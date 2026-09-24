@@ -59,6 +59,7 @@ To rebuild the database from scratch with only the bundled PDFs:
 
 ```bash
 pip install pymupdf
+sqlite3 data/qap.db < schema.sql          # the DB is gitignored; create it first
 python -m qapdb.ingest data/pdfs_bundled --commit
 python -m qapdb.apply_sources --commit
 for f in data/extractions/*.json; do python -m qapdb.load_extraction "$f" --commit; done

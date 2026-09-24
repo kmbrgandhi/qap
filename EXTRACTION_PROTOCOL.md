@@ -481,3 +481,24 @@ happened for every state in it.
   ("Energy  Efficient  Building  Policy"). The loader's whitespace-normalising
   fallback handles the padding; do not retype the heading to make it look
   tidy, quote it as it sits.
+
+### Test the bootstrap, not just the pipeline
+
+Found by cloning the repo into a temp directory and running it as a session
+with no access to this machine would.
+
+- **`schema.sql` had drifted from the live database.** `text_sha256` was added
+  to `qaps` by `ALTER TABLE` and never written back to the schema file. Every
+  working machine was fine, because every working machine already had the
+  column. A fresh clone built a `qaps` table that `ingest.py` could not write
+  to, and ingest reported each document as ingested while committing nothing.
+  → **When a column is added by ALTER TABLE, add it to `schema.sql` in the same
+  change.** A schema file that only describes machines that already work is
+  not a schema file.
+- **A dependency on `$QAP_PDF_DIR` was fatal where it should have been
+  survivable.** `verify_citations` exited if the shared drop folder was not
+  configured, which is exactly the situation a repo-only session is in. Now it
+  resolves through `qapdb/paths.py` and reports the PDFs it could not open.
+- The check is cheap and worth repeating after any schema or path change:
+  `git clone . /tmp/x`, create the database from `schema.sql`, ingest the
+  bundled PDFs, load, verify.

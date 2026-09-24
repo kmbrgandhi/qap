@@ -48,6 +48,14 @@ CREATE TABLE IF NOT EXISTS qaps (
     local_path      TEXT    NOT NULL,
     n_pages         INTEGER,
     text_chars      INTEGER,                       -- chars in the text layer
+    -- SHA-256 of the EXTRACTED TEXT at ingest, as distinct from sha256 above,
+    -- which hashes the file. A document can be re-OCR'd, or silently replaced
+    -- at a rolling URL, and still contain a criterion's quoted words while the
+    -- surrounding text -- and so what the criterion actually says -- has moved.
+    -- verify_citations compares this and says loudly when it has. It is why we
+    -- do not freeze the text to a separate artefact: the reviewer keeps reading
+    -- the same PDF the citation points at, and drift is still caught.
+    text_sha256     TEXT,
     source_quality  TEXT,   -- native | ocr | no_text_layer | garbled_text
 
     -- Total competitive points the document itself states are available.
