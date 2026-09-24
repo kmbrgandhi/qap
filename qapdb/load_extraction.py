@@ -167,8 +167,9 @@ def load(spec_path: Path, db_path: Path, commit: bool) -> int:
                (qap_id, ord, section_label, heading, verbatim_text, quote,
                 page_start, page_end, citation_verified, points_max, points_type,
                 scoring_unit, kind, rank_order, track, native_category, is_negative,
+                scored_against_round, tier_mode, detail_external,
                 note, exclusivity_group_id, extractor_version)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (qap_id, c.get("ord"), c.get("section_label"), c.get("heading"),
              c.get("verbatim_text"), c.get("quote"), c.get("page_start"),
              c.get("page_end"), c["_verified"], c.get("points_max"),

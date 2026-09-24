@@ -84,6 +84,9 @@ One row per thing a project is scored on, at the grain the document scores it.
 | `page_start` / `page_end` | **PDF page indices**, not printed page numbers. |
 | `quote` | See §4. |
 | `note` | Ambiguities, contradictions, alternatives, anything a reviewer should see. Generous notes are cheap; silent judgement calls are not. |
+| `scored_against_round` | True where the criterion is scored against the other applications rather than a fixed standard. Set it whenever the text says "lowest in the round", "rank order the applications", "compared with other applications" or similar. |
+| `tier_mode` | `alternative` where only the best tier applies, `additive` where the tiers are components that sum to the maximum, `mixed` where neither. Say which; the two look identical in the data and the double-counting figures depend on it. |
+| `detail_external` | Names the document that holds the actual test, where the QAP states only a point value: `Exhibit 4`, `Appendix W`, `Program Guide`. Leave null when the test is in the document. |
 
 ## 4. Quotes and citations
 
@@ -365,6 +368,28 @@ recording rather than rediscovering:
 The rule this suggests: survey first, and if the document needs a different
 *method* — images rather than text, or a session of its own — stop and say so.
 A half-read state costs more to repair than to do properly later.
+
+### Three fields added after sixteen states
+
+Added once the pattern was clear across enough states to be sure of the shape,
+rather than guessed at the start:
+
+- **`scored_against_round`.** Six criteria so far are scored against the other
+  applications in the round, not a fixed standard. Their `points_max` is a
+  ceiling nobody can plan for, and comparing such a value across states means
+  something different from comparing a fixed threshold. It was living in prose.
+- **`tier_mode`.** Tiers serve two opposite purposes and look identical in the
+  data: North Dakota's universal design components sum to its maximum, Hawaii's
+  green certification levels are alternatives. `naive_total`, which is the
+  headline double-counting figure, cannot be read honestly without knowing
+  which. Backfilled by arithmetic for the sixteen states coded before the field
+  existed (tiers summing to the maximum read as additive, a largest tier equal
+  to the maximum reads as alternative) — **those values are inferred and should
+  be confirmed during human review**; set it explicitly from here on.
+- **`detail_external`.** Eighteen criteria state a point value and defer the
+  test to a document the corpus does not hold, including South Dakota's 100
+  points for "as detailed in Exhibit 4". A reader deserves to see which figures
+  rest on something we cannot show them.
 
 ### Freezing the text, and why we did not
 

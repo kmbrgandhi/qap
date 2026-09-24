@@ -151,6 +151,32 @@ CREATE TABLE IF NOT EXISTS criteria (
 
     is_negative   INTEGER NOT NULL DEFAULT 0,      -- point deduction
 
+    -- Scored against the other applications in the round rather than against a
+    -- fixed standard. Hawaii awards its cost points to whichever application
+    -- has the lowest cost per square foot that year; Wisconsin rank-orders
+    -- below-market financing; New York compares project costs "to the costs
+    -- proposed in other project applications". points_max is then a ceiling
+    -- nobody can plan for, and cross-state comparison of these values means
+    -- something different from comparing fixed thresholds. Worth a column
+    -- rather than a sentence in a note, because "which states score relatively"
+    -- is a question the database should be able to answer.
+    scored_against_round INTEGER NOT NULL DEFAULT 0,
+
+    -- How a criterion's tiers combine. Both kinds exist and they look
+    -- identical in the data: North Dakota's universal design tiers add up to
+    -- its maximum, while Hawaii's green certification tiers are alternatives
+    -- and only the best applies. Without this, naive_total cannot tell
+    -- genuine double-counting from a criterion whose parts are meant to sum.
+    tier_mode     TEXT CHECK (tier_mode IN ('alternative','additive','mixed')),
+
+    -- Where the actual test lives, when it is not in this document. South
+    -- Dakota gives 100 of its 800 points to a section that says only "as
+    -- detailed in Exhibit 4"; Wisconsin defers 25 points to Appendix W;
+    -- Arkansas's opportunity index is published on a map. The points are
+    -- extractable and the criteria are not, and a reader deserves to see
+    -- which figures rest on a document we do not hold.
+    detail_external TEXT,
+
     exclusivity_group_id INTEGER REFERENCES exclusivity_groups(id) ON DELETE SET NULL,
 
     -- Free-text flag from extraction: ambiguities, drafting errors in the
