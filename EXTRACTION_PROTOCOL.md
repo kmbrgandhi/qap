@@ -594,3 +594,44 @@ reconciling to a stated figure.
   the next round to a project that won an appeal but was not funded. It is on
   its own track, like Delaware's bonus, so the base 63 is not inflated by a
   remedy few projects can claim.
+
+### Alaska, FY2027 GOAL plan
+
+49 criteria: 31 competitive, 2 tiebreakers and 16 thresholds. All 49
+citations verified, two only after a page range was widened to cover an item
+continuing onto the next page. The computed 231 matches the stated 231 and the
+hand-sum.
+
+- **The summary table was the spine, again.** pp.38–39 list every section
+  maximum, every item value and "TOTAL POINTS 231". The body agrees with it
+  line for line. Reading it first turned the body pass into checking rather
+  than discovery.
+- **When items overshoot a stated maximum by exactly one item, say so, and do
+  not invent the rule.** Section 3's nine items sum to 46 against a stated 38.
+  The gap is exactly the 8-point Senior Housing Offset. Its eligibility (at
+  most 20% of units income-restricted) limits 3.a to 2.4 points in practice,
+  which is probably what "offset" means, but the plan never says the offset
+  excludes anything. Coded as a `capped_sum` at the stated 38, which is what
+  the text supports, with the inference in the note for the reviewer. A
+  `max_one` or cross-criterion exclusion would have encoded a rule nobody
+  wrote.
+- **Either/or families inside one criterion are tiers, and the note carries
+  the arithmetic.** Energy Efficiency is 14 = best of (i)–(iv), worth 8, plus
+  best of (v)–(vi), worth 6. Pro Forma is 30 = the hard debt ladder (24) or the
+  automatic 14 for projects that cannot carry debt, plus 1 + 5. `tier_mode:
+  mixed`, with the sum written out, is enough for a reviewer to check it.
+- **Some criteria pull against each other by design.** Market Conditions
+  rewards low vacancy and population growth, while Rehabilitation pays 4
+  points each for negative growth and above-average vacancy, from the same
+  data. A 20-point small-community award sits beside 45 points for
+  labour-market and rental-market strength. Note the tension; the arithmetic
+  will not show it.
+- **Penalties with no maximum take a null `points_max`, not a guess.** The
+  summary says "Penalty points – no max", and three of the four schedules are
+  per-instance with no cap. Recorded as one negative criterion with
+  `points_max` null and the schedules in the note.
+- **Committee rankings are scored against the round too.** Project Leveraging
+  (28 points) is ranked by a review committee, and points are "evenly
+  distributed down the consolidated average ranking". That is
+  `scored_against_round`, even though no formula names the other
+  applications.

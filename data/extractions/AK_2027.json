@@ -1,0 +1,717 @@
+{
+  "_comment": "Alaska GOAL Program Rating and Award Criteria Plan (Qualified Allocation Plan), AHFC, version June 24, 2026. One plan rates applications for LIHTC, HOME, SCHDF and NHTF together. The document states no cycle year; the FY2027 in the filename is not on its face, so the cycle is left to data/sources.csv. Page numbers are PDF page indices and match the printed 'Page N of 51'. Rating criteria pp.21-36, with a RATING AND RANKING CRITERIA SUMMARY on pp.38-39 stating each section maximum and 'TOTAL POINTS 231'. The summary and the body agree on every section maximum and every item value. Hand-summed before loading: 21 + 52 + 38 + 45 + 40 + 28 + 1 + 6 = 231. One section needed a cap to reach it: Section 3 Project Characteristics states a maximum of 38 and its nine items sum to 46. The difference is exactly the 8-point Senior Housing Offset, and the plan states no rule excluding it from anything; recorded as a capped_sum group at 38 with the reasoning in the 3.h note. Two drafting errors are recorded: 5.a.iv cross-refers to '3(a)(iii)' where it means its own item, and the 4.a unemployment ladder's fifth tier reads 'at least equal to the statewide rate'. Thresholds are in AK_thresholds.json.",
+  "match": {
+    "filename": "alaska-qap-fy2027.pdf"
+  },
+  "extractor_version": "hand-2027-ak-1",
+  "qap_updates": {
+    "stated_total": 231,
+    "stated_total_page": 39
+  },
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": 231,
+      "page": 39,
+      "note": "RATING AND RANKING CRITERIA SUMMARY, pp.38-39: 'TOTAL POINTS 231', the sum of eight section maxima (21, 52, 38, 45, 40, 28, 1, 6). Section 3's items sum to 46 against its stated 38; the capped_sum group at 38 is what makes the computed total match. Penalty points have no maximum and are excluded, as are the 5.a.v and 5.b.iii deductions. The summary marks Underwriting as carrying an '8 point threshold': an application must earn at least 8 of its 40 points to be funded."
+    }
+  ],
+  "groups": [
+    {
+      "key": "ak_project_characteristics",
+      "label": "Project Characteristics, capped at 38",
+      "rule": "capped_sum",
+      "group_cap": 38,
+      "source_quote": "Project Characteristics (Maximum 38 Points)",
+      "page_start": 25,
+      "note": "Nine items sum to 46 (12 + 1 + 8 + 12 + 1 + 1 + 1 + 8 + 2) against the stated section maximum of 38, both in the body on p.25 and in the summary on p.38. The gap equals the Senior Housing Offset; see the 3.h note."
+    }
+  ],
+  "criteria": [
+    {
+      "native_category": "Project Location",
+      "section_label": "1.a",
+      "heading": "Small community",
+      "points_max": 20,
+      "points_type": "fixed",
+      "page_start": 21,
+      "page_end": 21,
+      "quote": "Project is located in an area qualifying as a “small community,” as defined in this",
+      "note": "The largest single fixed award in the plan. A small community is one of 6,500 or fewer people not connected by road or rail to Anchorage or Fairbanks, or of 1,600 or fewer that is connected and at least 50 miles from Anchorage or 25 from Fairbanks (definition, p.8). The Alaska Marine Highway does not count as a road connection.",
+      "kind": "competitive",
+      "ord": 1
+    },
+    {
+      "native_category": "Project Location",
+      "section_label": "1.b",
+      "heading": "QCT contributing to a community revitalization plan",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 21,
+      "page_end": 21,
+      "quote": "and is considered to contribute to a community revitalization plan",
+      "note": "One point, against 20 for a small community: the plan weights rural remoteness far above the federal QCT/revitalization preference.",
+      "kind": "competitive",
+      "ord": 2
+    },
+    {
+      "native_category": "Project Design",
+      "section_label": "2.a",
+      "heading": "Energy efficiency",
+      "points_max": 14,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 21,
+      "page_end": 23,
+      "quote": "Energy Efficiency (14 Points)",
+      "tiers": [
+        {
+          "tier_label": "5 Star Plus and BEES, moderate cost area",
+          "points": 4
+        },
+        {
+          "tier_label": "5 Star Plus and BEES, intermediate cost area",
+          "points": 6
+        },
+        {
+          "tier_label": "5 Star Plus and BEES, high-cost area",
+          "points": 8
+        },
+        {
+          "tier_label": "Cost effective building improvements, rehab only, at least $40 per unit per year",
+          "points": 5
+        },
+        {
+          "tier_label": "Cost effective renewable energy, at least $40 per unit per year",
+          "points": 6
+        },
+        {
+          "tier_label": "Cost effective energy efficiency improvements beyond 5 Star Plus BEES, at least $40 per unit per year",
+          "points": 6
+        }
+      ],
+      "note": "Two either/or families: (i)-(iv) are alternatives ('Points may be awarded under only one category'), worth at most 8; (v) and (vi) are alternatives ('Applicants may receive points for one category, but not both'), worth 6. 8 + 6 = the stated 14. The 5 Star Plus award depends on the cost area the site sits in, not on the building. Cost effectiveness is a payback test over the lesser of 30 years or system life with energy prices escalated at 3%. Recipients must supply annual financial statements and answer energy consumption inquiries for the term of the covenants.",
+      "kind": "competitive",
+      "ord": 3
+    },
+    {
+      "native_category": "Project Design",
+      "section_label": "2.b",
+      "heading": "Availability of larger units for households with children",
+      "points_max": 2,
+      "points_type": "formula",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "Availability of Larger Units for Households with Children (Maximum 2 Points)",
+      "note": "Points = (units with 3+ bedrooms x 2) / (total residential units x 0.4), so full points at 40% of units. The worked example gives 0.5 points, so fractional points are awarded.",
+      "kind": "competitive",
+      "ord": 4
+    },
+    {
+      "native_category": "Project Design",
+      "section_label": "2.c",
+      "heading": "Units equipped for persons with physical disabilities and sensory impairments",
+      "points_max": 8,
+      "points_type": "formula",
+      "page_start": 23,
+      "page_end": 24,
+      "quote": "Number of Units Equipped for Persons with Physical Disabilities and Sensory",
+      "note": "Senior: equipped units x 8 / total units, so full points only at 100% equipped. Non-senior: equipped units x 8 / (total units x 0.25), full points at 25%. The threshold already requires 5% equipped for physical disabilities and 2% for sensory impairments in projects of 5 or more units; the formula as written does not net those out.",
+      "kind": "competitive",
+      "ord": 5
+    },
+    {
+      "native_category": "Project Design",
+      "section_label": "2.d",
+      "heading": "Rehabilitation project",
+      "points_max": 16,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 24,
+      "page_end": 25,
+      "quote": "Rehabilitation Project (Maximum 16 points)",
+      "tiers": [
+        {
+          "tier_label": "Any project involving rehabilitation, including demolition within 3 years",
+          "points": 2
+        },
+        {
+          "tier_label": "Area with negative three-year average population growth",
+          "points": 4
+        },
+        {
+          "tier_label": "Area with vacancy above the statewide average",
+          "points": 4
+        },
+        {
+          "tier_label": "Converts a non-affordable property to affordable, or non-senior to senior",
+          "points": 6
+        }
+      ],
+      "note": "2 + 4 + 4 + 6 = the stated 16. The last three require meeting the minimum rehabilitation cost in the Project Cost and Funding Limitations section. Two of them reward weak markets (shrinking population, high vacancy) using the same data that Section 4 uses to reward strong ones, so a rehab project's Market Conditions and Rehabilitation scores pull against each other.",
+      "kind": "competitive",
+      "ord": 6
+    },
+    {
+      "native_category": "Project Design",
+      "section_label": "2.e",
+      "heading": "Storage facilities",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "All residential units will be provided with assigned tenant",
+      "note": "Units with attached garages qualify automatically.",
+      "kind": "competitive",
+      "ord": 7
+    },
+    {
+      "native_category": "Project Design",
+      "section_label": "2.f",
+      "heading": "Service enriched housing",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "Service enriched housing, which incorporates substantive social services for",
+      "note": "Only where homeless or disabled households are served through hard set-aside units, with service costs and funding in the operating budget.",
+      "kind": "competitive",
+      "ord": 8
+    },
+    {
+      "native_category": "Project Design",
+      "section_label": "2.g",
+      "heading": "Project based rental assistance",
+      "points_max": 8,
+      "points_type": "fixed",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "Project Based Rental Assistance (8 points)",
+      "note": "Federal project-based assistance on at least 25% of units for at least 15 years. GOAL rental subsidy sources do not qualify.",
+      "kind": "competitive",
+      "ord": 9
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "3.a",
+      "heading": "Project serves the lowest income tenants",
+      "points_max": 12,
+      "points_type": "formula",
+      "group": "ak_project_characteristics",
+      "page_start": 25,
+      "page_end": 26,
+      "quote": "Project Serves the Lowest Income Tenants (Maximum 12 Points)",
+      "note": "((50% AMI units - 10% of units) x 12) / (50% of units), floored at 0 and capped at 12, so points start above 10% of units and max out at 60%. Worked example on p.26: 50 of 97 units gives 9.97. Senior projects requesting only SCHDF funds are rated excluding this criterion.",
+      "kind": "competitive",
+      "ord": 10
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "3.b",
+      "heading": "Extended low-income project use",
+      "points_max": 1,
+      "points_type": "fixed",
+      "group": "ak_project_characteristics",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "One (1) point will be awarded to applications that commit the project to an",
+      "note": "30 years of extended use, and LIHTC sponsors taking the point forfeit the qualified contract route. SCHDF-only senior projects are rated excluding this criterion.",
+      "kind": "competitive",
+      "ord": 11
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "3.c",
+      "heading": "Projects which serve special needs populations",
+      "points_max": 8,
+      "points_type": "formula",
+      "group": "ak_project_characteristics",
+      "page_start": 27,
+      "page_end": 27,
+      "quote": "Projects which Serve Special Needs Populations (8 Points Maximum)",
+      "note": "(Special needs units beyond the 5% threshold x 8) / (50% of units), so full points at an additional 50% of units. Special needs includes households at or below 30% AMI, except for SCHDF-only projects.",
+      "kind": "competitive",
+      "ord": 12
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "3.d",
+      "heading": "Project mix",
+      "points_max": 12,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "group": "ak_project_characteristics",
+      "page_start": 27,
+      "page_end": 28,
+      "quote": "Project Mix (12 Points Maximum)",
+      "tiers": [
+        {
+          "tier_label": "Tract with 51%+ of households above AMI: 65% low-income units",
+          "points": 2
+        },
+        {
+          "tier_label": "Same: 70%",
+          "points": 4
+        },
+        {
+          "tier_label": "Same: 75%",
+          "points": 6
+        },
+        {
+          "tier_label": "Same: 80%",
+          "points": 8
+        },
+        {
+          "tier_label": "Tract with 40-51% of households above AMI: 65% low-income units",
+          "points": 1
+        },
+        {
+          "tier_label": "Same: 70%",
+          "points": 2
+        },
+        {
+          "tier_label": "Same: 75%",
+          "points": 3
+        },
+        {
+          "tier_label": "Same: 80%",
+          "points": 4
+        },
+        {
+          "tier_label": "Tract with 20%+ of households below 30% AMI: 20% of units at or above market rate",
+          "points": 5
+        },
+        {
+          "tier_label": "Same: 40%",
+          "points": 6
+        },
+        {
+          "tier_label": "Same: 60%",
+          "points": 7
+        },
+        {
+          "tier_label": "Same: 80%",
+          "points": 8
+        },
+        {
+          "tier_label": "Project mix bonus, any tract: at least 20% unrestricted with the rest restricted, or the reverse",
+          "points": 4
+        }
+      ],
+      "note": "Three tract-dependent ladders and a bonus. The two affluent-tract ladders are exclusive by definition, since a tract cannot be both above and below 51%; whether a tract could qualify for (i) or (ii) and (iii) at once is not addressed. The best ladder pays 8 and the bonus 4, which makes the stated 12. The ladders pull opposite ways: in affluent tracts more low-income units score higher, in poor tracts more market-rate units do. Census tract eligibility is set at pre-application from a required market study.",
+      "kind": "competitive",
+      "ord": 13
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "3.e",
+      "heading": "Projects intended for eventual tenant ownership",
+      "points_max": 1,
+      "points_type": "fixed",
+      "group": "ak_project_characteristics",
+      "page_start": 28,
+      "page_end": 28,
+      "quote": "Projects Intended for Eventual Tenant Ownership (1 Point)",
+      "note": "Requires a homeownership counseling plan and resale restrictions.",
+      "kind": "competitive",
+      "ord": 14
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "3.f",
+      "heading": "Preference in occupancy for homeless families",
+      "points_max": 1,
+      "points_type": "fixed",
+      "group": "ak_project_characteristics",
+      "page_start": 28,
+      "page_end": 28,
+      "quote": "Preference in Occupancy for Homeless Families (1 Point)",
+      "kind": "competitive",
+      "ord": 15
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "3.g",
+      "heading": "Public housing waiting lists",
+      "points_max": 1,
+      "points_type": "fixed",
+      "group": "ak_project_characteristics",
+      "page_start": 28,
+      "page_end": 29,
+      "quote": "Public Housing Waiting Lists (1 Point)",
+      "note": "Requires rents below the AHFC Payment Standard (or HUD FMR) and a referral relationship with AHFC or an Indian Housing Authority; no point where no such office can provide referrals.",
+      "kind": "competitive",
+      "ord": 16
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "3.h",
+      "heading": "Senior housing offset",
+      "points_max": 8,
+      "points_type": "fixed",
+      "group": "ak_project_characteristics",
+      "page_start": 29,
+      "page_end": 29,
+      "quote": "Senior Housing Offset (8 Points)",
+      "note": "Eight points for projects primarily housing senior households, but none if income-restricted funding encumbers more than 20% of the units. This is the item that accounts for the Section 3 gap: the nine items sum to 46 and the section maximum is 38, a difference of exactly 8. The plan states no rule making the offset exclusive of anything. Its 20% restriction ceiling does limit 3.a in practice: a project with at most 20% restricted units can score at most 2.4 there. That looks like the intent of the name, compensating senior projects that cannot earn the income-targeting points, but it is an inference. Coded inside a capped_sum group at 38 rather than as an exclusivity rule nobody wrote. Reviewer should confirm.",
+      "kind": "competitive",
+      "ord": 17
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "3.i",
+      "heading": "Veterans housing preference",
+      "points_max": 2,
+      "points_type": "fixed",
+      "group": "ak_project_characteristics",
+      "page_start": 29,
+      "page_end": 29,
+      "quote": "Veterans Housing Preference (2 Points)",
+      "kind": "competitive",
+      "ord": 18
+    },
+    {
+      "native_category": "Market Conditions",
+      "section_label": "4.a",
+      "heading": "Opportunity (unemployment relative to statewide rate)",
+      "points_max": 15,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 29,
+      "page_end": 30,
+      "quote": "Opportunity: (up to 15 Points)",
+      "tiers": [
+        {
+          "tier_label": "More than 5% above statewide unemployment",
+          "points": 0
+        },
+        {
+          "tier_label": "No more than 5% above",
+          "points": 4
+        },
+        {
+          "tier_label": "No more than 3% above",
+          "points": 8
+        },
+        {
+          "tier_label": "No more than 1% above",
+          "points": 10
+        },
+        {
+          "tier_label": "At least equal to the statewide rate",
+          "points": 12
+        },
+        {
+          "tier_label": "2.5% or more below",
+          "points": 15
+        }
+      ],
+      "note": "Borough or census area unemployment from the Department of Labor. The fifth tier reads 'at least equal to the statewide rate', which taken literally includes every rate above it; it presumably means equal to or below. Reviewer should read p.29. The whole section scores the strength of the local market, which works against the 20-point small community award for remote places.",
+      "kind": "competitive",
+      "ord": 19
+    },
+    {
+      "native_category": "Market Conditions",
+      "section_label": "4.b",
+      "heading": "Rental market strength (vacancy)",
+      "points_max": 15,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 30,
+      "page_end": 30,
+      "quote": "Rental Market Strength (up to 15 Points)",
+      "tiers": [
+        {
+          "tier_label": "Vacancy over 12%",
+          "points": 0
+        },
+        {
+          "tier_label": "9% to 12%",
+          "points": 2
+        },
+        {
+          "tier_label": "7% to under 9%",
+          "points": 6
+        },
+        {
+          "tier_label": "6% to under 7%",
+          "points": 10
+        },
+        {
+          "tier_label": "4% to under 6%",
+          "points": 13
+        },
+        {
+          "tier_label": "Under 4%",
+          "points": 15
+        }
+      ],
+      "note": "Department of Labor Rental Market Indicators survey, or a market study using the same method outside the survey areas.",
+      "kind": "competitive",
+      "ord": 20
+    },
+    {
+      "native_category": "Market Conditions",
+      "section_label": "4.c",
+      "heading": "Location trends (population growth)",
+      "points_max": 15,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 30,
+      "page_end": 31,
+      "quote": "Location Trends (up to 15 Points)",
+      "tiers": [
+        {
+          "tier_label": "Three-year growth 2.0% or more",
+          "points": 15
+        },
+        {
+          "tier_label": "1.25% to under 2.0%",
+          "points": 12
+        },
+        {
+          "tier_label": "0.5% to under 1.25%",
+          "points": 10
+        },
+        {
+          "tier_label": "Borough or census area under 6,500 people with growth above 0%",
+          "points": 8
+        },
+        {
+          "tier_label": "Above 0% to under 0.5%",
+          "points": 6
+        },
+        {
+          "tier_label": "Above -0.5% to 0%",
+          "points": 4
+        }
+      ],
+      "note": "Communities under 6,500 are scored on the lesser of community and borough growth; Palmer and Wasilla are combined. A shrinking place below -0.5% scores nothing, though the same decline earns 4 points under 2.d.ii for a rehab project.",
+      "kind": "competitive",
+      "ord": 21
+    },
+    {
+      "native_category": "Underwriting",
+      "section_label": "5.a",
+      "heading": "Pro forma analysis",
+      "points_max": 30,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 31,
+      "page_end": 32,
+      "quote": "Pro Forma Analysis (30 Points)",
+      "tiers": [
+        {
+          "tier_label": "Hard debt 4% to 6% of TDC",
+          "points": 6
+        },
+        {
+          "tier_label": "More than 6% to under 9%",
+          "points": 10
+        },
+        {
+          "tier_label": "9% to under 12%",
+          "points": 16
+        },
+        {
+          "tier_label": "12% to 15%",
+          "points": 20
+        },
+        {
+          "tier_label": "More than 15%",
+          "points": 24
+        },
+        {
+          "tier_label": "Automatic, projects barred from servicing debt (e.g. HUD 811, Section 202)",
+          "points": 14
+        },
+        {
+          "tier_label": "RDAW fee and contingency line items at or below limits",
+          "points": 1
+        },
+        {
+          "tier_label": "All RDAW line items clearly described (minus 2 per vague 'other' line)",
+          "points": 5
+        }
+      ],
+      "note": "The hard debt ladder and the 14-point automatic award are alternatives; the RDAW items are additive. 24 + 1 + 5 = the stated 30. Rewarding more hard debt is unusual. Remote small communities not on the road or rail system score the ladder at 40% of the target percentages, so 'more than 6%' earns 24 there. Item iv's deduction runs 'until points are no longer available under 3(a)(iii)', which is a cross-reference to Project Characteristics and cannot be right; it presumably means 5(a)(iv). Recorded as a drafting error.",
+      "kind": "competitive",
+      "ord": 22
+    },
+    {
+      "native_category": "Underwriting",
+      "section_label": "5.a.v",
+      "heading": "Penalty: RDAW discrepancy",
+      "points_max": -5,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 32,
+      "page_end": 33,
+      "quote": "Penalty: RDAW Discrepancy (minus 5 points maximum).",
+      "note": "One point per instance: omitted costs, sources or expenses not in the workbook, or sources and uses more than $1,000 apart.",
+      "kind": "competitive",
+      "ord": 23
+    },
+    {
+      "native_category": "Underwriting",
+      "section_label": "5.b",
+      "heading": "Developer fee",
+      "points_max": 2,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 33,
+      "page_end": 33,
+      "quote": "Developer Fee (2 Points)",
+      "tiers": [
+        {
+          "tier_label": "Developer overhead and fee in excess of overhead in separate line items",
+          "points": 1
+        },
+        {
+          "tier_label": "No deferred developer fee at or above 30% of total fee",
+          "points": 1
+        }
+      ],
+      "kind": "competitive",
+      "ord": 24
+    },
+    {
+      "native_category": "Underwriting",
+      "section_label": "5.b.iii",
+      "heading": "Penalty: deferred fee not repayable within 12 years",
+      "points_max": -2,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 33,
+      "page_end": 33,
+      "quote": "not repayable within 12 years based on trending analysis in the Rental",
+      "note": "Applies only where the developer is not the project owner.",
+      "kind": "competitive",
+      "ord": 25
+    },
+    {
+      "native_category": "Underwriting",
+      "section_label": "5.c",
+      "heading": "Debt coverage ratio",
+      "points_max": 8,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 33,
+      "page_end": 33,
+      "quote": "Debt Coverage Ratio   (8 Points)",
+      "tiers": [
+        {
+          "tier_label": "Year-one DCR at or above 1.40, hard debt at least 4% of TDC",
+          "points": 8
+        },
+        {
+          "tier_label": "1.30 to under 1.40",
+          "points": 3
+        },
+        {
+          "tier_label": "Automatic, projects barred from servicing debt",
+          "points": 8
+        }
+      ],
+      "note": "Projects that cannot carry debt receive the full 8 automatically here, but only 14 of 24 in 5.a, so the offset is partial.",
+      "kind": "competitive",
+      "ord": 26
+    },
+    {
+      "native_category": "Project Leveraging",
+      "section_label": "6.a",
+      "heading": "Appropriateness of total development cost per unit",
+      "points_max": 20,
+      "points_type": "formula",
+      "scored_against_round": true,
+      "page_start": 34,
+      "page_end": 34,
+      "quote": "The appropriateness of the project’s total development cost (TDC) per unit in the",
+      "note": "Ranked by a review committee of at least three from a narrative of up to 6 pages; points are 'evenly distributed down the consolidated average ranking', with the top proposal getting the maximum. The score depends entirely on the other applications.",
+      "kind": "competitive",
+      "ord": 27
+    },
+    {
+      "native_category": "Project Leveraging",
+      "section_label": "6.b",
+      "heading": "GOAL funding relative to TDC and other funding",
+      "points_max": 8,
+      "points_type": "formula",
+      "scored_against_round": true,
+      "page_start": 34,
+      "page_end": 34,
+      "quote": "The amount of GOAL funding requested relative to the TDC and the amount of",
+      "note": "Committee-ranked as 6.a.",
+      "kind": "competitive",
+      "ord": 28
+    },
+    {
+      "native_category": "Project Team Characteristics",
+      "section_label": "7.a",
+      "heading": "Non-profit or regional housing authority participation",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 34,
+      "page_end": 34,
+      "quote": "A tax-exempt organization or Regional Housing Authority is involved in the project on",
+      "note": "Involvement must be regular, continuous and substantial in both development and operation.",
+      "kind": "competitive",
+      "ord": 29
+    },
+    {
+      "native_category": "Project Team Characteristics",
+      "section_label": "7.b",
+      "heading": "Penalty points for past performance",
+      "points_max": null,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 34,
+      "page_end": 35,
+      "quote": "Points will be deducted from the applicant’s score in cases where a principal of the",
+      "note": "No maximum ('Penalty points - no max' in the p.39 summary), so points_max is null. Four schedules: 1 point per late grant progress report after the first; 1 point per month an AHFC mortgage payment is 30 days late, capped at 5; 3 points per project with an uncorrected 8823, non-compliant review or audit finding; and for unapproved scope changes on a prior project, the greater of 3 points per instance or the points originally awarded for the broken commitment. Assessed at pre-application and curable up to 45 days before the full application deadline.",
+      "kind": "competitive",
+      "ord": 30
+    },
+    {
+      "native_category": "Job Training Program",
+      "section_label": "8",
+      "heading": "Job training program",
+      "points_max": 6,
+      "points_type": "per_unit",
+      "page_start": 35,
+      "page_end": 36,
+      "quote": "Job Training Program (Maximum 6 Points)",
+      "note": "One point per on-the-job trainee during development, plus 2 for classroom training of at least 20 hours for at least two of those trainees, capped at 6. Failing to run the program can lead AHFC to recapture the award.",
+      "kind": "competitive",
+      "ord": 31
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tie-Break Provisions",
+      "section_label": "9.d.i",
+      "heading": "Community longest without a GOAL-funded development",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 36,
+      "page_end": 36,
+      "quote": "The tie-will be broken in favor of the project whose community has gone the",
+      "ord": 32
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tie-Break Provisions",
+      "section_label": "9.d.ii",
+      "heading": "Lowest total development cost per unit",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 36,
+      "page_end": 36,
+      "quote": "The tie will be broken by the development with the lowest total development cost",
+      "ord": 33
+    }
+  ]
+}

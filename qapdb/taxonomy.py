@@ -456,6 +456,22 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("IA", "6.4.C"): (SPON, READY),
     ("IA", "6.5.A"): READY, ("IA", "6.5.B"): PRES,
     ("IA", "7.10.B"): READY,
+
+    # ---- Alaska ------------------------------------------------------------
+    # Section 4 Market Conditions scores local demand; filed under location.
+    ("AK", "1.a"): LOC,     ("AK", "1.b"): LOC,
+    ("AK", "2.a"): DES,     ("AK", "2.b"): POP,     ("AK", "2.c"): DES,
+    ("AK", "2.d"): PRES,    ("AK", "2.e"): DES,     ("AK", "2.f"): POP,
+    ("AK", "2.g"): AFF,
+    ("AK", "3.a"): AFF,     ("AK", "3.b"): AFF,     ("AK", "3.c"): POP,
+    ("AK", "3.d"): (AFF, LOC), ("AK", "3.e"): AFF,  ("AK", "3.f"): POP,
+    ("AK", "3.g"): POP,     ("AK", "3.h"): POP,     ("AK", "3.i"): POP,
+    ("AK", "4.a"): LOC,     ("AK", "4.b"): LOC,     ("AK", "4.c"): LOC,
+    ("AK", "5.a"): READY,   ("AK", "5.a.v"): READY, ("AK", "5.b"): COST,
+    ("AK", "5.b.iii"): READY, ("AK", "5.c"): READY,
+    ("AK", "6.a"): COST,    ("AK", "6.b"): COST,
+    ("AK", "7.a"): SPON,    ("AK", "7.b"): SPON,
+    ("AK", "8"): POP,
 }
 
 
