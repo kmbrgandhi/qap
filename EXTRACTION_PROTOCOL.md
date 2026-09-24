@@ -737,3 +737,36 @@ hand-sum.
   state's documents.** The worksheet is three pages off and the QAP eight in
   the pages cited. The protocol already says to cite PDF indices; this is
   why.
+
+### Oklahoma, 2027 (Application Instructions, converted from .docx)
+
+28 criteria: 12 competitive, 1 tiebreaker, 4 ranked priorities and 11
+thresholds, all verified first time. There are two tracks and no stated
+totals. The 9% selection criteria compute to 83 and the State Tax Credit
+ranking to 12, both matching the hand-sums.
+
+- **A converted document keeps its old table of contents.** The TOC's page
+  numbers belong to the .docx, not the PDF. Map the sections by searching
+  the text layer for their headings before citing anything; that took one
+  command and avoided a page of wrong citations.
+- **A self-score sheet can omit the criterion that matters most.**
+  Attachment #11 lists nine criteria worth 62. The body has a tenth,
+  Development Cost Efficiency, worth 24 and ranked against the round by
+  staff after the deadline, which no applicant can self-score. Hand-summing
+  from the sheet alone would have missed a quarter of the scale. Reconcile
+  the summary sheet against the body in both directions.
+- **"Exclusive list" can mean exhaustive.** "The following is an exclusive
+  list" introduces nine additive location items capped at 10. Read it for
+  meaning, not as a hint of mutual exclusivity.
+- **Two criteria that cap each other can be exact as a capped group.**
+  Targeted Populations pays 5 (family) or 8 (elderly), and Individuals with
+  Children (3) is barred at 8. Both routes reach 8, so a `capped_sum` at 8
+  is exact rather than an approximation.
+- **A second scoring system can hide in a statutory section.** The Oklahoma
+  Affordable Housing Act section ranks 4% State Tax Credit requests by four
+  ordered preference categories and then a 12-point efficiency score. That
+  uses `ranked_priority` rows for the first time since Connecticut, on a
+  `state_credit` track of its own.
+- **Attachments are part of the document and can contradict it.** The
+  amenities certification gives a storm shelter 5 points where the body
+  gives every amenity 1. The maximum is unaffected, but the note records it.

@@ -1,0 +1,405 @@
+{
+  "_comment": "Oklahoma 2027 AHTC Application Instructions, OHFA, effective January 1, 2027. OHFA defines its QAP as these Instructions plus the Application Form and the Chapter 36 Rules; this document holds the scoring. The bundled PDF was converted from .docx, so the table of contents' page numbers do not match; page numbers here are PDF page indices. TWO SCORING SYSTEMS, recorded as tracks. The default track is the 9% Selection Criteria, pp.27-38: ten scored criteria, negative points and a tie breaker. 'state_credit' is the ranking of 4% bond applications that request Oklahoma State Tax Credits (pp.14-17): four ordered preference categories, then a 12-point efficiency score within each. NO TOTAL IS STATED for either. Hand-summed before loading: the nine self-scored criteria on the Attachment #11 score sheet (p.49-50) list 5 + 10 + 10 + 8 + 3 + 3 + 10 + 3 + 10 = 62. Because SC.5 is barred to projects taking 8 in SC.4, those two together can reach only 8, which leaves 59. Add the 24-point Development Cost Efficiency, which staff score against the round and which the sheet omits: 83. The loader matched. The 83 therefore includes 24 points no applicant can predict. One contradiction is recorded in SC.9: the body gives every amenity 1 point, while Attachment #13 gives the storm shelter or safe room 5. Thresholds are in OK_thresholds.json.",
+  "match": {
+    "filename": "oklahoma-qap-2027-CONVERTED-from-docx.pdf"
+  },
+  "extractor_version": "hand-2027-ok-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 49,
+      "note": "No total stated; the Attachment #11 'Total Self-Score' line is blank. Computed 83 = the self-scored criteria (62 flat, 59 once SC.4 and SC.5 are capped together at 8) plus 24 for Development Cost Efficiency, which is scored against the round by staff and is not on the self-score sheet. OHFA's Trustees may allocate 'irrespective of its point ranking' (p.27)."
+    },
+    {
+      "track": "state_credit",
+      "stated_total": null,
+      "page": 16,
+      "note": "4% applications requesting State Tax Credits: ordered by four preference categories, then ranked within a category by a 12-point efficiency score (8 + 4) scored against the round. Up to $4,000,000 of State Tax Credits a year, 75% for new construction and 25% for acquisition/rehabilitation in Funding Period One."
+    }
+  ],
+  "groups": [
+    {
+      "key": "ok_populations",
+      "label": "Targeted populations and individuals with children, capped at 8",
+      "rule": "capped_sum",
+      "group_cap": 8,
+      "source_quote": "If the Development receives 8 points in the Targeted Populations category, it will not",
+      "page_start": 34,
+      "note": "SC.5 is barred to a project taking 8 in SC.4, so the two routes are elderly (8 + 0) or family (5 + 3): both reach 8. A cap at 8 is exact."
+    }
+  ],
+  "criteria": [
+    {
+      "native_category": "Selection Criteria",
+      "section_label": "SC.1",
+      "heading": "Income targeting",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 27,
+      "page_end": 28,
+      "quote": "Applications will be evaluated to the extent the Development targets Lower-Income populations",
+      "tiers": [
+        {
+          "tier_label": "At least 40% of AHTC units at or below 50% AMI",
+          "points": 5
+        },
+        {
+          "tier_label": "At least 10% of AHTC units at or below 30% AMI",
+          "points": 5
+        }
+      ],
+      "note": "Either route pays the full 5. Targeted units must be spread proportionately across bedroom sizes.",
+      "kind": "competitive",
+      "ord": 1
+    },
+    {
+      "native_category": "Selection Criteria",
+      "section_label": "SC.2",
+      "heading": "Term of affordability / tenant ownership",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 28,
+      "page_end": 29,
+      "quote": "Points will be awarded to applicants who commit to an additional term of affordability of 10 years",
+      "tiers": [
+        {
+          "tier_label": "Ten years of affordability beyond the 30-year minimum",
+          "points": 10
+        },
+        {
+          "tier_label": "Tenant ownership after year 15, unsold units affordable ten years beyond 30",
+          "points": 10
+        }
+      ],
+      "note": "Both routes carry the same 40-year affordability for units that stay rental. The tenant ownership plan is evaluated for feasibility and must cover reserves, homebuyer education, maintenance duties, affordability of the ownership payment and the sales price calculation.",
+      "kind": "competitive",
+      "ord": 2
+    },
+    {
+      "native_category": "Selection Criteria",
+      "section_label": "SC.3",
+      "heading": "Development location",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 29,
+      "page_end": 33,
+      "quote": "Total Points Possible: 10 All documentation must be sufficient before points awarded. The",
+      "tiers": [
+        {
+          "tier_label": "QCT with a revitalization plan",
+          "points": 1
+        },
+        {
+          "tier_label": "DDA",
+          "points": 1
+        },
+        {
+          "tier_label": "Rent-burdened renter households above the state share (Oklahoma Housing Needs Assessment)",
+          "points": 5
+        },
+        {
+          "tier_label": "High opportunity area: one of poverty below the state rate, median income above the state, or Opportunity Zone",
+          "points": 5
+        },
+        {
+          "tier_label": "No 9% award within three miles in two years (elderly and family counted separately)",
+          "points": 3
+        },
+        {
+          "tier_label": "Proximity to amenities, 1 point each for eleven listed types within 2 miles urban or 4 rural",
+          "points": 11
+        },
+        {
+          "tier_label": "Population growth of 2% (under 25,000) or 1% over three years",
+          "points": 3
+        },
+        {
+          "tier_label": "Housing gap for the proposed bedroom sizes and AMI levels",
+          "points": 5
+        },
+        {
+          "tier_label": "Need index: critical 4, high 3, moderate 2, relatively less 1",
+          "points": 4
+        }
+      ],
+      "note": "Items worth 38 against a maximum of 10. 'The following is an exclusive list' means an exhaustive one: nothing else counts. Several items read OHFA's own housing data site (housingdata.ohfa.org) with click-by-click instructions pinned to 2023 data. The amenity item's 11 is the count of listed types at 1 point each; the need index row gives its top value. The High Opportunity sub-factors are alternatives: 'Only one sub-factor ... can be claimed'.",
+      "kind": "competitive",
+      "ord": 3
+    },
+    {
+      "native_category": "Selection Criteria",
+      "section_label": "SC.4",
+      "heading": "Tenant targeted populations",
+      "points_max": 8,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "group": "ok_populations",
+      "page_start": 33,
+      "page_end": 34,
+      "quote": "Applicant dedicates at least a minimum ten percent (10%) of the total residential units for",
+      "tiers": [
+        {
+          "tier_label": "Family development: 10% of units for targeted populations",
+          "points": 5
+        },
+        {
+          "tier_label": "Elderly development additionally targeting 10% of units",
+          "points": 8
+        }
+      ],
+      "note": "Targeted populations are the homeless, people with mental or physical disabilities, veterans and youth aging out of foster care; elderly households cannot be the 10%. Units must be marketed to the population for 90 days before letting to others.",
+      "kind": "competitive",
+      "ord": 4
+    },
+    {
+      "native_category": "Selection Criteria",
+      "section_label": "SC.5",
+      "heading": "Tenant populations of individuals with children",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "group": "ok_populations",
+      "page_start": 34,
+      "page_end": 34,
+      "quote": "If the Development receives 8 points in the Targeted Populations category, it will not",
+      "tiers": [
+        {
+          "tier_label": "At least 50% of AHTC units with two or more bedrooms",
+          "points": 3
+        },
+        {
+          "tier_label": "At least 30% of AHTC units with three or more bedrooms",
+          "points": 3
+        },
+        {
+          "tier_label": "Acquisition/rehabilitation or rehabilitation (automatic)",
+          "points": 3
+        }
+      ],
+      "note": "Barred to projects taking 8 points in SC.4; see the group.",
+      "kind": "competitive",
+      "ord": 5
+    },
+    {
+      "native_category": "Selection Criteria",
+      "section_label": "SC.6",
+      "heading": "Preservation of affordable housing",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "Preservation means the preservation of the affordability of the housing, not the",
+      "note": "Not pro-rated. Existing project-based rental assistance, USDA 515, LIHTC, Section 202/811 or 1937 Act financing are the usual qualifying histories.",
+      "kind": "competitive",
+      "ord": 6
+    },
+    {
+      "native_category": "Selection Criteria",
+      "section_label": "SC.7",
+      "heading": "Home energy efficiency rating (HERS)",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "HERS Score of less than or equal to 80 – 10 points",
+      "tiers": [
+        {
+          "tier_label": "HERS 80 or less",
+          "points": 10
+        },
+        {
+          "tier_label": "81-85",
+          "points": 8
+        },
+        {
+          "tier_label": "86-90",
+          "points": 5
+        },
+        {
+          "tier_label": "91-95",
+          "points": 3
+        }
+      ],
+      "note": "Missing the committed score at final application bars the owner, developer and principals from the next two funding periods.",
+      "kind": "competitive",
+      "ord": 7
+    },
+    {
+      "native_category": "Selection Criteria",
+      "section_label": "SC.8",
+      "heading": "Historic nature",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 36,
+      "page_end": 36,
+      "quote": "100% of the historic building must be rehabilitated. At least 50% percent of the proposed",
+      "note": "Listed or eligible for the National Register, rehabilitated to the Secretary of the Interior's standards, with at least half the units in the historic building.",
+      "kind": "competitive",
+      "ord": 8
+    },
+    {
+      "native_category": "Selection Criteria",
+      "section_label": "SC.9",
+      "heading": "Development amenities",
+      "points_max": 10,
+      "points_type": "per_unit",
+      "page_start": 36,
+      "page_end": 36,
+      "quote": "Applicants will receive 1 Point for each Amenity selected up to 10 for a maximum of 10 Points.",
+      "note": "CONTRADICTION, recorded not resolved. The body says 1 point per amenity. Attachment #13 (p.53) says 'up to 10 Points (1 Point per item, except the Storm Shelter/Safe room which is 5 points)'. The maximum is 10 either way, so only the route to it differs. The attachment lists twenty-three items, from fitness centres to security systems; scattered sites score on their lowest-scoring site.",
+      "kind": "competitive",
+      "ord": 9
+    },
+    {
+      "native_category": "Selection Criteria",
+      "section_label": "SC.10",
+      "heading": "Development cost efficiency",
+      "points_max": 24,
+      "points_type": "formula",
+      "scored_against_round": true,
+      "page_start": 36,
+      "page_end": 37,
+      "quote": "Each factor will be weighted individually against other Applications to derive a score and",
+      "tiers": [
+        {
+          "tier_label": "Lowest credits per unit (percentile rank x 8)",
+          "points": 8
+        },
+        {
+          "tier_label": "Highest leverage sources / TDC (percentile rank x 8)",
+          "points": 8
+        },
+        {
+          "tier_label": "Most square feet per bedroom (percentile rank x 8)",
+          "points": 8
+        }
+      ],
+      "tier_mode": "additive",
+      "note": "The largest criterion, and absent from the Attachment #11 self-score sheet because staff calculate it after the deadline: each factor is percentile-ranked against the round, so a 95th-percentile result earns 7.6 of 8 (the document's own example). An applicant cannot know this score before applying. An unfavourable change at final application bars the principals from two funding periods.",
+      "kind": "competitive",
+      "ord": 10
+    },
+    {
+      "native_category": "Selection Criteria",
+      "section_label": "SC.11",
+      "heading": "Negative points",
+      "points_max": -20,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 37,
+      "page_end": 38,
+      "quote": "Total Points Possible: -20",
+      "note": "Posted about 30 days before the deadline and counted in the next funding period: 2 points per late report beyond three, 3 for late fee payment, 5 for an uncorrected 8823 or OHFA notice of noncompliance. The points follow common general partners, managing members and principals, and stay with a transferred development for six months.",
+      "kind": "competitive",
+      "ord": 11
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Selection Criteria",
+      "section_label": "SC.12",
+      "heading": "Highest number of tax credit units",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 38,
+      "page_end": 38,
+      "quote": "Applications will be funded based on those proposing the highest number of Tax Credit units.",
+      "ord": 12
+    },
+    {
+      "kind": "ranked_priority",
+      "track": "state_credit",
+      "native_category": "Oklahoma Affordable Housing Act (State Tax Credits)",
+      "section_label": "OAHTC.1",
+      "heading": "New construction with common property ownership",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 16,
+      "page_end": 16,
+      "quote": "1. New Construction with Common Property Ownership",
+      "note": "4% bond applications requesting State Tax Credits are funded category by category in this order; the 12-point efficiency score ranks applications within a category. Common Property Ownership means the individuals controlling the current property owner hold at least 50% and those controlling the ultimate owner at least 49%.",
+      "ord": 13
+    },
+    {
+      "kind": "ranked_priority",
+      "track": "state_credit",
+      "native_category": "Oklahoma Affordable Housing Act (State Tax Credits)",
+      "section_label": "OAHTC.2",
+      "heading": "Acquisition/rehabilitation with common property ownership",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 16,
+      "page_end": 16,
+      "quote": "2. Acquisition/Rehabilitation with Common Property Ownership",
+      "note": "Within the category, preservation developments come first and developments with at least 75% of units receiving rental assistance second.",
+      "ord": 14
+    },
+    {
+      "kind": "ranked_priority",
+      "track": "state_credit",
+      "native_category": "Oklahoma Affordable Housing Act (State Tax Credits)",
+      "section_label": "OAHTC.3",
+      "heading": "New construction without common property ownership",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 3,
+      "page_start": 16,
+      "page_end": 16,
+      "quote": "3. New Construction without Common Property Ownership",
+      "ord": 15
+    },
+    {
+      "kind": "ranked_priority",
+      "track": "state_credit",
+      "native_category": "Oklahoma Affordable Housing Act (State Tax Credits)",
+      "section_label": "OAHTC.4",
+      "heading": "Acquisition/rehabilitation without common property ownership",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 4,
+      "page_start": 16,
+      "page_end": 16,
+      "quote": "4. Acquisition/Rehabilitation without Common Property Ownership",
+      "note": "Within the category, preservation developments come first and developments with at least 75% of units receiving rental assistance second.",
+      "ord": 16
+    },
+    {
+      "track": "state_credit",
+      "native_category": "Oklahoma Affordable Housing Act (State Tax Credits)",
+      "section_label": "OAHTC.efficiency",
+      "heading": "Best use of state tax credits",
+      "points_max": 12,
+      "points_type": "formula",
+      "scored_against_round": true,
+      "tier_mode": "additive",
+      "page_start": 16,
+      "page_end": 17,
+      "quote": "then all factor scores will be totaled, which can result in a maximum score for this criteria of 12",
+      "tiers": [
+        {
+          "tier_label": "Lowest State Tax Credits per unit (percentile rank x 8)",
+          "points": 8
+        },
+        {
+          "tier_label": "Lowest State Tax Credits per bedroom (percentile rank x 4)",
+          "points": 4
+        }
+      ],
+      "note": "Ranks 4% applications within each preference category. The factors are named for State Tax Credits, but the definitions paragraph says '\"Credit\" means the Federal Affordable Housing Tax Credits requested' - a definitional inconsistency recorded for the reviewer. State Tax Credits require 20% of units at or below 50% AMI and are capped at $2,000,000 per developer group a year.",
+      "kind": "competitive",
+      "ord": 17
+    }
+  ]
+}
