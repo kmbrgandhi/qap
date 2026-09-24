@@ -223,6 +223,71 @@ against a plan that states no maximum.
   → Delete by exact filename or id, and check the criteria count before and
   after. The taxonomy count dropping from 132 to 130 was the only signal.
 
+### Maryland, abandoned before extraction
+
+Worth recording as a success of the §1 check, not a failure. Maryland's QAP is
+34 pages and mentions "point" 19 times. Every one of those mentions turns out
+to name a section of DHCD's separate Multifamily Rental Financing Program
+Guide and its maximum — "Guide Section 4.1 Capacity of Development Team (74
+maximum points)" — with the criteria themselves in the Guide. Coding the QAP
+alone would have produced seven section headings and no criteria. Maryland
+needs the Guide collected first.
+
+### North Carolina, 2026
+
+47 criteria, 32 competitive and 15 thresholds, all citations verified first
+time. Computed maximum 106.
+
+- **Reconciliation can work without a stated total.** North Carolina states no
+  overall maximum, but it states a maximum per section: 68 site, 2 rent, 2
+  bonus, 4 Olmstead, 30 design. Those sum to 106 and the extraction computed
+  106. → When a QAP states section maxima but no total, sum them by hand and
+  check the computed figure against that. It catches a missed criterion just
+  as well as a stated total does.
+- **A capped group is the right shape more often than max_one.** Nine amenity
+  rows score independently by driving distance and sum to exactly the stated
+  46-point subsection maximum, while tribal funding and a transit stop each
+  earn *within* that cap rather than on top of it. `capped_sum` at 46 holds
+  all of that; `max_one` would have recorded 12.
+- **Table rows extract as label-then-value.** Quotes like `"Grocery\n12pts."`
+  verify cleanly against the text layer even though the table looks nothing
+  like that on the page. Useful whenever points live in a grid.
+- **Record a contradiction, do not average it.** The applicant bonus says
+  "MAXIMUM 2 POINTS", then "An Applicant is entitled to two bonus points",
+  then "No application can receive more than one bonus point". Recorded at 2
+  with the contradiction in the note, for the reviewer to settle.
+- **Scope honestly.** Section VI, six pages of general and underwriting
+  thresholds, is not extracted. That is stated in the file's `_comment` rather
+  than left for someone to discover.
+
+### Virginia, 2026
+
+61 criteria, all citations verified first time. The largest extraction so far.
+
+- **A regulation is not a QAP, and reads differently.** Virginia's plan is
+  13VAC10-180, so criteria are nested subdivisions (E.3.a.1.b) rather than a
+  scoring table. The section label scheme has to carry that nesting, and
+  sub-items that share a letter need a suffix: `E.3.a.1.b.brick` and
+  `E.3.a.1.b.fibercement` are two independent criteria in one lettered item,
+  and the plan says so explicitly.
+- **Formula criteria are common and `points_max` means the cap, not a score.**
+  Nine Virginia criteria scale with a percentage — 20 points times the share
+  of brick, 100 times the percentage below the standard per-unit credit. The
+  computed total of 763 is therefore a sum of caps and not a reachable score.
+  Said plainly in `track_totals.note` so nobody quotes it as a maximum.
+- **One criterion can score in both directions.** Efficient use of resources
+  awards points below the standard credit amount and deducts above it. Left as
+  a single positive criterion with the behaviour in the note, because two rows
+  would double-count it.
+- **The floor can be the only stated figure.** Virginia states no maximum at
+  all, only that under 300 points (200 for bond deals) an application is
+  rejected. Recorded as a threshold criterion so it is findable.
+- **Interacting caps are not exclusivity.** Points under subdivision 2 f
+  reduce the 60-point maximum of 2 e "in equal measure" — partly
+  interchangeable rather than mutually exclusive. No group models that
+  honestly, so both carry their stated caps and the note explains. A reviewer
+  should know the two cannot simply be added.
+
 ### Freezing the text, and why we did not
 
 Considered after North Dakota: should extraction work from a frozen text
