@@ -13,17 +13,18 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 68 |
-| **States coded** | **20** |
-| Criteria | 614 (468 competitive, 105 threshold) |
-| Point tiers | 651 |
-| Track totals | 23 |
+| **States coded** | **21** |
+| Criteria | 687 (512 competitive, 133 threshold) |
+| Point tiers | 774 |
+| Track totals | 25 |
 | Documents with a source URL | 33 of 68 |
-| Citations verifying | 614 of 614 |
+| Citations verifying | 687 of 687 |
 
-Coded: AL AR CT DE HI MA ME MI MO NC ND NH NY OH PA RI SD VA VT WI
+Coded: AL AR CT DE HI MA ME MI MO NC ND NH NV NY OH PA RI SD VA VT WI
 
 Every coded state reconciles its computed maximum against a total stated in its
-own document, or records in `track_totals` why it cannot.
+own document, or records in `track_totals` why it cannot. Nevada is the first
+whose stated total its own section maxima cannot produce; see below.
 
 ## The shape of the work
 
@@ -47,7 +48,7 @@ manifest.py         rewrites data/manifest.csv from the database
 ## Working from the git repo alone
 
 The full corpus is 123 MB in a shared drop folder and is **not** committed.
-`data/pdfs_bundled/` carries eleven documents covering ten uncoded states so
+`data/pdfs_bundled/` carries eleven documents covering ten states (Nevada now coded) so
 that a repo-only session has real work available. See its README.
 
 `qapdb/paths.py` resolves every PDF: the path recorded at ingest, then
@@ -75,12 +76,11 @@ The dashboard is `python -m app.server`, then http://127.0.0.1:8000.
 
 ## Next states to code
 
-Ten uncoded states have their PDFs committed in `data/pdfs_bundled/`. All were
+Ten states have their PDFs committed in `data/pdfs_bundled/`; Nevada is now coded. All were
 checked to carry real point values before being bundled.
 
 | State | File | Pages | Notes |
 |---|---|---|---|
-| NV | `nevada-qap-2026.pdf` | 53 | Deferred earlier only for length; states "Maximum Points" |
 | IA | `iowa-qap-2026-2027.pdf` | 55 | Same; states "maximum points" |
 | AK | `alaska-qap-fy2027.pdf` | 51 | Dense scoring; a section states "Maximum 52 points" |
 | AZ | `arizona-qap-2026-2027.pdf` | 50 | Maxima written in words, "thirty-five (35) points" |
@@ -91,8 +91,8 @@ checked to carry real point values before being bundled.
 | CO | `colorado-qap-2025-2026.pdf` | 102 | Only 68 "point" mentions across 102pp — check the scoring section is really in here before committing to it |
 | IN | `indiana-qap-2026-2027.pdf` | 103 | 245 "point" mentions, the densest of the ten |
 
-Start with Nevada or Iowa: both are around 55 pages with a stated maximum, which
-is the shape that has gone most smoothly.
+Start with Iowa: around 55 pages with a stated maximum, which is the shape that
+has gone most smoothly.
 
 ## Deliberately deferred, with reasons
 
@@ -124,7 +124,7 @@ is the shape that has gone most smoothly.
   against the PDFs, which is why citations are page-plus-quote rather than
   character offsets.
 
-## Two contradictions worth knowing about
+## Contradictions worth knowing about
 
 Recorded, not resolved, per protocol rule 3.
 
@@ -133,5 +133,10 @@ Recorded, not resolved, per protocol rule 3.
 - **Delaware** also heads Community Compatibility "up to fourteen (14) points"
   and caps it at twelve two sentences later. 14 is coded, because the section
   header of 59 requires it.
+- **Nevada** states "The maximum number of points is 97" (p.24), but its 7.3
+  and 7.4 section maxima alone sum to 99, before the 10 to 15 project-type
+  priority points in 7.2. Computed 115, recorded as MISMATCH in
+  `NV_2026.json` for the reviewer. Its bond track reconciles at 40.
 
-Both notes in `DE_2026.json` ask the reviewer to confirm against the PDF.
+The notes in `DE_2026.json` and `NV_2026.json` ask the reviewer to confirm
+against the PDF.

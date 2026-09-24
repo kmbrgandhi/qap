@@ -502,3 +502,57 @@ with no access to this machine would.
 - The check is cheap and worth repeating after any schema or path change:
   `git clone . /tmp/x`, create the database from `schema.sql`, ingest the
   bundled PDFs, load, verify.
+
+### Nevada, 2026
+
+73 criteria: 44 competitive, 1 tiebreaker and 28 thresholds. All 73 citations
+verified first time. The bond track reconciles at 40. **The 9% track does not
+reconcile, and that is the finding:** the plan states 97, and its own section
+maxima cannot produce 97.
+
+- **Hand-summing first is what made the mismatch trustworthy.** The 7.3 and
+  7.4 section maxima alone come to 99 (69 + 30). That is before 7.2's project
+  type priority points, which pay 10 to the top project in each category (15
+  for Tribal housing), plus 1 for a veterans preference. No whole section can
+  be dropped to reach 97. Because the arithmetic was done by hand before
+  loading, the loader's 115 confirmed a reading rather than prompting a hunt
+  for a missing row. Recorded in `track_totals.note` with the realistic
+  ceilings (110 non-Tribal, 107 Tribal) and the knock-on effect: the 60%
+  minimum score on p.6 is 58.2 points of 97 but 66 of 110.
+- **The dry run was ignoring exclusivity groups.** `load_extraction.py`
+  summed grouped criteria flat, so any state with a group printed a
+  "computed" figure that the database views would never produce: Nevada read
+  194 in the dry run and 115 in `v_total_reconciliation`. Fixed: the dry run
+  now applies `max_one` and `capped_sum` the same way `v_group_contribution`
+  does. Earlier states with groups reconciled through the view, so their
+  recorded results stand, but their dry runs would have shown false
+  mismatches.
+- **Round-relative scoring can be a whole section.** All eight 7.2 project
+  type priorities pay 10 or 15 points to the best application in the category
+  and 5 to the second-best, and nothing to anyone else. They are a `max_one`
+  group, because Section 4 allows one category per application, and every one
+  carries `scored_against_round`. Section 1.1 ("check all category ... boxes")
+  seems to allow more than one category. That tension is in the group note.
+- **Cross-references in a QAP can point nowhere.** "Section 21" for deductions
+  and "Section 7.15" for tie breakers do not exist, and 7.4.6 announces three
+  factors and lists two. None of them changes a number, but they tell the
+  reviewer how carefully the document was amended. Record them.
+- **Compare scoring ladders with the threshold limits they sit beside.** The
+  Clark County rehab cost ladder pays a point at "$135,000 or more", above the
+  $120,000 rehab cap in Section 6.4, and skips $120,001–$134,999 entirely. The
+  new construction ladders end exactly at the 6.4 limits, which makes the rehab
+  gap look like a drafting error rather than a policy choice. This only showed
+  up because the thresholds were read in the same pass.
+- **Sentence-level contradictions hide between adjacent sentences.** 7.2 says
+  eventual tenant ownership projects "are not eligible for scoring in Section
+  7.2", then says Rent to Own projects "will only receive points under" 7.2.8.
+  Section 4.8 defines the two terms as the same thing.
+- **Operational: running `manifest.py` against a repo-only database wiped the
+  corpus record.** A database built from `data/pdfs_bundled/` holds 11 of 68
+  documents, and `manifest.py` overwrote the manifest with just those rows.
+  The same partial database also recomputes `is_most_recent` among the
+  documents it can see, which flips Minnesota's QAP and worksheet. Fixed:
+  `manifest.py` now keeps manifest rows for documents it does not hold.
+  → **Before committing `data/manifest.csv` from a partial database, read the
+  diff.** Take only the rows for the state you coded. Here that was one field,
+  Nevada's stated total.

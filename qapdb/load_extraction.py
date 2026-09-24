@@ -100,6 +100,12 @@ def load(spec_path: Path, db_path: Path, commit: bool) -> int:
 
     # Points arithmetic, per track, before it reaches the database.
     tracks: dict[str | None, tuple[float, float]] = {}
+    # Grouped criteria contribute through their group, as v_group_contribution
+    # does, so the dry run prints the figure reconciliation will actually use.
+    # Summing them flat reported Nevada's 9% track as 194 when the view gives
+    # 115: a check that disagrees with the database is not a check.
+    rules = {g["key"]: g for g in spec.get("groups", [])}
+    grouped: dict[tuple[str, str | None], list[float]] = {}
     for c in criteria:
         if c.get("kind", "competitive") != "competitive" or c.get("points_max") is None:
             continue
@@ -111,10 +117,22 @@ def load(spec_path: Path, db_path: Path, commit: bool) -> int:
             continue
         real, naive = tracks.get(c.get("track"), (0.0, 0.0))
         tiers = c.get("tiers") or []
+        if c.get("group") in rules:
+            grouped.setdefault((c["group"], c.get("track")), []).append(c["points_max"])
+        else:
+            real += c["points_max"]
         tracks[c.get("track")] = (
-            real + c["points_max"],
+            real,
             naive + (sum(t["points"] for t in tiers) if tiers else c["points_max"]),
         )
+    for (key, track), pts in grouped.items():
+        g = rules[key]
+        rule = g.get("rule", "max_one")
+        add = (max(pts) if rule == "max_one"
+               else min(sum(pts), g["group_cap"]) if rule == "capped_sum"
+               else sum(pts))
+        real, naive = tracks[track]
+        tracks[track] = (real + add, naive)
     # A stated total belongs to a track, not to the document. Delaware states
     # 231 for its five scoring sections and carries bonus points on top;
     # comparing the bonus track to 231 reports a mismatch that is not one. So

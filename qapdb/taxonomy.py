@@ -415,6 +415,29 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("MI", "E.7"): POP,     ("MI", "E.8"): POP,     ("MI", "E.9"): POP,
     ("MI", "E.10"): POP,
     ("MI", "F.1"): COST,
+
+    # ---- Nevada ------------------------------------------------------------
+    # 7.2 project type priorities are populations; 7.2.9 is Tribal housing,
+    # scored on credits per bedroom, so cost is secondary.
+    ("NV", "7.2.1"): POP,   ("NV", "7.2.2"): POP,   ("NV", "7.2.3"): POP,
+    ("NV", "7.2.4"): POP,   ("NV", "7.2.5"): (AFF, POP),
+    ("NV", "7.2.6"): LOC,   ("NV", "7.2.7"): POP,
+    ("NV", "7.2.8"): (COST, DES),
+    ("NV", "7.2.9"): (POP, COST),
+    ("NV", "7.3.1"): LOC,   ("NV", "7.3.2"): READY, ("NV", "7.3.3"): DES,
+    ("NV", "7.3.4"): SPON,  ("NV", "7.3.5"): AFF,   ("NV", "7.3.6"): DES,
+    ("NV", "7.3.7"): PRES,  ("NV", "7.3.8"): (LOC, DES, COST),
+    ("NV", "7.3.9.A"): COST, ("NV", "7.3.9.B"): COST,
+    ("NV", "7.3.9.C"): PRES, ("NV", "7.3.9.D"): PRES, ("NV", "7.3.9.E"): PRES,
+    ("NV", "7.3.9.F"): AFF,  ("NV", "7.3.9.G"): AFF,  ("NV", "7.3.9.H"): READY,
+    ("NV", "7.4.1"): AFF,   ("NV", "7.4.2"): AFF,   ("NV", "7.4.3"): POP,
+    ("NV", "7.4.4"): COST,  ("NV", "7.4.5"): COST,
+    ("NV", "7.4.6.A"): COST, ("NV", "7.4.6.B"): COST,
+    ("NV", "7.6"): SPON,    ("NV", "16.reduction"): SPON, ("NV", "16.waiver"): READY,
+    ("NV", "8.2.ami"): AFF, ("NV", "8.2.site"): LOC,  ("NV", "8.2.land"): COST,
+    ("NV", "8.2.leverage"): COST, ("NV", "8.2.owner"): SPON,
+    ("NV", "8.2.ded.compliance"): SPON, ("NV", "8.2.ded.pricing"): COST,
+    ("NV", "8.2.ded.finance"): READY,   ("NV", "8.2.ded.cost"): COST,
 }
 
 
