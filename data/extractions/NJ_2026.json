@@ -1,0 +1,877 @@
+{
+  "_comment": "New Jersey QAP, N.J.A.C. 5:80-33, adopted February 2, 2026 (58 N.J.R. 991(a)). A regulation, cited by subsection. Page numbers are PDF page indices and match the printed page numbers. Scoring is 33.14 to 33.19, PDF pp.46-62. THREE CYCLES, which a project cannot enter simultaneously (33.3): Family (33.15), Age-Friendly Senior (33.16) and Supportive Housing (33.17). The Senior and Supportive Housing scales are defined as the Family scale minus named categories plus their own. Coded as a core track of the categories every cycle uses, plus one add-on track per cycle, so each cycle's maximum is core + its add-on. Only 33.15(a)21 had to be recorded twice, because it is in the Family and Senior scales but not the Supportive Housing one. NO MAXIMUM IS STATED anywhere, yet 33.14(a) sets the floor as 'a minimum of 65 percent of the maximum score'. Hand-summed before loading: core 75 (20+2+5+5+2+6+4+2+6+3+4+1+3+3+8+1); family add-on 22 (5+6+5+3+3), so Family = 97; senior add-on 13 (3+1+9), so Senior = 88; supportive add-on 23 (2+1+5+2+2+2+2+2+5), so Supportive Housing = 98. The loader matched all four. These maxima include the '(a)25 bonus point', which the scale lists as an ordinary category. TUM location changes the ceiling: a TUM project can earn 15 rather than 20 under (a)1 and 2 rather than 3 under (a)14iv-v, so a Family project in a TUM tops out at 91. Eight deduction categories run from -1 per cured defect (no maximum) to -15, and four of them also bar the application from every set-aside. Thresholds are in NJ_thresholds.json.",
+  "match": {
+    "filename": "new-jersey-qap-2026.pdf"
+  },
+  "extractor_version": "hand-2026-nj-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 46,
+      "note": "Core categories common to all three cycles: 75, hand-summed and matched. Not a total any project faces on its own; add the cycle's track. No maximum score is stated in the regulation, although 33.14(a) sets eligibility at '65 percent of the maximum score'."
+    },
+    {
+      "track": "family",
+      "stated_total": null,
+      "page": 47,
+      "note": "Family Cycle add-on: 22, for a Family Cycle maximum of 97 (91 inside a TUM). 65% of 97 is 63.05. The Family Cycle receives not less than 50% of competitive credits."
+    },
+    {
+      "track": "senior",
+      "stated_total": null,
+      "page": 57,
+      "note": "Age-Friendly Senior Cycle add-on: 13, for a Senior Cycle maximum of 88. 33.16(a) excludes the Family categories (a)3, (a)5, (a)14ii and (a)14iii."
+    },
+    {
+      "track": "supportive",
+      "stated_total": null,
+      "page": 58,
+      "note": "Supportive Housing Cycle add-on: 23, for a Supportive Housing maximum of 98. 33.17(a) excludes (a)3, (a)5 and (a)21 and replaces (a)14ii and iii, 'for a maximum of seven points available pursuant to N.J.A.C. 5:80-33.15(a)14'; the shared 14i (1) and 14iv-v (3) plus the replacements (2 + 1) make exactly that seven."
+    }
+  ],
+  "groups": [],
+  "criteria": [
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)1",
+      "heading": "Extended compliance period or tenant ownership",
+      "points_max": 20,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 47,
+      "page_end": 47,
+      "quote": "1. Applicants may select one of the following options (10 to 20 points):",
+      "tiers": [
+        {
+          "tier_label": "Outside a Targeted Urban Municipality, compliance period extended 15 years (45 years total)",
+          "points": 20
+        },
+        {
+          "tier_label": "Inside a TUM, compliance period extended 15 years",
+          "points": 15
+        },
+        {
+          "tier_label": "Single-family and duplex housing converting to tenant ownership",
+          "points": 10
+        }
+      ],
+      "note": "The largest category in every cycle. The same 15-year extension is worth 20 outside a TUM and 15 inside one, so location, not commitment, sets the value. The Mixed-Income and Emerging Developer set-asides (33.4(a)1 and 3) require the maximum here.",
+      "kind": "competitive",
+      "ord": 1
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)2",
+      "heading": "Public housing waiting lists",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 47,
+      "page_end": 47,
+      "quote": "2. An application shall receive two points if the project utilizes public housing waiting lists.",
+      "kind": "competitive",
+      "ord": 2
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)4",
+      "heading": "Municipal support: tax abatement",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 47,
+      "page_end": 48,
+      "quote": "4. Applicants may receive up to five points for municipal support.",
+      "tiers": [
+        {
+          "tier_label": "15-year fixed-rate abatement at 6.28% or less on the residential component",
+          "points": 5
+        },
+        {
+          "tier_label": "15-year fixed-rate abatement above 6.28%",
+          "points": 3
+        }
+      ],
+      "note": "Projects without an abatement score nothing and must instead capitalize two years of taxes in escrow and carry a 1.20 debt coverage ratio with at least $3,000 per unit core operating expenses. Nonprofit tax-exempt status does not count as an abatement.",
+      "kind": "competitive",
+      "ord": 3
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)6",
+      "heading": "Certified M/WBE participation",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 48,
+      "page_end": 49,
+      "quote": "6. Applications may receive up to a maximum of five points for the following:",
+      "tiers": [
+        {
+          "tier_label": "Certified M/WBE holds 100% of the general partner/managing member",
+          "points": 5
+        },
+        {
+          "tier_label": "50% or more but less than 100%",
+          "points": 3
+        },
+        {
+          "tier_label": "20% or more but less than 50%",
+          "points": 1
+        },
+        {
+          "tier_label": "At least 20% of construction costs to certified M/WBE contractors and suppliers",
+          "points": 5
+        },
+        {
+          "tier_label": "At least 15% but less than 20%",
+          "points": 3
+        }
+      ],
+      "note": "Two ladders, ownership and construction spending, each an internal choice of one option, under a combined 5-point maximum. The ownership route requires the M/WBE to earn at least its ownership share of paid and deferred developer fee and to stay in the ownership entity through the compliance period.",
+      "kind": "competitive",
+      "ord": 4
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)7",
+      "heading": "Ready to grow area",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 49,
+      "page_end": 49,
+      "quote": "7. Projects located within a ready to grow area shall be awarded two points.",
+      "kind": "competitive",
+      "ord": 5
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)8",
+      "heading": "Unit amenities",
+      "points_max": 6,
+      "points_type": "per_unit",
+      "page_start": 49,
+      "page_end": 50,
+      "quote": "8. NJHMFA awards up to six points for the provision of unit amenities. Two points will be awarded",
+      "note": "Two points per amenity from a list of thirteen (security alarm, all-electric cooking, ENERGY STAR refrigerator, washer/dryer or dishwasher, MERV 13 filtration, 100 sq ft bedrooms, cabinet and closet minimums, emergency call buttons for seniors, garages, patios, free high-speed internet), capped at three amenities. Substitutes need prior NJHMFA approval.",
+      "kind": "competitive",
+      "ord": 6
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)9",
+      "heading": "Project amenities",
+      "points_max": 4,
+      "points_type": "per_unit",
+      "page_start": 50,
+      "page_end": 50,
+      "quote": "9. NJHMFA awards up to four points for the provision of project amenities. Two points will be",
+      "note": "Two points per amenity from a list of ten, capped at two. One item, extreme heat mitigation infrastructure, is available to TUM projects only.",
+      "kind": "competitive",
+      "ord": 7
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)10",
+      "heading": "Community policing or public safety enhancements",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 51,
+      "page_end": 51,
+      "quote": "10. Projects that demonstrate community policing or public safety enhancements shall be awarded",
+      "note": "Any one of eight listed strategies, from an evening security guard to subsidising take-home police vehicles for officers living in the development.",
+      "kind": "competitive",
+      "ord": 8
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)11i",
+      "heading": "Proximity to positive land uses",
+      "points_max": 6,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 51,
+      "page_end": 52,
+      "quote": "11. Applications may receive up to a maximum of six points for the following (to be eligible for",
+      "tiers": [
+        {
+          "tier_label": "Within one-half mile of each of eight priority uses (grocery, hospital/clinic, school, senior center, day care, family success center, one-stop career center, community mental health center), per use",
+          "points": 2
+        },
+        {
+          "tier_label": "Within three miles (Family) or one mile (Senior and Supportive Housing) of any of twenty listed uses, per use",
+          "points": 1
+        }
+      ],
+      "note": "Capped at 6. The per-use values are those stated; the tier rows here are the two rates, not an enumeration of all twenty uses. Several uses are restricted by cycle (grocery non-senior unless transport is provided, school non-senior, mental health center Supportive Housing only). Multiple instances of one category do not add. The Mixed-Income and Emerging Developer set-asides require the maximum here. The regulation's own worked example (p.53) gives a project near a school, a grocery store and an oil refinery one point, netting the refinery's deduction under (a)11ii against the positive points.",
+      "kind": "competitive",
+      "ord": 9
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)12",
+      "heading": "Syndicator or investor commitment within the NJHMFA equity range",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 53,
+      "page_end": 53,
+      "quote": "12. Applications that include a commitment letter signed by the syndicator or investor or executed",
+      "note": "Term sheets do not qualify; applicants using the credits themselves need no letter.",
+      "kind": "competitive",
+      "ord": 10
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)13",
+      "heading": "Green building",
+      "points_max": 4,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 53,
+      "page_end": 54,
+      "quote": "13. Applications may receive up to a maximum of four points for the following:",
+      "tiers": [
+        {
+          "tier_label": "Enterprise Green Communities +40 optional points, LEED Silver or NGBS Silver, each with future-ready selections; NJ Zero Energy Ready Homes + renewables; Living Building Challenge; or Passive House",
+          "points": 4
+        },
+        {
+          "tier_label": "Enterprise Green Communities +40, LEED Silver or NGBS Silver without future-ready selections",
+          "points": 3
+        }
+      ],
+      "kind": "competitive",
+      "ord": 11
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)14i",
+      "heading": "Redevelopment, historic rehabilitation or adaptive reuse",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 54,
+      "page_end": 54,
+      "quote": "Redevelopment projects, rehabilitation of historic buildings, or projects that involve the adaptive",
+      "note": "Part of category 14, 'A maximum of 12 points shall be available in this category' (7 in the Supportive Housing Cycle). At least 40% of units must be in the historic or reused building.",
+      "kind": "competitive",
+      "ord": 12
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)14iv-v",
+      "heading": "Municipal Revitalization Index ranking, or opportunity zone in a TUM",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 55,
+      "page_end": 55,
+      "quote": "For projects located outside of a TUM, a project in a municipality that has a ranking of 283 or greater",
+      "tiers": [
+        {
+          "tier_label": "Outside a TUM, municipality ranked 283 or greater on the MRI",
+          "points": 3
+        },
+        {
+          "tier_label": "Outside a TUM, ranked 282 or below",
+          "points": 2
+        },
+        {
+          "tier_label": "Outside a TUM, ranked 282 or below, plus court-approved fair share plan listing the project (not senior projects)",
+          "points": 3
+        },
+        {
+          "tier_label": "Inside a TUM, census tract designated a Qualified Opportunity Zone",
+          "points": 2
+        }
+      ],
+      "note": "iv and v are exclusive by location: iv applies outside a TUM, v inside. A higher MRI ranking means less distress, so outside TUMs the points favour less distressed municipalities.",
+      "kind": "competitive",
+      "ord": 13
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)20",
+      "heading": "Development and management experience",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "20. Applicants may select one of the following:",
+      "note": "Three routes to the same 3 points: two prior LIHTC projects with a 50% GP interest; three with a 20% interest plus an experienced management company (five years, 300 units); or one with a 50% interest plus that management company.",
+      "kind": "competitive",
+      "ord": 14
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)22",
+      "heading": "Deeper income targeting: 20% at 50% election or 10% at 30% AMI",
+      "points_max": 8,
+      "points_type": "fixed",
+      "page_start": 57,
+      "page_end": 57,
+      "quote": "22. Projects that select the 20 percent at 50 percent Federal set aside as defined under Section",
+      "note": "The single largest affordability award after category 1. The 20-at-50 route restricts every tax credit unit to 50% AMI; the 10-at-30 route keeps the federal minimum set-aside and adds 30% AMI units across unit sizes.",
+      "kind": "competitive",
+      "ord": 15
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)25",
+      "heading": "Bonus point",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 57,
+      "page_end": 57,
+      "quote": "25. Applicants may select one of the following options for one bonus point:",
+      "note": "One of three: 20% of units unrestricted market-rate (which forfeits the 130% HERA basis boost), 20% of units underwritten at or below 30% AMI without rental assistance, or NJHMFA pooled permanent bond financing. Called a bonus but listed as a point category in the scale, so it is counted in the maximum here.",
+      "kind": "competitive",
+      "ord": 16
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)11ii",
+      "heading": "Negative land uses within one mile",
+      "points_max": -6,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 52,
+      "page_end": 53,
+      "quote": "below shall have three points deducted from the project score for each qualifying item, up to a",
+      "note": "Three points per use, maximum six: landfill, dump, incinerator, nuclear plant, refinery, unremediated Superfund site, jail, wastewater plant.",
+      "kind": "competitive",
+      "ord": 17
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)15",
+      "heading": "Uncorrected noncompliance on a New Jersey LIHTC project",
+      "points_max": -15,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 55,
+      "page_end": 55,
+      "quote": "managing or controlling interest in a New Jersey LIHTC project with an uncorrected noncompliance",
+      "note": "15 points for maintenance or health ordinance violations or failed major systems; 10 points for failing to fulfil QAP representations. The text does not say whether both can apply to one application, which would make 25; coded at the larger stated figure. Also bars the application from every set-aside. Failing to answer the category counts as a deduction.",
+      "kind": "competitive",
+      "ord": 18
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)16",
+      "heading": "Full return of tax credits in the past two years",
+      "points_max": -5,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 55,
+      "page_end": 55,
+      "quote": "involved in a full return of tax credits to NJHMFA within the past two years with such return",
+      "note": "Applies only to the first application after the return.",
+      "kind": "competitive",
+      "ord": 19
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)17",
+      "heading": "Unpaid NJHMFA monitoring fees",
+      "points_max": -15,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 55,
+      "page_end": 56,
+      "quote": "managing or controlling interest in a New Jersey LIHTC project that has failed to pay NJHMFA",
+      "note": "Also bars the application from every set-aside.",
+      "kind": "competitive",
+      "ord": 20
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)18",
+      "heading": "Missing annual certifications or tenant information",
+      "points_max": -15,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "managing or controlling interest in a New Jersey LIHTC project that has failed to submit its annual",
+      "note": "Also bars the application from every set-aside.",
+      "kind": "competitive",
+      "ord": 21
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)19",
+      "heading": "Fair housing findings in the last four years",
+      "points_max": -15,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "managing or controlling interest in a New Jersey LIHTC project that, within the last four years, has",
+      "note": "Federal or State fair housing discrimination findings, noncompliance with state tenant selection standards, or Fair Chance in Housing Act penalties. Also bars the application from every set-aside.",
+      "kind": "competitive",
+      "ord": 22
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)24",
+      "heading": "Arrearages on an NJHMFA-financed property",
+      "points_max": -15,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 57,
+      "page_end": 57,
+      "quote": "managing or controlling interest in an NJHMFA-financed property with three or more months of",
+      "note": "Three or more months in arrears with no approved workout plan.",
+      "kind": "competitive",
+      "ord": 23
+    },
+    {
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)23",
+      "heading": "Deduction per defect cured",
+      "points_max": null,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 57,
+      "page_end": 57,
+      "quote": "23. Applicants that utilize the cure period at N.J.A.C. 5:80-33.11(c)1 or 3 shall have one point per",
+      "note": "One point per defect cured, with no maximum, so points_max is null. Repeated at 33.11(e) on p.28.",
+      "kind": "competitive",
+      "ord": 24
+    },
+    {
+      "track": "family",
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)3",
+      "heading": "Large-family units in low-density buildings",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 47,
+      "page_end": 47,
+      "quote": "3. Low-density buildings where at least 25 percent of the tax-credit units are large-family units shall",
+      "note": "Family Cycle only: excluded from both the Senior (33.16(a)) and Supportive Housing (33.17(a)) scales.",
+      "kind": "competitive",
+      "ord": 25
+    },
+    {
+      "track": "family",
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)5",
+      "heading": "Social services",
+      "points_max": 6,
+      "points_type": "per_unit",
+      "page_start": 48,
+      "page_end": 48,
+      "quote": "awards up to six points for the provision of up to three social services for the compliance period.",
+      "note": "Two points per service, up to three, with funding evidence, provider experience and executed contracts. Family Cycle only: the Senior and Supportive Housing scales exclude it (Supportive Housing scores services under its own 33.17(b)1-2 instead).",
+      "kind": "competitive",
+      "ord": 26
+    },
+    {
+      "track": "family",
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)14ii",
+      "heading": "Public transportation and jobs-to-housing ratio",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 54,
+      "page_end": 54,
+      "quote": "Up to five points for public transportation and/or jobs availability can be received for each",
+      "tiers": [
+        {
+          "tier_label": "Fully within a Transit Village district",
+          "points": 5
+        },
+        {
+          "tier_label": "Within one-quarter mile of publicly operated transit",
+          "points": 3
+        },
+        {
+          "tier_label": "Within one-half mile of publicly operated transit",
+          "points": 2
+        },
+        {
+          "tier_label": "Within one-half mile of transit paid for by the development",
+          "points": 1
+        },
+        {
+          "tier_label": "Jobs-to-housing ratio 1.5 or greater (only with at least one transit point)",
+          "points": 2
+        },
+        {
+          "tier_label": "Jobs-to-housing ratio 0.95 to 1.5 (only with at least one transit point)",
+          "points": 1
+        }
+      ],
+      "note": "Transit options are alternatives; the jobs-to-housing bonus adds to them within a 5-point cap. Family Cycle only: excluded from the Senior scale and replaced in the Supportive Housing scale. The Mixed-Income set-aside outside a TUM requires at least 3 points here.",
+      "kind": "competitive",
+      "ord": 27
+    },
+    {
+      "track": "family",
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)14iii",
+      "heading": "High-performing school district",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 54,
+      "page_end": 55,
+      "quote": "Up to three points for school district characteristics can be received for each application.",
+      "tiers": [
+        {
+          "tier_label": "At least 66% of Grade 4 students at Level 4 or 5 in both Math and ELA",
+          "points": 3
+        },
+        {
+          "tier_label": "At least 50%",
+          "points": 2
+        },
+        {
+          "tier_label": "At least 40%",
+          "points": 1
+        },
+        {
+          "tier_label": "District participates in Interdistrict Public School Choice from Grade 6 (only with at least one NJSLA point)",
+          "points": 1
+        }
+      ],
+      "note": "Capped at 3, so the school choice point only helps districts below the top band. Family Cycle only: excluded from the Senior scale and replaced in the Supportive Housing scale. The Mixed-Income set-aside outside a TUM requires at least 2 points here.",
+      "kind": "competitive",
+      "ord": 28
+    },
+    {
+      "track": "family",
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)21.family",
+      "heading": "Homeless or Olmstead unit set-aside",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 56,
+      "page_end": 57,
+      "quote": "for individuals or families who are homeless, and which projects meet the criteria at N.J.A.C.",
+      "tiers": [
+        {
+          "tier_label": "Five units or 5% for homeless individuals or families, registered in HMIS",
+          "points": 3
+        },
+        {
+          "tier_label": "Five units or 5% for people with disabilities leaving or at risk of institutions (Olmstead)",
+          "points": 2
+        }
+      ],
+      "note": "Recorded twice, on the family and senior tracks, because it applies in both of those cycles but is excluded from Supportive Housing (33.17(a)). In the Family Cycle the homeless units must be one one-bedroom, two two-bedroom and two three-bedroom.",
+      "kind": "competitive",
+      "ord": 29
+    },
+    {
+      "track": "senior",
+      "native_category": "Point system for the Family Cycle",
+      "section_label": "33.15(a)21.senior",
+      "heading": "Homeless or Olmstead unit set-aside",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 56,
+      "page_end": 57,
+      "quote": "for individuals or families who are homeless, and which projects meet the criteria at N.J.A.C.",
+      "tiers": [
+        {
+          "tier_label": "Five units or 5% for homeless individuals or families",
+          "points": 3
+        },
+        {
+          "tier_label": "Five units or 5% for Olmstead populations",
+          "points": 2
+        }
+      ],
+      "note": "The same category as 33.15(a)21.family, repeated here because the Senior Cycle includes it and the Supportive Housing Cycle does not.",
+      "kind": "competitive",
+      "ord": 30
+    },
+    {
+      "track": "senior",
+      "native_category": "Point system for the Age-Friendly Senior Cycle",
+      "section_label": "33.16(b)1",
+      "heading": "Municipality with 25% or more residents aged 55+",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 58,
+      "page_end": 58,
+      "quote": "1. A project that is fully located within a municipality wherein 25.00 percent or more of the residents",
+      "kind": "competitive",
+      "ord": 31
+    },
+    {
+      "track": "senior",
+      "native_category": "Point system for the Age-Friendly Senior Cycle",
+      "section_label": "33.16(b)2",
+      "heading": "Senior services and amenities",
+      "points_max": 9,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 58,
+      "page_end": 58,
+      "quote": "2. Applicants may select any of the following options for a maximum of nine points. Within six",
+      "tiers": [
+        {
+          "tier_label": "On-site transportation at least weekly",
+          "points": 3
+        },
+        {
+          "tier_label": "Services for Independent Living (SIL) participation",
+          "points": 3
+        },
+        {
+          "tier_label": "Regular licensed on-site healthcare provider with a private room",
+          "points": 2
+        },
+        {
+          "tier_label": "On-site pharmacy, wellness clinic, PACE, medical day care, assisted living or similar partnership",
+          "points": 2
+        },
+        {
+          "tier_label": "Accessible outdoor community space, 25% of permanent open space",
+          "points": 1
+        },
+        {
+          "tier_label": "Exercise room",
+          "points": 1
+        }
+      ],
+      "note": "Six options totalling 12 against a maximum of 9.",
+      "kind": "competitive",
+      "ord": 32
+    },
+    {
+      "track": "supportive",
+      "native_category": "Point system for the Supportive Housing Cycle",
+      "section_label": "33.17(a)1",
+      "heading": "On-site transportation (replaces public transportation)",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 59,
+      "page_end": 59,
+      "quote": "1. Two points shall be awarded to projects that offer on-site transportation at least once per week.",
+      "note": "Replaces 33.15(a)14ii in this cycle. With (a)2-3 and the shared 14i and 14iv-v, category 14 reaches the stated Supportive Housing maximum of seven.",
+      "kind": "competitive",
+      "ord": 33
+    },
+    {
+      "track": "supportive",
+      "native_category": "Point system for the Supportive Housing Cycle",
+      "section_label": "33.17(a)2-3",
+      "heading": "School district (non-age-restricted) or 55+ municipality (age-restricted)",
+      "points_max": 1,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 59,
+      "page_end": 59,
+      "quote": "2. For non-age-restricted projects, a project that is fully located within a school district wherein 40",
+      "tiers": [
+        {
+          "tier_label": "Non-age-restricted: school district with 40% or more of Grade 4 students at Level 4 or 5",
+          "points": 1
+        },
+        {
+          "tier_label": "Age-restricted: municipality with 25% or more residents aged 55+",
+          "points": 1
+        }
+      ],
+      "note": "33.17(a) says 14ii and 14iii 'are replaced, respectively, with the following' and then lists three items for two categories. Read here as item 1 (transportation) replacing 14ii and items 2 and 3 replacing 14iii; items 2 and 3 apply to different project types, so only one can score. That reading makes category 14 reach the stated seven; a reviewer should confirm on p.59.",
+      "kind": "competitive",
+      "ord": 34
+    },
+    {
+      "track": "supportive",
+      "native_category": "Point system for the Supportive Housing Cycle",
+      "section_label": "33.17(b)1",
+      "heading": "Supportive services plan",
+      "points_max": 5,
+      "points_type": "tiered",
+      "page_start": 59,
+      "page_end": 60,
+      "quote": "1. Applicants shall be awarded up to five points to the extent the social services plan required at",
+      "note": "'Up to five points to the extent' the plan covers five elements (provider experience, services, tenant/landlord facilitation, at least one of three core services, annual staff training). How the 5 points divide among them is not stated, so no tiers are coded.",
+      "kind": "competitive",
+      "ord": 35
+    },
+    {
+      "track": "supportive",
+      "native_category": "Point system for the Supportive Housing Cycle",
+      "section_label": "33.17(b)2",
+      "heading": "Healthy lifestyles education and job training",
+      "points_max": 2,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 60,
+      "page_end": 60,
+      "quote": "2. Up to two points will be awarded as follows: one point will be awarded to applicants that will",
+      "tiers": [
+        {
+          "tier_label": "On-site healthy lifestyles education and programming",
+          "points": 1
+        },
+        {
+          "tier_label": "Job training and job search assistance",
+          "points": 1
+        }
+      ],
+      "kind": "competitive",
+      "ord": 36
+    },
+    {
+      "track": "supportive",
+      "native_category": "Point system for the Supportive Housing Cycle",
+      "section_label": "33.17(b)3",
+      "heading": "All units lease-based permanent supportive housing",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 60,
+      "page_end": 60,
+      "quote": "time limit for tenancy and/or program participation) shall be awarded two points.",
+      "kind": "competitive",
+      "ord": 37
+    },
+    {
+      "track": "supportive",
+      "native_category": "Point system for the Supportive Housing Cycle",
+      "section_label": "33.17(b)4",
+      "heading": "Rental assistance commitments for all special needs units",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 60,
+      "page_end": 60,
+      "quote": "4. Applications that evidence rental assistance funding commitments from the HUD McKinney-",
+      "note": "McKinney-Vento, Section 811 PRA, or other government project- or sponsor-based rental assistance.",
+      "kind": "competitive",
+      "ord": 38
+    },
+    {
+      "track": "supportive",
+      "native_category": "Point system for the Supportive Housing Cycle",
+      "section_label": "33.17(b)5",
+      "heading": "Qualified nonprofit general partner",
+      "points_max": 2,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 60,
+      "page_end": 60,
+      "quote": "partner interest in the final ownership entity shall be awarded two points. Applications submitted by",
+      "tiers": [
+        {
+          "tier_label": "Nonprofit holds 100% of the general partner interest",
+          "points": 2
+        },
+        {
+          "tier_label": "At least 50% but less than 100%",
+          "points": 1
+        }
+      ],
+      "kind": "competitive",
+      "ord": 39
+    },
+    {
+      "track": "supportive",
+      "native_category": "Point system for the Supportive Housing Cycle",
+      "section_label": "33.17(b)6",
+      "heading": "Integrated community living",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 61,
+      "page_end": 61,
+      "quote": "6. Projects that encourage integrated community living opportunities, including mixed-income",
+      "note": "Mixed-income, mixed-special-needs and scattered site projects.",
+      "kind": "competitive",
+      "ord": 40
+    },
+    {
+      "track": "supportive",
+      "native_category": "Point system for the Supportive Housing Cycle",
+      "section_label": "33.17(b)7",
+      "heading": "Minimum living standards",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 61,
+      "page_end": 61,
+      "quote": "7. Five points shall be awarded to projects that meet all of the following minimum living standards:",
+      "note": "All four: bedrooms of at least 100 sq ft, own bedroom for unrelated residents, no more than four unrelated adults per bathroom, access to a full kitchen.",
+      "kind": "competitive",
+      "ord": 41
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tiebreaker system",
+      "section_label": "33.19(a)1i",
+      "heading": "Outside a TUM: municipality longest without a 9% award",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 61,
+      "page_end": 61,
+      "quote": "For projects located outside of a TUM, a tax credit reservation shall be awarded to the project",
+      "note": "Prior awards in the same court-approved fair share plan are excluded.",
+      "ord": 42
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tiebreaker system",
+      "section_label": "33.19(a)1ii",
+      "heading": "Inside a TUM: municipality with the lowest MRI ranking",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 61,
+      "page_end": 61,
+      "quote": "For projects located within a TUM, a tax credit reservation shall be awarded to the project",
+      "note": "Lowest ranking means greatest distress.",
+      "ord": 43
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tiebreaker system",
+      "section_label": "33.19(a)2i",
+      "heading": "Senior Cycle: least credits per tax-credit unit",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 62,
+      "page_end": 62,
+      "quote": "In the Age-Friendly Senior Cycle, a tax credit reservation shall be awarded to the project with",
+      "ord": 44
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tiebreaker system",
+      "section_label": "33.19(a)2ii",
+      "heading": "Other cycles: least credits per tax-credit bedroom",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 62,
+      "page_end": 62,
+      "quote": "In all other cycles, a tax credit reservation shall be awarded to the project with the least amount",
+      "ord": 45
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tiebreaker system",
+      "section_label": "33.19(a)3",
+      "heading": "Lower total development cost per bedroom",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 3,
+      "page_start": 62,
+      "page_end": 62,
+      "quote": "project with a lower total development cost per bedroom.",
+      "ord": 46
+    }
+  ]
+}

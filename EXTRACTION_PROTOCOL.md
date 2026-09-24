@@ -664,3 +664,40 @@ agree: rehab 170, new construction 185, and a 25-point Tribal add-on.
 - **An unfinished cover is a document-status finding.** "Submitted on December
   1, 2025 and amended on ____" leaves unclear which version this is. It goes
   in the `_comment` for the reviewer and is not settled by guessing a date.
+
+### New Jersey, 2026 (N.J.A.C. 5:80-33)
+
+66 criteria: 38 competitive, 5 tiebreakers and 20 thresholds, all verified
+first time. There are three cycles and no stated maximum. The core scale is 75
+and the cycle add-ons are Family 22, Senior 13 and Supportive Housing 23, so
+the cycle maxima are 97, 88 and 98. Every figure matched a hand-sum made
+before loading.
+
+- **When one scale is defined as another scale minus some items plus others,
+  code the shared core once.** The Senior and Supportive Housing scales are
+  "all point categories of the Family Cycle except …" plus their own. A core
+  track of the shared categories, with one add-on track per cycle, turned
+  three 25-item scales into 46 rows. Only one category had to be recorded
+  twice ((a)21, in Family and Senior but not Supportive Housing), and the
+  label suffix `.family`/`.senior` keeps the taxonomy keys unique.
+- **A floor stated as a share of an unstated maximum still needs the
+  maximum.** 33.14(a) makes 65% "of the maximum score" the eligibility floor,
+  and the regulation never says what the maximum is. The computed maxima give
+  the floor its value (about 63 in Family). That is worth putting next to the
+  threshold row, with the caveat that it is our arithmetic, not the
+  regulation's.
+- **Location can cap a project below the scale maximum.** Inside a Targeted
+  Urban Municipality the same 15-year extension earns 15 rather than 20, and
+  the MRI item gives way to a 2-point opportunity zone item. A TUM Family
+  project tops out at 91, not 97. Say so in the note; one track total cannot.
+- **"Respectively" with the wrong number of items is an interpretation.**
+  33.17(a) replaces two categories "respectively" with three items. The
+  reading that reproduces the stated seven-point cap is coded and flagged.
+- **Deductions that can stack go in at the larger stated figure, with a
+  note.** (a)15 deducts 15 for one kind of noncompliance and 10 for another,
+  without saying whether both can apply. Coded at −15 with the possible −25
+  explained, rather than inventing a combined figure.
+- **Regulations format well for extraction.** Justified text breaks lines
+  mid-sentence, but the whitespace-normalising verifier does not care. Pick
+  quotes that avoid line-end hyphenation ("set- asides") and they verify
+  first time.

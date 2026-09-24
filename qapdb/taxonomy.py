@@ -481,6 +481,31 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("AZ", "V.C.1"): SPON,  ("AZ", "V.C.2"): POP,   ("AZ", "V.C.3"): LOC,
     ("AZ", "V.C.4"): LOC,   ("AZ", "V.C.5"): COST,  ("AZ", "V.C.6"): POP,
     ("AZ", "V.C.7"): DES,   ("AZ", "V.C.8"): AFF,   ("AZ", "V.C.9"): SPON,
+
+    # ---- New Jersey --------------------------------------------------------
+    # Core categories shared by all three cycles, then each cycle's add-ons.
+    # 33.15(a)21 is recorded on both the family and senior tracks.
+    ("NJ", "33.15(a)1"): AFF,      ("NJ", "33.15(a)2"): POP,
+    ("NJ", "33.15(a)4"): COST,     ("NJ", "33.15(a)6"): SPON,
+    ("NJ", "33.15(a)7"): LOC,      ("NJ", "33.15(a)8"): DES,
+    ("NJ", "33.15(a)9"): DES,      ("NJ", "33.15(a)10"): DES,
+    ("NJ", "33.15(a)11i"): LOC,    ("NJ", "33.15(a)11ii"): LOC,
+    ("NJ", "33.15(a)12"): READY,   ("NJ", "33.15(a)13"): DES,
+    ("NJ", "33.15(a)14i"): (PRES, LOC), ("NJ", "33.15(a)14iv-v"): LOC,
+    ("NJ", "33.15(a)15"): SPON,    ("NJ", "33.15(a)16"): SPON,
+    ("NJ", "33.15(a)17"): SPON,    ("NJ", "33.15(a)18"): SPON,
+    ("NJ", "33.15(a)19"): SPON,    ("NJ", "33.15(a)20"): SPON,
+    ("NJ", "33.15(a)22"): AFF,     ("NJ", "33.15(a)23"): READY,
+    ("NJ", "33.15(a)24"): SPON,    ("NJ", "33.15(a)25"): (AFF, COST),
+    ("NJ", "33.15(a)3"): POP,      ("NJ", "33.15(a)5"): POP,
+    ("NJ", "33.15(a)14ii"): LOC,   ("NJ", "33.15(a)14iii"): LOC,
+    ("NJ", "33.15(a)21.family"): POP, ("NJ", "33.15(a)21.senior"): POP,
+    ("NJ", "33.16(b)1"): LOC,      ("NJ", "33.16(b)2"): POP,
+    ("NJ", "33.17(a)1"): POP,      ("NJ", "33.17(a)2-3"): LOC,
+    ("NJ", "33.17(b)1"): POP,      ("NJ", "33.17(b)2"): POP,
+    ("NJ", "33.17(b)3"): POP,      ("NJ", "33.17(b)4"): AFF,
+    ("NJ", "33.17(b)5"): SPON,     ("NJ", "33.17(b)6"): POP,
+    ("NJ", "33.17(b)7"): DES,
 }
 
 
