@@ -13,14 +13,14 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 68 |
-| **States coded** | **21** |
-| Criteria | 687 (512 competitive, 133 threshold) |
-| Point tiers | 774 |
-| Track totals | 25 |
+| **States coded** | **22** |
+| Criteria | 742 (548 competitive, 147 threshold) |
+| Point tiers | 788 |
+| Track totals | 27 |
 | Documents with a source URL | 33 of 68 |
-| Citations verifying | 687 of 687 |
+| Citations verifying | 742 of 742 |
 
-Coded: AL AR CT DE HI MA ME MI MO NC ND NH NV NY OH PA RI SD VA VT WI
+Coded: AL AR CT DE HI IA MA ME MI MO NC ND NH NV NY OH PA RI SD VA VT WI
 
 Every coded state reconciles its computed maximum against a total stated in its
 own document, or records in `track_totals` why it cannot. Nevada is the first
@@ -48,7 +48,7 @@ manifest.py         rewrites data/manifest.csv from the database
 ## Working from the git repo alone
 
 The full corpus is 123 MB in a shared drop folder and is **not** committed.
-`data/pdfs_bundled/` carries eleven documents covering ten states (Nevada now coded) so
+`data/pdfs_bundled/` carries eleven documents covering ten states (Nevada and Iowa now coded) so
 that a repo-only session has real work available. See its README.
 
 `qapdb/paths.py` resolves every PDF: the path recorded at ingest, then
@@ -76,12 +76,12 @@ The dashboard is `python -m app.server`, then http://127.0.0.1:8000.
 
 ## Next states to code
 
-Ten states have their PDFs committed in `data/pdfs_bundled/`; Nevada is now coded. All were
+Ten states have their PDFs committed in `data/pdfs_bundled/`; Nevada and Iowa
+are now coded. All were
 checked to carry real point values before being bundled.
 
 | State | File | Pages | Notes |
 |---|---|---|---|
-| IA | `iowa-qap-2026-2027.pdf` | 55 | Same; states "maximum points" |
 | AK | `alaska-qap-fy2027.pdf` | 51 | Dense scoring; a section states "Maximum 52 points" |
 | AZ | `arizona-qap-2026-2027.pdf` | 50 | Maxima written in words, "thirty-five (35) points" |
 | NJ | `new-jersey-qap-2026.pdf` | 76 | 205 "point" mentions |
@@ -91,8 +91,7 @@ checked to carry real point values before being bundled.
 | CO | `colorado-qap-2025-2026.pdf` | 102 | Only 68 "point" mentions across 102pp — check the scoring section is really in here before committing to it |
 | IN | `indiana-qap-2026-2027.pdf` | 103 | 245 "point" mentions, the densest of the ten |
 
-Start with Iowa: around 55 pages with a stated maximum, which is the shape that
-has gone most smoothly.
+Start with Alaska: 51 pages with stated section maxima.
 
 ## Deliberately deferred, with reasons
 

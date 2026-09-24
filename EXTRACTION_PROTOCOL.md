@@ -556,3 +556,41 @@ maxima cannot produce 97.
   → **Before committing `data/manifest.csv` from a partial database, read the
   diff.** Take only the rows for the state you coded. Here that was one field,
   Nevada's stated total.
+
+### Iowa, 2026-2027 (second amended)
+
+55 criteria: 35 competitive, 5 tiebreakers, 1 appeal-remedy criterion and 14
+thresholds. All 55 citations verified; one needed its page corrected first (a
+threshold quote was on p.22, not p.21). The computed 63 matches the hand-sum.
+**Iowa states no overall maximum**, so the 63 checks completeness rather than
+reconciling to a stated figure.
+
+- **Stated section maxima cover less than it looks.** Iowa states 30 for
+  Affordability, 5 for Site Appeal and 5 for Market Appeal. Location, the
+  Development Team and Other have no section figure. When a hand-sum rests
+  partly on item values, say in `track_totals.note` how much of it does (here
+  28 of the 63), so nobody takes a completeness check for a reconciliation.
+- **A per-share rate with no ceiling takes the section cap as its maximum.**
+  "5 points for each 4.0% of the Tax Credit Units" has no stopping point of
+  its own; the "30 points Maximum" on the section is what stops it. Coded as
+  `per_unit` with `points_max` 30 inside a `capped_sum` group at 30, and the
+  note says the 30 comes from the section, not the item.
+- **A preamble can contradict the item it introduces.** 6.1 says categories
+  A–E "are not available to an Applicant that elects the minimum set aside as
+  Average Income Test"; 6.1.E is "Projects that elect Average Income Test". The
+  basis boost in 5.5 treats E as live, which suggests the preamble should
+  have said A–D. Coded as available and flagged, not silently fixed.
+- **When a matrix only pays through an average, code the average.** Site
+  Appeal has twelve categories scored 5/3/1/0, but none is worth points on
+  its own: the twelve are averaged and rounded to 0–5. It is one criterion at
+  5. That also avoids pairing column descriptors the text layer has flattened.
+  Some categories fill only two of the four columns, and guessing which would
+  break rule 1.
+- **"0 to 2 points" is a range, not a tier list.** Density, Disaster Recovery
+  and High Quality Jobs state only a range and defer the test to an appendix
+  that is not in the document. They carry `detail_external` and no tiers. A
+  1-point tier that is not on the page would be an invented number.
+- **Look for points outside the scoring section.** 7.10.B awards 5 points in
+  the next round to a project that won an appeal but was not funded. It is on
+  its own track, like Delaware's bonus, so the base 63 is not inflated by a
+  remedy few projects can claim.

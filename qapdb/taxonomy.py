@@ -438,6 +438,24 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("NV", "8.2.leverage"): COST, ("NV", "8.2.owner"): SPON,
     ("NV", "8.2.ded.compliance"): SPON, ("NV", "8.2.ded.pricing"): COST,
     ("NV", "8.2.ded.finance"): READY,   ("NV", "8.2.ded.cost"): COST,
+
+    # ---- Iowa --------------------------------------------------------------
+    # 6.1.F pays for limiting the credit to a 6% rate, so cost is secondary.
+    ("IA", "6.1.A"): AFF,   ("IA", "6.1.B"): AFF,   ("IA", "6.1.C"): POP,
+    ("IA", "6.1.D.1"): AFF, ("IA", "6.1.D.2"): AFF, ("IA", "6.1.E"): AFF,
+    ("IA", "6.1.F"): (AFF, COST),
+    ("IA", "6.2.A"): LOC,   ("IA", "6.2.B"): LOC,   ("IA", "6.2.C"): LOC,
+    ("IA", "6.2.D"): LOC,   ("IA", "6.2.E"): LOC,   ("IA", "6.2.F"): LOC,
+    ("IA", "6.2.G"): LOC,   ("IA", "6.2.H"): (LOC, READY),
+    ("IA", "6.3.A"): DES,   ("IA", "6.3.B"): DES,   ("IA", "6.3.C"): DES,
+    ("IA", "6.3.D"): DES,   ("IA", "6.3.E"): DES,   ("IA", "6.3.F"): AFF,
+    ("IA", "6.3.G"): DES,   ("IA", "6.3.H"): DES,   ("IA", "6.3.I"): (DES, PRES),
+    ("IA", "6.3.J"): (DES, PRES), ("IA", "6.3.K"): (DES, POP),
+    ("IA", "6.3.L"): DES,   ("IA", "6.3.M"): DES,   ("IA", "6.3.N"): DES,
+    ("IA", "6.4.A"): SPON,  ("IA", "6.4.B.1"): SPON, ("IA", "6.4.B.2"): SPON,
+    ("IA", "6.4.C"): (SPON, READY),
+    ("IA", "6.5.A"): READY, ("IA", "6.5.B"): PRES,
+    ("IA", "7.10.B"): READY,
 }
 
 

@@ -1,0 +1,678 @@
+{
+  "_comment": "Iowa 2026-2027 Second Amended 9% QAP, Iowa Finance Authority. Scoring is Section 6, PDF pp.25-33, with tiebreakers in 7.4 (pp.34-35) and an appeal remedy worth 5 points in 7.10.B (p.35). Page numbers are PDF page indices and match the printed page numbers. IOWA STATES NO OVERALL MAXIMUM. It states three maxima: Affordability for Residents '30 points Maximum' (p.25), Site Appeal 'valued at a total of 5 points' (p.27), Market Appeal '5 points maximum' (p.30). Every other item carries its own value or range. Hand-summed before loading: 30 + Location 20 (2+1+2+5+2+1+2+5) + Market Appeal 5 + Qualified Development Team 5 (3+2, excluding the two -1 deductions) + Other 3 (2+1) = 63. The loader computed the same. Because three of the five sections have no stated maximum, this is a completeness check on the itemised values, not an independent reconciliation. Seven location items defer the actual test to appendices (E, F, G, I, J, K, Q) that are published separately and not held here, and three of them state only a range ('0 to 2', '0 to 5'), so their tiers are not coded. One contradiction is recorded in 6.1.E: the 6.1 preamble closes categories A-E to projects electing the Average Income Test, and E requires that election. Thresholds are in IA_thresholds.json.",
+  "match": {
+    "filename": "iowa-qap-2026-2027.pdf"
+  },
+  "extractor_version": "hand-2026-ia-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 25,
+      "note": "No overall maximum is stated. Stated section maxima: 30 (6.1, p.25), 5 (Site Appeal, p.27), 5 (6.3, p.30). The remaining sections state per-item values only. Hand-sum of the section maxima and item values is 63, which the loader matches; the 60 points not stated at section level (Location 20 with Site Appeal inside it, Qualified Development Team 5, Other 3) rest on item values alone. The two 6.4.B deductions (-1 each, headed '0 to -2 points') are excluded. No minimum score is stated."
+    },
+    {
+      "track": "appeal_remedy",
+      "stated_total": null,
+      "page": 35,
+      "note": "7.10.B: 5 points in the next 9% round for a project that won an informal appeal and was placed on the waiting list but not funded before the list expired. Additional to the base 63, and on its own track so it does not inflate it."
+    }
+  ],
+  "groups": [
+    {
+      "key": "ia_affordability",
+      "label": "Affordability for Residents, capped at 30",
+      "rule": "capped_sum",
+      "group_cap": 30,
+      "source_quote": "All Applicants may achieve the 30 points maximum by selecting one or multiple categories below.",
+      "page_start": 25,
+      "note": "Categories combine up to 30, but 'No Units shall count for points in more than one Affordability for Residents categories, except for Projects Providing Permanent Supportive Housing or project-based vouchers from a local PHA.' A, B, C and E state per-share rates or a single value with no ceiling of their own, so each is recorded at the section maximum it can reach. 6.1.A-E are closed to Average Income Test electors, and E and F require that election; see the 6.1.E note."
+    },
+    {
+      "key": "ia_market_appeal",
+      "label": "Market Appeal, capped at 5",
+      "rule": "capped_sum",
+      "group_cap": 5,
+      "source_quote": "5 points maximum",
+      "page_start": 30,
+      "note": "Fourteen items totalling 32 (1+1+1+2+2+2+2+2+4+2+2+3+5+3) against a stated maximum of 5. Exterior Materials alone reaches the cap."
+    }
+  ],
+  "criteria": [
+    {
+      "native_category": "Affordability for Residents",
+      "section_label": "6.1.A",
+      "heading": "Serving 40% AMI LIHTC residents",
+      "points_max": 30,
+      "points_type": "per_unit",
+      "group": "ia_affordability",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "Serving 40% AMI LIHTC Residents.",
+      "note": "5 points for each 4.0% of Tax Credit Units set aside and occupied at 40% AMI or less, rent-restricted at 40%. The item states no ceiling of its own; 30 is the section maximum that caps it, reached at 24% of units. Tenants may rise to 60% AMI on recertification and still count while the rent stays at 40%. NHTF and HOME units do not count. Reaching the 30 under A, B or E also qualifies for a 20% basis boost under 5.5.",
+      "kind": "competitive",
+      "ord": 1
+    },
+    {
+      "native_category": "Affordability for Residents",
+      "section_label": "6.1.B",
+      "heading": "Rent reduction to 40% AMI rent levels",
+      "points_max": 30,
+      "points_type": "per_unit",
+      "group": "ia_affordability",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "Rent Reduction. Projects that provide Tax Credit rents for the 60% or 50% AMI Units at 40% AMI rent",
+      "note": "5 points for each 4.0% of Tax Credit Units whose rents are set at the 40% AMI level while income eligibility stays at 50% or 60%. No per-item ceiling is stated; capped by the 30-point section maximum. Not available to projects with a federal project-based rental assistance contract.",
+      "kind": "competitive",
+      "ord": 2
+    },
+    {
+      "native_category": "Affordability for Residents",
+      "section_label": "6.1.C",
+      "heading": "Projects providing permanent supportive housing",
+      "points_max": 30,
+      "points_type": "per_unit",
+      "group": "ia_affordability",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "Projects Providing Permanent Supportive Housing.",
+      "detail_external": "Appendix D - Permanent Supportive Housing",
+      "note": "5 points for each 2.5% of Tax Credit Units leased only to persons experiencing homelessness, so the 30-point section maximum is reached at 15% of units. The richest rate in the section, and the only category in which HOME and NHTF units count and whose units may also count under another category. The team must have completed the Iowa Supportive Housing Institute, confirmed by a CSH letter.",
+      "kind": "competitive",
+      "ord": 3
+    },
+    {
+      "native_category": "Affordability for Residents",
+      "section_label": "6.1.D.1",
+      "heading": "Federal project-based rental assistance contract",
+      "points_max": 30,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "group": "ia_affordability",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "Projects with a Federal Project Based Rental Assistance Contract with HUD or RD.",
+      "tiers": [
+        {
+          "tier_label": "At least 25% of total units covered",
+          "points": 15
+        },
+        {
+          "tier_label": "At least 50%",
+          "points": 20
+        },
+        {
+          "tier_label": "At least 75%",
+          "points": 30
+        }
+      ],
+      "note": "HUD or RD contracts. A project with such a contract cannot elect the Average Income Test (3.5.C.3) and cannot use 6.1.B.",
+      "kind": "competitive",
+      "ord": 4
+    },
+    {
+      "native_category": "Affordability for Residents",
+      "section_label": "6.1.D.2",
+      "heading": "Project-based vouchers from a local PHA",
+      "points_max": 10,
+      "points_type": "fixed",
+      "group": "ia_affordability",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "Projects with project-based vouchers from a local PHA with a commitment for at least 10 years.",
+      "note": "10 points for vouchers on 10% of Tax Credit Units with at least a 10-year commitment. Like 6.1.C, these units may also count under another category.",
+      "kind": "competitive",
+      "ord": 5
+    },
+    {
+      "native_category": "Affordability for Residents",
+      "section_label": "6.1.E",
+      "heading": "Average Income Test with 40% AMI",
+      "points_max": 30,
+      "points_type": "fixed",
+      "group": "ia_affordability",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "Average Income Test with 40% AMI.",
+      "note": "CONTRADICTION, recorded not resolved. E requires a project to 'elect Average Income Test', but the 6.1 preamble on p.25 says 'The Affordability for Residents categories A through E are not available to an Applicant that elects the minimum set aside as Average Income Test.' Read literally, E is closed to the only projects that can use it. 5.5 also lists E among the categories whose maximum earns a basis boost, which suggests E is meant to be live, and that the preamble should read 'A through D'. A reviewer should confirm against pp.25-26. Coded as available.",
+      "kind": "competitive",
+      "ord": 6
+    },
+    {
+      "native_category": "Affordability for Residents",
+      "section_label": "6.1.F",
+      "heading": "Average Income Test with tax credit cap at the 6% rate",
+      "points_max": 30,
+      "points_type": "fixed",
+      "group": "ia_affordability",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "100% Average Income Test Units",
+      "note": "30 points for electing the Average Income Test on all units and limiting the tax credit cap to a 6% tax credit rate. The only 30-point route whose test is a credit limit rather than deeper income or rent targeting.",
+      "kind": "competitive",
+      "ord": 7
+    },
+    {
+      "native_category": "Location",
+      "section_label": "6.2.A",
+      "heading": "Underserved cities",
+      "points_max": 2,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "detail_external": "Appendix E - Underserved Cities",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "Projects located in an underserved city as shown in Appendix E",
+      "tiers": [
+        {
+          "tier_label": "No Tax Credit award in the city in the last four years",
+          "points": 2
+        },
+        {
+          "tier_label": "No award in the last two years",
+          "points": 1
+        }
+      ],
+      "note": "Supplemental awards count as awards; a fully returned award does not. Every scattered site must be in the underserved city. For all location items IFA awards the lesser score across a project's buildings.",
+      "kind": "competitive",
+      "ord": 8
+    },
+    {
+      "native_category": "Location",
+      "section_label": "6.2.B",
+      "heading": "Rent burdened households",
+      "points_max": 1,
+      "points_type": "fixed",
+      "detail_external": "Appendix F - Rent Burdened Households",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "Rent Burdened Households.",
+      "note": "A location test that also demands affordability: the city must be listed in Appendix F and the project must provide an additional 4% of Tax Credit Units under 6.1.A or 6.1.B beyond what it claims there. The text calls 6.1.A 'Serving 40% AMI Tax Credit Residents' where 6.1.A is headed 'Serving 40% AMI LIHTC Residents'.",
+      "kind": "competitive",
+      "ord": 9
+    },
+    {
+      "native_category": "Location",
+      "section_label": "6.2.C",
+      "heading": "Tax credit unit density",
+      "points_max": 2,
+      "points_type": "tiered",
+      "detail_external": "Appendix G - Tax Credit Unit Density",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "Projects located in a census tract that has a low percentage of Tax Credit Units Placed-In-Service",
+      "note": "'0 to 2 points'. The QAP does not state what earns 1 or 2; the tract values are in Appendix G, which is not in this document. No tiers coded, because none are stated here.",
+      "kind": "competitive",
+      "ord": 10
+    },
+    {
+      "native_category": "Location",
+      "section_label": "6.2.D",
+      "heading": "Disaster recovery",
+      "points_max": 5,
+      "points_type": "tiered",
+      "detail_external": "Appendix K - Disaster Recovery",
+      "page_start": 27,
+      "page_end": 27,
+      "quote": "Projects located in a county for which the Governor has issued a state major disaster proclamation with",
+      "note": "'0 to 5 points'. The largest location item. IFA decides which counties, cities or tracts to activate and how many points each gets, in Appendix K, which is not in this document, and may change it mid-cycle ('except for Disaster Recovery' in the 6 preamble). No tiers coded, because none are stated here.",
+      "kind": "competitive",
+      "ord": 11
+    },
+    {
+      "native_category": "Location",
+      "section_label": "6.2.E",
+      "heading": "High quality jobs award",
+      "points_max": 2,
+      "points_type": "tiered",
+      "detail_external": "Appendix I - High Quality Job Awards",
+      "page_start": 27,
+      "page_end": 27,
+      "quote": "Projects located in cities that have received IEDA High Quality Job awards in the past 2 years as shown",
+      "note": "'0 to 2 points'. The QAP does not state what earns 1 or 2; see Appendix I.",
+      "kind": "competitive",
+      "ord": 12
+    },
+    {
+      "native_category": "Location",
+      "section_label": "6.2.F",
+      "heading": "Targeted tenant population for individuals with disabilities",
+      "points_max": 1,
+      "points_type": "fixed",
+      "detail_external": "Appendix J - Targeted Tenant Population",
+      "page_start": 27,
+      "page_end": 27,
+      "quote": "Targeted Tenant Population for Individuals with Disabilities.",
+      "note": "A county-level location test: the county has a higher share of individuals with disabilities. Nothing in this item requires the project to serve them.",
+      "kind": "competitive",
+      "ord": 13
+    },
+    {
+      "native_category": "Location",
+      "section_label": "6.2.G",
+      "heading": "Iowa Thriving Communities",
+      "points_max": 2,
+      "points_type": "fixed",
+      "detail_external": "Appendix Q - Iowa Thriving Communities",
+      "page_start": 27,
+      "page_end": 27,
+      "quote": "Iowa Thriving Communities.",
+      "note": "Some designated cities have targeted boundaries, shown in Appendix Q.",
+      "kind": "competitive",
+      "ord": 14
+    },
+    {
+      "native_category": "Location",
+      "section_label": "6.2.H",
+      "heading": "Site appeal",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 27,
+      "page_end": 30,
+      "quote": "The Site Appeal scoring section is valued at a total of 5 points.",
+      "note": "Twelve categories, each scored 5, 3, 1 or 0, are averaged and rounded to the nearest whole number: site neighborhood, location to services, grocery store, daycare/school/senior center, public transportation, adjacent properties, noise, site frontage, paved road with storm drainage, offsite utilities, ease of site development (11a, new construction) or condition of buildings (11b, rehab and adaptive reuse), and historic significance or community revitalization. The categories are coded as one criterion because none is worth points on its own, only through the average. The matrix on pp.27-30 is laid out in columns that the text layer flattens, and several categories fill only some columns; the category-level descriptors were not mapped column by column. Intentional or blatant misrepresentation in the applicant's preliminary scoring can zero the whole section. Scattered sites are averaged.",
+      "kind": "competitive",
+      "ord": 15
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.A",
+      "heading": "Kitchen pantry",
+      "points_max": 1,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 30,
+      "page_end": 30,
+      "quote": "Kitchen Pantry",
+      "kind": "competitive",
+      "ord": 16
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.B",
+      "heading": "Walk-in closets",
+      "points_max": 1,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 30,
+      "page_end": 30,
+      "quote": "Walk-In Closets",
+      "kind": "competitive",
+      "ord": 17
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.C",
+      "heading": "Fitness center",
+      "points_max": 1,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 30,
+      "page_end": 30,
+      "quote": "Fitness Center",
+      "kind": "competitive",
+      "ord": 18
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.D",
+      "heading": "Playground (family projects)",
+      "points_max": 2,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 31,
+      "page_end": 31,
+      "quote": "For family Projects only, an outdoor area provided for children to play in containing 5 to 7 commercial",
+      "note": "Not available to scattered site projects.",
+      "kind": "competitive",
+      "ord": 19
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.E",
+      "heading": "Patio/balcony",
+      "points_max": 2,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 31,
+      "page_end": 31,
+      "quote": "Each Unit shall include a patio or balcony.",
+      "kind": "competitive",
+      "ord": 20
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.F",
+      "heading": "Free heating",
+      "points_max": 2,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 31,
+      "page_end": 31,
+      "quote": "Owner-paid heat for each Unit.",
+      "kind": "competitive",
+      "ord": 21
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.G",
+      "heading": "Fenced dog walking area",
+      "points_max": 2,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 31,
+      "page_end": 31,
+      "quote": "Fenced Dog Walking Area",
+      "kind": "competitive",
+      "ord": 22
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.H",
+      "heading": "Storage units",
+      "points_max": 2,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "group": "ia_market_appeal",
+      "page_start": 31,
+      "page_end": 31,
+      "quote": "Storage In-Unit",
+      "tiers": [
+        {
+          "tier_label": "Storage in project, one per unit",
+          "points": 1
+        },
+        {
+          "tier_label": "Storage in-unit",
+          "points": 2
+        }
+      ],
+      "note": "At least 20 square feet, floor to ceiling, in addition to required closets.",
+      "kind": "competitive",
+      "ord": 23
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.I",
+      "heading": "In-unit laundry added (acquisition/rehab only)",
+      "points_max": 4,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 31,
+      "page_end": 31,
+      "quote": "Laundry (Acq/Rehab only)",
+      "kind": "competitive",
+      "ord": 24
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.J",
+      "heading": "Built-in dishwashers added (acquisition/rehab only)",
+      "points_max": 2,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 31,
+      "page_end": 31,
+      "quote": "Built-in Dishwashers (Acq/Rehab only)",
+      "kind": "competitive",
+      "ord": 25
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.K",
+      "heading": "Olmstead goals (senior projects only)",
+      "points_max": 2,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 31,
+      "page_end": 31,
+      "quote": "Olmstead Goals (Senior Projects Only)",
+      "note": "At least 20% of units fully accessible for persons with mobility disabilities, UFAS compliant.",
+      "kind": "competitive",
+      "ord": 26
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.L",
+      "heading": "Single family, duplex, or townhome/rowhouse",
+      "points_max": 3,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 31,
+      "page_end": 31,
+      "quote": "Single Family, Duplex, or Townhome/Rowhouse",
+      "note": "At least 20% of the project. The same building types also earn a basis boost of 20% or 30% under 5.4.",
+      "kind": "competitive",
+      "ord": 27
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.M",
+      "heading": "Exterior materials",
+      "points_max": 5,
+      "points_type": "fixed",
+      "group": "ia_market_appeal",
+      "page_start": 32,
+      "page_end": 32,
+      "quote": "Each building in the Project shall have a minimum of 30% of the gross exterior",
+      "note": "Alone reaches the 5-point section maximum. At least 30% masonry, stone, stucco over masonry, architectural block or precast panels, with the rest fiber cement, engineered wood or concealed-fastener metal. Applies to every building in the project, not only residential ones.",
+      "kind": "competitive",
+      "ord": 28
+    },
+    {
+      "native_category": "Market Appeal",
+      "section_label": "6.3.N",
+      "heading": "Energy efficiency",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "group": "ia_market_appeal",
+      "page_start": 32,
+      "page_end": 32,
+      "quote": "New construction buildings meeting 2020 NGBS Gold Certification Requirements.",
+      "tiers": [
+        {
+          "tier_label": "New construction, 2020 NGBS Gold",
+          "points": 2
+        },
+        {
+          "tier_label": "New construction, 2020 NGBS Emerald",
+          "points": 3
+        },
+        {
+          "tier_label": "Acquisition/rehab, 2020 NGBS Silver",
+          "points": 2
+        },
+        {
+          "tier_label": "Acquisition/rehab, 2020 NGBS Gold or higher",
+          "points": 3
+        },
+        {
+          "tier_label": "Adaptive reuse, 2020 NGBS Gold or higher",
+          "points": 3
+        }
+      ],
+      "note": "Headed '3 points maximum'. Certification is checked at the IRS Form 8609 application, after the award.",
+      "kind": "competitive",
+      "ord": 29
+    },
+    {
+      "native_category": "Qualified Development Team",
+      "section_label": "6.4.A",
+      "heading": "Tax credit experience",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 33,
+      "page_end": 33,
+      "quote": "Points available for one of the following categories under this section.",
+      "tiers": [
+        {
+          "tier_label": "One point per Iowa project with an 8609 issued 2016-2025 (2026 round) or 2017-2026 (2027 round)",
+          "points": 3
+        },
+        {
+          "tier_label": "Three projects anywhere with an 8609 issued 2019-2025 (2026 round) or 2020-2026 (2027 round)",
+          "points": 3
+        }
+      ],
+      "note": "One of two routes, each worth up to 3. The first rewards Iowa experience one point at a time over a ten-year window; the second pays the full 3 for any three projects in a seven-year window and does not say Iowa. All entities must be in good standing.",
+      "kind": "competitive",
+      "ord": 30
+    },
+    {
+      "native_category": "Qualified Development Team",
+      "section_label": "6.4.B.1",
+      "heading": "Material change to a prior Iowa tax credit project",
+      "points_max": -1,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 33,
+      "page_end": 33,
+      "quote": "requested and received approval for a material change to a Tax Credit Project",
+      "note": "Part of 6.4.B, headed '0 to -2 points'. Section 8 (p.37) says approved material changes carry a 'future scoring penalty in the 9% Tax Credit Round'; this is where it lands.",
+      "kind": "competitive",
+      "ord": 31
+    },
+    {
+      "native_category": "Qualified Development Team",
+      "section_label": "6.4.B.2",
+      "heading": "Extension to the carryover ten percent deadline",
+      "points_max": -1,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 33,
+      "page_end": 33,
+      "quote": "requested and received approval for an extension to the Carryover-Ten Percent Application",
+      "note": "Part of 6.4.B, headed '0 to -2 points'.",
+      "kind": "competitive",
+      "ord": 32
+    },
+    {
+      "native_category": "Qualified Development Team",
+      "section_label": "6.4.C",
+      "heading": "Closing timeframe",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 33,
+      "page_end": 33,
+      "quote": "closed one 9% Tax Credit Project in such role since January 1, 2023",
+      "note": "A prior 9% project closed with its investor within 10 months of the award letter. The page footnote says this language was revised on 09/17/2025 to correct a scrivener's error.",
+      "kind": "competitive",
+      "ord": 33
+    },
+    {
+      "native_category": "Other",
+      "section_label": "6.5.A",
+      "heading": "Iowa Title Guaranty",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 33,
+      "page_end": 33,
+      "quote": "Applicants shall use Iowa Title Guaranty from Tax Credit Award through IRS Form 8609 Issuance.",
+      "note": "The title guaranty must run from award through 8609 issuance, with a final owner certificate covering land, pre-existing improvements and total hard construction costs.",
+      "kind": "competitive",
+      "ord": 34
+    },
+    {
+      "native_category": "Other",
+      "section_label": "6.5.B",
+      "heading": "Existing tax credit projects, resyndication",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 33,
+      "page_end": 33,
+      "quote": "Existing Tax Credit Projects – Resyndication.",
+      "note": "At the end of year 20 of the compliance/extended use period, for projects in good standing.",
+      "kind": "competitive",
+      "ord": 35
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "7.4.A",
+      "heading": "ROSE homeownership program",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 34,
+      "page_end": 34,
+      "quote": "Projects that provide an opportunity for homeownership through the Iowa Renter to Ownership Single-",
+      "note": "Appendix M describes the ROSE program.",
+      "ord": 36
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "7.4.B",
+      "heading": "Longest without an Iowa award, development team",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 34,
+      "page_end": 34,
+      "quote": "that has not received an award of Tax Credits in Iowa for the longest period of time",
+      "note": "Within the last 7 years; developers new to Iowa are excluded.",
+      "ord": 37
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "7.4.C",
+      "heading": "Least tax credits per unit",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 3,
+      "page_start": 34,
+      "page_end": 34,
+      "quote": "Application requesting the least amount of Tax Credits per Unit.",
+      "ord": 38
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "7.4.D",
+      "heading": "Longest without an award, community",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 4,
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "Project in a community that has not received a reservation of Tax Credits for the longest period of time",
+      "ord": 39
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "7.4.E",
+      "heading": "Board discretion",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 5,
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "Board Discretion.",
+      "ord": 40
+    },
+    {
+      "track": "appeal_remedy",
+      "native_category": "Remedies on Appeal",
+      "section_label": "7.10.B",
+      "heading": "Points for a successfully appealed project in the next round",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "on the waiting list due to a successful appeal shall be awarded 5 points in the next 9% Tax Credit Round.",
+      "note": "On its own track because it is available only to a project that won an appeal, was waitlisted, and was not funded before the waiting list expired, and it sits on top of the 63. The project must be 'substantially the same', at IFA's discretion.",
+      "kind": "competitive",
+      "ord": 41
+    }
+  ]
+}
