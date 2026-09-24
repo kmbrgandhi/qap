@@ -268,6 +268,47 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("VA", "E.7.a"): AFF,                    ("VA", "E.7.b"): AFF,
     ("VA", "E.7.c"): AFF,                    ("VA", "E.7.d"): SPON,
     ("VA", "E.7.e"): (AFF, PRES),            ("VA", "E.7.f"): SPON,
+
+    # ---- Arkansas ----------------------------------------------------------
+    ("AR", "II.A.1"): LOC,              ("AR", "II.A.2"): POP,
+    ("AR", "II.A.3"): PRES,             ("AR", "II.A.4"): COST,
+    ("AR", "II.A.5"): PRES,             ("AR", "II.A.6"): LOC,
+    ("AR", "II.A.7"): AFF,              ("AR", "II.A.8"): LOC,
+    ("AR", "II.A.8.adjacent"): LOC,     ("AR", "II.A.8.nearby"): LOC,
+    ("AR", "II.A.9"): COST,             ("AR", "II.A.10"): AFF,
+    ("AR", "II.A.11"): (AFF, PRES),     ("AR", "II.A.12"): LOC,
+    ("AR", "II.A.13"): DES,             ("AR", "II.A.14"): SPON,
+    ("AR", "II.A.15"): SPON,
+
+    # ---- Hawaii ------------------------------------------------------------
+    ("HI", "III.D.1"): COST,            ("HI", "III.D.2"): LOC,
+    ("HI", "III.D.3"): COST,            ("HI", "III.D.4"): READY,
+    ("HI", "III.D.5"): POP,             ("HI", "III.D.6"): (AFF, POP),
+    ("HI", "III.D.7"): COST,            ("HI", "III.D.8"): COST,
+    ("HI", "III.D.9"): DES,             ("HI", "III.D.10"): LOC,
+    ("HI", "III.D.11"): SPON,           ("HI", "III.D.12"): AFF,
+    ("HI", "III.D.13"): POP,            ("HI", "III.D.14"): POP,
+    ("HI", "III.D.15"): AFF,            ("HI", "III.D.16"): SPON,
+    ("HI", "III.D.17"): POP,            ("HI", "III.D.18"): LOC,
+    ("HI", "III.D.19"): PRES,           ("HI", "III.D.20"): LOC,
+    ("HI", "III.D.21"): COST,           ("HI", "III.D.22"): AFF,
+    ("HI", "III.D.23"): PRES,
+
+    # ---- Missouri ----------------------------------------------------------
+    # The Phase II award is a flat 45 for meeting any of nine priority groups,
+    # which span several categories; it is filed under readiness as the gate
+    # that lets an application proceed rather than under any one subject.
+    ("MO", "IV.B"): READY,
+    ("MO", "IV.C.1.income"): AFF,       ("MO", "IV.C.1.mixedincome"): AFF,
+    ("MO", "IV.C.1.homeownership"): POP, ("MO", "IV.C.1.serviceenriched"): POP,
+    ("MO", "IV.C.1.supportive"): POP,   ("MO", "IV.C.1.extended"): AFF,
+    ("MO", "IV.C.1.previousphase"): SPON,
+    ("MO", "IV.C.2.costburden"): LOC,   ("MO", "IV.C.2.opportunity"): LOC,
+    ("MO", "IV.C.2.rural"): LOC,        ("MO", "IV.C.2.preservation"): PRES,
+    ("MO", "IV.C.3.favorable"): COST,   ("MO", "IV.C.3.localsupport"): COST,
+    ("MO", "IV.C.3.cdbgdr"): COST,      ("MO", "IV.C.3.pbra"): (AFF, COST),
+    ("MO", "IV.C.3.creditefficiency"): COST,
+    ("MO", "IV.C.4.priorperformance"): SPON,
 }
 
 

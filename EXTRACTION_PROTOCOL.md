@@ -288,6 +288,36 @@ time. Computed maximum 106.
   honestly, so both carry their stated caps and the note explains. A reviewer
   should know the two cannot simply be added.
 
+### Arkansas 2027, Hawaii 2026, Missouri 2027
+
+Three states in one pass, 63 criteria, every citation verified first time, and
+each computed total matched a hand-sum done before loading: 99, 117, 169.
+
+- **Hand-sum the stated maxima before you load.** Doing the arithmetic by hand
+  first turns the loader's number into a check rather than a result. It is
+  thirty seconds of work and it is how you find a missed row.
+- **A blank in the document is a finding.** Arkansas's Points Criteria table
+  ends with a row labelled "Total Points Possible:" and the value was never
+  filled in. Recorded in `track_totals.note` rather than quietly summed.
+- **Headings and tables disagree, often.** Hawaii's Criterion 12 is headed
+  "0 to 7 points" and its table tops out at 6 for perpetual affordability.
+  `points_max` records 6, the highest value actually attainable, with the
+  heading's 7 in the note. → Where a heading and a table disagree, take the
+  table and say so: the table is what a scorer applies.
+- **A floor can be stated and then unstated.** Missouri says twice that an
+  application must reach 90 combined points, then says MHDC may recommend
+  applications that do not. Both recorded.
+- **Some criteria cannot be scored from the document at all.** Hawaii scores
+  six criteria against the rest of the round — lowest cost per square foot
+  takes 6 points, highest takes 0 — and Missouri's credit efficiency safe
+  harbour is set from the applications actually submitted. The point value is
+  real but unknowable in advance. Say so in the note; a reader comparing
+  states will otherwise assume a fixed standard.
+- **Watch for values published outside the QAP.** Arkansas's opportunity index
+  lives on an ArcGIS map, Missouri's cost-burden figures and rural county list
+  on MHDC's website. The criterion is in the plan; the data that decides it is
+  not.
+
 ### Freezing the text, and why we did not
 
 Considered after North Dakota: should extraction work from a frozen text

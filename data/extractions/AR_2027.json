@@ -1,0 +1,355 @@
+{
+  "_comment": "Arkansas 2027 QAP, ADFA. Competitive scoring is Section II.A, the numbered Points Criteria table on PDF pp.22-28. One criterion per numbered row, which is the grain the table scores at. Page numbers are PDF page indices and match the printed numbers.",
+  "match": {
+    "filename": "arkansas-qap-2027.pdf"
+  },
+  "extractor_version": "hand-2027-ar-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 28,
+      "note": "The QAP has a row labelled 'Total Points Possible:' at the end of the Points Criteria table on p.28 and LEAVES IT BLANK. The value was never filled in. Summing the twelve positive rows gives 99; the three deduction rows run to -12, -25 and -20, and the site selection deductions are explicitly uncapped."
+    }
+  ],
+  "groups": [],
+  "criteria": [
+    {
+      "ord": 1,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.1",
+      "heading": "Location: Area of Opportunity Index",
+      "points_max": 10,
+      "points_type": "formula",
+      "page_start": 22,
+      "page_end": 22,
+      "quote": "Area of Opportunity Index",
+      "note": "The index is calculated per census tract from unemployment rate, vacancy rate and population growth, runs 0 to 10 with two decimal places, and is published on an ADFA map rather than in the QAP."
+    },
+    {
+      "ord": 2,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.2",
+      "heading": "Tenant needs",
+      "points_max": 6,
+      "points_type": "tiered",
+      "page_start": 22,
+      "page_end": 23,
+      "quote": "designed, equipped, and set-aside for elderly",
+      "tiers": [
+        {"tier_label": "100% of units set aside for elderly tenants", "points": 6},
+        {"tier_label": "Low-income families or individuals with children, at least 20% of units with three or more bedrooms", "points": 6},
+        {"tier_label": "Supportive housing for disabled persons, at least 20% of units", "points": 6}
+      ],
+      "note": "Three alternatives joined by OR, each worth 6. The QAP states that an applicant choosing 100% elderly cannot also take the three-bedroom points. The supportive housing route requires statements from both the applicant and the service provider, and services must be optional to tenants."
+    },
+    {
+      "ord": 3,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.3",
+      "heading": "Rehabilitation point deduction",
+      "points_max": -12,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "acquisition and/or rehabilitation of one or more buildings that were",
+      "tiers": [
+        {"tier_label": "Less than 16 years since the prior allocation", "points": -12},
+        {"tier_label": "16 to 17 years", "points": -10},
+        {"tier_label": "17 to 18 years", "points": -8},
+        {"tier_label": "18 to 19 years", "points": -6},
+        {"tier_label": "19 to 20 years", "points": -4}
+      ],
+      "note": "Applies where the buildings received a LIHTC allocation within the last 20 years. No credit at all is allowed for a building still inside the 15-year compliance period of a prior allocation."
+    },
+    {
+      "ord": 4,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.4",
+      "heading": "Profit and overhead limits",
+      "points_max": 5,
+      "points_type": "tiered",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "1 point for general requirements not exceeding 6% of construction hard",
+      "tiers": [
+        {"tier_label": "All three limits met, additional bonus", "points": 2},
+        {"tier_label": "General requirements no more than 6% of hard costs", "points": 1},
+        {"tier_label": "Contractor profit no more than 8% of hard costs plus general requirements", "points": 1},
+        {"tier_label": "Contractor overhead no more than 3% of hard costs plus general requirements", "points": 1}
+      ],
+      "note": "Additive rather than alternative: three limits worth a point each, plus 2 more for meeting all three, which is how the row reaches its stated maximum of 5."
+    },
+    {
+      "ord": 5,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.5",
+      "heading": "Historic developments",
+      "points_max": 4,
+      "points_type": "fixed",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "individually listed in the National Register of Historic Places",
+      "note": "Or determined to contribute to a registered historic district. Requires a letter dated within six months of the application deadline."
+    },
+    {
+      "ord": 6,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.6",
+      "heading": "Development county without a recent allocation",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "3 points for building in a County that has not had a 9% LIHTC allocation"
+    },
+    {
+      "ord": 7,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.7",
+      "heading": "Income targeting below 60% AMI",
+      "points_max": 10,
+      "points_type": "tiered",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "Up to 10 points for targeting units below 60% AMI",
+      "tiers": [
+        {"tier_label": "20% of total units at 50% AMI", "points": 10},
+        {"tier_label": "10% of total units at 50% AMI", "points": 7}
+      ]
+    },
+    {
+      "ord": 8,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.8",
+      "heading": "Site selection: proximity to amenities",
+      "points_max": 27,
+      "points_type": "tiered",
+      "page_start": 24,
+      "page_end": 25,
+      "quote": "3 points for the following site amenities located within three (3) miles",
+      "tiers": [
+        {"tier_label": "Each qualifying amenity within 3 miles (urban) or 5 miles (rural)", "points": 3},
+        {"tier_label": "At least four residential units within 0.5 miles of the site boundary", "points": 3}
+      ],
+      "note": "Nine amenity types are listed, each worth 3, plus 3 for nearby occupied residential units, which is 30 against a stated row maximum of 27. Distances are the shortest driving route per Google Maps; rural eligibility is determined from a USDA site. Two points of detail worth a reviewer's eye: the amenity list is lettered b to j with no item a, and the school or daycare item cannot be claimed by a 100% elderly property while the senior centre item can only be claimed by one."
+    },
+    {
+      "ord": 9,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.8.adjacent",
+      "heading": "Incompatible use adjacent to the site",
+      "points_max": -3,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "3 Points will be deducted if incompatible uses are adjacent to the site",
+      "note": "Adjacent means nearby but not necessarily touching. The QAP states there is no limit on the total number of points that can be deducted for site selection, so this and the 0.3-mile deduction can compound."
+    },
+    {
+      "ord": 10,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.8.nearby",
+      "heading": "Incompatible use within 0.3 miles",
+      "points_max": -2,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "2 Points will be deducted if incompatible uses are within 0.3 miles",
+      "note": "Measured as the crow flies. The listed uses are a junk yard, public dump or solid waste disposal, pig or chicken farm, prison or jail, and an airport, and the QAP says that list is not exclusive."
+    },
+    {
+      "ord": 11,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.9",
+      "heading": "Total development cost per unit",
+      "points_max": 15,
+      "points_type": "tiered",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "15 points for <$210,000",
+      "tiers": [
+        {"tier_label": "Under $210,000 per unit", "points": 15},
+        {"tier_label": "$210,000 to $219,999", "points": 12},
+        {"tier_label": "$220,000 to $229,999", "points": 9},
+        {"tier_label": "$230,000 to $239,999", "points": 7},
+        {"tier_label": "$240,000 to $249,999", "points": 5},
+        {"tier_label": "$250,000 to $259,999", "points": 2},
+        {"tier_label": "Over $260,000", "points": 0}
+      ],
+      "note": "Total uses divided by the number of units, including employee units. The bands leave a gap: a development at exactly $260,000 falls between the $250,000-$259,999 band and the 'over $260,000' band."
+    },
+    {
+      "ord": 12,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.10",
+      "heading": "Serves the lowest income group possible",
+      "points_max": 7,
+      "points_type": "fixed",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "whose incomes are 30% or less of the area median income",
+      "note": "At least 5% of residential rental units, with rents restricted accordingly. Not available to developments with project-based rental assistance on more than 75% of units, and the units cannot double as HOME or National Housing Trust Fund affordability units."
+    },
+    {
+      "ord": 13,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.11",
+      "heading": "Extended affordability, tenant ownership or acquisition-rehabilitation",
+      "points_max": 6,
+      "points_type": "tiered",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "the period of affordability must be at minimum 35 years",
+      "tiers": [
+        {"tier_label": "Affordability period extended to at least 35 years, new construction only", "points": 6},
+        {"tier_label": "Eventual tenant ownership under 26 U.S.C. 42(i)(7)", "points": 6},
+        {"tier_label": "Acquisition or rehabilitation of an existing operating affordable development", "points": 6}
+      ],
+      "note": "Three alternatives joined by OR. The tenant ownership route requires the proposed right of first refusal contract and is closed to HOME and National Housing Trust Fund applicants. This row has no heading in the QAP; the number 11 stands alone."
+    },
+    {
+      "ord": 14,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.12",
+      "heading": "Community revitalization plan",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "located in a Qualified Census Tract if it contributes to a concerted community",
+      "note": "The plan must be approved by the planning authority and specifically address a need for affordable housing, with the relevant sections highlighted."
+    },
+    {
+      "ord": 15,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.13",
+      "heading": "Energy efficiency and air quality",
+      "points_max": 5,
+      "points_type": "tiered",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "Install HVAC system with SEER2 rating of 15.2 or above",
+      "tiers": [
+        {"tier_label": "HVAC with a SEER2 rating of 15.2 or above", "points": 2},
+        {"tier_label": "Air handler installed within conditioned space volume", "points": 2},
+        {"tier_label": "Ceiling insulation rated R-44 or above", "points": 1},
+        {"tier_label": "Windows with 0.35 u-factor and 0.30 SHGC", "points": 1},
+        {"tier_label": "Advanced framing techniques implemented", "points": 1},
+        {"tier_label": "Air sealing package with technical plans", "points": 1}
+      ],
+      "note": "Additive measures whose values total 8 against a stated row maximum of 5, so a project cannot claim everything."
+    },
+    {
+      "ord": 16,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.14",
+      "heading": "Past performance point deduction",
+      "points_max": -25,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 27,
+      "page_end": 27,
+      "quote": "failed to meet program or ADFA requirements on a prior",
+      "note": "Discretionary and assessed round by round, with applicants told during the scoring notification period. Examples given include not following through on representations that won points, slow responses to staff, missed deadlines including Form 8609 packages, cost certifications above the amount in the awarded application, and missing monthly inspection reports."
+    },
+    {
+      "ord": 17,
+      "kind": "competitive",
+      "native_category": "Points Criteria",
+      "section_label": "II.A.15",
+      "heading": "Non-compliance point deduction",
+      "points_max": -20,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 27,
+      "page_end": 28,
+      "quote": "for the calculated Non-Compliance Percentage for",
+      "tiers": [
+        {"tier_label": "Average non-compliance percentage 51% or more", "points": -20},
+        {"tier_label": "41% to 50%", "points": -15},
+        {"tier_label": "31% to 40%", "points": -10},
+        {"tier_label": "16% to 30%", "points": -5},
+        {"tier_label": "0% to 15%", "points": 0}
+      ],
+      "note": "Non-compliant units over units reviewed, averaged across ADFA properties reviewed in a three-year window, evidenced by Form 8823, reports of non-compliance and NSPIRE inspections. Applicants new to ADFA must obtain the equivalent report from any other agency they have worked with."
+    },
+    {
+      "ord": 18,
+      "kind": "tiebreaker",
+      "native_category": "Ranking and Award Determination",
+      "section_label": "II.B.1",
+      "heading": "Maximum number of affordable rental units produced",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 28,
+      "page_end": 28,
+      "quote": "maximum number of affordable rental units produced",
+      "note": "The QAP describes its four tiebreakers as criteria ADFA 'would likely use, but not exclusively of others', so the order is indicative rather than binding."
+    },
+    {
+      "ord": 19,
+      "kind": "tiebreaker",
+      "native_category": "Ranking and Award Determination",
+      "section_label": "II.B.2",
+      "heading": "Least LIHTC requested per unit",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 28,
+      "page_end": 28,
+      "quote": "the Application which requested the least amount of LIHTCs per-unit"
+    },
+    {
+      "ord": 20,
+      "kind": "tiebreaker",
+      "native_category": "Ranking and Award Determination",
+      "section_label": "II.B.3",
+      "heading": "Least aggregate participation by an owner or team member",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 3,
+      "page_start": 28,
+      "page_end": 28,
+      "quote": "the least amount of aggregate participation by any one owner",
+      "note": "Aggregate participation counts all applications recommended for funding in the current round."
+    },
+    {
+      "ord": 21,
+      "kind": "tiebreaker",
+      "native_category": "Ranking and Award Determination",
+      "section_label": "II.B.4",
+      "heading": "Equitable geographic distribution",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 4,
+      "page_start": 28,
+      "page_end": 28,
+      "quote": "equitable geographic distribution of awarded LIHTCs"
+    }
+  ]
+}

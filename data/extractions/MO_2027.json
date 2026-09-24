@@ -1,0 +1,331 @@
+{
+  "_comment": "Missouri 2027 QAP, MHDC. Scoring runs across two phases: Phase II awards a flat 45 points for meeting a priority group, and Phase III scores four point-category groups. PDF pp.22-28. Page numbers are PDF page indices; the printed numbers run 3 lower.",
+  "match": {
+    "filename": "missouri-qap-2027.pdf"
+  },
+  "extractor_version": "hand-2027-mo-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 23,
+      "note": "No maximum is stated. The operative figure is a floor: 'Applications must earn at least ninety (90) combined points in Phases II and III to qualify for Phase IV: Underwriting review and be considered for funding.' The plan then adds that MHDC may evaluate and recommend applications that do not reach 90, so the floor is not absolute. Summing the stated maxima gives 169."
+    }
+  ],
+  "groups": [
+    {
+      "key": "mo_housing_priorities",
+      "label": "Service-enriched against supportive housing",
+      "rule": "max_one",
+      "group_cap": 10,
+      "source_quote": "points will only be awarded to the highest scoring priority that meets all",
+      "page_start": 24,
+      "note": "An applicant may propose both, but only the higher-scoring priority is paid, to a maximum of 10."
+    },
+    {
+      "key": "mo_site_location",
+      "label": "Cost-burdened households against opportunity area",
+      "rule": "max_one",
+      "group_cap": 10,
+      "source_quote": "points will only be awarded to the highest scoring category that meets all",
+      "page_start": 25,
+      "note": "Same structure as the housing priorities: both may be proposed, only the higher is paid."
+    }
+  ],
+  "criteria": [
+    {
+      "ord": 1,
+      "kind": "competitive",
+      "native_category": "Phase II: Priority Scoring",
+      "section_label": "IV.B",
+      "heading": "Meets a priority group",
+      "points_max": 45,
+      "points_type": "fixed",
+      "page_start": 22,
+      "page_end": 23,
+      "quote": "Applications that meet the qualifications for one of the above priority groups will be assigned forty-",
+      "note": "A flat 45 points, and the largest single award in the plan. Nine priority groups: nonprofit, HOME CHDO, service-enriched including veterans housing, supportive housing, preservation, CDBG-DR, workforce housing, opportunity area, and the 50% maximum pilot. Meeting one is also a gate: an application must qualify for at least one to reach Phase III at all."
+    },
+    {
+      "ord": 2,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "IV.C.1.income",
+      "heading": "Income targeting",
+      "points_max": 13,
+      "points_type": "tiered",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "Developments that target a percentage of units to lower income households",
+      "tiers": [
+        {"tier_label": "St Louis and Kansas City MSAs: 15% or more at 30% AMI", "points": 13},
+        {"tier_label": "St Louis and Kansas City MSAs: 10% or more at 30% AMI", "points": 9},
+        {"tier_label": "St Louis and Kansas City MSAs: 10% or more at 40% AMI", "points": 4},
+        {"tier_label": "St Louis and Kansas City MSAs: 10% or more at 50% AMI", "points": 2},
+        {"tier_label": "Mid-size MSAs: 12.5% or more at 30% AMI", "points": 13},
+        {"tier_label": "Mid-size MSAs: 7.5% or more at 30% AMI", "points": 9},
+        {"tier_label": "Mid-size MSAs: 7.5% or more at 40% AMI", "points": 4},
+        {"tier_label": "Mid-size MSAs: 7.5% or more at 50% AMI", "points": 2},
+        {"tier_label": "All other counties: 10% or more at 30% AMI", "points": 13},
+        {"tier_label": "All other counties: 5% or more at 30% AMI", "points": 9},
+        {"tier_label": "All other counties: 5% or more at 40% AMI", "points": 4},
+        {"tier_label": "All other counties: 5% or more at 50% AMI", "points": 2}
+      ],
+      "note": "Three parallel ladders, one per market type; a development sits on one of them. The mid-size MSA table covers Springfield, Columbia, Joplin, Jefferson City, Cape Girardeau and St Joseph. Average income elections must hold the targeted percentage."
+    },
+    {
+      "ord": 3,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "IV.C.1.mixedincome",
+      "heading": "Mixed income development",
+      "points_max": 10,
+      "points_type": "fixed",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "Developments that have at least ten percent (10%) market rate units",
+      "note": "Or average income set-aside units at 80% AMI."
+    },
+    {
+      "ord": 4,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "IV.C.1.homeownership",
+      "heading": "Homeownership opportunity",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "Developments of single-family and duplex homes intended for one hundred percent (100%)",
+      "note": "Tenant ownership at the end of the fifteen-year compliance period, with a detailed ownership plan acceptable to MHDC."
+    },
+    {
+      "ord": 5,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "IV.C.1.serviceenriched",
+      "heading": "Service-enriched housing priority",
+      "points_max": 10,
+      "points_type": "tiered",
+      "group": "mo_housing_priorities",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "provide services for the duration of the affordability period will receive five (5) points",
+      "tiers": [
+        {"tier_label": "Written commitment to provide services for the affordability period", "points": 5},
+        {"tier_label": "One point per service parameter, up to five", "points": 5}
+      ],
+      "note": "Five service parameters: housing stability, increased income or employment, physical or mental health, quality of life, and social and community connection. Each needs a fully executed letter of intent, and MHDC weighs service quality, fit with the tenant population, the delivery plan and a minimum three-year provider commitment."
+    },
+    {
+      "ord": 6,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "IV.C.1.supportive",
+      "heading": "Supportive housing priority",
+      "points_max": 10,
+      "points_type": "tiered",
+      "group": "mo_housing_priorities",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "for permanent supportive housing or vulnerable population tenants will",
+      "tiers": [
+        {"tier_label": "At least 15% of units set aside for permanent supportive housing or vulnerable populations", "points": 5},
+        {"tier_label": "Supportive services plan, judged on quality and alignment with the population", "points": 5}
+      ]
+    },
+    {
+      "ord": 7,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "IV.C.1.extended",
+      "heading": "Extended compliance",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "waive the right to opt out at the end of the fifteen-year LIHTC"
+    },
+    {
+      "ord": 8,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "IV.C.1.previousphase",
+      "heading": "Previous phase success",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "Subsequent phase development proposals will be awarded one (1) point",
+      "note": "The earlier phase must have vacancy under 5%, a waiting list, the same occupancy type, and sit within half a mile driving distance."
+    },
+    {
+      "ord": 9,
+      "kind": "competitive",
+      "native_category": "Site Location",
+      "section_label": "IV.C.2.costburden",
+      "heading": "Cost-burdened households in the county",
+      "points_max": 10,
+      "points_type": "tiered",
+      "group": "mo_site_location",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "based on the county's share of",
+      "tiers": [
+        {"tier_label": "More than 20% of renter households severely cost burdened", "points": 10},
+        {"tier_label": "More than 15%", "points": 7},
+        {"tier_label": "More than 10%", "points": 5}
+      ],
+      "note": "Severely cost burdened means spending more than half of gross monthly income on housing. The figures come from supplemental data published on MHDC's website rather than in the QAP."
+    },
+    {
+      "ord": 10,
+      "kind": "competitive",
+      "native_category": "Site Location",
+      "section_label": "IV.C.2.opportunity",
+      "heading": "Opportunity area",
+      "points_max": 7,
+      "points_type": "fixed",
+      "group": "mo_site_location",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "Family sites that meet the requirements of an Opportunity Area"
+    },
+    {
+      "ord": 11,
+      "kind": "competitive",
+      "native_category": "Site Location",
+      "section_label": "IV.C.2.rural",
+      "heading": "Rural underserved county",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "Developments located in rural underserved counties as defined by MHDC",
+      "note": "The qualifying county list is published on MHDC's website, not in the QAP."
+    },
+    {
+      "ord": 12,
+      "kind": "competitive",
+      "native_category": "Site Location",
+      "section_label": "IV.C.2.preservation",
+      "heading": "Preservation",
+      "points_max": 15,
+      "points_type": "tiered",
+      "page_start": 25,
+      "page_end": 26,
+      "quote": "Development proposals that qualify and meet the requirements for the Preservation priority",
+      "tiers": [
+        {"tier_label": "Existing USDA Rural Development property", "points": 15},
+        {"tier_label": "Located in an MSA-Rural or Rural region", "points": 12},
+        {"tier_label": "Located in the Kansas City or St Louis regions", "points": 10}
+      ],
+      "note": "Scored in the highest eligible category. Note the inversion worth a reviewer's eye: rural preservation scores higher than metropolitan preservation."
+    },
+    {
+      "ord": 13,
+      "kind": "competitive",
+      "native_category": "Use of Resources",
+      "section_label": "IV.C.3.favorable",
+      "heading": "Leveraged funds: favourable financing",
+      "points_max": 7,
+      "points_type": "tiered",
+      "page_start": 26,
+      "page_end": 26,
+      "quote": "Development proposals that include source(s) from an unaffiliated party(ies)",
+      "tiers": [
+        {"tier_label": "Leveraged funds greater than 7.5%", "points": 7},
+        {"tier_label": "Greater than 5%", "points": 5},
+        {"tier_label": "Greater than 2.5%", "points": 3}
+      ],
+      "note": "Eligible sources are HOME, HOME-ARP, CDBG, a local housing trust fund, a private or community foundation, historic tax credit proceeds, or other government funds. MHDC resources and conventional bank loans do not count. Requires an executed letter of intent with amounts and terms. Part of a 13-point leveraged funds group."
+    },
+    {
+      "ord": 14,
+      "kind": "competitive",
+      "native_category": "Use of Resources",
+      "section_label": "IV.C.3.localsupport",
+      "heading": "Leveraged funds: local government support",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 26,
+      "page_end": 27,
+      "quote": "Development proposals that include local government support through one of the",
+      "note": "Tax exemptions, fee waivers of at least $50,000 or all the fees the government can waive, donated government-owned land, or required infrastructure improvements. The support must offset a real line item, not appear as a line item itself, be documented by an approved commitment, and come with a valuation methodology."
+    },
+    {
+      "ord": 15,
+      "kind": "competitive",
+      "native_category": "Use of Resources",
+      "section_label": "IV.C.3.cdbgdr",
+      "heading": "Leveraged funds: federal disaster recovery funds",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 27,
+      "page_end": 27,
+      "quote": "Development proposals that include federal disaster recovery funds"
+    },
+    {
+      "ord": 16,
+      "kind": "competitive",
+      "native_category": "Use of Resources",
+      "section_label": "IV.C.3.pbra",
+      "heading": "Project-based rental assistance",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 27,
+      "page_end": 27,
+      "quote": "a project-based rental assistance contract for at least 15% of"
+    },
+    {
+      "ord": 17,
+      "kind": "competitive",
+      "native_category": "Use of Resources",
+      "section_label": "IV.C.3.creditefficiency",
+      "heading": "Credit efficiency",
+      "points_max": 7,
+      "points_type": "tiered",
+      "page_start": 27,
+      "page_end": 27,
+      "quote": "based on the eligible LIHTC amount per LIHTC bedroom",
+      "tiers": [
+        {"tier_label": "Below the safe harbour", "points": 7},
+        {"tier_label": "Within the safe harbour", "points": 3},
+        {"tier_label": "Above the safe harbour", "points": 0}
+      ],
+      "note": "Scored against the round, not a fixed standard: applications are split into family and senior, new construction and rehabilitation, and the safe harbour is 10% either side of that category's average eligible credit per bedroom among the applications actually submitted."
+    },
+    {
+      "ord": 18,
+      "kind": "competitive",
+      "native_category": "Development Team",
+      "section_label": "IV.C.4.priorperformance",
+      "heading": "Development team prior performance",
+      "points_max": 25,
+      "points_type": "tiered",
+      "page_start": 27,
+      "page_end": 28,
+      "quote": "based on a Development Team's",
+      "tiers": [
+        {"tier_label": "Developer, owner or consultant", "points": 12},
+        {"tier_label": "Property management company", "points": 8},
+        {"tier_label": "Supporting development team", "points": 5}
+      ],
+      "note": "Starts from the full value and deducts 5 points per unsatisfactory performance factor: waivers approved with prejudice, construction closing delays beyond three years, deviation from a scored commitment, construction not built to MHDC standards, delinquent loan payments, and significant disregard for MHDC policies. MHDC looks back up to five years. A developer with no MHDC history is judged on the rest of the team and can reach only 22 of the 25."
+    },
+    {
+      "ord": 19,
+      "kind": "threshold",
+      "native_category": "Phase III: General Scoring",
+      "section_label": "IV.C.minimum",
+      "heading": "Minimum 90 combined points in Phases II and III",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "at least ninety (90) combined points in Phases II and III",
+      "note": "Stated twice as an absolute bar, then qualified on p.28: 'MHDC may evaluate, and recommend for funding, applications that do not earn ninety (90) points or more.' Recorded as a threshold with the contradiction noted rather than resolved."
+    }
+  ]
+}
