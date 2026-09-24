@@ -526,6 +526,20 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("OK", "SC.7"): DES,    ("OK", "SC.8"): PRES,   ("OK", "SC.9"): DES,
     ("OK", "SC.10"): COST,  ("OK", "SC.11"): SPON,
     ("OK", "OAHTC.efficiency"): COST,
+
+    # ---- Wyoming -----------------------------------------------------------
+    # Housing Needs scores market demand at the site, filed under location.
+    ("WY", "1.a"): LOC,     ("WY", "1.b"): LOC,     ("WY", "1.c"): LOC,
+    ("WY", "1.d"): LOC,     ("WY", "1.e"): LOC,
+    ("WY", "2.a"): DES,
+    ("WY", "3.a"): LOC,     ("WY", "3.a.dynamic"): LOC, ("WY", "3.b"): LOC,
+    ("WY", "3.c"): LOC,     ("WY", "3.d"): (READY, LOC), ("WY", "3.d.neg"): (READY, LOC),
+    ("WY", "3.e"): LOC,
+    ("WY", "4.a"): DES,     ("WY", "4.b"): READY,   ("WY", "4.c"): READY,
+    ("WY", "4.d"): AFF,
+    ("WY", "5.a"): SPON,    ("WY", "5.b"): SPON,
+    ("WY", "6.a"): COST,    ("WY", "6.b"): COST,    ("WY", "6.c"): COST,
+    ("WY", "6.d"): COST,
 }
 
 

@@ -224,5 +224,18 @@
  "VT|3.3": "Readiness & feasibility",
  "VT|3.4": "Sponsor capacity & performance",
  "VT|3.5": "Populations & supportive services",
- "WI|C.minimum": "Readiness & feasibility"
+ "WI|C.minimum": "Readiness & feasibility",
+ "WY|SC.minimum": "Location, transit & community",
+ "WY|SC.nonpoint": "Sponsor capacity & performance",
+ "WY|SR.10": "Readiness & feasibility",
+ "WY|SR.11": "Location, transit & community",
+ "WY|SR.12": "Readiness & feasibility",
+ "WY|SR.22": "Sponsor capacity & performance",
+ "WY|SR.23": "Sponsor capacity & performance",
+ "WY|SR.27": "Readiness & feasibility",
+ "WY|SR.31": "Preservation & historic reuse",
+ "WY|SR.7": "Readiness & feasibility",
+ "WY|SR.9": "Readiness & feasibility",
+ "WY|SR.rehab.CNA": "Preservation & historic reuse",
+ "WY|SR.rehab.relocation": "Populations & supportive services"
 }

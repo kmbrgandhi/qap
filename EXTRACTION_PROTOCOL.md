@@ -770,3 +770,38 @@ ranking to 12, both matching the hand-sums.
 - **Attachments are part of the document and can contradict it.** The
   amenities certification gives a storm shelter 5 points where the body
   gives every amenity 1. The maximum is unaffected, but the note records it.
+
+### Wyoming, 2027
+
+39 criteria: 23 competitive, 3 tiebreakers and 13 thresholds, all verified
+first time. The computed total matches the stated 495, and the stated −1,510
+in negative points reconciles too.
+
+- **Two-column summary tables need the page image, not the text layer.** The
+  summary on pp.37–38 has a Negative column and a Maximum Points column, and
+  the text layer interleaves them ("d) Environmental/Inappropriate Location
+  -200 5"). Every figure in the reconciliation was read from the rendered
+  pages, and the `_comment` says so. This is the Nebraska problem in a
+  milder form. It was solvable here because the table is short and the
+  images are clean.
+- **Reconcile the negatives as well as the maxima when a document states
+  both.** Wyoming's −1,510 is the sum of −30, −280 and −1,200. Checking it
+  exposed two section headers that disagree with their own parts: −28
+  against −30 for Housing Needs, and −250 against −280 for Project Location.
+- **Worked examples are claims to check, not illustrations to trust.** The
+  Donations rule pays 3 points per 1% of project cost. The example beside it
+  gives a 10% contribution 35 points, where the rule gives 30. Two
+  statements, one number each; neither is right by default, so both go in
+  the note.
+- **A table can reach its stated maximum only by counting alternatives.**
+  Amenities sum to exactly the stated 50, but only if a project claims both
+  the new-construction and the acquisition/rehab laundry rows. Coded at the
+  stated 50 with the 45 and 49 single-type ceilings noted, because a mixed
+  project might claim both.
+- **A category-level floor is its own kind of threshold.** Housing Needs must
+  reach 100 of its 158 before anything else is scored. Recorded as a
+  threshold row, with a note that it applies to a category, not the total.
+- **Deductions sized to eliminate are still worth recording at face value.**
+  Up to −1,000 for total project costs over the limits, with a published
+  escape hatch (the Statistical Outlier Method). The value is extreme but
+  stated, so it goes in as written.

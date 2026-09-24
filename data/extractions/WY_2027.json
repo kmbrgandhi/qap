@@ -1,0 +1,797 @@
+{
+  "_comment": "Wyoming 2027 Affordable Housing Allocation Plan (HOME, NHTF, 4% and 9% LIHTC), Wyoming Community Development Authority. The document states no cycle beyond its title year; cycle is left to data/sources.csv. Page numbers are PDF page indices; the printed number matches up to p.19 and runs one lower from PDF p.20, where printed page 19 repeats. Scoring Allocation Criteria, PDF pp.37-50. The summary table on pp.37-38 lays out a Negative and a Maximum Points column that the text layer interleaves; it was read from the rendered page images. It states 'TOTALS -1510 495'. Hand-summed before loading from the section subtotals: 158 + 65 + 77 + 85 + 40 + 70 = 495, which the loader matched. The negatives reconcile too: -30 in Housing Needs (carried inside 1.d and 1.e, which score in both directions), -280 in Project Location (-30 dynamic, -50 concentration, -200 environmental) and -1200 in Financials (-200 subsidy, -1000 costs) make -1510. Three internal contradictions are recorded: the Housing Needs header says 'up to negative 28 points' against -30 in its parts; the Project Location header says 'Up to a negative 250 points' against -280 in the summary; and the Donations example awards 35 points for a 10% contribution that its own 3-points-per-1% rule values at 30. Thresholds are in WY_thresholds.json.",
+  "match": {
+    "filename": "wyoming-qap-2027.pdf"
+  },
+  "extractor_version": "hand-2027-wy-1",
+  "qap_updates": {
+    "stated_total": 495,
+    "stated_total_page": 38
+  },
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": 495,
+      "page": 38,
+      "note": "Summary table, pp.37-38: 'TOTALS -1510 495', read from the rendered pages because the text layer interleaves the Negative and Maximum Points columns. 495 is the sum of the six section subtotals (158, 65, 77, 85, 40, 70). Negative points are excluded, as everywhere in the corpus; the -1510 is recorded in the notes of the negative criteria. The Housing Needs category must reach 100 of its 158 for an application to be scored."
+    }
+  ],
+  "groups": [],
+  "criteria": [
+    {
+      "native_category": "Housing Needs Characteristics",
+      "section_label": "1.a",
+      "heading": "Income levels (market study capture rate)",
+      "points_max": 28,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 39,
+      "page_end": 39,
+      "quote": "Income Levels (28 points)",
+      "tiers": [
+        {
+          "tier_label": "Capture rate 0.0-5.0%",
+          "points": 28
+        },
+        {
+          "tier_label": "Capture rate 5.1-10.0%",
+          "points": 26
+        },
+        {
+          "tier_label": "Capture rate 10.1-15.0%",
+          "points": 24
+        },
+        {
+          "tier_label": "Capture rate 15.1-20.0%",
+          "points": 22
+        },
+        {
+          "tier_label": "Capture rate 20.1-25.0%",
+          "points": 20
+        },
+        {
+          "tier_label": "Capture rate 25.1-30.0%",
+          "points": 18
+        },
+        {
+          "tier_label": "Capture rate 30.1-35.0%",
+          "points": 16
+        },
+        {
+          "tier_label": "Capture rate 35.1-40.0%",
+          "points": 14
+        },
+        {
+          "tier_label": "Capture rate 40.1-45.0%",
+          "points": 12
+        },
+        {
+          "tier_label": "Capture rate 45.1-50.0%",
+          "points": 10
+        },
+        {
+          "tier_label": "Capture rate 50.1-55.0%",
+          "points": 8
+        },
+        {
+          "tier_label": "Capture rate 55.1-60.0%",
+          "points": 6
+        },
+        {
+          "tier_label": "Capture rate 60.1-65.0%",
+          "points": 4
+        },
+        {
+          "tier_label": "Capture rate 65.1-70.0%",
+          "points": 2
+        },
+        {
+          "tier_label": "Capture rate 70.1-75.0%",
+          "points": 0
+        },
+        {
+          "tier_label": "Capture rate 75.1+%",
+          "points": 0
+        }
+      ],
+      "note": "The lower the market study's capture rate, the more points: 28 at 5% or below, falling by 2 per 5 points of capture rate to 0 above 70%. The Housing Needs category needs at least 100 of its 158 points for the application to be scored at all.",
+      "kind": "competitive",
+      "ord": 1
+    },
+    {
+      "native_category": "Housing Needs Characteristics",
+      "section_label": "1.b",
+      "heading": "Saturation",
+      "points_max": 48,
+      "points_type": "formula",
+      "page_start": 39,
+      "page_end": 39,
+      "quote": "Saturation (48 Points)",
+      "note": "48 minus the saturation percentage (proposed units / income-restricted units needed) as a whole number; the document's example is 13% saturation earning 35. Fully occupied or waitlisted rehab projects get the maximum.",
+      "kind": "competitive",
+      "ord": 2
+    },
+    {
+      "native_category": "Housing Needs Characteristics",
+      "section_label": "1.c",
+      "heading": "Absorption rate",
+      "points_max": 14,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 40,
+      "page_end": 40,
+      "quote": "Absorption Rate (14 Points)",
+      "tiers": [
+        {
+          "tier_label": "1 month to fill",
+          "points": 14
+        },
+        {
+          "tier_label": "2 months to fill",
+          "points": 13
+        },
+        {
+          "tier_label": "3 months to fill",
+          "points": 12
+        },
+        {
+          "tier_label": "4 months to fill",
+          "points": 11
+        },
+        {
+          "tier_label": "5 months to fill",
+          "points": 10
+        },
+        {
+          "tier_label": "6 months to fill",
+          "points": 9
+        },
+        {
+          "tier_label": "7 months to fill",
+          "points": 7
+        },
+        {
+          "tier_label": "8 months to fill",
+          "points": 6
+        },
+        {
+          "tier_label": "9 months to fill",
+          "points": 4
+        },
+        {
+          "tier_label": "10 months to fill",
+          "points": 3
+        },
+        {
+          "tier_label": "11 months to fill",
+          "points": 1
+        },
+        {
+          "tier_label": "12 months to fill",
+          "points": 0
+        }
+      ],
+      "note": "Fully occupied or waitlisted rehab projects get the maximum.",
+      "kind": "competitive",
+      "ord": 3
+    },
+    {
+      "native_category": "Housing Needs Characteristics",
+      "section_label": "1.d",
+      "heading": "Vacancy in community",
+      "points_max": 40,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 41,
+      "page_end": 41,
+      "quote": "Vacancy in Community (Maximum 40 points; up to negative 20 points)",
+      "tiers": [
+        {
+          "tier_label": "Market study (PMA) vacancy 0%-1%",
+          "points": 25
+        },
+        {
+          "tier_label": "Market study (PMA) vacancy 1.01%-2%",
+          "points": 22
+        },
+        {
+          "tier_label": "Market study (PMA) vacancy 2.01%-3%",
+          "points": 19
+        },
+        {
+          "tier_label": "Market study (PMA) vacancy 3.01%-4%",
+          "points": 16
+        },
+        {
+          "tier_label": "Market study (PMA) vacancy 4.01%-5%",
+          "points": 11
+        },
+        {
+          "tier_label": "Market study (PMA) vacancy 5.01%-6%",
+          "points": 6
+        },
+        {
+          "tier_label": "Market study (PMA) vacancy 6.01%-8%",
+          "points": 1
+        },
+        {
+          "tier_label": "2026 Wyoming Rental Vacancy Survey 0%-1%",
+          "points": 15
+        },
+        {
+          "tier_label": "2026 Wyoming Rental Vacancy Survey 1.01%-2%",
+          "points": 13
+        },
+        {
+          "tier_label": "2026 Wyoming Rental Vacancy Survey 2.01%-3%",
+          "points": 11
+        },
+        {
+          "tier_label": "2026 Wyoming Rental Vacancy Survey 3.01%-4%",
+          "points": 9
+        },
+        {
+          "tier_label": "2026 Wyoming Rental Vacancy Survey 4.01%-5%",
+          "points": 7
+        },
+        {
+          "tier_label": "2026 Wyoming Rental Vacancy Survey 5.01%-6%",
+          "points": 4
+        },
+        {
+          "tier_label": "2026 Wyoming Rental Vacancy Survey 6.01%-8%",
+          "points": 1
+        }
+      ],
+      "note": "Two ladders that add, market study (up to 25) and the state vacancy survey (up to 15), for 40. Each ladder runs on below zero: 0 at 8.01-10%, -5 at 10.01-12% and -10 above 12%, which is where the 'up to negative 20 points' comes from. Recorded as one criterion scoring in both directions (the Virginia pattern), with the negative rows described here rather than tiered.",
+      "kind": "competitive",
+      "ord": 4
+    },
+    {
+      "native_category": "Housing Needs Characteristics",
+      "section_label": "1.e",
+      "heading": "Vacancy in low-income projects",
+      "points_max": 28,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "Vacancy in Low-Income Projects (Maximum 28 points; up to negative 10 points)",
+      "tiers": [
+        {
+          "tier_label": "0%-1%",
+          "points": 28
+        },
+        {
+          "tier_label": "1.01%-2%",
+          "points": 22
+        },
+        {
+          "tier_label": "2.01%-3%",
+          "points": 16
+        },
+        {
+          "tier_label": "3.01%-4%",
+          "points": 10
+        },
+        {
+          "tier_label": "4.01%-5%",
+          "points": 5
+        },
+        {
+          "tier_label": "5.01%-6%",
+          "points": 0
+        }
+      ],
+      "note": "Continues below zero: -5 at 6.01-8% and -10 at 8.01-10%. Projects in communities with over 10% vacancy in income-restricted projects are not considered unless they are rehabilitations with under 10% vacancy themselves. CONTRADICTION: the Housing Needs header on p.39 says 'up to negative 28 points', but its two components carry -20 and -10, and the summary table on p.37 gives -30.",
+      "kind": "competitive",
+      "ord": 5
+    },
+    {
+      "native_category": "Quality of Construction",
+      "section_label": "2.a",
+      "heading": "Construction/energy efficiency standards exceeded",
+      "points_max": 65,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "Construction/Energy Efficiency Standards Exceeded (Maximum 65 points)",
+      "tiers": [
+        {
+          "tier_label": "Walk-up or townhome style units",
+          "points": 10
+        },
+        {
+          "tier_label": "Roofing warranty over 30 years",
+          "points": 5
+        },
+        {
+          "tier_label": "Siding warranty over 30 years",
+          "points": 5
+        },
+        {
+          "tier_label": "Windows U-value 0.3 or lower",
+          "points": 5
+        },
+        {
+          "tier_label": "Energy Star lighting throughout",
+          "points": 5
+        },
+        {
+          "tier_label": "Motion-controlled exterior lighting",
+          "points": 5
+        },
+        {
+          "tier_label": "Energy Star refrigerator, dishwasher, ceiling fans and washer/dryer",
+          "points": 5
+        },
+        {
+          "tier_label": "Ceiling fans",
+          "points": 5
+        },
+        {
+          "tier_label": "Energy Star certification",
+          "points": 10
+        },
+        {
+          "tier_label": "HERS rating at or below 100",
+          "points": 10
+        }
+      ],
+      "note": "The items sum to exactly 65. Ceiling fans appear both inside the Energy Star appliance item and as their own 5-point item. Applicants may also 'advocate for points' for standards not listed, which leaves the test open-ended within the 65.",
+      "kind": "competitive",
+      "ord": 6
+    },
+    {
+      "native_category": "Project Location",
+      "section_label": "3.a",
+      "heading": "Geographic distribution",
+      "points_max": 40,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 43,
+      "page_end": 43,
+      "quote": "Geographic Distribution (Maximum 40 points)",
+      "tiers": [
+        {
+          "tier_label": "Community last funded 2026",
+          "points": 0
+        },
+        {
+          "tier_label": "2025",
+          "points": 10
+        },
+        {
+          "tier_label": "2024",
+          "points": 20
+        },
+        {
+          "tier_label": "2023",
+          "points": 30
+        },
+        {
+          "tier_label": "2022 or earlier within the four-year look-back",
+          "points": 40
+        }
+      ],
+      "note": "Years since the community's last 9% award, within a four-year look-back. See 3.a.dynamic for the deduction applied when several applications come from one community.",
+      "kind": "competitive",
+      "ord": 7
+    },
+    {
+      "native_category": "Project Location",
+      "section_label": "3.a.dynamic",
+      "heading": "Dynamic scoring deduction for multiple applications in one community",
+      "points_max": -30,
+      "points_type": "negative",
+      "is_negative": true,
+      "scored_against_round": true,
+      "page_start": 43,
+      "page_end": 43,
+      "quote": "Dynamic Scoring: In the event that multiple applications are received",
+      "note": "After final scoring: -10 for the second-highest application from the same community, -20 for the third, -30 for the fourth or lower. Depends entirely on the other applications.",
+      "kind": "competitive",
+      "ord": 8
+    },
+    {
+      "native_category": "Project Location",
+      "section_label": "3.b",
+      "heading": "Proximity to services",
+      "points_max": 22,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 44,
+      "page_end": 44,
+      "quote": "Proximity to Services (Maximum 22 points)",
+      "tiers": [
+        {
+          "tier_label": "Grocery within 1 mile",
+          "points": 5
+        },
+        {
+          "tier_label": "Retail shopping within 1 mile",
+          "points": 5
+        },
+        {
+          "tier_label": "Pharmacy within 1 mile",
+          "points": 3
+        },
+        {
+          "tier_label": "Healthcare within 1 mile",
+          "points": 3
+        },
+        {
+          "tier_label": "Public school within 1 mile (family projects)",
+          "points": 3
+        },
+        {
+          "tier_label": "Recreation center or park within 1 mile",
+          "points": 3
+        },
+        {
+          "tier_label": "Senior center within 1 mile (senior projects)",
+          "points": 3
+        }
+      ],
+      "note": "A distance matrix: grocery and retail pay 3, 4 and 5 at 2, 1.5 and 1 mile, the others 1, 2 and 3. The tiers give the 1-mile values; family projects count the school and senior projects the senior center, so either reaches 22. Communities lacking a service are scored case by case.",
+      "kind": "competitive",
+      "ord": 9
+    },
+    {
+      "native_category": "Project Location",
+      "section_label": "3.c",
+      "heading": "Concentration of low-income housing",
+      "points_max": -50,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 44,
+      "page_end": 44,
+      "quote": "Concentration of Low-Income Housing (Up to a negative 50 points)",
+      "note": "At WCDA's judgement from visual observation, market study data and HUD CPD maps. Rehabilitation projects are exempt.",
+      "kind": "competitive",
+      "ord": 10
+    },
+    {
+      "native_category": "Project Location",
+      "section_label": "3.d",
+      "heading": "Environmental: clean Phase I",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 44,
+      "page_end": 44,
+      "quote": "Environmental Items/Inappropriate Location (Maximum of 5 points; Up to a Negative 200 points)",
+      "note": "Five points for a Phase I with no recognized environmental conditions or areas of concern; rehabilitation projects get the maximum. The same heading carries the -200 recorded in 3.d.neg.",
+      "kind": "competitive",
+      "ord": 11
+    },
+    {
+      "native_category": "Project Location",
+      "section_label": "3.d.neg",
+      "heading": "Environmental: unaddressed mitigation or inappropriate location",
+      "points_max": -200,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 45,
+      "page_end": 45,
+      "quote": "Negative points will be assessed if the project will need mitigation that has not",
+      "note": "Up to -200 for mitigation not addressed or budgeted under HUD Part 58, or a site in or near heavy industrial or commercial areas, containing hazardous materials, or otherwise unfit for housing. CONTRADICTION: the Project Location header (p.43) says 'Up to a negative 250 points', while the summary table (p.37) gives -280, which is -30 dynamic scoring plus -50 concentration plus -200 here.",
+      "kind": "competitive",
+      "ord": 12
+    },
+    {
+      "native_category": "Project Location",
+      "section_label": "3.e",
+      "heading": "Community revitalization in QCT or revitalization plan",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 45,
+      "page_end": 46,
+      "quote": "Community Revitalization in Qualified Census Tracts And/or Community",
+      "tiers": [
+        {
+          "tier_label": "In a Qualified Census Tract",
+          "points": 5
+        },
+        {
+          "tier_label": "Existing housing used in a Community Revitalization Plan, or a jurisdiction actively reducing barriers",
+          "points": 5
+        },
+        {
+          "tier_label": "Tribal land, with the most recent Indian Housing Plan",
+          "points": 10
+        }
+      ],
+      "note": "The QCT and plan items add to 10; the tribal route reaches 10 alone. Generic community-wide housing studies are expressly not enough.",
+      "kind": "competitive",
+      "ord": 13
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "4.a",
+      "heading": "Project and unit amenities",
+      "points_max": 50,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 47,
+      "page_end": 47,
+      "quote": "Project and Unit Amenities (Maximum 50 points)",
+      "tiers": [
+        {
+          "tier_label": "Community laundry room on-site, new construction",
+          "points": 1
+        },
+        {
+          "tier_label": "Community laundry room on-site, acquisition/rehab",
+          "points": 5
+        },
+        {
+          "tier_label": "On-site playground (family) or emergency call (senior)",
+          "points": 5
+        },
+        {
+          "tier_label": "Security cameras",
+          "points": 10
+        },
+        {
+          "tier_label": "Covered parking",
+          "points": 3
+        },
+        {
+          "tier_label": "BBQ/picnic area",
+          "points": 1
+        },
+        {
+          "tier_label": "Storage areas beyond standard closets",
+          "points": 3
+        },
+        {
+          "tier_label": "Multi-purpose room",
+          "points": 5
+        },
+        {
+          "tier_label": "Dishwasher",
+          "points": 2
+        },
+        {
+          "tier_label": "Garbage disposal",
+          "points": 2
+        },
+        {
+          "tier_label": "Washer/dryer in unit",
+          "points": 5
+        },
+        {
+          "tier_label": "Central HVAC",
+          "points": 5
+        },
+        {
+          "tier_label": "Luxury vinyl tile flooring",
+          "points": 3
+        }
+      ],
+      "note": "The thirteen rows sum to exactly the stated 50, but only by counting both laundry rows, one for new construction (1) and one for acquisition/rehab (5). A project that is only one or the other tops out at 45 or 49. Coded at the stated 50 because a project with both components could arguably claim both; the reviewer should confirm.",
+      "kind": "competitive",
+      "ord": 14
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "4.b",
+      "heading": "Site control",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 47,
+      "page_end": 47,
+      "quote": "Site Control (Maximum 10 points)",
+      "tiers": [
+        {
+          "tier_label": "Own",
+          "points": 10
+        },
+        {
+          "tier_label": "Option to buy, or WCDA-approved 99+ year lease before application",
+          "points": 5
+        }
+      ],
+      "kind": "competitive",
+      "ord": 15
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "4.c",
+      "heading": "Proper zoning",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 47,
+      "page_end": 47,
+      "quote": "Proper Zoning (Maximum 10 points)",
+      "tiers": [
+        {
+          "tier_label": "Zoning in place, no approval required",
+          "points": 10
+        },
+        {
+          "tier_label": "Zoning in place, other approvals required",
+          "points": 3
+        },
+        {
+          "tier_label": "Re-zoning in process",
+          "points": 1
+        }
+      ],
+      "kind": "competitive",
+      "ord": 16
+    },
+    {
+      "native_category": "Project Characteristics",
+      "section_label": "4.d",
+      "heading": "Projects with project-based rental assistance",
+      "points_max": 15,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 48,
+      "page_end": 48,
+      "quote": "Projects with Project Based Rental Assistance (Maximum 15 points)",
+      "tiers": [
+        {
+          "tier_label": "Rehabilitation of an existing project with PBRA",
+          "points": 15
+        },
+        {
+          "tier_label": "New construction with PBRA",
+          "points": 10
+        }
+      ],
+      "kind": "competitive",
+      "ord": 17
+    },
+    {
+      "native_category": "Sponsor/Applicant Characteristics",
+      "section_label": "5.a",
+      "heading": "Property management team",
+      "points_max": 20,
+      "points_type": "formula",
+      "page_start": 48,
+      "page_end": 48,
+      "quote": "Property Management Team (Maximum 20 points)",
+      "note": "Discretionary: WCDA's annual view of end-of-year reporting, financial assessment, risk management and monitoring findings. No scale is published.",
+      "kind": "competitive",
+      "ord": 18
+    },
+    {
+      "native_category": "Sponsor/Applicant Characteristics",
+      "section_label": "5.b",
+      "heading": "Development team",
+      "points_max": 20,
+      "points_type": "formula",
+      "page_start": 48,
+      "page_end": 48,
+      "quote": "Development Team (Maximum 20 points)",
+      "note": "Discretionary: cost management, returned credits, timely completion, reporting, experience and communication. Developers new to Wyoming are scored on references from two other states. No scale is published.",
+      "kind": "competitive",
+      "ord": 19
+    },
+    {
+      "native_category": "Financials",
+      "section_label": "6.a",
+      "heading": "Loan terms (HOME and NHTF requests)",
+      "points_max": 35,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 49,
+      "page_end": 49,
+      "quote": "Loan Terms (Maximum 35 points)",
+      "tiers": [
+        {
+          "tier_label": "HOME request over $2,000,000",
+          "points": 20
+        },
+        {
+          "tier_label": "HOME request over $1,000,000",
+          "points": 10
+        },
+        {
+          "tier_label": "HOME request under $1,000,000",
+          "points": 5
+        },
+        {
+          "tier_label": "NHTF request over $750,000",
+          "points": 15
+        },
+        {
+          "tier_label": "NHTF request under $750,000",
+          "points": 7
+        }
+      ],
+      "note": "The larger the HOME or NHTF request, the more points; the HOME ladder (up to 20) and NHTF ladder (up to 15) add to 35. A LIHTC-only application scores nothing here. As written, requests of exactly $1,000,000 or $750,000 fall between rows.",
+      "kind": "competitive",
+      "ord": 20
+    },
+    {
+      "native_category": "Financials",
+      "section_label": "6.b",
+      "heading": "Subsidy above per-unit limits",
+      "points_max": -200,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 49,
+      "page_end": 49,
+      "quote": "Subsidy (Up to a Negative 200 points)",
+      "note": "-10 per 1% over the Attachment A per-unit eligible basis or subsidy limits.",
+      "kind": "competitive",
+      "ord": 21
+    },
+    {
+      "native_category": "Financials",
+      "section_label": "6.c",
+      "heading": "Donations, grants and waived fees",
+      "points_max": 35,
+      "points_type": "formula",
+      "page_start": 49,
+      "page_end": 49,
+      "quote": "Donations, Grants & Waived Fees (Maximum 35 points)",
+      "note": "CONTRADICTION, recorded not resolved: the rule is '3 points per 1% in waivers and/or contributions', which reaches 35 at about 11.7% of project costs, but the document's own example gives a 10% reduction 35 points, where the rule gives 30. Non-federal contributions from unrelated parties only; deferred developer fee does not count.",
+      "kind": "competitive",
+      "ord": 22
+    },
+    {
+      "native_category": "Financials",
+      "section_label": "6.d",
+      "heading": "Total project costs above limits",
+      "points_max": -1000,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 49,
+      "page_end": 50,
+      "quote": "Total Project Costs (Up to a negative 1000 points)",
+      "note": "-10 per 1% over the Attachment A total project cost limits, up to -1000: large enough to eliminate any application. WCDA may waive all negative points for one over-limit project a round and offer a pro-rated award under the Statistical Outlier Method (p.50).",
+      "kind": "competitive",
+      "ord": 23
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tie Breaker",
+      "section_label": "TB.1",
+      "heading": "Rehabilitation with project-based rental assistance",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 38,
+      "page_end": 38,
+      "quote": "Rehabilitation Proposal with Project Based Rental Assistance",
+      "ord": 24
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tie Breaker",
+      "section_label": "TB.2",
+      "heading": "Rehabilitation without project-based rental assistance",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 38,
+      "page_end": 38,
+      "quote": "Rehabilitation Proposal without Project Based Rental Assistance",
+      "ord": 25
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Tie Breaker",
+      "section_label": "TB.3",
+      "heading": "New construction",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 3,
+      "page_start": 38,
+      "page_end": 38,
+      "quote": "3) New Construction",
+      "ord": 26
+    }
+  ]
+}
