@@ -1,0 +1,178 @@
+{
+ "_comment": "Threshold requirements, NH. Mandatory; carry no points.",
+ "match": {
+  "filename": "2027-2028-Qualified-Allocation-Plan.pdf"
+ },
+ "extractor_version": "hand-2026-thresholds-1",
+ "groups": [],
+ "criteria": [
+  {
+   "ord": 501,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.1",
+   "heading": "Site Plan Approval",
+   "native_category": "Threshold requirement",
+   "page_start": 12,
+   "page_end": 12,
+   "quote": "Site Plan Approval"
+  },
+  {
+   "ord": 502,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.2",
+   "heading": "Feasibility and Eligibility",
+   "native_category": "Threshold requirement",
+   "page_start": 12,
+   "page_end": 12,
+   "quote": "Feasibility and Eligibility"
+  },
+  {
+   "ord": 503,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.3",
+   "heading": "Market Demand",
+   "native_category": "Threshold requirement",
+   "page_start": 12,
+   "page_end": 12,
+   "quote": "Market Demand"
+  },
+  {
+   "ord": 504,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.4",
+   "heading": "Capacity",
+   "native_category": "Threshold requirement",
+   "page_start": 13,
+   "page_end": 13,
+   "quote": "Capacity"
+  },
+  {
+   "ord": 505,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.5",
+   "heading": "Completion of Prior Phase",
+   "native_category": "Threshold requirement",
+   "page_start": 13,
+   "page_end": 13,
+   "quote": "Completion of Prior Phase"
+  },
+  {
+   "ord": 506,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.6",
+   "heading": "Site Control",
+   "native_category": "Threshold requirement",
+   "page_start": 14,
+   "page_end": 14,
+   "quote": "Site Control"
+  },
+  {
+   "ord": 507,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.7",
+   "heading": "Cost Reasonableness",
+   "native_category": "Threshold requirement",
+   "page_start": 14,
+   "page_end": 14,
+   "quote": "Cost Reasonableness"
+  },
+  {
+   "ord": 508,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.8",
+   "heading": "Readiness",
+   "native_category": "Threshold requirement",
+   "page_start": 14,
+   "page_end": 14,
+   "quote": "Readiness"
+  },
+  {
+   "ord": 509,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.9",
+   "heading": "Service Coordination",
+   "native_category": "Threshold requirement",
+   "page_start": 14,
+   "page_end": 14,
+   "quote": "Service Coordination"
+  },
+  {
+   "ord": 510,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.10",
+   "heading": "Investor Aggregators, Right of First Refusal, and Partnership",
+   "native_category": "Threshold requirement",
+   "page_start": 15,
+   "page_end": 15,
+   "quote": "Investor Aggregators, Right of First Refusal, and Partnership"
+  },
+  {
+   "ord": 511,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.11",
+   "heading": "Smoke Free Requirement",
+   "native_category": "Threshold requirement",
+   "page_start": 15,
+   "page_end": 15,
+   "quote": "Smoke Free Requirement"
+  },
+  {
+   "ord": 512,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.12",
+   "heading": "Public Housing Waiting Lists",
+   "native_category": "Threshold requirement",
+   "page_start": 15,
+   "page_end": 15,
+   "quote": "Public Housing Waiting Lists"
+  },
+  {
+   "ord": 513,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.13",
+   "heading": "Projects Intended for Eventual Tenant Ownership",
+   "native_category": "Threshold requirement",
+   "page_start": 16,
+   "page_end": 16,
+   "quote": "Projects Intended for Eventual Tenant Ownership"
+  },
+  {
+   "ord": 514,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "109.06.14",
+   "heading": "Minimum Scoring Requirements",
+   "native_category": "Threshold requirement",
+   "page_start": 16,
+   "page_end": 16,
+   "quote": "Minimum Scoring Requirements"
+  }
+ ]
+}

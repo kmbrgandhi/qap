@@ -1,0 +1,80 @@
+{
+  "_comment": "Threshold requirements, Rhode Island 2026. Mandatory; carry no points. The QAP states five threshold criteria on p.27 and describes each in detail on pp.27-31. Page numbers are PDF page indices in the OCR'd copy.",
+  "match": {
+    "filename": "rhode-island-qap-lihtc-2026-ocr.pdf"
+  },
+  "extractor_version": "hand-2026-ri-thresholds-1",
+  "groups": [],
+  "criteria": [
+    {
+      "ord": 501,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "III.A.1",
+      "heading": "Development team capacity",
+      "native_category": "Threshold Criteria",
+      "page_start": 27,
+      "page_end": 29,
+      "quote": "The developer must have experience in the",
+      "note": "Developer, consultant, architect, management agent and contractor are assessed individually and collectively. Without satisfactory LIHTC experience the developer must joint venture with an experienced entity. Creditworthiness is reviewed against three years of audited financial statements."
+    },
+    {
+      "ord": 502,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "III.A.2",
+      "heading": "Financial feasibility",
+      "native_category": "Threshold Criteria",
+      "page_start": 27,
+      "page_end": 29,
+      "quote": "The development must demonstrate financially feasibility for at least 15 years",
+      "note": "Covers development costs, long-term operations and the overall capital stack. Sources must be demonstrably available within 9 months of reservation. Mixed-income deals need a municipal tax assessment agreement."
+    },
+    {
+      "ord": 503,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "III.A.3",
+      "heading": "Marketability",
+      "native_category": "Threshold Criteria",
+      "page_start": 27,
+      "page_end": 30,
+      "quote": "The development must have a reasonable likelihood of achieving sustainable",
+      "note": "Sustainable occupancy of 95% within 6 months of construction completion. Mixed-income proposals meeting the 20-at-50 or 40-at-60 set-asides require a third-party market study with an absorption schedule."
+    },
+    {
+      "ord": 504,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "III.A.4",
+      "heading": "Readiness to proceed",
+      "native_category": "Threshold Criteria",
+      "page_start": 27,
+      "page_end": 31,
+      "quote": "Construction must be reasonably likely to commence within 12 months of",
+      "note": "Construction within 12 months of preliminary commitment and complete within 30 months of firm commitment. Initial readiness is judged on approvals, reviews, site control, funding commitments and feasibility within 9 months of the reservation letter."
+    },
+    {
+      "ord": 505,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "III.A.5",
+      "heading": "Per-unit total development cost cap",
+      "native_category": "Threshold Criteria",
+      "page_start": 27,
+      "page_end": 27,
+      "quote": "The per unit TDC of the project does not exceed",
+      "note": "$500,000 per unit excluding capitalised reserves. Exceptions for documented extraordinary conditions. In a mixed preservation and new construction project each component must meet the cap separately."
+    }
+  ]
+}

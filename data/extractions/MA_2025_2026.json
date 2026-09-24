@@ -1,0 +1,266 @@
+{
+ "_comment": "Massachusetts 2025-2026 QAP (EOHLC). Two scoring stages: Section XI-A Fundamental Project Characteristics (100 points, gated) and Section XI-B Special Project Characteristics. Page numbers are PHYSICAL PDF pages; the printed page number runs two lower.",
+ "match": {
+  "filename": "2025-2026 QAP (002).pdf"
+ },
+ "extractor_version": "hand-2026-pilot-1",
+ "qap_updates": {
+  "stated_total": null,
+  "stated_total_page": 40,
+  "governs_round": 2025,
+  "notes": "TWO-STAGE SCORING. Section XI-A awards 100 points across five equally weighted components (20 each) and acts as a gate: an application must score at least 12 in EVERY component, and at least 60 overall, or it receives no allocation and is never evaluated for Section XI-B. Section XI-B then awards up to 85 further points. stated_total = 100 refers to XI-A only; the QAP states no combined maximum."
+ },
+ "groups": [],
+ "criteria": [
+  {
+   "ord": 1,
+   "track": "fundamental",
+   "kind": "competitive",
+   "native_category": "Fundamental Project Characteristics",
+   "section_label": "XI-A.A-1",
+   "heading": "Financial feasibility",
+   "points_max": 20,
+   "points_type": "formula",
+   "page_start": 42,
+   "page_end": 43,
+   "quote": "Financial Feasibility",
+   "note": "20 points available, 12-point minimum required. Falling below 12 in this component alone disqualifies the application entirely."
+  },
+  {
+   "ord": 2,
+   "track": "fundamental",
+   "kind": "competitive",
+   "native_category": "Fundamental Project Characteristics",
+   "section_label": "XI-A.A-2",
+   "heading": "Fundamental design characteristics",
+   "points_max": 20,
+   "points_type": "formula",
+   "page_start": 44,
+   "page_end": 47,
+   "quote": "Fundamental Design Characteristics",
+   "note": "20 points available, 12-point minimum required. Revised in this QAP to emphasise green, carbon-reducing and climate-resilient design, including continuous mechanical ventilation."
+  },
+  {
+   "ord": 3,
+   "track": "fundamental",
+   "kind": "competitive",
+   "native_category": "Fundamental Project Characteristics",
+   "section_label": "XI-A.A-3",
+   "heading": "Development team",
+   "points_max": 20,
+   "points_type": "formula",
+   "page_start": 48,
+   "page_end": 50,
+   "quote": "Development Team",
+   "note": "20 points available, 12-point minimum required."
+  },
+  {
+   "ord": 4,
+   "track": "fundamental",
+   "kind": "competitive",
+   "native_category": "Fundamental Project Characteristics",
+   "section_label": "XI-A.A-4",
+   "heading": "Marketability",
+   "points_max": 20,
+   "points_type": "formula",
+   "page_start": 51,
+   "page_end": 52,
+   "quote": "Marketability",
+   "note": "20 points available, 12-point minimum required."
+  },
+  {
+   "ord": 5,
+   "track": "fundamental",
+   "kind": "competitive",
+   "native_category": "Fundamental Project Characteristics",
+   "section_label": "XI-A.A-5",
+   "heading": "Readiness to proceed",
+   "points_max": 20,
+   "points_type": "formula",
+   "page_start": 53,
+   "page_end": 53,
+   "quote": "Readiness to Proceed",
+   "note": "20 points available, 12-point minimum required."
+  },
+  {
+   "ord": 10,
+   "track": "special",
+   "kind": "competitive",
+   "native_category": "Special Project Characteristics",
+   "section_label": "XI-B.B-1",
+   "heading": "Official local support",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 55,
+   "page_end": 56,
+   "quote": "Official Local Support"
+  },
+  {
+   "ord": 11,
+   "track": "special",
+   "kind": "competitive",
+   "native_category": "Special Project Characteristics",
+   "section_label": "XI-B.B-2",
+   "heading": "Contribution to a concerted community revitalization planning effort",
+   "points_max": 6,
+   "points_type": "fixed",
+   "page_start": 56,
+   "page_end": 57,
+   "quote": "Contribution to a Concerted Community Revitalization Planning Effort"
+  },
+  {
+   "ord": 12,
+   "track": "special",
+   "kind": "competitive",
+   "native_category": "Special Project Characteristics",
+   "section_label": "XI-B.B-3",
+   "heading": "MBE/WBE membership on the development team",
+   "points_max": 6,
+   "points_type": "fixed",
+   "page_start": 57,
+   "page_end": 58,
+   "quote": "MBE/WBE Membership on the Development Team"
+  },
+  {
+   "ord": 13,
+   "track": "special",
+   "kind": "competitive",
+   "native_category": "Special Project Characteristics",
+   "section_label": "XI-B.B-4",
+   "heading": "Non-profit sponsorship",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 58,
+   "page_end": 59,
+   "quote": "Non-Profit Sponsorship"
+  },
+  {
+   "ord": 14,
+   "track": "special",
+   "kind": "competitive",
+   "native_category": "Special Project Characteristics",
+   "section_label": "XI-B.B-5",
+   "heading": "Persons with disabilities or special populations as intended consumers",
+   "points_max": 8,
+   "points_type": "fixed",
+   "page_start": 59,
+   "page_end": 60,
+   "quote": "Persons with Disabilities or Special Populations as Intended Consumers",
+   "note": "Awarded to projects offering units for people with disabilities integrated into larger projects, at no more than 15% of total units."
+  },
+  {
+   "ord": 15,
+   "track": "special",
+   "kind": "competitive",
+   "native_category": "Special Project Characteristics",
+   "section_label": "XI-B.B-6",
+   "heading": "Location in an area of opportunity",
+   "points_max": 14,
+   "points_type": "fixed",
+   "page_start": 60,
+   "page_end": 62,
+   "quote": "Location in an Area of Opportunity",
+   "note": "The largest single item in Section XI-B."
+  },
+  {
+   "ord": 16,
+   "track": "special",
+   "kind": "competitive",
+   "native_category": "Special Project Characteristics",
+   "section_label": "XI-B.B-7",
+   "heading": "Rural LIHTC projects",
+   "points_max": 4,
+   "points_type": "fixed",
+   "page_start": 62,
+   "page_end": 63,
+   "quote": "Rural LIHTC Projects",
+   "note": "REVIEW: B-6 (area of opportunity) and B-7 (rural) are likely to be mutually exclusive in practice, but the QAP does not say so. Not grouped, pending review."
+  },
+  {
+   "ord": 17,
+   "track": "special",
+   "kind": "competitive",
+   "native_category": "Special Project Characteristics",
+   "section_label": "XI-B.B-8",
+   "heading": "Conformance with Section 42 Code preferences",
+   "points_max": 3,
+   "points_type": "fixed",
+   "page_start": 63,
+   "page_end": 64,
+   "quote": "Conformance with Section 42 Code Preferences"
+  },
+  {
+   "ord": 18,
+   "track": "special",
+   "kind": "competitive",
+   "native_category": "Special Project Characteristics",
+   "section_label": "XI-B.B-9",
+   "heading": "Green, carbon-reducing, sustainable and climate resilient design",
+   "points_max": 21,
+   "points_type": "tiered",
+   "page_start": 64,
+   "page_end": 66,
+   "quote": "Emphasis on Green, Carbon-Reducing, Sustainable, and Climate Resilient Design",
+   "tiers": [
+    {
+     "tier_label": "Clean energy systems, incl. on-site solar photovoltaic",
+     "points": 4
+    }
+   ],
+   "note": "Stated as '21 Maximum Additional Points' \u2014 the largest item in either MA scoring stage. Sub-components are spread across three pages; only the Clean Energy Systems sub-cap (4) was read cleanly, so the tier list is incomplete and the 21-point maximum is the reliable figure."
+  },
+  {
+   "ord": 19,
+   "track": "special",
+   "kind": "competitive",
+   "native_category": "Special Project Characteristics",
+   "section_label": "XI-B.B-10",
+   "heading": "Enhanced accessibility",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 66,
+   "page_end": 68,
+   "quote": "Enhanced Accessibility"
+  },
+  {
+   "ord": 20,
+   "track": "special",
+   "kind": "competitive",
+   "native_category": "Special Project Characteristics",
+   "section_label": "XI-B.B-11",
+   "heading": "Proximity to transit",
+   "points_max": 6,
+   "points_type": "fixed",
+   "page_start": 68,
+   "page_end": 68,
+   "quote": "Proximity to Transit"
+  },
+  {
+   "ord": 301,
+   "track": "fundamental",
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "XI-A",
+   "heading": "Minimum 12 points in every fundamental component, and at least 60 overall",
+   "page_start": 40,
+   "page_end": 40,
+   "quote": "must score at least 12 points in each of the",
+   "note": "A scored gate rather than a conventional threshold: an application scoring under 12 in any one component receives no allocation and is not evaluated for Section XI-B at all."
+  }
+ ],
+ "track_totals": [
+  {
+   "track": "fundamental",
+   "stated_total": 100,
+   "page": 40,
+   "note": "Section XI-A states 100 points across five components of 20 each."
+  },
+  {
+   "track": "special",
+   "stated_total": null,
+   "page": 54,
+   "note": "Section XI-B states no maximum; the eleven items sum to 85."
+  }
+ ]
+}

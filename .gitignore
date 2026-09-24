@@ -1,0 +1,25 @@
+# ---------------------------------------------------------------------------
+# QAP PDFs live in a SHARED DROP FOLDER, not in this repo.
+# Point QAP_PDF_DIR at your local mount of it in .env (see .env.example).
+# The corpus is described by data/manifest.csv, which IS committed.
+# ---------------------------------------------------------------------------
+*.pdf
+data/pdfs/
+
+# Per-machine config: the shared folder is at a different path for each of us
+.env
+
+# Build artefacts of the pipeline, reproducible from manifest + extractions
+data/qap.db
+data/*.db-journal
+data/*.db-wal
+data/export.json
+
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+~$*
+
+# Verification run output, rebuildable: python -m qapdb.verify_citations
+data/citation_check.json

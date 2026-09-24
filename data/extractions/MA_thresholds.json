@@ -1,0 +1,154 @@
+{
+ "_comment": "Threshold requirements, MA. Mandatory; carry no points.",
+ "match": {
+  "filename": "2025-2026 QAP (002).pdf"
+ },
+ "extractor_version": "hand-2026-thresholds-1",
+ "groups": [],
+ "criteria": [
+  {
+   "ord": 501,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.1",
+   "heading": "Conformance with Set-Aside Categories",
+   "native_category": "Threshold requirement",
+   "page_start": 33,
+   "page_end": 33,
+   "quote": "Conformance with Set-Aside Categories"
+  },
+  {
+   "ord": 502,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.2",
+   "heading": "Quality of Site",
+   "native_category": "Threshold requirement",
+   "page_start": 34,
+   "page_end": 34,
+   "quote": "Quality of Site"
+  },
+  {
+   "ord": 503,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.3",
+   "heading": "Evidence of Local Support or Local Processing",
+   "native_category": "Threshold requirement",
+   "page_start": 34,
+   "page_end": 34,
+   "quote": "Evidence of Local Support or Local Processing"
+  },
+  {
+   "ord": 504,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.4",
+   "heading": "Creditworthiness of Sponsor/Owner",
+   "native_category": "Threshold requirement",
+   "page_start": 35,
+   "page_end": 35,
+   "quote": "Creditworthiness of Sponsor/Owner"
+  },
+  {
+   "ord": 505,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.5",
+   "heading": "Evidence of Site Control",
+   "native_category": "Threshold requirement",
+   "page_start": 36,
+   "page_end": 36,
+   "quote": "Evidence of Site Control"
+  },
+  {
+   "ord": 506,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.6",
+   "heading": "Identification of All Financing Sources",
+   "native_category": "Threshold requirement",
+   "page_start": 36,
+   "page_end": 36,
+   "quote": "Identification of All Financing Sources"
+  },
+  {
+   "ord": 507,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.7",
+   "heading": "Status of Compliance Monitoring of Other Tax Credit Projects",
+   "native_category": "Threshold requirement",
+   "page_start": 33,
+   "page_end": 33,
+   "quote": "Status of Compliance Monitoring of Other Tax Credit Projects"
+  },
+  {
+   "ord": 508,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.8",
+   "heading": "Good Standing with Respect to Other State Housing Programs",
+   "native_category": "Threshold requirement",
+   "page_start": 33,
+   "page_end": 33,
+   "quote": "Good Standing with Respect to Other State Housing Programs"
+  },
+  {
+   "ord": 509,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.9",
+   "heading": "Commitment to a Thirty-Year Term of Affordability",
+   "native_category": "Threshold requirement",
+   "page_start": 37,
+   "page_end": 37,
+   "quote": "Commitment to a Thirty-Year Term of Affordability"
+  },
+  {
+   "ord": 510,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.10",
+   "heading": "Tenant Supportive Services",
+   "native_category": "Threshold requirement",
+   "page_start": 37,
+   "page_end": 37,
+   "quote": "Tenant Supportive Services"
+  },
+  {
+   "ord": 511,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.11",
+   "heading": "Inclusion of Units for Extremely Low-Income Persons or Families",
+   "native_category": "Threshold requirement",
+   "page_start": 33,
+   "page_end": 33,
+   "quote": "Inclusion of Units for Extremely Low-Income Persons or Families"
+  },
+  {
+   "ord": 512,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "X.12",
+   "heading": "Fair Housing Narrative",
+   "native_category": "Threshold requirement",
+   "page_start": 38,
+   "page_end": 38,
+   "quote": "Fair Housing Narrative"
+  }
+ ]
+}

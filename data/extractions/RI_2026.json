@@ -1,0 +1,547 @@
+{
+  "_comment": "Rhode Island 2026 QAP, RIHousing. Competitive scoring criteria. The source PDF is a scan with no text layer; this extraction reads the OCR'd copy, and page numbers are PDF page indices in that file. Where OCR mangled a point value, the value was read off the rendered page image and cross-checked against the Scoring/Point Allocation Summary table on p.32; those criteria carry a note saying so.",
+  "match": {
+    "filename": "rhode-island-qap-lihtc-2026-ocr.pdf"
+  },
+  "extractor_version": "hand-2026-ri-1",
+  "qap_updates": {
+    "stated_total": 147,
+    "stated_total_page": 32,
+    "agency": "RIHousing"
+  },
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": 147,
+      "page": 32,
+      "note": "The Scoring/Point Allocation Summary table on p.32 totals 147 points: Financing 60, Incomes/Populations Served 44, Promoting RI Workforce/Permitting 16, Community 13, Sustainability 14. Up to 20 negative points may also be assessed. Note the QAP contradicts itself: the section header on p.33 reads 'FINANCING POINTS (Up to 66 points)' while the summary table and the itemised maxima (25+20+5+10) both give 60."
+    }
+  ],
+  "groups": [
+    {
+      "key": "ri_community_a",
+      "label": "Community category (Housing 2030)",
+      "rule": "max_one",
+      "group_cap": 10,
+      "source_quote": "applicants are only eligible for one category and a maximum of 10",
+      "page_start": 39,
+      "note": "The three Housing 2030 community categories are alternatives worth 10, 7 and 5 points. Only one may be claimed, capped at 10."
+    }
+  ],
+  "criteria": [
+    {
+      "ord": 1,
+      "kind": "competitive",
+      "native_category": "Financing",
+      "section_label": "III.B.Fin.A",
+      "heading": "TDC per residential unit",
+      "points_max": 25,
+      "points_type": "formula",
+      "page_start": 33,
+      "page_end": 34,
+      "quote": "TDC per residential unit based on construction type as defined",
+      "note": "Scored on a Weighted Average TDC, ([2 * TDC/unit] + [TDC/# of bedrooms]) / 3, in $5,000 increments against a maximum per building type published in the Developer's Handbook rather than in the QAP. Extraordinary conditions (pp.34-35) may be deducted before scoring."
+    },
+    {
+      "ord": 2,
+      "kind": "competitive",
+      "native_category": "Financing",
+      "section_label": "III.B.Fin.B",
+      "heading": "LIHTC efficiency - credits per residential unit",
+      "points_max": 20,
+      "points_type": "formula",
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "Applications with more than",
+      "note": "Point value confirmed from the page image ('B. Up to 20 points') and the p.32 summary ('LIHTC Efficiency 20'); OCR dropped the label. Applications above $30,000 per credit per unit score 0, increasing by 1 point per $1,000 below that maximum."
+    },
+    {
+      "ord": 3,
+      "kind": "competitive",
+      "native_category": "Financing",
+      "section_label": "III.B.Fin.C",
+      "heading": "Leveraging committed state and federal rental and operating subsidy",
+      "points_max": 5,
+      "points_type": "tiered",
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "for leveraging committed state and federal funds from rental",
+      "tiers": [
+        {
+          "tier_label": "20% or more units in the development",
+          "points": 5
+        },
+        {
+          "tier_label": "10-19% of units in the development",
+          "points": 3
+        },
+        {
+          "tier_label": "up to 9% of units in the development",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "ord": 4,
+      "kind": "competitive",
+      "native_category": "Financing",
+      "section_label": "III.B.Fin.D",
+      "heading": "Leveraging hard debt or other competitive housing resources",
+      "points_max": 10,
+      "points_type": "tiered",
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "Less than $20,000 per unit will receive 0",
+      "tiers": [
+        {
+          "tier_label": ">=$60,000 per unit",
+          "points": 10
+        },
+        {
+          "tier_label": ">=$50,000 per unit",
+          "points": 8
+        },
+        {
+          "tier_label": ">=$40,000 per unit",
+          "points": 6
+        },
+        {
+          "tier_label": ">=$30,000 per unit",
+          "points": 4
+        },
+        {
+          "tier_label": ">=$20,000 per unit",
+          "points": 2
+        }
+      ],
+      "note": "Examples given are USDA funding, municipal, federal and/or state historic credits, FHLB and private grants."
+    },
+    {
+      "ord": 5,
+      "kind": "competitive",
+      "native_category": "Incomes / Populations Served",
+      "section_label": "III.B.Inc.A",
+      "heading": "Creation of new three-bedroom or larger units",
+      "points_max": 6,
+      "points_type": "tiered",
+      "page_start": 35,
+      "page_end": 36,
+      "quote": "The creation of new three bedroom or larger units",
+      "tiers": [
+        {
+          "tier_label": "30% of overall unit count",
+          "points": 6
+        },
+        {
+          "tier_label": "20% of overall unit count",
+          "points": 4
+        },
+        {
+          "tier_label": "10% of overall unit count",
+          "points": 2
+        }
+      ],
+      "note": "Preservation of existing larger units does not qualify. No points below 10%."
+    },
+    {
+      "ord": 6,
+      "kind": "competitive",
+      "native_category": "Incomes / Populations Served",
+      "section_label": "III.B.Inc.B",
+      "heading": "Serving households at or below 30% AMI, homeless, or special needs",
+      "points_max": 25,
+      "points_type": "tiered",
+      "page_start": 36,
+      "page_end": 37,
+      "quote": "for effectively serving people",
+      "tiers": [
+        {
+          "tier_label": "With supportive services: 21% or more of units",
+          "points": 25
+        },
+        {
+          "tier_label": "With supportive services: 16-20% of units",
+          "points": 20
+        },
+        {
+          "tier_label": "With supportive services: 11-15% of units",
+          "points": 15
+        },
+        {
+          "tier_label": "With supportive services: up to 10% of units",
+          "points": 10
+        },
+        {
+          "tier_label": "30% AMI units without supportive services: 21% or more of units",
+          "points": 18
+        },
+        {
+          "tier_label": "30% AMI units without supportive services: 16-20% of units",
+          "points": 15
+        },
+        {
+          "tier_label": "30% AMI units without supportive services: 11-15% of units",
+          "points": 12
+        },
+        {
+          "tier_label": "30% AMI units without supportive services: up to 10% of units",
+          "points": 9
+        }
+      ],
+      "note": "Two alternative ladders, not additive: with a service provider partnership (25/20/15/10) or 30% AMI units without supportive services (18/15/12/9). An elderly population alone does not qualify as special needs. A service plan and MOU approved by RIHousing are required for the services ladder."
+    },
+    {
+      "ord": 7,
+      "kind": "competitive",
+      "native_category": "Incomes / Populations Served",
+      "section_label": "III.B.Inc.C",
+      "heading": "Additional accessible units",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 37,
+      "page_end": 37,
+      "quote": "for making no less than 10% of the newly created units accessible",
+      "note": "Above the stated minimum of 5% of units (at least one) under UFAS."
+    },
+    {
+      "ord": 8,
+      "kind": "competitive",
+      "native_category": "Incomes / Populations Served",
+      "section_label": "III.B.Inc.D",
+      "heading": "Mixed income - units above 80% AMI",
+      "points_max": 5,
+      "points_type": "tiered",
+      "page_start": 37,
+      "page_end": 37,
+      "quote": "A development that proposes to have a range of income levels",
+      "tiers": [
+        {
+          "tier_label": "More than 20% of units above 80% AMI",
+          "points": 5
+        },
+        {
+          "tier_label": "Up to 20% of units above 80% AMI",
+          "points": 3
+        },
+        {
+          "tier_label": "15% of units above 80% AMI",
+          "points": 2
+        }
+      ],
+      "note": "Tier values read from the rendered page image; OCR garbled the two lower rows. Requires at least 15% of units above 80% AMI and a demonstration that those units need no capital subsidy."
+    },
+    {
+      "ord": 9,
+      "kind": "competitive",
+      "native_category": "Incomes / Populations Served",
+      "section_label": "III.B.Inc.E",
+      "heading": "Resident services coordination",
+      "points_max": 6,
+      "points_type": "tiered",
+      "page_start": 37,
+      "page_end": 37,
+      "quote": "Resident Services",
+      "tiers": [
+        {
+          "tier_label": "40 hour per week Resident Services Coordinator or equivalent MOU",
+          "points": 6
+        },
+        {
+          "tier_label": "20 hour per week Resident Services Coordinator or equivalent MOU",
+          "points": 4
+        },
+        {
+          "tier_label": "10 hour per week Resident Services Coordinator or equivalent MOU",
+          "points": 2
+        }
+      ],
+      "note": "Cost must be in the operating budget or evidenced in an MOU with a third-party provider."
+    },
+    {
+      "ord": 10,
+      "kind": "competitive",
+      "native_category": "Promoting RI Workforce / Permitting",
+      "section_label": "III.B.Work.A",
+      "heading": "Use of Rhode Island based construction firms",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 38,
+      "page_end": 38,
+      "quote": "for utilizing Rhode Island based firms",
+      "note": "Awarded on a certification in the application that up to 50% of sub-contractor contracts go to Rhode Island based construction firms."
+    },
+    {
+      "ord": 11,
+      "kind": "competitive",
+      "native_category": "Promoting RI Workforce / Permitting",
+      "section_label": "III.B.Work.B",
+      "heading": "Certified minority or women-owned business enterprise on the team",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 38,
+      "page_end": 38,
+      "quote": "for including a certified Minority or Women-owned Business Enterprise",
+      "note": "As developer or minimum 50% co-developer, architect, general contractor or property manager."
+    },
+    {
+      "ord": 12,
+      "kind": "competitive",
+      "native_category": "Promoting RI Workforce / Permitting",
+      "section_label": "III.B.Work.C",
+      "heading": "Rhode Island community-based nonprofit developer",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 38,
+      "page_end": 38,
+      "quote": "Developer is",
+      "note": "Point value from the p.32 summary ('RI Nonprofit developers 3'); OCR rendered the label as 'Bpoints'. Requires a demonstrable track record of community engagement, RI incorporation, 501(c)(3) status and neighbourhood operating history; may be a joint venture holding at least 50% of the general partner interest."
+    },
+    {
+      "ord": 13,
+      "kind": "competitive",
+      "native_category": "Promoting RI Workforce / Permitting",
+      "section_label": "III.B.Work.D",
+      "heading": "Permitting and design completeness at application",
+      "points_max": 8,
+      "points_type": "tiered",
+      "page_start": 38,
+      "page_end": 39,
+      "quote": "development that at the time of application has all applicable",
+      "tiers": [
+        {
+          "tier_label": "Fully permitted, specs 90% complete, architect letter, signed schedule of values",
+          "points": 8
+        },
+        {
+          "tier_label": "Master, preliminary and final plan approval or by-right, plus 50% plans and specs",
+          "points": 6
+        },
+        {
+          "tier_label": "Master, preliminary and final plan approval or by-right, schematic plans only",
+          "points": 4
+        }
+      ],
+      "note": "Points prorated based on approvals in place at time of application. Covers municipal planning, zoning and fire code approvals plus DEM and CRMC."
+    },
+    {
+      "ord": 14,
+      "kind": "competitive",
+      "native_category": "Community",
+      "section_label": "III.B.Comm.A",
+      "heading": "Community category under the State's Housing 2030 plan",
+      "points_max": 10,
+      "points_type": "tiered",
+      "page_start": 39,
+      "page_end": 39,
+      "group": "ri_community_a",
+      "quote": "A proposed development which is located within a community",
+      "tiers": [
+        {
+          "tier_label": "Community with less than 10% affordable housing, Modest or Strategic Growth",
+          "points": 10
+        },
+        {
+          "tier_label": "Community with more than 10% affordable housing, Modest or Strategic Growth",
+          "points": 7
+        },
+        {
+          "tier_label": "Continued Growth community with access to public water",
+          "points": 5
+        }
+      ],
+      "note": "Mutually exclusive: the QAP states applicants are eligible for one category and a maximum of 10 points."
+    },
+    {
+      "ord": 15,
+      "kind": "competitive",
+      "native_category": "Community",
+      "section_label": "III.B.Comm.1",
+      "heading": "Qualified census tract or concerted community revitalization plan",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 39,
+      "page_end": 39,
+      "quote": "A proposed development is in a QCT and/or there is a Concerted",
+      "note": "Judged against the criteria in the Federal Criteria section of the Allocation Plan."
+    },
+    {
+      "ord": 16,
+      "kind": "competitive",
+      "native_category": "Community",
+      "section_label": "III.B.Comm.2",
+      "heading": "High school graduation rate of the community",
+      "points_max": 2,
+      "points_type": "tiered",
+      "page_start": 39,
+      "page_end": 40,
+      "quote": "The statewide average HS graduation is",
+      "tiers": [
+        {
+          "tier_label": "HS graduation rate at or above 92%",
+          "points": 2
+        },
+        {
+          "tier_label": "HS graduation rate between 84% and 91.99%",
+          "points": 1
+        },
+        {
+          "tier_label": "HS graduation rate below 84%",
+          "points": 0
+        }
+      ],
+      "note": "Tier values read from the rendered page image: OCR rendered the statewide average as 64% (the page reads 84%) and the lowest tier as 9 points (the page reads 0). Referenced to the 2024 Rhode Island KIDS COUNT Factbook, p.160."
+    },
+    {
+      "ord": 17,
+      "kind": "competitive",
+      "native_category": "Sustainability",
+      "section_label": "III.B.Sust.A",
+      "heading": "Energy Star and RI Energy RNC Tier II standards",
+      "points_max": 3,
+      "points_type": "tiered",
+      "page_start": 40,
+      "page_end": 40,
+      "quote": "may be awarded to new construction that achieve",
+      "tiers": [
+        {
+          "tier_label": "New construction meeting RNC Tier II and Energy Star standards",
+          "points": 3
+        },
+        {
+          "tier_label": "Substantial rehabilitation demonstrating RNC Tier II standards",
+          "points": 3
+        },
+        {
+          "tier_label": "Historic mill rehabilitation, Adaptive Reuse Program Level 2",
+          "points": 2
+        },
+        {
+          "tier_label": "Historic mill rehabilitation, Adaptive Reuse Program Level 1",
+          "points": 1
+        }
+      ],
+      "note": "Three alternative routes, not additive: new construction, substantial rehabilitation, or historic mill adaptive reuse. Standards must be itemised or no points are awarded."
+    },
+    {
+      "ord": 18,
+      "kind": "competitive",
+      "native_category": "Sustainability",
+      "section_label": "III.B.Sust.B",
+      "heading": "All-electric systems and appliances",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 41,
+      "page_end": 41,
+      "quote": "may be awarded to projects that are 100% electric",
+      "note": "Must also meet the energy efficiency requirements of the Design and Construction Standards."
+    },
+    {
+      "ord": 19,
+      "kind": "competitive",
+      "native_category": "Sustainability",
+      "section_label": "III.B.Sust.C",
+      "heading": "Net Zero or Passive House certification",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 41,
+      "page_end": 41,
+      "quote": "additional points may be awarded to projects that achieve RNC",
+      "note": "Additional to the Tier II points in A; requires RNC Tier II and current Net Zero or Passive House certification standards."
+    },
+    {
+      "ord": 20,
+      "kind": "competitive",
+      "native_category": "Sustainability",
+      "section_label": "III.B.Sust.D",
+      "heading": "On-site solar or other renewables",
+      "points_max": 3,
+      "points_type": "tiered",
+      "page_start": 41,
+      "page_end": 41,
+      "quote": "developments that incorporate",
+      "tiers": [
+        {
+          "tier_label": "System sized to create a net-zero development",
+          "points": 3
+        },
+        {
+          "tier_label": "Covers at least 100% of annual common area and site electric load",
+          "points": 2
+        },
+        {
+          "tier_label": "Covers at least 50% of annual common area and site electric load",
+          "points": 1
+        }
+      ],
+      "note": "Coverage must be calculated by a qualified engineer. Includes net metering as defined in R.I.G.L. Chapter 39-26-5."
+    },
+    {
+      "ord": 21,
+      "kind": "competitive",
+      "native_category": "Sustainability",
+      "section_label": "III.B.Sust.E",
+      "heading": "Avoiding destruction of open space",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 41,
+      "page_end": 41,
+      "quote": "points for a development that does not involve destruction of fields",
+      "note": "Or a cluster development conserving more than 50% of the land."
+    },
+    {
+      "ord": 22,
+      "kind": "competitive",
+      "native_category": "Negative Points",
+      "section_label": "III.B.Neg.1",
+      "heading": "Higher TDC per unit at closing of a previous LIHTC transaction",
+      "points_max": -5,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "for having a higher TDC per unit at the closing of the",
+      "note": "Waived if the developer secured additional non-RIHousing and non-State gap funding to offset the cost."
+    },
+    {
+      "ord": 23,
+      "kind": "competitive",
+      "native_category": "Negative Points",
+      "section_label": "III.B.Neg.2",
+      "heading": "Higher LIHTCs per unit at closing of a previous LIHTC transaction",
+      "points_max": -5,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "for higher LIHTCs per unit at the closing of the developer's"
+    },
+    {
+      "ord": 24,
+      "kind": "competitive",
+      "native_category": "Negative Points",
+      "section_label": "III.B.Neg.3",
+      "heading": "Previous transaction not closed within 12 months of preliminary approval",
+      "points_max": -5,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "for developer not closing their previous LIHTC transaction",
+      "note": "Exceptions for circumstances outside the developer's control, in RIHousing's sole determination."
+    },
+    {
+      "ord": 25,
+      "kind": "competitive",
+      "native_category": "Negative Points",
+      "section_label": "III.B.Neg.4",
+      "heading": "Incentives scored but dropped from the final scope of work",
+      "points_max": -5,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "who closes a previously approved",
+      "note": "An applicant subject to a negative assessment must still meet threshold and score at or above the lowest scoring application in the round."
+    }
+  ]
+}

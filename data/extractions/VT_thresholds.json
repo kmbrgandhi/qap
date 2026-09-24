@@ -1,0 +1,70 @@
+{
+ "_comment": "Threshold requirements, VT. Mandatory; carry no points.",
+ "match": {
+  "filename": "vermont-draft-qap-6-23-2026-ocr.pdf"
+ },
+ "extractor_version": "hand-2026-thresholds-1",
+ "groups": [],
+ "criteria": [
+  {
+   "ord": 501,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "3.1",
+   "heading": "Compliance with Application Submission Requirements",
+   "native_category": "Threshold requirement",
+   "page_start": 4,
+   "page_end": 4,
+   "quote": "Compliance with Application Submission Requirements"
+  },
+  {
+   "ord": 502,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "3.2",
+   "heading": "Readiness to Proceed",
+   "native_category": "Threshold requirement",
+   "page_start": 4,
+   "page_end": 4,
+   "quote": "Readiness to Proceed"
+  },
+  {
+   "ord": 503,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "3.3",
+   "heading": "Financial Feasibility and Cost Reasonableness",
+   "native_category": "Threshold requirement",
+   "page_start": 5,
+   "page_end": 5,
+   "quote": "Financial Feasibility and Cost Reasonableness"
+  },
+  {
+   "ord": 504,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "3.4",
+   "heading": "Development Team Capacity",
+   "native_category": "Threshold requirement",
+   "page_start": 6,
+   "page_end": 6,
+   "quote": "Development Team Capacity"
+  },
+  {
+   "ord": 505,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "3.5",
+   "heading": "Housing with Services",
+   "native_category": "Threshold requirement",
+   "page_start": 7,
+   "page_end": 7,
+   "quote": "Housing with Services"
+  }
+ ]
+}

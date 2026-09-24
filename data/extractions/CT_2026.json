@@ -1,0 +1,773 @@
+{
+ "_comment": "Connecticut 2026 QAP (CHFA). Hand extraction, pilot. Page numbers are PHYSICAL PDF pages (1-indexed), which is what the review viewer needs; the printed page number is one lower throughout this document.",
+ "match": {
+  "filename": "FINAL_2026_QAP.pdf"
+ },
+ "extractor_version": "hand-2026-pilot-1",
+ "qap_updates": {
+  "stated_total": null,
+  "stated_total_page": 14,
+  "adopted_date": "2025-09-25",
+  "effective_date": "2025-10-01",
+  "governs_round": 2026,
+  "notes": "Two parallel tracks. Preservation Classification is ranked on nine ordered priorities and carries NO points; New Construction Classification is scored to 100 points. stated_total applies to the new_construction track only."
+ },
+ "groups": [],
+ "criteria": [
+  {
+   "ord": 1,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Rental Affordability",
+   "section_label": "III.H.1.a",
+   "heading": "Supportive Housing Units",
+   "points_max": 9,
+   "points_type": "tiered",
+   "page_start": 16,
+   "page_end": 16,
+   "quote": "Up to 9 Points may be awarded in this category",
+   "tiers": [
+    {
+     "tier_label": "\u2265 10% CAN Referral",
+     "points": 7
+    },
+    {
+     "tier_label": "\u2265 10% State Referral",
+     "points": 5
+    },
+    {
+     "tier_label": "\u2265 5% Moving-On Households",
+     "points": 2
+    }
+   ],
+   "note": "Tier values sum to 14 but the category is explicitly capped at 9. CAN and State referral are alternatives (both keyed to \u226510% referral); Moving-On is additive, giving 7+2=9."
+  },
+  {
+   "ord": 2,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Rental Affordability",
+   "section_label": "III.H.1.b",
+   "heading": "Extremely Low-Income (ELI) Households",
+   "points_max": 8,
+   "points_type": "tiered",
+   "page_start": 16,
+   "page_end": 16,
+   "quote": "Extremely Low-Income (ELI) Households",
+   "tiers": [
+    {
+     "tier_label": "\u2265 25%",
+     "points": 8
+    },
+    {
+     "tier_label": "\u2265 20% and < 25%",
+     "points": 5
+    },
+    {
+     "tier_label": "\u2265 15% and < 20%",
+     "points": 3
+    },
+    {
+     "tier_label": "\u2265 10% and < 15%",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "ord": 3,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Rental Affordability",
+   "section_label": "III.H.1.c",
+   "heading": "Very Low-Income (VLI) Households",
+   "points_max": 7,
+   "points_type": "tiered",
+   "page_start": 17,
+   "page_end": 17,
+   "quote": "Very Low-Income (VLI) Households",
+   "tiers": [
+    {
+     "tier_label": "\u2265 40%",
+     "points": 7
+    },
+    {
+     "tier_label": "\u2265 30% and < 40%",
+     "points": 4
+    },
+    {
+     "tier_label": "Over 20% and < 30%",
+     "points": 3
+    }
+   ]
+  },
+  {
+   "ord": 4,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Rental Affordability",
+   "section_label": "III.H.1.d",
+   "heading": "Mixed-Income Housing",
+   "points_max": 6,
+   "points_type": "tiered",
+   "page_start": 17,
+   "page_end": 17,
+   "quote": "Mixed-Income Housing",
+   "tiers": [
+    {
+     "tier_label": "\u2265 20% non-qualified units",
+     "points": 6
+    },
+    {
+     "tier_label": "\u2265 10% and < 20%",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "ord": 5,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Rental Affordability",
+   "section_label": "III.H.1.e",
+   "heading": "Existing Phased Developments",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 17,
+   "page_end": 17,
+   "quote": "Existing Phased Developments"
+  },
+  {
+   "ord": 6,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Rental Affordability",
+   "section_label": "III.H.1.f",
+   "heading": "On-Site Resident Services Coordinator & Clinical Partnership",
+   "points_max": 3,
+   "points_type": "tiered",
+   "page_start": 17,
+   "page_end": 18,
+   "quote": "A maximum award of 3 Points",
+   "tiers": [
+    {
+     "tier_label": "Full-Time Credentialed",
+     "points": 2
+    },
+    {
+     "tier_label": "Part-Time",
+     "points": 1
+    },
+    {
+     "tier_label": "Clinical Partnership",
+     "points": 1
+    }
+   ],
+   "note": "AMBIGUITY FOR REVIEW: the text says a maximum award is earned 'by virtue of qualifying under either subsection (i) or subsection (iii)', then states points are not awarded for simultaneous eligibility in '(i) and (ii)'. The (i)/(iii) reference appears to be a drafting error for (i)/(ii). Max of 3 is only reachable as Full-Time (2) + Clinical Partnership (1)."
+  },
+  {
+   "ord": 7,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Financial Efficiency & Sustainability",
+   "section_label": "III.H.2.a",
+   "heading": "Cost Effectiveness & Hard Costs",
+   "points_max": 4,
+   "points_type": "tiered",
+   "page_start": 18,
+   "page_end": 18,
+   "quote": "Cost Effectiveness & Hard Costs",
+   "tiers": [
+    {
+     "tier_label": "Between +/- 5%",
+     "points": 4
+    },
+    {
+     "tier_label": "Between > 5% and 10% or between < -5% and -10%",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "ord": 8,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Financial Efficiency & Sustainability",
+   "section_label": "III.H.2.b",
+   "heading": "Credits Per Qualified Bedroom",
+   "points_max": 5,
+   "points_type": "tiered",
+   "page_start": 18,
+   "page_end": 19,
+   "quote": "Credits Per Qualified Bedroom",
+   "tiers": [
+    {
+     "tier_label": "Lowest credits per qualified bedroom",
+     "points": 5
+    },
+    {
+     "tier_label": "Second lowest",
+     "points": 4
+    },
+    {
+     "tier_label": "Third lowest",
+     "points": 3
+    },
+    {
+     "tier_label": "Fourth lowest",
+     "points": 2
+    },
+    {
+     "tier_label": "Fifth lowest",
+     "points": 1
+    }
+   ],
+   "note": "Rank-ordered across applicants; no more than five developments receive points."
+  },
+  {
+   "ord": 9,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Financial Efficiency & Sustainability",
+   "section_label": "III.H.2.c",
+   "heading": "Credit Equity Less than 50% of Total Uses",
+   "points_max": 3,
+   "points_type": "fixed",
+   "page_start": 19,
+   "page_end": 19,
+   "quote": "Credit Equity Less than 50% of Total Uses"
+  },
+  {
+   "ord": 10,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Financial Efficiency & Sustainability",
+   "section_label": "III.H.2.d",
+   "heading": "Other Permanent Funding Sources",
+   "points_max": 3,
+   "points_type": "fixed",
+   "page_start": 19,
+   "page_end": 19,
+   "quote": "Other Permanent Funding Sources"
+  },
+  {
+   "ord": 11,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Financial Efficiency & Sustainability",
+   "section_label": "III.H.2.e",
+   "heading": "Sustainable Design",
+   "points_max": 9,
+   "points_type": "tiered",
+   "page_start": 19,
+   "page_end": 20,
+   "quote": "Sustainable Design Measures",
+   "tiers": [
+    {
+     "tier_label": "Energy Conservation Tier 1",
+     "points": 2
+    },
+    {
+     "tier_label": "Energy Conservation Tier 2",
+     "points": 3
+    },
+    {
+     "tier_label": "Green Building Tier 1",
+     "points": 2
+    },
+    {
+     "tier_label": "Green Building Tier 2",
+     "points": 3
+    },
+    {
+     "tier_label": "Solar",
+     "points": 2
+    },
+    {
+     "tier_label": "Sustainable Development with Digital Literacy and Connectivity",
+     "points": 1
+    }
+   ],
+   "note": "Energy Conservation Tier 1/2 are alternatives, as are Green Building Tier 1/2. Max = 3 + 3 + 2 + 1 = 9. Detail is in Exhibit A-2, which is not extracted here."
+  },
+  {
+   "ord": 12,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Financial Efficiency & Sustainability",
+   "section_label": "III.H.2.f",
+   "heading": "Cost Effectiveness, Intermediary Costs",
+   "points_max": 4,
+   "points_type": "tiered",
+   "page_start": 20,
+   "page_end": 20,
+   "quote": "Cost Effectiveness, Intermediary Costs",
+   "tiers": [
+    {
+     "tier_label": "Lowest percentage",
+     "points": 4
+    },
+    {
+     "tier_label": "Second-lowest",
+     "points": 3
+    },
+    {
+     "tier_label": "Third lowest",
+     "points": 2
+    },
+    {
+     "tier_label": "Fourth-lowest",
+     "points": 1
+    }
+   ],
+   "note": "Rank-ordered across applicants; no more than four developments receive points."
+  },
+  {
+   "ord": 13,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Local Impact",
+   "section_label": "III.H.3.a",
+   "heading": "Access to Infrastructure",
+   "points_max": 3,
+   "points_type": "tiered",
+   "page_start": 20,
+   "page_end": 21,
+   "quote": "Access to Infrastructure",
+   "tiers": [
+    {
+     "tier_label": "3 criteria met",
+     "points": 3
+    },
+    {
+     "tier_label": "2 criteria met",
+     "points": 2
+    },
+    {
+     "tier_label": "1 criterion met",
+     "points": 1
+    }
+   ],
+   "note": "Criteria are sewer service, public water service, and local bus service seven days a week within one-half mile."
+  },
+  {
+   "ord": 14,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Local Impact",
+   "section_label": "III.H.3.b",
+   "heading": "Transit-Oriented Development",
+   "points_max": 4,
+   "points_type": "tiered",
+   "page_start": 21,
+   "page_end": 21,
+   "quote": "Transit-Oriented Development",
+   "tiers": [
+    {
+     "tier_label": "Proximity to transit (within one-half mile)",
+     "points": 2
+    },
+    {
+     "tier_label": "Private amenities within two miles",
+     "points": 1
+    },
+    {
+     "tier_label": "Public amenities within two miles",
+     "points": 1
+    }
+   ],
+   "note": "Sub-awards are additive: 2 + 1 + 1 = 4."
+  },
+  {
+   "ord": 15,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Local Impact",
+   "section_label": "III.H.3.c",
+   "heading": "Historic Place, Adaptive re-use, or Brownfield Development",
+   "points_max": 6,
+   "points_type": "tiered",
+   "page_start": 21,
+   "page_end": 22,
+   "quote": "Historic Place, Adaptive re-use, or Brownfield Development",
+   "tiers": [
+    {
+     "tier_label": "Funding offsetting renovation/remediation hard costs",
+     "points": 2
+    },
+    {
+     "tier_label": "Clean site delivered by a municipality",
+     "points": 2
+    },
+    {
+     "tier_label": "State or federal historic tax credit commitments",
+     "points": 2
+    }
+   ],
+   "note": "Sub-awards are additive: 2 + 2 + 2 = 6."
+  },
+  {
+   "ord": 16,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Local Impact",
+   "section_label": "III.H.3.d",
+   "heading": "Located in a Qualified Census Tract",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 22,
+   "page_end": 22,
+   "quote": "Located in a Qualified Census Tract"
+  },
+  {
+   "ord": 17,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Local Impact",
+   "section_label": "III.H.3.e",
+   "heading": "Concerted Community Revitalization Plan and/or Affordable Housing Plan",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 22,
+   "page_end": 23,
+   "quote": "Concerted Community Revitalization Plan and/or Affordable Housing Plan"
+  },
+  {
+   "ord": 18,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Housing Needs & Location",
+   "section_label": "III.H.4.a",
+   "heading": "Municipalities with Less Assisted and Deed-Restricted Housing",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "Municipalities with Less Assisted and Deed-Restricted Housing",
+   "note": "Municipality below 10% assisted and deed-restricted housing per CGS 8-30g(k)."
+  },
+  {
+   "ord": 19,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Housing Needs & Location",
+   "section_label": "III.H.4.b",
+   "heading": "Developments Located in Area of Housing Needs",
+   "points_max": 5,
+   "points_type": "formula",
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "Developments Located in Area of Housing Needs",
+   "tiers": [
+    {
+     "tier_label": "1 to 5 Points based on Housing Needs Index quintile",
+     "points": 5
+    }
+   ],
+   "note": "Scored on the Housing Needs Index in Exhibit B, which the Authority may amend at its discretion. Not a fixed schedule in the QAP text."
+  },
+  {
+   "ord": 20,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Qualifications & Experience",
+   "section_label": "III.H.5.a",
+   "heading": "Experience of the Sponsor/Applicant/General Partner",
+   "points_max": 5,
+   "points_type": "tiered",
+   "page_start": 23,
+   "page_end": 24,
+   "quote": "up to a\nmaximum of 5 Points combined",
+   "tiers": [
+    {
+     "tier_label": "Projects \u2265 6",
+     "points": 3
+    },
+    {
+     "tier_label": "Projects \u2265 4 and < 6",
+     "points": 2
+    },
+    {
+     "tier_label": "Projects \u2265 2 and < 4",
+     "points": 1
+    },
+    {
+     "tier_label": "Years \u2265 10",
+     "points": 2
+    },
+    {
+     "tier_label": "Years \u2265 5 and < 10",
+     "points": 1
+    }
+   ],
+   "note": "Two independent sub-scales, each pick-one: projects (max 3) plus years (max 2) = 5 combined."
+  },
+  {
+   "ord": 21,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Qualifications & Experience",
+   "section_label": "III.H.5.b",
+   "heading": "Developer/Sponsor Resources",
+   "points_max": 3,
+   "points_type": "tiered",
+   "page_start": 24,
+   "page_end": 24,
+   "quote": "Developer/Sponsor Resources",
+   "tiers": [
+    {
+     "tier_label": "\u2265 10% of total development resources",
+     "points": 3
+    },
+    {
+     "tier_label": "\u2265 5% and < 10%",
+     "points": 2
+    },
+    {
+     "tier_label": "< 5%",
+     "points": 0
+    }
+   ]
+  },
+  {
+   "ord": 22,
+   "track": "new_construction",
+   "kind": "competitive",
+   "native_category": "Qualifications & Experience",
+   "section_label": "III.H.5.c",
+   "heading": "Developer LIHTC Program Performance",
+   "points_max": 4,
+   "points_type": "tiered",
+   "page_start": 24,
+   "page_end": 25,
+   "quote": "Developer LIHTC Program Performance",
+   "tiers": [
+    {
+     "tier_label": "Initial construction closing within 8 months of award",
+     "points": 2
+    },
+    {
+     "tier_label": "Initial construction closing within 10 months of award",
+     "points": 1
+    },
+    {
+     "tier_label": "Final cost certification \u2264 5% of approved budget",
+     "points": 2
+    },
+    {
+     "tier_label": "Final cost certification > +5% and \u2264 +10%",
+     "points": 1
+    }
+   ],
+   "note": "Two independent pairs, each an explicit OR: closing timing (max 2) plus cost certification (max 2) = 4."
+  },
+  {
+   "ord": 101,
+   "track": "preservation",
+   "kind": "ranked_priority",
+   "rank_order": 1,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.D.1",
+   "heading": "Largest scope of rehabilitation work on an existing occupied affordable development",
+   "page_start": 13,
+   "page_end": 13,
+   "quote": "demonstrating the largest scope of rehabilitation work"
+  },
+  {
+   "ord": 102,
+   "track": "preservation",
+   "kind": "ranked_priority",
+   "rank_order": 2,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.D.2",
+   "heading": "At risk of losing affordability within five years",
+   "page_start": 13,
+   "page_end": 13,
+   "quote": "at risk of losing affordability through expiring restrictive"
+  },
+  {
+   "ord": 103,
+   "track": "preservation",
+   "kind": "ranked_priority",
+   "rank_order": 3,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.D.3",
+   "heading": "Seeking re-syndication of a prior allocation of Credits",
+   "page_start": 13,
+   "page_end": 13,
+   "quote": "seeking re-syndication of a prior allocation of Credits"
+  },
+  {
+   "ord": 104,
+   "track": "preservation",
+   "kind": "ranked_priority",
+   "rank_order": 4,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.D.4",
+   "heading": "Subsequent phase of an Existing Phased Development",
+   "page_start": 13,
+   "page_end": 13,
+   "quote": "Existing Phased Development"
+  },
+  {
+   "ord": 105,
+   "track": "preservation",
+   "kind": "ranked_priority",
+   "rank_order": 5,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.D.5",
+   "heading": "Demonstrated cost efficiencies",
+   "page_start": 13,
+   "page_end": 13,
+   "quote": "with demonstrated cost efficiencies"
+  },
+  {
+   "ord": 106,
+   "track": "preservation",
+   "kind": "ranked_priority",
+   "rank_order": 6,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.D.6",
+   "heading": "Applicant's demonstrated successful performance as developer/GP",
+   "page_start": 13,
+   "page_end": 13,
+   "quote": "demonstrated successful performance as developer"
+  },
+  {
+   "ord": 107,
+   "track": "preservation",
+   "kind": "ranked_priority",
+   "rank_order": 7,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.D.7",
+   "heading": "Municipality with less than 10% assisted and deed-restricted housing",
+   "page_start": 13,
+   "page_end": 13,
+   "quote": "less than 10% assisted"
+  },
+  {
+   "ord": 108,
+   "track": "preservation",
+   "kind": "ranked_priority",
+   "rank_order": 8,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.D.8",
+   "heading": "Greatest number of sustainability design measures (Exhibit A-1)",
+   "page_start": 13,
+   "page_end": 13,
+   "quote": "greatest number of sustainability design measures"
+  },
+  {
+   "ord": 109,
+   "track": "preservation",
+   "kind": "ranked_priority",
+   "rank_order": 9,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.D.9",
+   "heading": "Identified as needing rehabilitation for community revitalization purposes",
+   "page_start": 13,
+   "page_end": 13,
+   "quote": "needing rehabilitation for"
+  },
+  {
+   "ord": 201,
+   "track": "new_construction",
+   "kind": "tiebreaker",
+   "rank_order": 1,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.F.1",
+   "heading": "Highest total score in Rental Affordability",
+   "page_start": 15,
+   "page_end": 15,
+   "quote": "Highest total score in \u201cRental Affordability\u201d category"
+  },
+  {
+   "ord": 202,
+   "track": "new_construction",
+   "kind": "tiebreaker",
+   "rank_order": 2,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.F.2",
+   "heading": "Highest total score in Financial Efficiency & Sustainability",
+   "page_start": 15,
+   "page_end": 15,
+   "quote": "Highest total score in \u201cFinancial Efficiency & Sustainability\u201d category"
+  },
+  {
+   "ord": 203,
+   "track": "new_construction",
+   "kind": "tiebreaker",
+   "rank_order": 3,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.F.3",
+   "heading": "Highest total score in Housing Needs & Location",
+   "page_start": 15,
+   "page_end": 15,
+   "quote": "Highest total score in \u201cHousing Needs & Location\u201d category"
+  },
+  {
+   "ord": 204,
+   "track": "new_construction",
+   "kind": "tiebreaker",
+   "rank_order": 4,
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.F.4",
+   "heading": "Highest total score in Local Impact",
+   "page_start": 15,
+   "page_end": 15,
+   "quote": "Highest total score in \u201cLocal Impact\u201d category"
+  },
+  {
+   "ord": 301,
+   "track": null,
+   "kind": "set_aside",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.G",
+   "heading": "Qualified Non-Profit Set-Aside (10%)",
+   "page_start": 15,
+   "page_end": 16,
+   "quote": "10% non-profit set-aside of credit authority",
+   "note": "Discretionary ranking priority, not a point award. Set-asides shift credit allocation independently of the points system and must not be folded into point totals."
+  },
+  {
+   "ord": 302,
+   "track": null,
+   "kind": "set_aside",
+   "points_max": null,
+   "points_type": "none",
+   "section_label": "III.C",
+   "heading": "Preservation / New Construction credit split (25% / 75%)",
+   "page_start": 12,
+   "page_end": 12,
+   "quote": "25% of the awards or reservations",
+   "note": "Intent to award 25% of each annual Credit Ceiling to Preservation and 75% to New Construction. Structural allocation, not scoring."
+  }
+ ],
+ "track_totals": [
+  {
+   "track": "new_construction",
+   "stated_total": 100,
+   "page": 14,
+   "note": "Section III.E states a total of 100 Points for the New Construction Classification."
+  },
+  {
+   "track": "preservation",
+   "stated_total": null,
+   "page": 13,
+   "note": "The Preservation Classification is ranked on nine ordered priorities and awards no points."
+  }
+ ]
+}
