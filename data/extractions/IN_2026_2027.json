@@ -1,0 +1,1206 @@
+{
+  "_comment": "Indiana 2026-2027 QAP v2, IHCDA. Page numbers are PDF page indices and match the printed 'Page | N'. Section 6 Scoring Criteria, pp.56-93. The summary table on p.56 states section totals of 23 + 52 + 42 + 14 + 30 + 4 and 'Total Number of Points Possible 165'. Every section's items sum exactly to its stated total, and every item was read. BUT 165 IS NOT REACHABLE by any application, for two reasons the document itself states. (1) Explicit exclusions: 6.2(D) Vacant Structure, 6.2(E) Preservation (6 + a 3-point unit bonus) and 6.2(F) Infill each bar the others, so 6.2's 52 includes 12 points no project can combine; and 6.5(E) and 6.5(F) exclude each other by definition, so 6.5's 30 includes 3. (2) Scoring universes: 6.1(A), 6.1(B) and 6.3(B), worth 25, are not scored for 4%/bond applications, and 6.6(A) Bond Experience, worth 4, is scored only for them. Coded as a core track of what every competitive application faces (121) plus a nine_pct add-on (25) and a bond add-on (4), with the exclusions as groups. Hand-summed before loading: core 4 + 40 + 36 + 14 + 27 = 121; 9% ceiling 146; competitive 4% ceiling 125. The loader matched each. The stated 165 is recorded against the core track and reports MISMATCH by design; the track note decomposes the gap (121 + 25 + 4 + 12 + 3 = 165). The document's cross-references among 6.2(D)-(F) and from 6.3(H) are wrong by a letter or a section; they are recorded in the notes. Thresholds are in IN_thresholds.json.",
+  "match": {
+    "filename": "indiana-qap-2026-2027.pdf"
+  },
+  "extractor_version": "hand-2026-in-1",
+  "qap_updates": {
+    "stated_total": 165,
+    "stated_total_page": 56
+  },
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": 165,
+      "page": 56,
+      "note": "p.56: 'Total Number of Points Possible 165', the sum of six section totals. MISMATCH BY DESIGN, fully decomposed: the core track holds 121; the 9%-only categories add 25 (nine_pct track) and the 4%-only Bond Experience 4 (bond track); the Vacant/Preservation/Infill exclusion removes 12 and the Institute exclusion 3. 121 + 25 + 4 + 12 + 3 = 165. A 9% application can reach at most 146, and the 9% threshold is 85 (58% of 146). A competitive 4% application can reach 125, and its minimum is set case by case but never below 50."
+    },
+    {
+      "track": "nine_pct",
+      "stated_total": null,
+      "page": 56,
+      "note": "Add-on for 9% applications: 6.1(A) Rent Restrictions 16, 6.1(B) Income Restrictions 3, 6.3(B) Underserved Areas 6. Each says competitive 4%/bond applications are not scored in it."
+    },
+    {
+      "track": "bond",
+      "stated_total": null,
+      "page": 93,
+      "note": "Add-on for 4%/bond applications: 6.6(A) Indiana Bond Experience, 4 points."
+    }
+  ],
+  "groups": [
+    {
+      "key": "in_site_type",
+      "label": "Vacant structure, preservation or infill",
+      "rule": "capped_sum",
+      "group_cap": 9,
+      "source_quote": "Applications claiming points in this category are not eligible for points under scoring category",
+      "page_start": 64,
+      "note": "Each of 6.2(D), (E) and (F) bars the other two. The best route is Preservation 6 plus its unit bonus 3 = 9; Vacant and Infill are worth 6 alone. A cap at 9 over all four rows gives that ceiling (the bonus requires 6.2(E), which the cap cannot enforce but the arithmetic respects)."
+    },
+    {
+      "key": "in_institute",
+      "label": "Supportive housing: new integrated concept or prior Institute development",
+      "rule": "max_one",
+      "source_quote": "If the proposed development was developed through the Institute, the application is not eligible for this",
+      "page_start": 89,
+      "note": "6.5(E) is for developments not designed through the Institute; 6.5(F) is for developments that were. Exclusive by definition."
+    }
+  ],
+  "criteria": [
+    {
+      "track": "nine_pct",
+      "native_category": "Affordability",
+      "section_label": "6.1(A)",
+      "heading": "Rent restrictions",
+      "points_max": 16,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 56,
+      "page_end": 57,
+      "quote": "6.1(A): Rent Restrictions",
+      "tiers": [
+        {
+          "tier_label": "20% of LIHTC units at or below 30% AMI rent, 50% at or below 50%",
+          "points": 16
+        },
+        {
+          "tier_label": "20% at 30%, 40% at or below 50%",
+          "points": 12
+        },
+        {
+          "tier_label": "20% at 30%, 33% at or below 50%",
+          "points": 8
+        },
+        {
+          "tier_label": "Less than 20% at 30%, 33% at or below 50%",
+          "points": 4
+        }
+      ],
+      "note": "The table was read from the rendered p.57 because its text layer lists the columns out of order. 9% only: 'Competitive 4%/bond/AWHTC applications will not be scored in this category', hence the nine_pct track.",
+      "kind": "competitive",
+      "ord": 1
+    },
+    {
+      "track": "nine_pct",
+      "native_category": "Affordability",
+      "section_label": "6.1(B)",
+      "heading": "Income restrictions matching rent restrictions",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 57,
+      "page_end": 57,
+      "quote": "6.1(B): Income Restrictions",
+      "note": "Required of Average Income electors, so they get it automatically. 9% only.",
+      "kind": "competitive",
+      "ord": 2
+    },
+    {
+      "native_category": "Affordability",
+      "section_label": "6.1(C)",
+      "heading": "Additional years of affordability",
+      "points_max": 4,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 58,
+      "page_end": 58,
+      "quote": "6.1(C): Additional Years of Affordability",
+      "tiers": [
+        {
+          "tier_label": "35-year extended use period",
+          "points": 2
+        },
+        {
+          "tier_label": "40-year extended use period",
+          "points": 4
+        }
+      ],
+      "kind": "competitive",
+      "ord": 3
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(A)",
+      "heading": "Amenities",
+      "points_max": 6,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 58,
+      "page_end": 62,
+      "quote": "6.2(A): Amenities",
+      "tiers": [
+        {
+          "tier_label": "Chart 1 common area: ten or more, at least two per column",
+          "points": 2
+        },
+        {
+          "tier_label": "Chart 2 apartment unit: five or more, at least two per column",
+          "points": 2
+        },
+        {
+          "tier_label": "Chart 3 safety and security: three or more, at least one per column",
+          "points": 2
+        }
+      ],
+      "note": "The three charts (pp.59-62) list the qualifying amenities column by column. Amenities required by code earn nothing.",
+      "kind": "competitive",
+      "ord": 4
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(B)",
+      "heading": "Accessible or adaptable units",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 62,
+      "page_end": 63,
+      "quote": "6.2(B): Accessible or Adaptable Units",
+      "tiers": [
+        {
+          "tier_label": "Above threshold, lowest band for the project type",
+          "points": 1
+        },
+        {
+          "tier_label": "Middle band",
+          "points": 3
+        },
+        {
+          "tier_label": "Top band (e.g. 15% for new construction; 100% for age-restricted or supportive new construction)",
+          "points": 5
+        }
+      ],
+      "note": "Bands differ by project type: non-age-restricted rehab 7/8/10%, new construction 8/11/15%; age-restricted or supportive adaptive reuse without elevator 8/11/15%, rehab 11/13/15%, and new construction 5 points only at 100%. Developments of 16 or fewer units need at least two such units.",
+      "kind": "competitive",
+      "ord": 5
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(C)",
+      "heading": "Universal design features",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 63,
+      "page_end": 64,
+      "quote": "6.2(C): Universal Design Features",
+      "tiers": [
+        {
+          "tier_label": "8 features from each universal design column",
+          "points": 3
+        },
+        {
+          "tier_label": "9 from each",
+          "points": 4
+        },
+        {
+          "tier_label": "10 from each",
+          "points": 5
+        }
+      ],
+      "kind": "competitive",
+      "ord": 6
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(D)",
+      "heading": "Redevelopment of vacant structure",
+      "points_max": 6,
+      "points_type": "fixed",
+      "group": "in_site_type",
+      "page_start": 64,
+      "page_end": 64,
+      "quote": "6.2(D): Redevelopment of Vacant Structure",
+      "note": "Structure 100% vacant at application and 100% redeveloped. Excludes the preservation and infill categories; see the group. The exclusion note names them '6.2F Preservation of Existing Affordable Housing or 6.2G Infill New Construction', but they are 6.2(E) and 6.2(F): the cross-references are off by one letter.",
+      "kind": "competitive",
+      "ord": 7
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(E)",
+      "heading": "Preservation of existing rental housing",
+      "points_max": 6,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "group": "in_site_type",
+      "page_start": 64,
+      "page_end": 65,
+      "quote": "6.2(E): Preservation of Existing Rental Housing",
+      "tiers": [
+        {
+          "tier_label": "Existing LIHTC project past its 15-year compliance period, extended use still in effect",
+          "points": 6
+        },
+        {
+          "tier_label": "Former LIHTC project whose extended use expired or was released",
+          "points": 6
+        },
+        {
+          "tier_label": "HUD- or USDA-assisted housing",
+          "points": 6
+        },
+        {
+          "tier_label": "Any other affordable housing",
+          "points": 4
+        },
+        {
+          "tier_label": "Market-rate housing converting to LIHTC",
+          "points": 4
+        }
+      ],
+      "note": "Its exclusion note cites '6.2D Vacant Structure or 6.2G Infill New Construction'; infill is 6.2(F).",
+      "kind": "competitive",
+      "ord": 8
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(E).bonus",
+      "heading": "Preservation bonus for number of units preserved",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "group": "in_site_type",
+      "page_start": 65,
+      "page_end": 66,
+      "quote": "Bonus points for number of units preserved:",
+      "tiers": [
+        {
+          "tier_label": "9%: 50-74 units (4%: 100-124)",
+          "points": 1
+        },
+        {
+          "tier_label": "9%: 75-99 (4%: 125-149)",
+          "points": 2
+        },
+        {
+          "tier_label": "9%: 100+ (4%: 150+)",
+          "points": 3
+        }
+      ],
+      "note": "Only for applications that qualify under 6.2(E).",
+      "kind": "competitive",
+      "ord": 9
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(F)",
+      "heading": "Infill new construction",
+      "points_max": 6,
+      "points_type": "fixed",
+      "group": "in_site_type",
+      "page_start": 66,
+      "page_end": 66,
+      "quote": "6.2(F): Infill New Construction",
+      "note": "At least two sides adjacent to occupied residential, commercial or active public space, with utilities available. Its exclusion note cites '6.2D Vacant Structure or 6.2F Preservation of Existing Affordable Housing', naming itself where it means 6.2(E).",
+      "kind": "competitive",
+      "ord": 10
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(G)",
+      "heading": "Development is historic in nature",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 67,
+      "page_end": 68,
+      "quote": "6.2(G): Development is Historic in Nature",
+      "tiers": [
+        {
+          "tier_label": "At least 50% of units in a designated historic building",
+          "points": 2
+        },
+        {
+          "tier_label": "At least 25% of units",
+          "points": 1
+        },
+        {
+          "tier_label": "Using historic tax credits with a conditionally accepted Part 2",
+          "points": 1
+        }
+      ],
+      "kind": "competitive",
+      "ord": 11
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(H)",
+      "heading": "Foreclosed and condemned properties",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 68,
+      "page_end": 69,
+      "quote": "6.2(H): Foreclosed and Condemned Properties",
+      "kind": "competitive",
+      "ord": 12
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(I)",
+      "heading": "Internet access",
+      "points_max": 4,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 69,
+      "page_end": 70,
+      "quote": "6.2(I): Internet Access",
+      "tiers": [
+        {
+          "tier_label": "Free high-speed internet in every unit",
+          "points": 3
+        },
+        {
+          "tier_label": "Internet included in the utility allowance",
+          "points": 3
+        },
+        {
+          "tier_label": "Plus free Wi-Fi in an indoor common area",
+          "points": 1
+        }
+      ],
+      "note": "The Required Documentation paragraph refers to 'the two- or three-point option above', but no two-point option is listed; recorded as a drafting remnant.",
+      "kind": "competitive",
+      "ord": 13
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(J)",
+      "heading": "Lease-purchase",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 70,
+      "page_end": 70,
+      "quote": "6.2(J): Lease-Purchase",
+      "note": "Single-family, townhouse or duplex only, 100% of units, half with three or more bedrooms; not for age-restricted or supportive housing set-aside projects.",
+      "kind": "competitive",
+      "ord": 14
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(K)",
+      "heading": "Building certification",
+      "points_max": 2,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 70,
+      "page_end": 71,
+      "quote": "6.2(K): Building Certification",
+      "tiers": [
+        {
+          "tier_label": "LEED Certified or NGBS Bronze",
+          "points": 1
+        },
+        {
+          "tier_label": "LEED Silver, NGBS Silver, Enterprise Green Communities or Passive House",
+          "points": 2
+        }
+      ],
+      "kind": "competitive",
+      "ord": 15
+    },
+    {
+      "native_category": "Development Characteristics",
+      "section_label": "6.2(L)",
+      "heading": "Onsite recycling",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 71,
+      "page_end": 71,
+      "quote": "6.2(L): Onsite Recycling",
+      "kind": "competitive",
+      "ord": 16
+    },
+    {
+      "native_category": "Market Characteristics",
+      "section_label": "6.3(A)",
+      "heading": "Desirable sites",
+      "points_max": 6,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 72,
+      "page_end": 74,
+      "quote": "6.3(A): Desirable Sites",
+      "tiers": [
+        {
+          "tier_label": "Within a mile of a store with fresh produce",
+          "points": 2
+        },
+        {
+          "tier_label": "Near positive land uses: three facilities within half a mile or five within a mile, from two columns",
+          "points": 2
+        },
+        {
+          "tier_label": "Within half a mile of fixed transit (point-to-point service for small city and rural)",
+          "points": 2
+        }
+      ],
+      "note": "The undesirable-site deduction in the same table is recorded separately as 6.3(A).undesirable.",
+      "kind": "competitive",
+      "ord": 17
+    },
+    {
+      "native_category": "Market Characteristics",
+      "section_label": "6.3(A).undesirable",
+      "heading": "Undesirable sites deduction",
+      "points_max": null,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 74,
+      "page_end": 74,
+      "quote": "then one point will be deducted for each undesirable site.",
+      "note": "One point per undesirable site within a quarter mile, with no stated maximum, so points_max is null. Remediation can preserve the points.",
+      "kind": "competitive",
+      "ord": 18
+    },
+    {
+      "track": "nine_pct",
+      "native_category": "Market Characteristics",
+      "section_label": "6.3(B)",
+      "heading": "Unit production in areas underserved by the 9% program",
+      "points_max": 6,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 74,
+      "page_end": 75,
+      "quote": "6.3(B): Unit Production in Areas Underserved by the 9% LIHTC Program",
+      "tiers": [
+        {
+          "tier_label": "Local unit of government without a 9% allocation in 5 years",
+          "points": 1
+        },
+        {
+          "tier_label": "LUG, 10 years",
+          "points": 2
+        },
+        {
+          "tier_label": "LUG, 15 years",
+          "points": 3
+        },
+        {
+          "tier_label": "County without a 9% allocation in 5 years",
+          "points": 1
+        },
+        {
+          "tier_label": "County, 10 years",
+          "points": 2
+        },
+        {
+          "tier_label": "County, 15 years",
+          "points": 3
+        }
+      ],
+      "note": "The LUG and county ladders add, 3 + 3 = 6. 9% only: '4%/bond applications will not be scored in this category'.",
+      "kind": "competitive",
+      "ord": 19
+    },
+    {
+      "native_category": "Market Characteristics",
+      "section_label": "6.3(C)",
+      "heading": "Census tract without active tax credit projects",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 75,
+      "page_end": 76,
+      "quote": "6.3(C): Census Tract without Active Tax Credit Projects",
+      "tiers": [
+        {
+          "tier_label": "No active LIHTC project of the same occupancy type in the tract",
+          "points": 3
+        },
+        {
+          "tier_label": "Exactly one other",
+          "points": 1.5
+        }
+      ],
+      "kind": "competitive",
+      "ord": 20
+    },
+    {
+      "native_category": "Market Characteristics",
+      "section_label": "6.3(D)",
+      "heading": "Opportunity index",
+      "points_max": 4,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 76,
+      "page_end": 77,
+      "quote": "6.3(D): Opportunity Index",
+      "tiers": [
+        {
+          "tier_label": "High income tract (top quartile), outside a QCT",
+          "points": 1
+        },
+        {
+          "tier_label": "Low poverty tract (bottom quartile), outside a QCT",
+          "points": 1
+        },
+        {
+          "tier_label": "County unemployment below state average",
+          "points": 1
+        },
+        {
+          "tier_label": "County with 2,000 or fewer people per primary care physician",
+          "points": 1
+        }
+      ],
+      "kind": "competitive",
+      "ord": 21
+    },
+    {
+      "native_category": "Market Characteristics",
+      "section_label": "6.3(D).recap",
+      "heading": "R/ECAP deduction",
+      "points_max": -1,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 77,
+      "page_end": 77,
+      "quote": "One point will be deducted if the proposed site falls within a census tract that is defined as a",
+      "note": "Racially/Ethnically Concentrated Area of Poverty; not applied to Preservation set-aside applications. Can take the Opportunity Index to -1.",
+      "kind": "competitive",
+      "ord": 22
+    },
+    {
+      "native_category": "Market Characteristics",
+      "section_label": "6.3(E)",
+      "heading": "Housing need index",
+      "points_max": 8,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 77,
+      "page_end": 78,
+      "quote": "6.3(E): Housing Need Index",
+      "tiers": [
+        {
+          "tier_label": "County population growth above the state's 2.0% (2020-2024)",
+          "points": 1
+        },
+        {
+          "tier_label": "City or town with 41%+ of renters rent burdened",
+          "points": 1
+        },
+        {
+          "tier_label": "City or town with 25%+ of renters with a severe housing problem",
+          "points": 1
+        },
+        {
+          "tier_label": "City or town with 25%+ of renters at or below 30% AMI",
+          "points": 1
+        },
+        {
+          "tier_label": "LIHTC units to low-income renters below the state ratio",
+          "points": 1
+        },
+        {
+          "tier_label": "County whose largest housing age band is pre-1940",
+          "points": 1
+        },
+        {
+          "tier_label": "County vacancy below the state average",
+          "points": 1
+        },
+        {
+          "tier_label": "Age-restricted rental housing desert (19 named counties), 55+ or 62+ projects only",
+          "points": 1
+        }
+      ],
+      "kind": "competitive",
+      "ord": 23
+    },
+    {
+      "native_category": "Market Characteristics",
+      "section_label": "6.3(F)",
+      "heading": "10-year projected job growth by economic growth region",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 78,
+      "page_end": 79,
+      "quote": "6.3(F): 10-Year Projected Job Growth by Economic Growth Region",
+      "tiers": [
+        {
+          "tier_label": "10,000+ projected jobs",
+          "points": 5
+        },
+        {
+          "tier_label": "9,000-9,999 projected jobs",
+          "points": 4.5
+        },
+        {
+          "tier_label": "8,000-8,999 projected jobs",
+          "points": 4
+        },
+        {
+          "tier_label": "7,000-7,999 projected jobs",
+          "points": 3.5
+        },
+        {
+          "tier_label": "6,000-6,999 projected jobs",
+          "points": 3
+        },
+        {
+          "tier_label": "5,000-5,999 projected jobs",
+          "points": 2.5
+        },
+        {
+          "tier_label": "4,000-4,999 projected jobs",
+          "points": 2
+        },
+        {
+          "tier_label": "3,000-3,999 projected jobs",
+          "points": 1.5
+        },
+        {
+          "tier_label": "2,000-2,999 projected jobs",
+          "points": 1
+        },
+        {
+          "tier_label": "1,000-1,999 projected jobs",
+          "points": 0.5
+        },
+        {
+          "tier_label": "Less than 1,000 projected jobs",
+          "points": 0
+        }
+      ],
+      "kind": "competitive",
+      "ord": 24
+    },
+    {
+      "native_category": "Market Characteristics",
+      "section_label": "6.3(G)",
+      "heading": "Five-year actual job growth by county",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 79,
+      "page_end": 79,
+      "quote": "6.3(G): Five-Year Actual Job Growth Percentage by County",
+      "tiers": [
+        {
+          "tier_label": "County job growth 10.00%+",
+          "points": 5
+        },
+        {
+          "tier_label": "County job growth 9.00-9.99%",
+          "points": 4.5
+        },
+        {
+          "tier_label": "County job growth 8.00-8.99%",
+          "points": 4
+        },
+        {
+          "tier_label": "County job growth 7.00-7.99%",
+          "points": 3.5
+        },
+        {
+          "tier_label": "County job growth 6.00-6.99%",
+          "points": 3
+        },
+        {
+          "tier_label": "County job growth 5.00-5.99%",
+          "points": 2.5
+        },
+        {
+          "tier_label": "County job growth 4.00-4.99%",
+          "points": 2
+        },
+        {
+          "tier_label": "County job growth 3.00-3.99%",
+          "points": 1.5
+        },
+        {
+          "tier_label": "County job growth 2.00-2.99%",
+          "points": 1
+        },
+        {
+          "tier_label": "County job growth 1.00-1.99%",
+          "points": 0.5
+        },
+        {
+          "tier_label": "County job growth Less than 1.00%",
+          "points": 0
+        }
+      ],
+      "kind": "competitive",
+      "ord": 25
+    },
+    {
+      "native_category": "Market Characteristics",
+      "section_label": "6.3(H)",
+      "heading": "Ratio of new jobs to housing permits",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 80,
+      "page_end": 80,
+      "quote": "6.3(H): Ratio of New Jobs to Housing Permits",
+      "tiers": [
+        {
+          "tier_label": "20+ net jobs per housing permit",
+          "points": 3
+        },
+        {
+          "tier_label": "15-19",
+          "points": 2.5
+        },
+        {
+          "tier_label": "10-14",
+          "points": 2
+        },
+        {
+          "tier_label": "5-9",
+          "points": 1.5
+        },
+        {
+          "tier_label": "2-4",
+          "points": 1
+        }
+      ],
+      "note": "Only for applications scoring above zero under 6.3(G), which the text calls 'Scoring Category 6.4H'; 6.4 is Financing and has no H. Recorded as a cross-reference error.",
+      "kind": "competitive",
+      "ord": 26
+    },
+    {
+      "native_category": "Market Characteristics",
+      "section_label": "6.3(I)",
+      "heading": "Community revitalization plan for developments in a QCT",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 80,
+      "page_end": 81,
+      "quote": "6.3(I): Community Revitalization Plan for Developments Located in a QCT",
+      "kind": "competitive",
+      "ord": 27
+    },
+    {
+      "native_category": "Financing",
+      "section_label": "6.4(A)",
+      "heading": "Leveraging capital resources",
+      "points_max": 4,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 82,
+      "page_end": 83,
+      "quote": "6.4(A): Leveraging Capital Resources",
+      "tiers": [
+        {
+          "tier_label": "1.00-2.49% of TDC",
+          "points": 1
+        },
+        {
+          "tier_label": "2.50-3.99%",
+          "points": 1.5
+        },
+        {
+          "tier_label": "4.00-5.49%",
+          "points": 2
+        },
+        {
+          "tier_label": "5.50-6.99%",
+          "points": 2.5
+        },
+        {
+          "tier_label": "7.00-8.49%",
+          "points": 3
+        },
+        {
+          "tier_label": "8.50-9.99%",
+          "points": 3.5
+        },
+        {
+          "tier_label": "10.00% or greater",
+          "points": 4
+        }
+      ],
+      "kind": "competitive",
+      "ord": 28
+    },
+    {
+      "native_category": "Financing",
+      "section_label": "6.4(B)",
+      "heading": "Leveraging the READI program",
+      "points_max": 4,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 83,
+      "page_end": 83,
+      "quote": "6.4(B): Leveraging the READI Program",
+      "tiers": [
+        {
+          "tier_label": "No IHCDA gap resources beyond credits or bonds",
+          "points": 2
+        },
+        {
+          "tier_label": "Basis boost of no more than 20%",
+          "points": 2
+        }
+      ],
+      "kind": "competitive",
+      "ord": 29
+    },
+    {
+      "native_category": "Financing",
+      "section_label": "6.4(C)",
+      "heading": "Non-IHCDA project-based rental assistance",
+      "points_max": 2,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 84,
+      "page_end": 84,
+      "quote": "6.4(C): Non-IHCDA Project-Based Rental Assistance",
+      "tiers": [
+        {
+          "tier_label": "At least 20% of units",
+          "points": 2
+        },
+        {
+          "tier_label": "At least 10%",
+          "points": 1
+        }
+      ],
+      "kind": "competitive",
+      "ord": 30
+    },
+    {
+      "native_category": "Financing",
+      "section_label": "6.4(D)",
+      "heading": "Tax credit per unit / bond volume per unit",
+      "points_max": 4,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "scored_against_round": true,
+      "page_start": 84,
+      "page_end": 85,
+      "quote": "6.4(D): Tax Credit Per Unit / Bond Volume Per Unit",
+      "tiers": [
+        {
+          "tier_label": "80th percentile or better (lowest request per unit)",
+          "points": 4
+        },
+        {
+          "tier_label": "60th percentile",
+          "points": 3
+        },
+        {
+          "tier_label": "40th percentile",
+          "points": 2
+        },
+        {
+          "tier_label": "20th percentile",
+          "points": 1
+        },
+        {
+          "tier_label": "Below 20th percentile",
+          "points": 0
+        }
+      ],
+      "note": "Percentile-ranked against the round: credits per unit for 9%, bond volume per unit for competitive 4%. Noncompetitive 4% applications are not scored here.",
+      "kind": "competitive",
+      "ord": 31
+    },
+    {
+      "native_category": "Other Scoring",
+      "section_label": "6.5(A)",
+      "heading": "Certified tax credit compliance specialist",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 85,
+      "page_end": 86,
+      "quote": "6.5(A): Certified Tax Credit Compliance Specialist",
+      "tiers": [
+        {
+          "tier_label": "Management contact, first certification",
+          "points": 1
+        },
+        {
+          "tier_label": "Management contact, second certification",
+          "points": 1
+        },
+        {
+          "tier_label": "Owner or developer contact certified",
+          "points": 1
+        }
+      ],
+      "kind": "competitive",
+      "ord": 32
+    },
+    {
+      "native_category": "Other Scoring",
+      "section_label": "6.5(B)",
+      "heading": "Unique features",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 86,
+      "page_end": 86,
+      "quote": "6.5(B): Unique Features",
+      "tiers": [
+        {
+          "tier_label": "Unique",
+          "points": 3
+        },
+        {
+          "tier_label": "Average",
+          "points": 2
+        },
+        {
+          "tier_label": "Below average",
+          "points": 1
+        },
+        {
+          "tier_label": "Form not submitted",
+          "points": 0
+        }
+      ],
+      "note": "At IHCDA's sole discretion.",
+      "kind": "competitive",
+      "ord": 33
+    },
+    {
+      "native_category": "Other Scoring",
+      "section_label": "6.5(C)",
+      "heading": "Resident services",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 86,
+      "page_end": 88,
+      "quote": "6.5(C): Resident Services",
+      "tiers": [
+        {
+          "tier_label": "Each Level 1 service",
+          "points": 0.5
+        },
+        {
+          "tier_label": "Each Level 2 service",
+          "points": 1
+        }
+      ],
+      "note": "Per-service values across five service categories, capped at 5; the two tier rows are the rates, not an enumeration of the listed services.",
+      "kind": "competitive",
+      "ord": 34
+    },
+    {
+      "native_category": "Other Scoring",
+      "section_label": "6.5(D)",
+      "heading": "Resident service coordinator for supportive housing",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 88,
+      "page_end": 88,
+      "quote": "6.5(D): Resident Service Coordinator for Supportive Housing",
+      "note": "Only for applications eligible for the Supportive Housing set-aside or the 6.5(E) integrated supportive housing category.",
+      "kind": "competitive",
+      "ord": 35
+    },
+    {
+      "native_category": "Other Scoring",
+      "section_label": "6.5(E)",
+      "heading": "Integrated supportive housing (prior Institute team, new concept)",
+      "points_max": 3,
+      "points_type": "fixed",
+      "group": "in_institute",
+      "page_start": 89,
+      "page_end": 90,
+      "quote": "6.5(E): Integrated Supportive Housing for Persons Experiencing Homelessness",
+      "note": "20-25% of units supportive housing for people experiencing homelessness, developed by a team that completed the Indiana Supportive Housing Institute but not designed through it. A development designed through the Institute is expressly ineligible here, which makes this exclusive with 6.5(F).",
+      "kind": "competitive",
+      "ord": 36
+    },
+    {
+      "native_category": "Other Scoring",
+      "section_label": "6.5(F)",
+      "heading": "Developments from previous supportive housing institutes",
+      "points_max": 3,
+      "points_type": "fixed",
+      "group": "in_institute",
+      "page_start": 90,
+      "page_end": 90,
+      "quote": "6.5(F): Developments from Previous Supportive Housing Institutes",
+      "note": "Part of the Institute in 2024 or earlier and competing in the Supportive Housing set-aside.",
+      "kind": "competitive",
+      "ord": 37
+    },
+    {
+      "native_category": "Other Scoring",
+      "section_label": "6.5(G)",
+      "heading": "Eviction prevention plan",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 90,
+      "page_end": 91,
+      "quote": "6.5(G): Eviction Prevention Plan",
+      "kind": "competitive",
+      "ord": 38
+    },
+    {
+      "native_category": "Other Scoring",
+      "section_label": "6.5(H)",
+      "heading": "Low-barrier tenant screening",
+      "points_max": 4,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 91,
+      "page_end": 92,
+      "quote": "6.5(H): Low-barrier Tenant Screening",
+      "tiers": [
+        {
+          "tier_label": "No screening on misdemeanors",
+          "points": 1
+        },
+        {
+          "tier_label": "No screening on felonies older than five years (with listed exceptions)",
+          "points": 1
+        },
+        {
+          "tier_label": "No screening on evictions more than 12 months old",
+          "points": 1
+        },
+        {
+          "tier_label": "No screening on evictions more than six months old",
+          "points": 2
+        }
+      ],
+      "kind": "competitive",
+      "ord": 39
+    },
+    {
+      "native_category": "Other Scoring",
+      "section_label": "6.5(I)",
+      "heading": "Readiness to proceed",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 92,
+      "page_end": 92,
+      "quote": "6.5(I): Readiness to Proceed",
+      "tiers": [
+        {
+          "tier_label": "Phase I with no recognized environmental conditions",
+          "points": 1
+        },
+        {
+          "tier_label": "Phase II already completed",
+          "points": 1
+        },
+        {
+          "tier_label": "Uncommitted non-IHCDA sources at most 10% of sources",
+          "points": 1
+        },
+        {
+          "tier_label": "Uncommitted non-IHCDA sources at most 5%",
+          "points": 2
+        },
+        {
+          "tier_label": "Final HUD PCNA (rehab)",
+          "points": 1
+        },
+        {
+          "tier_label": "Closing within six months of Board approval",
+          "points": 1
+        }
+      ],
+      "note": "Options total 7 against a maximum of 5 (the 10% and 5% options are presumably alternatives). Missing the six-month close loses the point and may bring penalties under Part 7.6.",
+      "kind": "competitive",
+      "ord": 40
+    },
+    {
+      "native_category": "Other Scoring",
+      "section_label": "6.5(J)",
+      "heading": "Owners who requested release through a qualified contract",
+      "points_max": -4,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 92,
+      "page_end": 93,
+      "quote": "6.5(J): Owners Who Have Requested Release Through Qualified Contract",
+      "note": "-2 for one qualified contract request in Indiana since January 25, 2021, -4 for more than one or for a foreclosure that released an extended use period; maximum penalty -4.",
+      "kind": "competitive",
+      "ord": 41
+    },
+    {
+      "track": "bond",
+      "native_category": "Bond Experience",
+      "section_label": "6.6(A)",
+      "heading": "Indiana bond experience (4% applications only)",
+      "points_max": 4,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 93,
+      "page_end": 93,
+      "quote": "6.6(A): Indiana Bond Experience",
+      "tiers": [
+        {
+          "tier_label": "Developer has a 4%/bond development in Indiana placed in service within 5 years",
+          "points": 4
+        },
+        {
+          "tier_label": "Placed in service 5-10 years ago",
+          "points": 2
+        }
+      ],
+      "note": "Scored only for applications requesting 4% credits and bonds, hence the bond track.",
+      "kind": "competitive",
+      "ord": 42
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Scoring Criteria",
+      "section_label": "TB.1",
+      "heading": "Community without an LIHTC award in three years",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "1st Tie Breaker: priority will be given to the application for a Development located in a",
+      "ord": 43
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Scoring Criteria",
+      "section_label": "TB.2",
+      "heading": "Lowest credits (9%) or bond volume (4%) per unit",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "2nd Tie Breaker: if a tie still remains, priority will be given to the application that requests the",
+      "ord": 44
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Scoring Criteria",
+      "section_label": "TB.3",
+      "heading": "Lowest average rent restriction",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 3,
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "3rd Tie Breaker: if a tie still remains, priority will be given to the application with the lowest",
+      "ord": 45
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "Scoring Criteria",
+      "section_label": "TB.4",
+      "heading": "Competes under the most set-asides",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 4,
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "4th Tie Breaker: if a tie still remains, priority will be given to the application that competes under",
+      "ord": 46
+    }
+  ]
+}

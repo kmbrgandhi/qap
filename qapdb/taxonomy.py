@@ -549,6 +549,25 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("CO", "5.B.3.d"): PRES, ("CO", "5.B.3.e"): DES, ("CO", "5.B.3.f"): (COST, DES),
     ("CO", "5.B.3.g"): DES, ("CO", "5.B.3.h"): POP,
     ("CO", "5.B.4"): SPON,  ("CO", "5.B.5"): POP,   ("CO", "5.B.6"): POP,
+
+    # ---- Indiana -----------------------------------------------------------
+    # Core track plus nine_pct (6.1(A), 6.1(B), 6.3(B)) and bond (6.6(A)).
+    ("IN", "6.1(A)"): AFF,  ("IN", "6.1(B)"): AFF,  ("IN", "6.1(C)"): AFF,
+    ("IN", "6.2(A)"): DES,  ("IN", "6.2(B)"): DES,  ("IN", "6.2(C)"): DES,
+    ("IN", "6.2(D)"): PRES, ("IN", "6.2(E)"): PRES, ("IN", "6.2(E).bonus"): PRES,
+    ("IN", "6.2(F)"): LOC,  ("IN", "6.2(G)"): PRES, ("IN", "6.2(H)"): PRES,
+    ("IN", "6.2(I)"): DES,  ("IN", "6.2(J)"): AFF,  ("IN", "6.2(K)"): DES,
+    ("IN", "6.2(L)"): DES,
+    ("IN", "6.3(A)"): LOC,  ("IN", "6.3(A).undesirable"): LOC,
+    ("IN", "6.3(B)"): LOC,  ("IN", "6.3(C)"): LOC,  ("IN", "6.3(D)"): LOC,
+    ("IN", "6.3(D).recap"): LOC, ("IN", "6.3(E)"): LOC, ("IN", "6.3(F)"): LOC,
+    ("IN", "6.3(G)"): LOC,  ("IN", "6.3(H)"): LOC,  ("IN", "6.3(I)"): LOC,
+    ("IN", "6.4(A)"): COST, ("IN", "6.4(B)"): COST, ("IN", "6.4(C)"): AFF,
+    ("IN", "6.4(D)"): COST,
+    ("IN", "6.5(A)"): SPON, ("IN", "6.5(B)"): DES,  ("IN", "6.5(C)"): POP,
+    ("IN", "6.5(D)"): POP,  ("IN", "6.5(E)"): POP,  ("IN", "6.5(F)"): POP,
+    ("IN", "6.5(G)"): POP,  ("IN", "6.5(H)"): POP,  ("IN", "6.5(I)"): READY,
+    ("IN", "6.5(J)"): SPON, ("IN", "6.6(A)"): SPON,
 }
 
 

@@ -13,14 +13,14 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 68 |
-| **States coded** | **29** |
-| Criteria | 1042 (713 competitive, 255 threshold) |
-| Point tiers | 1166 |
-| Track totals | 40 |
+| **States coded** | **30** |
+| Criteria | 1111 (755 competitive, 278 threshold) |
+| Point tiers | 1284 |
+| Track totals | 43 |
 | Documents with a source URL | 33 of 68 |
-| Citations verifying | 1042 of 1042 |
+| Citations verifying | 1111 of 1111 |
 
-Coded: AK AL AR AZ CO CT DE HI IA MA ME MI MN MO NC ND NH NJ NV NY OH OK PA RI SD VA VT WI WY
+Coded: AK AL AR AZ CO CT DE HI IA IN MA ME MI MN MO NC ND NH NJ NV NY OH OK PA RI SD VA VT WI WY
 
 Every coded state reconciles its computed maximum against a total stated in its
 own document, or records in `track_totals` why it cannot. Nevada is the first
@@ -82,9 +82,8 @@ checked to carry real point values before being bundled.
 
 | State | File | Pages | Notes |
 |---|---|---|---|
-| IN | `indiana-qap-2026-2027.pdf` | 103 | 245 "point" mentions, the densest of the ten |
 
-Next is Indiana.
+All ten bundled states are now coded; see below for what remains.
 
 ## Deliberately deferred, with reasons
 

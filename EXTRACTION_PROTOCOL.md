@@ -834,3 +834,37 @@ with one criterion missing.
   must elect 25 years of extended use, which is exactly the 40-point tier of
   the extended-use criterion. For 9% applicants the 40 points are free. The
   minimum score of 130 has to be read with that in mind.
+
+### Indiana, 2026-2027 (v2)
+
+69 criteria: 42 competitive, 4 tiebreakers and 23 thresholds, all verified
+first time. The document states 165. The computed core is 121, with a 9%
+add-on of 25 and a bond add-on of 4, and the difference is fully accounted
+for.
+
+- **A summary total can be the flat sum of items no application can
+  combine.** Every section's items add up exactly to its stated subtotal,
+  and the subtotals to 165. But the text makes Vacant Structure,
+  Preservation (with its bonus) and Infill mutually exclusive (−12), and the
+  two supportive-housing Institute items exclusive (−3). Some categories are
+  9% only (25) and one is 4% only (4). 121 + 25 + 4 + 12 + 3 = 165, so the
+  stated total is reachable by nobody: a 9% application tops out at 146. The
+  mismatch is recorded against the core track by design, with the
+  decomposition in the note. This is the fourth state (after Nevada,
+  Alabama and Minnesota) where honouring the document's own exclusion
+  sentences breaks its own total.
+- **Scoring-universe scoping is often one sentence at the end of a
+  criterion.** "Competitive 4%/bond/AWHTC applications will not be scored in
+  this category" appears inside three criteria, and "in addition to those
+  categories" opens the bond section. Read every criterion's closing lines
+  for scope before deciding which track it belongs on.
+- **Cross-references drift when sections are relabelled.** The exclusion
+  notes in 6.2(D)–(F) name the categories one letter off, one of them naming
+  itself, and 6.3(H) sends the reader to "6.4H", which does not exist. The
+  intended targets were unambiguous here, so the exclusions are coded and
+  the wrong references recorded. Where they are not unambiguous, record and
+  do not code.
+- **Checked estimates out of the notes.** First drafts described the amenity
+  charts as "some 90" items and the service list as "some fifty". Neither was
+  counted, so both were removed. A number in a note is still a number, and
+  rule 1 applies to it.
