@@ -1,0 +1,59 @@
+{
+  "_comment": "Ohio program years 2026-2027 9% LIHTC QAP with 2027 Technical Amendments, OHFA, board approved 20 August 2026. Competitive scoring is Section H, PDF pp.47-49, and is the shortest in the corpus: three index-driven criteria totalling exactly 100 points, every one auto-calculated in OHFA's application workbook. Page numbers are PDF page indices and match the printed numbers.",
+  "match": {
+    "filename": "ohio-qap-2026-2027.pdf"
+  },
+  "extractor_version": "hand-2026-oh-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": 100,
+      "page": 47,
+      "note": "Stated in a table that also gives each criterion's share of the total: Neighborhood Opportunity Index 40%, Housing Needs Index 35%, Annual LIHTC Request per LIHTC Unit 25%. Scores are summed in the application workbook and only the total is rounded, to two decimal places."
+    }
+  ],
+  "groups": [],
+  "criteria": [
+    {
+      "ord": 1,
+      "kind": "competitive",
+      "native_category": "Competitive Scoring",
+      "section_label": "H.1",
+      "heading": "Neighborhood Opportunity Index",
+      "points_max": 40,
+      "points_type": "formula",
+      "detail_external": "Neighborhood Opportunity Index (Urban Institute)",
+      "page_start": 47,
+      "page_end": 48,
+      "quote": "Neighborhood Opportunity Index",
+      "note": "Built with the Urban Institute and updated annually. Two indices by targeted population: General Occupancy distils four categories and 20 indicators, Senior distils three categories and 15 indicators, each into a single census tract score. The index itself is published separately, so the QAP states the weight but not the test."
+    },
+    {
+      "ord": 2,
+      "kind": "competitive",
+      "native_category": "Competitive Scoring",
+      "section_label": "H.2",
+      "heading": "Housing Needs Index",
+      "points_max": 35,
+      "points_type": "formula",
+      "detail_external": "2026-2027 Housing Needs Index Technical Amendment",
+      "page_start": 49,
+      "page_end": 49,
+      "quote": "Housing Needs Index",
+      "note": "Also built with the Urban Institute: three categories and four indicators covering housing supply, affordable housing stock and affordability. Calculated as the census tract's raw index score times 0.35, on the tract holding the majority of LIHTC units."
+    },
+    {
+      "ord": 3,
+      "kind": "competitive",
+      "native_category": "Competitive Scoring",
+      "section_label": "H.3",
+      "heading": "Annual LIHTC request per LIHTC unit",
+      "points_max": 25,
+      "points_type": "formula",
+      "page_start": 49,
+      "page_end": 49,
+      "quote": "Annual LIHTC Request per LIHTC Unit",
+      "note": "Full 25 points at or below $29,500 of annual credit per unit, sliding to zero at $51,000, by the formula the QAP prints in full: MAX(0, MIN(25, ((51000 - request per unit) / 21500) * 25)). Note the formula and the stated threshold disagree: it pays 25 points only at or below $29,500 by the stated rule, but the printed formula reaches 25 at $29,500 exactly and would exceed it below that, which the MIN caps. The thresholds are to be adjusted to the Multifamily Residential Construction Index in the final draft for board approval, estimated August 2026, so these figures are provisional by the QAP's own statement."
+    }
+  ]
+}

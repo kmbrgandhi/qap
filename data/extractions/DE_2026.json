@@ -1,0 +1,468 @@
+{
+  "_comment": "Delaware 2025-2026 QAP, DSHA. Scoring and Ranking runs PDF pp.34-51, with a Scoring Summary on p.52. Page numbers are PDF page indices; the printed footer runs one lower ('51 of 65' on PDF p.52). Delaware contains two internal contradictions, both recorded rather than resolved. (1) p.34 states 234 total possible points; the Scoring Summary on p.52 states 231. The gap is entirely in Development Team: the body and the section header agree on 37, but the summary table lists items summing to 40 because it gives Management Experience and Performance as 15 where the body says (0-12). 12 is the value supported by the body's own sub-items (5 + 2 + 5) and by the 37 section header, so 12 is coded and the 15 is recorded here. (2) Community Compatibility is headed (0-14 points) and 'Up to fourteen (14) points', but its own text then says projects 'will not receive more than twelve (12) points total'. 14 is coded because the section header of 59 requires it (20+5+20+14); the 12 is recorded. Both need reviewer confirmation against the PDF.",
+  "match": {
+    "filename": "delaware-qap-2025-2026.pdf"
+  },
+  "extractor_version": "hand-2026-de-1",
+  "qap_updates": {
+    "stated_total": 231,
+    "stated_total_page": 52
+  },
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": 231,
+      "page": 52,
+      "note": "Scoring Summary, p.52: 'Total = 231 points (Note: No application can achieve the maximum total points.)'. This is the sum of the five section headers (55 + 59 + 45 + 35 + 37). Contradicted by p.34, which states 234; see the file comment. Minimum to be competitive is 100, and 95 for non-competitive credit."
+    },
+    {
+      "track": "bonus",
+      "stated_total": 10,
+      "page": 51,
+      "note": "Bonus points are additional to the 231 and are recorded on their own track so they do not inflate the base total. p.34 describes the total as '234 with bonus points available upon qualification', treating bonus as separate from the headline figure."
+    }
+  ],
+  "groups": [],
+  "criteria": [
+    {
+      "ord": 1,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "1.1",
+      "heading": "Increase in extended use period / conversion to homeownership",
+      "points_max": 15,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 34,
+      "page_end": 34,
+      "quote": "Increase in Extended Use Period / Conversion to Homeownership",
+      "tiers": [
+        {"tier_label": "Each additional five-year extension of the extended use period, up to 15 further years (45 total)", "points": 15},
+        {"tier_label": "Conversion to homeownership after the initial 15-year compliance period; extended use period waived", "points": 10}
+      ],
+      "note": "The two routes are joined by an explicit 'OR' in the text, so they are alternatives rather than additive. The extension route pays five points per additional five-year period, reaching 15 at a 45-year term."
+    },
+    {
+      "ord": 2,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "1.2",
+      "heading": "Preservation",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 34,
+      "page_end": 34,
+      "quote": "Points will be awarded for each of the following factors up to a maximum of ten (10) points.",
+      "tiers": [
+        {"tier_label": "Requires hard costs that exceed $65,000 per unit", "points": 4},
+        {"tier_label": "Have committed federal rental assistance contracts", "points": 2},
+        {"tier_label": "Projects have not been syndicated with LIHTC after 1990", "points": 3},
+        {"tier_label": "Property is a family development", "points": 2},
+        {"tier_label": "Projects are located in Kent and/or Sussex Counties", "points": 2}
+      ],
+      "note": "The five factors sum to 13 but the criterion is capped at 10, so a project can qualify on every factor and still not exceed the cap."
+    },
+    {
+      "ord": 3,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "1.3",
+      "heading": "Development and unit amenities",
+      "points_max": 15,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 35,
+      "page_end": 36,
+      "quote": "Development and Unit Amenities",
+      "tiers": [
+        {"tier_label": "Onsite community center, including a computer/business centre", "points": 5},
+        {"tier_label": "Resilience hub with back-up power", "points": 3},
+        {"tier_label": "Private outdoor space for each dwelling unit", "points": 3},
+        {"tier_label": "WIFI for all units", "points": 2},
+        {"tier_label": "Washers and dryers in units", "points": 2},
+        {"tier_label": "Site-provided transportation, senior properties, at least three times weekly", "points": 2},
+        {"tier_label": "Design accessories such as door surrounds, window trim, cornice details", "points": 2},
+        {"tier_label": "Self-service delivery lockers on site", "points": 2},
+        {"tier_label": "Exercise and/or walking trails with permanent surface", "points": 1},
+        {"tier_label": "Ceiling fans, Energy-Star compliant, in all bedrooms and living areas", "points": 1},
+        {"tier_label": "Microwave or micro-hood combination", "points": 1},
+        {"tier_label": "Trash chutes, mid- or high-rise facilities", "points": 1},
+        {"tier_label": "Raised garden plots served by a water standpipe", "points": 1},
+        {"tier_label": "Gazebo, 100 sq. ft., fully ADA accessible", "points": 1}
+      ],
+      "note": "The listed amenities sum to 27 against a cap of 15, so this is a menu rather than a checklist. Eligibility requires 100% of units to benefit. Applicants may also propose unlisted amenities for points at DSHA's sole discretion, and amenities must be new to the development. Failure to deliver an amenity that earned points is penalised against a future application."
+    },
+    {
+      "ord": 4,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "1.4",
+      "heading": "Provision of social services",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 36,
+      "page_end": 37,
+      "quote": "Provision of Social Services",
+      "tiers": [
+        {"tier_label": "One qualified social service", "points": 2},
+        {"tier_label": "Two qualified social services", "points": 3},
+        {"tier_label": "Three qualified social services", "points": 5}
+      ],
+      "note": "Services must be distinct: a series of financial literacy classes on different topics counts as one. Each service must run at least four hours per calendar quarter, sixteen hours per year, free to tenants, with transport provided for off-site services and procedures for tracking utilisation."
+    },
+    {
+      "ord": 5,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "1.5",
+      "heading": "Energy conservation measures",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "detail_external": "DSHA Exhibit 32, Base Level Energy and Green Standards",
+      "page_start": 37,
+      "page_end": 37,
+      "quote": "Energy Conservation Measures",
+      "tiers": [
+        {"tier_label": "Base: Enterprise Green Communities 2020, National Green Building Standards 2020, or LEED for Homes Multifamily", "points": 3},
+        {"tier_label": "Intermediate, only if a base criterion is elected: Passive House or DOE Efficient New Home for new construction, HERS index 70 or less for acquisition/rehabilitation", "points": 2},
+        {"tier_label": "Advanced, only if base and intermediate are elected: integrative design and operating energy, resilient construction, building design and construction certification", "points": 3},
+        {"tier_label": "Rehabilitation projects converting from gas to all-electric systems", "points": 2}
+      ],
+      "note": "The three certification levels are a ladder, each gated on the one below, and the all-electric conversion is additive on top. The QAP states that the chart is 'provided for informational purposes; final point scoring will be based on the criteria contained in Exhibit 32', so the operative test lives outside the QAP."
+    },
+    {
+      "ord": 6,
+      "kind": "competitive",
+      "native_category": "Community Impact",
+      "section_label": "2.1",
+      "heading": "Promoting balanced housing opportunities",
+      "points_max": 20,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 38,
+      "page_end": 38,
+      "quote": "Promoting Balanced Housing Opportunities",
+      "tiers": [
+        {"tier_label": "0%-49.9% of total units located in an Area of Opportunity", "points": 0},
+        {"tier_label": "50%-99.9% of total units located in an Area of Opportunity", "points": 7},
+        {"tier_label": "100% of total units located in an Area of Opportunity", "points": 15},
+        {"tier_label": "Additional, New Creation developments in Eastern Sussex", "points": 5}
+      ],
+      "note": "The Area of Opportunity tiers are alternatives; the Eastern Sussex award is additive on top, which is how 15 and 5 reach the stated maximum of 20. Restricted to family development proposals. Areas of Opportunity are published on a DSHA ArcGIS map rather than defined in the QAP."
+    },
+    {
+      "ord": 7,
+      "kind": "competitive",
+      "native_category": "Community Impact",
+      "section_label": "2.2",
+      "heading": "Community revitalization, opportunity zones, and downtown development districts",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 38,
+      "page_end": 38,
+      "quote": "Community Revitalization, Opportunity Zones, and Downtown Development Districts",
+      "tiers": [
+        {"tier_label": "In a Qualified Census Tract contributing to an eligible Concerted Community Revitalization Plan", "points": 5},
+        {"tier_label": "Entirely within a certified Downtown Development District or designated Opportunity Zone and contributing to an eligible CCRP", "points": 5},
+        {"tier_label": "Entirely within a certified DDD or designated OZ but not contributing to an eligible CCRP", "points": 2}
+      ],
+      "note": "Explicitly joined by 'or'. A QCT alone earns nothing without a CCRP contribution. The entire CCRP must be submitted and certified by its author, and applicants 'demonstrating weak or vague contribution to the CCRP will not receive points'."
+    },
+    {
+      "ord": 8,
+      "kind": "competitive",
+      "native_category": "Community Impact",
+      "section_label": "2.3",
+      "heading": "Site and neighborhood standards",
+      "points_max": 20,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 38,
+      "page_end": 40,
+      "quote": "Site and Neighborhood Standards",
+      "tiers": [
+        {"tier_label": "Access to transit: walkable to a fixed transit stop, 0.25 mile in New Castle County or 0.5 mile in Kent and Sussex", "points": 4},
+        {"tier_label": "Access to transit: additional, where that stop is within an area of opportunity", "points": 4},
+        {"tier_label": "Amenities within the stated radius, scored from a tariff of 17 amenity types", "points": 12}
+      ],
+      "note": "Transit 8 plus amenities 12 makes the stated 20 exactly. The amenity tariff pays more for proximity (grocery over 10,000 sq ft and walk-in medical each pay 3 at half a mile, 2 at one mile) and also carries negative entries: a public airport or active landfill within a quarter mile deducts 3, a jail, railroad or heavy industry deducts 2. The QAP states those deductions 'will only be deducted from points earned in the Amenities category and will not reduce the base score'. Rural and USDA-designated areas apply 1.5 times the stated radius. DSHA may remove an application entirely 'if the site is sufficiently inadequate in any one of the categories'."
+    },
+    {
+      "ord": 9,
+      "kind": "competitive",
+      "native_category": "Community Impact",
+      "section_label": "2.4",
+      "heading": "Community compatibility",
+      "points_max": 14,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 41,
+      "page_end": 42,
+      "quote": "Community Compatibility",
+      "tiers": [
+        {"tier_label": "Community connectivity: all-weather pathways independent of the street edge connecting to adjoining neighbourhoods", "points": 3},
+        {"tier_label": "Residential appropriateness: infill, contiguity to developed land, access to civic associations, trails, paratransit collaboration", "points": 5},
+        {"tier_label": "Community design: one point each from a list of twelve design features", "points": 10}
+      ],
+      "note": "CONTRADICTION, recorded not resolved. The heading and opening sentence both say fourteen points, and the section header of 59 requires 14 to balance (20+5+20+14). But the same paragraph then states 'Projects may score in all categories but will not receive more than twelve (12) points total.' 14 is coded; a reviewer should confirm against p.41. Separately, community design is gated: applicants 'cannot score in this category if they do not score at least three (3) points in the residential appropriateness category'. Existing sidewalks earn only 1 of the 3 connectivity points unless improvements are included."
+    },
+    {
+      "ord": 10,
+      "kind": "competitive",
+      "native_category": "Tenant Populations Served",
+      "section_label": "3.1",
+      "heading": "Serving lower-income residents",
+      "points_max": 20,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 43,
+      "page_end": 43,
+      "quote": "Serving Lower-Income Residents",
+      "tiers": [
+        {"tier_label": "Average AMI of overall project under 40%", "points": 20},
+        {"tier_label": "41-45%", "points": 17},
+        {"tier_label": "46-50%", "points": 14},
+        {"tier_label": "51-55%", "points": 11},
+        {"tier_label": "56-58%", "points": 9},
+        {"tier_label": "Over 58%", "points": 0}
+      ],
+      "note": "Averaged by bedroom rather than by unit, with SRO and efficiency units counted as 0.67 bedrooms and the result rounded down to a full percentage point. The floor for the calculation is 30% of AMI, so deeper targeting than that earns nothing further here. Projects electing Average Income must reach an average at or below 58%, which is also the point at which this criterion pays zero."
+    },
+    {
+      "ord": 11,
+      "kind": "competitive",
+      "native_category": "Tenant Populations Served",
+      "section_label": "3.2",
+      "heading": "Integrated housing for special populations",
+      "points_max": 10,
+      "points_type": "fixed",
+      "page_start": 43,
+      "page_end": 44,
+      "quote": "Integrated Housing for Special Populations",
+      "note": "All or nothing: ten points for setting aside the greater of 10% of units or 6 units, counting the 5% threshold requirement toward that percentage. Units must be for households at or below 30% of AMI in named categories including persons with HIV/AIDS related illness, literally or imminently homeless households, survivors of domestic violence, persons with disabilities, and youth exiting foster care. Target units must not be segregated or distinguishable from non-targeted units, and an unfilled unit may be let to another household at the same AMI after a sixty-day referral period."
+    },
+    {
+      "ord": 12,
+      "kind": "competitive",
+      "native_category": "Tenant Populations Served",
+      "section_label": "3.3",
+      "heading": "Additional fully accessible units",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 44,
+      "page_end": 45,
+      "quote": "Additional Fully Accessible Units",
+      "tiers": [
+        {"tier_label": "New Castle County, 10% of units fully accessible", "points": 3},
+        {"tier_label": "New Castle County, 15% of units fully accessible", "points": 5},
+        {"tier_label": "Kent and Sussex County, 10% of units fully accessible", "points": 3}
+      ],
+      "note": "Measured against the Fair Housing minimum of 5%. The table offers no 15% row for Kent and Sussex, so the full five points appear to be available only in New Castle County; a reviewer should confirm whether that is deliberate. Requires an accessibility outreach and marketing agreement signed by at least one disability service provider, and listing on delawarehousingsearch.org."
+    },
+    {
+      "ord": 13,
+      "kind": "competitive",
+      "native_category": "Tenant Populations Served",
+      "section_label": "3.4",
+      "heading": "Mixed income / market rate",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 46,
+      "page_end": 46,
+      "quote": "Mixed Income/Market Rate",
+      "tiers": [
+        {"tier_label": "10% of units neither income nor rent restricted", "points": 2},
+        {"tier_label": "15%", "points": 4},
+        {"tier_label": "20%", "points": 6},
+        {"tier_label": "25%", "points": 8},
+        {"tier_label": "30%", "points": 10}
+      ],
+      "note": "Points for unrestricted units, running in the opposite direction to 3.1, which pays for deeper affordability. A project maximising both would need 30% market-rate units alongside an overall average AMI under 40%. Applicants seeking DSHA financing must show non-restricted financing sufficient to carry the market-rate units."
+    },
+    {
+      "ord": 14,
+      "kind": "competitive",
+      "native_category": "Use of Resources",
+      "section_label": "4.1",
+      "heading": "Cost balance",
+      "points_max": 15,
+      "points_type": "formula",
+      "page_start": 46,
+      "page_end": 47,
+      "quote": "Cost Balance",
+      "note": "Construction cost as a share of total development cost less land, by [(Construction Costs) / (TDC-Land Costs)] * 100. New construction starts earning at 67% and gains one point for every 1.5% above it; acquisition, rehabilitation and new creation rehabilitation start at 50% and gain one point per 1% above it. So rehabilitation reaches the 15-point cap at 65% while new construction needs 89.5%. New construction in an Area of Opportunity may exclude appraised land cost from TDC for this category only. Scoring at least 10 here is also the gate for bonus points."
+    },
+    {
+      "ord": 15,
+      "kind": "competitive",
+      "native_category": "Use of Resources",
+      "section_label": "4.2",
+      "heading": "Leveraging",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 47,
+      "page_end": 47,
+      "quote": "Leveraging",
+      "tiers": [
+        {"tier_label": "New Castle County: 81%-100% of permanent sources non-DSHA", "points": 10},
+        {"tier_label": "New Castle County: 71-80%", "points": 8},
+        {"tier_label": "New Castle County: 61-70%", "points": 6},
+        {"tier_label": "New Castle County: 51-60%", "points": 4},
+        {"tier_label": "New Castle County: 36-50%", "points": 2},
+        {"tier_label": "Kent and Sussex County: 71-100%", "points": 10},
+        {"tier_label": "Kent and Sussex County: 61-70%", "points": 8},
+        {"tier_label": "Kent and Sussex County: 51-60%", "points": 6},
+        {"tier_label": "Kent and Sussex County: 36-50%", "points": 4},
+        {"tier_label": "Kent and Sussex County: 21-35%", "points": 2}
+      ],
+      "note": "Two separate ladders, one per region, so a project is scored against only one of them. Kent and Sussex are graded more leniently at every step: 71% earns 10 there but 8 in New Castle. DSHA-controlled funds (HDF, ARHP, DSHA HOME, NHTF) do not count as leverage, nor do project reserves, tax credit equity including historic equity, or deferred developer fee. A change in financing structure after application triggers recalculation and re-ranking."
+    },
+    {
+      "ord": 16,
+      "kind": "competitive",
+      "native_category": "Use of Resources",
+      "section_label": "4.3",
+      "heading": "New rental subsidies",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 48,
+      "page_end": 48,
+      "quote": "New Rental Subsidies",
+      "note": "All or nothing: five points for an award of new project-based rental subsidies covering at least 75% of total affordable units, excluding eligible unrestricted market rate units. Transfers of existing contracts are explicitly not new subsidies, so preservation deals carrying a project-based contract forward earn nothing here."
+    },
+    {
+      "ord": 17,
+      "kind": "competitive",
+      "native_category": "Use of Resources",
+      "section_label": "4.4",
+      "heading": "Historic housing",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 48,
+      "page_end": 48,
+      "quote": "Historic Housing",
+      "tiers": [
+        {"tier_label": "Federal Section 47 and/or State Historic Tax Credits, all buildings already on the National Historic Register at application", "points": 5},
+        {"tier_label": "Less than 100% but more than 50% of units eligible", "points": 2}
+      ],
+      "note": "Listing must already be in place at the time of application, not pending. Property within a listed historic district must be deemed 'contributing to the significance of the historic district', and the applicant must hold a letter from the State Historic Preservation Office confirming state credits will be available by conversion."
+    },
+    {
+      "ord": 18,
+      "kind": "competitive",
+      "native_category": "Development Team",
+      "section_label": "5.1",
+      "heading": "Minority-, women-, veteran-, service-disabled-veteran- and disability-owned business participation",
+      "points_max": 5,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 48,
+      "page_end": 48,
+      "quote": "Minority-Owned/Women-Owned/Veteran-Owned",
+      "tiers": [
+        {"tier_label": "Development entity, developer or applicant with majority MBE/WBE/VBE/DBE ownership", "points": 5},
+        {"tier_label": "Each other eligible special team member, such as general contractor, architect, management agent, engineering firm, cost certification accountant, security system provider or construction subcontractor", "points": 1}
+      ],
+      "note": "The full five points go to ownership of the development entity itself; other team members pay one point each toward the same cap, so five qualifying subcontractors match one qualifying owner. Certification must be by the State of Delaware Division of Supplier Diversity. Firms must have executed contracts at application and be committed for two years, and replacing one without DSHA consent deducts the same points from a future application."
+    },
+    {
+      "ord": 19,
+      "kind": "competitive",
+      "native_category": "Development Team",
+      "section_label": "5.2",
+      "heading": "Sponsor capacity",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 49,
+      "page_end": 49,
+      "quote": "Sponsor Capacity",
+      "tiers": [
+        {"tier_label": "2-4 developments in service less than 3 years", "points": 3},
+        {"tier_label": "2-4 developments in service more than 3 years", "points": 5},
+        {"tier_label": "5 or more developments in service less than 3 years", "points": 7},
+        {"tier_label": "5 or more developments in service more than 3 years", "points": 10}
+      ],
+      "note": "Counts LIHTC properties successfully developed by the general partner or developer that have maintained financial stability. Two points are deducted from allocations made in 2022 or later where the team returned credits to, or received a forward reservation from, DSHA in the past two credit years. Points for developments in service over three years require a CPA certification of positive operating cash flow and funded reserves. A consultant's experience may be substituted if a signed contract for substantial services is provided."
+    },
+    {
+      "ord": 20,
+      "kind": "competitive",
+      "native_category": "Development Team",
+      "section_label": "5.3",
+      "heading": "Management agent's experience and performance",
+      "points_max": 12,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 49,
+      "page_end": 50,
+      "quote": "Management Agent’s Experience and Performance",
+      "tiers": [
+        {"tier_label": "1-4 LIHTC and subsidized developments currently managed", "points": 1},
+        {"tier_label": "5-15 developments", "points": 3},
+        {"tier_label": "More than 15 developments", "points": 5},
+        {"tier_label": "Limited English Proficiency: applications, leases and management documents available in Spanish and other languages", "points": 2},
+        {"tier_label": "Delaware Section 811 contracts or target units, 65-80% occupied by qualified tenants", "points": 2},
+        {"tier_label": "Delaware Section 811 contracts or target units, over 80% occupied by qualified tenants", "points": 5}
+      ],
+      "note": "CONTRADICTION, recorded not resolved. The body heads this '(0-12 points)' and its sub-items sum to 12 (5 portfolio size + 2 LEP + 5 for 811 performance), which is also what the Development Team section header of 37 requires. The Scoring Summary on p.52 instead lists 'Management Experience and Performance' at 15, and it is that single figure which makes the summary's items sum to 40 rather than 37 and produces the 234 on p.34. 12 is coded. A reviewer should confirm against pp.49-50 and p.52. The portfolio-size and 811 rows are each internally alternative; the three groups are additive. All points are forfeited if more than 1% of the agent's portfolio is subject to an unresolved Form 8823, if the average REAC score is 79 or below, if average vacancy loss across five or more similar properties is 7% or more, or if under 30% of its 811 units are filled with qualified tenants."
+    },
+    {
+      "ord": 21,
+      "kind": "competitive",
+      "native_category": "Development Team",
+      "section_label": "5.4",
+      "heading": "Readiness to proceed",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 50,
+      "page_end": 50,
+      "quote": "Readiness to Proceed",
+      "tiers": [
+        {"tier_label": "Final zoning approvals", "points": 3},
+        {"tier_label": "Local municipality design and/or site plan final approvals", "points": 3},
+        {"tier_label": "DNREC final approvals", "points": 3},
+        {"tier_label": "DelDOT final approvals", "points": 3},
+        {"tier_label": "Initial allocations received in 2021 or later that achieved construction closing by the initial Carryover deadline", "points": 3}
+      ],
+      "note": "Five items at three points each sum to 15 against a cap of 10, so four of the five suffice. The QAP adds that 'If an item is not applicable, it is not eligible for points', which means a project needing no DelDOT or DNREC approval cannot reach the cap by that route."
+    },
+    {
+      "ord": 22,
+      "kind": "competitive",
+      "track": "bonus",
+      "native_category": "Bonus Points",
+      "section_label": "BONUS",
+      "heading": "Bonus points for cost balance combined with policy categories",
+      "points_max": 10,
+      "points_type": "formula",
+      "page_start": 51,
+      "page_end": 51,
+      "quote": "BONUS POINTS",
+      "note": "Additional to the 231, and recorded on a separate track for that reason. Gated on scoring at least 10 points in Cost Balance, then paying 0.5 x (Cost Balance + sum of points earned in eligible point pools), capped at 10. Eligible pools are Promoting Balanced Housing Opportunities, Historic Housing, Energy Conservation Measures, Additional Fully Accessible Units, New Creation in Sussex County, Readiness to Proceed, and New Creation family projects serving residents under 40% AMI. The QAP's own worked example: 0.5 x (10 + (5+3)) = 9 bonus points. Note that 'New Creation in Sussex County' is named as an eligible pool but is not itself a scored category anywhere in the summary; a reviewer should check whether it refers to the Eastern Sussex award inside 2.1."
+    },
+    {
+      "ord": 23,
+      "kind": "threshold",
+      "native_category": "Scoring and Ranking",
+      "section_label": "SC.minimum",
+      "heading": "Minimum point score",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "page_start": 52,
+      "page_end": 52,
+      "quote": "Applications for competitive credit must score a minimum of 100 points.",
+      "note": "Non-competitive, tax-exempt bond financed applications must reach 95. Against a base maximum of 231, the competitive floor is about 43% of available points. The summary also warns that 'No application can achieve the maximum total points', which is consistent with 3.1 and 3.4 pulling in opposite directions and with the not-applicable rule in 5.4."
+    }
+  ]
+}

@@ -367,6 +367,54 @@ ASSIGN: dict[tuple[str, str], object] = {
     # corpus; filed under design as the closest fit, flagged in its note.
     ("SD", "V.C"): DES,         ("SD", "V.D"): POP,
     ("SD", "V.E"): LOC,
+
+    # ---- Ohio --------------------------------------------------------------
+    # Three index-driven criteria, the shortest scoring system in the corpus.
+    ("OH", "H.1"): LOC,     ("OH", "H.2"): LOC,     ("OH", "H.3"): COST,
+
+    # ---- Pennsylvania ------------------------------------------------------
+    ("PA", "A.1"): LOC,     ("PA", "A.2"): LOC,     ("PA", "A.3"): LOC,
+    ("PA", "B.1"): AFF,     ("PA", "B.2"): POP,     ("PA", "B.3"): DES,
+    ("PA", "B.4"): POP,     ("PA", "B.5"): DES,     ("PA", "B.6"): POP,
+    ("PA", "C.1"): LOC,     ("PA", "C.2"): DES,     ("PA", "C.3"): DES,
+    ("PA", "C.4"): COST,
+    ("PA", "D.1"): SPON,    ("PA", "D.2"): SPON,    ("PA", "D.3"): READY,
+    ("PA", "D.4"): COST,    ("PA", "D.5"): SPON,
+    ("PA", "E"): COST,      ("PA", "F"): READY,
+
+    # ---- Delaware ----------------------------------------------------------
+    ("DE", "1.1"): AFF,     ("DE", "1.2"): PRES,    ("DE", "1.3"): DES,
+    ("DE", "1.4"): POP,     ("DE", "1.5"): DES,
+    ("DE", "2.1"): LOC,     ("DE", "2.2"): LOC,     ("DE", "2.3"): LOC,
+    ("DE", "2.4"): DES,
+    ("DE", "3.1"): AFF,     ("DE", "3.2"): POP,     ("DE", "3.3"): POP,
+    ("DE", "3.4"): AFF,
+    ("DE", "4.1"): COST,    ("DE", "4.2"): COST,    ("DE", "4.3"): AFF,
+    ("DE", "4.4"): PRES,
+    ("DE", "5.1"): SPON,    ("DE", "5.2"): SPON,    ("DE", "5.3"): SPON,
+    ("DE", "5.4"): READY,
+    ("DE", "BONUS"): COST,
+
+    # ---- Michigan ----------------------------------------------------------
+    # Parallel urban (A) and rural (B) tracks share categories name for name.
+    ("MI", "A.1"): LOC,     ("MI", "A.2"): LOC,     ("MI", "A.3"): LOC,
+    ("MI", "A.4"): LOC,     ("MI", "A.5"): LOC,     ("MI", "A.6"): LOC,
+    ("MI", "A.7"): LOC,
+    ("MI", "B.1"): LOC,     ("MI", "B.2"): LOC,     ("MI", "B.3"): LOC,
+    ("MI", "B.4"): LOC,     ("MI", "B.5"): LOC,     ("MI", "B.6"): LOC,
+    ("MI", "B.7"): LOC,
+    ("MI", "C.1"): POP,     ("MI", "C.2"): AFF,     ("MI", "C.3"): PRES,
+    ("MI", "C.4"): AFF,     ("MI", "C.5"): AFF,     ("MI", "C.6"): POP,
+    ("MI", "C.7"): DES,     ("MI", "C.8"): READY,   ("MI", "C.9"): READY,
+    ("MI", "C.10"): POP,    ("MI", "C.11"): DES,    ("MI", "C.12"): COST,
+    ("MI", "C.13"): PRES,   ("MI", "C.14"): AFF,
+    ("MI", "D.1"): SPON,    ("MI", "D.2"): SPON,    ("MI", "D.3"): SPON,
+    ("MI", "D.4"): SPON,    ("MI", "D.5"): SPON,    ("MI", "D.6"): SPON,
+    ("MI", "E.1"): POP,     ("MI", "E.2"): POP,     ("MI", "E.3"): POP,
+    ("MI", "E.4"): LOC,     ("MI", "E.5"): SPON,    ("MI", "E.6"): POP,
+    ("MI", "E.7"): POP,     ("MI", "E.8"): POP,     ("MI", "E.9"): POP,
+    ("MI", "E.10"): POP,
+    ("MI", "F.1"): COST,
 }
 
 

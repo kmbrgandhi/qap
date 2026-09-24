@@ -426,3 +426,58 @@ Lessons that will bite the next extractions:
   Colorado; OHFA is Ohio and Oklahoma. State names collide too: "Arkansas"
   contains "Kansas", and "West Virginia" contains "Virginia". All three
   misfiled a document before being fixed in `ingest.py`.
+
+### Ohio, Pennsylvania, Delaware, Michigan 2026
+
+Four states coded in one batch after the three-column schema change. All four
+reconciled exactly to a stated total, which is the first batch where that
+happened for every state in it.
+
+- **Extract at the grain the state publishes.** Pennsylvania has a Selection
+  Criteria Scoring Summary Table (pp.42–43) and Michigan a Quick Reference
+  Sheet (p.47), each naming every criterion and its maximum. Coding to that
+  grain made both reconcile first time. Where a state gives you its own index
+  of criteria, use it as the spine and hang the body detail off it — do not
+  invent a grain from the prose.
+- **A summary table can contradict its own body, and the body usually wins.**
+  Delaware states 234 total points on p.34 and 231 on p.52. The whole gap is
+  one criterion: the summary lists Management Experience and Performance at
+  15, the body heads it `(0-12)`, and 12 is what its sub-items (5 + 2 + 5) and
+  the section header of 37 both require. Coded 12, recorded the 15. The same
+  document also heads Community Compatibility "up to fourteen (14) points" and
+  then caps it at twelve two sentences later. **Check section-header arithmetic
+  against both the body and the summary before trusting either.** Where they
+  disagree, code the one the sub-items support and record the other in the
+  note with an explicit call for reviewer confirmation.
+- **Tracks are for mutually exclusive scoring universes, not just set-asides.**
+  Michigan has four: urban and rural opportunity criteria are alternatives to
+  each other ("A project will only be eligible for points from the applicable
+  Tab A or B"), supportive housing criteria apply only to PSH projects, and the
+  rest apply to everyone. Four track totals, each reconciling, describe Michigan
+  far better than one number could. Delaware's bonus points went on their own
+  track for the same reason: they sit on top of the 231 rather than inside it.
+- **A stated total belongs to a track, not to a document.** The loader used to
+  compare every track against one `stated_total` and reported a mismatch on
+  Delaware's bonus track that was not one. Fixed: `load_extraction.py` now
+  prefers the per-track figure from `track_totals` and falls back to the
+  document-level figure only for the default track.
+- **Where a track total is computed rather than read, say so in the row.**
+  Michigan states each section total but no total for the sections every
+  project faces. The 78 recorded for its default track is the sum of three
+  stated section totals; the `track_totals` note says exactly that, so the
+  figure is never mistaken for one read off the page.
+- **A negative criterion confirms the is_negative rule.** Michigan's section D
+  totals 11, which is its two positive criteria (7 + 4) and excludes its four
+  deductions (−5, −20, −20, −20). Independent confirmation that stated maxima
+  exclude deductions, which is what the loader has assumed since Rhode Island.
+- **Record what you did not read.** Michigan's E.3 and E.4 carry stated maxima
+  whose tier composition was not fully read. Both notes say so and ask the
+  reviewer to confirm, rather than presenting a partial tier list as complete.
+  Same for Delaware 3.3, where the table offers 15% only in New Castle County
+  and it is unclear whether that is deliberate.
+- **Self-score workbooks printed to PDF read cleanly but carry spreadsheet
+  litter.** Michigan's text layer includes `#DIV/0!`, empty self-score columns
+  and out-of-order table fragments, and headings arrive space-padded
+  ("Energy  Efficient  Building  Policy"). The loader's whitespace-normalising
+  fallback handles the padding; do not retype the heading to make it look
+  tidy, quote it as it sits.

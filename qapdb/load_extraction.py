@@ -25,6 +25,8 @@ from pathlib import Path
 
 import pymupdf
 
+from .paths import resolve_pdf
+
 
 def _normalise(s: str) -> str:
     """Collapse the whitespace and punctuation variance PDFs introduce."""
@@ -65,7 +67,13 @@ def load(spec_path: Path, db_path: Path, commit: bool) -> int:
         return 1
     qap_id, local_path, state = row
 
-    doc = pymupdf.open(local_path)
+    pdf = resolve_pdf(local_path, match["filename"])
+    if pdf is None:
+        print(f"cannot find {match['filename']} on this machine; looked at the"
+              f" ingested path, data/pdfs_bundled/ and $QAP_PDF_DIR",
+              file=sys.stderr)
+        return 1
+    doc = pymupdf.open(pdf)
     criteria = spec["criteria"]
 
     # Verify every citation before writing anything.
@@ -107,8 +115,16 @@ def load(spec_path: Path, db_path: Path, commit: bool) -> int:
             real + c["points_max"],
             naive + (sum(t["points"] for t in tiers) if tiers else c["points_max"]),
         )
-    stated = (spec.get("qap_updates") or {}).get("stated_total")
+    # A stated total belongs to a track, not to the document. Delaware states
+    # 231 for its five scoring sections and carries bonus points on top;
+    # comparing the bonus track to 231 reports a mismatch that is not one. So
+    # prefer the per-track figure from track_totals and fall back to the
+    # document-level one only for the default track.
+    per_track = {tt.get("track"): tt.get("stated_total")
+                 for tt in spec.get("track_totals", [])}
+    doc_stated = (spec.get("qap_updates") or {}).get("stated_total")
     for track, (real, naive) in tracks.items():
+        stated = per_track.get(track, doc_stated if track is None else None)
         flag = ""
         if stated is not None:
             flag = "  OK" if abs(real - stated) < 0.01 else f"  MISMATCH (stated {stated})"
@@ -176,8 +192,10 @@ def load(spec_path: Path, db_path: Path, commit: bool) -> int:
              c.get("points_type", "fixed"), c.get("scoring_unit", "points"),
              c.get("kind", "competitive"),
              c.get("rank_order"), c.get("track"), c.get("native_category"),
-             1 if c.get("is_negative") else 0, c.get("note"),
-             group_ids.get(c.get("group")), version))
+             1 if c.get("is_negative") else 0,
+             1 if c.get("scored_against_round") else 0,
+             c.get("tier_mode"), c.get("detail_external"),
+             c.get("note"), group_ids.get(c.get("group")), version))
         cid = cur.lastrowid
         for i, t in enumerate(c.get("tiers") or [], start=1):
             conn.execute(

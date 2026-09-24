@@ -6,6 +6,11 @@
 *.pdf
 data/pdfs/
 
+# ...except the bundled subset, which IS committed so that a session with only
+# the git repo (a cloud agent, a new machine) has documents to code from.
+# See data/pdfs_bundled/README.md. Keep this small; the full corpus is 123 MB.
+!data/pdfs_bundled/*.pdf
+
 # Per-machine config: the shared folder is at a different path for each of us
 .env
 

@@ -1,0 +1,287 @@
+{
+  "_comment": "Pennsylvania 2025/2026 QAP, PHFA, final plan adopted 10 October 2024. Scoring is Exhibit SC2025/2026, whose Selection Criteria Scoring Summary Table on PDF pp.42-43 names every criterion and its maximum; the detail runs pp.43-59 and is largely prose describing what the Agency weighs rather than numeric tiers. Criteria are therefore recorded at the grain of the summary table, with sub-item values carried as tiers where the detail states them and the rest summarised in notes. Page numbers are PDF page indices and match the printed numbers.",
+  "match": {
+    "filename": "pennsylvania-qap-2025-2026.pdf"
+  },
+  "extractor_version": "hand-2025-pa-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": 232,
+      "page": 43,
+      "note": "The summary table states 'Total: 232 Points', which is the sum of sections A through D plus F and excludes section E, Development Cost Savings, marked 'Suspended for 2025/2026'. Thresholds are stated alongside: 9% applications must score at or above 125, 4% applications at or above 110."
+    }
+  ],
+  "groups": [],
+  "criteria": [
+    {
+      "ord": 1,
+      "kind": "competitive",
+      "native_category": "Community and Economic Impact",
+      "section_label": "A.1",
+      "heading": "Underserved areas",
+      "points_max": 15,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 42,
+      "page_end": 44,
+      "quote": "A.1 Underserved Areas",
+      "tiers": [
+        {"tier_label": "Senior occupancy developments", "points": 15}
+      ],
+      "note": "Three alternative routes, A.1.a through A.1.c, of which the senior occupancy route is worth up to 15. Judged on the number of eligible seniors, limited affordable options subsidised and unsubsidised, limited production over the past twenty years, and proximity to health and retail amenities."
+    },
+    {
+      "ord": 2,
+      "kind": "competitive",
+      "native_category": "Community and Economic Impact",
+      "section_label": "A.2",
+      "heading": "Community revitalization plan",
+      "points_max": 17,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 42,
+      "page_end": 44,
+      "quote": "A.2 Community Revitalization Plan",
+      "tiers": [
+        {"tier_label": "Preservation properties", "points": 17},
+        {"tier_label": "New construction or substantial rehabilitation", "points": 16}
+      ],
+      "note": "The only criterion in the plan worth more to preservation than to new construction. Judged on the development forming part of a broader neighbourhood improvement programme capable of changing the character of the neighbourhood, with municipal support in a publicly approved plan or significant funding commitments, and on transport, infrastructure and site suitability."
+    },
+    {
+      "ord": 3,
+      "kind": "competitive",
+      "native_category": "Community and Economic Impact",
+      "section_label": "A.3",
+      "heading": "Social inequities and community disparities",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "A.3  Social Inequities and Community Disparities"
+    },
+    {
+      "ord": 4,
+      "kind": "competitive",
+      "native_category": "Resident Population & Services",
+      "section_label": "B.1",
+      "heading": "Income and rent targeting",
+      "points_max": 20,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "B.1 Income & Rent Targeting",
+      "note": "The largest single criterion in section B, which is itself the second largest section at 62 points."
+    },
+    {
+      "ord": 5,
+      "kind": "competitive",
+      "native_category": "Resident Population & Services",
+      "section_label": "B.2",
+      "heading": "Designated population and supportive services",
+      "points_max": 12,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "B.2 Designated Population & Supportive Services"
+    },
+    {
+      "ord": 6,
+      "kind": "competitive",
+      "native_category": "Resident Population & Services",
+      "section_label": "B.3",
+      "heading": "Accessible units",
+      "points_max": 10,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "B.3 Accessible Units"
+    },
+    {
+      "ord": 7,
+      "kind": "competitive",
+      "native_category": "Resident Population & Services",
+      "section_label": "B.4",
+      "heading": "Affordable units for large families",
+      "points_max": 10,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "B.4 Affordable Units for Large Families"
+    },
+    {
+      "ord": 8,
+      "kind": "competitive",
+      "native_category": "Resident Population & Services",
+      "section_label": "B.5",
+      "heading": "Broadband internet access",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "B.5 Broadband Internet Access"
+    },
+    {
+      "ord": 9,
+      "kind": "competitive",
+      "native_category": "Resident Population & Services",
+      "section_label": "B.6",
+      "heading": "Section 811 programme participation",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "Section 811 Program Participation"
+    },
+    {
+      "ord": 10,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "C.1",
+      "heading": "Smart site selection",
+      "points_max": 10,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "C.1 Smart Site Selection"
+    },
+    {
+      "ord": 11,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "C.2",
+      "heading": "Green certification",
+      "points_max": 10,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "C.2 Green Certification"
+    },
+    {
+      "ord": 12,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "C.3",
+      "heading": "Energy efficiency",
+      "points_max": 10,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "C.3 Energy Efficiency"
+    },
+    {
+      "ord": 13,
+      "kind": "competitive",
+      "native_category": "Development Characteristics",
+      "section_label": "C.4",
+      "heading": "Build America Buy America",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "Build America Buy America"
+    },
+    {
+      "ord": 14,
+      "kind": "competitive",
+      "native_category": "Development Team and Process",
+      "section_label": "D.1",
+      "heading": "Development team experience",
+      "points_max": 41,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "D.1 Development Team Experience",
+      "note": "The largest single criterion in the plan, nearly a fifth of the 232 available, and the largest weighting given to the team rather than the project anywhere in the corpus so far."
+    },
+    {
+      "ord": 15,
+      "kind": "competitive",
+      "native_category": "Development Team and Process",
+      "section_label": "D.2",
+      "heading": "Material participation of MBE and WBE",
+      "points_max": 15,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "D.2 Material Participation of MBE and WBE"
+    },
+    {
+      "ord": 16,
+      "kind": "competitive",
+      "native_category": "Development Team and Process",
+      "section_label": "D.3",
+      "heading": "Zoning",
+      "points_max": 10,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "D.3 Zoning"
+    },
+    {
+      "ord": 17,
+      "kind": "competitive",
+      "native_category": "Development Team and Process",
+      "section_label": "D.4",
+      "heading": "Commitment of funds",
+      "points_max": 27,
+      "points_type": "formula",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "D.4 Commitment of Funds"
+    },
+    {
+      "ord": 18,
+      "kind": "competitive",
+      "native_category": "Development Team and Process",
+      "section_label": "D.5",
+      "heading": "Noncompliance",
+      "points_max": -10,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "D.5 Noncompliance"
+    },
+    {
+      "ord": 19,
+      "kind": "competitive",
+      "native_category": "Development Cost Savings",
+      "section_label": "E",
+      "heading": "Development cost savings (suspended)",
+      "points_max": 0,
+      "points_type": "none",
+      "page_start": 43,
+      "page_end": 43,
+      "quote": "Development Cost Savings",
+      "note": "Worth 10 points in the table but marked 'NOTE: Suspended for 2025/2026', and excluded from the stated total of 232. Recorded at zero so it does not inflate the computed maximum, with its nominal value noted here. Worth watching in the next cycle."
+    },
+    {
+      "ord": 20,
+      "kind": "competitive",
+      "native_category": "Complete Application Package",
+      "section_label": "F",
+      "heading": "Complete application package",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 43,
+      "page_end": 43,
+      "quote": "Complete Application Package"
+    },
+    {
+      "ord": 21,
+      "kind": "threshold",
+      "native_category": "Selection Criteria",
+      "section_label": "SC.minimum.9pct",
+      "heading": "Minimum score of 125 for 9% applications",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "page_start": 43,
+      "page_end": 43,
+      "quote": "to meet threshold, score must be at or above 125",
+      "note": "4% applications must reach 110. At 232 available, the 9% floor is just over half."
+    }
+  ]
+}

@@ -30,6 +30,8 @@ try:
 except ImportError:  # older installs expose the same API as fitz
     import fitz
 
+from .paths import resolve_pdf
+
 DB = Path(__file__).resolve().parent.parent / "data" / "qap.db"
 SEARCH_RADIUS = 3  # pages either side, when a quote misses its cited page
 
@@ -50,8 +52,13 @@ def norm(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip().lower()
 
 
-def pdf_dir() -> Path:
-    """QAP_PDF_DIR from .env, which is per-machine and gitignored."""
+def pdf_dir() -> Path | None:
+    """The shared drop folder, if this machine has one.
+
+    Returns None rather than exiting when it does not: a session working from
+    the git repo alone still has data/pdfs_bundled/, and resolve_pdf finds
+    documents there. Callers report which PDFs they could not open.
+    """
     env = Path(__file__).resolve().parent.parent / ".env"
     if env.exists():
         for line in env.read_text().splitlines():
@@ -59,10 +66,12 @@ def pdf_dir() -> Path:
                 return Path(line.split("=", 1)[1].strip())
     if os.environ.get("QAP_PDF_DIR"):
         return Path(os.environ["QAP_PDF_DIR"])
-    sys.exit("QAP_PDF_DIR is not set. See .env.example.")
+    return None
 
 
-def find_pdf(root: Path, filename: str) -> Path | None:
+def find_pdf(root: Path | None, filename: str) -> Path | None:
+    if root is None or not root.exists():
+        return None
     direct = root / filename
     if direct.exists():
         return direct
@@ -75,7 +84,7 @@ def check(state_filter: str | None = None) -> list[dict]:
     sql = """
         SELECT c.id, c.qap_id, c.section_label, c.heading, c.quote,
                c.page_start, c.page_end, c.kind,
-               q.state, q.filename, q.n_pages
+               q.state, q.filename, q.n_pages, q.local_path
         FROM criteria c JOIN qaps q ON q.id = c.qap_id
     """
     args: tuple = ()
@@ -85,7 +94,6 @@ def check(state_filter: str | None = None) -> list[dict]:
     sql += " ORDER BY q.state, c.ord"
     rows = [dict(r) for r in con.execute(sql, args)]
 
-    root = pdf_dir()
     page_cache: dict[tuple[str, int], str] = {}
     docs: dict[str, fitz.Document] = {}
     results = []
@@ -93,7 +101,7 @@ def check(state_filter: str | None = None) -> list[dict]:
     for r in rows:
         fn = r["filename"]
         if fn not in docs:
-            path = find_pdf(root, fn)
+            path = resolve_pdf(r.get("local_path"), fn) or find_pdf(pdf_dir(), fn)
             docs[fn] = fitz.open(path) if path else None
         doc = docs[fn]
         out = {k: r[k] for k in ("id", "state", "section_label", "heading",
@@ -163,10 +171,9 @@ def check_text_hashes(state_filter: str | None = None) -> list[dict]:
 
     drifted = []
     for r in con.execute(sql, args):
-        path = Path(r["local_path"])
-        if not path.exists():
-            path = find_pdf(pdf_dir(), r["filename"]) or path
-        if not path.exists():
+        path = resolve_pdf(r["local_path"], r["filename"]) or find_pdf(
+            pdf_dir(), r["filename"])
+        if path is None or not path.exists():
             continue
         doc = fitz.open(path)
         text = "".join(p.get_text() for p in doc)
