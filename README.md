@@ -43,6 +43,25 @@ file added twice under different names is ingested once.
 it from. Without it nobody else can re-fetch the document, and
 `python -m qapdb.manifest` will list every document still missing one.
 
+Record it in `data/sources.csv`, which is committed, and apply it with:
+
+```bash
+python -m qapdb.apply_sources --commit
+```
+
+The URL cannot live only in the database: `data/qap.db` is a build artefact and
+is rebuilt from scratch. `data/sources.csv` is keyed by SHA-256, so renaming a
+PDF does not break the link, and it also carries the handful of corrections a
+human verified against the agency's own site — the agency name, and a cycle for
+documents whose text never states one. Virginia's plan, for instance, contains
+the string "2026" nowhere; that is the agency's label for it. A cycle set this
+way is stored with `cycle_source = 'manual'` so it is never mistaken for one the
+document stated.
+
+Note a few documents are mirrors or derivatives rather than the agency's own
+file — Rhode Island's scan came from a Novogradac copy and was then OCR'd
+locally — and the `note` column says so for each.
+
 ### What ingest will skip or flag
 
 - **Skipped silently:** `~$` lock files, dotfiles, and cloud-sync artefacts

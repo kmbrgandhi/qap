@@ -67,8 +67,18 @@ STATES = {
 
 # Agency names are a stronger signal than the state name, which shows up
 # incidentally ("...similar to New York's approach..."). Checked first.
+# Token -> (state or None, agency name). Matched longest token first, so a
+# full agency name always beats a bare abbreviation.
+#
+# Abbreviations are not unique across states and must not carry a state on
+# their own: CHFA is both the Connecticut Housing Finance Authority and the
+# Colorado Housing and Finance Authority, and it silently filed Colorado's
+# 2025-2026 QAP under CT. An abbreviation that two agencies share maps to
+# state None, which falls through to counting state names in the text.
 AGENCIES = {
-    "CHFA": ("CT", "Connecticut Housing Finance Authority"),
+    "CONNECTICUT HOUSING FINANCE AUTHORITY": ("CT", "Connecticut Housing Finance Authority"),
+    "COLORADO HOUSING AND FINANCE AUTHORITY": ("CO", "Colorado Housing and Finance Authority"),
+    "CHFA": (None, None),                    # ambiguous: CT and CO
     "MASSHOUSING": ("MA", "MassHousing"),
     "EOHLC": ("MA", "Executive Office of Housing and Livable Communities"),
     "DHCD": (None, "Dept. of Housing and Community Development"),
@@ -79,6 +89,35 @@ AGENCIES = {
     "NEW HAMPSHIRE HOUSING": ("NH", "New Hampshire Housing Finance Authority"),
     "NJHMFA": ("NJ", "New Jersey Housing and Mortgage Finance Agency"),
     "HCR": ("NY", "NYS Homes and Community Renewal"),
+    # Added with the 2026 multi-state expansion.
+    "TEXAS DEPARTMENT OF HOUSING AND COMMUNITY AFFAIRS": ("TX", "Texas Dept. of Housing and Community Affairs"),
+    "TDHCA": ("TX", "Texas Dept. of Housing and Community Affairs"),
+    "CALIFORNIA TAX CREDIT ALLOCATION COMMITTEE": ("CA", "California Tax Credit Allocation Committee"),
+    "TCAC": ("CA", "California Tax Credit Allocation Committee"),
+    "WASHINGTON STATE HOUSING FINANCE COMMISSION": ("WA", "Washington State Housing Finance Commission"),
+    "WSHFC": ("WA", "Washington State Housing Finance Commission"),
+    "OHIO HOUSING FINANCE AGENCY": ("OH", "Ohio Housing Finance Agency"),
+    "OHFA": (None, None),                    # ambiguous: OH and OK
+    "NORTH CAROLINA HOUSING FINANCE AGENCY": ("NC", "North Carolina Housing Finance Agency"),
+    "NCHFA": ("NC", "North Carolina Housing Finance Agency"),
+    "GEORGIA HOUSING AND FINANCE AUTHORITY": ("GA", "Georgia Housing and Finance Authority"),
+    "GHFA": ("GA", "Georgia Housing and Finance Authority"),
+    "FLORIDA HOUSING FINANCE CORPORATION": ("FL", "Florida Housing Finance Corporation"),
+    "VIRGINIA HOUSING DEVELOPMENT AUTHORITY": ("VA", "Virginia Housing"),
+    "VIRGINIA HOUSING": ("VA", "Virginia Housing"),
+    "DELAWARE STATE HOUSING AUTHORITY": ("DE", "Delaware State Housing Authority"),
+    "DSHA": ("DE", "Delaware State Housing Authority"),
+    "PENNSYLVANIA HOUSING FINANCE AGENCY": ("PA", "Pennsylvania Housing Finance Agency"),
+    "PHFA": ("PA", "Pennsylvania Housing Finance Agency"),
+    "ILLINOIS HOUSING DEVELOPMENT AUTHORITY": ("IL", "Illinois Housing Development Authority"),
+    "IHDA": ("IL", "Illinois Housing Development Authority"),
+    "WISCONSIN HOUSING AND ECONOMIC DEVELOPMENT AUTHORITY": ("WI", "WHEDA"),
+    "WHEDA": ("WI", "WHEDA"),
+    "MINNESOTA HOUSING": ("MN", "Minnesota Housing Finance Agency"),
+    "MICHIGAN STATE HOUSING DEVELOPMENT AUTHORITY": ("MI", "Michigan State Housing Development Authority"),
+    "MSHDA": ("MI", "Michigan State Housing Development Authority"),
+    "MISSOURI HOUSING DEVELOPMENT COMMISSION": ("MO", "Missouri Housing Development Commission"),
+    "MHDC": ("MO", "Missouri Housing Development Commission"),
 }
 
 DRAFT_RE = re.compile(r"\bdraft\b", re.I)
@@ -220,7 +259,13 @@ def identify(path: Path) -> Ident:
             f"{doc.page_count} pages) - needs OCR before extraction"
         )
 
-    probe = " ".join(doc[i].get_text() for i in range(min(8, doc.page_count)))
+    # Measure the whole document, not the front matter. A title page and a
+    # dotted table of contents are mostly digits, dots and whitespace: over the
+    # first 8 pages Michigan's 2026-2027 QAP reads 22% letters and Minnesota's
+    # 30%, against 72% and 74% across the full document. Both were flagged as
+    # garbled and neither is. Genuine garbling does not hide: Vermont's Type3
+    # draft measures 3% whichever way you slice it.
+    probe = " ".join(doc[i].get_text() for i in range(doc.page_count))
     letters = sum(c.isascii() and c.isalpha() for c in probe)
     ratio = letters / max(len(probe.strip()), 1)
     if ident.source_quality == "native" and len(probe.strip()) > 200 \
@@ -260,12 +305,18 @@ def identify(path: Path) -> Ident:
     upper = head.upper()
 
     # Agency first - a stronger signal than an incidental state mention.
-    for token, (st, name) in AGENCIES.items():
+    # Longest token first: "COLORADO HOUSING AND FINANCE AUTHORITY" must win
+    # over the "CHFA" that also appears in the same document.
+    for token in sorted(AGENCIES, key=len, reverse=True):
         if token in upper:
-            ident.agency = name
+            st, name = AGENCIES[token]
+            if name:
+                ident.agency = name
             if st:
                 ident.state = st
-            break
+                break
+            # An ambiguous abbreviation identifies nothing on its own; keep
+            # looking for a token that does.
 
     if not ident.state:
         hits = {code: upper.count(nm.upper())
