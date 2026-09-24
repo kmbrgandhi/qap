@@ -203,6 +203,17 @@ ASSIGN: dict[tuple[str, str], object] = {
     # previous allocation, which is sponsor capacity rather than cost.
     ("RI", "III.B.Neg.1"): SPON,        ("RI", "III.B.Neg.2"): SPON,
     ("RI", "III.B.Neg.3"): SPON,        ("RI", "III.B.Neg.4"): SPON,
+
+    # ---- North Dakota ------------------------------------------------------
+    ("ND", "7.A"): AFF,         ("ND", "7.B"): LOC,
+    ("ND", "7.C"): PRES,        ("ND", "7.D"): POP,
+    ("ND", "7.E"): DES,         ("ND", "7.F"): DES,
+    ("ND", "7.G"): DES,         ("ND", "7.H"): POP,
+    ("ND", "7.I"): POP,         ("ND", "7.J"): POP,
+    ("ND", "7.K"): POP,         ("ND", "7.L"): PRES,
+    ("ND", "7.M"): COST,
+    # The per-requirement deduction is about application completeness.
+    ("ND", "5.deduction"): READY,
 }
 
 

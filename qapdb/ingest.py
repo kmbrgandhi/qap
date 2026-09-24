@@ -118,6 +118,40 @@ AGENCIES = {
     "MSHDA": ("MI", "Michigan State Housing Development Authority"),
     "MISSOURI HOUSING DEVELOPMENT COMMISSION": ("MO", "Missouri Housing Development Commission"),
     "MHDC": ("MO", "Missouri Housing Development Commission"),
+    # Added with the remaining 25 states. Note WEST VIRGINIA HOUSING DEVELOPMENT
+    # FUND contains "VIRGINIA HOUSING", which filed it under VA until this
+    # entry existed; longest-token-first matching is what makes it work.
+    "WEST VIRGINIA HOUSING DEVELOPMENT FUND": ("WV", "West Virginia Housing Development Fund"),
+    "WVHDF": ("WV", "West Virginia Housing Development Fund"),
+    "ALABAMA HOUSING FINANCE AUTHORITY": ("AL", "Alabama Housing Finance Authority"),
+    "AHFA": ("AL", "Alabama Housing Finance Authority"),
+    "ALASKA HOUSING FINANCE CORPORATION": ("AK", "Alaska Housing Finance Corporation"),
+    "AHFC": ("AK", "Alaska Housing Finance Corporation"),
+    "ARIZONA DEPARTMENT OF HOUSING": ("AZ", "Arizona Department of Housing"),
+    "ARKANSAS DEVELOPMENT FINANCE AUTHORITY": ("AR", "Arkansas Development Finance Authority"),
+    "ADFA": ("AR", "Arkansas Development Finance Authority"),
+    "HAWAII HOUSING FINANCE": ("HI", "Hawaii Housing Finance and Development Corporation"),
+    "HHFDC": ("HI", "Hawaii Housing Finance and Development Corporation"),
+    "IDAHO HOUSING AND FINANCE ASSOCIATION": ("ID", "Idaho Housing and Finance Association"),
+    "INDIANA HOUSING AND COMMUNITY DEVELOPMENT AUTHORITY": ("IN", "Indiana Housing and Community Development Authority"),
+    "IHCDA": ("IN", "Indiana Housing and Community Development Authority"),
+    "IOWA FINANCE AUTHORITY": ("IA", "Iowa Finance Authority"),
+    "KANSAS HOUSING RESOURCES CORPORATION": ("KS", "Kansas Housing Resources Corporation"),
+    "KHRC": ("KS", "Kansas Housing Resources Corporation"),
+    "KENTUCKY HOUSING CORPORATION": ("KY", "Kentucky Housing Corporation"),
+    "LOUISIANA HOUSING CORPORATION": ("LA", "Louisiana Housing Corporation"),
+    "MISSISSIPPI HOME CORPORATION": ("MS", "Mississippi Home Corporation"),
+    "MONTANA BOARD OF HOUSING": ("MT", "Montana Board of Housing"),
+    "NEBRASKA INVESTMENT FINANCE AUTHORITY": ("NE", "Nebraska Investment Finance Authority"),
+    "NIFA": ("NE", "Nebraska Investment Finance Authority"),
+    "NEVADA HOUSING DIVISION": ("NV", "Nevada Housing Division"),
+    "SOUTH DAKOTA HOUSING": ("SD", "South Dakota Housing Development Authority"),
+    "SDHDA": ("SD", "South Dakota Housing Development Authority"),
+    "TENNESSEE HOUSING DEVELOPMENT AGENCY": ("TN", "Tennessee Housing Development Agency"),
+    "THDA": ("TN", "Tennessee Housing Development Agency"),
+    "UTAH HOUSING CORPORATION": ("UT", "Utah Housing Corporation"),
+    "WYOMING COMMUNITY DEVELOPMENT AUTHORITY": ("WY", "Wyoming Community Development Authority"),
+    "WCDA": ("WY", "Wyoming Community Development Authority"),
 }
 
 DRAFT_RE = re.compile(r"\bdraft\b", re.I)
@@ -157,6 +191,7 @@ class Ident:
     title: str | None = None
     n_pages: int = 0
     text_chars: int = 0
+    text_sha256: str | None = None
     source_quality: str = "native"
     pdf_metadata: str | None = None
     warnings: list[str] = field(default_factory=list)
@@ -250,7 +285,13 @@ def identify(path: Path) -> Ident:
     doc = pymupdf.open(path)
     ident.n_pages = doc.page_count
 
-    ident.text_chars = sum(len(doc[i].get_text()) for i in range(doc.page_count))
+    extracted = "".join(doc[i].get_text() for i in range(doc.page_count))
+    ident.text_chars = len(extracted)
+    # Hash the text, not just the file. The file hash proves the PDF is the
+    # one we fetched; this proves the text a citation is checked against has
+    # not moved underneath it — after a re-OCR, or after an agency quietly
+    # replaces a file at a rolling URL.
+    ident.text_sha256 = hashlib.sha256(extracted.encode("utf-8")).hexdigest()
     per_page = ident.text_chars / max(doc.page_count, 1)
     if per_page < MIN_CHARS_PER_PAGE:
         ident.source_quality = "no_text_layer"
@@ -319,8 +360,21 @@ def identify(path: Path) -> Ident:
             # looking for a token that does.
 
     if not ident.state:
-        hits = {code: upper.count(nm.upper())
-                for code, nm in STATES.items() if nm.upper() in upper}
+        # State names overlap, in two different ways, and both bit:
+        #   "Arkansas" contains "Kansas"       -> needs word boundaries
+        #   "West Virginia" contains "Virginia" -> boundaries do not help,
+        #                                          since it is a whole word
+        # So match longest name first and blank out what it consumed, leaving
+        # shorter names to match only text no longer name has claimed. West
+        # Virginia's 2025-2026 plan was filed under VA before this.
+        remaining = upper
+        hits: dict[str, int] = {}
+        for code, nm in sorted(STATES.items(), key=lambda kv: -len(kv[1])):
+            pat = re.compile(rf"\b{re.escape(nm.upper())}\b")
+            n = len(pat.findall(remaining))
+            if n:
+                hits[code] = n
+                remaining = pat.sub(" ", remaining)
         if hits:
             ranked = sorted(hits.items(), key=lambda kv: -kv[1])
             ident.state = ranked[0][0]
@@ -340,7 +394,12 @@ def identify(path: Path) -> Ident:
     # Draft detection looks only at the first page - later pages say
     # "draft" about unrelated things (draft regulatory agreements, etc.).
     first_page = head[:1500]
-    ident.doc_status = "draft" if DRAFT_RE.search(first_page) else "final"
+    # The filename counts too. Kansas's and New Mexico's 2027 drafts say
+    # "Adopted on [date]" with an unfilled placeholder and never use the word
+    # "draft" on page 1, so front-matter alone filed both as adopted plans.
+    ident.doc_status = ("draft"
+                        if DRAFT_RE.search(first_page) or DRAFT_RE.search(path.name)
+                        else "final")
     if ident.doc_status == "draft":
         ident.warnings.append("appears to be a DRAFT, not an adopted QAP")
 
@@ -432,13 +491,14 @@ def ingest(pdf_dir: Path, db_path: Path, commit: bool) -> int:
                (state, state_name, agency, doc_role, doc_status,
                 cycle_start, cycle_end, cycle_source, effective_date, title,
                 retrieved_at, sha256, filename, local_path,
-                n_pages, text_chars, source_quality, notes)
-               VALUES (?,?,?,'primary',?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                n_pages, text_chars, text_sha256, source_quality, notes)
+               VALUES (?,?,?,'primary',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (ident.state, ident.state_name, ident.agency, ident.doc_status,
              ident.cycle_start, ident.cycle_end, ident.cycle_source,
              ident.effective_date, ident.title,
              today, digest, path.name, str(path.resolve()),
-             ident.n_pages, ident.text_chars, ident.source_quality,
+             ident.n_pages, ident.text_chars, ident.text_sha256,
+             ident.source_quality,
              json.dumps(ident.warnings) if ident.warnings else None),
         )
 

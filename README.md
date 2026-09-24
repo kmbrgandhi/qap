@@ -3,6 +3,13 @@
 A searchable database of state Qualified Allocation Plan scoring criteria for
 9% LIHTC, with a verified page citation behind every figure.
 
+## Coding a QAP
+
+Read [EXTRACTION_PROTOCOL.md](EXTRACTION_PROTOCOL.md) first, every time. It
+holds the rules for what counts as a criterion, how to quote and cite, how
+points and exclusivity are recorded, and the running log of what each
+extraction taught us. Update its lessons log when you finish a state.
+
 ## Where the PDFs live
 
 **The QAPs are not in this repo.** They live in a shared drop folder that both

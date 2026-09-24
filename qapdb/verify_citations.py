@@ -16,6 +16,7 @@ instead of a PDF page index.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -141,11 +142,53 @@ def check(state_filter: str | None = None) -> list[dict]:
     return results
 
 
+def check_text_hashes(state_filter: str | None = None) -> list[dict]:
+    """Has any document's extracted text moved since it was ingested?
+
+    A quote can still be found after a document is re-OCR'd or quietly
+    replaced at a rolling URL, while the surrounding text — and therefore what
+    the criterion actually says — has changed. Comparing the stored hash of
+    the extracted text catches that, and it is why this is cheaper than
+    freezing the text to a separate file: the reviewer keeps reading the same
+    PDF the citation points at, and drift is still loud.
+    """
+    con = sqlite3.connect(DB)
+    con.row_factory = sqlite3.Row
+    sql = ("SELECT id, state, filename, local_path, text_sha256 FROM qaps"
+           " WHERE text_sha256 IS NOT NULL AND id IN (SELECT DISTINCT qap_id FROM criteria)")
+    args: tuple = ()
+    if state_filter:
+        sql += " AND state = ?"
+        args = (state_filter,)
+
+    drifted = []
+    for r in con.execute(sql, args):
+        path = Path(r["local_path"])
+        if not path.exists():
+            path = find_pdf(pdf_dir(), r["filename"]) or path
+        if not path.exists():
+            continue
+        doc = fitz.open(path)
+        text = "".join(p.get_text() for p in doc)
+        doc.close()
+        if hashlib.sha256(text.encode("utf-8")).hexdigest() != r["text_sha256"]:
+            drifted.append({"state": r["state"], "filename": r["filename"]})
+    return drifted
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--state")
     ap.add_argument("--json", dest="json_path")
     args = ap.parse_args()
+
+    drifted = check_text_hashes(args.state)
+    if drifted:
+        print(f"!! {len(drifted)} document(s) whose extracted text has CHANGED "
+              f"since ingest. Citations below were written against the old text:")
+        for d in drifted:
+            print(f"   {d['state']}  {d['filename']}")
+        print()
 
     results = check(args.state)
     by_status: dict[str, int] = {}

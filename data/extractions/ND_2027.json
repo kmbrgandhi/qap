@@ -1,0 +1,318 @@
+{
+  "_comment": "North Dakota 2027 Allocation Plan, NDHFA. Competitive scoring is Section 7, Project Ratings (PDF pp.13-17). Page numbers are PDF page indices; the printed page numbers run 7 lower. The plan states no overall maximum, only a 55-point eligibility floor, so the computed total of 99 is ours and not the document's.",
+  "match": {
+    "filename": "northdakota-qap-2027.pdf"
+  },
+  "extractor_version": "hand-2027-nd-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 13,
+      "note": "The plan states no maximum score. Section 7 sets a floor instead: 'Applications for an allocation of competitive 9% LIHTCs must receive a minimum of 55 points as determined by the Agency to be eligible for further consideration.' Summing every criterion's maximum gives 105, but categories H, I and J cannot be combined with K, so the most a project can actually earn is 99."
+    }
+  ],
+  "groups": [
+    {
+      "key": "nd_older_persons_exclusion",
+      "label": "Housing for Older Persons against rent rebate, tenant ownership and family housing",
+      "rule": "capped_sum",
+      "group_cap": 9,
+      "source_quote": "are not eligible for points under this scoring category",
+      "page_start": 15,
+      "note": "Categories H (2), I (2) and J (5) each state that an application seeking points under K, Housing for Older Persons, is not eligible for them. So a project takes either K alone (6) or any combination of H, I and J (up to 9). Modelled as a capped sum of 9, which is the larger of the two routes; max_one would understate it as 6."
+    }
+  ],
+  "criteria": [
+    {
+      "ord": 1,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.A",
+      "heading": "Serves lowest income groups",
+      "points_max": 45,
+      "points_type": "tiered",
+      "page_start": 13,
+      "page_end": 13,
+      "quote": "Points will be awarded to projects with a minimum percentage of units having gross rents based upon 50%",
+      "tiers": [
+        {"tier_label": "30% or less AMI: 50%+ of total units", "points": 45},
+        {"tier_label": "30% or less AMI: 40%<50% of total units", "points": 40},
+        {"tier_label": "30% or less AMI: 30%<40% of total units", "points": 30},
+        {"tier_label": "30% or less AMI: 20%<30% of total units", "points": 20},
+        {"tier_label": "30% or less AMI: 10%<20% of total units", "points": 10},
+        {"tier_label": "40% AMI: 20%+ of total units", "points": 15},
+        {"tier_label": "40% AMI: 10%<20% of total units", "points": 10},
+        {"tier_label": "40% AMI: 5%<10% of total units", "points": 5},
+        {"tier_label": "40% AMI: 1%<5% of total units", "points": 2},
+        {"tier_label": "50% AMI: 20%+ of total units", "points": 10},
+        {"tier_label": "50% AMI: 10%<20% of total units", "points": 5},
+        {"tier_label": "50% AMI: 5%<10% of total units", "points": 4},
+        {"tier_label": "50% AMI: 1%<5% of total units", "points": 3}
+      ],
+      "note": "A three-column table, one column per AMI band, each with its own ladder. The plan does not say whether a project may claim in more than one band, so 45 is recorded as the maximum on the deepest band alone. Worth a reviewer's eye. Gross rent here includes the tenant portion plus the utility allowance."
+    },
+    {
+      "ord": 2,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.B",
+      "heading": "Redevelopment and revitalization",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 13,
+      "page_end": 13,
+      "quote": "Adaptive reuse projects are eligible for points under this scoring category",
+      "note": "Awarded for any one of three conditions: a previously developed site, a QCT or city revitalization area contributing to a concerted community revitalization plan, or a site entirely within an Opportunity Zone. Rehabilitation of existing habitable housing does not qualify."
+    },
+    {
+      "ord": 3,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.C",
+      "heading": "Historic properties",
+      "points_max": 4,
+      "points_type": "fixed",
+      "page_start": 13,
+      "page_end": 14,
+      "quote": "Properties that are on the National Register of Historic Places and receiving Historic Rehabilitation Tax Credits"
+    },
+    {
+      "ord": 4,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.D",
+      "heading": "Service coordinator",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 14,
+      "page_end": 14,
+      "quote": "Service Coordinator for the residents of project",
+      "note": "Must be available on site at least thirty minutes per project unit per month, by direct employment or contract. HUD's Service Coordinators in Multifamily Housing program is the stated basis."
+    },
+    {
+      "ord": 5,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.E",
+      "heading": "Design standards",
+      "points_max": 5,
+      "points_type": "tiered",
+      "page_start": 14,
+      "page_end": 14,
+      "quote": "Projects may score points under only one Design Standard",
+      "tiers": [
+        {"tier_label": "Elevator in each residential building", "points": 5},
+        {"tier_label": "A separate outside main entrance for each unit", "points": 5}
+      ],
+      "note": "The two standards are alternatives worth 5 each; the plan states only one may be scored."
+    },
+    {
+      "ord": 6,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.F",
+      "heading": "Universal design",
+      "points_max": 9,
+      "points_type": "tiered",
+      "page_start": 14,
+      "page_end": 14,
+      "quote": "Applicants seeking Project Standards points are required to provide a written statement",
+      "tiers": [
+        {"tier_label": "All Project Standards implemented", "points": 3},
+        {"tier_label": "Unit Standards in 10.00% to under 25.00% of units", "points": 3},
+        {"tier_label": "Unit Standards in 5.00% to under 10.00% of units", "points": 2},
+        {"tier_label": "Unit Standards in over 0.00% to under 5.00% of units", "points": 1},
+        {"tier_label": "One point per universal design unit of two bedrooms or larger", "points": 3}
+      ],
+      "note": "Three components that add up to the 9-point maximum: project standards (3), a unit-standards ladder (up to 3), and up to 3 more for two-bedroom-or-larger universal design units. Requires an architect's written statement."
+    },
+    {
+      "ord": 7,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.G",
+      "heading": "Green communities",
+      "points_max": 5,
+      "points_type": "tiered",
+      "page_start": 15,
+      "page_end": 15,
+      "quote": "Applicants must submit a written development plan outlining the integrated design approach",
+      "tiers": [
+        {"tier_label": "Rehabilitation: LEED, Green Communities or ICC 700 certification", "points": 5},
+        {"tier_label": "Rehabilitation: 17 Green Communities criteria", "points": 3},
+        {"tier_label": "Rehabilitation: 10 Green Communities criteria", "points": 2},
+        {"tier_label": "Not rehabilitation: LEED, Green Communities or ICC 700 certification", "points": 5},
+        {"tier_label": "Not rehabilitation: 20 Green Communities criteria", "points": 3},
+        {"tier_label": "Not rehabilitation: 15 Green Communities criteria", "points": 2},
+        {"tier_label": "Not rehabilitation: 10 Green Communities criteria", "points": 1}
+      ],
+      "note": "Two separate ladders, one for rehabilitation and one for everything else; a project sits on one or the other."
+    },
+    {
+      "ord": 8,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.H",
+      "heading": "Rent rebate",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 15,
+      "page_end": 15,
+      "group": "nd_older_persons_exclusion",
+      "quote": "Commitment to set aside tenant-paid rent to assist in the purchase of a primary residence",
+      "note": "At least 5% of tenant-paid rent rebated if the household moves to an owner-occupied primary residence within 30 days of vacating. HUD-assisted projects can instead earn the 2 points by committing to the Family Self-Sufficiency Program. Not available to applications seeking category K."
+    },
+    {
+      "ord": 9,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.I",
+      "heading": "Tenant ownership",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 15,
+      "page_end": 15,
+      "group": "nd_older_persons_exclusion",
+      "quote": "all residential buildings in the Project must be individually surveyed, platted, separate physical addresses",
+      "note": "Requires a transfer plan, a future purchase price and homebuyer counselling. Not available to applications seeking category K."
+    },
+    {
+      "ord": 10,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.J",
+      "heading": "Family housing",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 15,
+      "page_end": 15,
+      "group": "nd_older_persons_exclusion",
+      "quote": "At least 20% of the low-income units are three-bedroom or larger",
+      "note": "Not available to applications seeking category K."
+    },
+    {
+      "ord": 11,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.K",
+      "heading": "Housing for older persons",
+      "points_max": 6,
+      "points_type": "fixed",
+      "page_start": 15,
+      "page_end": 16,
+      "group": "nd_older_persons_exclusion",
+      "quote": "Housing designed for and marketed to households consisting of individuals 55 years of age and over",
+      "note": "Requires a community room with kitchen facilities free to tenants, and a marketing plan consistent with the Fair Housing Act's Housing for Older Persons exemption. Claiming this category rules out H, I and J."
+    },
+    {
+      "ord": 12,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.L",
+      "heading": "Preserve existing affordability",
+      "points_max": 8,
+      "points_type": "tiered",
+      "page_start": 16,
+      "page_end": 16,
+      "quote": "A project proposing the acquisition and/or rehabilitation of a multifamily project currently assisted",
+      "tiers": [
+        {"tier_label": "Asset preservation, at risk of loss within 30 months", "points": 8},
+        {"tier_label": "Subsidy preservation", "points": 8},
+        {"tier_label": "Asset preservation, at risk of loss within 60 months", "points": 4},
+        {"tier_label": "LIHTC past its initial compliance period with waived extended use period", "points": 4},
+        {"tier_label": "Transfer between parties with an identity of interest (maximum)", "points": 4}
+      ],
+      "note": "The plan caps a transfer between parties with an identity of interest at 4 points whichever route is used. Whether the asset and subsidy preservation routes can be combined is not stated; 8 is recorded as the maximum on one route."
+    },
+    {
+      "ord": 13,
+      "kind": "competitive",
+      "native_category": "Project Ratings",
+      "section_label": "7.M",
+      "heading": "Committed leverage",
+      "points_max": 4,
+      "points_type": "tiered",
+      "page_start": 16,
+      "page_end": 17,
+      "quote": "Applications which provide signed, firm commitments of funding source(s)",
+      "tiers": [
+        {"tier_label": "Greater than 7.5% of total development costs", "points": 4},
+        {"tier_label": "More than 5% but no more than 7.5% of total development costs", "points": 3},
+        {"tier_label": "At least 1% but no more than 5% of total development costs", "points": 2},
+        {"tier_label": "Twin-financed 9% LIHTC with 4% tax-exempt financing", "points": 2}
+      ],
+      "note": "The plan states a project may receive points under only one of these. Funds that require repayment, are temporary, or do not last the compliance period are excluded."
+    },
+    {
+      "ord": 14,
+      "kind": "competitive",
+      "native_category": "Threshold Requirements",
+      "section_label": "5.deduction",
+      "heading": "Deduction for each missing threshold requirement",
+      "points_max": -2,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 12,
+      "page_end": 12,
+      "quote": "a 2-point scoring deduction will be assessed for each missing Threshold Requirement",
+      "note": "Applied per missing requirement, so the total deduction is unbounded in principle. An applicant granted an exemption from the Capital Needs Assessment requirement is not deducted for it."
+    },
+    {
+      "ord": 15,
+      "kind": "tiebreaker",
+      "native_category": "Project Ratings",
+      "section_label": "7.tiebreak",
+      "heading": "Fewer LIHTCs per unit",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 13,
+      "page_end": 13,
+      "quote": "the project requiring fewer LIHTCs per unit will be selected first"
+    },
+    {
+      "ord": 16,
+      "kind": "threshold",
+      "native_category": "Project Ratings",
+      "section_label": "7.N",
+      "heading": "Geographic location: at most two projects per city",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "page_start": 17,
+      "page_end": 17,
+      "quote": "No more than two projects will be approved in any one city during a competitive application round",
+      "note": "Lettered as a scoring category but carries no points: it is a limit on awards, not something an applicant earns or must satisfy. Recorded as a threshold for want of a closer kind; a project receiving an additional allocation under a prior year does not trigger the limit."
+    },
+    {
+      "ord": 17,
+      "kind": "set_aside",
+      "native_category": "Set-Asides and Targeted Areas",
+      "section_label": "8.A",
+      "heading": "Non-profit participation set-aside",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "page_start": 17,
+      "page_end": 17,
+      "quote": "the Applicant must be a qualified non-profit organization",
+      "note": "Ten percent of the state's allocation. The highest-ranking non-profit application takes the set-aside; further non-profit applications compete with for-profit ones. Ownership interest means at least a 50% general partner position."
+    },
+    {
+      "ord": 18,
+      "kind": "set_aside",
+      "native_category": "Set-Asides and Targeted Areas",
+      "section_label": "8.B",
+      "heading": "Native American set-aside",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "page_start": 17,
+      "page_end": 17,
+      "quote": "Agency shall award the highest-scoring qualified application in the first application",
+      "note": "For applications on North Dakota Indian reservations or tribal land, held in trust or fee simple, subject to the maximum credit limit."
+    }
+  ]
+}
