@@ -188,7 +188,7 @@
       "section_label": "33.15(a)11i",
       "heading": "Proximity to positive land uses",
       "points_max": 6,
-      "points_type": "tiered",
+      "points_type": "per_unit",
       "tier_mode": "additive",
       "page_start": 51,
       "page_end": 52,

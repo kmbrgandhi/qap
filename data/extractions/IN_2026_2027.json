@@ -964,7 +964,7 @@
       "section_label": "6.5(C)",
       "heading": "Resident services",
       "points_max": 5,
-      "points_type": "tiered",
+      "points_type": "per_unit",
       "tier_mode": "additive",
       "page_start": 86,
       "page_end": 88,

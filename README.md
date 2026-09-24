@@ -92,6 +92,7 @@ Put the OCR'd version in the shared folder and ingest that.
 
 ```bash
 sqlite3 data/qap.db < schema.sql                          # create the database
+# without the sqlite3 binary: python -c "import sqlite3; sqlite3.connect('data/qap.db').executescript(open('schema.sql').read())"
 python -m qapdb.ingest --commit                           # load documents
 python -m qapdb.load_extraction data/extractions/CT_2026.json --commit
 python -m qapdb.taxonomy --commit                         # apply the category codebook
@@ -137,3 +138,8 @@ maximum at all, Massachusetts runs a 100-point gate followed by a separate
 Where a criterion lists tiers, usually only one applies, so the maximum sits well
 below the tier total. Summing every stated point value overstates what a project
 can actually earn by 50–65% in the states extracted so far.
+
+A stated total is not always reachable, and many states state none. Indiana
+states 165 while its own exclusion rules cap a 9% application at 146, and six of
+the last ten states coded state no maximum at all. Where a computed figure is a
+ceiling rather than a score, the `track_totals` note says so.

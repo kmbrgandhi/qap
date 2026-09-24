@@ -1,6 +1,8 @@
 # Bundled PDFs
 
-Eleven documents covering ten uncoded states, committed to the repo on purpose.
+Eleven documents covering ten states, committed to the repo on purpose. All ten
+are now coded; these files are what lets their citations be re-verified from
+the repo alone.
 
 The full corpus is 123 MB in a shared drop folder and stays out of git — see
 the note at the top of `.gitignore`. But a session that has only the repo (a
@@ -25,8 +27,8 @@ bytes the rest of the corpus was built from, not re-downloads.
 | OK | `oklahoma-qap-2027-CONVERTED-from-docx.pdf` | 76 |
 | WY | `wyoming-qap-2027.pdf` | 80 |
 
-All eleven were checked to carry real point values before being bundled;
-`HANDOFF.md` has the per-state notes and suggests where to start.
+All eleven were checked to carry real point values before being bundled.
+`HANDOFF.md` records where each state landed and which states to bundle next.
 
 Keep this folder small. It is a working set, not a mirror. If you need a
 document that is not here, take it from the shared drop folder via

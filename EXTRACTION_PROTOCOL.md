@@ -51,7 +51,20 @@ Work through this in order. It takes ten minutes and saves hours.
   single most useful page in the QAP. Read it first, not last.
 - **Map the scoring section** by listing headings and page numbers before
   reading in detail, so you know how much there is and can spot an appendix
-  you would otherwise miss.
+  you would otherwise miss. In a converted document, map from the text layer:
+  Oklahoma's table of contents kept the page numbers of the .docx it came from.
+- **A low "point" count is a prompt to look, not a verdict.** Colorado's 102
+  pages carry 68 mentions because its largest criterion is a formula; the
+  scoring was all there. Read the pages that carry the mentions before
+  deferring a state.
+- **Reconcile any score sheet against the body in both directions.** Oklahoma's
+  self-score sheet omits the largest criterion (cost efficiency, scored by
+  staff against the round, 24 of 83 points). Indiana's summary counts items its
+  own body says cannot be combined.
+- **Look for points outside the scoring section:** appeal remedies (Iowa
+  7.10.B), a statutory state-credit ranking (Oklahoma), penalty schedules in
+  another chapter (Minnesota 2.J), deductions among the thresholds (North
+  Dakota).
 
 ## 2. What counts as one criterion
 
@@ -66,7 +79,14 @@ One row per thing a project is scored on, at the grain the document scores it.
 - Separately lettered items in the document are separate criteria even when
   they cover similar ground.
 - Point deductions are criteria too, with `is_negative: true`,
-  `points_type: "negative"` and a negative `points_max`.
+  `points_type: "negative"` and a negative `points_max` (null where the
+  document states no maximum: Alaska's penalty points, New Jersey's per-defect
+  cure deduction).
+- A criterion that scores in both directions (a vacancy ladder running from
+  +25 to −10) stays **one row**, with the negative bands in the note; a purely
+  negative item is its own row (Virginia, Wyoming).
+- When a matrix pays only through an average or a count (Iowa's Site Appeal,
+  Indiana's amenity charts), code the thing that is scored, not every cell.
 
 ## 3. Fields
 
@@ -76,11 +96,11 @@ One row per thing a project is scored on, at the grain the document scores it.
 | `section_label` | **Must be unique within the QAP.** The taxonomy is keyed on `(state, section_label)`, so duplicates silently collide. Where the document letters items A, B, C inside unnumbered sections, prefix the section: `III.B.Fin.A`, `III.B.Inc.A`. |
 | `heading` | The document's own heading, lightly normalised. |
 | `native_category` | The QAP's own category name, verbatim. Never our taxonomy's. |
-| `points_max` | What this criterion alone can yield. Null for thresholds. |
+| `points_max` | What this criterion alone can yield. Null for thresholds, for deductions with no stated maximum, and where the values live in a document the corpus does not hold (then `detail_external` names it: Colorado's Housing Need exhibits). |
 | `points_type` | `fixed`, `tiered`, `formula`, `per_unit`, `unlimited`, `negative`, `none`. |
 | `scoring_unit` | `points` unless the document scores in something else. Vermont scores in checkmarks; Utah uses weights (weight × score). Never mix units in one total. |
 | `kind` | `competitive`, `threshold`, `ranked_priority`, `tiebreaker`, `set_aside`. |
-| `track` | Only where the QAP runs parallel scored tracks that must not be pooled. |
+| `track` | Where the QAP runs scoring universes that must not be pooled. Two kinds, which look identical in the data, so every `track_totals.note` must say which it is: **alternatives**, where a project is in exactly one (Michigan urban/rural, Arizona rehab/new construction, Oklahoma 9%/state credit); and **add-ons**, extra criteria on top of a shared core (Arizona tribal, New Jersey's three cycles, Indiana 9%/bond). When scales share most criteria, code the core once plus one add-on track per scale rather than duplicating it; suffix any criterion that must appear on two tracks (`.family`, `.senior`). |
 | `page_start` / `page_end` | **PDF page indices**, not printed page numbers. |
 | `quote` | See §4. |
 | `note` | Ambiguities, contradictions, alternatives, anything a reviewer should see. Generous notes are cheap; silent judgement calls are not. |
@@ -101,6 +121,10 @@ One row per thing a project is scored on, at the grain the document scores it.
   on the same page. The citation points at the page; it does not have to be
   the single most central sentence.
 - Never adjust a quote to make it verify. Adjust which passage you quote.
+- **Two-column tables need the page image.** Where the text layer interleaves
+  columns (Wyoming's Negative and Maximum Points summary, Indiana's rent
+  table), read the figures from the rendered page, say so in `_comment`, and
+  quote clean body text for the citation.
 
 ## 5. Points arithmetic
 
@@ -117,6 +141,20 @@ One row per thing a project is scored on, at the grain the document scores it.
   criterion for sentences of the form "applications seeking points under X are
   not eligible for points under this category" — they are easy to miss because
   they sit in the body text, not in the point table.
+- **An exclusion that bars one tier or route, not the whole criterion, is a
+  `capped_sum` at the best allowed route.** Minnesota's Rental Assistance is
+  barred to Preservation Tier 1 but not Tier 2: cap 46, where `max_one` would
+  record 45.
+- **Unit-level and source-level exclusions cannot be groups.** "Cannot be
+  claimed for the same units" limits the real maximum in a way the schema
+  cannot hold. Put it in the notes and say in the track note that the computed
+  figure is a ceiling (Minnesota).
+- **A formula with no stated cap may record its ceiling, labelled as
+  computed.** Colorado's targeting score is a weighted share; `points_max`
+  holds 92.5, the top weight applied to every unit, and the note and
+  `_comment` both say it is derived. Never let a derived figure pass as stated.
+- **A heading range that is the only statement of a maximum still gets
+  checked against the options** (Minnesota's "(7 to 37 Points)").
 - **Deductions never count toward a total.** The views exclude `is_negative`;
   so should any arithmetic you do by hand.
 - Record the document's own stated total in `track_totals` with the page it
@@ -132,7 +170,16 @@ the stated one:
 - **MISMATCH** — do not adjust numbers to close the gap. Find the missing
   criterion, the missed exclusivity group, or the contradiction in the
   document, and write down which it was.
-- **no stated total** — the QAP states no maximum. Fine, but say so.
+- **no stated total** — the QAP states no maximum. Fine, but say so, and treat
+  the hand-sum as a completeness check. Say how much of it rests on item
+  values rather than stated section maxima (Iowa: 28 of 63).
+- **MISMATCH by design** — where a stated total counts items the document says
+  cannot combine, or spans scoring universes, keep the stated figure against
+  its track and decompose the gap in the note until it sums exactly (Indiana:
+  121 + 25 + 4 + 12 + 3 = 165).
+- **Reconcile negatives too** where the document states them (Wyoming's
+  −1,510), and check worked examples against the rule they illustrate
+  (Wyoming's donations example contradicts its rule).
 
 ## 7. Thresholds and non-competitive criteria
 
@@ -143,6 +190,14 @@ the stated one:
   `scoring_unit: "none"`.
 - Map thresholds to categories in `data/threshold_categories.json`, keyed
   `STATE|section_label`.
+- A floor that applies to one category rather than the total (Wyoming: 100 of
+  158 in Housing Needs) is a threshold row whose note says what it applies to.
+  A floor stated as a share of an unstated maximum (New Jersey's 65%) gets the
+  computed value in its note, labelled as ours.
+- **When a companion document holds the points, give the QAP its own small
+  file** for whatever the companion defers to it (Minnesota's tie breakers and
+  the RD/Small Projects floor are in `MN_qap_2026_2028.json`, matched to the QAP
+  PDF), so every citation stays on the page it names.
 
 ## 8. The sequence
 
@@ -157,7 +212,15 @@ python -m qapdb.manifest
 ```
 
 Never skip the dry run. It verifies every citation and prints the arithmetic
-before anything is written.
+before anything is written, applying exclusivity groups exactly as the
+database views do, so its computed figure is the one reconciliation will use.
+
+Two operational notes. If the `sqlite3` binary is missing, create the database
+with `python -c "import sqlite3; sqlite3.connect('data/qap.db').executescript(open('schema.sql').read())"`.
+And `manifest.py` run against a partial database (the bundled PDFs only) keeps
+the rows it cannot see but recomputes the rows it can, including
+`is_most_recent` over the partial set; read the diff and commit only the rows
+for the state you coded.
 
 ## 9. What to hand the reviewer
 
@@ -169,6 +232,14 @@ The human review queue is for judgement, not for typos. Flag in `note`:
 - anything the document leaves genuinely ambiguous
 - criteria whose points depend on a document published elsewhere (a developer
   handbook, a program bulletin, a data table)
+- any figure you computed rather than read (a formula ceiling, a floor
+  expressed as a share of an unstated maximum), labelled as computed
+- cross-references that point to the wrong section, with the section you took
+  them to mean
+
+Numbers in notes are held to rule 1 like any other: count them or leave them
+out. "Some 90 amenities" is an estimate, and estimates do not belong in the
+database.
 
 ---
 
@@ -850,9 +921,9 @@ for.
   9% only (25) and one is 4% only (4). 121 + 25 + 4 + 12 + 3 = 165, so the
   stated total is reachable by nobody: a 9% application tops out at 146. The
   mismatch is recorded against the core track by design, with the
-  decomposition in the note. This is the fourth state (after Nevada,
-  Alabama and Minnesota) where honouring the document's own exclusion
-  sentences breaks its own total.
+  decomposition in the note. Unlike Nevada, whose gap nothing in the
+  document explains, Indiana's gap is entirely its own exclusion and scope
+  rules.
 - **Scoring-universe scoping is often one sentence at the end of a
   criterion.** "Competitive 4%/bond/AWHTC applications will not be scored in
   this category" appears inside three criteria, and "in addition to those
@@ -868,3 +939,25 @@ for.
   charts as "some 90" items and the service list as "some fifty". Neither was
   counted, so both were removed. A number in a note is still a number, and
   rule 1 applies to it.
+
+### Ten bundled states, consolidated
+
+After Nevada through Indiana, the recurring lessons were promoted from this log
+into the rules above rather than left to be rediscovered: score-sheet versus body
+in both directions and points outside the scoring section (§1); two-way
+criteria and matrices scored through a count (§2); `points_max` null where the
+values live elsewhere, and the two kinds of track (§3); page images for
+interleaved tables (§4); tier-level exclusions, unit-level exclusions, and
+labelled formula ceilings (§5); completeness checks, MISMATCH by design, and
+negative reconciliation (§6); category floors and companion-document files
+(§7); the dry run's group handling and the partial-database manifest (§8);
+and computed figures, wrong cross-references and estimates in notes (§9).
+
+Of the ten states, two reconciled fully to a stated total (Alaska and
+Wyoming). Nevada's bond track reconciled, but its 9% track recorded a MISMATCH
+that nothing in the document explains. Indiana recorded a MISMATCH that its
+own exclusion and scope rules explain exactly. The other six state no total
+at all. The absence of a stated total is the norm in this batch, not the
+exception. That makes the hand-sum-first rule more important, not less: it is
+the only check that exists.
+
