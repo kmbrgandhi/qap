@@ -472,6 +472,15 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("AK", "6.a"): COST,    ("AK", "6.b"): COST,
     ("AK", "7.a"): SPON,    ("AK", "7.b"): SPON,
     ("AK", "8"): POP,
+
+    # ---- Arizona -----------------------------------------------------------
+    # Rehab (V.B) and new construction (V.C) are separate tracks; the shared
+    # CRP/QCT and developer experience criteria are labelled alike in both.
+    ("AZ", "V.B.1"): PRES,  ("AZ", "V.B.2"): PRES,  ("AZ", "V.B.3"): AFF,
+    ("AZ", "V.B.4"): LOC,   ("AZ", "V.B.5"): SPON,
+    ("AZ", "V.C.1"): SPON,  ("AZ", "V.C.2"): POP,   ("AZ", "V.C.3"): LOC,
+    ("AZ", "V.C.4"): LOC,   ("AZ", "V.C.5"): COST,  ("AZ", "V.C.6"): POP,
+    ("AZ", "V.C.7"): DES,   ("AZ", "V.C.8"): AFF,   ("AZ", "V.C.9"): SPON,
 }
 
 

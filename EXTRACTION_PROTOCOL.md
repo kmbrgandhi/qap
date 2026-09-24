@@ -635,3 +635,32 @@ hand-sum.
   distributed down the consolidated average ranking". That is
   `scored_against_round`, even though no formula names the other
   applications.
+
+### Arizona, 2026 and 2027
+
+44 criteria: 14 competitive, 6 tiebreakers and 24 thresholds, all verified
+first time. There are three tracks and no stated totals. Hand-sums and loader
+agree: rehab 170, new construction 185, and a 25-point Tribal add-on.
+
+- **An add-on track is not the same as an alternative track.** The rehab
+  criteria (V.B) and the new construction criteria (V.C) are separate
+  universes: a project is in one set-aside. The Tribal set-aside, though, uses
+  every V.C criterion plus one more (LOCCS Balance). Recording LOCCS as a
+  `tribal` track holding only that criterion, next to the default track,
+  keeps both totals honest (185 and 210). Say in `track_totals.note` which
+  kind each track is, because the data cannot show it.
+- **A criterion incorporated by reference still needs its values read at the
+  source.** V.C.4 says only "based on the criteria described in QAP Section
+  V(B)(4)". Its tiers come from p.17, and the note says so, since the page
+  cited for V.C.4 carries no numbers.
+- **Where a floor is filed matters.** The 160-point minimum sits under the New
+  Construction threshold heading but says "the competitive 9% LIHTC round".
+  Against rehab's 170 it would leave only 10 points of slack. It is recorded
+  as a threshold with both readings, not assigned to a track by guesswork.
+- **Threshold minimums and scoring ladders rarely meet cleanly.** Rehab must
+  spend at least $25,000 per unit to be eligible, the ladder pays nothing
+  below $30,001, and exactly $30,000 falls between rows. This is the Nevada
+  lesson again; it is worth checking every time.
+- **An unfinished cover is a document-status finding.** "Submitted on December
+  1, 2025 and amended on ____" leaves unclear which version this is. It goes
+  in the `_comment` for the reviewer and is not settled by guessing a date.

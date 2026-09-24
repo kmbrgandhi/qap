@@ -1,0 +1,563 @@
+{
+  "_comment": "Arizona 2026 and 2027 QAP, Arizona Department of Housing. The cover reads 'Submitted on December 1, 2025 and amended on ____ by:', with the amendment date left blank, although the introduction says ADOH 'has adopted this QAP for 2026 and amended it for 2027'; which version this is should be confirmed at the source. Page numbers are PDF page indices and match the printed page numbers (the table of contents does not: it lists II.G on page 7 after II.F on page 10). Selection Criteria are Section V, pp.16-25. 4% LIHTC applications are not scored (V.A). THREE SCORING UNIVERSES, recorded as tracks. 'rehab' is V.B, 9% LIHTC Rehabilitation, five criteria totalling 170. The default track is V.C, 9% LIHTC New Construction (Rural and Metro) and Tribal, eight criteria totalling 185. 'tribal' is the one criterion V.C.9 LOCCS Balance, 25 points, which applies only in the Tribal set-aside on top of the default track, so a Tribal new construction project faces 210. No track states a total. Every criterion states its own maximum, and each was hand-summed before loading (rehab 35 + 60 + 40 + 10 + 25; new construction 25 + 30 + 40 + 10 + 25 + 20 + 15 + 20). The only stated figure is a floor: 'a minimum total score of one hundred sixty (160) points', in IV.C.6 under the New Construction threshold heading, whose text refers to 'the competitive 9% LIHTC round'. Whether it binds rehab applications, for which it would be 94% of the maximum, is unclear. Thresholds are in AZ_thresholds.json.",
+  "match": {
+    "filename": "arizona-qap-2026-2027.pdf"
+  },
+  "extractor_version": "hand-2026-az-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 19,
+      "note": "No total stated. 9% New Construction (Rural and Metro, and Tribal before its add-on): the eight criteria's stated maxima sum to 185, which the loader matches. The 160-point minimum in IV.C.6 (p.16) is 86% of 185. Two criteria (V.C.2 and V.C.5) list items worth more than their stated maxima and are capped at them."
+    },
+    {
+      "track": "rehab",
+      "stated_total": null,
+      "page": 17,
+      "note": "No total stated. 9% Rehabilitation set-aside (up to two awards): the five criteria's stated maxima sum to 170. If the 160-point minimum in IV.C.6 applies here too, a rehab project could miss only 10 points."
+    },
+    {
+      "track": "tribal",
+      "stated_total": null,
+      "page": 25,
+      "note": "Add-on for the Tribal set-aside: V.C.9 LOCCS Balance, 25 points, on top of the default track's 185, for 210 in all. Tribal projects outside Tribal land compete in Rural or Metro instead and cannot earn this."
+    }
+  ],
+  "groups": [],
+  "criteria": [
+    {
+      "track": "rehab",
+      "native_category": "9% LIHTC Rehabilitation",
+      "section_label": "V.B.1",
+      "heading": "Project type",
+      "points_max": 35,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 17,
+      "page_end": 17,
+      "quote": "ADOH will award up to thirty-five (35) points based on the following:",
+      "tiers": [
+        {
+          "tier_label": "Existing vacant housing",
+          "points": 15
+        },
+        {
+          "tier_label": "Existing USDA or other federally funded project",
+          "points": 25
+        },
+        {
+          "tier_label": "Existing LIHTC project, or federally funded project with project-based rent subsidy covering at least 70% of units",
+          "points": 35
+        }
+      ],
+      "note": "Rewards preserving existing subsidized stock over reoccupying vacant buildings.",
+      "kind": "competitive",
+      "ord": 1
+    },
+    {
+      "track": "rehab",
+      "native_category": "9% LIHTC Rehabilitation",
+      "section_label": "V.B.2",
+      "heading": "Rehabilitation work (hard cost per unit)",
+      "points_max": 60,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 17,
+      "page_end": 17,
+      "quote": "Maximum of sixty (60) points.",
+      "tiers": [
+        {
+          "tier_label": "Less than $30,000 per unit",
+          "points": 0
+        },
+        {
+          "tier_label": "$30,001 to $40,000",
+          "points": 20
+        },
+        {
+          "tier_label": "$40,001 to $50,000",
+          "points": 40
+        },
+        {
+          "tier_label": "$50,001 and above",
+          "points": 60
+        }
+      ],
+      "note": "The largest criterion in the rehab track, and it pays for spending more per unit, supported by a third-party CNA and a scope meeting Exhibit A. The threshold minimum is $25,000 per unit (IV.B.2), so $25,000-$30,000 is eligible but scores 0; exactly $30,000 falls between the first two rows.",
+      "kind": "competitive",
+      "ord": 2
+    },
+    {
+      "track": "rehab",
+      "native_category": "9% LIHTC Rehabilitation",
+      "section_label": "V.B.3",
+      "heading": "Project-based rental assistance",
+      "points_max": 40,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 17,
+      "page_end": 17,
+      "quote": "ADOH will award up to forty (40) points for the percentage of total units supported by project-based rent",
+      "tiers": [
+        {
+          "tier_label": "15% of units or less",
+          "points": 10
+        },
+        {
+          "tier_label": "16% to 30%",
+          "points": 20
+        },
+        {
+          "tier_label": "31% to 45%",
+          "points": 30
+        },
+        {
+          "tier_label": "46% or more",
+          "points": 40
+        }
+      ],
+      "note": "The bottom row pays 10 points for '15% or less', which as written includes a project with any assistance at all; the text does not say whether 0% scores. Project-based rent assistance or federally funded operating subsidy both count.",
+      "kind": "competitive",
+      "ord": 3
+    },
+    {
+      "track": "rehab",
+      "native_category": "9% LIHTC Rehabilitation",
+      "section_label": "V.B.4",
+      "heading": "Community revitalization plans, QCTs, DDAs and opportunity zones",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 17,
+      "page_end": 18,
+      "quote": "ADOH will award five (5) points to applications that are located within a:",
+      "tiers": [
+        {
+          "tier_label": "Community Revitalization Plan area",
+          "points": 5
+        },
+        {
+          "tier_label": "Qualified Census Tract (at least one building)",
+          "points": 5
+        },
+        {
+          "tier_label": "Difficult Development Area (all buildings)",
+          "points": 5
+        },
+        {
+          "tier_label": "Opportunity Zone (all buildings)",
+          "points": 5
+        }
+      ],
+      "note": "Five points per designation, capped at 10, so any two suffice. The CRP must be adopted by a local government before the deadline, name a revitalization area containing the site, carry non-housing investment commitments, and not have been initiated by a Principal. A QCT needs only one building inside it; a DDA or OZ needs all of them.",
+      "kind": "competitive",
+      "ord": 4
+    },
+    {
+      "track": "rehab",
+      "native_category": "9% LIHTC Rehabilitation",
+      "section_label": "V.B.5",
+      "heading": "Developer's experience",
+      "points_max": 25,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 18,
+      "page_end": 18,
+      "quote": "5. DEVELOPER’S EXPERIENCE",
+      "tiers": [
+        {
+          "tier_label": "One project placed in service",
+          "points": 5
+        },
+        {
+          "tier_label": "Two",
+          "points": 10
+        },
+        {
+          "tier_label": "Three to four",
+          "points": 15
+        },
+        {
+          "tier_label": "Five to six",
+          "points": 20
+        },
+        {
+          "tier_label": "Seven or more",
+          "points": 25
+        }
+      ],
+      "note": "Distinct LIHTC or federally subsidized projects placed in service by the developer, co-developer or a consultant. A consultant supplying the experience must stay involved through 8609 and cannot be dropped without ADOH approval. Identical to V.C.1.",
+      "kind": "competitive",
+      "ord": 5
+    },
+    {
+      "kind": "tiebreaker",
+      "track": "rehab",
+      "native_category": "9% LIHTC Rehabilitation",
+      "section_label": "V.B.6.1",
+      "heading": "Greatest total number of LIHTC units",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 19,
+      "page_end": 19,
+      "quote": "contains the greatest total number of LIHTC units;",
+      "ord": 6
+    },
+    {
+      "kind": "tiebreaker",
+      "track": "rehab",
+      "native_category": "9% LIHTC Rehabilitation",
+      "section_label": "V.B.6.2",
+      "heading": "Lowest AMI average of the rent-restricted units",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 19,
+      "page_end": 19,
+      "quote": "has the lowest AMI average of the rent restricted units",
+      "ord": 7
+    },
+    {
+      "kind": "tiebreaker",
+      "track": "rehab",
+      "native_category": "9% LIHTC Rehabilitation",
+      "section_label": "V.B.6.3",
+      "heading": "Longest extended use period",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 3,
+      "page_start": 19,
+      "page_end": 19,
+      "quote": "has the longest extended use period.",
+      "ord": 8
+    },
+    {
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.1",
+      "heading": "Developer's experience",
+      "points_max": 25,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 19,
+      "page_end": 19,
+      "quote": "1. DEVELOPER’S EXPERIENCE",
+      "tiers": [
+        {
+          "tier_label": "One project placed in service",
+          "points": 5
+        },
+        {
+          "tier_label": "Two",
+          "points": 10
+        },
+        {
+          "tier_label": "Three to four",
+          "points": 15
+        },
+        {
+          "tier_label": "Five to six",
+          "points": 20
+        },
+        {
+          "tier_label": "Seven or more",
+          "points": 25
+        }
+      ],
+      "note": "Identical to V.B.5 in the rehab track. ADOH scores only 'the highest-ranking self-scored applications in their respective set-asides', so the self-score decides which applications are reviewed at all.",
+      "kind": "competitive",
+      "ord": 9
+    },
+    {
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.2",
+      "heading": "Supportive housing",
+      "points_max": 30,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 19,
+      "page_end": 20,
+      "quote": "Tenant Based Rental Assistance Participation",
+      "tiers": [
+        {
+          "tier_label": "Commit to lease at least 15% of units to households with tenant-based rental assistance",
+          "points": 30
+        },
+        {
+          "tier_label": "Project-based rental assistance targeted to special populations, 15% of units",
+          "points": 20
+        },
+        {
+          "tier_label": "Project-based rental assistance targeted to special populations, 30% of units or more",
+          "points": 30
+        }
+      ],
+      "note": "Two routes under a 30-point maximum. The text does not say whether they combine, but the tenant-based route alone reaches the cap, which makes the question moot for scoring. The tenant-based route asks only for a commitment to lease to voucher holders; the project-based route needs third-party vouchers for units at 30% AMI, an ADOH-approved targeting plan with units held open 60 days after certificate of occupancy, and a supportive services plan. The same 30 points are available either way.",
+      "kind": "competitive",
+      "ord": 10
+    },
+    {
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.3",
+      "heading": "Proximity to amenities",
+      "points_max": 40,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 20,
+      "page_end": 21,
+      "quote": "PROXIMITY TO AMENITIES",
+      "tiers": [
+        {
+          "tier_label": "Grocery (named chains, or others by request)",
+          "points": 10
+        },
+        {
+          "tier_label": "Shopping or pharmacy",
+          "points": 5
+        },
+        {
+          "tier_label": "Medical facility",
+          "points": 5
+        },
+        {
+          "tier_label": "Bus or transit stop (6 days a week in Valley Metro/Sun Tran areas, 5 elsewhere)",
+          "points": 5
+        },
+        {
+          "tier_label": "Employment center (250 FTE metro, 50 rural, 30 tribal)",
+          "points": 5
+        },
+        {
+          "tier_label": "Other amenities, 2 points each from twelve types, maximum 10",
+          "points": 10
+        }
+      ],
+      "note": "The six items sum to the stated 40. Driving distance by Google Maps: 2.5 miles metro, 4 miles rural, 15 miles on Tribal land. The same establishment may count under several categories, so one Walmart Supercenter can supply grocery and shopping. The grocery list names specific chains.",
+      "kind": "competitive",
+      "ord": 11
+    },
+    {
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.4",
+      "heading": "Community revitalization plans, QCTs, DDAs and opportunity zones",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 21,
+      "page_end": 21,
+      "quote": "ADOH will award points based on the criteria described in QAP Section V(B)(4).",
+      "tiers": [
+        {
+          "tier_label": "Community Revitalization Plan area",
+          "points": 5
+        },
+        {
+          "tier_label": "Qualified Census Tract",
+          "points": 5
+        },
+        {
+          "tier_label": "Difficult Development Area",
+          "points": 5
+        },
+        {
+          "tier_label": "Opportunity Zone",
+          "points": 5
+        }
+      ],
+      "note": "Incorporates V.B.4 by reference: 5 points per designation, capped at 10. The tier values are read from p.17, where V.B.4 states them.",
+      "kind": "competitive",
+      "ord": 12
+    },
+    {
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.5",
+      "heading": "Below market loans and local support",
+      "points_max": 25,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 22,
+      "page_end": 23,
+      "quote": "BELOW MARKET LOANS AND LOCAL SUPPORT",
+      "tiers": [
+        {
+          "tier_label": "Local gap financing loans ($500,000 metro, $100,000 rural and tribal)",
+          "points": 10
+        },
+        {
+          "tier_label": "Eligible for the federal historic rehabilitation tax credit",
+          "points": 5
+        },
+        {
+          "tier_label": "Land lease from local government or non-affiliated 501(c)(3), at most $2,000 a month",
+          "points": 5
+        },
+        {
+          "tier_label": "Local fee waivers ($100,000 metro, $50,000 rural and tribal)",
+          "points": 5
+        },
+        {
+          "tier_label": "Below-prime loans from 501(c)(3) charities",
+          "points": 5
+        }
+      ],
+      "note": "Five items totalling 30 against a stated maximum of 25. Sources affiliated with a Principal may be disregarded, and a local government's loan is reduced by the price of any land it sells to the project. A historic-credit item inside the new construction track presumably serves adaptive reuse, which the New Construction set-aside includes.",
+      "kind": "competitive",
+      "ord": 13
+    },
+    {
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.6",
+      "heading": "Senior and family",
+      "points_max": 20,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "Applications will earn twenty (20) points for agreeing to comply with one of the following two options.",
+      "tiers": [
+        {
+          "tier_label": "Senior housing with at least three of eight listed services or features",
+          "points": 20
+        },
+        {
+          "tier_label": "Family property with at least 20% of units of three or more bedrooms",
+          "points": 20
+        }
+      ],
+      "note": "Either option pays the full 20, so almost every project can claim it; it sorts projects into senior and family rather than ranking them.",
+      "kind": "competitive",
+      "ord": 14
+    },
+    {
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.7",
+      "heading": "Energy efficiency and heat mitigation",
+      "points_max": 15,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "page_start": 23,
+      "page_end": 24,
+      "quote": "ENERGY EFFICIENCY & HEAT MITIGATION",
+      "tiers": [
+        {
+          "tier_label": "Certification: Enterprise Green Communities, LEED Silver, NGBS Silver, or DOE Zero Energy Ready",
+          "points": 10
+        },
+        {
+          "tier_label": "HERS/ERI at or below 50 (zone 2B), 52 (3B), 56 (4B) or 60 (5B)",
+          "points": 5
+        }
+      ],
+      "note": "10 + 5 = the stated 15. Despite the heading, nothing in the section addresses heat mitigation specifically; both items are energy certifications or ratings.",
+      "kind": "competitive",
+      "ord": 15
+    },
+    {
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.8",
+      "heading": "Increase in extended use period or homeownership",
+      "points_max": 20,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 24,
+      "page_end": 25,
+      "quote": "INCREASE IN EXTENDED USE PERIOD OR HOMEOWNERSHIP",
+      "tiers": [
+        {
+          "tier_label": "Extended use 35 years",
+          "points": 5
+        },
+        {
+          "tier_label": "40 years",
+          "points": 10
+        },
+        {
+          "tier_label": "45 years",
+          "points": 15
+        },
+        {
+          "tier_label": "50 years",
+          "points": 20
+        },
+        {
+          "tier_label": "Homeownership conversion after year 15",
+          "points": 10
+        }
+      ],
+      "note": "Joined by 'or'. Five points per additional five years beyond the 30-year minimum, to 50 years. Homeownership conversion pays only 10 and is limited to single-family or townhome projects on Tribal land or qualifying for a nonprofit adjustment.",
+      "kind": "competitive",
+      "ord": 16
+    },
+    {
+      "track": "tribal",
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.9",
+      "heading": "LOCCS balance (Tribal set-aside only)",
+      "points_max": 25,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "LOCCS BALANCE (Tribal Set Aside Only)",
+      "tiers": [
+        {
+          "tier_label": "Unexpended NAHASDA funds less than the greater of $1 million or one full year",
+          "points": 25
+        },
+        {
+          "tier_label": "One full year but less than two, 'or the greater of $2 million'",
+          "points": 15
+        }
+      ],
+      "note": "Rewards tribes that have spent their NAHASDA funds: the smaller the unexpended LOCCS balance, the higher the score, and a balance of two years or more earns nothing. The second tier's wording ('One (1) full year but less than two (2) full years or the greater of $2 million') does not parse cleanly and should be read by a reviewer on p.25.",
+      "kind": "competitive",
+      "ord": 17
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.10.1",
+      "heading": "Greatest number of total LIHTC units",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "contains the greatest number of total LIHTC units;",
+      "ord": 18
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.10.2",
+      "heading": "Lowest AMI average of the rent-restricted units",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "has the lowest AMI average of the rent restricted units",
+      "ord": 19
+    },
+    {
+      "kind": "tiebreaker",
+      "native_category": "9% LIHTC New Construction (Rural & Metro) & Tribal",
+      "section_label": "V.C.10.3",
+      "heading": "Longest extended use period",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 3,
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "has the longest extended use period.",
+      "ord": 20
+    }
+  ]
+}
