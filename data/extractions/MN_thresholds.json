@@ -1,0 +1,120 @@
+{
+  "_comment": "Threshold requirements from the Minnesota 2026-2028 Self-Scoring Worksheet: the Instructions and Requirements (PDF pp.4-8) and the Round 1 minimum threshold (pp.9-10). The QAP's own eligibility chapters are not extracted; the QAP-side floor for the RD/Small Projects set-aside and the tie breakers are in MN_qap_2026_2028.json.",
+  "match": {
+    "filename": "minnesota-self-scoring-worksheet-2026-2028.pdf"
+  },
+  "extractor_version": "hand-2026-mn-thresholds-1",
+  "groups": [],
+  "criteria": [
+    {
+      "ord": 501,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "I.A",
+      "heading": "Strategic priority",
+      "native_category": "Instructions and Requirements",
+      "page_start": 4,
+      "page_end": 4,
+      "quote": "All projects must meet at least one of the HTC statutory strategic priorities or a strategic",
+      "note": "Bond-financed projects under Minnesota Statutes chapter 474A are the highest strategic priority and need no separate one."
+    },
+    {
+      "ord": 502,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "I.D.1",
+      "heading": "Minimum 80 points for 9% credits",
+      "native_category": "Instructions and Requirements",
+      "page_start": 5,
+      "page_end": 5,
+      "quote": "demonstrate the project is eligible for no fewer than 80 points, excluding projects funded",
+      "note": "31% of the computed ceiling of 258, but the ceiling is unreachable, so the effective share is higher. The RD/Small Projects set-aside is excluded here without a figure; the QAP gives it 30 (MN_qap_2026_2028.json)."
+    },
+    {
+      "ord": 503,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "I.D.2",
+      "heading": "Minimum 40 points for 4% bond credits",
+      "native_category": "Instructions and Requirements",
+      "page_start": 5,
+      "page_end": 5,
+      "quote": "Requests for Minnesota Housing-administered 4% HTCs in association with tax-exempt volume"
+    },
+    {
+      "ord": 504,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "I.H",
+      "heading": "Extended duration: 30 years and qualified contract waiver",
+      "native_category": "Instructions and Requirements",
+      "page_start": 6,
+      "page_end": 6,
+      "quote": "must maintain the low-income use for a minimum of 30 years or longer, if a longer duration is selected.",
+      "note": "2.D Long-Term Affordability scores 40 and 50 years."
+    },
+    {
+      "ord": 505,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "I.I",
+      "heading": "Rental housing design and construction standards",
+      "native_category": "Instructions and Requirements",
+      "page_start": 6,
+      "page_end": 6,
+      "quote": "The project must meet the requirements in the Minnesota Housing Rental Housing"
+    },
+    {
+      "ord": 506,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "I.K.1",
+      "heading": "Deeper rent targeting: 2% of units at the 30% MTSP rent",
+      "native_category": "Instructions and Requirements",
+      "page_start": 7,
+      "page_end": 7,
+      "quote": "restrict at least 2% of the total units, with a minimum number of one unit, to rents at or below",
+      "note": "Units with project-based rental assistance count; 100% PBRA projects are exempt."
+    },
+    {
+      "ord": 507,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "I.K.2",
+      "heading": "Deeper rent targeting: 3% of units at the HAP payment standard",
+      "native_category": "Instructions and Requirements",
+      "page_start": 7,
+      "page_end": 7,
+      "quote": "restrict at least 3% of the total units, with a minimum number of one unit, to rents at or below",
+      "note": "Exempt for 100% PBRA projects and projects on Tribal reservations, Dakota communities and trust lands."
+    },
+    {
+      "ord": 508,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "R1",
+      "heading": "Round 1 statutory minimum threshold type",
+      "native_category": "Round 1 – Minimum Threshold Requirements",
+      "page_start": 9,
+      "page_end": 9,
+      "quote": "all 9% HTC applications submitted statewide in HTC Round 1 must meet one of the following threshold types",
+      "note": "One of: in the Metropolitan Area, 75% SRO/efficiency/one-bedroom units at 30% AMI rents, 75% family units of two-plus bedrooms, or substantial rehab in a targeted neighbourhood; outside it, a locally identified need; statewide, set-asides for people with specified disabilities, preservation of subsidised housing, or USDA Rural Development projects (Minnesota Statutes 462A.222 subd. 3(e))."
+    }
+  ]
+}

@@ -1,0 +1,810 @@
+{
+  "_comment": "Minnesota 2026-2028 Self-Scoring Worksheet, amended, last updated April 2026. Minnesota's QAP does not carry point values; they are in this worksheet, which Minnesota defines as part of the QAP. Page numbers are PDF page indices; the printed page number is three lower (printed 8 is PDF p.11). Selection criteria PDF pp.11-50. Every criterion heading states its own range, e.g. '(7 to 37 Points)', and the body's options were read and add up to each stated maximum. NO OVERALL MAXIMUM IS STATED. The floors are 80 points for 9% credits and 40 for 4% bond credits (Instructions D, p.5); the QAP adds 30 for the RD/Small Projects set-aside, which the worksheet exempts from the 80 without giving a figure (see MN_qap_2026_2028.json). Hand-summed before loading: the headings' maxima total 291. Two whole-project exclusions are coded as groups. Large Family and Senior Housing are exclusive by definition, so the pair counts 15. Preservation Tier 1 bars Rental Assistance, but Tier 2 does not, so the best route through the pair is Tier 2 15 + severity 5 + Rental Assistance 26 = 46. That leaves 291 - 8 - 25 = 258, which the loader matched. 258 is a ceiling of caps, NOT A REACHABLE SCORE: many rules are unit-level ('cannot be claimed for the same units' between 1.C and 1.D, 2.A Tier 2 and 2.C, and 2.B and 2.C; the 25% supportive-unit cap with Section 811; the requirement that every unit be HPH or Other Homeless for 7 points) or source-level (5.A and 5.B cannot count the same source), and none of these can be expressed as groups.",
+  "match": {
+    "filename": "minnesota-self-scoring-worksheet-2026-2028.pdf"
+  },
+  "extractor_version": "hand-2026-mn-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 5,
+      "note": "No maximum stated. Computed 258 = 291 (sum of the criterion headings' maxima) less 8 (Senior Housing, exclusive of Large Family) less 25 (Preservation Tier 1 and Rental Assistance cannot combine; best allowed route 46 against 71 flat). A ceiling of caps; unit-level and source-level exclusions make it unreachable. Floors: 80 for 9% (p.5), 40 for 4% bonds (p.5), 30 for the RD/Small Projects set-aside (QAP p.54)."
+    }
+  ],
+  "groups": [
+    {
+      "key": "mn_household_type",
+      "label": "Large family or senior housing",
+      "rule": "max_one",
+      "source_quote": "years old or older. The owner agrees to market to families with minor children.",
+      "page_start": 11,
+      "note": "1.A requires family housing 'not restricted to persons 55 years old or older'; 1.B requires housing 'restricted to persons 55 years of age or older'. A project can be one or the other."
+    },
+    {
+      "key": "mn_preservation_rental_assistance",
+      "label": "Preservation and rental assistance, best allowed combination",
+      "rule": "capped_sum",
+      "group_cap": 46,
+      "source_quote": "The Rental Assistance (2.B.) selection criterion cannot be claimed if the project is of a type",
+      "page_start": 21,
+      "note": "2.B cannot be claimed by a project 'of a type covered under Preservation – Tier 1', so Tier 1 (40 + severity 5 = 45) stands alone. Preservation Tier 2 is not barred from 2.B: Tier 2 15 + severity 5 + Rental Assistance 26 = 46, the better route, so the pair is capped at 46 rather than recorded as either-or. This follows the cross-criterion exclusivity rule in protocol section 5. Whether a Tier 2 project with new rental assistance would satisfy both definitions in practice is for the reviewer."
+    }
+  ],
+  "criteria": [
+    {
+      "native_category": "Greatest Need Tenant Targeting",
+      "section_label": "1.A",
+      "heading": "Large family housing",
+      "points_max": 15,
+      "points_type": "tiered",
+      "tier_mode": "additive",
+      "group": "mn_household_type",
+      "page_start": 11,
+      "page_end": 11,
+      "quote": "A. Large Family Housing (12 to 15 Points)",
+      "tiers": [
+        {
+          "tier_label": "At least 75% of units with two or more bedrooms, and a third of those with three or more",
+          "points": 12
+        },
+        {
+          "tier_label": "Additionally, a third of the three-plus bedroom units with four or more bedrooms",
+          "points": 3
+        }
+      ],
+      "note": "Family housing not restricted to persons 55 or older, so exclusive of 1.B Senior Housing; see the group.",
+      "kind": "competitive",
+      "ord": 1
+    },
+    {
+      "native_category": "Greatest Need Tenant Targeting",
+      "section_label": "1.B",
+      "heading": "Senior housing",
+      "points_max": 8,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "group": "mn_household_type",
+      "page_start": 11,
+      "page_end": 12,
+      "quote": "B. Senior Housing (2 to 8 Points)",
+      "tiers": [
+        {
+          "tier_label": "100% of units restricted to persons 55+",
+          "points": 4
+        },
+        {
+          "tier_label": "90% to 99.99%",
+          "points": 3
+        },
+        {
+          "tier_label": "80% to 89.99%",
+          "points": 2
+        },
+        {
+          "tier_label": "Further restricted to 30% MTSP income: 30% to 100% of units",
+          "points": 4
+        },
+        {
+          "tier_label": "20% to 29.99%",
+          "points": 3
+        },
+        {
+          "tier_label": "10% to 19.99%",
+          "points": 2
+        },
+        {
+          "tier_label": "5% to 9.99%",
+          "points": 1
+        }
+      ],
+      "note": "Two ladders, each select-one: the age-restricted share (4/3/2) and, for projects eligible under it, units further restricted to 30% MTSP income (4/3/2/1). The second cannot be claimed for units counted under 2.B.2 Further Restricting Rental Assistance. Age-restricted projects cannot claim 1.D People with Disabilities.",
+      "kind": "competitive",
+      "ord": 2
+    },
+    {
+      "native_category": "Greatest Need Tenant Targeting",
+      "section_label": "1.C",
+      "heading": "Permanent supportive housing for households experiencing homelessness",
+      "points_max": 37,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 12,
+      "page_end": 15,
+      "quote": "C. Permanent Supportive Housing for Households Experiencing Homelessness (7 to 37 Points)",
+      "tiers": [
+        {
+          "tier_label": "High Priority Homeless units: 50% to 100% of units, at least 20",
+          "points": 30
+        },
+        {
+          "tier_label": "HPH: 10% to 49.99%, at least 7",
+          "points": 10
+        },
+        {
+          "tier_label": "HPH: 5% to 9.99%, at least 4",
+          "points": 7
+        },
+        {
+          "tier_label": "Other Homeless, with HPH: 100% of units HPH plus Other Homeless",
+          "points": 7
+        },
+        {
+          "tier_label": "Other Homeless, with HPH: 75% to 99.9%",
+          "points": 5
+        }
+      ],
+      "note": "30 + 7 = the stated 37. The HPH ladder is select-one; Other Homeless points require HPH eligibility. HPH units are those prioritised by the Coordinated Entry System. HPH units and 1.D PWD units 'cannot be layered; they must be separate and distinct', and the 7-point Other Homeless tier needs every unit in the project to be HPH or Other Homeless, which leaves none for 1.D. Relief provisions for these units are in QAP Chapter 6.A. A step from 30 points at 50% of units down to 10 points just below it makes the 50% line decisive.",
+      "kind": "competitive",
+      "ord": 3
+    },
+    {
+      "native_category": "Greatest Need Tenant Targeting",
+      "section_label": "1.D",
+      "heading": "People with disabilities",
+      "points_max": 19,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 15,
+      "page_end": 17,
+      "quote": "D. People with Disabilities (PWD) (7 to 19 Points)",
+      "tiers": [
+        {
+          "tier_label": "Tier 1: 15% to 25% of units, at least six",
+          "points": 10
+        },
+        {
+          "tier_label": "Tier 1: 10% to 14.99%, at least five",
+          "points": 9
+        },
+        {
+          "tier_label": "Tier 1: 5% to 9.99%, at least four",
+          "points": 7
+        },
+        {
+          "tier_label": "Tier 2, HUD Section 811 PRA: 15% to 25%, at least six",
+          "points": 19
+        },
+        {
+          "tier_label": "Tier 2: 10% to 14.99%, at least five",
+          "points": 17
+        },
+        {
+          "tier_label": "Tier 2: 5% to 9.99%, at least four",
+          "points": 15
+        }
+      ],
+      "note": "Tier 1 or Tier 2 ('OR'). Units restricted to 30% MTSP income. Tier 2 nearly doubles the points for the same share of units if HUD Section 811 PRA is used, but caps 811 units at 11 and all supportive housing units (HPH, homeless, PWD) at 25% of the project, which rules out the 30-point HPH tier in 1.C. Not available to projects with any age-restricted units.",
+      "kind": "competitive",
+      "ord": 4
+    },
+    {
+      "native_category": "Serves Lowest Income for Long Durations",
+      "section_label": "2.A",
+      "heading": "Preservation",
+      "points_max": 45,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "group": "mn_preservation_rental_assistance",
+      "page_start": 18,
+      "page_end": 22,
+      "quote": "A. Preservation (15 to 45 Points)",
+      "tiers": [
+        {
+          "tier_label": "Tier 1, existing project-based rental assistance: 50.01% to 100% of units federally assisted",
+          "points": 40
+        },
+        {
+          "tier_label": "Tier 1: 50% or less",
+          "points": 20
+        },
+        {
+          "tier_label": "Tier 2, other existing federal assistance and critical affordable units",
+          "points": 15
+        },
+        {
+          "tier_label": "Severity of critical physical needs over $25,000 per unit",
+          "points": 5
+        },
+        {
+          "tier_label": "Severity over $15,000 per unit",
+          "points": 3
+        }
+      ],
+      "note": "Gated on one of three risk-of-loss thresholds (market conversion, critical physical needs, ownership capacity), then Tier 1 or Tier 2 ('either'), plus the severity points. Assistance must be at least 15 years old. 40 + 5 = the stated 45. Tier 1 projects cannot claim 2.B, 'even if the project is not claiming Preservation points'; see the group. Tier 2 units cannot also count under 2.C.",
+      "kind": "competitive",
+      "ord": 5
+    },
+    {
+      "native_category": "Serves Lowest Income for Long Durations",
+      "section_label": "2.B",
+      "heading": "Rental assistance",
+      "points_max": 26,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "group": "mn_preservation_rental_assistance",
+      "page_start": 22,
+      "page_end": 25,
+      "quote": "B. Rental Assistance6 (6 to 26 Points)",
+      "tiers": [
+        {
+          "tier_label": "Project-based rental assistance on 100% of units",
+          "points": 19
+        },
+        {
+          "tier_label": "51.1% to 99.9%",
+          "points": 16
+        },
+        {
+          "tier_label": "20.1% to 51%",
+          "points": 13
+        },
+        {
+          "tier_label": "10.1% to 20%, at least four",
+          "points": 10
+        },
+        {
+          "tier_label": "5% to 10%, at least four",
+          "points": 7
+        },
+        {
+          "tier_label": "Fewer than 5%, at least four",
+          "points": 6
+        },
+        {
+          "tier_label": "Further restricting to 30% MTSP income: 75.1% to 100% of units",
+          "points": 7
+        },
+        {
+          "tier_label": "50.1% to 75%",
+          "points": 6
+        },
+        {
+          "tier_label": "25.1% to 50%",
+          "points": 5
+        },
+        {
+          "tier_label": "15.1% to 25%",
+          "points": 4
+        },
+        {
+          "tier_label": "5% to 15%, at least four",
+          "points": 3
+        }
+      ],
+      "note": "19 + 7 = the stated 26. New or transferred assistance under 15 years old; a commitment, not a pending request. Operating subsidies and privately funded assistance do not qualify. Units with rental assistance cannot also claim 2.C.",
+      "kind": "competitive",
+      "ord": 6
+    },
+    {
+      "native_category": "Serves Lowest Income for Long Durations",
+      "section_label": "2.C",
+      "heading": "Serves lowest income tenants / rent reduction",
+      "points_max": 20,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 25,
+      "page_end": 26,
+      "quote": "C. Serves Lowest Income Tenants/Rent Reduction (8 to 20 Points)",
+      "tiers": [
+        {
+          "tier_label": "100% of units at or below the 50% MTSP rent limit",
+          "points": 13
+        },
+        {
+          "tier_label": "At least 50% of units",
+          "points": 8
+        },
+        {
+          "tier_label": "Further, 30% to 40% of units at the 30% MTSP rent limit",
+          "points": 7
+        },
+        {
+          "tier_label": "20% to 29.99%",
+          "points": 6
+        },
+        {
+          "tier_label": "10% to 19.99%",
+          "points": 5
+        },
+        {
+          "tier_label": "5% to 9.99%",
+          "points": 4
+        }
+      ],
+      "note": "13 + 7 = the stated 20. Restricts rents only, not incomes. Only units without project-based rental assistance count, so a project with 100% PBRA under 2.B can earn nothing here, and Preservation Tier 2 units cannot be layered with it.",
+      "kind": "competitive",
+      "ord": 7
+    },
+    {
+      "native_category": "Serves Lowest Income for Long Durations",
+      "section_label": "2.D",
+      "heading": "Long-term affordability",
+      "points_max": 9,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 26,
+      "page_end": 27,
+      "quote": "D. Long-Term Affordability (8 to 9 Points)",
+      "tiers": [
+        {
+          "tier_label": "LURA or deferred loan declaration of at least 50 years, with qualified contract waiver",
+          "points": 9
+        },
+        {
+          "tier_label": "At least 40 years",
+          "points": 8
+        }
+      ],
+      "note": "The 30-year minimum and qualified contract waiver are already required (Instructions H), so 40 years earns 8 of the 9.",
+      "kind": "competitive",
+      "ord": 8
+    },
+    {
+      "native_category": "Increasing Housing Choice",
+      "section_label": "3.A",
+      "heading": "Access to more affordable housing",
+      "points_max": 6,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "detail_external": "Minnesota Housing Methodology Guide",
+      "page_start": 27,
+      "page_end": 27,
+      "quote": "A. Access to More Affordable Housing (2 to 6 Points)",
+      "tiers": [
+        {
+          "tier_label": "Tier 1 tract or city, or Tribal reservation, Dakota community or trust land",
+          "points": 6
+        },
+        {
+          "tier_label": "Tier 2 tract or city",
+          "points": 4
+        },
+        {
+          "tier_label": "Tier 3 tract or city",
+          "points": 2
+        }
+      ],
+      "note": "Tiers set by percentiles of cost-burdened renters and of the affordable share of housing, published through the Methodology Guide. Hold harmless: a project not selected may reuse its prior cycle's 3.A-3.C scores.",
+      "kind": "competitive",
+      "ord": 9
+    },
+    {
+      "native_category": "Increasing Housing Choice",
+      "section_label": "3.B",
+      "heading": "Workforce housing communities",
+      "points_max": 6,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "detail_external": "Minnesota Housing Methodology Guide",
+      "page_start": 28,
+      "page_end": 28,
+      "quote": "B. Workforce Housing Communities (3 to 6 Points)",
+      "tiers": [
+        {
+          "tier_label": "Top Job Center or Net Five Year Job Growth Community",
+          "points": 6
+        },
+        {
+          "tier_label": "Individual Employer Growth Community (100 net jobs in five years)",
+          "points": 6
+        },
+        {
+          "tier_label": "Long Commute Community",
+          "points": 3
+        }
+      ],
+      "note": "Within five miles of a qualifying city or township in the Metropolitan Area, ten in Greater Minnesota.",
+      "kind": "competitive",
+      "ord": 10
+    },
+    {
+      "native_category": "Increasing Housing Choice",
+      "section_label": "3.C",
+      "heading": "Transit and walkability",
+      "points_max": 9,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 28,
+      "page_end": 31,
+      "quote": "C. Transit and Walkability (1 to 9 Points)",
+      "tiers": [
+        {
+          "tier_label": "Metro: within 1/2 mile of LRT, BRT, commuter rail or Hi-Frequency stop",
+          "points": 7
+        },
+        {
+          "tier_label": "Metro: within 1/4 mile of high-service fixed route, or 1/2 mile of express bus or park and ride",
+          "points": 4
+        },
+        {
+          "tier_label": "Metro: demand response with prior-day notice",
+          "points": 2
+        },
+        {
+          "tier_label": "Greater MN urbanized: within 1/4 mile of fixed route",
+          "points": 7
+        },
+        {
+          "tier_label": "Greater MN urbanized: 1/4 to 1/2 mile of fixed route, or under 1/2 mile of express bus or park and ride",
+          "points": 4
+        },
+        {
+          "tier_label": "Greater MN rural/small urban: transit stop, same-day dial-a-ride or commuter rail",
+          "points": 7
+        },
+        {
+          "tier_label": "Greater MN rural/small urban: dial-a-ride with prior-day notice",
+          "points": 4
+        },
+        {
+          "tier_label": "Walkability, higher Walk Score band",
+          "points": 2
+        },
+        {
+          "tier_label": "Walkability, lower Walk Score band",
+          "points": 1
+        }
+      ],
+      "note": "Select the geography, then one transit option (up to 7) plus one walkability option (up to 2): 7 + 2 = the stated 9. Walk Score bands differ by geography: 80+/60-79 in Minneapolis and Saint Paul, 60+/50-59 in suburban Metro, 70+/50-69 in Greater Minnesota urbanized areas and 50+/30-49 in rural and small urban areas.",
+      "kind": "competitive",
+      "ord": 11
+    },
+    {
+      "native_category": "Supporting Community and Economic Development",
+      "section_label": "4.A",
+      "heading": "Community development initiative",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 31,
+      "page_end": 33,
+      "quote": "A. Community Development Initiative (3 Points)",
+      "note": "Requires a narrative and CDI documentation meeting Table 1 (targeted area and map, implementation plan, affordable housing as a key strategy, stakeholders); projects in a QCT must also show a strategy for non-housing investment (Table 2).",
+      "kind": "competitive",
+      "ord": 12
+    },
+    {
+      "native_category": "Supporting Community and Economic Development",
+      "section_label": "4.B",
+      "heading": "Equitable development",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 33,
+      "page_end": 36,
+      "quote": "B. Equitable Development (3 Points)",
+      "note": "A Qualified Stakeholder Group with at least three members from a Community Most Impacted by housing disparities must have had at least two engagement opportunities and a significant role in the proposal, evidenced by a signed letter. Tribes and tribal entities on tribal land qualify as a QSG without the independence requirement.",
+      "kind": "competitive",
+      "ord": 13
+    },
+    {
+      "native_category": "Supporting Community and Economic Development",
+      "section_label": "4.C",
+      "heading": "Rural/Tribal",
+      "points_max": 8,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 36,
+      "page_end": 36,
+      "quote": "C. Rural/Tribal (4 to 8 Points)",
+      "tiers": [
+        {
+          "tier_label": "Tier 1: community of 2,000 or fewer, or Tribal reservation, Dakota community or trust land",
+          "points": 8
+        },
+        {
+          "tier_label": "Tier 2: 2,001 to 5,000",
+          "points": 6
+        },
+        {
+          "tier_label": "Tier 3: 5,001 to 10,000",
+          "points": 5
+        },
+        {
+          "tier_label": "Tier 4: over 10,000",
+          "points": 4
+        }
+      ],
+      "note": "Outside the Metropolitan Area and outside Greater Minnesota's urbanized areas. The smaller the community, the more points.",
+      "kind": "competitive",
+      "ord": 14
+    },
+    {
+      "native_category": "Supporting Community and Economic Development",
+      "section_label": "4.D",
+      "heading": "Qualified census tract / community revitalization or tribal equivalent area",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 36,
+      "page_end": 37,
+      "quote": "D. Qualified Census Tracts/Community Revitalization or Tribal Equivalent Areas (3 Points)",
+      "tiers": [
+        {
+          "tier_label": "In a QCT and part of a concerted community revitalization plan",
+          "points": 3
+        },
+        {
+          "tier_label": "In a Tribal Equivalent Area (location alone)",
+          "points": 3
+        }
+      ],
+      "note": "One of the QAP's five Preference Criteria, which are counted separately for the first tie breaker.",
+      "kind": "competitive",
+      "ord": 15
+    },
+    {
+      "native_category": "Supporting Community and Economic Development",
+      "section_label": "4.E",
+      "heading": "Multifamily award history",
+      "points_max": 4,
+      "points_type": "fixed",
+      "detail_external": "Minnesota Housing Methodology Guide",
+      "page_start": 37,
+      "page_end": 37,
+      "quote": "E. Multifamily Award History (4 Points)",
+      "note": "Communities without a Minnesota Housing RFP, HTC or bond-with-4%-HTC award in the last five years.",
+      "kind": "competitive",
+      "ord": 16
+    },
+    {
+      "native_category": "Supporting Community and Economic Development",
+      "section_label": "4.F",
+      "heading": "BIPOC-owned or women-owned business enterprises",
+      "points_max": 20,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 37,
+      "page_end": 40,
+      "quote": "Women-owned Business Enterprises (1 to 20 Points)",
+      "tiers": [
+        {
+          "tier_label": "Owner and sponsor: Tribe, tribal entity or for-profit BIPOC-owned business",
+          "points": 8
+        },
+        {
+          "tier_label": "Owner and sponsor: for-profit women-owned business",
+          "points": 5
+        },
+        {
+          "tier_label": "Owner and sponsor: nonprofit BIPOC-owned or women-owned business",
+          "points": 4
+        },
+        {
+          "tier_label": "Development team: two or more BIPOC-owned entities",
+          "points": 7
+        },
+        {
+          "tier_label": "Development team: two or more women-owned, or one BIPOC and one women-owned",
+          "points": 4
+        },
+        {
+          "tier_label": "Development team: one BIPOC- or women-owned entity",
+          "points": 1
+        },
+        {
+          "tier_label": "Capacity building partnership: partner with a 50.1% stake",
+          "points": 4
+        },
+        {
+          "tier_label": "Capacity building partnership: partner with a 30% stake",
+          "points": 2
+        },
+        {
+          "tier_label": "Capacity building partnership: contractor or other team member partners for a defined portion of work",
+          "points": 1
+        }
+      ],
+      "note": "Three select-one ladders that add: 8 + 7 + (4 + 1) = the stated 20. With an identity of interest between owner/sponsor and developer, the owner ladder and the developer-based team or partnership points cannot both be claimed.",
+      "kind": "competitive",
+      "ord": 17
+    },
+    {
+      "native_category": "Supporting Community and Economic Development",
+      "section_label": "4.G",
+      "heading": "Local actions to support housing",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 40,
+      "page_end": 40,
+      "quote": "Local Actions to Support Housing (2 Points)",
+      "note": "Two points if the jurisdiction meets any one of eight zoning and land-use reforms (multifamily in commercial zones, duplexes/ADUs in single-family zones, parking caps, lot-size caps, no aesthetic mandates, density bonus, inclusionary zoning). Effective from the 2026 RFP/2027 HTC rounds, so not scored in the first cycle of the plan.",
+      "kind": "competitive",
+      "ord": 18
+    },
+    {
+      "native_category": "Efficient Use of Scarce Resources and Leverage",
+      "section_label": "5.A",
+      "heading": "Financial readiness to proceed / leveraged funds",
+      "points_max": 16,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 41,
+      "page_end": 43,
+      "quote": "A. Financial Readiness to Proceed/Leveraged Funds (4 to 16 Points)",
+      "tiers": [
+        {
+          "tier_label": "10.51% or more of TDC committed",
+          "points": 16
+        },
+        {
+          "tier_label": "9.01% to 10.5%",
+          "points": 14
+        },
+        {
+          "tier_label": "7.51% to 9.0%",
+          "points": 12
+        },
+        {
+          "tier_label": "6.01% to 7.5%",
+          "points": 10
+        },
+        {
+          "tier_label": "4.51% to 6.0%",
+          "points": 8
+        },
+        {
+          "tier_label": "3.01% to 4.5%",
+          "points": 6
+        },
+        {
+          "tier_label": "1.51% to 3.0%",
+          "points": 4
+        }
+      ],
+      "note": "Committed permanent capital sources as a share of TDC, excluding amortizing first mortgages and proceeds of the current HTC request. The same source cannot count under both 5.A and 5.B. Also the fourth tie breaker.",
+      "kind": "competitive",
+      "ord": 19
+    },
+    {
+      "native_category": "Efficient Use of Scarce Resources and Leverage",
+      "section_label": "5.B",
+      "heading": "Other contributions",
+      "points_max": 10,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 43,
+      "page_end": 45,
+      "quote": "B. Other Contributions (2 to 10 Points)",
+      "tiers": [
+        {
+          "tier_label": "6.00% of TDC and above",
+          "points": 10
+        },
+        {
+          "tier_label": "4.50% to 5.99%",
+          "points": 8
+        },
+        {
+          "tier_label": "3.00% to 4.49%",
+          "points": 6
+        },
+        {
+          "tier_label": "1.5% to 2.99%",
+          "points": 4
+        },
+        {
+          "tier_label": ".01% to 1.49%",
+          "points": 2
+        }
+      ],
+      "note": "Non-capital contributions: land donation or write-down, in-kind work, fee waivers, tax-exempt reservation land, long-term low-cost leases, TIF or abatement and PILOT for properties that cannot support debt.",
+      "kind": "competitive",
+      "ord": 20
+    },
+    {
+      "native_category": "Efficient Use of Scarce Resources and Leverage",
+      "section_label": "5.C",
+      "heading": "Intermediary costs",
+      "points_max": 4,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 45,
+      "page_end": 46,
+      "quote": "C. Intermediary Costs (1 to 4 Points)",
+      "tiers": [
+        {
+          "tier_label": "0.0% to 15% of TDC",
+          "points": 4
+        },
+        {
+          "tier_label": "15.1% to 20%",
+          "points": 3
+        },
+        {
+          "tier_label": "20.1% to 25%",
+          "points": 2
+        },
+        {
+          "tier_label": "25.1% to 30%",
+          "points": 1
+        }
+      ],
+      "note": "Third-party service costs as a share of TDC, enforceable at closing or 8609. Also the fifth tie breaker.",
+      "kind": "competitive",
+      "ord": 21
+    },
+    {
+      "native_category": "Building Characteristics",
+      "section_label": "6.A",
+      "heading": "Innovative construction techniques",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 46,
+      "page_end": 47,
+      "quote": "A. Innovative Construction Techniques (3 points)",
+      "note": "A technique new to Minnesota Housing projects that aims to cut construction cost by 10% or construction time by 20%, with a public lessons-learned report afterwards.",
+      "kind": "competitive",
+      "ord": 22
+    },
+    {
+      "native_category": "Building Characteristics",
+      "section_label": "6.B",
+      "heading": "Universal design",
+      "points_max": 3,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 47,
+      "page_end": 47,
+      "quote": "B. Universal Design (3 Points)",
+      "tiers": [
+        {
+          "tier_label": "Elevator building with 100% Universal Design units",
+          "points": 3
+        },
+        {
+          "tier_label": "Non-elevator building with at least 10% Universal Design units",
+          "points": 3
+        }
+      ],
+      "kind": "competitive",
+      "ord": 23
+    },
+    {
+      "native_category": "Building Characteristics",
+      "section_label": "6.C",
+      "heading": "Enhanced sustainability",
+      "points_max": 12,
+      "points_type": "tiered",
+      "tier_mode": "mixed",
+      "page_start": 48,
+      "page_end": 49,
+      "quote": "C. Enhanced Sustainability (2 to 12 Points)",
+      "tiers": [
+        {
+          "tier_label": "Tier 1: twice the minimum Enterprise Green Communities optional points",
+          "points": 2
+        },
+        {
+          "tier_label": "Tier 2: three times the minimum",
+          "points": 4
+        },
+        {
+          "tier_label": "Tier 3: SB 2030, DOE Zero Energy Ready Home, or EGCC 5.1b ERI pathway",
+          "points": 6
+        },
+        {
+          "tier_label": "Tier 4: Passive House or zero-energy certification",
+          "points": 8
+        }
+      ],
+      "note": "'Tiers 1 and 3, Tiers 2 and 3, Tiers 1 and 4 or Tiers 2 and 4 for a maximum of 12 points': one of Tiers 1-2 plus one of Tiers 3-4, so 4 + 8 = 12.",
+      "kind": "competitive",
+      "ord": 24
+    },
+    {
+      "native_category": "Unacceptable Practices",
+      "section_label": "7",
+      "heading": "Unacceptable practices penalty",
+      "points_max": -35,
+      "points_type": "negative",
+      "is_negative": true,
+      "detail_external": "QAP Chapter 2.J",
+      "page_start": 50,
+      "page_end": 50,
+      "quote": "Minnesota Housing may impose penalty points for unacceptable practices as set forth in Chapter 2.J. of",
+      "note": "'(-1 to -35 points)'. The schedule is in QAP Chapter 2.J (QAP PDF pp.21-24): unapproved transfers, displacing Section 8 tenants, material changes to scored features, late 8609 submissions losing credit authority, fair housing and compliance failures, and violations of law, among others. Applied in future application rounds.",
+      "kind": "competitive",
+      "ord": 25
+    }
+  ]
+}

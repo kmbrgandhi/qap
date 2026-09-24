@@ -506,6 +506,19 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("NJ", "33.17(b)3"): POP,      ("NJ", "33.17(b)4"): AFF,
     ("NJ", "33.17(b)5"): SPON,     ("NJ", "33.17(b)6"): POP,
     ("NJ", "33.17(b)7"): DES,
+
+    # ---- Minnesota (self-scoring worksheet) ---------------------------------
+    ("MN", "1.A"): POP,     ("MN", "1.B"): POP,     ("MN", "1.C"): POP,
+    ("MN", "1.D"): POP,
+    ("MN", "2.A"): PRES,    ("MN", "2.B"): AFF,     ("MN", "2.C"): AFF,
+    ("MN", "2.D"): AFF,
+    ("MN", "3.A"): LOC,     ("MN", "3.B"): LOC,     ("MN", "3.C"): LOC,
+    ("MN", "4.A"): LOC,     ("MN", "4.B"): (POP, LOC), ("MN", "4.C"): LOC,
+    ("MN", "4.D"): LOC,     ("MN", "4.E"): LOC,     ("MN", "4.F"): SPON,
+    ("MN", "4.G"): LOC,
+    ("MN", "5.A"): (COST, READY), ("MN", "5.B"): COST, ("MN", "5.C"): COST,
+    ("MN", "6.A"): (DES, COST), ("MN", "6.B"): DES, ("MN", "6.C"): DES,
+    ("MN", "7"): SPON,
 }
 
 

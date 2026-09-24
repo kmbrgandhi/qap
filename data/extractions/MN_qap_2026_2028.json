@@ -1,0 +1,110 @@
+{
+  "_comment": "Minnesota 2026-2028 QAP, amended. The points are in the Self-Scoring Worksheet (MN_2026_2028.json); this file carries only what the worksheet leaves to the QAP: the tie breakers (Chapter 4.D, PDF p.56) and the 30-point floor for the RD/Small Projects set-aside (PDF p.54). The unacceptable practices schedule the worksheet cites (Chapter 2.J, PDF pp.21-24) is described in the worksheet criterion 7 note rather than coded again here. Page numbers are PDF page indices; the printed page number is eight lower in this part of the QAP (PDF p.56 is printed 48).",
+  "match": {
+    "filename": "minnesota-qap-2026-2028.pdf"
+  },
+  "extractor_version": "hand-2026-mn-qap-1",
+  "groups": [],
+  "criteria": [
+    {
+      "ord": 601,
+      "kind": "threshold",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "section_label": "QAP.C.rd_small",
+      "heading": "Minimum 30 points for the RD/Small Projects set-aside",
+      "native_category": "Selection and Preference Criteria",
+      "page_start": 54,
+      "page_end": 54,
+      "quote": "This excludes projects funded through the RD/Small Projects set-aside, which must be eligible for no less than 30 points.",
+      "note": "The worksheet (p.5) exempts this set-aside from the 80-point floor without stating a figure of its own; the QAP supplies it: 'This excludes projects funded through the RD/Small Projects set-aside, which must be eligible for no less than 30 points.'"
+    },
+    {
+      "ord": 602,
+      "kind": "tiebreaker",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "section_label": "QAP.D.1",
+      "heading": "Greater number of points in the Preference Criteria",
+      "native_category": "Tie Breakers",
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "Priority will be given to the project with the greater number of points in",
+      "note": "Preference Criteria are Serves Lowest Income Tenants/Rent Reduction (2.C), Rental Assistance (2.B), Long-Term Affordability (2.D), QCT/Community Revitalization or Tribal Equivalent Areas (4.D), and Eventual Tenant Ownership, which carries no points (QAP pp.55-56)."
+    },
+    {
+      "ord": 603,
+      "kind": "tiebreaker",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "section_label": "QAP.D.2",
+      "heading": "Eventual tenant ownership component",
+      "native_category": "Tie Breakers",
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "Priority will be given to the project that will have an Eventual Tenant",
+      "note": "The worksheet's Instructions C describe the ETO preference as operating only here."
+    },
+    {
+      "ord": 604,
+      "kind": "tiebreaker",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 3,
+      "section_label": "QAP.D.3",
+      "heading": "Community without a credit-ceiling HTC allocation in two years",
+      "native_category": "Tie Breakers",
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "Priority will be given to a project located in a city, township or tribal"
+    },
+    {
+      "ord": 605,
+      "kind": "tiebreaker",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 4,
+      "section_label": "QAP.D.4",
+      "heading": "Highest percentage of funds committed (5.A)",
+      "native_category": "Tie Breakers",
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "Priority will be given to the project with the highest percentage of funds"
+    },
+    {
+      "ord": 606,
+      "kind": "tiebreaker",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 5,
+      "section_label": "QAP.D.5",
+      "heading": "Lowest intermediary cost percentage (5.C)",
+      "native_category": "Tie Breakers",
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "Priority will be given to the project with the lowest percentage of"
+    },
+    {
+      "ord": 607,
+      "kind": "tiebreaker",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 6,
+      "section_label": "QAP.D.6",
+      "heading": "Lot",
+      "native_category": "Tie Breakers",
+      "page_start": 56,
+      "page_end": 56,
+      "quote": "Priority will be determined by lot."
+    }
+  ]
+}

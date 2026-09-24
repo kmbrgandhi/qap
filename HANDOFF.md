@@ -13,14 +13,14 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 68 |
-| **States coded** | **25** |
-| Criteria | 901 (634 competitive, 207 threshold) |
-| Point tiers | 940 |
-| Track totals | 35 |
+| **States coded** | **26** |
+| Criteria | 941 (659 competitive, 216 threshold) |
+| Point tiers | 1036 |
+| Track totals | 36 |
 | Documents with a source URL | 33 of 68 |
-| Citations verifying | 901 of 901 |
+| Citations verifying | 941 of 941 |
 
-Coded: AK AL AR AZ CT DE HI IA MA ME MI MO NC ND NH NJ NV NY OH PA RI SD VA VT WI
+Coded: AK AL AR AZ CT DE HI IA MA ME MI MN MO NC ND NH NJ NV NY OH PA RI SD VA VT WI
 
 Every coded state reconciles its computed maximum against a total stated in its
 own document, or records in `track_totals` why it cannot. Nevada is the first
@@ -48,7 +48,7 @@ manifest.py         rewrites data/manifest.csv from the database
 ## Working from the git repo alone
 
 The full corpus is 123 MB in a shared drop folder and is **not** committed.
-`data/pdfs_bundled/` carries eleven documents covering ten states (Nevada, Iowa, Alaska, Arizona and New Jersey now coded) so
+`data/pdfs_bundled/` carries eleven documents covering ten states (Nevada, Iowa, Alaska, Arizona, New Jersey and Minnesota now coded) so
 that a repo-only session has real work available. See its README.
 
 `qapdb/paths.py` resolves every PDF: the path recorded at ingest, then
@@ -77,18 +77,17 @@ The dashboard is `python -m app.server`, then http://127.0.0.1:8000.
 ## Next states to code
 
 Ten states have their PDFs committed in `data/pdfs_bundled/`; Nevada, Iowa,
-Alaska, Arizona and New Jersey are now coded. All were
+Alaska, Arizona, New Jersey and Minnesota are now coded. All were
 checked to carry real point values before being bundled.
 
 | State | File | Pages | Notes |
 |---|---|---|---|
-| MN | `minnesota-qap-2026-2028.pdf` + `minnesota-self-scoring-worksheet-2026-2028.pdf` | 83 + 50 | **Scoring is in the worksheet**, not the QAP — like Michigan. Code the worksheet, cite the QAP only where the worksheet points to it |
 | OK | `oklahoma-qap-2027-CONVERTED-from-docx.pdf` | 76 | Converted from .docx; expect clean text but odd layout |
 | WY | `wyoming-qap-2027.pdf` | 80 | States "Maximum Points" |
 | CO | `colorado-qap-2025-2026.pdf` | 102 | Only 68 "point" mentions across 102pp — check the scoring section is really in here before committing to it |
 | IN | `indiana-qap-2026-2027.pdf` | 103 | 245 "point" mentions, the densest of the ten |
 
-Next is Minnesota.
+Next is Oklahoma.
 
 ## Deliberately deferred, with reasons
 

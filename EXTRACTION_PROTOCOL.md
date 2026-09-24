@@ -667,7 +667,7 @@ agree: rehab 170, new construction 185, and a 25-point Tribal add-on.
 
 ### New Jersey, 2026 (N.J.A.C. 5:80-33)
 
-66 criteria: 38 competitive, 5 tiebreakers and 20 thresholds, all verified
+66 criteria: 41 competitive, 5 tiebreakers and 20 thresholds, all verified
 first time. There are three cycles and no stated maximum. The core scale is 75
 and the cycle add-ons are Family 22, Senior 13 and Supportive Housing 23, so
 the cycle maxima are 97, 88 and 98. Every figure matched a hand-sum made
@@ -701,3 +701,39 @@ before loading.
   mid-sentence, but the whitespace-normalising verifier does not care. Pick
   quotes that avoid line-end hyphenation ("set- asides") and they verify
   first time.
+
+### Minnesota, 2026-2028 (self-scoring worksheet)
+
+40 criteria across two documents: 25 competitive and 8 thresholds from the
+worksheet, and 6 tiebreakers and 1 threshold from the QAP. All verified. No
+maximum is stated. The computed 258 is a ceiling of caps and matched the
+hand-sum.
+
+- **When scoring lives in a companion document, code it there and give the
+  QAP its own small file for what the companion defers.** The worksheet
+  carries every point. The QAP carries the tie breakers and the 30-point
+  floor for the RD/Small Projects set-aside, which the worksheet exempts from
+  its 80-point floor without stating a figure. `MN_qap_2026_2028.json`
+  matches the QAP PDF and holds only those, so every citation stays on the
+  page it names.
+- **Heading ranges are a gift; check each against its options anyway.** Every
+  criterion is headed "(7 to 37 Points)" or similar. Reading the options
+  confirmed every upper bound (30 + 7, 40 + 5, 19 + 7, 13 + 7, 4 + 8 …). One
+  wrong range would have meant a wrong maximum, and the ranges are the only
+  place the totals are stated.
+- **Most of Minnesota's exclusions are about units, not criteria, and the
+  schema cannot hold them.** "Cannot be claimed for the same units … must be
+  separate and distinct" (1.C/1.D, 2.A Tier 2/2.C, 2.B/2.C) and a 25% cap on
+  supportive units with Section 811 limit the real maximum well below the
+  sum of caps. Only whole-project exclusions went into groups: Large Family
+  or Senior, and Preservation Tier 1 or Rental Assistance. The rest are in
+  notes, and the track note says plainly that 258 cannot be reached.
+- **An exclusion that bars one tier, not the whole criterion, is a capped
+  group at the best allowed route.** 2.B is barred to Preservation Tier 1
+  projects but not to Tier 2. Tier 1 alone is worth 45; Tier 2 plus
+  severity plus Rental Assistance is worth 46. A `capped_sum` at 46 is the
+  North Dakota pattern again, and `max_one` would have undercounted by one.
+- **Printed and PDF page numbers can drift by different amounts within one
+  state's documents.** The worksheet is three pages off and the QAP eight in
+  the pages cited. The protocol already says to cite PDF indices; this is
+  why.
