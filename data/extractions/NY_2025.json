@@ -1,0 +1,252 @@
+{
+  "_comment": "New York State, HCR/DHCR. The QAP is a codified regulation, 9 NYCRR Part 2040, effective 11 June 2025. Scoring is section 2040.3(f), 'Project scoring and ranking criteria', PDF pp.19-25. NYC HPD is a separate allocating agency with its own QAP, not covered here. Page numbers are PDF page indices. Note the regulation repeatedly defers the substance of a criterion to a notice of credit availability, request for proposals or agency manual, so the point value is in the rule but the test often is not.",
+  "match": {
+    "filename": "new-york-qap-2025.pdf"
+  },
+  "extractor_version": "hand-2025-ny-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 19,
+      "note": "No maximum and no minimum score are stated. The seventeen criteria sum to 100 points exactly, which is almost certainly the design even though the regulation never says so. Applications must first pass a threshold eligibility review of 26 items under section 2040.3(e)."
+    }
+  ],
+  "groups": [],
+  "criteria": [
+    {
+      "ord": 1,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.1",
+      "heading": "Community impact and revitalization",
+      "points_max": 10,
+      "points_type": "tiered",
+      "page_start": 19,
+      "page_end": 21,
+      "quote": "Community impact/revitalization (up to 10 points)",
+      "tiers": [
+        {"tier_label": "Advances a concerted community revitalization plan or effort", "points": 5},
+        {"tier_label": "Non-residential space serving unmet needs of tenants and local residents, or commercial space for local ownership", "points": 2},
+        {"tier_label": "Advances housing objectives of a Regional Economic Development Council strategic plan or other State revitalization initiative", "points": 3}
+      ],
+      "note": "The revitalization plan is judged against seven stated tests, including walkability, consistency with neighbourhood character and density, an open public process, identified strengths and goals, and promotion of mixed income development. Plans may be led by local government, community organisations or individuals."
+    },
+    {
+      "ord": 2,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.2",
+      "heading": "Financial leveraging",
+      "points_max": 10,
+      "points_type": "formula",
+      "page_start": 21,
+      "page_end": 21,
+      "quote": "Financial leveraging (up to 10 points)",
+      "note": "Judged on how much of total development cost is financed by other sources, explicitly excluding a deferred developer's fee. Listed sources include permanent funding from outside the division or HTFC, donated land or buildings, a long-term lease at nominal rent, net syndication proceeds as a share of the credit requested, and the credit requested per unit adjusted for unit size."
+    },
+    {
+      "ord": 3,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.3",
+      "heading": "Sponsor characteristics",
+      "points_max": 11,
+      "points_type": "formula",
+      "page_start": 21,
+      "page_end": 21,
+      "quote": "Sponsor characteristics (up to 11 points)",
+      "note": "Development and management team experience: timely delivery within budget and scope, meeting or exceeding MBE, WBE and SDVOB participation goals on previous HCR-financed projects, and managing housing within approved operating budgets. The largest single criterion in the regulation."
+    },
+    {
+      "ord": 4,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.4",
+      "heading": "Sustainability",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 22,
+      "page_end": 22,
+      "quote": "Sustainability (up to 5 points)",
+      "note": "Judged against a green building strategy exceeding the baseline in HCR's sustainability guidelines, which are outside the regulation."
+    },
+    {
+      "ord": 5,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.5",
+      "heading": "Additional accessible units",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 22,
+      "page_end": 22,
+      "quote": "Additional HCR accessible units (up to 5 points)",
+      "note": "Units for people with mobility, hearing or vision impairments beyond HCR's design minimum. Also requires evidence of market demand and a certification that the applicant will contract with an experienced service organisation for occupancy referrals."
+    },
+    {
+      "ord": 6,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.6",
+      "heading": "Affordability",
+      "points_max": 7,
+      "points_type": "formula",
+      "page_start": 22,
+      "page_end": 22,
+      "quote": "Affordability (up to 7 points)",
+      "note": "Scored on the percentage of LIHTC units targeted to the lowest incomes, with 30, 40 and 50 percent of area median income given as examples rather than as fixed bands."
+    },
+    {
+      "ord": 7,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.7",
+      "heading": "Individuals with children",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 22,
+      "page_end": 22,
+      "quote": "Individuals with children (up to 5 points)",
+      "note": "Scored on the ratio of bedrooms to units in a project serving households with children that also qualifies under subparagraph 2040.3(f)(14), well-resourced areas, or advances a neighbourhood revitalization plan."
+    },
+    {
+      "ord": 8,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.8",
+      "heading": "Project readiness",
+      "points_max": 10,
+      "points_type": "formula",
+      "page_start": 22,
+      "page_end": 23,
+      "quote": "Project readiness (up to 10 points)",
+      "note": "Judged on the likelihood of a construction closing in the shortest timeframe, based on financing commitments and supporting measures such as infrastructure improvements, real property tax relief and rezoning."
+    },
+    {
+      "ord": 9,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.9",
+      "heading": "Special housing needs and supportive housing",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "Special housing needs and supportive housing (up to 5 points)",
+      "note": "Scored on the share of LIHTC-assisted units designated for people with special housing needs or in need of supportive housing as defined in section 2040.2(z)."
+    },
+    {
+      "ord": 10,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.10",
+      "heading": "Participation of non-profit organisations",
+      "points_max": 4,
+      "points_type": "tiered",
+      "page_start": 23,
+      "page_end": 24,
+      "quote": "Participation of non-profit organizations (up to 4 points)",
+      "tiers": [
+        {"tier_label": "Local non-profit as sole general partner or sole managing member, with low-income housing as a tax exempt purpose and no for-profit control", "points": 4},
+        {"tier_label": "Local non-profit with housing experience in a defined and substantive development or management role through the extended use period", "points": 2},
+        {"tier_label": "Non-local non-profit in a defined and substantive ownership, development or management role through the extended use period", "points": 1}
+      ]
+    },
+    {
+      "ord": 11,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.11",
+      "heading": "Mixed income",
+      "points_max": 4,
+      "points_type": "formula",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "Mixed income (up to 4 points)",
+      "note": "Scored on serving households earning above 60 percent of area median income."
+    },
+    {
+      "ord": 12,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.12",
+      "heading": "Historic nature of project",
+      "points_max": 2,
+      "points_type": "tiered",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "Historic nature of project (up to 2 points)",
+      "tiers": [
+        {"tier_label": "Includes the rehabilitation of a historic building", "points": 1},
+        {"tier_label": "Includes a building eligible for, and the applicant will seek, the federal historic rehabilitation credit", "points": 1}
+      ],
+      "note": "The two points are additive, not alternatives."
+    },
+    {
+      "ord": 13,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.13",
+      "heading": "Cost effectiveness",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "Cost effectiveness (5 points)",
+      "note": "Scored against the round: project costs are compared with those proposed in the other applications, so the value is not knowable from the regulation alone."
+    },
+    {
+      "ord": 14,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.14",
+      "heading": "Projects in well-resourced areas",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "Projects in well-resourced areas (up to 5 points)",
+      "note": "Socio-economic factors that may include educational opportunity and low poverty rates, as set out in a request for proposals or other HCR guidance."
+    },
+    {
+      "ord": 15,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.15",
+      "heading": "Transit-oriented development",
+      "points_max": 2,
+      "points_type": "formula",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "Transit-oriented development (up to 2 points)",
+      "note": "Proximity to public transportation, with the test set out in a request for proposals or other HCR guidance rather than in the regulation."
+    },
+    {
+      "ord": 16,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.16",
+      "heading": "Investment in underserved areas",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "Investment in underserved areas (5 points)",
+      "note": "Limited or no subsidised affordable housing production, and unmet demand, in the past ten years within the primary market area."
+    },
+    {
+      "ord": 17,
+      "kind": "competitive",
+      "native_category": "Project scoring and ranking criteria",
+      "section_label": "2040.3.f.17",
+      "heading": "MBE, WBE and service-disabled veteran-owned business participation",
+      "points_max": 5,
+      "points_type": "formula",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "Veteran-Owned Business participation (up to 5 points)",
+      "note": "Scored on an MBE or WBE holding a controlling or material ownership interest maintained through development, construction and the regulatory term, and on the development team including an MBE, WBE or SDVOB."
+    }
+  ]
+}

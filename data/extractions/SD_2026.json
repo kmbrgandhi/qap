@@ -1,0 +1,397 @@
+{
+  "_comment": "South Dakota 2026-27 QAP, SDHDA, approved 15 June 2026. Scoring is Section V, Project Selection Criteria, PDF pp.19-25, organised in five lettered groups: A Primary Selection Criteria, B Readiness to Proceed, C Project Characteristics, D Tenant Ownership, E Local Housing Need. Page numbers are PDF page indices; the printed numbers run one lower.",
+  "match": {
+    "filename": "southdakota-qap-2026-2027.pdf"
+  },
+  "extractor_version": "hand-2026-sd-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 19,
+      "note": "No maximum is stated. The operative figure is a floor: 'Applications must obtain a minimum of 400 points to be considered for award, other than those for additional tax credits.' Summing the stated section maxima gives 800, so the floor sits at half of the available points. Two criteria are scored against the round rather than a fixed standard: Project Characteristics defers entirely to Exhibit 4, and Local Housing Need awards the highest score to the greatest assessed need."
+    }
+  ],
+  "groups": [
+    {
+      "key": "sd_extended_use_or_ownership",
+      "label": "Extended use commitment against tenant ownership",
+      "rule": "max_one",
+      "group_cap": 20,
+      "source_quote": "are ineligible to claim points for Tenant Ownership",
+      "page_start": 20,
+      "note": "Stated from both ends: the extended use criterion says such applicants are ineligible for tenant ownership points, and the tenant ownership criterion says the reverse. Both are worth 20."
+    }
+  ],
+  "criteria": [
+    {
+      "ord": 1,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.1",
+      "heading": "Deep income targeting",
+      "points_max": 100,
+      "points_type": "tiered",
+      "page_start": 19,
+      "page_end": 20,
+      "quote": "Within the 20/50, 40/60, or Average Income election, to receive points for deep income targeting",
+      "tiers": [
+        {"tier_label": "20% of rent restricted units at 50% AMI, rents at the lesser of FMR or 50% AMI", "points": 25},
+        {"tier_label": "A further 10% of units for households at or below 50% AMI", "points": 25},
+        {"tier_label": "A further 7% of units at or below 40% AMI", "points": 25},
+        {"tier_label": "A further 3% of units at or below 30% AMI", "points": 25}
+      ],
+      "note": "Cumulative, not alternative: the QAP states each point category must be in addition to the preceding one, so all four together make the 100. Housing Trust Fund units count toward the 30% AMI tier only where there is at least one more 30% unit than HTF funding requires."
+    },
+    {
+      "ord": 2,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.2",
+      "heading": "Extended use commitment",
+      "points_max": 20,
+      "points_type": "fixed",
+      "group": "sd_extended_use_or_ownership",
+      "page_start": 20,
+      "page_end": 20,
+      "quote": "commit to increase the Extended Use Period an additional 10 years",
+      "note": "Taking the affordability period to 40 years. Claiming this forfeits tenant ownership points."
+    },
+    {
+      "ord": 3,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.3",
+      "heading": "Construction type",
+      "points_max": 60,
+      "points_type": "tiered",
+      "page_start": 20,
+      "page_end": 20,
+      "quote": "A rehabilitation project that remodels existing affordable rental housing to like new rental",
+      "tiers": [
+        {"tier_label": "Rehabilitation remodelling existing affordable rental housing to like new", "points": 40},
+        {"tier_label": "Rehabilitation using buildings of historic nature", "points": 20},
+        {"tier_label": "Rehabilitation converting existing buildings to new rental units", "points": 20},
+        {"tier_label": "Designated senior housing, 55 and over or 62 and over", "points": 20}
+      ],
+      "note": "Four items totalling 100 against a stated maximum of 60, so a project can combine at most some of them. Note the structure favours rehabilitation heavily: three of the four routes require an existing building."
+    },
+    {
+      "ord": 4,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.4",
+      "heading": "Concerted community revitalization plan",
+      "points_max": 20,
+      "points_type": "fixed",
+      "page_start": 20,
+      "page_end": 20,
+      "quote": "located within a Qualified Census Tract (QCT) and that contribute to a Concerted",
+      "note": "The plan must be documented at the time of application."
+    },
+    {
+      "ord": 5,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.5",
+      "heading": "Third-party financial support",
+      "points_max": 20,
+      "points_type": "tiered",
+      "page_start": 20,
+      "page_end": 20,
+      "quote": "documentation of financing or incentives from third party individuals",
+      "tiers": [
+        {"tier_label": "$10,001 or more per unit", "points": 20},
+        {"tier_label": "$5,001 to $10,000 per unit", "points": 15},
+        {"tier_label": "$1,000 to $5,000 per unit", "points": 10}
+      ],
+      "note": "Support that reduces development costs or enhances feasibility. The bands leave a gap between $10,000 and $10,001, and nothing below $1,000."
+    },
+    {
+      "ord": 6,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.6.a",
+      "heading": "Applicant characteristics",
+      "points_max": 40,
+      "points_type": "tiered",
+      "page_start": 21,
+      "page_end": 21,
+      "quote": "SDHDA will award the points indicated for each documented characteristic",
+      "tiers": [
+        {"tier_label": "Demonstrated track record in developing or managing subsidised housing", "points": 20},
+        {"tier_label": "Enterprise at least 51% owned or operated by a minority individual or a woman", "points": 10},
+        {"tier_label": "Owner equity above 10% of total development cost, not a deferred developer fee", "points": 10}
+      ],
+      "note": "Additive to the stated 40-point maximum. Where a consultant provides the track record, their services must run through issuance of Form 8609 and the contract must be in the application."
+    },
+    {
+      "ord": 7,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.6.b",
+      "heading": "Unapproved changes or unresolved compliance issues",
+      "points_max": -25,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 21,
+      "page_end": 21,
+      "quote": "SDHDA will deduct 25 points from where applicant or any member of the development",
+      "note": "Applies to a significant change made to another SDHDA-administered project without approval within the past two years, or unresolved compliance issues. An applicant in either position is also barred from the 20-point track record award, so the effective swing is 45 points."
+    },
+    {
+      "ord": 8,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.6.d",
+      "heading": "Applied for additional funding after an initial reservation",
+      "points_max": -10,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 21,
+      "page_end": 21,
+      "quote": "SDHDA will deduct 10 points for any project whose developer/owner applied for additional",
+      "note": "Applies for the two annual rounds following the request. Unlike the 25-point deduction, this one leaves the track record points intact."
+    },
+    {
+      "ord": 9,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.7",
+      "heading": "Service enriched housing",
+      "points_max": 30,
+      "points_type": "fixed",
+      "page_start": 21,
+      "page_end": 21,
+      "quote": "Projects that provide verifiable full-time, on-site services to the tenants",
+      "note": "The QAP states no sub-criteria for how the 30 points are apportioned."
+    },
+    {
+      "ord": 10,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.8",
+      "heading": "Percentage of soft costs",
+      "points_max": 30,
+      "points_type": "tiered",
+      "page_start": 22,
+      "page_end": 22,
+      "quote": "Soft costs include but are not limited to developers",
+      "tiers": [
+        {"tier_label": "Soft costs 0.00% to 9.99%", "points": 30},
+        {"tier_label": "10.00% to 14.99%", "points": 20},
+        {"tier_label": "15.00% to 19.00%", "points": 10},
+        {"tier_label": "19.01% and above", "points": 0}
+      ],
+      "note": "Builder's profit is excluded from soft costs. The bands leave a gap between 19.00% and 19.01%."
+    },
+    {
+      "ord": 11,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.9.a",
+      "heading": "Proximity to community services or transport",
+      "points_max": 20,
+      "points_type": "tiered",
+      "page_start": 22,
+      "page_end": 22,
+      "quote": "The property is within one half mile of community services",
+      "tiers": [
+        {"tier_label": "Bus stop within one city block, or free scheduled or on-call transport for tenants", "points": 20},
+        {"tier_label": "On-call transport provided at reduced rates", "points": 10},
+        {"tier_label": "Grocery or retail store within half a mile", "points": 5},
+        {"tier_label": "Hospital or medical clinic within half a mile", "points": 5},
+        {"tier_label": "School, or senior centre for senior properties, within half a mile", "points": 5},
+        {"tier_label": "Special service offices within half a mile", "points": 5}
+      ],
+      "note": "Two routes to the same 20 points: four services at 5 each, or the transport provision alone."
+    },
+    {
+      "ord": 12,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.9.b",
+      "heading": "Area of opportunity",
+      "points_max": 20,
+      "points_type": "tiered",
+      "page_start": 22,
+      "page_end": 22,
+      "quote": "Area of Opportunity (5 points for each achieved)",
+      "tiers": [
+        {"tier_label": "Low poverty census tract, under 10% poverty", "points": 5},
+        {"tier_label": "Ratio of jobs to population above the state average", "points": 5},
+        {"tier_label": "Unemployment below the state rate", "points": 5},
+        {"tier_label": "School performance index above average", "points": 5}
+      ]
+    },
+    {
+      "ord": 13,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.10",
+      "heading": "Households with children",
+      "points_max": 10,
+      "points_type": "fixed",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "at least 50% of units containing two or more bedrooms"
+    },
+    {
+      "ord": 14,
+      "kind": "competitive",
+      "native_category": "Primary Selection Criteria",
+      "section_label": "V.A.11",
+      "heading": "Public housing notification and waiting list priority",
+      "points_max": 10,
+      "points_type": "fixed",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "notify local public housing agencies of vacancies and give"
+    },
+    {
+      "ord": 15,
+      "kind": "competitive",
+      "native_category": "Readiness to Proceed",
+      "section_label": "V.B.1",
+      "heading": "Plans and specifications",
+      "points_max": 30,
+      "points_type": "fixed",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "architectural plans/working drawings that are at least 50% complete",
+      "note": "Or a physical needs assessment completed by an independent third party."
+    },
+    {
+      "ord": 16,
+      "kind": "competitive",
+      "native_category": "Readiness to Proceed",
+      "section_label": "V.B.2",
+      "heading": "Site control",
+      "points_max": 30,
+      "points_type": "tiered",
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "a recorded warranty deed, a recorded long-term lease, or an approval of Transfer",
+      "tiers": [
+        {"tier_label": "Recorded warranty deed, recorded long-term lease, or approved transfer of physical assets", "points": 30},
+        {"tier_label": "Enforceable signed and accepted purchase agreement or option to buy", "points": 20}
+      ]
+    },
+    {
+      "ord": 17,
+      "kind": "competitive",
+      "native_category": "Readiness to Proceed",
+      "section_label": "V.B.3",
+      "heading": "Financing commitments",
+      "points_max": 60,
+      "points_type": "tiered",
+      "page_start": 23,
+      "page_end": 24,
+      "quote": "Construction Financing (20 points maximum)",
+      "tiers": [
+        {"tier_label": "Construction or interim financing commitment", "points": 20},
+        {"tier_label": "Permanent financing, fixed rate, term of 15 years or more", "points": 20},
+        {"tier_label": "Permanent financing, fixed rate, term under 15 years", "points": 10},
+        {"tier_label": "Equity commitment disclosing all conditions", "points": 20}
+      ],
+      "note": "Three components of 20 each make the 60. The equity commitment must carry the investor's acknowledgement that it has reviewed the application and accepts the rent, income and use restrictions."
+    },
+    {
+      "ord": 18,
+      "kind": "competitive",
+      "native_category": "Readiness to Proceed",
+      "section_label": "V.B.4",
+      "heading": "Utilities at or adjacent to the site",
+      "points_max": 40,
+      "points_type": "tiered",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "for documentation from each provider",
+      "tiers": [
+        {"tier_label": "Water provider confirmation", "points": 10},
+        {"tier_label": "Sewer provider confirmation", "points": 10},
+        {"tier_label": "Electricity provider confirmation", "points": 10},
+        {"tier_label": "Heat provider confirmation, electric, natural gas or fuel oil", "points": 10}
+      ],
+      "note": "Each provider must confirm the utility is currently at or immediately adjacent to the site with capacity for the project. Close proximity, or that a utility could be extended, does not qualify."
+    },
+    {
+      "ord": 19,
+      "kind": "competitive",
+      "native_category": "Readiness to Proceed",
+      "section_label": "V.B.5",
+      "heading": "Zoning",
+      "points_max": 20,
+      "points_type": "fixed",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "the project site is properly zoned or that zoning is not"
+    },
+    {
+      "ord": 20,
+      "kind": "competitive",
+      "native_category": "Readiness to Proceed",
+      "section_label": "V.B.6",
+      "heading": "Platting",
+      "points_max": 20,
+      "points_type": "fixed",
+      "page_start": 24,
+      "page_end": 24,
+      "quote": "the final plat of the land has been recorded"
+    },
+    {
+      "ord": 21,
+      "kind": "competitive",
+      "native_category": "Project Characteristics",
+      "section_label": "V.C",
+      "heading": "Project characteristics",
+      "points_max": 100,
+      "points_type": "formula",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "Applications will receive up to 100 points as detailed in Exhibit 4",
+      "note": "A hundred points, an eighth of everything available, with no criteria stated in the QAP at all. Exhibit 4 is a separate document and is not in the corpus, so nothing beyond the maximum is extractable here."
+    },
+    {
+      "ord": 22,
+      "kind": "competitive",
+      "native_category": "Tenant Ownership",
+      "section_label": "V.D",
+      "heading": "Tenant ownership, lease purchase",
+      "points_max": 20,
+      "points_type": "fixed",
+      "group": "sd_extended_use_or_ownership",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "Projects intended for eventual tenant ownership will receive 20 points",
+      "note": "Requires a management plan covering homebuyer counselling and the calculation of the future purchase price. Claiming this forfeits the extended use commitment points."
+    },
+    {
+      "ord": 23,
+      "kind": "competitive",
+      "native_category": "Local Housing Need",
+      "section_label": "V.E",
+      "heading": "Local housing need",
+      "points_max": 100,
+      "points_type": "formula",
+      "page_start": 25,
+      "page_end": 25,
+      "quote": "SDHDA will award the highest score to projects considered to be facing the highest overall need",
+      "note": "Scored against the round and at SDHDA's assessment, with no stated method. Communities with two or more low-income projects under construction or still in rent-up below 90% occupancy may receive zero."
+    },
+    {
+      "ord": 24,
+      "kind": "threshold",
+      "native_category": "Project Selection Criteria",
+      "section_label": "V.minimum",
+      "heading": "Minimum 400 points",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "page_start": 19,
+      "page_end": 19,
+      "quote": "Applications must obtain a minimum of 400 points to be considered for award",
+      "note": "Applications for additional tax credits are exempt and are judged on the applicable criteria instead."
+    }
+  ]
+}

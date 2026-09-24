@@ -1,0 +1,541 @@
+{
+  "_comment": "Wisconsin 2027-28, WHEDA. The QAP itself carries almost no point values; scoring lives in Appendix C, Selection Criteria, revised 19 August 2026, which is what this extraction reads. Page numbers are PDF page indices in that appendix and match its printed 'Page N of 23'. Two sections defer their detail to further appendices that are not in the corpus: section 9 to Appendix W and section 15 to Appendix P.",
+  "match": {
+    "filename": "wisconsin-appendix-c-selection-criteria-2027.pdf"
+  },
+  "extractor_version": "hand-2027-wi-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 1,
+      "note": "No maximum is stated; the appendix states a floor instead: 'All developments must score at least sixty-five (65) points to be eligible for a Housing Tax Credit (HTC) award. (WHEDA may change this threshold.)' Summing the section maxima, and honouring the cap that binds sections 1 and 3, gives 155."
+    }
+  ],
+  "groups": [
+    {
+      "key": "wi_opportunity_or_stabilization",
+      "label": "Area of economic opportunity against tribal, rehabilitation and stabilization",
+      "rule": "capped_sum",
+      "group_cap": 30,
+      "source_quote": "cannot score points in this category",
+      "page_start": 11,
+      "note": "Two constraints are folded into one cap of 30. Sections 1 and 3 are mutually exclusive: 'Projects scoring points in 1. Area of Economic Opportunity cannot score points in this category.' And within section 1, 'The maximum total points awarded in Median Income, School District, and Rent Burden is limited to twenty (20) points.' So the best available is 30 by the section 1 route (20 capped plus linkages 5 plus transit 5), or 25 by the section 3 route. A cap of 30 over all six criteria records that correctly; the schema cannot nest one group inside another, so the 20-point sub-cap lives in this note."
+    }
+  ],
+  "criteria": [
+    {
+      "ord": 1,
+      "kind": "competitive",
+      "native_category": "Area of Economic Opportunity",
+      "section_label": "C.1.a",
+      "heading": "Census tract median income",
+      "points_max": 10,
+      "points_type": "tiered",
+      "group": "wi_opportunity_or_stabilization",
+      "page_start": 1,
+      "page_end": 1,
+      "quote": "Sites in Census tracts at the following percents of County Median Income earn",
+      "tiers": [
+        {
+          "tier_label": "At or above 120% of county median income",
+          "points": 10
+        },
+        {
+          "tier_label": "Between 100% and 119%",
+          "points": 8
+        }
+      ],
+      "note": "Available points by census tract are published in Appendix R.1, not here."
+    },
+    {
+      "ord": 2,
+      "kind": "competitive",
+      "native_category": "Area of Economic Opportunity",
+      "section_label": "C.1.b",
+      "heading": "School district accountability score",
+      "points_max": 5,
+      "points_type": "tiered",
+      "group": "wi_opportunity_or_stabilization",
+      "page_start": 1,
+      "page_end": 2,
+      "quote": "Overall Accountability Score earn",
+      "tiers": [
+        {
+          "tier_label": "Significantly exceeds expectations",
+          "points": 5
+        },
+        {
+          "tier_label": "Exceeds expectations",
+          "points": 3
+        }
+      ],
+      "note": "Where districts overlap, the applicant may use the higher score. Points by district are in Appendix R.2."
+    },
+    {
+      "ord": 3,
+      "kind": "competitive",
+      "native_category": "Area of Economic Opportunity",
+      "section_label": "C.1.c",
+      "heading": "Rent burden in the census tract",
+      "points_max": 10,
+      "points_type": "tiered",
+      "group": "wi_opportunity_or_stabilization",
+      "page_start": 2,
+      "page_end": 2,
+      "quote": "percent of renters paying over 30% of",
+      "tiers": [
+        {
+          "tier_label": "50% or more of renters paying over 30% of income",
+          "points": 10
+        },
+        {
+          "tier_label": "40% to 49.99%",
+          "points": 6
+        },
+        {
+          "tier_label": "30% to 39.99%",
+          "points": 2
+        }
+      ],
+      "note": "The tract must also have an average rent of $900 or more to be eligible at all."
+    },
+    {
+      "ord": 4,
+      "kind": "competitive",
+      "native_category": "Area of Economic Opportunity",
+      "section_label": "C.1.d",
+      "heading": "Linkages: proximity to services and amenities",
+      "points_max": 5,
+      "points_type": "tiered",
+      "group": "wi_opportunity_or_stabilization",
+      "page_start": 2,
+      "page_end": 10,
+      "quote": "Properties will receive points for proximity to services and amenities",
+      "tiers": [
+        {
+          "tier_label": "Full service grocery store",
+          "points": 2
+        },
+        {
+          "tier_label": "Public elementary, middle or high school, family properties only",
+          "points": 1
+        },
+        {
+          "tier_label": "Senior centre, senior properties only",
+          "points": 1
+        },
+        {
+          "tier_label": "Full service medical clinic or hospital",
+          "points": 1
+        },
+        {
+          "tier_label": "Public library",
+          "points": 1
+        },
+        {
+          "tier_label": "Public park",
+          "points": 1
+        },
+        {
+          "tier_label": "Job training facility, community college or continuing education",
+          "points": 1
+        }
+      ],
+      "note": "Additive up to the stated maximum of 5. Distance bands differ by location: 2.0 miles in a nonmetro county, 1.5 in a metro county, 4.0 on federally designated tribal land. Each claimed item needs a map with measurements, colour photos and a contact. The appendix devotes pp.3-10 to defining what qualifies, including a named list of eligible grocery stores."
+    },
+    {
+      "ord": 5,
+      "kind": "competitive",
+      "native_category": "Area of Economic Opportunity",
+      "section_label": "C.1.e",
+      "heading": "Public transportation",
+      "points_max": 5,
+      "points_type": "fixed",
+      "group": "wi_opportunity_or_stabilization",
+      "page_start": 10,
+      "page_end": 10,
+      "quote": "no more than",
+      "note": "Any part of the site within half a mile of a regularly scheduled local bus stop. Nonmetro counties and tribal land may instead evidence an on-call transportation programme offering a choice of local destinations at low cost."
+    },
+    {
+      "ord": 6,
+      "kind": "competitive",
+      "native_category": "Lower-Income Areas",
+      "section_label": "C.2.a",
+      "heading": "Concerted community revitalization plan",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 10,
+      "page_end": 10,
+      "quote": "if the site is in the geographic area of a Concerted Community",
+      "note": "The plan must be geographically specific, include a strategy for public and private investment beyond the development itself, demonstrate the need, carry outcome goals, timelines and partners, and have been approved or amended within the past ten years."
+    },
+    {
+      "ord": 7,
+      "kind": "competitive",
+      "native_category": "Lower-Income Areas",
+      "section_label": "C.2.b",
+      "heading": "Qualified census tract or successful competitive RFP response",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 10,
+      "page_end": 10,
+      "quote": "Additional Lower-Income Area Point",
+      "note": "Requires no identity of interest between the locality and the awardee."
+    },
+    {
+      "ord": 8,
+      "kind": "competitive",
+      "native_category": "Tribal, Rehabilitation and Neighborhood Stabilization",
+      "section_label": "C.3",
+      "heading": "Tribal ownership, neighbourhood stabilisation, or a county without a recent award",
+      "points_max": 25,
+      "points_type": "fixed",
+      "group": "wi_opportunity_or_stabilization",
+      "page_start": 11,
+      "page_end": 11,
+      "quote": "WHEDA will award twenty-\ufb01ve (25) points to applications owned by a Tribe",
+      "note": "The stabilisation route requires a city letter, at least 24 units, at least $25,000 per unit of rehabilitation, a first-year rent increase of no more than 5%, not scattered site, local financial support of at least 5% of development cost, and a relocation plan meeting Uniform Relocation Act standards. Thirty-nine counties are listed as being without a recent award; awards to tribally owned projects are excluded when determining that list."
+    },
+    {
+      "ord": 9,
+      "kind": "competitive",
+      "native_category": "Job Centers/Growth",
+      "section_label": "C.4.a",
+      "heading": "Top job centres",
+      "points_max": 8,
+      "points_type": "tiered",
+      "page_start": 12,
+      "page_end": 12,
+      "quote": "Jobs in Census Tract",
+      "tiers": [
+        {
+          "tier_label": "2,200 or more jobs in the census tract",
+          "points": 8
+        },
+        {
+          "tier_label": "1,800 to 2,199",
+          "points": 6
+        },
+        {
+          "tier_label": "1,000 to 1,799",
+          "points": 4
+        },
+        {
+          "tier_label": "500 to 999",
+          "points": 2
+        }
+      ],
+      "note": "Qualifying census tracts are listed in Appendix V."
+    },
+    {
+      "ord": 10,
+      "kind": "competitive",
+      "native_category": "Job Centers/Growth",
+      "section_label": "C.4.b",
+      "heading": "Net job growth",
+      "points_max": 8,
+      "points_type": "tiered",
+      "page_start": 12,
+      "page_end": 12,
+      "quote": "Job Growth in Census Tract in the Past Year",
+      "tiers": [
+        {
+          "tier_label": "10% or greater growth in the past year",
+          "points": 8
+        },
+        {
+          "tier_label": "7% to 9.99%",
+          "points": 6
+        },
+        {
+          "tier_label": "1% to 6.99%",
+          "points": 4
+        },
+        {
+          "tier_label": "0.1% to 0.99%",
+          "points": 2
+        }
+      ],
+      "note": "The bands leave a gap: growth between 0.99% and 1% falls between the 2-point and 4-point rows."
+    },
+    {
+      "ord": 11,
+      "kind": "competitive",
+      "native_category": "Serves Large Families or Seniors",
+      "section_label": "C.5",
+      "heading": "Serves large families or seniors",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 12,
+      "page_end": 12,
+      "quote": "WHEDA will award \ufb01ve (5) points for family projects with either",
+      "note": "Either at least 10% of low-income units with three or more bedrooms, or a 100% senior project with a letter from the area Aging and Disability Resource Center. The market study and application must both identify the development as family or senior."
+    },
+    {
+      "ord": 12,
+      "kind": "competitive",
+      "native_category": "Serves Lowest-Income Residents",
+      "section_label": "C.6",
+      "heading": "Serves lowest-income residents",
+      "points_max": 10,
+      "points_type": "tiered",
+      "page_start": 12,
+      "page_end": 13,
+      "quote": "WHEDA will award ten (10) points for agreeing to target units based on the matrix",
+      "tiers": [
+        {
+          "tier_label": "High income county: a quarter of units at 30% AMI, or average income at or below 52%",
+          "points": 10
+        },
+        {
+          "tier_label": "Moderate income county: a quarter of units at 40% AMI, or average income at or below 55%",
+          "points": 10
+        },
+        {
+          "tier_label": "Low income county: a quarter of units at 50% AMI, or average income at or below 57%",
+          "points": 10
+        }
+      ],
+      "note": "The required depth varies by the county's income level, and every county in the state is assigned to one of the three bands. Existing housing meets the percentages at unit turnover. Units with committed federal project-based assistance count as serving the lowest expected AMI."
+    },
+    {
+      "ord": 13,
+      "kind": "competitive",
+      "native_category": "Section 811 PBRA",
+      "section_label": "C.7",
+      "heading": "Section 811 project rental assistance",
+      "points_max": 10,
+      "points_type": "fixed",
+      "page_start": 14,
+      "page_end": 14,
+      "quote": "developments that submit a qualifying application for Section 811",
+      "note": "Section 811 units cannot be reserved under any other special designation, so they cannot double as the veterans units in section 8."
+    },
+    {
+      "ord": 14,
+      "kind": "competitive",
+      "native_category": "Veterans Housing",
+      "section_label": "C.8",
+      "heading": "Veterans housing",
+      "points_max": 3,
+      "points_type": "tiered",
+      "page_start": 14,
+      "page_end": 14,
+      "quote": "for developments intending to provide services designed to address the",
+      "tiers": [
+        {
+          "tier_label": "11% to 100% of units",
+          "points": 3
+        },
+        {
+          "tier_label": "6% to 10%",
+          "points": 2
+        },
+        {
+          "tier_label": "1% to 5%",
+          "points": 1
+        }
+      ],
+      "note": "Requires a signed memorandum with a county, tribal or veteran-specific service office describing referral and outreach. A vacant veterans unit is held for at least 30 days, attested by the property manager, and the units must be at 60% county median income or below."
+    },
+    {
+      "ord": 15,
+      "kind": "competitive",
+      "native_category": "Energy Efficiency and Sustainability",
+      "section_label": "C.9",
+      "heading": "Energy efficiency and sustainability",
+      "points_max": 25,
+      "points_type": "fixed",
+      "page_start": 14,
+      "page_end": 14,
+      "quote": "Applications will earn points based on the criteria in Appendix W",
+      "note": "The second largest category in the plan, and its criteria are entirely in Appendix W, which is not in the corpus. Only the 25-point maximum is extractable from Appendix C."
+    },
+    {
+      "ord": 16,
+      "kind": "competitive",
+      "native_category": "Universal Design",
+      "section_label": "C.10",
+      "heading": "Universal design",
+      "points_max": 13,
+      "points_type": "tiered",
+      "page_start": 14,
+      "page_end": 19,
+      "quote": "WHEDA will award thirteen (13) points based on how selections/commitments made",
+      "tiers": [
+        {
+          "tier_label": "21 or more design elements selected",
+          "points": 13
+        },
+        {
+          "tier_label": "17 to 20 elements",
+          "points": 12
+        },
+        {
+          "tier_label": "13 to 16 elements",
+          "points": 10
+        },
+        {
+          "tier_label": "9 to 12 elements",
+          "points": 8
+        },
+        {
+          "tier_label": "5 to 8 elements",
+          "points": 4
+        },
+        {
+          "tier_label": "1 to 4 elements",
+          "points": 2
+        }
+      ],
+      "note": "Scored on a count of checked design elements rather than on any one feature. Every selected element must be clearly labelled on the submitted site and building plans."
+    },
+    {
+      "ord": 17,
+      "kind": "competitive",
+      "native_category": "Eventual Tenant Ownership",
+      "section_label": "C.11",
+      "heading": "Eventual tenant ownership",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 19,
+      "page_end": 19,
+      "quote": "if 100% of the development is intended for eventual resident ownership",
+      "note": "New construction single-family detached family units only, with a resident homeownership plan covering qualifications, counselling, timelines, affordable purchase price methodology and any down payment assistance. Also requires clustering within half a mile, local or private support of at least 5% of development cost, and replacement reserves of at least $400 per unit. One point for a great deal of commitment."
+    },
+    {
+      "ord": 18,
+      "kind": "competitive",
+      "native_category": "Land Donation and Other Support",
+      "section_label": "C.12",
+      "heading": "Land donation and other support",
+      "points_max": 10,
+      "points_type": "fixed",
+      "page_start": 20,
+      "page_end": 20,
+      "quote": "Applications for new construction will earn ten (10) points if the project meets one or more",
+      "note": "Any one of three routes: donated land or a 99-year ground lease at no more than $100 a year with a clean Phase I; a building eligible for the federal historic rehabilitation credit with that equity listed as a source; or local government tax-increment financing of at least $200,000 or fee waivers of at least $50,000."
+    },
+    {
+      "ord": 19,
+      "kind": "competitive",
+      "native_category": "Building Amenities",
+      "section_label": "C.13.a",
+      "heading": "In-unit internet at no cost to residents",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 20,
+      "page_end": 20,
+      "quote": "In-unit internet at no cost to residents"
+    },
+    {
+      "ord": 20,
+      "kind": "competitive",
+      "native_category": "Building Amenities",
+      "section_label": "C.13.b",
+      "heading": "On-site community room",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 20,
+      "page_end": 20,
+      "quote": "On-site community room dedicated for residents"
+    },
+    {
+      "ord": 21,
+      "kind": "competitive",
+      "native_category": "Below-Market Financing",
+      "section_label": "C.14",
+      "heading": "Below-market financing per unit",
+      "points_max": 20,
+      "points_type": "formula",
+      "page_start": 21,
+      "page_end": 22,
+      "quote": "WHEDA will rank order the applications based on the amount of qualifying loan(s) per unit",
+      "note": "Scored against the round, not a fixed standard: the highest qualifying loan amount per unit takes 20 points and each successive application steps down by an increment that depends on how many applications there are, which the appendix illustrates with worked tables for 8 and 15 applicants. Qualifying loans must be at least $250,000, fixed at no more than 3%, amortised over at least 20 years, from a listed public source. Amounts from a local government are reduced by the cost of any land it sells to the project, and sources affiliated with the sponsor may be disregarded."
+    },
+    {
+      "ord": 22,
+      "kind": "competitive",
+      "native_category": "Development Team",
+      "section_label": "C.15",
+      "heading": "Development team",
+      "points_max": 6,
+      "points_type": "fixed",
+      "page_start": 22,
+      "page_end": 22,
+      "quote": "based on the criteria in Appendix P Development Team",
+      "note": "Criteria are in Appendix P, which is not in the corpus. Only the 6-point maximum is extractable here."
+    },
+    {
+      "ord": 23,
+      "kind": "competitive",
+      "native_category": "Site Characteristics",
+      "section_label": "C.16",
+      "heading": "Site without negative features",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 22,
+      "page_end": 22,
+      "quote": "WHEDA will provide 2 points for sites without negative features",
+      "note": "Transmission lines and towers, underground obstacles, undesirable sights or smells, flood hazards, steep slopes, boulders, ravines, year-round streams and wetlands are the listed examples."
+    },
+    {
+      "ord": 24,
+      "kind": "threshold",
+      "native_category": "Selection Criteria",
+      "section_label": "C.minimum",
+      "heading": "Minimum score of 65 points",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "page_start": 1,
+      "page_end": 1,
+      "quote": "All developments must score at least sixty-\ufb01ve (65) points to be eligible",
+      "note": "The appendix adds that WHEDA may change this threshold. Separately, points are refused outright where they are not requested or where documentation is missing, insufficient or in an unacceptable form, and scattered site projects need two thirds of units in the qualifying area."
+    },
+    {
+      "ord": 25,
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "C.17.1",
+      "heading": "Would be the only award for the development team",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "if an award would be the only one for each developer"
+    },
+    {
+      "ord": 26,
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "C.17.2",
+      "heading": "County with the fewest 9% awards in the last five cycles",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "the county with the least number of 9% HTC awards in the previous \ufb01ve (5) cycles"
+    },
+    {
+      "ord": 27,
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "C.17.3",
+      "heading": "Lottery",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 3,
+      "page_start": 23,
+      "page_end": 23,
+      "quote": "Third, a lottery"
+    }
+  ]
+}

@@ -318,6 +318,54 @@ each computed total matched a hand-sum done before loading: 99, 117, 169.
   on MHDC's website. The criterion is in the plan; the data that decides it is
   not.
 
+### Wisconsin 2027-28, Alabama 2027, New York 2025, South Dakota 2026-27
+
+100 criteria, every citation verified. Computed totals 155, 101, 100 and 780.
+
+- **Subsection caps are easy to miss and change the total.** Alabama first
+  computed 119 against its own stated section maxima of 104. Three caps were
+  missing: new construction against rehabilitation, tenant needs (items total
+  6 against a stated 5), and project type (items total 21 against a stated 12).
+  → Whenever a subsection states a maximum, check whether its items sum above
+  it. If they do, that is a group, not a rounding error.
+- **One cap can carry two constraints.** Wisconsin's sections 1 and 3 are
+  mutually exclusive, and within section 1 three sub-items are capped at 20.
+  The schema cannot nest groups, but a single capped sum at 30 over all six
+  criteria produces the right maximum, with the sub-cap explained in the note.
+- **The absence of a stated total is not the absence of a design.** New York
+  states no maximum, and its seventeen criteria compute to exactly 100. Worth
+  saying in the note; the reader can then trust the extraction is complete.
+- **A regulation can carry the points and not the test.** New York repeatedly
+  gives a criterion a value and then defers the substance to a notice of credit
+  availability or agency manual. South Dakota gives 100 points, an eighth of
+  everything available, to "Project Characteristics" and defers entirely to
+  Exhibit 4. Record the value, say plainly that the test is elsewhere.
+- **Deductions can compound with a lost award.** South Dakota deducts 25 points
+  for unresolved compliance issues and separately bars that applicant from the
+  20-point track record award, so the real swing is 45. Note the interaction;
+  the arithmetic alone will not show it.
+
+### When to defer a state rather than code it badly
+
+Three states were surveyed and set aside in this pass, each for a reason worth
+recording rather than rediscovering:
+
+- **Nebraska** publishes its scoring as a spreadsheet-style scoresheet whose
+  text layer separates labels from values, sometimes printing the value before
+  the label. Pairing them from the text layer would be guesswork. It needs an
+  image-based pass over its five pages.
+- **South Carolina** publishes only redline PDFs, so struck-out and replacement
+  values merge in extraction: the raw text reads "Max - 65 70 points" where 70
+  is correct. Also needs an image-based pass.
+- **Nevada** and **Iowa** are not hard, only long: Nevada runs fifteen pages of
+  round-relative preference points, Iowa a twelve-category site appeal matrix
+  inside a larger section. Both deserve a dedicated pass rather than the tail
+  end of one.
+
+The rule this suggests: survey first, and if the document needs a different
+*method* — images rather than text, or a session of its own — stop and say so.
+A half-read state costs more to repair than to do properly later.
+
 ### Freezing the text, and why we did not
 
 Considered after North Dakota: should extraction work from a frozen text

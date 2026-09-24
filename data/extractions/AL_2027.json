@@ -1,0 +1,688 @@
+{
+  "_comment": "Alabama 2027 Housing Credit QAP, AHFA, adopted 10 June 2026. Scoring is Addendum A, the Point Scoring System, PDF pp.34-46 (printed A-1 to A-13). The addendum is explicitly two-sided: Points Gained less Points Lost gives the project score. Page numbers are PDF page indices. Within-criterion detail that spans pages of definitions is summarised in notes rather than split into separate criteria.",
+  "match": {
+    "filename": "alabama-qap-2027.pdf"
+  },
+  "extractor_version": "hand-2027-al-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 35,
+      "note": "No maximum is stated overall. The two stated section maxima are Project Characteristics 84 and Applicant Characteristics 20. Honouring every stated subsection cap gives 101 rather than 104, because Rent Affordability's items total 13 against a stated 16. The operative figure is a floor: 'Projects with a net score of less than 70 points (Points Gained less Points Lost) will not be considered for allocation.' Deductions are open-ended: negative neighbourhood services, existing project non-compliance and post-inspection non-compliance are each marked No Maximum. AHFA also reserves the right to deny an allocation regardless of ranking, and to allocate irrespective of ranking order."
+    }
+  ],
+  "groups": [
+    {
+      "key": "al_construction_type",
+      "label": "New construction against rehabilitation component points",
+      "rule": "max_one",
+      "group_cap": 8,
+      "source_quote": "New Construction Projects Only (Maximum of 8 Points)",
+      "page_start": 38,
+      "note": "A project is either new construction or rehabilitation, and each route caps at 8. Together with the 25-point amenities maximum this is what makes the stated Type of Construction maximum of 33."
+    },
+    {
+      "key": "al_tenant_needs",
+      "label": "Tenant needs, capped at the subsection maximum",
+      "rule": "capped_sum",
+      "group_cap": 5,
+      "source_quote": "(iv.) Tenant Needs (Maximum 5 Points)",
+      "page_start": 40,
+      "note": "The five tenant needs items total 6 points against a stated subsection maximum of 5, so a project cannot claim them all."
+    },
+    {
+      "key": "al_project_type",
+      "label": "Project type, capped at the subsection maximum",
+      "rule": "capped_sum",
+      "group_cap": 12,
+      "source_quote": "(v.) Project Type (Maximum 12 Points)",
+      "page_start": 41,
+      "note": "The four project type items total 21 points against a stated subsection maximum of 12."
+    }
+  ],
+  "criteria": [
+    {
+      "ord": 1,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Type of Construction",
+      "section_label": "A.1.i.a",
+      "heading": "Extra unit and project amenities",
+      "points_max": 25,
+      "points_type": "tiered",
+      "page_start": 36,
+      "page_end": 38,
+      "quote": "A maximum of 25 points in aggregate will be given to projects that provide extra",
+      "tiers": [
+        {
+          "tier_label": "Camera or video monitoring of entries, parking and amenities",
+          "points": 4
+        },
+        {
+          "tier_label": "Lighting of all amenities, parking and entry and exit points",
+          "points": 4
+        },
+        {
+          "tier_label": "Unit security package, alarms on all entry doors and windows",
+          "points": 4
+        },
+        {
+          "tier_label": "Storm shelter meeting ICC-500 standards",
+          "points": 4
+        },
+        {
+          "tier_label": "Playground with commercial equipment and at least three activities",
+          "points": 4
+        },
+        {
+          "tier_label": "Outdoor fitness area with three equipment types",
+          "points": 4
+        },
+        {
+          "tier_label": "Covered picnic pavilion",
+          "points": 4
+        },
+        {
+          "tier_label": "Furnished children's activity or senior arts and crafts centre",
+          "points": 3
+        },
+        {
+          "tier_label": "Senior gathering area in multistorey elevator developments",
+          "points": 3
+        },
+        {
+          "tier_label": "Gazebo, minimum 16 by 16 feet",
+          "points": 3
+        },
+        {
+          "tier_label": "Computer centre with two or more computers, printer and internet",
+          "points": 3
+        },
+        {
+          "tier_label": "Splash centre of at least 500 square feet",
+          "points": 3
+        },
+        {
+          "tier_label": "Exercise or fitness room with three equipment types",
+          "points": 3
+        },
+        {
+          "tier_label": "Covered bus stop shelter",
+          "points": 3
+        },
+        {
+          "tier_label": "Storm doors, aluminium construction",
+          "points": 1
+        },
+        {
+          "tier_label": "Emergency pull cord or call button in each unit",
+          "points": 1
+        },
+        {
+          "tier_label": "Bike racks at the community building and an outdoor amenity area",
+          "points": 1
+        }
+      ],
+      "note": "Additive up to 25 in aggregate. The QAP specifies each amenity in physical detail, down to room sizes and equipment counts. Failing to deliver a represented amenity exposes the project and its responsible owners to point penalties and other sanctions."
+    },
+    {
+      "ord": 2,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Type of Construction",
+      "section_label": "A.1.i.newconstruction",
+      "heading": "New construction: windows, doors and exterior materials",
+      "points_max": 8,
+      "points_type": "tiered",
+      "page_start": 38,
+      "page_end": 38,
+      "quote": "4 points will be given for storm windows; thermal break insulated windows",
+      "tiers": [
+        {
+          "tier_label": "Energy Star rated insulated windows and insulated exterior doors",
+          "points": 4
+        },
+        {
+          "tier_label": "Full brick, cementitious siding, stucco, cultured stone or CMU exterior",
+          "points": 4
+        }
+      ],
+      "note": "New construction only. The brick requirement is specified as at least 40% of each multifamily building fa\u00e7ade from finished grade to eave line, or 50% for single-family, with entry areas included. No exterior insulation finishing system is acceptable.",
+      "group": "al_construction_type"
+    },
+    {
+      "ord": 3,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Type of Construction",
+      "section_label": "A.1.i.rehabilitation",
+      "heading": "Rehabilitation: replacement of building components",
+      "points_max": 8,
+      "points_type": "tiered",
+      "page_start": 38,
+      "page_end": 38,
+      "quote": "2 points will be given for replacing all entry doors with insulated exterior doors",
+      "tiers": [
+        {
+          "tier_label": "Replace all entry doors and all windows, Energy Star rated",
+          "points": 2
+        },
+        {
+          "tier_label": "Replace all kitchen cabinets and countertops",
+          "points": 2
+        },
+        {
+          "tier_label": "Replace all plumbing fixtures",
+          "points": 2
+        },
+        {
+          "tier_label": "Further replacement item",
+          "points": 2
+        }
+      ],
+      "note": "Rehabilitation only, to a maximum of 8. Four 2-point replacement items; the fourth continues past the page break and is recorded generically rather than guessed at.",
+      "group": "al_construction_type"
+    },
+    {
+      "ord": 4,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Energy and Water",
+      "section_label": "A.1.ii",
+      "heading": "Energy and water conservation and healthy living environment",
+      "points_max": 8,
+      "points_type": "tiered",
+      "page_start": 38,
+      "page_end": 39,
+      "quote": "Energy/Water Conservation and Healthy Living Environment",
+      "tiers": [
+        {
+          "tier_label": "HVAC of 14.3 SEER2 or above",
+          "points": 3
+        },
+        {
+          "tier_label": "Energy Star cool roof shingles or metal roof with a 50-year warranty",
+          "points": 3
+        },
+        {
+          "tier_label": "Dehumidifiers in all units, controls inaccessible to tenants",
+          "points": 3
+        },
+        {
+          "tier_label": "Radiant barrier roof deck at all buildings",
+          "points": 3
+        },
+        {
+          "tier_label": "Kitchen range hood vented to the exterior with a damper",
+          "points": 2
+        },
+        {
+          "tier_label": "WaterSense labelled water closet, bathroom faucets and showerheads",
+          "points": 2
+        },
+        {
+          "tier_label": "Jumper ducts to closets without an HVAC duct",
+          "points": 2
+        },
+        {
+          "tier_label": "LED fixtures or bulbs at all interior and exterior unit fixtures",
+          "points": 2
+        },
+        {
+          "tier_label": "Humidistat controlled Energy Star ventilation fans in all bathrooms",
+          "points": 2
+        },
+        {
+          "tier_label": "Energy Star rated bath and kitchen exhaust fans",
+          "points": 2
+        }
+      ],
+      "note": "Ten measures worth 24 in total against an aggregate maximum of 8, so a project picks its best three or four."
+    },
+    {
+      "ord": 5,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Rent Affordability",
+      "section_label": "A.1.iii.a",
+      "heading": "New funds committed to the project",
+      "points_max": 5,
+      "points_type": "tiered",
+      "page_start": 39,
+      "page_end": 40,
+      "quote": "A maximum of 5 points in aggregate will be given to projects which",
+      "tiers": [
+        {
+          "tier_label": "Listed federal sources including AHP, non-AHFA HOME, USDA 515, CDBG or Choice Neighborhoods",
+          "points": 5
+        },
+        {
+          "tier_label": "Capital Fund Program, public housing sales proceeds or RAD, $30,001+ per unit",
+          "points": 3
+        },
+        {
+          "tier_label": "Capital Fund Program, public housing sales proceeds or RAD, $16,000-30,000 per unit",
+          "points": 2
+        }
+      ],
+      "note": "Funds must be permanent and newly committed, evidenced by a fully executed firm commitment; assumed or extended existing funds do not qualify. The first list scales by amount per unit as well, with 2 points at $4,000-8,000 per unit."
+    },
+    {
+      "ord": 6,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Rent Affordability",
+      "section_label": "A.1.iii.b",
+      "heading": "Existing USDA 515 loan transfer",
+      "points_max": 3,
+      "points_type": "tiered",
+      "page_start": 40,
+      "page_end": 40,
+      "quote": "A maximum of 3 points will be given to projects that have a letter from",
+      "tiers": [
+        {
+          "tier_label": "$30,001 or more per unit",
+          "points": 3
+        },
+        {
+          "tier_label": "$10,000 to $30,000 per unit",
+          "points": 2
+        }
+      ],
+      "note": "Requires a USDA letter stating the applicant applied for transfer or assumption of an existing Rural Development 515 loan."
+    },
+    {
+      "ord": 7,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Rent Affordability",
+      "section_label": "A.1.iii.c",
+      "heading": "Rental or operating subsidies",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 40,
+      "page_end": 40,
+      "quote": "A maximum of 2 points will be given to projects that have a commitment for rental/operating",
+      "note": "From USDA Rural Development, HUD or a public housing authority, covering at least 25% of the proposed units."
+    },
+    {
+      "ord": 8,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Rent Affordability",
+      "section_label": "A.1.iii.d",
+      "heading": "Forgoing the qualified contract option",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 40,
+      "page_end": 40,
+      "quote": "irrevocably commit in writing",
+      "note": "An irrevocable written commitment not to request a qualified contract, remaining affordable through the full 30-year extended use period."
+    },
+    {
+      "ord": 9,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Tenant Needs",
+      "section_label": "A.1.iv.a",
+      "heading": "Elderly set-aside",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 40,
+      "page_end": 40,
+      "quote": "100% of the units in the project designed, equipped",
+      "group": "al_tenant_needs"
+    },
+    {
+      "ord": 10,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Tenant Needs",
+      "section_label": "A.1.iv.b",
+      "heading": "Low-income families with three-bedroom units",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 40,
+      "page_end": 41,
+      "quote": "with a minimum of 15% of the low-income units having three or more bedrooms",
+      "note": "A 100% elderly election forfeits these points. Rehabilitation projects must already have the bedrooms.",
+      "group": "al_tenant_needs"
+    },
+    {
+      "ord": 11,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Tenant Needs",
+      "section_label": "A.1.iv.c",
+      "heading": "Set-aside for tenants with disabilities or homeless populations",
+      "points_max": 2,
+      "points_type": "tiered",
+      "page_start": 41,
+      "page_end": 41,
+      "quote": "for tenants with disabilities or homeless populations for a minimum of 30",
+      "tiers": [
+        {
+          "tier_label": "At least 7% of total units, for 30 years",
+          "points": 2
+        },
+        {
+          "tier_label": "At least 5% of total units, for 30 years",
+          "points": 1
+        }
+      ],
+      "note": "Requires active marketing, a marketing and preference plan, and an executed Tenant Needs Memorandum of Understanding if funded. The population includes people fleeing domestic violence and those ageing out of foster care or leaving institutions.",
+      "group": "al_tenant_needs"
+    },
+    {
+      "ord": 12,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Tenant Needs",
+      "section_label": "A.1.iv.d",
+      "heading": "Targeting public housing waiting lists",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 41,
+      "page_end": 41,
+      "quote": "target  households on the public housing waiting lists",
+      "group": "al_tenant_needs"
+    },
+    {
+      "ord": 13,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Tenant Needs",
+      "section_label": "A.1.iv.e",
+      "heading": "Accessible units beyond the minimum",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 41,
+      "page_end": 41,
+      "quote": "5% of the dwelling units be",
+      "note": "At least 5% readily accessible to people with mobility impairments, plus a further 2% accessible to people with sensory impairments.",
+      "group": "al_tenant_needs"
+    },
+    {
+      "ord": 14,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Project Type",
+      "section_label": "A.1.v.a",
+      "heading": "Rehabilitation of a project with a maturing AHFA HOME loan",
+      "points_max": 10,
+      "points_type": "tiered",
+      "page_start": 41,
+      "page_end": 41,
+      "quote": "for the rehabilitation of a project with an",
+      "tiers": [
+        {
+          "tier_label": "AHFA HOME loan repaid in full, principal and interest",
+          "points": 10
+        },
+        {
+          "tier_label": "Closed a 15-year extension of the original AHFA HOME loan",
+          "points": 8
+        }
+      ],
+      "group": "al_project_type"
+    },
+    {
+      "ord": 15,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Project Type",
+      "section_label": "A.1.v.b",
+      "heading": "Rehabilitation of a prior funded LIHTC project",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 41,
+      "page_end": 41,
+      "quote": "5 points will be given for rehabilitation of a prior funded LIHTC project",
+      "note": "Must be out of the 15-year compliance period and free of a current USDA 515 loan or pending transfer.",
+      "group": "al_project_type"
+    },
+    {
+      "ord": 16,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Project Type",
+      "section_label": "A.1.v.c",
+      "heading": "Historic rehabilitation tax credit eligibility",
+      "points_max": 4,
+      "points_type": "fixed",
+      "page_start": 41,
+      "page_end": 41,
+      "quote": "qualifies for the Alabama Historic Rehabilitation Tax Credit or Federal Historic Tax Credit",
+      "group": "al_project_type"
+    },
+    {
+      "ord": 17,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Project Type",
+      "section_label": "A.1.v.d",
+      "heading": "Rehabilitation or replacement of existing multifamily housing",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "Rehabilitation of existing multifamily residential rental housing",
+      "note": "Also covers replacement of public housing authority multifamily housing, and replacement of housing destroyed or damaged in a presidentially declared disaster area. Demolished public housing counts if cleared within the last eight years.",
+      "group": "al_project_type"
+    },
+    {
+      "ord": 18,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Location",
+      "section_label": "A.1.vi.a",
+      "heading": "Neighbourhood services near the site",
+      "points_max": 10,
+      "points_type": "tiered",
+      "page_start": 42,
+      "page_end": 42,
+      "quote": "2 points will be given for each of the following neighborhood services located within",
+      "tiers": [
+        {
+          "tier_label": "Grocery store",
+          "points": 2
+        },
+        {
+          "tier_label": "Pharmacy or drug store",
+          "points": 2
+        },
+        {
+          "tier_label": "Convenience store",
+          "points": 2
+        },
+        {
+          "tier_label": "Bank or credit union",
+          "points": 2
+        },
+        {
+          "tier_label": "Hospital or doctor's office",
+          "points": 2
+        }
+      ],
+      "note": "Within 3 miles, or 5 miles in a USDA-defined rural area, measured by odometer from the site's automobile entrance to the service's car park entrance. Duplicate services do not count twice. Existing rural projects may submit the best available option for a grocery store. One point is deducted for each service AHFA cannot locate because of inaccurate directions."
+    },
+    {
+      "ord": 19,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Location",
+      "section_label": "A.1.vi.b.1.adjacent",
+      "heading": "Adjacent to an incompatible use",
+      "points_max": -5,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 43,
+      "page_end": 43,
+      "quote": "5 points will be deducted for applications involving any other project that is",
+      "note": "Marked No Maximum: there is no limit on points deducted for negative neighbourhood services. A prior-funded AHFA project at 85% occupancy loses 2 rather than 5. Adjacent means nearby, not necessarily touching. Fourteen incompatible uses are listed and the list is not exhaustive. No deduction for an adjacent railway if noise is under 65 dB outside and 45 dB inside, per the environmental report."
+    },
+    {
+      "ord": 20,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Location",
+      "section_label": "A.1.vi.b.1.nearby",
+      "heading": "Within 0.3 miles of an incompatible use",
+      "points_max": -2,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 43,
+      "page_end": 44,
+      "quote": "2 points will be deducted for applications involving any other project that is within .3 miles",
+      "note": "Applies only where the project is not already adjacent to one. A prior-funded AHFA project at 85% occupancy loses 1 rather than 2. No deduction for a prison or jail co-located with a police station."
+    },
+    {
+      "ord": 21,
+      "kind": "competitive",
+      "native_category": "Project Characteristics: Location",
+      "section_label": "A.1.vi.b.2",
+      "heading": "Unsatisfactory streets and sidewalks",
+      "points_max": -2,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 44,
+      "page_end": 44,
+      "quote": "2 points will be deducted if the condition of the streets and sidewalks are",
+      "note": "Street width and difficulty of access are taken into account."
+    },
+    {
+      "ord": 22,
+      "kind": "competitive",
+      "native_category": "Applicant Characteristics",
+      "section_label": "A.2.i",
+      "heading": "Participation of minorities or women",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 44,
+      "page_end": 44,
+      "quote": "A maximum of 5 points will be given to applicants with participation of minorities or",
+      "note": "Either ownership in the ownership entity or a guarantee that at least 10% of total building cost goes to minority or women-owned businesses. The individual must be general partner, manager or managing member and hold at least 51% of the entity or participating business."
+    },
+    {
+      "ord": 23,
+      "kind": "competitive",
+      "native_category": "Applicant Characteristics",
+      "section_label": "A.2.ii",
+      "heading": "Responsible owner development experience",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 44,
+      "page_end": 45,
+      "quote": "previous successful experience in the development of Active AHFA Projects",
+      "note": "Projects with an AHFA reservation letter or HOME written agreement from 2000 or later; non-AHFA projects can also qualify, without duplication."
+    },
+    {
+      "ord": 24,
+      "kind": "competitive",
+      "native_category": "Applicant Characteristics",
+      "section_label": "A.2.iii",
+      "heading": "Experienced managing agent",
+      "points_max": 10,
+      "points_type": "fixed",
+      "page_start": 45,
+      "page_end": 45,
+      "quote": "10 points will be given to applicants with sound, experienced managing agents",
+      "note": "Measured by units or projects currently managed, with 10 points at 1,000 or more units or 10 or more projects. Only low-income units count, in projects at least 20% low income."
+    },
+    {
+      "ord": 25,
+      "kind": "competitive",
+      "native_category": "Points Lost",
+      "section_label": "B.1.i",
+      "heading": "Altering an approved project without consent",
+      "points_max": -5,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 45,
+      "page_end": 45,
+      "quote": "altered an approved project in any manner different from",
+      "note": "Marked No Maximum: 5 points for each occurrence, with no cap on the number of occurrences. Deductions cover non-compliance identified between 1 January and 31 December of the year before the QAP year, taking account of whether corrective action was completed by AHFA's deadline."
+    },
+    {
+      "ord": 26,
+      "kind": "competitive",
+      "native_category": "Points Lost",
+      "section_label": "B.2",
+      "heading": "Non-compliance after the initial on-site inspection",
+      "points_max": null,
+      "points_type": "negative",
+      "is_negative": true,
+      "page_start": 46,
+      "page_end": 46,
+      "quote": "Non-Compliance after the Initial On-Site Inspection",
+      "note": "Marked No Maximum and no value is stated here: deductions follow Addendum B, the compliance monitoring procedures and penalty criteria, which is a separate document not extracted. Non-AHFA projects, in state or out, face the same requirements, except that Addendum B's 4-point threshold does not apply to them. points_max is left null because the addendum states no figure."
+    },
+    {
+      "ord": 27,
+      "kind": "threshold",
+      "native_category": "Point Scoring System",
+      "section_label": "A.minimum",
+      "heading": "Minimum net score of 70 points",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "Projects with a net score of less than 70 points (Points Gained less Points Lost) will not be considered",
+      "note": "AHFA also allocates generally to only one project per county, as a geographic balance priority."
+    },
+    {
+      "ord": 28,
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "A.tie.1",
+      "heading": "Least aggregate participation by a responsible owner",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 1,
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "the least amount of aggregate participation by any one",
+      "note": "Aggregate participation counts all Housing Credit and HOME applications recommended for allocation in the current cycle."
+    },
+    {
+      "ord": 29,
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "A.tie.2",
+      "heading": "Applied for HOME funds",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 2,
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "priority will be given to the application that has applied for HOME Funds"
+    },
+    {
+      "ord": 30,
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "A.tie.3",
+      "heading": "Census tract median family income at or above the county's",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 3,
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "Estimated Tract Median Family Income from the Federal Financial Institutions"
+    },
+    {
+      "ord": 31,
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "A.tie.4",
+      "heading": "County with the fewest units in active and unplaced projects",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 4,
+      "page_start": 35,
+      "page_end": 35,
+      "quote": "the application located in a county with the least"
+    },
+    {
+      "ord": 32,
+      "kind": "tiebreaker",
+      "native_category": "Tiebreakers",
+      "section_label": "A.tie.9",
+      "heading": "Public drawing",
+      "points_max": null,
+      "points_type": "none",
+      "scoring_unit": "none",
+      "rank_order": 9,
+      "page_start": 36,
+      "page_end": 36,
+      "quote": "priority will be given in accordance with a drawing",
+      "note": "Nine tiebreakers in total; this extraction records the first four and the ninth, which are the ones legible without ambiguity in the text layer. The drawing is held the next business day in AHFA's boardroom, drawn by an impartial person, open to the public, with results posted on AHFA's website."
+    }
+  ]
+}

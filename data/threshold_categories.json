@@ -1,4 +1,5 @@
 {
+ "AL|A.minimum": "Readiness & feasibility",
  "CT|III.A.1": "Readiness & feasibility",
  "CT|III.A.10": "Cost efficiency & leverage",
  "CT|III.A.11": "Preservation & historic reuse",
@@ -92,10 +93,12 @@
  "RI|III.A.3": "Readiness & feasibility",
  "RI|III.A.4": "Readiness & feasibility",
  "RI|III.A.5": "Cost efficiency & leverage",
+ "SD|V.minimum": "Readiness & feasibility",
  "VA|E.minimum": "Readiness & feasibility",
  "VT|3.1": "Readiness & feasibility",
  "VT|3.2": "Readiness & feasibility",
  "VT|3.3": "Readiness & feasibility",
  "VT|3.4": "Sponsor capacity & performance",
- "VT|3.5": "Populations & supportive services"
+ "VT|3.5": "Populations & supportive services",
+ "WI|C.minimum": "Readiness & feasibility"
 }

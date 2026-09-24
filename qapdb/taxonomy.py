@@ -309,6 +309,64 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("MO", "IV.C.3.cdbgdr"): COST,      ("MO", "IV.C.3.pbra"): (AFF, COST),
     ("MO", "IV.C.3.creditefficiency"): COST,
     ("MO", "IV.C.4.priorperformance"): SPON,
+
+    # ---- Wisconsin ---------------------------------------------------------
+    ("WI", "C.1.a"): LOC,       ("WI", "C.1.b"): LOC,
+    ("WI", "C.1.c"): LOC,       ("WI", "C.1.d"): LOC,
+    ("WI", "C.1.e"): LOC,       ("WI", "C.2.a"): LOC,
+    ("WI", "C.2.b"): LOC,       ("WI", "C.3"): (PRES, LOC),
+    ("WI", "C.4.a"): LOC,       ("WI", "C.4.b"): LOC,
+    ("WI", "C.5"): POP,         ("WI", "C.6"): AFF,
+    ("WI", "C.7"): POP,         ("WI", "C.8"): POP,
+    ("WI", "C.9"): DES,         ("WI", "C.10"): DES,
+    ("WI", "C.11"): POP,        ("WI", "C.12"): COST,
+    ("WI", "C.13.a"): DES,      ("WI", "C.13.b"): DES,
+    ("WI", "C.14"): COST,       ("WI", "C.15"): SPON,
+    ("WI", "C.16"): READY,
+
+    # ---- Alabama -----------------------------------------------------------
+    ("AL", "A.1.i.a"): DES,                 ("AL", "A.1.i.newconstruction"): DES,
+    ("AL", "A.1.i.rehabilitation"): (PRES, DES), ("AL", "A.1.ii"): DES,
+    ("AL", "A.1.iii.a"): COST,              ("AL", "A.1.iii.b"): (COST, PRES),
+    ("AL", "A.1.iii.c"): (AFF, COST),       ("AL", "A.1.iii.d"): AFF,
+    ("AL", "A.1.iv.a"): POP,                ("AL", "A.1.iv.b"): POP,
+    ("AL", "A.1.iv.c"): POP,                ("AL", "A.1.iv.d"): POP,
+    ("AL", "A.1.iv.e"): DES,
+    ("AL", "A.1.v.a"): PRES,                ("AL", "A.1.v.b"): PRES,
+    ("AL", "A.1.v.c"): PRES,                ("AL", "A.1.v.d"): PRES,
+    ("AL", "A.1.vi.a"): LOC,
+    ("AL", "A.1.vi.b.1.adjacent"): LOC,     ("AL", "A.1.vi.b.1.nearby"): LOC,
+    ("AL", "A.1.vi.b.2"): LOC,
+    ("AL", "A.2.i"): SPON,                  ("AL", "A.2.ii"): SPON,
+    ("AL", "A.2.iii"): SPON,
+    ("AL", "B.1.i"): SPON,                  ("AL", "B.2"): SPON,
+
+    # ---- New York ----------------------------------------------------------
+    ("NY", "2040.3.f.1"): LOC,      ("NY", "2040.3.f.2"): COST,
+    ("NY", "2040.3.f.3"): SPON,     ("NY", "2040.3.f.4"): DES,
+    ("NY", "2040.3.f.5"): DES,      ("NY", "2040.3.f.6"): AFF,
+    ("NY", "2040.3.f.7"): POP,      ("NY", "2040.3.f.8"): READY,
+    ("NY", "2040.3.f.9"): POP,      ("NY", "2040.3.f.10"): SPON,
+    ("NY", "2040.3.f.11"): AFF,     ("NY", "2040.3.f.12"): PRES,
+    ("NY", "2040.3.f.13"): COST,    ("NY", "2040.3.f.14"): LOC,
+    ("NY", "2040.3.f.15"): LOC,     ("NY", "2040.3.f.16"): LOC,
+    ("NY", "2040.3.f.17"): SPON,
+
+    # ---- South Dakota ------------------------------------------------------
+    ("SD", "V.A.1"): AFF,       ("SD", "V.A.2"): AFF,
+    ("SD", "V.A.3"): (PRES, POP), ("SD", "V.A.4"): LOC,
+    ("SD", "V.A.5"): COST,      ("SD", "V.A.6.a"): SPON,
+    ("SD", "V.A.6.b"): SPON,    ("SD", "V.A.6.d"): SPON,
+    ("SD", "V.A.7"): POP,       ("SD", "V.A.8"): COST,
+    ("SD", "V.A.9.a"): LOC,     ("SD", "V.A.9.b"): LOC,
+    ("SD", "V.A.10"): POP,      ("SD", "V.A.11"): POP,
+    ("SD", "V.B.1"): READY,     ("SD", "V.B.2"): READY,
+    ("SD", "V.B.3"): READY,     ("SD", "V.B.4"): READY,
+    ("SD", "V.B.5"): READY,     ("SD", "V.B.6"): READY,
+    # Project Characteristics defers entirely to Exhibit 4, which is not in the
+    # corpus; filed under design as the closest fit, flagged in its note.
+    ("SD", "V.C"): DES,         ("SD", "V.D"): POP,
+    ("SD", "V.E"): LOC,
 }
 
 
