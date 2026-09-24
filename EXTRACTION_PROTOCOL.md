@@ -805,3 +805,32 @@ in negative points reconciles too.
   Up to −1,000 for total project costs over the limits, with a published
   escape hatch (the Statistical Outlier Method). The value is extreme but
   stated, so it goes in as written.
+
+### Colorado, 2025-2026 (second amendment)
+
+34 criteria: 19 competitive and 15 thresholds, all verified first time. No
+maximum is stated. The computed 220.5 matched the hand-sum; it is a ceiling
+with one criterion missing.
+
+- **A low count of "point" mentions is a prompt to look, not a verdict.**
+  The handoff flagged Colorado because 102 pages held only 68 mentions of
+  "point". The scoring is all in Section 5, seven pages long; it is compact
+  because the largest criterion is a formula. Survey the pages that carry
+  the mentions before deciding to defer.
+- **A weighted formula has a ceiling even when no maximum is stated, and it
+  must be labelled as computed.** Low-income targeting multiplies the share
+  of units at each AMI level by weights of 50, 72.5 and 92.5. The ceiling is
+  92.5, and it is available only with project-based assistance; the cap of
+  60% on 40% AMI units makes it 84.5 otherwise. `points_max` records 92.5,
+  and the note and `_comment` say both figures are derived from stated
+  weights, not stated. Where you do this, say it every place the number
+  appears.
+- **When the points live in a document the corpus lacks, leave
+  `points_max` null.** Housing Need scores come from Application exhibits C-1
+  and C-2. The criterion is recorded with `detail_external` and no maximum,
+  and the total's note says it is excluded. A guessed figure would have made
+  the total look complete.
+- **A required election can make a scored criterion automatic.** 9% projects
+  must elect 25 years of extended use, which is exactly the 40-point tier of
+  the extended-use criterion. For 9% applicants the 40 points are free. The
+  minimum score of 130 has to be read with that in mind.

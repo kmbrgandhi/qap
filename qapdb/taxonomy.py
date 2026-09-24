@@ -540,6 +540,15 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("WY", "5.a"): SPON,    ("WY", "5.b"): SPON,
     ("WY", "6.a"): COST,    ("WY", "6.b"): COST,    ("WY", "6.c"): COST,
     ("WY", "6.d"): COST,
+
+    # ---- Colorado ----------------------------------------------------------
+    ("CO", "5.A.1"): AFF,   ("CO", "5.A.1.county"): (AFF, LOC),
+    ("CO", "5.A.1.d"): AFF, ("CO", "5.A.2"): AFF,   ("CO", "5.A.3"): LOC,
+    ("CO", "5.B.1"): LOC,   ("CO", "5.B.2.a"): LOC, ("CO", "5.B.2.b"): LOC,
+    ("CO", "5.B.3.a"): AFF, ("CO", "5.B.3.b"): LOC, ("CO", "5.B.3.c"): PRES,
+    ("CO", "5.B.3.d"): PRES, ("CO", "5.B.3.e"): DES, ("CO", "5.B.3.f"): (COST, DES),
+    ("CO", "5.B.3.g"): DES, ("CO", "5.B.3.h"): POP,
+    ("CO", "5.B.4"): SPON,  ("CO", "5.B.5"): POP,   ("CO", "5.B.6"): POP,
 }
 
 

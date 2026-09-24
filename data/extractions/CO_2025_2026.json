@@ -1,0 +1,298 @@
+{
+  "_comment": "Colorado 2025-2026 Housing Tax Credit QAP, Second Amendment, CHFA. The handoff flagged Colorado for having few 'point' mentions; the scoring is in the document after all, in Section 5 Scoring Criteria, PDF pp.44-50 (printed pp.40-46; the printed page is four lower). Page numbers are PDF page indices. NO MAXIMUM IS STATED. The floors are stated: 130 points for federal 9%, 115 for federal 4% with state credit, 95 for federal 4% (p.44, and as Threshold #1 on p.20). Hand-summed before loading, the itemised maxima give 220.5. That is 92.5 for the weighted targeting formula, a ceiling computed from its stated weights; 20 for the lowest-AMI county bonus; 15 for either 5.A.1(d) or 5.B.5, which cannot combine; 40 extended use; 1 revitalization plan; 6 location; 39 project characteristics; 5 applicant; and 2 waitlist. The loader matched. Housing Need Characteristics (5.B.1) is excluded from the total because its point values live in Application exhibits C-1 and C-2, not the QAP. The computed figure is therefore a ceiling with one criterion missing, and it leans on a derived number: read it as structure, not as a stated maximum. Thresholds are in CO_thresholds.json.",
+  "match": {
+    "filename": "colorado-qap-2025-2026.pdf"
+  },
+  "extractor_version": "hand-2025-co-1",
+  "track_totals": [
+    {
+      "track": null,
+      "stated_total": null,
+      "page": 44,
+      "note": "No maximum stated. Computed 220.5 excludes 5.B.1 Housing Need (values in Application exhibits C-1/C-2) and uses 92.5 as the targeting formula's ceiling, computed from its stated weights (84.5 without project-based assistance). Floors: 130 (9%), 115 (4% + state), 95 (4%). Because 9% projects must elect 25 years of extended use, their 40 points under 5.A.2 are effectively automatic, so the 130 floor is met largely by targeting."
+    }
+  ],
+  "groups": [
+    {
+      "key": "co_eli_or_special",
+      "label": "Extremely low-income targeting or homeless/special populations",
+      "rule": "max_one",
+      "source_quote": "Projects claiming points in this section cannot also claim points under Section 5.B.5.",
+      "page_start": 46,
+      "note": "5.A.1(d) says it cannot be combined with 5.B.5, and 5.B.5 says the same of 5.A.1(d). Both are worth 15."
+    }
+  ],
+  "criteria": [
+    {
+      "native_category": "Primary Selection Criteria",
+      "section_label": "5.A.1",
+      "heading": "Low-income targeting (weighted AMI score)",
+      "points_max": 92.5,
+      "points_type": "formula",
+      "page_start": 44,
+      "page_end": 46,
+      "quote": "a weight factor of 92.5 for selecting the 40 percent",
+      "note": "Share of rent-restricted units at each AMI level times a weight: 50 at 60% AMI, 72.5 at 50%, 92.5 at 40%, summed, under whichever minimum set-aside (20/50, 40/60 or Average Income) the project elects. No maximum is stated. The 92.5 recorded here is the formula's ceiling, all rent-restricted units at the 40% weight, which the plan permits only with project-based rental assistance or operating subsidies; otherwise no more than 60% of low-income units may count at 40%, which caps the score at 84.5 (0.6 x 92.5 + 0.4 x 72.5). Both ceilings are computed from the stated weights, not stated by CHFA. A primary criterion: a project must earn points here and in 5.A.2 to be eligible at all.",
+      "kind": "competitive",
+      "ord": 1
+    },
+    {
+      "native_category": "Primary Selection Criteria",
+      "section_label": "5.A.1.county",
+      "heading": "Additional points for counties with lowest AMI",
+      "points_max": 20,
+      "points_type": "fixed",
+      "detail_external": "Colorado county AMI levels (HUD)",
+      "page_start": 45,
+      "page_end": 46,
+      "quote": "20 additional points for counties with lowest AMI",
+      "note": "Printed on each of the three set-aside worksheets. Which counties count as 'lowest AMI' is not defined in the QAP beyond using the current county median income at application.",
+      "kind": "competitive",
+      "ord": 2
+    },
+    {
+      "native_category": "Primary Selection Criteria",
+      "section_label": "5.A.1.d",
+      "heading": "Extremely low-income targeting (30% AMI)",
+      "points_max": 15,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "group": "co_eli_or_special",
+      "page_start": 46,
+      "page_end": 46,
+      "quote": "Additional points will be awarded for projects that target extremely low-income residents.",
+      "tiers": [
+        {
+          "tier_label": "10% of units at or below 30% AMI",
+          "points": 5
+        },
+        {
+          "tier_label": "20%",
+          "points": 10
+        },
+        {
+          "tier_label": "30%",
+          "points": 15
+        }
+      ],
+      "note": "Bonus points on top of the chosen set-aside table. Cannot be combined with 5.B.5; see the group. Homeless and special population projects need five years' development experience and supportive services from a provider with three years' experience.",
+      "kind": "competitive",
+      "ord": 3
+    },
+    {
+      "native_category": "Primary Selection Criteria",
+      "section_label": "5.A.2",
+      "heading": "Extended low-income use",
+      "points_max": 40,
+      "points_type": "tiered",
+      "tier_mode": "alternative",
+      "page_start": 47,
+      "page_end": 47,
+      "quote": "15 Years of Compliance + 25 Years of Extended Use – 40 points",
+      "tiers": [
+        {
+          "tier_label": "15 years compliance + 15 years extended use",
+          "points": 25
+        },
+        {
+          "tier_label": "15 years compliance + 25 years extended use",
+          "points": 40
+        }
+      ],
+      "note": "Federal 9% and competitive state credit projects are already required to elect 25 years of extended use, so for them the 40 points are effectively automatic; only 4% projects choose between 25 and 40. A primary criterion.",
+      "kind": "competitive",
+      "ord": 4
+    },
+    {
+      "native_category": "Primary Selection Criteria",
+      "section_label": "5.A.3",
+      "heading": "Community revitalization plan",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 47,
+      "page_end": 47,
+      "quote": "CHFA will award one point for projects located in a qualified census tract that contribute to a Community",
+      "note": "Requires measurable community impact and significant local government funding or major investment beyond tax credit housing.",
+      "kind": "competitive",
+      "ord": 5
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.1",
+      "heading": "Housing need characteristics",
+      "points_max": null,
+      "points_type": "formula",
+      "detail_external": "Preliminary Application exhibits C-1 and C-2",
+      "page_start": 47,
+      "page_end": 47,
+      "quote": "Points may be earned under this category if the area where the proposed project is located is",
+      "note": "POINT VALUES NOT IN THE QAP. The C-1 (share of renter households under 51% AMI with housing problems) and C-2 (number of such households) scores are listed by county or metro area in the Application, which the corpus does not hold, so points_max is left null and this criterion is absent from the computed total. Applicants may submit other quantitative local data.",
+      "kind": "competitive",
+      "ord": 6
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.2.a",
+      "heading": "Community affordable housing priority",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 48,
+      "quote": "Three points may be earned for proposed projects to be located in a community that has an",
+      "page_end": 48,
+      "kind": "competitive",
+      "ord": 7
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.2.b",
+      "heading": "Transit-oriented development site",
+      "points_max": 3,
+      "points_type": "fixed",
+      "page_start": 48,
+      "quote": "Three points may be earned for proposed projects located at an existing or planned TOD site",
+      "page_end": 48,
+      "note": "Within a half-mile walk of transit corridors with easy access to a job center, maximising allowable density.",
+      "kind": "competitive",
+      "ord": 8
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.3.a",
+      "heading": "Mixed income",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 48,
+      "quote": "(Five points) Project that provides housing for mixed income",
+      "page_end": 48,
+      "note": "No more than 80% of units tax-credit eligible, including bond-financed projects; market-rate and restricted units must match in design and size.",
+      "kind": "competitive",
+      "ord": 9
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.3.b",
+      "heading": "Non-metro county of 180,000 or fewer",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 48,
+      "quote": "(Five points) Projects located in non-metro counties that have a population of 180,000 or less.",
+      "page_end": 48,
+      "kind": "competitive",
+      "ord": 10
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.3.c",
+      "heading": "Rehabilitation of blighted or historic buildings",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 48,
+      "quote": "(Five points) Rehabilitation of blighted buildings or locally or federally designated historic",
+      "page_end": 48,
+      "note": "At least $20,000 per unit in hard costs; conversions to residential use that are not blighted do not qualify.",
+      "kind": "competitive",
+      "ord": 11
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.3.d",
+      "heading": "Preservation",
+      "points_max": 15,
+      "points_type": "fixed",
+      "page_start": 48,
+      "quote": "(Fifteen points) Preservation projects which are defined as existing Tax Credit projects in year",
+      "page_end": 48,
+      "note": "Existing tax credit projects in year 25 or later of extended use, or projects whose rental assistance contract expires within three years. The largest secondary item.",
+      "kind": "competitive",
+      "ord": 12
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.3.e",
+      "heading": "No-smoking policy",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 48,
+      "quote": "(One point) No-smoking policy",
+      "page_end": 48,
+      "kind": "competitive",
+      "ord": 13
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.3.f",
+      "heading": "Modular or factory-built construction",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 48,
+      "quote": "(Five points) Projects maximizing construction efficiency by utilizing modular or factory-built",
+      "page_end": 48,
+      "kind": "competitive",
+      "ord": 14
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.3.g",
+      "heading": "Universal design or accessible units",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 48,
+      "quote": "(Two points) Projects utilizing Universal Design or providing accessible units which total at",
+      "page_end": 48,
+      "note": "At least 5% of units.",
+      "kind": "competitive",
+      "ord": 15
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.3.h",
+      "heading": "Pet-inclusive",
+      "points_max": 1,
+      "points_type": "fixed",
+      "page_start": 48,
+      "quote": "(One point) Projects that are pet-inclusive allowing one or more pet animals",
+      "page_end": 48,
+      "kind": "competitive",
+      "ord": 16
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.4",
+      "heading": "Nonprofit or public housing authority applicant",
+      "points_max": 5,
+      "points_type": "fixed",
+      "page_start": 49,
+      "quote": "(Five points) Applicant is an approved 501(c)3 or 501(c) 4 tax-exempt organization",
+      "page_end": 49,
+      "note": "Sole general partner, materially participating throughout the compliance period.",
+      "kind": "competitive",
+      "ord": 17
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.5",
+      "heading": "Projects serving persons experiencing homelessness or special populations",
+      "points_max": 15,
+      "points_type": "fixed",
+      "group": "co_eli_or_special",
+      "page_start": 49,
+      "page_end": 49,
+      "quote": "Fifteen points may be earned for the set-aside of at least 25 percent of the units for Persons experiencing",
+      "note": "At least 25% of units for one of the two populations, with population-appropriate design, a service plan, budget, MOUs and Housing First tenant selection. Cannot be combined with 5.A.1(d).",
+      "kind": "competitive",
+      "ord": 18
+    },
+    {
+      "native_category": "Secondary Selection Criteria",
+      "section_label": "5.B.6",
+      "heading": "Housing authority waitlist",
+      "points_max": 2,
+      "points_type": "fixed",
+      "page_start": 50,
+      "quote": "Two points may be earned by Applicants who enter into a written agreement with the local public",
+      "page_end": 50,
+      "kind": "competitive",
+      "ord": 19
+    }
+  ]
+}
