@@ -12,15 +12,14 @@ says *where we are*; the protocol says *how to work*.
 | | |
 |---|---|
 | States collected | 50 |
-| Documents | 68 |
-| **States coded** | **42** |
-| Criteria | 1694 (1125 competitive, 452 threshold) |
+| Documents | 70 |
+| **States coded** | **43** |
+| Criteria | 1711 (1137 competitive, 574 threshold and other) |
 | Point tiers | 2314 |
-| Track totals | 69 |
-| Documents with a source URL | 33 of 68 |
-| Citations verifying | 1694 of 1694 |
+| Documents with a source URL | 42 of 70 |
+| Citations verifying | all |
 
-Coded: AK AL AR AZ CA CO CT DE GA HI IA ID IL IN KS LA MA ME MI MN MO MS NC ND NH NJ NM NV NY OH OK PA RI SD TN TX VA VT WA WI WV WY
+Coded: AK AL AR AZ CA CO CT DE GA HI IA ID IL IN KS KY LA MA ME MI MN MO MS NC ND NH NJ NM NV NY OH OK PA RI SD TN TX VA VT WA WI WV WY
 
 The figures combine the 20 states coded against the full corpus with the 22
 coded from `data/pdfs_bundled/`. A repo-only session can rebuild and re-verify
@@ -123,42 +122,26 @@ The dashboard is `python -m app.server`, then http://127.0.0.1:8000.
 
 ## What to do next
 
-Both bundles are coded: 22 states from the repo, 42 in all. No uncoded
-document is left in `data/pdfs_bundled/`, so the next extraction needs either
-the shared drop folder or a newly collected document.
+**Four states remain uncoded, and all four have their documents in the repo.**
+`data/pdfs_bundled/README.md` carries the per-state briefing; each is also
+researched in `data/sources.csv`.
 
-1. **Second passes the first pass deliberately left out**, each noted in its
-   file: California's §10326 tax-exempt bond scoring (a separate competition);
-   the 4% universes of Kansas and Georgia, described in notes rather than coded
-   as tracks; and the selective threshold files, whose `_comment`s list what
-   was omitted.
-2. **Human review of the flagged items below.** Each is recorded in its state's
-   notes with the page to check. They are judgement calls, which is what the
-   review queue is for.
-3. **States still needing a decision or a document:**
+| State | Why it is last | Warning |
+|---|---|---|
+| **SC** | Nothing — start here, 12 pages | Code from the file ending `-amendments.pdf`; the other is a redline reading `Max - 65 70 points`, where 70 is correct |
+| **MD** | Nothing | Scoring is in the Program Guide, not the QAP. Printed pages run 5 behind PDF pages |
+| **NE** | Needs an image pass | The scoresheet interleaves labels and values, as Wyoming's did. Wyoming was read from rendered page images successfully |
+| **UT** | First weight-scored state | Use `scoring_unit`. Do not flatten weights to points, and do not compute a grand total: the QAP states none |
 
-   | Group | States |
-   |---|---|
-   | Need a method decision first | NE, SC (image pass), MD (Program Guide not collected), KY (spreadsheet), UT (weights) |
-   | Need a different document collected | OR — see below |
-   | Nothing to extract | FL (RFAs), MT (no points) |
+Three states are finished rather than pending, because they have no point
+system to extract: **Oregon** (threshold, then supplemental count, then ordered
+tiebreakers), **Montana** (no point system), **Florida** (scoring delegated to
+per-cycle RFAs).
 
-   **Oregon was wrongly listed here as ready.** `oregon-qap-2025.pdf` is a
-   public comment-and-response log: pages 44–142 are named commenters and
-   replies, not a scoring plan, and its only point values sit inside a reply
-   discussing proposed resilient construction scoring. Collect Oregon's actual
-   QAP before attempting it. The lesson is in the protocol: a high page count
-   and a plausible filename are not evidence that a document scores anything.
-4. **Fill `data/sources.csv`** for the 35 documents without a source URL, and
-   set cycles for Alaska, Wyoming and Idaho (none of the three documents states
-   one; Idaho gives only approval dates in April and May 2026), California (its
-   regulations are dated December 10, 2025 and name no round) and Arizona
-   (ingest recorded a filename/document CONFLICT).
-5. **Consider a `qapdb/stats` command** that prints this file's corpus table
-   from the full database. The figures here were computed from the 22 bundled
-   states plus the earlier 20 states' recorded totals, which is one more place
-   for arithmetic to drift. It should de-duplicate West Virginia's `.E` rows
-   when counting criteria.
+After those four the corpus is complete at 47 of 50, with the other three
+recorded as non-scoring. The remaining work is then human review, not
+extraction.
+
 
 ## Deliberately deferred, with reasons
 
