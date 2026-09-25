@@ -140,6 +140,7 @@ below the tier total. Summing every stated point value overstates what a project
 can actually earn by 50–65% in the states extracted so far.
 
 A stated total is not always reachable, and many states state none. Indiana
-states 165 while its own exclusion rules cap a 9% application at 146, and six of
-the last ten states coded state no maximum at all. Where a computed figure is a
+states 165 while its own exclusion rules cap a 9% application at 146; Tennessee
+states 100 and says its criteria are not meant to reach it; and 15 of the 22
+states coded from the bundled PDFs state no maximum at all. Where a computed figure is a
 ceiling rather than a score, the `track_totals` note says so.

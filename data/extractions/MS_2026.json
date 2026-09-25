@@ -1,0 +1,599 @@
+{
+ "_comment": "Mississippi 2026 QAP, Mississippi Home Corporation. Page numbers are PDF page indices, matching the printed page numbers. Every page's running header reads '2024 QUALIFIED ALLOCATION PLAN', but p.5 records 'adoption of the 2026 Qualified Allocation Plan' and the p.19 schedule runs in 2026; the header is stale, recorded not resolved. Scoring is Addendum A (pp.62-76). Competitive applications need 85 points and bond applications 80 (p.62). NO TOTAL IS STATED. Hand-summed before loading from the section maxima: Site Location 10 (two of four, capped), Building Standards 7, Development Amenities 6, Unit Amenities 10, Development Type 25 (new construction 10 or acquisition/rehabilitation 25), Deeper Targeting 5, Special Needs 13 (one category), Development Experience 13, Management Experience 20, and +5 from the construction cost adjustment = 114. The loader matched. Deductions are excluded, and three have no maximum. Thresholds (Section 4) are in MS_thresholds.json.",
+ "match": {
+  "filename": "mississippi-qap-2026.pdf"
+ },
+ "extractor_version": "hand-2026-ms-1",
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": null,
+   "page": 62,
+   "note": "No total stated. Computed 114: the section maxima total 109, plus 5 from the MCC adjustment, which can add as well as deduct. Minimums are 85 (competitive) and 80 (bond)."
+  }
+ ],
+ "groups": [
+  {
+   "key": "ms_site",
+   "label": "Site Location: up to two of four categories, maximum 10",
+   "rule": "capped_sum",
+   "group_cap": 10,
+   "source_quote": "Developments may receive up to ten points if the site is located in up to two of the four categories listed in Chart 5",
+   "page_start": 62
+  },
+  {
+   "key": "ms_devtype",
+   "label": "New Construction or Acquisition/Rehabilitation",
+   "rule": "max_one",
+   "source_quote": "Applicants cannot receive points for",
+   "page_start": 68
+  },
+  {
+   "key": "ms_special",
+   "label": "One Special Needs category",
+   "rule": "max_one",
+   "source_quote": "Points will be awarded to developments that target one of the Special Needs categories listed below.",
+   "page_start": 71
+  }
+ ],
+ "criteria": [
+  {
+   "native_category": "Site Location",
+   "section_label": "SC.1",
+   "heading": "Contributes to a Concerted Revitalization Plan",
+   "points_max": 5,
+   "points_type": "fixed",
+   "group": "ms_site",
+   "page_start": 62,
+   "page_end": 62,
+   "quote": "Five points may be awarded to developments located in a community that has a concerted revitalization plan.",
+   "kind": "competitive",
+   "ord": 1
+  },
+  {
+   "native_category": "Site Location",
+   "section_label": "SC.2",
+   "heading": "Qualified Zip Codes",
+   "points_max": 5,
+   "points_type": "fixed",
+   "group": "ms_site",
+   "page_start": 62,
+   "page_end": 62,
+   "quote": "Five points may be awarded to developments that are fully located in a zip code which has not had any New",
+   "kind": "competitive",
+   "note": "Qualifying developments are also eligible for the discretionary 130% basis boost.",
+   "ord": 2
+  },
+  {
+   "native_category": "Site Location",
+   "section_label": "SC.3",
+   "heading": "High Opportunity Area",
+   "points_max": 10,
+   "points_type": "fixed",
+   "group": "ms_site",
+   "page_start": 62,
+   "page_end": 62,
+   "quote": "Ten points may be awarded to developments located in a High Opportunity Area.",
+   "kind": "competitive",
+   "ord": 3
+  },
+  {
+   "native_category": "Site Location",
+   "section_label": "SC.4",
+   "heading": "Business Development Area",
+   "points_max": 10,
+   "points_type": "fixed",
+   "group": "ms_site",
+   "page_start": 63,
+   "page_end": 63,
+   "quote": "A Business Development Area (BDA) is a shovel-ready site identified by the Mississippi Development",
+   "kind": "competitive",
+   "note": "The text says MHC will provide the map layer 'for the 2024 application year' (p.63), in a 2026 QAP.",
+   "ord": 4
+  },
+  {
+   "native_category": "Development Characteristics",
+   "section_label": "SC.5",
+   "heading": "Building Standards",
+   "points_max": 7,
+   "points_type": "fixed",
+   "page_start": 64,
+   "page_end": 64,
+   "quote": "Applicants may choose from two green building standards or the Fortified Multifamily program to receive",
+   "note": "NGBS Silver or Enterprise Green Communities, or FORTIFIED Multifamily Gold; no split of the 7 between them is given. Failing to deliver certification triggers the Section 1.4(6) penalties.",
+   "kind": "competitive",
+   "ord": 5
+  },
+  {
+   "native_category": "Development Characteristics",
+   "section_label": "SC.6",
+   "heading": "Development Amenities",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 64,
+   "page_end": 67,
+   "quote": "Developments will be awarded points (as stated below) for each development amenity up to a",
+   "tiers": [
+    {
+     "tier_label": "Full-time third-party Service Coordinator",
+     "points": 6
+    },
+    {
+     "tier_label": "Part-time Service Coordinator",
+     "points": 3
+    },
+    {
+     "tier_label": "Experienced Service Provider, 10-year contract (instead of a coordinator)",
+     "points": 6
+    },
+    {
+     "tier_label": "Advanced community services/classes",
+     "points": 2
+    },
+    {
+     "tier_label": "Neighborhood services: two of grocery, pharmacy, bank, hospital within 3 miles",
+     "points": 2
+    },
+    {
+     "tier_label": "Furnished clubhouse or community building",
+     "points": 2
+    },
+    {
+     "tier_label": "On-site business/education center",
+     "points": 2
+    },
+    {
+     "tier_label": "Full perimeter fencing with controlled access gate",
+     "points": 2
+    },
+    {
+     "tier_label": "Exterior security",
+     "points": 2
+    },
+    {
+     "tier_label": "Fitness center",
+     "points": 2
+    },
+    {
+     "tier_label": "On-site laundry facility",
+     "points": 2
+    },
+    {
+     "tier_label": "Walking, jogging or biking trail",
+     "points": 1
+    },
+    {
+     "tier_label": "Basketball, volleyball or tennis court",
+     "points": 1
+    },
+    {
+     "tier_label": "Landscaped area with gazebo",
+     "points": 1
+    },
+    {
+     "tier_label": "Playground",
+     "points": 2
+    },
+    {
+     "tier_label": "Development Wi-Fi",
+     "points": 1
+    },
+    {
+     "tier_label": "Multi-purpose bus stop structure",
+     "points": 1
+    },
+    {
+     "tier_label": "MDOT Ride Share",
+     "points": 1
+    }
+   ],
+   "note": "Up to a maximum of 6. The section header carries no point value. The coordinator tiers and the experienced provider are alternatives ('OR'). Selected amenities are binding whether or not they score.",
+   "kind": "competitive",
+   "ord": 6
+  },
+  {
+   "native_category": "Development Characteristics",
+   "section_label": "SC.7",
+   "heading": "Unit Amenities",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 67,
+   "page_end": 68,
+   "quote": "Developments will be awarded up to a maximum of ten (10) points for providing a combination of any of the",
+   "tiers": [
+    {
+     "tier_label": "Patios",
+     "points": 1
+    },
+    {
+     "tier_label": "Outside storage lockers",
+     "points": 1
+    },
+    {
+     "tier_label": "Smart thermostat (requires Development Wi-Fi)",
+     "points": 1
+    },
+    {
+     "tier_label": "Washer and dryer in each unit",
+     "points": 2
+    },
+    {
+     "tier_label": "Tankless water heaters",
+     "points": 2
+    },
+    {
+     "tier_label": "Security system with alarm on all entry doors and windows",
+     "points": 3
+    },
+    {
+     "tier_label": "Storm doors",
+     "points": 3
+    },
+    {
+     "tier_label": "Storm shelter",
+     "points": 3
+    }
+   ],
+   "kind": "competitive",
+   "ord": 7
+  },
+  {
+   "native_category": "Development Characteristics",
+   "section_label": "SC.8.A",
+   "heading": "Development Type: New Construction",
+   "points_max": 10,
+   "points_type": "fixed",
+   "group": "ms_devtype",
+   "page_start": 68,
+   "page_end": 68,
+   "quote": "Applicants applying as a new construction development must meet MHC",
+   "note": "Chart 6 lists 'New Construction 10 pts'. The Lease Purchase Option is marked optional and carries no points of its own.",
+   "kind": "competitive",
+   "ord": 8
+  },
+  {
+   "native_category": "Development Characteristics",
+   "section_label": "SC.8.B",
+   "heading": "Development Type: Acquisition/Rehabilitation",
+   "points_max": 25,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "group": "ms_devtype",
+   "page_start": 69,
+   "page_end": 70,
+   "quote": "Points may be awarded to an acquisition/rehabilitation development based on the",
+   "tiers": [
+    {
+     "tier_label": "Rehabilitation hard costs $35,000 per unit",
+     "points": 15
+    },
+    {
+     "tier_label": "Rehabilitation hard costs $25,000 per unit",
+     "points": 10
+    },
+    {
+     "tier_label": "Rehabilitation hard costs $15,000 per unit",
+     "points": 5
+    },
+    {
+     "tier_label": "Historic Development (National Register, contributing to a district, or Mississippi Landmark)",
+     "points": 10
+    },
+    {
+     "tier_label": "Preservation (previous LIHTC after the extended use period, or loss of rental assistance)",
+     "points": 5
+    }
+   ],
+   "note": "Chart 7 maximum 25. Rehabilitation tiers are alternatives; Historic Developments are not eligible for Preservation, so the reachable maximum is 15 + 10 = 25. CONTRADICTION: the Development Type header says 'UP TO 25 PTS' and the text below it 'Up to twenty points'. Coded 25, which Chart 7 states.",
+   "kind": "competitive",
+   "ord": 9
+  },
+  {
+   "native_category": "Housing Needs Characteristics",
+   "section_label": "SC.9",
+   "heading": "Deeper Targeting",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 71,
+   "page_end": 71,
+   "quote": "Five points will be awarded to developments that set aside at least fifteen percent (15%) of the total units for",
+   "note": "15% of units at 30% AMI (a straight-line calculation from 50% AMI) for 40 years, which waives the qualified contract, plus referrals from an Addendum L housing service provider. Not available to Single Family Lease Purchase.",
+   "kind": "competitive",
+   "ord": 10
+  },
+  {
+   "native_category": "Housing Needs Characteristics",
+   "section_label": "SC.10.a",
+   "heading": "Special Needs: Elderly",
+   "points_max": 10,
+   "points_type": "fixed",
+   "group": "ms_special",
+   "page_start": 71,
+   "page_end": 71,
+   "quote": "A development will be considered an Elderly Development if 100% of its units will be occupied by",
+   "kind": "competitive",
+   "note": "The Elderly bar also names 'Large Family', which is not a Special Needs category in this QAP.",
+   "ord": 11
+  },
+  {
+   "native_category": "Housing Needs Characteristics",
+   "section_label": "SC.10.b",
+   "heading": "Special Needs: Housing for Disabled Persons Targeted by Mississippi Affirmative Olmstead Initiative",
+   "points_max": 13,
+   "points_type": "fixed",
+   "group": "ms_special",
+   "page_start": 71,
+   "page_end": 71,
+   "quote": "Thirteen (13) points will be awarded to developments that set aside a minimum of 7% but no more than",
+   "kind": "competitive",
+   "ord": 12
+  },
+  {
+   "native_category": "Housing Needs Characteristics",
+   "section_label": "SC.10.c",
+   "heading": "Special Needs: Housing for Veterans",
+   "points_max": 10,
+   "points_type": "fixed",
+   "group": "ms_special",
+   "page_start": 72,
+   "page_end": 72,
+   "quote": "A minimum of 10% of the units must be set aside for Veterans.",
+   "kind": "competitive",
+   "ord": 13
+  },
+  {
+   "native_category": "Development Team Characteristics",
+   "section_label": "SC.11",
+   "heading": "Development Experience",
+   "points_max": 13,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 72,
+   "page_end": 73,
+   "quote": "Up to thirteen points will be awarded to an applicant that has at least one qualified principal member.",
+   "tiers": [
+    {
+     "tier_label": "One development placed in service 2014-2023 (any state)",
+     "points": 2
+    },
+    {
+     "tier_label": "Two",
+     "points": 4
+    },
+    {
+     "tier_label": "Three",
+     "points": 6
+    },
+    {
+     "tier_label": "Four",
+     "points": 8
+    },
+    {
+     "tier_label": "Five or more",
+     "points": 10
+    },
+    {
+     "tier_label": "At least one of them in Mississippi",
+     "points": 3
+    }
+   ],
+   "note": "Chart 8 tiers are alternatives; the Mississippi 3 adds. The text says points follow 'Chart 2, page 18'; Chart 2 is the Important Dates table, and the scale is Chart 8 on p.73. The qualified principal needs 51% ownership (49% with nonprofit involvement).",
+   "kind": "competitive",
+   "ord": 14
+  },
+  {
+   "native_category": "Development Team Characteristics",
+   "section_label": "SC.12",
+   "heading": "Management Experience",
+   "points_max": 20,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 73,
+   "page_end": 74,
+   "quote": "Ten points will be awarded to applicants that have a contract with a property management company that has",
+   "tiers": [
+    {
+     "tier_label": "Qualified development: LIHTC placed in service and managed since before January 1, 2014",
+     "points": 10
+    },
+    {
+     "tier_label": "A qualified development in Mississippi",
+     "points": 5
+    },
+    {
+     "tier_label": "HTC-certified contact person (HCCP, C3P or SHCM)",
+     "points": 5
+    }
+   ],
+   "note": "The -5 for uncorrected Form 8823s in Chart 9 is coded separately as SC.12.neg.",
+   "kind": "competitive",
+   "ord": 15
+  },
+  {
+   "native_category": "Development Team Characteristics",
+   "section_label": "SC.12.neg",
+   "heading": "Management entity noncompliance (IRS Form 8823 not corrected)",
+   "points_max": -5,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 74,
+   "page_end": 74,
+   "quote": "Five points will be deducted from an applicant",
+   "note": "The text reads 'major noncompliance issues that occurred prior to January 1, 2025 that is not corrected by December 31, 2024'; Chart 9 reads 'IRS Form 8823 not corrected by 12/31/24'. The other-deductions list (PA.4.f) has a similar -5 for 8823s 'corrected after December 31, 2024'.",
+   "kind": "competitive",
+   "ord": 16
+  },
+  {
+   "native_category": "Point Adjustments",
+   "section_label": "PA.1",
+   "heading": "Over Concentration",
+   "points_max": -5,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 75,
+   "page_end": 75,
+   "quote": "Five (5) points will be deducted if an applicant proposes a new construction development in a primary market area",
+   "note": "New construction in a primary market area with three or more awards in the previous two years. The accompanying chart lists years 2022 and 2023 and ZIP 38771, in a 2026 QAP.",
+   "kind": "competitive",
+   "ord": 17
+  },
+  {
+   "native_category": "Point Adjustments",
+   "section_label": "PA.2",
+   "heading": "Maximum Construction Costs (MCC) Limits Assessment",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 75,
+   "page_end": 75,
+   "quote": "Developments whose construction costs fall below or exceed those limits as per Attachment FF-1:",
+   "tiers": [
+    {
+     "tier_label": "Hard cost per unit less than the MCC limit",
+     "points": 5
+    },
+    {
+     "tier_label": "Equal to or above the limit by less than 10%",
+     "points": 0
+    },
+    {
+     "tier_label": "Above the limit by more than 10%",
+     "points": -5
+    }
+   ],
+   "note": "A point adjustment that can add 5 as well as deduct 5; coded as a competitive criterion with a +5 maximum and a -5 tier.",
+   "kind": "competitive",
+   "ord": 18
+  },
+  {
+   "native_category": "Point Adjustments",
+   "section_label": "PA.3",
+   "heading": "Threshold Deficiencies",
+   "points_max": null,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 75,
+   "page_end": 75,
+   "quote": "Two points will be deducted for each deficient Threshold item outlined in Section 4.",
+   "tiers": [
+    {
+     "tier_label": "Per deficient threshold item",
+     "points": -2
+    }
+   ],
+   "note": "No maximum; clarifications are not deducted.",
+   "kind": "competitive",
+   "ord": 19
+  },
+  {
+   "native_category": "Point Adjustments",
+   "section_label": "PA.4",
+   "heading": "Other Point Deductions",
+   "points_max": null,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 75,
+   "page_end": 75,
+   "quote": "Points will be deducted for each of the following:",
+   "tiers": [
+    {
+     "tier_label": "Amenities not highlighted on plans",
+     "points": -1
+    },
+    {
+     "tier_label": "Other Attachments not labelled on the TOC",
+     "points": -1
+    },
+    {
+     "tier_label": "Missing site control addendums or exhibits",
+     "points": -1
+    },
+    {
+     "tier_label": "Missing/incomplete required document (each)",
+     "points": -1
+    },
+    {
+     "tier_label": "Required copies missing from the TOC",
+     "points": -1
+    },
+    {
+     "tier_label": "Uncorrected IRS Form 8823 from before 2025, corrected after December 31, 2024",
+     "points": -5
+    },
+    {
+     "tier_label": "Online application late",
+     "points": -5
+    },
+    {
+     "tier_label": "Online application incomplete",
+     "points": -5
+    },
+    {
+     "tier_label": "Documents in incorrect sections (each)",
+     "points": -1
+    }
+   ],
+   "note": "Several items are per occurrence; no maximum.",
+   "kind": "competitive",
+   "ord": 20
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tiebreakers",
+   "section_label": "TB.1",
+   "heading": "Lowest soft cost percentage",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 76,
+   "page_end": 76,
+   "quote": "Priority funding will be given to the development with the lowest soft cost percentage.",
+   "ord": 21
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tiebreakers",
+   "section_label": "TB.2",
+   "heading": "Lowest cost per unit",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 2,
+   "page_start": 76,
+   "page_end": 76,
+   "quote": "Developments that have the lowest cost per unit (CPU).",
+   "ord": 22
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tiebreakers",
+   "section_label": "TB.3",
+   "heading": "Fewest tax credits per unit",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 3,
+   "page_start": 76,
+   "page_end": 76,
+   "quote": "Applications will be ranked according to tax credits per unit favoring the development that requires the",
+   "ord": 23
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tiebreakers",
+   "section_label": "TB.4",
+   "heading": "Located in a qualified census tract",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 4,
+   "page_start": 76,
+   "page_end": 76,
+   "quote": "A development to be located in a qualified census tract shall take precedence over one that is not.",
+   "ord": 24
+  }
+ ]
+}

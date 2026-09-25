@@ -1,0 +1,127 @@
+{
+ "_comment": "West Virginia 2025-2026 Allocation Plan eligibility requirements and minimum standards (pp.21-30). The Manual's Requirements for Requests, which the Plan incorporates, is not itemised.",
+ "match": {
+  "filename": "westvirginia-qap-2025-2026.pdf"
+ },
+ "extractor_version": "hand-2025-wv-thresholds-1",
+ "groups": [],
+ "criteria": [
+  {
+   "ord": 501,
+   "kind": "threshold",
+   "native_category": "Eligibility and Minimum Standards",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "PP.1",
+   "heading": "Program Participants Eligibility Requirements",
+   "page_start": 21,
+   "page_end": 21,
+   "quote": "Any material misrepresentations or failure to disclose with regard to any of the following eligibility"
+  },
+  {
+   "ord": 502,
+   "kind": "threshold",
+   "native_category": "Eligibility and Minimum Standards",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "PP.2",
+   "heading": "Minimum Credit Score and Fiscal Soundness",
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "includes any Principal who has a credit score (Experian) below 620."
+  },
+  {
+   "ord": 503,
+   "kind": "threshold",
+   "native_category": "Eligibility and Minimum Standards",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "PP.3",
+   "heading": "Developer/General Partner Capacity",
+   "page_start": 24,
+   "page_end": 24,
+   "quote": "The Fund will not approve equity closing for any selected property that cannot"
+  },
+  {
+   "ord": 504,
+   "kind": "threshold",
+   "native_category": "Eligibility and Minimum Standards",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "PP.4",
+   "heading": "Other Eligibility Requirements",
+   "page_start": 24,
+   "page_end": 24,
+   "quote": "The Fund reserves the right to reject an application if one or more additional factors"
+  },
+  {
+   "ord": 505,
+   "kind": "threshold",
+   "native_category": "Eligibility and Minimum Standards",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "MH.1",
+   "heading": "Minimum Housing Standards",
+   "page_start": 25,
+   "page_end": 25,
+   "quote": "At a minimum, for a property to be eligible for Credits, the property must be"
+  },
+  {
+   "ord": 506,
+   "kind": "threshold",
+   "native_category": "Eligibility and Minimum Standards",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "MH.2",
+   "heading": "Miscellaneous Design Requirements",
+   "page_start": 25,
+   "page_end": 25,
+   "quote": "Either a new recirculating range hood (can be non-vented or duct free) or a"
+  },
+  {
+   "ord": 507,
+   "kind": "threshold",
+   "native_category": "Eligibility and Minimum Standards",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "MH.3",
+   "heading": "Property Architect Site Suitability Rating",
+   "page_start": 26,
+   "page_end": 26,
+   "quote": "The Property Architect must assess and assign a suitability"
+  },
+  {
+   "ord": 508,
+   "kind": "threshold",
+   "native_category": "Eligibility and Minimum Standards",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "MH.4",
+   "heading": "The Fund's Site Suitability Rating",
+   "page_start": 28,
+   "page_end": 28,
+   "quote": "designated construction professionals will visit"
+  },
+  {
+   "ord": 509,
+   "kind": "threshold",
+   "native_category": "Eligibility and Minimum Standards",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "MIN.500",
+   "heading": "Minimum 500 Selection and Preference Criteria points",
+   "page_start": 30,
+   "page_end": 30,
+   "quote": "minimum point threshold of 500 Selection and Preference Criteria"
+  }
+ ]
+}

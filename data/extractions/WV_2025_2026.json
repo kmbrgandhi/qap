@@ -1,0 +1,3040 @@
+{
+ "_comment": "West Virginia 2025 and 2026 Allocation Plan, West Virginia Housing Development Fund. Page numbers are PDF page indices; the printed 'Page N' runs twelve lower. The p.30 summary states TOTAL POINTS AVAILABLE 993 for both New Supply and Existing Low-Income Housing, which score the same criteria at different values. TWO FULL PARALLEL TRACKS: New Supply is the default track and Existing Low-Income Housing is track 'existing'. Every criterion that applies to both appears twice, with a '.E' suffix on the Existing copy, so that each universe reconciles on its own. It is one criterion in the document, not two. Section totals checked against p.30, New Supply / Existing: Property Characteristics 120 / 235; Ability to Produce 180 / 180; Location and Housing Needs 200 / 100; Sponsor 3; Tenant Populations 20; PHA Waiting List 25; Tenant Ownership 5; Historic 20; Lowest Income 50; Longest Periods 150; QCT/CRP 35; Energy and Quality 185 / 170; total 993 / 993. MISMATCH BY DESIGN: Tenant Ownership (5) and Longest Periods (150) bar each other (pp.73, 76), so the reachable maximum is 988 on each track. The 993 counts both. Family/senior un-met need and school/senior amenities are alternatives within their sections, and the section maxima count them once. A 10-point Top Off bonus (track top_off_bonus) and negative points sit outside the 993. Minimum 500 (p.30). Mixed properties are scored on a unit-weighted average of the two tracks.",
+ "match": {
+  "filename": "westvirginia-qap-2025-2026.pdf"
+ },
+ "extractor_version": "hand-2025-wv-1",
+ "qap_updates": {
+  "stated_total": 993
+ },
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": 993,
+   "page": 30,
+   "note": "New Supply. TOTAL POINTS AVAILABLE 993. Computed 988: Tenant Ownership (5) and Longest Periods (150) are mutually exclusive but both are in the 993. MISMATCH by design, fully explained."
+  },
+  {
+   "track": "existing",
+   "stated_total": 993,
+   "page": 30,
+   "note": "Existing Low-Income Housing. 993 stated, 988 computed, for the same reason."
+  },
+  {
+   "track": "top_off_bonus",
+   "stated_total": null,
+   "page": 89,
+   "note": "10 bonus points for a Top Off applicant in its final permitted year, beyond the 993."
+  }
+ ],
+ "groups": [
+  {
+   "key": "wv_unmet",
+   "label": "Family or senior un-met housing need (New Supply)",
+   "rule": "max_one",
+   "source_quote": "For Senior Properties: Senior Potential Un-Met Housing Need Net of Senior",
+   "page_start": 60
+  },
+  {
+   "key": "wv_unmet_e",
+   "label": "Family or senior un-met housing need (Existing)",
+   "rule": "max_one",
+   "source_quote": "For Senior Properties: Senior Potential Un-Met Housing Need Net of Senior",
+   "page_start": 60
+  },
+  {
+   "key": "wv_school_senior",
+   "label": "School performance or proximity to senior amenities (New Supply)",
+   "rule": "max_one",
+   "source_quote": "For Senior Properties: Proximity to Senior Amenities",
+   "page_start": 68
+  },
+  {
+   "key": "wv_school_senior_e",
+   "label": "School performance or proximity to senior amenities (Existing)",
+   "rule": "max_one",
+   "source_quote": "For Senior Properties: Proximity to Senior Amenities",
+   "page_start": 68
+  },
+  {
+   "key": "wv_ownership_longest",
+   "label": "Eventual tenant ownership or longest-period preference (New Supply)",
+   "rule": "max_one",
+   "source_quote": "Properties which commit to Properties Committed to Eventual Tenant Ownership are",
+   "page_start": 76
+  },
+  {
+   "key": "wv_ownership_longest_e",
+   "label": "Eventual tenant ownership or longest-period preference (Existing)",
+   "rule": "max_one",
+   "source_quote": "Properties which commit to Properties Committed to Eventual Tenant Ownership are",
+   "page_start": 76
+  }
+ ],
+ "criteria": [
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.1",
+   "heading": "Set-Aside Categories",
+   "points_max": 50,
+   "points_type": "tiered",
+   "page_start": 31,
+   "page_end": 32,
+   "quote": "Each property may compete for Credits from only one set-aside category.",
+   "tiers": [
+    {
+     "tier_label": "New construction, 50 units or fewer",
+     "points": 50
+    },
+    {
+     "tier_label": "New construction, more than 50",
+     "points": 40
+    },
+    {
+     "tier_label": "Substantial rehabilitation, 50 or fewer",
+     "points": 30
+    },
+    {
+     "tier_label": "Rehabilitation, more than 50",
+     "points": 20
+    },
+    {
+     "tier_label": "Acquisition and rehabilitation, 50 or fewer",
+     "points": 10
+    },
+    {
+     "tier_label": "Acquisition and rehabilitation, more than 50",
+     "points": 0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Points by type and size of property in the chosen set-aside (Qualified Non-Profit, Existing Low-Income Housing Preservation, New Supply Non-Rural, New Supply Rural, or Top Off, which keeps its original points). Existing Low-Income Housing can only be rehabilitation, so its maximum is 30.",
+   "ord": 1
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.3.a",
+   "heading": "RD or HUD or Other Government Financing or Guarantee/Insurance",
+   "points_max": 20,
+   "points_type": "tiered",
+   "page_start": 35,
+   "page_end": 38,
+   "quote": "20 points will be awarded to an Applicant that submits documentation",
+   "tiers": [
+    {
+     "tier_label": "Government financing/guarantee with cash flow to amortize 50%+ of each (or 75%+ of new) such financing",
+     "points": 20
+    },
+    {
+     "tier_label": "Government financing/guarantee without the amortization test",
+     "points": 10
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Such financing must be at least 50% of Total Permanent Financing, with stated exceptions.",
+   "ord": 2
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.3.d",
+   "heading": "Favorable Financing",
+   "points_max": 25,
+   "points_type": "fixed",
+   "page_start": 39,
+   "page_end": 41,
+   "quote": "evidencing that the property will be financed with construction, pre-",
+   "note": "Construction, pre-development and bridge financing fees at or below 1%; permanent financing at a fixed rate at or below the Fund's 'maximum favorable financing rate', for at least the Compliance Period, and at least 50% of Total Permanent Financing.",
+   "ord": 3
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.5",
+   "heading": "Property-Based Rental Assistance",
+   "points_max": 25,
+   "points_type": "tiered",
+   "page_start": 43,
+   "page_end": 44,
+   "quote": "that the property has property-based rental assistance",
+   "tiers": [
+    {
+     "tier_label": "Property-based rental assistance on 25%-49.9% of units",
+     "points": 15
+    },
+    {
+     "tier_label": "50%-74.9%",
+     "points": 20
+    },
+    {
+     "tier_label": "75% or more",
+     "points": 25
+    }
+   ],
+   "tier_mode": "alternative",
+   "ord": 4
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.1",
+   "heading": "Permanent Financing",
+   "points_max": 25,
+   "points_type": "fixed",
+   "page_start": 45,
+   "page_end": 47,
+   "quote": "that the Ownership Entity has received written conditional permanent financing",
+   "ord": 5
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.2",
+   "heading": "Syndication of Investment Interests and Tax Credits",
+   "points_max": 25,
+   "points_type": "fixed",
+   "page_start": 47,
+   "page_end": 48,
+   "quote": "that the Applicant has formally accepted in writing a syndicator",
+   "ord": 6
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.3",
+   "heading": "Developer Experience in the LIHTCP",
+   "points_max": 25,
+   "points_type": "tiered",
+   "page_start": 48,
+   "page_end": 49,
+   "quote": "Developer Experience in the LIHTCP (Maximum Points Available: 25)",
+   "tiers": [
+    {
+     "tier_label": "Eight or more LIHTCP properties",
+     "points": 25
+    },
+    {
+     "tier_label": "Six or more",
+     "points": 20
+    },
+    {
+     "tier_label": "Four",
+     "points": 15
+    },
+    {
+     "tier_label": "Two",
+     "points": 10
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "The tiers (p.49) give no value for three, five or seven properties.",
+   "ord": 7
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.4",
+   "heading": "Developer's and General Partner's Post-2008 Timely Delivery of Units and Future Timely Equity Closing Commitment",
+   "points_max": 35,
+   "points_type": "tiered",
+   "page_start": 50,
+   "page_end": 51,
+   "quote": "A property will be awarded 2.5 or 1.25 points for each LIHTCP property where",
+   "tiers": [
+    {
+     "tier_label": "Per timely-delivered West Virginia property (each developer and GP has one), up to 10 properties",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Per property otherwise",
+     "points": 1.25
+    },
+    {
+     "tier_label": "Commitment to close equity by the stated deadline",
+     "points": 10
+    }
+   ],
+   "tier_mode": "mixed",
+   "note": "Up to 10 properties x 2.5 = 25, plus 10 for the equity closing commitment. An unfulfilled commitment costs 20 points on each of the Principals' next three applications (coded as NEG.2).",
+   "ord": 8
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.5",
+   "heading": "General Partner Portfolio Occupancy Rate",
+   "points_max": 25,
+   "points_type": "fixed",
+   "page_start": 52,
+   "page_end": 53,
+   "quote": "A property will be awarded 25 points if an Applicant submits documentation",
+   "note": "General Partner's West Virginia LIHTCP portfolio 93% or more occupied.",
+   "ord": 9
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.6",
+   "heading": "Attendance at a Fund LIHTCP Application Workshop Covering the Current Plan",
+   "points_max": 25,
+   "points_type": "tiered",
+   "page_start": 53,
+   "page_end": 53,
+   "quote": "A property will be awarded 12.5 points if an Applicant submits documentation",
+   "tiers": [
+    {
+     "tier_label": "One Principal of each developer attended all workshop sessions",
+     "points": 12.5
+    },
+    {
+     "tier_label": "An additional Principal or development employee attended",
+     "points": 12.5
+    }
+   ],
+   "tier_mode": "additive",
+   "ord": 10
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.7",
+   "heading": "Pipeline Properties",
+   "points_max": 20,
+   "points_type": "fixed",
+   "page_start": 53,
+   "page_end": 54,
+   "quote": "20 points will be awarded to a property where the Owner of such property was",
+   "note": "Not selected from the prior year's ceiling, and unchanged in the ways listed.",
+   "ord": 11
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.1",
+   "heading": "LIHTCP Unit Production as a Percentage of the Renter-Occupied Housing Units",
+   "points_max": 30,
+   "points_type": "tiered",
+   "page_start": 55,
+   "page_end": 55,
+   "quote": "LIHTCP Unit Production as a Percentage of the Renter-Occupied Housing Units",
+   "tiers": [
+    {
+     "tier_label": "County value 19.13% and 21.26%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "County value 17.00% and 19.12%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "County value 14.88% and 16.99%",
+     "points": 9.0
+    },
+    {
+     "tier_label": "County value 12.75% and 14.87%",
+     "points": 12.0
+    },
+    {
+     "tier_label": "County value 10.63% and 12.74%",
+     "points": 15.0
+    },
+    {
+     "tier_label": "County value 8.50% and 10.62%",
+     "points": 18.0
+    },
+    {
+     "tier_label": "County value 6.37% and 8.49%",
+     "points": 21.0
+    },
+    {
+     "tier_label": "County value 4.25% and 6.36%",
+     "points": 24.0
+    },
+    {
+     "tier_label": "County value 2.12% and 4.24%",
+     "points": 27.0
+    },
+    {
+     "tier_label": "County value 0.00% and 2.11%",
+     "points": 30.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten county bands; Existing Low-Income Housing earns half.",
+   "detail_external": "Exhibit A county statistics",
+   "ord": 12
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.2",
+   "heading": "Median Household Income",
+   "points_max": 20,
+   "points_type": "tiered",
+   "page_start": 56,
+   "page_end": 56,
+   "quote": "Median Household Income (Maximum Points Available: 20 for New Supply or 10",
+   "tiers": [
+    {
+     "tier_label": "County value $87,193 and $93,744",
+     "points": 2.0
+    },
+    {
+     "tier_label": "County value $80,642 and $87,192",
+     "points": 4.0
+    },
+    {
+     "tier_label": "County value $74,091 and $80,641",
+     "points": 6.0
+    },
+    {
+     "tier_label": "County value $67,540 and $74,090",
+     "points": 8.0
+    },
+    {
+     "tier_label": "County value $60,989 and $67,539",
+     "points": 10.0
+    },
+    {
+     "tier_label": "County value $54,438 and $60,988",
+     "points": 12.0
+    },
+    {
+     "tier_label": "County value $47,887 and $54,437",
+     "points": 14.0
+    },
+    {
+     "tier_label": "County value $41,336 and $47,886",
+     "points": 16.0
+    },
+    {
+     "tier_label": "County value $34,785 and $41,335",
+     "points": 18.0
+    },
+    {
+     "tier_label": "County value $28,235 and $34,784",
+     "points": 20.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten county bands; Existing Low-Income Housing earns half.",
+   "detail_external": "Exhibit A county statistics",
+   "ord": 13
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.3",
+   "heading": "Percentage of Households whose Gross Rent as a Percentage of Household Income is 30% or Greater",
+   "points_max": 20,
+   "points_type": "tiered",
+   "page_start": 57,
+   "page_end": 57,
+   "quote": "Percentage of Households whose Gross Rent as a Percentage of Household Income",
+   "tiers": [
+    {
+     "tier_label": "County value 20.1% and 24.7%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "County value 24.8% and 29.4%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "County value 29.5% and 34.0%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "County value 34.1% and 38.7%",
+     "points": 8.0
+    },
+    {
+     "tier_label": "County value 38.8% and 43.4%",
+     "points": 10.0
+    },
+    {
+     "tier_label": "County value 43.5% and 48.0%",
+     "points": 12.0
+    },
+    {
+     "tier_label": "County value 48.1% and 52.7%",
+     "points": 14.0
+    },
+    {
+     "tier_label": "County value 52.8% and 57.3%",
+     "points": 16.0
+    },
+    {
+     "tier_label": "County value 57.4% and 62.0%",
+     "points": 18.0
+    },
+    {
+     "tier_label": "County value 62.1% and 66.7%",
+     "points": 20.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten county bands; Existing Low-Income Housing earns half.",
+   "detail_external": "Exhibit A county statistics",
+   "ord": 14
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.4",
+   "heading": "Rental Vacancy Rate",
+   "points_max": 20,
+   "points_type": "tiered",
+   "page_start": 58,
+   "page_end": 58,
+   "quote": "Rental Vacancy Rate (Maximum Points Available: 20 for New Supply or 10 for",
+   "tiers": [
+    {
+     "tier_label": "County value 22.2% and 24.7%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "County value 19.7% and 22.1%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "County value 17.2% and 19.6%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "County value 14.8% and 17.1%",
+     "points": 8.0
+    },
+    {
+     "tier_label": "County value 12.3% and 14.7%",
+     "points": 10.0
+    },
+    {
+     "tier_label": "County value 9.8% and 12.2%",
+     "points": 12.0
+    },
+    {
+     "tier_label": "County value 7.4% and 9.7%",
+     "points": 14.0
+    },
+    {
+     "tier_label": "County value 4.9% and 7.3%",
+     "points": 16.0
+    },
+    {
+     "tier_label": "County value 2.4% and 4.8%",
+     "points": 18.0
+    },
+    {
+     "tier_label": "County value 0.0% and 2.3%",
+     "points": 20.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten county bands; Existing Low-Income Housing earns half.",
+   "detail_external": "Exhibit A county statistics",
+   "ord": 15
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.5.a",
+   "heading": "Family Potential Un-Met Housing Need Net of Non-Senior New Supply Production (2021-2024)",
+   "points_max": 20,
+   "points_type": "tiered",
+   "page_start": 59,
+   "page_end": 59,
+   "quote": "For properties other than Senior Properties: Family Potential Un-Met",
+   "tiers": [
+    {
+     "tier_label": "County rank 51 and 55",
+     "points": 1.0
+    },
+    {
+     "tier_label": "County rank 46 and 50",
+     "points": 2.0
+    },
+    {
+     "tier_label": "County rank 41 and 45",
+     "points": 3.0
+    },
+    {
+     "tier_label": "County rank 36 and 40",
+     "points": 4.0
+    },
+    {
+     "tier_label": "County rank 31 and 35",
+     "points": 5.0
+    },
+    {
+     "tier_label": "County rank 26 and 30",
+     "points": 6.0
+    },
+    {
+     "tier_label": "County rank 21 and 25",
+     "points": 7.0
+    },
+    {
+     "tier_label": "County rank 16 and 20",
+     "points": 8.0
+    },
+    {
+     "tier_label": "County rank 11 and 15",
+     "points": 10.0
+    },
+    {
+     "tier_label": "County rank 6 and 10",
+     "points": 15.0
+    },
+    {
+     "tier_label": "County rank 1 and 5",
+     "points": 20.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "group": "wv_unmet",
+   "note": "Eleven county-rank bands. Family and senior properties take a or b respectively.",
+   "ord": 16
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.5.b",
+   "heading": "Senior Potential Un-Met Housing Need Net of Senior New Supply Production (2021-2024)",
+   "points_max": 20,
+   "points_type": "tiered",
+   "page_start": 60,
+   "page_end": 60,
+   "quote": "For Senior Properties: Senior Potential Un-Met Housing Need Net of Senior",
+   "tiers": [
+    {
+     "tier_label": "County rank 51 and 55",
+     "points": 1.0
+    },
+    {
+     "tier_label": "County rank 46 and 50",
+     "points": 2.0
+    },
+    {
+     "tier_label": "County rank 41 and 45",
+     "points": 3.0
+    },
+    {
+     "tier_label": "County rank 36 and 40",
+     "points": 4.0
+    },
+    {
+     "tier_label": "County rank 31 and 35",
+     "points": 5.0
+    },
+    {
+     "tier_label": "County rank 26 and 30",
+     "points": 6.0
+    },
+    {
+     "tier_label": "County rank 21 and 25",
+     "points": 7.0
+    },
+    {
+     "tier_label": "County rank 16 and 20",
+     "points": 8.0
+    },
+    {
+     "tier_label": "County rank 11 and 15",
+     "points": 10.0
+    },
+    {
+     "tier_label": "County rank 6 and 10",
+     "points": 15.0
+    },
+    {
+     "tier_label": "County rank 1 and 5",
+     "points": 20.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "group": "wv_unmet",
+   "note": "Eleven county-rank bands. Family and senior properties take a or b respectively.",
+   "ord": 17
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.a",
+   "heading": "General Housing Stability: Owner-Occupied Units as a Percentage of Total Occupied Housing Units",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 61,
+   "page_end": 61,
+   "quote": "Owner-Occupied Units as a Percentage of Total",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 0.0% and 9.9%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 10.0% and 19.8%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 19.9% and 29.7%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 29.8% and 39.7%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 39.8% and 49.6%",
+     "points": 5.0
+    },
+    {
+     "tier_label": "Census tract value 49.7% and 59.5%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "Census tract value 59.6% and 69.5%",
+     "points": 7.0
+    },
+    {
+     "tier_label": "Census tract value 69.6% and 79.4%",
+     "points": 8.0
+    },
+    {
+     "tier_label": "Census tract value 79.5% and 89.3%",
+     "points": 9.0
+    },
+    {
+     "tier_label": "Census tract value 89.4% and 99.3%",
+     "points": 10.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 18
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.b",
+   "heading": "General Housing Stability: Percentage of Households whose Occupants per Room are 1.01 or More",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 62,
+   "page_end": 62,
+   "quote": "Room are 1.01 or More (Maximum Points Available: 10 for New Supply or 5 for",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 14.8% and 16.5%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 13.2% and 14.7%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 11.5% and 13.1%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 9.9% and 11.4%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 8.2% and 9.8%",
+     "points": 5.0
+    },
+    {
+     "tier_label": "Census tract value 6.6% and 8.1%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "Census tract value 4.9% and 6.5%",
+     "points": 7.0
+    },
+    {
+     "tier_label": "Census tract value 3.3% and 4.8%",
+     "points": 8.0
+    },
+    {
+     "tier_label": "Census tract value 1.6% and 3.2%",
+     "points": 9.0
+    },
+    {
+     "tier_label": "Census tract value 0.0% and 1.5%",
+     "points": 10.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 19
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.c",
+   "heading": "Poverty/Public Assistance: Population Below the Poverty Level",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 63,
+   "page_end": 63,
+   "quote": "Population Below the Poverty Level as a Percentage",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 66.3% and 73.6%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 59.1% and 66.2%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 51.9% and 59.0%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 44.7% and 51.8%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 37.5% and 44.6%",
+     "points": 5.0
+    },
+    {
+     "tier_label": "Census tract value 30.2% and 37.4%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "Census tract value 23.0% and 30.1%",
+     "points": 7.0
+    },
+    {
+     "tier_label": "Census tract value 15.8% and 22.9%",
+     "points": 8.0
+    },
+    {
+     "tier_label": "Census tract value 8.6% and 15.7%",
+     "points": 9.0
+    },
+    {
+     "tier_label": "Census tract value 1.4% and 8.5%",
+     "points": 10.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 20
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.d",
+   "heading": "Poverty/Public Assistance: Households Receiving Food Stamps/SNAP",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 64,
+   "page_end": 64,
+   "quote": "Households Receiving Food Stamps/SNAP as a",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 55.6% and 61.7%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 49.5% and 55.5%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 43.4% and 49.4%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 37.3% and 43.3%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 31.2% and 37.2%",
+     "points": 5.0
+    },
+    {
+     "tier_label": "Census tract value 25.1% and 31.1%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "Census tract value 19.0% and 25.0%",
+     "points": 7.0
+    },
+    {
+     "tier_label": "Census tract value 12.9% and 18.9%",
+     "points": 8.0
+    },
+    {
+     "tier_label": "Census tract value 6.8% and 12.8%",
+     "points": 9.0
+    },
+    {
+     "tier_label": "Census tract value 0.8% and 6.7%",
+     "points": 10.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 21
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.e",
+   "heading": "Labor Market Engagement: Unemployment Rate of the Total Population 20 to 64",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 65,
+   "page_end": 65,
+   "quote": "Unemployment Rate of the Total Population 20 to",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 34.6% and 38.5%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 30.8% and 34.5%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 26.9% and 30.7%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 23.1% and 26.8%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 19.2% and 23.0%",
+     "points": 5.0
+    },
+    {
+     "tier_label": "Census tract value 15.4% and 19.1%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "Census tract value 11.5% and 15.3%",
+     "points": 7.0
+    },
+    {
+     "tier_label": "Census tract value 7.7% and 11.4%",
+     "points": 8.0
+    },
+    {
+     "tier_label": "Census tract value 3.8% and 7.6%",
+     "points": 9.0
+    },
+    {
+     "tier_label": "Census tract value 0.0% and 3.7%",
+     "points": 10.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 22
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.f",
+   "heading": "Labor Market Engagement: Bachelor's Degree or Higher, Population 25 and Older",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 66,
+   "page_end": 66,
+   "quote": "Educational Attainment of a Bachelor",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 0.0% and 7.7%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 7.8% and 15.5%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 15.6% and 23.2%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 23.3% and 31.0%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 31.1% and 38.7%",
+     "points": 5.0
+    },
+    {
+     "tier_label": "Census tract value 38.8% and 46.5%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "Census tract value 46.6% and 54.2%",
+     "points": 7.0
+    },
+    {
+     "tier_label": "Census tract value 54.3% and 62.0%",
+     "points": 8.0
+    },
+    {
+     "tier_label": "Census tract value 62.1% and 69.7%",
+     "points": 9.0
+    },
+    {
+     "tier_label": "Census tract value 69.8% and 77.5%",
+     "points": 10.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 23
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.g.1",
+   "heading": "School Performance: Grades Based upon the 2024 West Virginia Schools Balanced Scorecard",
+   "points_max": 20,
+   "points_type": "tiered",
+   "page_start": 67,
+   "page_end": 67,
+   "quote": "Each property will receive one point-",
+   "tiers": [
+    {
+     "tier_label": "Elementary A",
+     "points": 5
+    },
+    {
+     "tier_label": "Elementary B",
+     "points": 4
+    },
+    {
+     "tier_label": "Elementary C",
+     "points": 3
+    },
+    {
+     "tier_label": "Elementary D",
+     "points": 2
+    },
+    {
+     "tier_label": "Middle A",
+     "points": 5
+    },
+    {
+     "tier_label": "Middle B",
+     "points": 4
+    },
+    {
+     "tier_label": "Middle C",
+     "points": 3
+    },
+    {
+     "tier_label": "Middle D",
+     "points": 2
+    },
+    {
+     "tier_label": "High A",
+     "points": 10
+    },
+    {
+     "tier_label": "High B",
+     "points": 8
+    },
+    {
+     "tier_label": "High C",
+     "points": 6
+    },
+    {
+     "tier_label": "High D",
+     "points": 4
+    }
+   ],
+   "tier_mode": "mixed",
+   "group": "wv_school_senior",
+   "note": "One award per school level: elementary + middle + high = 5 + 5 + 10 (New Supply). The Existing Low-Income Housing table gives exactly half of each value (A 2.5/2.5/5 down to D 1/1/2). Non-senior properties only.",
+   "ord": 24
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.g.2",
+   "heading": "Proximity to Senior Amenities",
+   "points_max": 20,
+   "points_type": "tiered",
+   "page_start": 68,
+   "page_end": 68,
+   "quote": "20 points will be awarded to an Applicant which submits documentation [a",
+   "tiers": [
+    {
+     "tier_label": "Within 1/5 mile walk of two or more senior amenities",
+     "points": 20
+    },
+    {
+     "tier_label": "Within 5 miles of two or more",
+     "points": 10
+    }
+   ],
+   "tier_mode": "alternative",
+   "group": "wv_school_senior",
+   "note": "Senior properties only; Existing Low-Income Housing earns half.",
+   "ord": 25
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.h",
+   "heading": "Proximity to Public Transportation",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 68,
+   "page_end": 69,
+   "quote": "Proximity to Public Transportation (Points Available: 10 for New Supply or 5 for",
+   "note": "Within 1/3 mile walk of a public transportation stop (existing or added), or equivalent property-provided transportation.",
+   "ord": 26
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Sponsor Characteristics",
+   "section_label": "SC.1",
+   "heading": "Support Services Provided and/or Coordinated by a Non-Profit, PHA or Governmental Entity",
+   "points_max": 3,
+   "points_type": "fixed",
+   "page_start": 69,
+   "page_end": 70,
+   "quote": "Support Services Provided and/or Coordinated by a Non-Profit or by a Public Housing",
+   "note": "Two or more support services at least monthly.",
+   "ord": 27
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Tenant Populations Targeted for Occupancy",
+   "section_label": "TP.1",
+   "heading": "Tenant Populations Targeted for Occupancy",
+   "points_max": 20,
+   "points_type": "tiered",
+   "page_start": 70,
+   "page_end": 71,
+   "quote": "Tenant Populations Targeted for Occupancy (Points Available: 20)",
+   "tiers": [
+    {
+     "tier_label": "Option 1: target special housing needs populations for 25%+ of units",
+     "points": 20
+    },
+    {
+     "tier_label": "Option 2: target large or single-parent families for 25%+ of units",
+     "points": 20
+    }
+   ],
+   "tier_mode": "alternative",
+   "ord": 28
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Persons on a Public Housing Waiting List",
+   "section_label": "PW.1",
+   "heading": "Persons on a Public Housing Waiting List",
+   "points_max": 25,
+   "points_type": "fixed",
+   "page_start": 72,
+   "page_end": 73,
+   "quote": "25 points will be awarded to an Applicant that submits a fully executed and",
+   "note": "Awarded also on a qualifying PHA refusal letter.",
+   "ord": 29
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Properties Committed to Eventual Tenant Ownership",
+   "section_label": "TO.1",
+   "heading": "Properties Committed to Eventual Tenant Ownership",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 73,
+   "page_end": 73,
+   "quote": "Properties which commit to Preference for Properties Obligated to Serving Qualified",
+   "group": "wv_ownership_longest",
+   "note": "Single-family, duplex or townhouse; no HOME or HTF financing; not with the 150-point longest-period preference.",
+   "ord": 30
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Historic Nature of the Property",
+   "section_label": "HN.1",
+   "heading": "Historic Nature of Property",
+   "points_max": 20,
+   "points_type": "fixed",
+   "page_start": 73,
+   "page_end": 74,
+   "quote": "the property will involve the rehabilitation of a Certified Historic Structure(s).",
+   "ord": 31
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Preference for Properties Serving the Lowest Income Tenants",
+   "section_label": "LI.1",
+   "heading": "Preference for Properties Serving the Lowest Income Tenants",
+   "points_max": 50,
+   "points_type": "tiered",
+   "page_start": 74,
+   "page_end": 76,
+   "quote": "Preference for Properties Serving the Lowest Income Tenants",
+   "tiers": [
+    {
+     "tier_label": "Option 1: 5% of units at or below 40% AMI",
+     "points": 10
+    },
+    {
+     "tier_label": "40% AMI: 10%",
+     "points": 20
+    },
+    {
+     "tier_label": "40% AMI: 15%",
+     "points": 30
+    },
+    {
+     "tier_label": "40% AMI: 20%",
+     "points": 40
+    },
+    {
+     "tier_label": "40% AMI: 25%",
+     "points": 50
+    },
+    {
+     "tier_label": "Option 2: 5% of units at or below 50% AMI",
+     "points": 8
+    },
+    {
+     "tier_label": "50% AMI: 10%",
+     "points": 16
+    },
+    {
+     "tier_label": "50% AMI: 15%",
+     "points": 24
+    },
+    {
+     "tier_label": "50% AMI: 20%",
+     "points": 32
+    },
+    {
+     "tier_label": "50% AMI: 25%",
+     "points": 40
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Option 1 (40% AMI, up to 50) or Option 2 (50% AMI, up to 40). Soft-funded 40% AMI units must be matched by project-based rental assistance or are rescored at 50%.",
+   "ord": 32
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Preference for Properties Obligated to Serving Qualified Tenants for the Longest Periods of Time",
+   "section_label": "LP.1",
+   "heading": "Preference for Properties Obligated to Serving Qualified Tenants for the Longest Periods of Time",
+   "points_max": 150,
+   "points_type": "fixed",
+   "page_start": 76,
+   "page_end": 77,
+   "quote": "Properties which commit to Properties Committed to Eventual Tenant Ownership are",
+   "group": "wv_ownership_longest",
+   "note": "15 years beyond the initial Compliance Period; waives the Qualified Contract. The largest single criterion.",
+   "ord": 33
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Preference for Community Revitalization Properties Located in QCTs",
+   "section_label": "QC.1",
+   "heading": "Preference for Concerted Community Revitalization Properties Located in Qualified Census Tracts",
+   "points_max": 35,
+   "points_type": "tiered",
+   "page_start": 78,
+   "page_end": 79,
+   "quote": "35 points will be awarded to an Applicant that submits documentation evidencing",
+   "tiers": [
+    {
+     "tier_label": "Located in a QCT and part of an approved CRP",
+     "points": 35
+    },
+    {
+     "tier_label": "Alternative: located in a QCT",
+     "points": 15
+    },
+    {
+     "tier_label": "Alternative: part of an approved CRP (not with PC.4)",
+     "points": 15
+    },
+    {
+     "tier_label": "Alternative: Certified BUILD WV District",
+     "points": 15
+    }
+   ],
+   "tier_mode": "alternative",
+   "ord": 34
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.1",
+   "heading": "Masonry Veneer Exterior Percentage",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 81,
+   "page_end": 81,
+   "quote": "Masonry Veneer Exterior Percentage (Points Available: 15)",
+   "ord": 35
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.2",
+   "heading": "Energy Star Certified Whole-Unit HVAC",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 81,
+   "page_end": 81,
+   "quote": "Energy Star Certified Whole-Unit HVAC (Points Available: 15)",
+   "ord": 36
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.3",
+   "heading": "Energy Star Certified Appliances",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 81,
+   "page_end": 82,
+   "quote": "Energy Star Certified Appliances (Points Available: 15)",
+   "ord": 37
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.4",
+   "heading": "Energy Star Certified Exterior Doors and Windows",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 82,
+   "page_end": 83,
+   "quote": "Energy Star Certified Exterior Doors and Windows (Points Available: 15)",
+   "ord": 38
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.5",
+   "heading": "Roofing Materials",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 83,
+   "page_end": 84,
+   "quote": "Roofing Materials (Points Available: 15)",
+   "ord": 39
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.6",
+   "heading": "Energy Star Certified Light Fixtures, Ceiling Fans, and Bath Exhaust Fans",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 84,
+   "page_end": 84,
+   "quote": "Energy Star Certified Light Fixtures, Ceiling Fans, and Bath Exhaust Fans (Points",
+   "ord": 40
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.7",
+   "heading": "Thickness and Warranty of Siding and Trim",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 84,
+   "page_end": 85,
+   "quote": "Thickness and Warranty of Siding and Trim (Points Available: 15)",
+   "ord": 41
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.8",
+   "heading": "Green Building Training for Residential Housing",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 85,
+   "page_end": 85,
+   "quote": "Green Building Training for Residential Housing (Points Available: 15)",
+   "ord": 42
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.9",
+   "heading": "Reachable Green Space Percentage",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 85,
+   "page_end": 86,
+   "quote": "Reachable Green Space",
+   "ord": 43
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.11",
+   "heading": "Interior Unit Square Footage",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 87,
+   "page_end": 88,
+   "quote": "Interior Unit Square Footage (Points Available: 10)",
+   "ord": 44
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.12",
+   "heading": "High-Speed Internet Access",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 88,
+   "page_end": 88,
+   "quote": "High-Speed Internet Access (Points Available: 10)",
+   "ord": 45
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.13",
+   "heading": "Landscaping Cost Per Unit",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 88,
+   "page_end": 88,
+   "quote": "Landscaping Cost Per Unit (Points Available: 10)",
+   "ord": 46
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.14",
+   "heading": "Stove Top Fire Suppression or Prevention",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 88,
+   "page_end": 88,
+   "quote": "Stove Top Fire Suppression or Prevention (Points Available: 10)",
+   "ord": 47
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.10",
+   "heading": "Laundry Closet with Washer and Dryer or Hookup Only",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 86,
+   "page_end": 87,
+   "quote": "Laundry Closet with Washer and Dryer or Hookup Only (Maximum Points",
+   "tiers": [
+    {
+     "tier_label": "Laundry closet with new washer and dryer in each unit",
+     "points": 10
+    },
+    {
+     "tier_label": "Laundry closet with washer/dryer hookups",
+     "points": 7
+    },
+    {
+     "tier_label": "Existing housing alternative: laundry room with new washers and dryers",
+     "points": 10
+    }
+   ],
+   "tier_mode": "alternative",
+   "ord": 48
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.1.E",
+   "heading": "Set-Aside Categories",
+   "points_max": 30,
+   "points_type": "tiered",
+   "page_start": 31,
+   "page_end": 32,
+   "quote": "Each property may compete for Credits from only one set-aside category.",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Substantial rehabilitation, 50 or fewer",
+     "points": 30
+    },
+    {
+     "tier_label": "Rehabilitation, more than 50",
+     "points": 20
+    },
+    {
+     "tier_label": "Acquisition and rehabilitation, 50 or fewer",
+     "points": 10
+    },
+    {
+     "tier_label": "Acquisition and rehabilitation, more than 50",
+     "points": 0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Points by type and size of property in the chosen set-aside (Qualified Non-Profit, Existing Low-Income Housing Preservation, New Supply Non-Rural, New Supply Rural, or Top Off, which keeps its original points). Existing Low-Income Housing can only be rehabilitation, so its maximum is 30.",
+   "ord": 49
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.2.E",
+   "heading": "Existing Housing in Most Need of and Most Suitable for Rehabilitation",
+   "points_max": 100,
+   "points_type": "tiered",
+   "page_start": 34,
+   "page_end": 35,
+   "quote": "100 points will be awarded to each property which is rated as a Tier 1 property",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Tier 1",
+     "points": 100
+    },
+    {
+     "tier_label": "Tier 2",
+     "points": 75
+    },
+    {
+     "tier_label": "Tier 3",
+     "points": 50
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Rated by the Fund's construction professionals after a site visit; below Tier 3 earns zero.",
+   "scored_against_round": false,
+   "ord": 50
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.3.a.E",
+   "heading": "RD or HUD or Other Government Financing or Guarantee/Insurance",
+   "points_max": 20,
+   "points_type": "tiered",
+   "page_start": 35,
+   "page_end": 38,
+   "quote": "20 points will be awarded to an Applicant that submits documentation",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Government financing/guarantee with cash flow to amortize 50%+ of each (or 75%+ of new) such financing",
+     "points": 20
+    },
+    {
+     "tier_label": "Government financing/guarantee without the amortization test",
+     "points": 10
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Such financing must be at least 50% of Total Permanent Financing, with stated exceptions.",
+   "ord": 51
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.3.b.E",
+   "heading": "Maturing Mortgage with Expiring Project-Based Rental Assistance",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 38,
+   "page_end": 38,
+   "quote": "an RD mortgage which will mature in five years or less",
+   "track": "existing",
+   "note": "RD or HUD mortgage maturing within five years whose repayment ends rental assistance covering at least 25% of units.",
+   "ord": 52
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.3.c.E",
+   "heading": "Expiring LIHTCP Extended Use Period",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 39,
+   "page_end": 39,
+   "quote": "10 points will be awarded to a property that has an Extended Use Period",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Extended Use Period expiring within two years or expired within three",
+     "points": 10
+    },
+    {
+     "tier_label": "Expiring within five years",
+     "points": 5
+    }
+   ],
+   "tier_mode": "alternative",
+   "ord": 53
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.3.d.E",
+   "heading": "Favorable Financing",
+   "points_max": 25,
+   "points_type": "fixed",
+   "page_start": 39,
+   "page_end": 41,
+   "quote": "evidencing that the property will be financed with construction, pre-",
+   "track": "existing",
+   "note": "Construction, pre-development and bridge financing fees at or below 1%; permanent financing at a fixed rate at or below the Fund's 'maximum favorable financing rate', for at least the Compliance Period, and at least 50% of Total Permanent Financing.",
+   "ord": 54
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.4.E",
+   "heading": "Existing Housing as Part of a Concerted Community Revitalization Plan",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 42,
+   "page_end": 43,
+   "quote": "that the property includes the use of Existing Housing that is clearly and",
+   "track": "existing",
+   "ord": 55
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Characteristics",
+   "section_label": "PC.5.E",
+   "heading": "Property-Based Rental Assistance",
+   "points_max": 25,
+   "points_type": "tiered",
+   "page_start": 43,
+   "page_end": 44,
+   "quote": "that the property has property-based rental assistance",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Property-based rental assistance on 25%-49.9% of units",
+     "points": 15
+    },
+    {
+     "tier_label": "50%-74.9%",
+     "points": 20
+    },
+    {
+     "tier_label": "75% or more",
+     "points": 25
+    }
+   ],
+   "tier_mode": "alternative",
+   "ord": 56
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.1.E",
+   "heading": "Permanent Financing",
+   "points_max": 25,
+   "points_type": "fixed",
+   "page_start": 45,
+   "page_end": 47,
+   "quote": "that the Ownership Entity has received written conditional permanent financing",
+   "track": "existing",
+   "ord": 57
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.2.E",
+   "heading": "Syndication of Investment Interests and Tax Credits",
+   "points_max": 25,
+   "points_type": "fixed",
+   "page_start": 47,
+   "page_end": 48,
+   "quote": "that the Applicant has formally accepted in writing a syndicator",
+   "track": "existing",
+   "ord": 58
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.3.E",
+   "heading": "Developer Experience in the LIHTCP",
+   "points_max": 25,
+   "points_type": "tiered",
+   "page_start": 48,
+   "page_end": 49,
+   "quote": "Developer Experience in the LIHTCP (Maximum Points Available: 25)",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Eight or more LIHTCP properties",
+     "points": 25
+    },
+    {
+     "tier_label": "Six or more",
+     "points": 20
+    },
+    {
+     "tier_label": "Four",
+     "points": 15
+    },
+    {
+     "tier_label": "Two",
+     "points": 10
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "The tiers (p.49) give no value for three, five or seven properties.",
+   "ord": 59
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.4.E",
+   "heading": "Developer's and General Partner's Post-2008 Timely Delivery of Units and Future Timely Equity Closing Commitment",
+   "points_max": 35,
+   "points_type": "tiered",
+   "page_start": 50,
+   "page_end": 51,
+   "quote": "A property will be awarded 2.5 or 1.25 points for each LIHTCP property where",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Per timely-delivered West Virginia property (each developer and GP has one), up to 10 properties",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Per property otherwise",
+     "points": 1.25
+    },
+    {
+     "tier_label": "Commitment to close equity by the stated deadline",
+     "points": 10
+    }
+   ],
+   "tier_mode": "mixed",
+   "note": "Up to 10 properties x 2.5 = 25, plus 10 for the equity closing commitment. An unfulfilled commitment costs 20 points on each of the Principals' next three applications (coded as NEG.2).",
+   "ord": 60
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.5.E",
+   "heading": "General Partner Portfolio Occupancy Rate",
+   "points_max": 25,
+   "points_type": "fixed",
+   "page_start": 52,
+   "page_end": 53,
+   "quote": "A property will be awarded 25 points if an Applicant submits documentation",
+   "track": "existing",
+   "note": "General Partner's West Virginia LIHTCP portfolio 93% or more occupied.",
+   "ord": 61
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.6.E",
+   "heading": "Attendance at a Fund LIHTCP Application Workshop Covering the Current Plan",
+   "points_max": 25,
+   "points_type": "tiered",
+   "page_start": 53,
+   "page_end": 53,
+   "quote": "A property will be awarded 12.5 points if an Applicant submits documentation",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "One Principal of each developer attended all workshop sessions",
+     "points": 12.5
+    },
+    {
+     "tier_label": "An additional Principal or development employee attended",
+     "points": 12.5
+    }
+   ],
+   "tier_mode": "additive",
+   "ord": 62
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Ability to Produce a Qualified Low-Income Residential Rental Property",
+   "section_label": "AP.7.E",
+   "heading": "Pipeline Properties",
+   "points_max": 20,
+   "points_type": "fixed",
+   "page_start": 53,
+   "page_end": 54,
+   "quote": "20 points will be awarded to a property where the Owner of such property was",
+   "track": "existing",
+   "note": "Not selected from the prior year's ceiling, and unchanged in the ways listed.",
+   "ord": 63
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.1.E",
+   "heading": "LIHTCP Unit Production as a Percentage of the Renter-Occupied Housing Units",
+   "points_max": 15,
+   "points_type": "tiered",
+   "page_start": 55,
+   "page_end": 55,
+   "quote": "LIHTCP Unit Production as a Percentage of the Renter-Occupied Housing Units",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "County value 19.13% and 21.26%",
+     "points": 1.5
+    },
+    {
+     "tier_label": "County value 17.00% and 19.12%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "County value 14.88% and 16.99%",
+     "points": 4.5
+    },
+    {
+     "tier_label": "County value 12.75% and 14.87%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "County value 10.63% and 12.74%",
+     "points": 7.5
+    },
+    {
+     "tier_label": "County value 8.50% and 10.62%",
+     "points": 9.0
+    },
+    {
+     "tier_label": "County value 6.37% and 8.49%",
+     "points": 10.5
+    },
+    {
+     "tier_label": "County value 4.25% and 6.36%",
+     "points": 12.0
+    },
+    {
+     "tier_label": "County value 2.12% and 4.24%",
+     "points": 13.5
+    },
+    {
+     "tier_label": "County value 0.00% and 2.11%",
+     "points": 15.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten county bands; Existing Low-Income Housing earns half.",
+   "detail_external": "Exhibit A county statistics",
+   "ord": 64
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.2.E",
+   "heading": "Median Household Income",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 56,
+   "page_end": 56,
+   "quote": "Median Household Income (Maximum Points Available: 20 for New Supply or 10",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "County value $87,193 and $93,744",
+     "points": 1.0
+    },
+    {
+     "tier_label": "County value $80,642 and $87,192",
+     "points": 2.0
+    },
+    {
+     "tier_label": "County value $74,091 and $80,641",
+     "points": 3.0
+    },
+    {
+     "tier_label": "County value $67,540 and $74,090",
+     "points": 4.0
+    },
+    {
+     "tier_label": "County value $60,989 and $67,539",
+     "points": 5.0
+    },
+    {
+     "tier_label": "County value $54,438 and $60,988",
+     "points": 6.0
+    },
+    {
+     "tier_label": "County value $47,887 and $54,437",
+     "points": 7.0
+    },
+    {
+     "tier_label": "County value $41,336 and $47,886",
+     "points": 8.0
+    },
+    {
+     "tier_label": "County value $34,785 and $41,335",
+     "points": 9.0
+    },
+    {
+     "tier_label": "County value $28,235 and $34,784",
+     "points": 10.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten county bands; Existing Low-Income Housing earns half.",
+   "detail_external": "Exhibit A county statistics",
+   "ord": 65
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.3.E",
+   "heading": "Percentage of Households whose Gross Rent as a Percentage of Household Income is 30% or Greater",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 57,
+   "page_end": 57,
+   "quote": "Percentage of Households whose Gross Rent as a Percentage of Household Income",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "County value 20.1% and 24.7%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "County value 24.8% and 29.4%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "County value 29.5% and 34.0%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "County value 34.1% and 38.7%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "County value 38.8% and 43.4%",
+     "points": 5.0
+    },
+    {
+     "tier_label": "County value 43.5% and 48.0%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "County value 48.1% and 52.7%",
+     "points": 7.0
+    },
+    {
+     "tier_label": "County value 52.8% and 57.3%",
+     "points": 8.0
+    },
+    {
+     "tier_label": "County value 57.4% and 62.0%",
+     "points": 9.0
+    },
+    {
+     "tier_label": "County value 62.1% and 66.7%",
+     "points": 10.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten county bands; Existing Low-Income Housing earns half.",
+   "detail_external": "Exhibit A county statistics",
+   "ord": 66
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.4.E",
+   "heading": "Rental Vacancy Rate",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 58,
+   "page_end": 58,
+   "quote": "Rental Vacancy Rate (Maximum Points Available: 20 for New Supply or 10 for",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "County value 22.2% and 24.7%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "County value 19.7% and 22.1%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "County value 17.2% and 19.6%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "County value 14.8% and 17.1%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "County value 12.3% and 14.7%",
+     "points": 5.0
+    },
+    {
+     "tier_label": "County value 9.8% and 12.2%",
+     "points": 6.0
+    },
+    {
+     "tier_label": "County value 7.4% and 9.7%",
+     "points": 7.0
+    },
+    {
+     "tier_label": "County value 4.9% and 7.3%",
+     "points": 8.0
+    },
+    {
+     "tier_label": "County value 2.4% and 4.8%",
+     "points": 9.0
+    },
+    {
+     "tier_label": "County value 0.0% and 2.3%",
+     "points": 10.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten county bands; Existing Low-Income Housing earns half.",
+   "detail_external": "Exhibit A county statistics",
+   "ord": 67
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.5.a.E",
+   "heading": "Family Potential Un-Met Housing Need Net of Non-Senior New Supply Production (2021-2024)",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 59,
+   "page_end": 59,
+   "quote": "For properties other than Senior Properties: Family Potential Un-Met",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "County rank 51 and 55",
+     "points": 0.5
+    },
+    {
+     "tier_label": "County rank 46 and 50",
+     "points": 1.0
+    },
+    {
+     "tier_label": "County rank 41 and 45",
+     "points": 1.5
+    },
+    {
+     "tier_label": "County rank 36 and 40",
+     "points": 2.0
+    },
+    {
+     "tier_label": "County rank 31 and 35",
+     "points": 2.5
+    },
+    {
+     "tier_label": "County rank 26 and 30",
+     "points": 3.0
+    },
+    {
+     "tier_label": "County rank 21 and 25",
+     "points": 3.5
+    },
+    {
+     "tier_label": "County rank 16 and 20",
+     "points": 4.0
+    },
+    {
+     "tier_label": "County rank 11 and 15",
+     "points": 5.0
+    },
+    {
+     "tier_label": "County rank 6 and 10",
+     "points": 7.5
+    },
+    {
+     "tier_label": "County rank 1 and 5",
+     "points": 10.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "group": "wv_unmet_e",
+   "note": "Eleven county-rank bands. Family and senior properties take a or b respectively.",
+   "ord": 68
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics",
+   "section_label": "LH.5.b.E",
+   "heading": "Senior Potential Un-Met Housing Need Net of Senior New Supply Production (2021-2024)",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 60,
+   "page_end": 60,
+   "quote": "For Senior Properties: Senior Potential Un-Met Housing Need Net of Senior",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "County rank 51 and 55",
+     "points": 0.5
+    },
+    {
+     "tier_label": "County rank 46 and 50",
+     "points": 1.0
+    },
+    {
+     "tier_label": "County rank 41 and 45",
+     "points": 1.5
+    },
+    {
+     "tier_label": "County rank 36 and 40",
+     "points": 2.0
+    },
+    {
+     "tier_label": "County rank 31 and 35",
+     "points": 2.5
+    },
+    {
+     "tier_label": "County rank 26 and 30",
+     "points": 3.0
+    },
+    {
+     "tier_label": "County rank 21 and 25",
+     "points": 3.5
+    },
+    {
+     "tier_label": "County rank 16 and 20",
+     "points": 4.0
+    },
+    {
+     "tier_label": "County rank 11 and 15",
+     "points": 5.0
+    },
+    {
+     "tier_label": "County rank 6 and 10",
+     "points": 7.5
+    },
+    {
+     "tier_label": "County rank 1 and 5",
+     "points": 10.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "group": "wv_unmet_e",
+   "note": "Eleven county-rank bands. Family and senior properties take a or b respectively.",
+   "ord": 69
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.a.E",
+   "heading": "General Housing Stability: Owner-Occupied Units as a Percentage of Total Occupied Housing Units",
+   "points_max": 5,
+   "points_type": "tiered",
+   "page_start": 61,
+   "page_end": 61,
+   "quote": "Owner-Occupied Units as a Percentage of Total",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 0.0% and 9.9%",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Census tract value 10.0% and 19.8%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 19.9% and 29.7%",
+     "points": 1.5
+    },
+    {
+     "tier_label": "Census tract value 29.8% and 39.7%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 39.8% and 49.6%",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Census tract value 49.7% and 59.5%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 59.6% and 69.5%",
+     "points": 3.5
+    },
+    {
+     "tier_label": "Census tract value 69.6% and 79.4%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 79.5% and 89.3%",
+     "points": 4.5
+    },
+    {
+     "tier_label": "Census tract value 89.4% and 99.3%",
+     "points": 5.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 70
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.b.E",
+   "heading": "General Housing Stability: Percentage of Households whose Occupants per Room are 1.01 or More",
+   "points_max": 5,
+   "points_type": "tiered",
+   "page_start": 62,
+   "page_end": 62,
+   "quote": "Room are 1.01 or More (Maximum Points Available: 10 for New Supply or 5 for",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 14.8% and 16.5%",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Census tract value 13.2% and 14.7%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 11.5% and 13.1%",
+     "points": 1.5
+    },
+    {
+     "tier_label": "Census tract value 9.9% and 11.4%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 8.2% and 9.8%",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Census tract value 6.6% and 8.1%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 4.9% and 6.5%",
+     "points": 3.5
+    },
+    {
+     "tier_label": "Census tract value 3.3% and 4.8%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 1.6% and 3.2%",
+     "points": 4.5
+    },
+    {
+     "tier_label": "Census tract value 0.0% and 1.5%",
+     "points": 5.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 71
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.c.E",
+   "heading": "Poverty/Public Assistance: Population Below the Poverty Level",
+   "points_max": 5,
+   "points_type": "tiered",
+   "page_start": 63,
+   "page_end": 63,
+   "quote": "Population Below the Poverty Level as a Percentage",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 66.3% and 73.6%",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Census tract value 59.1% and 66.2%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 51.9% and 59.0%",
+     "points": 1.5
+    },
+    {
+     "tier_label": "Census tract value 44.7% and 51.8%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 37.5% and 44.6%",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Census tract value 30.2% and 37.4%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 23.0% and 30.1%",
+     "points": 3.5
+    },
+    {
+     "tier_label": "Census tract value 15.8% and 22.9%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 8.6% and 15.7%",
+     "points": 4.5
+    },
+    {
+     "tier_label": "Census tract value 1.4% and 8.5%",
+     "points": 5.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 72
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.d.E",
+   "heading": "Poverty/Public Assistance: Households Receiving Food Stamps/SNAP",
+   "points_max": 5,
+   "points_type": "tiered",
+   "page_start": 64,
+   "page_end": 64,
+   "quote": "Households Receiving Food Stamps/SNAP as a",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 55.6% and 61.7%",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Census tract value 49.5% and 55.5%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 43.4% and 49.4%",
+     "points": 1.5
+    },
+    {
+     "tier_label": "Census tract value 37.3% and 43.3%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 31.2% and 37.2%",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Census tract value 25.1% and 31.1%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 19.0% and 25.0%",
+     "points": 3.5
+    },
+    {
+     "tier_label": "Census tract value 12.9% and 18.9%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 6.8% and 12.8%",
+     "points": 4.5
+    },
+    {
+     "tier_label": "Census tract value 0.8% and 6.7%",
+     "points": 5.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 73
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.e.E",
+   "heading": "Labor Market Engagement: Unemployment Rate of the Total Population 20 to 64",
+   "points_max": 5,
+   "points_type": "tiered",
+   "page_start": 65,
+   "page_end": 65,
+   "quote": "Unemployment Rate of the Total Population 20 to",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 34.6% and 38.5%",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Census tract value 30.8% and 34.5%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 26.9% and 30.7%",
+     "points": 1.5
+    },
+    {
+     "tier_label": "Census tract value 23.1% and 26.8%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 19.2% and 23.0%",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Census tract value 15.4% and 19.1%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 11.5% and 15.3%",
+     "points": 3.5
+    },
+    {
+     "tier_label": "Census tract value 7.7% and 11.4%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 3.8% and 7.6%",
+     "points": 4.5
+    },
+    {
+     "tier_label": "Census tract value 0.0% and 3.7%",
+     "points": 5.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 74
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.f.E",
+   "heading": "Labor Market Engagement: Bachelor's Degree or Higher, Population 25 and Older",
+   "points_max": 5,
+   "points_type": "tiered",
+   "page_start": 66,
+   "page_end": 66,
+   "quote": "Educational Attainment of a Bachelor",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Census tract value 0.0% and 7.7%",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Census tract value 7.8% and 15.5%",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Census tract value 15.6% and 23.2%",
+     "points": 1.5
+    },
+    {
+     "tier_label": "Census tract value 23.3% and 31.0%",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Census tract value 31.1% and 38.7%",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Census tract value 38.8% and 46.5%",
+     "points": 3.0
+    },
+    {
+     "tier_label": "Census tract value 46.6% and 54.2%",
+     "points": 3.5
+    },
+    {
+     "tier_label": "Census tract value 54.3% and 62.0%",
+     "points": 4.0
+    },
+    {
+     "tier_label": "Census tract value 62.1% and 69.7%",
+     "points": 4.5
+    },
+    {
+     "tier_label": "Census tract value 69.8% and 77.5%",
+     "points": 5.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Ten census tract bands.",
+   "detail_external": "Exhibit A census tract statistics",
+   "ord": 75
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.g.1.E",
+   "heading": "School Performance: Grades Based upon the 2024 West Virginia Schools Balanced Scorecard",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 67,
+   "page_end": 67,
+   "quote": "Each property will receive one point-",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Elementary A",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Elementary B",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Elementary C",
+     "points": 1.5
+    },
+    {
+     "tier_label": "Elementary D",
+     "points": 1.0
+    },
+    {
+     "tier_label": "Middle A",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Middle B",
+     "points": 2.0
+    },
+    {
+     "tier_label": "Middle C",
+     "points": 1.5
+    },
+    {
+     "tier_label": "Middle D",
+     "points": 1.0
+    },
+    {
+     "tier_label": "High A",
+     "points": 5.0
+    },
+    {
+     "tier_label": "High B",
+     "points": 4.0
+    },
+    {
+     "tier_label": "High C",
+     "points": 3.0
+    },
+    {
+     "tier_label": "High D",
+     "points": 2.0
+    }
+   ],
+   "tier_mode": "mixed",
+   "group": "wv_school_senior_e",
+   "note": "One award per school level: elementary + middle + high = 5 + 5 + 10 (New Supply). The Existing Low-Income Housing table gives exactly half of each value (A 2.5/2.5/5 down to D 1/1/2). Non-senior properties only.",
+   "ord": 76
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.g.2.E",
+   "heading": "Proximity to Senior Amenities",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 68,
+   "page_end": 68,
+   "quote": "20 points will be awarded to an Applicant which submits documentation [a",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Within 1/5 mile walk of two or more senior amenities",
+     "points": 10.0
+    },
+    {
+     "tier_label": "Within 5 miles of two or more",
+     "points": 5.0
+    }
+   ],
+   "tier_mode": "alternative",
+   "group": "wv_school_senior_e",
+   "note": "Senior properties only; Existing Low-Income Housing earns half.",
+   "ord": 77
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Property Location and Housing Needs Characteristics: High-Opportunity Location",
+   "section_label": "LH.6.h.E",
+   "heading": "Proximity to Public Transportation",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 68,
+   "page_end": 69,
+   "quote": "Proximity to Public Transportation (Points Available: 10 for New Supply or 5 for",
+   "track": "existing",
+   "note": "Within 1/3 mile walk of a public transportation stop (existing or added), or equivalent property-provided transportation.",
+   "ord": 78
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Sponsor Characteristics",
+   "section_label": "SC.1.E",
+   "heading": "Support Services Provided and/or Coordinated by a Non-Profit, PHA or Governmental Entity",
+   "points_max": 3,
+   "points_type": "fixed",
+   "page_start": 69,
+   "page_end": 70,
+   "quote": "Support Services Provided and/or Coordinated by a Non-Profit or by a Public Housing",
+   "track": "existing",
+   "note": "Two or more support services at least monthly.",
+   "ord": 79
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Tenant Populations Targeted for Occupancy",
+   "section_label": "TP.1.E",
+   "heading": "Tenant Populations Targeted for Occupancy",
+   "points_max": 20,
+   "points_type": "tiered",
+   "page_start": 70,
+   "page_end": 71,
+   "quote": "Tenant Populations Targeted for Occupancy (Points Available: 20)",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Option 1: target special housing needs populations for 25%+ of units",
+     "points": 20
+    },
+    {
+     "tier_label": "Option 2: target large or single-parent families for 25%+ of units",
+     "points": 20
+    }
+   ],
+   "tier_mode": "alternative",
+   "ord": 80
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Persons on a Public Housing Waiting List",
+   "section_label": "PW.1.E",
+   "heading": "Persons on a Public Housing Waiting List",
+   "points_max": 25,
+   "points_type": "fixed",
+   "page_start": 72,
+   "page_end": 73,
+   "quote": "25 points will be awarded to an Applicant that submits a fully executed and",
+   "track": "existing",
+   "note": "Awarded also on a qualifying PHA refusal letter.",
+   "ord": 81
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Properties Committed to Eventual Tenant Ownership",
+   "section_label": "TO.1.E",
+   "heading": "Properties Committed to Eventual Tenant Ownership",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 73,
+   "page_end": 73,
+   "quote": "Properties which commit to Preference for Properties Obligated to Serving Qualified",
+   "track": "existing",
+   "group": "wv_ownership_longest_e",
+   "note": "Single-family, duplex or townhouse; no HOME or HTF financing; not with the 150-point longest-period preference.",
+   "ord": 82
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Historic Nature of the Property",
+   "section_label": "HN.1.E",
+   "heading": "Historic Nature of Property",
+   "points_max": 20,
+   "points_type": "fixed",
+   "page_start": 73,
+   "page_end": 74,
+   "quote": "the property will involve the rehabilitation of a Certified Historic Structure(s).",
+   "track": "existing",
+   "ord": 83
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Preference for Properties Serving the Lowest Income Tenants",
+   "section_label": "LI.1.E",
+   "heading": "Preference for Properties Serving the Lowest Income Tenants",
+   "points_max": 50,
+   "points_type": "tiered",
+   "page_start": 74,
+   "page_end": 76,
+   "quote": "Preference for Properties Serving the Lowest Income Tenants",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Option 1: 5% of units at or below 40% AMI",
+     "points": 10
+    },
+    {
+     "tier_label": "40% AMI: 10%",
+     "points": 20
+    },
+    {
+     "tier_label": "40% AMI: 15%",
+     "points": 30
+    },
+    {
+     "tier_label": "40% AMI: 20%",
+     "points": 40
+    },
+    {
+     "tier_label": "40% AMI: 25%",
+     "points": 50
+    },
+    {
+     "tier_label": "Option 2: 5% of units at or below 50% AMI",
+     "points": 8
+    },
+    {
+     "tier_label": "50% AMI: 10%",
+     "points": 16
+    },
+    {
+     "tier_label": "50% AMI: 15%",
+     "points": 24
+    },
+    {
+     "tier_label": "50% AMI: 20%",
+     "points": 32
+    },
+    {
+     "tier_label": "50% AMI: 25%",
+     "points": 40
+    }
+   ],
+   "tier_mode": "alternative",
+   "note": "Option 1 (40% AMI, up to 50) or Option 2 (50% AMI, up to 40). Soft-funded 40% AMI units must be matched by project-based rental assistance or are rescored at 50%.",
+   "ord": 84
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Preference for Properties Obligated to Serving Qualified Tenants for the Longest Periods of Time",
+   "section_label": "LP.1.E",
+   "heading": "Preference for Properties Obligated to Serving Qualified Tenants for the Longest Periods of Time",
+   "points_max": 150,
+   "points_type": "fixed",
+   "page_start": 76,
+   "page_end": 77,
+   "quote": "Properties which commit to Properties Committed to Eventual Tenant Ownership are",
+   "track": "existing",
+   "group": "wv_ownership_longest_e",
+   "note": "15 years beyond the initial Compliance Period; waives the Qualified Contract. The largest single criterion.",
+   "ord": 85
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Preference for Community Revitalization Properties Located in QCTs",
+   "section_label": "QC.1.E",
+   "heading": "Preference for Concerted Community Revitalization Properties Located in Qualified Census Tracts",
+   "points_max": 35,
+   "points_type": "tiered",
+   "page_start": 78,
+   "page_end": 79,
+   "quote": "35 points will be awarded to an Applicant that submits documentation evidencing",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Located in a QCT and part of an approved CRP",
+     "points": 35
+    },
+    {
+     "tier_label": "Alternative: located in a QCT",
+     "points": 15
+    },
+    {
+     "tier_label": "Alternative: part of an approved CRP (not with PC.4)",
+     "points": 15
+    },
+    {
+     "tier_label": "Alternative: Certified BUILD WV District",
+     "points": 15
+    }
+   ],
+   "tier_mode": "alternative",
+   "ord": 86
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.1.E",
+   "heading": "Masonry Veneer Exterior Percentage",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 81,
+   "page_end": 81,
+   "quote": "Masonry Veneer Exterior Percentage (Points Available: 15)",
+   "track": "existing",
+   "ord": 87
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.2.E",
+   "heading": "Energy Star Certified Whole-Unit HVAC",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 81,
+   "page_end": 81,
+   "quote": "Energy Star Certified Whole-Unit HVAC (Points Available: 15)",
+   "track": "existing",
+   "ord": 88
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.3.E",
+   "heading": "Energy Star Certified Appliances",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 81,
+   "page_end": 82,
+   "quote": "Energy Star Certified Appliances (Points Available: 15)",
+   "track": "existing",
+   "ord": 89
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.4.E",
+   "heading": "Energy Star Certified Exterior Doors and Windows",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 82,
+   "page_end": 83,
+   "quote": "Energy Star Certified Exterior Doors and Windows (Points Available: 15)",
+   "track": "existing",
+   "ord": 90
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.5.E",
+   "heading": "Roofing Materials",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 83,
+   "page_end": 84,
+   "quote": "Roofing Materials (Points Available: 15)",
+   "track": "existing",
+   "ord": 91
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.6.E",
+   "heading": "Energy Star Certified Light Fixtures, Ceiling Fans, and Bath Exhaust Fans",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 84,
+   "page_end": 84,
+   "quote": "Energy Star Certified Light Fixtures, Ceiling Fans, and Bath Exhaust Fans (Points",
+   "track": "existing",
+   "ord": 92
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.7.E",
+   "heading": "Thickness and Warranty of Siding and Trim",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 84,
+   "page_end": 85,
+   "quote": "Thickness and Warranty of Siding and Trim (Points Available: 15)",
+   "track": "existing",
+   "ord": 93
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.8.E",
+   "heading": "Green Building Training for Residential Housing",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 85,
+   "page_end": 85,
+   "quote": "Green Building Training for Residential Housing (Points Available: 15)",
+   "track": "existing",
+   "ord": 94
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.11.E",
+   "heading": "Interior Unit Square Footage",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 87,
+   "page_end": 88,
+   "quote": "Interior Unit Square Footage (Points Available: 10)",
+   "track": "existing",
+   "ord": 95
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.12.E",
+   "heading": "High-Speed Internet Access",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 88,
+   "page_end": 88,
+   "quote": "High-Speed Internet Access (Points Available: 10)",
+   "track": "existing",
+   "ord": 96
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.13.E",
+   "heading": "Landscaping Cost Per Unit",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 88,
+   "page_end": 88,
+   "quote": "Landscaping Cost Per Unit (Points Available: 10)",
+   "track": "existing",
+   "ord": 97
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.14.E",
+   "heading": "Stove Top Fire Suppression or Prevention",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 88,
+   "page_end": 88,
+   "quote": "Stove Top Fire Suppression or Prevention (Points Available: 10)",
+   "track": "existing",
+   "ord": 98
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Energy Efficiency and Quality of Housing",
+   "section_label": "EQ.10.E",
+   "heading": "Laundry Closet with Washer and Dryer or Hookup Only",
+   "points_max": 10,
+   "points_type": "tiered",
+   "page_start": 86,
+   "page_end": 87,
+   "quote": "Laundry Closet with Washer and Dryer or Hookup Only (Maximum Points",
+   "track": "existing",
+   "tiers": [
+    {
+     "tier_label": "Laundry closet with new washer and dryer in each unit",
+     "points": 10
+    },
+    {
+     "tier_label": "Laundry closet with washer/dryer hookups",
+     "points": 7
+    },
+    {
+     "tier_label": "Existing housing alternative: laundry room with new washers and dryers",
+     "points": 10
+    }
+   ],
+   "tier_mode": "alternative",
+   "ord": 99
+  },
+  {
+   "kind": "competitive",
+   "track": "top_off_bonus",
+   "native_category": "Bonus Points for Certain Properties Applying to the Top Off Set-Aside Category",
+   "section_label": "BONUS.1",
+   "heading": "Top Off final-year bonus",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 89,
+   "page_end": 89,
+   "quote": "The Fund will increase a property",
+   "note": "Top Off applicants in the final year they may request Credit. Beyond the 993.",
+   "ord": 100
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Negative Points",
+   "section_label": "NEG.1",
+   "heading": "Reservation Request Acceptance Checklist items cured late",
+   "points_max": null,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 89,
+   "page_end": 90,
+   "quote": "The Fund will reduce a property",
+   "tiers": [
+    {
+     "tier_label": "First and second item, each",
+     "points": -2
+    },
+    {
+     "tier_label": "Third and fourth, each",
+     "points": -3
+    },
+    {
+     "tier_label": "Fifth and sixth, each",
+     "points": -4
+    },
+    {
+     "tier_label": "Seventh and beyond, each",
+     "points": -5
+    }
+   ],
+   "note": "No maximum.",
+   "ord": 101
+  },
+  {
+   "kind": "competitive",
+   "native_category": "Negative Points",
+   "section_label": "NEG.2",
+   "heading": "Unfulfilled equity closing commitment",
+   "points_max": -20,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 51,
+   "page_end": 51,
+   "quote": "If the commitment is not fulfilled, 20 points will be deducted from",
+   "note": "Deducted from each of the Principals' next three applications (AP.4).",
+   "ord": 102
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Property Selection",
+   "section_label": "TB.1",
+   "heading": "Lowest Credits requested per total Interior Unit Square Footage",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 93,
+   "page_end": 93,
+   "quote": "the lowest amount of Credits requested per total Interior Unit Square Footage will receive the award.",
+   "ord": 103
+  }
+ ]
+}

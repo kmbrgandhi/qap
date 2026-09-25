@@ -1,0 +1,128 @@
+{
+ "_comment": "Texas 2026 QAP threshold and eligibility sections, one row per section: §11.8, §11.101(a), §11.101(b)(1), §11.202-11.205, §11.302-11.303. Their subsections and the §11.304-11.306 third-party report guidelines are not itemised.",
+ "match": {
+  "filename": "texas-qap-2026.pdf"
+ },
+ "extractor_version": "hand-2026-tx-thresholds-1",
+ "groups": [],
+ "criteria": [
+  {
+   "ord": 501,
+   "kind": "threshold",
+   "native_category": "10 TAC Chapter 11 Threshold and Eligibility",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "11.8",
+   "heading": "Pre-Application Requirements (Competitive HTC Only)",
+   "page_start": 56,
+   "page_end": 56,
+   "quote": "The pre-application process allows Applicants interested in pursuing an Application to assess"
+  },
+  {
+   "ord": 502,
+   "kind": "threshold",
+   "native_category": "10 TAC Chapter 11 Threshold and Eligibility",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "11.101(a)",
+   "heading": "Site Requirements and Restrictions",
+   "page_start": 92,
+   "page_end": 92,
+   "quote": "The purpose of this section is to identify specific requirements and restrictions related to a Development Site"
+  },
+  {
+   "ord": 503,
+   "kind": "threshold",
+   "native_category": "10 TAC Chapter 11 Threshold and Eligibility",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "11.101(b)(1)",
+   "heading": "Ineligible Developments, including Competitive Applications scoring under 120",
+   "page_start": 98,
+   "page_end": 99,
+   "quote": "itive Housing Tax Credit Applications that scores fewer than 120 total points, inclusive of any scoring",
+   "note": "§11.101(b)(1)(A)(x): Competitive Housing Tax Credit Applications scoring fewer than 120 total points, inclusive of scoring reductions, are ineligible. The quote starts mid-word because 'Compet-' ends p.98."
+  },
+  {
+   "ord": 504,
+   "kind": "threshold",
+   "native_category": "10 TAC Chapter 11 Threshold and Eligibility",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "11.202",
+   "heading": "Ineligible Applicants and Applications",
+   "page_start": 127,
+   "page_end": 127,
+   "quote": "The purpose of this section is to identify those situations in which an Application or Applicant may be considered"
+  },
+  {
+   "ord": 505,
+   "kind": "threshold",
+   "native_category": "10 TAC Chapter 11 Threshold and Eligibility",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "11.203",
+   "heading": "Public Notifications",
+   "page_start": 131,
+   "page_end": 131,
+   "quote": "A certification, as provided in the Application, that the Applicant met the requirements and deadlines identified"
+  },
+  {
+   "ord": 506,
+   "kind": "threshold",
+   "native_category": "10 TAC Chapter 11 Threshold and Eligibility",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "11.204",
+   "heading": "Required Documentation for Application Submission",
+   "page_start": 133,
+   "page_end": 133,
+   "quote": "The purpose of this section is to identify the threshold documentation that is required at the time of Application"
+  },
+  {
+   "ord": 507,
+   "kind": "threshold",
+   "native_category": "10 TAC Chapter 11 Threshold and Eligibility",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "11.205",
+   "heading": "Required Third Party Reports",
+   "page_start": 152,
+   "page_end": 152,
+   "quote": "The Environmental Site Assessment, Scope and Cost Review, Appraisal (if applicable), and the Market Analysis must"
+  },
+  {
+   "ord": 508,
+   "kind": "threshold",
+   "native_category": "10 TAC Chapter 11 Threshold and Eligibility",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "11.302",
+   "heading": "Underwriting Rules and Guidelines",
+   "page_start": 157,
+   "page_end": 157,
+   "quote": "Pursuant to Tex. Gov't Code §2306.148 and §2306.185(b), the Board is authorized to adopt underwriting standards"
+  },
+  {
+   "ord": 509,
+   "kind": "threshold",
+   "native_category": "10 TAC Chapter 11 Threshold and Eligibility",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "11.303",
+   "heading": "Market Analysis Rules and Guidelines",
+   "page_start": 176,
+   "page_end": 176,
+   "quote": "A Market Analysis prepared for the Department must evaluate the need for decent, safe, and sanitary housing"
+  }
+ ]
+}

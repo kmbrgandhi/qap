@@ -1,0 +1,116 @@
+{
+ "_comment": "Idaho 2026 QAP thresholds: the seven 4.9 Application Thresholds (pp.20-23) plus the 4.4 development team requirement. The Section 9 architectural requirements, Exhibit E underwriting and the Section 1.4 fair housing and accessibility requirements are incorporated elsewhere and not itemised.",
+ "match": {
+  "filename": "idaho-qap-2026.pdf"
+ },
+ "extractor_version": "hand-2026-id-thresholds-1",
+ "groups": [],
+ "criteria": [
+  {
+   "kind": "threshold",
+   "native_category": "4.9 Application Thresholds",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.9.1",
+   "heading": "Market Study Threshold",
+   "page_start": 20,
+   "page_end": 20,
+   "quote": "Applications submitted for developments in locations where marketability is deemed questionable",
+   "ord": 501
+  },
+  {
+   "kind": "threshold",
+   "native_category": "4.9 Application Thresholds",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.9.2",
+   "heading": "Readiness Threshold: site control and zoning",
+   "page_start": 20,
+   "page_end": 20,
+   "quote": "To meet the Readiness Threshold, submitted applications must provide evidence of site control and zoning.",
+   "ord": 502
+  },
+  {
+   "kind": "threshold",
+   "native_category": "4.9 Application Thresholds",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.9.3",
+   "heading": "Economic Feasibility Threshold",
+   "page_start": 20,
+   "page_end": 20,
+   "quote": "Applications received during each Application Round will be reviewed and evaluated in accordance with",
+   "ord": 503
+  },
+  {
+   "kind": "threshold",
+   "native_category": "4.9 Application Thresholds",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.9.4",
+   "heading": "Green Building Threshold",
+   "page_start": 21,
+   "page_end": 21,
+   "quote": "incorporate a combination of individual green building components into their design whose total value is eight (8) points or more",
+   "note": "Met by a certifiable green building program standard, or components worth at least 8 points on the QAP's component list. These are threshold points, not selection points.",
+   "ord": 504
+  },
+  {
+   "kind": "threshold",
+   "native_category": "4.9 Application Thresholds",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.9.5",
+   "heading": "Management Capacity Threshold",
+   "page_start": 22,
+   "page_end": 22,
+   "quote": "The Association requires that developments receiving LIHTCs be managed by a property management agent with",
+   "ord": 505
+  },
+  {
+   "kind": "threshold",
+   "native_category": "4.9 Application Thresholds",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.9.6",
+   "heading": "Selection Criteria Point Threshold",
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "Applications for competitive 9% LIHTC developments must achieve a minimum 70 points or the application will be declined.",
+   "note": "9% minimum 70; 4% minimum 50.",
+   "ord": 506
+  },
+  {
+   "kind": "threshold",
+   "native_category": "4.9 Application Thresholds",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.9.7",
+   "heading": "Affordability Threshold",
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "The maximum tax credit rents, less an allowance for tenant-paid utilities, must be less than the market rents for",
+   "ord": 507
+  },
+  {
+   "kind": "threshold",
+   "native_category": "Section 4",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.4",
+   "heading": "Development Team",
+   "page_start": 18,
+   "page_end": 18,
+   "quote": "Sponsors must clearly identify all members of the development team, providing resum",
+   "ord": 508
+  }
+ ]
+}

@@ -1,0 +1,813 @@
+{
+ "_comment": "Washington 9% Competitive Housing Tax Credit Policies, Washington State Housing Finance Commission. The cover reads 'Last approved July 23rd, 2026 / Republished August 5th, 2026'; p.2 reads 'Republished 8/1/2025 with corrections', recorded not resolved. The companion washington-qap-2027.pdf is the 10-page QAP; the scoring lives here, in Chapter 6 Allocation Criteria (pp.43-65). Page numbers are PDF page indices; printed numbers run one lower. THREE GEOGRAPHIC POOLS, coded as a shared core (default track) plus add-on tracks king, metro and non_metro holding the pool-specific priority-population and location criteria. Hand-summed before loading. Core: 60 + 44 + 10 + 2 + 5 + 8 + 10 + 6 (At Risk or Historic) + 5 + 5 + 2 + 2 = 159. King +35 +7 = 201; Metro +25 +7 = 191; Non-Metro +25 +10 = 194. The loader matched each. NO TOTAL IS STATED; minimums are 160 King, 158 Metro and 154 Non-Metro (p.44). Summary-versus-body contradictions are recorded on 6.1 and 6.2.",
+ "match": {
+  "filename": "washington-9pct-policies-2027.pdf"
+ },
+ "extractor_version": "hand-2027-wa-1",
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": null,
+   "page": 44,
+   "note": "Shared core for all three pools, 159. No total stated."
+  },
+  {
+   "track": "king",
+   "stated_total": null,
+   "page": 44,
+   "note": "King County add-on 42 (priority populations 35, location 7): pool maximum 201. Minimum 160."
+  },
+  {
+   "track": "metro",
+   "stated_total": null,
+   "page": 44,
+   "note": "Metro add-on 32 (25 + 7): pool maximum 191. Minimum 158."
+  },
+  {
+   "track": "non_metro",
+   "stated_total": null,
+   "page": 44,
+   "note": "Non-Metro add-on 35 (25 + 10): pool maximum 194. Minimum 154."
+  }
+ ],
+ "groups": [
+  {
+   "key": "wa_atrisk_historic",
+   "label": "At Risk of Market Conversion (rehab only) or Historic Buildings (new production only)",
+   "rule": "max_one",
+   "source_quote": "At Risk of Market Conversion points are not available to projects competing in the New Production pool,",
+   "page_start": 55,
+   "note": "The p.45 summary marks At-Risk 'Rehab only' and Historic 'New Production Only'."
+  },
+  {
+   "key": "wa_pop_K",
+   "label": "Priority populations, King County: A, B, or up to two of C",
+   "rule": "max_one",
+   "source_quote": "Applicants may not combine option A. or B. with any of the other options.",
+   "page_start": 48
+  },
+  {
+   "key": "wa_loc_K",
+   "label": "Location-targeting criteria, King County, capped at the better route (7)",
+   "rule": "capped_sum",
+   "group_cap": 7,
+   "source_quote": "If a Project selects points under this Allocation Criterion, it is not eligible to select points under the",
+   "page_start": 56,
+   "note": "A DEVICE, not the document's rule. The rule is Eligible Tribal Area OR the other location criteria. A group can hold only one criterion per route, so this caps the sum of all of them at the better route's value: King 7 (2+2+1+1+1 against tribal 6), Metro 7 (2+2+1+1+1 against 5), Non-Metro 10 (tribal against 2+1). The maximum is exact; the group cannot tell an application which combination is legal."
+  },
+  {
+   "key": "wa_pop_M",
+   "label": "Priority populations, Metro Counties: A, B, or up to two of C",
+   "rule": "max_one",
+   "source_quote": "Applicants may not combine option A. or B. with any of the other options.",
+   "page_start": 48
+  },
+  {
+   "key": "wa_loc_M",
+   "label": "Location-targeting criteria, Metro Counties, capped at the better route (7)",
+   "rule": "capped_sum",
+   "group_cap": 7,
+   "source_quote": "If a Project selects points under this Allocation Criterion, it is not eligible to select points under the",
+   "page_start": 56,
+   "note": "A DEVICE, not the document's rule. The rule is Eligible Tribal Area OR the other location criteria. A group can hold only one criterion per route, so this caps the sum of all of them at the better route's value: King 7 (2+2+1+1+1 against tribal 6), Metro 7 (2+2+1+1+1 against 5), Non-Metro 10 (tribal against 2+1). The maximum is exact; the group cannot tell an application which combination is legal."
+  },
+  {
+   "key": "wa_pop_N",
+   "label": "Priority populations, Non-Metro Counties: A, B, or up to two of C",
+   "rule": "max_one",
+   "source_quote": "Applicants may not combine option A. or B. with any of the other options.",
+   "page_start": 48
+  },
+  {
+   "key": "wa_loc_N",
+   "label": "Location-targeting criteria, Non-Metro Counties, capped at the better route (10)",
+   "rule": "capped_sum",
+   "group_cap": 10,
+   "source_quote": "If a Project selects points under this Allocation Criterion, it is not eligible to select points under the",
+   "page_start": 56,
+   "note": "A DEVICE, not the document's rule. The rule is Eligible Tribal Area OR the other location criteria. A group can hold only one criterion per route, so this caps the sum of all of them at the better route's value: King 7 (2+2+1+1+1 against tribal 6), Metro 7 (2+2+1+1+1 against 5), Non-Metro 10 (tribal against 2+1). The maximum is exact; the group cannot tell an application which combination is legal."
+  }
+ ],
+ "criteria": [
+  {
+   "section_label": "6.1",
+   "heading": "Additional Low-Income Housing Commitment",
+   "points_max": 60,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 45,
+   "page_end": 46,
+   "quote": "Points will be awarded to projects based on the Applicant",
+   "tiers": [
+    {
+     "tier_label": "Best option in either county group",
+     "points": 60
+    },
+    {
+     "tier_label": "Lowest menu value",
+     "points": 54
+    }
+   ],
+   "note": "Seventeen set-aside options (p.46), each worth 54-60 points in a Higher Income County and 56-60 in a Lower Income County (two points more for the same option); several are unavailable in one of the two. Only representative tiers are coded. CONTRADICTIONS: the text says 'one of 20 different set-aside combinations valued between 50 and 60 points' against a 17-row menu whose lowest value is 54; Example A selects 'Option 20'; Example B's 'Option 5' splits 40/30/30, which is not option 5 (50/25/25).",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 1
+  },
+  {
+   "section_label": "6.2",
+   "heading": "Additional Low-Income Housing Use Period",
+   "points_max": 44,
+   "points_type": "formula",
+   "page_start": 47,
+   "page_end": 47,
+   "quote": "Twenty-four points will be awarded to Applicants that commit to an Additional Low-Income Housing Use",
+   "note": "24 points for 25 years, plus one per additional year, to 44 for 45 years. CONTRADICTION: the p.44 summary gives '22-44'; the section heading and text give 24-44.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 2
+  },
+  {
+   "section_label": "6.4",
+   "heading": "Leverage Scoring and Points",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 51,
+   "page_end": 52,
+   "quote": "Points for this category are based upon the amount of capital sources leveraged, defined below, as a",
+   "tiers": [
+    {
+     "tier_label": "King: 5-10% of Total Project Costs; Metro 2-7%; Non-Metro 2-7%",
+     "points": 2
+    },
+    {
+     "tier_label": "King 11-20%; Metro 8-12%; Non-Metro 8-15%",
+     "points": 4
+    },
+    {
+     "tier_label": "King 21-25%; Metro 13-17%; Non-Metro 16-22%",
+     "points": 7
+    },
+    {
+     "tier_label": "King 26%+; Metro 18%+; Non-Metro 23%+",
+     "points": 10
+    }
+   ],
+   "note": "Bands differ by pool; the maximum is 10 in all three.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 3
+  },
+  {
+   "section_label": "6.5",
+   "heading": "Public Leverage",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 52,
+   "page_end": 52,
+   "quote": "two additional points can be awarded for projects that have",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 4
+  },
+  {
+   "section_label": "6.6",
+   "heading": "Project-Based Rental Assistance",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 52,
+   "page_end": 52,
+   "quote": "Points will be awarded to projects who have secured funding commitments for federal project-based",
+   "tiers": [
+    {
+     "tier_label": "PBRA on 10-25% of low-income units",
+     "points": 2
+    },
+    {
+     "tier_label": "26-49%",
+     "points": 3
+    },
+    {
+     "tier_label": "50% or more",
+     "points": 4
+    },
+    {
+     "tier_label": "Non-federal O&M funding committed two years or more",
+     "points": 1
+    }
+   ],
+   "note": "The heading says 'PBRA Points (1-4)' but the lowest PBRA tier is 2.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 5
+  },
+  {
+   "section_label": "6.7",
+   "heading": "Cost Containment Incentive",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 52,
+   "page_end": 54,
+   "quote": "TDC Limit Point: TDC Limit Cost Containment Point will be awarded to a project that is below its",
+   "tiers": [
+    {
+     "tier_label": "TDC under the limit",
+     "points": 1
+    },
+    {
+     "tier_label": "More than 5% under",
+     "points": 3
+    },
+    {
+     "tier_label": "More than 10% under",
+     "points": 6
+    },
+    {
+     "tier_label": "Median Square Footage: cost/sf at or below the pool median for the round",
+     "points": 2
+    }
+   ],
+   "note": "TDC tiers are not cumulative; the Median Square Footage point adds (6 + 2 = 8). The median is computed against the round.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 6
+  },
+  {
+   "section_label": "6.8",
+   "heading": "Developer Fees",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 54,
+   "page_end": 54,
+   "quote": "Points will be awarded based on the Applicant",
+   "tiers": [
+    {
+     "tier_label": "Developer fee 10% of Total Project Cost",
+     "points": 10
+    },
+    {
+     "tier_label": "11%",
+     "points": 8
+    },
+    {
+     "tier_label": "12%",
+     "points": 6
+    },
+    {
+     "tier_label": "13%",
+     "points": 4
+    },
+    {
+     "tier_label": "14%",
+     "points": 2
+    },
+    {
+     "tier_label": "15%",
+     "points": 0
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 7
+  },
+  {
+   "section_label": "6.9",
+   "heading": "Properties At Risk of Loss or Market Conversion",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "wa_atrisk_historic",
+   "page_start": 54,
+   "page_end": 55,
+   "quote": "This Allocation Criterion prioritizes projects that are at imminent risk of loss to the State",
+   "tiers": [
+    {
+     "tier_label": "79 units or fewer at risk",
+     "points": 4
+    },
+    {
+     "tier_label": "80 units or more",
+     "points": 6
+    }
+   ],
+   "note": "Rehabilitation only (p.45 summary); not available in the New Production pool.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 8
+  },
+  {
+   "section_label": "6.10",
+   "heading": "Historic Buildings",
+   "points_max": 5,
+   "points_type": "fixed",
+   "group": "wa_atrisk_historic",
+   "page_start": 55,
+   "page_end": 56,
+   "quote": "Points will be awarded to Projects that fit the definition of New Production, are using the federal",
+   "note": "New Production only, using federal Historic Tax Credits, with 50%+ of units in the historic building(s).",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 9
+  },
+  {
+   "section_label": "6.18",
+   "heading": "Nonprofit Sponsor",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 62,
+   "page_end": 63,
+   "quote": "To be considered for the five Nonprofit Sponsor points, Applicants must qualify under one of the",
+   "note": "Nonprofit only, for-profit/nonprofit partnership, or an advance waiver by the MHCF Director.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 10
+  },
+  {
+   "section_label": "6.19",
+   "heading": "Donation in Support of Local Housing Needs",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 63,
+   "page_end": 64,
+   "quote": "Commitment to contribute funds to a local",
+   "note": "$15,000 (Total Project Cost up to $12.5M) or $25,000 (above) to a local nonprofit serving the county.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 11
+  },
+  {
+   "section_label": "6.20",
+   "heading": "Eventual Tenant Ownership",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 64,
+   "page_end": 65,
+   "quote": "Two points will be awarded to Projects that include units that are intended for eventual tenant",
+   "note": "Single family, townhomes or duplexes with clear lot delineation only.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 12
+  },
+  {
+   "section_label": "6.21",
+   "heading": "Energy Efficiency Modeling",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 65,
+   "page_end": 65,
+   "quote": "Two points will be awarded for projects that select Option #1 from ESDS Section 1.02 Advanced Tools.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 13
+  },
+  {
+   "track": "king",
+   "section_label": "6.3.A.K",
+   "heading": "Priority Populations: Permanent Supportive Housing for the Homeless (75%)",
+   "points_max": 35,
+   "points_type": "fixed",
+   "group": "wa_pop_K",
+   "page_start": 47,
+   "page_end": 47,
+   "quote": "Seattle/King – minimum of 75% required for 35 points",
+   "note": "King County: at least 75% of units, 35 points.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 14
+  },
+  {
+   "track": "king",
+   "section_label": "6.3.C.K",
+   "heading": "Priority Populations: up to two 10-point commitments",
+   "points_max": 20,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "group": "wa_pop_K",
+   "page_start": 47,
+   "page_end": 48,
+   "quote": "The following Housing Commitments are worth 10 allocation points each. A maximum of two",
+   "tiers": [
+    {
+     "tier_label": "20% Farmworker",
+     "points": 10
+    },
+    {
+     "tier_label": "20% Large Households",
+     "points": 10
+    },
+    {
+     "tier_label": "20% Persons with Disabilities",
+     "points": 10
+    },
+    {
+     "tier_label": "20% Homeless",
+     "points": 10
+    },
+    {
+     "tier_label": "100% Elderly",
+     "points": 10
+    }
+   ],
+   "note": "Two different populations at most. Not combinable with A or B ('Applicants may not combine option A. or B. with any of the other options').",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 15
+  },
+  {
+   "track": "king",
+   "section_label": "6.11.K",
+   "heading": "Eligible Tribal Area",
+   "points_max": 6,
+   "points_type": "fixed",
+   "group": "wa_loc_K",
+   "page_start": 56,
+   "page_end": 56,
+   "quote": "If a Project selects points under this Allocation Criterion, it is not eligible to select points under the",
+   "note": "6 in King, 5 in Metro, 10 in Non-Metro. Bars every other location-targeting criterion; see the group note.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 16
+  },
+  {
+   "track": "king",
+   "section_label": "6.12.K",
+   "heading": "Location Efficient Projects",
+   "points_max": 2,
+   "points_type": "fixed",
+   "group": "wa_loc_K",
+   "page_start": 56,
+   "page_end": 57,
+   "quote": "Points will be awarded to Projects that provide nearby access to food and go beyond the minimum",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 17
+  },
+  {
+   "track": "king",
+   "section_label": "6.13.K",
+   "heading": "Area Targeted by a Local Jurisdiction",
+   "points_max": 2,
+   "points_type": "fixed",
+   "group": "wa_loc_K",
+   "page_start": 58,
+   "page_end": 58,
+   "quote": "Points will be awarded to a Project that is located within the defined geographic boundaries of a",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 18
+  },
+  {
+   "track": "king",
+   "section_label": "6.14.K",
+   "heading": "Community Revitalization Plan (CRP)",
+   "points_max": 1,
+   "points_type": "fixed",
+   "group": "wa_loc_K",
+   "page_start": 58,
+   "page_end": 59,
+   "quote": "One point will be awarded to a Project that is located within the defined geographic boundaries of a",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 19
+  },
+  {
+   "track": "king",
+   "section_label": "6.15.K",
+   "heading": "Transit Oriented Development (TOD)",
+   "points_max": 1,
+   "points_type": "fixed",
+   "group": "wa_loc_K",
+   "page_start": 59,
+   "page_end": 59,
+   "quote": "Projects will be awarded 1 point if they are located within the following fixed-distance buffers of existing",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 20
+  },
+  {
+   "track": "king",
+   "section_label": "6.17.K",
+   "heading": "High and Very High Opportunity Areas",
+   "points_max": 1,
+   "points_type": "fixed",
+   "group": "wa_loc_K",
+   "page_start": 61,
+   "page_end": 61,
+   "quote": "Projects in a census tract that is rated High or Very High on the Comprehensive Opportunity Index as",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 21
+  },
+  {
+   "track": "metro",
+   "section_label": "6.3.A.M",
+   "heading": "Priority Populations: Permanent Supportive Housing for the Homeless (25%)",
+   "points_max": 25,
+   "points_type": "fixed",
+   "group": "wa_pop_M",
+   "page_start": 47,
+   "page_end": 47,
+   "quote": "Metro and Non-Metro – minimum of 25% required for 25 points",
+   "note": "Metro Counties: at least 25% of units, 25 points.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 22
+  },
+  {
+   "track": "metro",
+   "section_label": "6.3.B.M",
+   "heading": "Priority Populations: Farmworker Housing (75%)",
+   "points_max": 25,
+   "points_type": "fixed",
+   "group": "wa_pop_M",
+   "page_start": 47,
+   "page_end": 47,
+   "quote": "Housing is worth 25 allocation points.",
+   "note": "Not available in King County. No more than two farmworker projects a year in the Non-Metro pool.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 23
+  },
+  {
+   "track": "metro",
+   "section_label": "6.3.C.M",
+   "heading": "Priority Populations: up to two 10-point commitments",
+   "points_max": 20,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "group": "wa_pop_M",
+   "page_start": 47,
+   "page_end": 48,
+   "quote": "The following Housing Commitments are worth 10 allocation points each. A maximum of two",
+   "tiers": [
+    {
+     "tier_label": "20% Farmworker",
+     "points": 10
+    },
+    {
+     "tier_label": "20% Large Households",
+     "points": 10
+    },
+    {
+     "tier_label": "20% Persons with Disabilities",
+     "points": 10
+    },
+    {
+     "tier_label": "20% Homeless",
+     "points": 10
+    },
+    {
+     "tier_label": "100% Elderly",
+     "points": 10
+    }
+   ],
+   "note": "Two different populations at most. Not combinable with A or B ('Applicants may not combine option A. or B. with any of the other options').",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 24
+  },
+  {
+   "track": "metro",
+   "section_label": "6.11.M",
+   "heading": "Eligible Tribal Area",
+   "points_max": 5,
+   "points_type": "fixed",
+   "group": "wa_loc_M",
+   "page_start": 56,
+   "page_end": 56,
+   "quote": "If a Project selects points under this Allocation Criterion, it is not eligible to select points under the",
+   "note": "6 in King, 5 in Metro, 10 in Non-Metro. Bars every other location-targeting criterion; see the group note.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 25
+  },
+  {
+   "track": "metro",
+   "section_label": "6.12.M",
+   "heading": "Location Efficient Projects",
+   "points_max": 2,
+   "points_type": "fixed",
+   "group": "wa_loc_M",
+   "page_start": 56,
+   "page_end": 57,
+   "quote": "Points will be awarded to Projects that provide nearby access to food and go beyond the minimum",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 26
+  },
+  {
+   "track": "metro",
+   "section_label": "6.13.M",
+   "heading": "Area Targeted by a Local Jurisdiction",
+   "points_max": 2,
+   "points_type": "fixed",
+   "group": "wa_loc_M",
+   "page_start": 58,
+   "page_end": 58,
+   "quote": "Points will be awarded to a Project that is located within the defined geographic boundaries of a",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 27
+  },
+  {
+   "track": "metro",
+   "section_label": "6.14.M",
+   "heading": "Community Revitalization Plan (CRP)",
+   "points_max": 1,
+   "points_type": "fixed",
+   "group": "wa_loc_M",
+   "page_start": 58,
+   "page_end": 59,
+   "quote": "One point will be awarded to a Project that is located within the defined geographic boundaries of a",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 28
+  },
+  {
+   "track": "metro",
+   "section_label": "6.15.M",
+   "heading": "Transit Oriented Development (TOD)",
+   "points_max": 1,
+   "points_type": "fixed",
+   "group": "wa_loc_M",
+   "page_start": 59,
+   "page_end": 59,
+   "quote": "Projects will be awarded 1 point if they are located within the following fixed-distance buffers of existing",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 29
+  },
+  {
+   "track": "metro",
+   "section_label": "6.16.M",
+   "heading": "Job Centers",
+   "points_max": 1,
+   "points_type": "fixed",
+   "group": "wa_loc_M",
+   "page_start": 59,
+   "page_end": 60,
+   "quote": "One point will be awarded to Projects located in or near the top 25 cities and Census Designated Places",
+   "note": "Within 5 miles (Metro) or 10 miles (Non-Metro) of a listed top-25 job growth place, 2019-2023.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 30
+  },
+  {
+   "track": "non_metro",
+   "section_label": "6.3.A.N",
+   "heading": "Priority Populations: Permanent Supportive Housing for the Homeless (25%)",
+   "points_max": 25,
+   "points_type": "fixed",
+   "group": "wa_pop_N",
+   "page_start": 47,
+   "page_end": 47,
+   "quote": "Metro and Non-Metro – minimum of 25% required for 25 points",
+   "note": "Non-Metro Counties: at least 25% of units, 25 points.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 31
+  },
+  {
+   "track": "non_metro",
+   "section_label": "6.3.B.N",
+   "heading": "Priority Populations: Farmworker Housing (75%)",
+   "points_max": 25,
+   "points_type": "fixed",
+   "group": "wa_pop_N",
+   "page_start": 47,
+   "page_end": 47,
+   "quote": "Housing is worth 25 allocation points.",
+   "note": "Not available in King County. No more than two farmworker projects a year in the Non-Metro pool.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 32
+  },
+  {
+   "track": "non_metro",
+   "section_label": "6.3.C.N",
+   "heading": "Priority Populations: up to two 10-point commitments",
+   "points_max": 20,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "group": "wa_pop_N",
+   "page_start": 47,
+   "page_end": 48,
+   "quote": "The following Housing Commitments are worth 10 allocation points each. A maximum of two",
+   "tiers": [
+    {
+     "tier_label": "20% Farmworker",
+     "points": 10
+    },
+    {
+     "tier_label": "20% Large Households",
+     "points": 10
+    },
+    {
+     "tier_label": "20% Persons with Disabilities",
+     "points": 10
+    },
+    {
+     "tier_label": "20% Homeless",
+     "points": 10
+    },
+    {
+     "tier_label": "100% Elderly",
+     "points": 10
+    }
+   ],
+   "note": "Two different populations at most. Not combinable with A or B ('Applicants may not combine option A. or B. with any of the other options').",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 33
+  },
+  {
+   "track": "non_metro",
+   "section_label": "6.11.N",
+   "heading": "Eligible Tribal Area",
+   "points_max": 10,
+   "points_type": "fixed",
+   "group": "wa_loc_N",
+   "page_start": 56,
+   "page_end": 56,
+   "quote": "If a Project selects points under this Allocation Criterion, it is not eligible to select points under the",
+   "note": "6 in King, 5 in Metro, 10 in Non-Metro. Bars every other location-targeting criterion; see the group note.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 34
+  },
+  {
+   "track": "non_metro",
+   "section_label": "6.12.N",
+   "heading": "Location Efficient Projects",
+   "points_max": 2,
+   "points_type": "fixed",
+   "group": "wa_loc_N",
+   "page_start": 56,
+   "page_end": 57,
+   "quote": "Points will be awarded to Projects that provide nearby access to food and go beyond the minimum",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 35
+  },
+  {
+   "track": "non_metro",
+   "section_label": "6.16.N",
+   "heading": "Job Centers",
+   "points_max": 1,
+   "points_type": "fixed",
+   "group": "wa_loc_N",
+   "page_start": 59,
+   "page_end": 60,
+   "quote": "One point will be awarded to Projects located in or near the top 25 cities and Census Designated Places",
+   "note": "Within 5 miles (Metro) or 10 miles (Non-Metro) of a listed top-25 job growth place, 2019-2023.",
+   "kind": "competitive",
+   "native_category": "6 Allocation Criteria",
+   "ord": 36
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "5.2.7 Tiebreakers",
+   "section_label": "5.2.7.1",
+   "heading": "Located in a Qualified Census Tract",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "quote": "the first tie breaker will be if a",
+   "ord": 37
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "5.2.7 Tiebreakers",
+   "section_label": "5.2.7.2",
+   "heading": "Least amount of Credit requested",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 2,
+   "page_start": 42,
+   "page_end": 42,
+   "quote": "The second tie breaker will be the project that requests the",
+   "ord": 38
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "5.2.7 Tiebreakers",
+   "section_label": "5.2.7.3",
+   "heading": "Least Credit per Low-Income Housing Unit",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 3,
+   "page_start": 42,
+   "page_end": 42,
+   "quote": "The third tie breaker will be the project that requests the least amount of Credit",
+   "ord": 39
+  }
+ ]
+}

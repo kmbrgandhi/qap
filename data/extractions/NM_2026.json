@@ -1,0 +1,627 @@
+{
+ "_comment": "New Mexico 2026 9% LIHTC QAP, Housing New Mexico. Page numbers are PDF page indices, which match the printed page numbers. Scoring is Section V, pp.35-68. The p.35-36 summary table lists maxima but NO TOTAL IS STATED anywhere. Hand-summed before loading from the body maxima: A 5, B 6, C 5, D 10, E 16, F 2, G 8, H 5, I 5, J 4, K 10, L 2, M 5, N 2, O 2, P 5, Q 6, R 2, S 9, T 6 = 115 flat. Three exclusions bring it to 102: H, I and J are mutually exclusive (max 5, -9); N cannot be combined with G (max 8, -2); R is barred to projects earning C (max 5, -2). The loader matched 102. Contradiction recorded: the summary letters the criteria after O as Q-U with a blank P row, while the body and table of contents letter them P-T. Body letters are used. Thresholds (Section IV) are in NM_thresholds.json.",
+ "match": {
+  "filename": "newmexico-qap-2026.pdf"
+ },
+ "extractor_version": "hand-2026-nm-1",
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": null,
+   "page": 35,
+   "note": "No total stated. Computed 102: body maxima sum to 115, less the H/I/J housing priority exclusion (9), the G/N extended use versus tenant ownership bar (2) and the C/R rehabilitation versus adaptive reuse bar (2)."
+  }
+ ],
+ "groups": [
+  {
+   "key": "nm_priority",
+   "label": "One housing priority: Special Needs, Seniors or Children",
+   "rule": "max_one",
+   "source_quote": "Applications requesting points under this scoring criterion are not eligible for points",
+   "page_start": 45,
+   "note": "Each of H, I and J carries the same bar against the other two."
+  },
+  {
+   "key": "nm_use_ownership",
+   "label": "Longer Extended Use Period or eventual tenant ownership",
+   "rule": "max_one",
+   "source_quote": "These points may not be awarded in combination with points under Projects",
+   "page_start": 62
+  },
+  {
+   "key": "nm_rehab_reuse",
+   "label": "Rehabilitation Projects or Adaptive Reuse",
+   "rule": "max_one",
+   "source_quote": "Projects eligible for points for Rehabilitation Projects are not eligible for points under this",
+   "page_start": 66
+  }
+ ],
+ "criteria": [
+  {
+   "section_label": "V.A",
+   "heading": "Nonprofit, NM Housing Authority, TDHE, THA or Government Entity Ownership",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 36,
+   "page_end": 37,
+   "quote": "demonstrate financial capacity by having net worth/net assets of at least $1,000,000 will qualify for five points",
+   "tiers": [
+    {
+     "tier_label": "Tier 1: local nonprofit, NMHA, TDHE, THA or government entity with net worth/net assets of at least $1,000,000",
+     "points": 5
+    },
+    {
+     "tier_label": "Tier 2: the same with at least $250,000, or a non-local qualified nonprofit with at least $2,000,000",
+     "points": 3
+    }
+   ],
+   "note": "The entity must own at least 51% of the General Partner interest, receive at least 10% of the Developer fee, hold a Section 42(i)(7) right of first refusal, and have attended the most recent QAP training.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 1
+  },
+  {
+   "section_label": "V.B",
+   "heading": "Locational Efficiency",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 39,
+   "page_end": 41,
+   "quote": "Projects located in proximity and connected to 1) services or 2) public transportation",
+   "tiers": [
+    {
+     "tier_label": "Proximity to Services (General: 1-mile walk to 3 facilities or 2-mile walk to 6; Rural/Tribal: 5-mile walk/drive to 2)",
+     "points": 2
+    },
+    {
+     "tier_label": "Access to Public Transportation: 1-mile walk (Urban) or 2-mile walk (outside Urban Areas) to a commuter bus or rail stop",
+     "points": 2
+    },
+    {
+     "tier_label": "Frequent Transportation: 0.25-mile walk to a commuter bus stop with service more often than hourly, Monday-Friday",
+     "points": 4
+    }
+   ],
+   "note": "Services and transportation add; the two transportation tiers are alternatives (2 or 4), so the maximum is 2 + 4 = 6.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 2
+  },
+  {
+   "section_label": "V.C",
+   "heading": "Rehabilitation Projects",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "nm_rehab_reuse",
+   "page_start": 41,
+   "page_end": 42,
+   "quote": "are available for a Project that exceeds the 20-year requirement as follows:",
+   "tiers": [
+    {
+     "tier_label": ">= 21 years",
+     "points": 1
+    },
+    {
+     "tier_label": ">= 23 years",
+     "points": 2
+    },
+    {
+     "tier_label": ">= 25 years",
+     "points": 3
+    },
+    {
+     "tier_label": ">= 27 years",
+     "points": 4
+    },
+    {
+     "tier_label": ">= 29 years",
+     "points": 5
+    }
+   ],
+   "note": "Requires average rehab Construction Costs of $25,000 per Unit (Moderate) or $45,000 (Substantial), and more than 20 years since the certificate of occupancy, placed-in-service date or last tax-credit rehabilitation. Combinable with Sustaining Affordability; not with Adaptive Reuse (V.R).",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 3
+  },
+  {
+   "section_label": "V.D",
+   "heading": "Sustaining Affordability",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 42,
+   "page_end": 42,
+   "quote": "Projects which meet one of the criteria listed below are eligible for 10 points:",
+   "tiers": [
+    {
+     "tier_label": "Expiring use restrictions by 2029, prepayment/Qualified Contract eligible, imminent risk of conversion, or a new federal rental assistance contract on at least 75% of Units",
+     "points": 10
+    },
+    {
+     "tier_label": "Existing federal rental assistance contract on at least 75% of Units (or a conversion of existing assistance)",
+     "points": 8
+    },
+    {
+     "tier_label": "Existing or new federal rental assistance contract on at least 20% of Units",
+     "points": 6
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 4
+  },
+  {
+   "section_label": "V.E",
+   "heading": "Income Levels of Tenants",
+   "points_max": 16,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 43,
+   "page_end": 44,
+   "quote": "An Application may qualify for up to sixteen (16) points for rent and income",
+   "tiers": [
+    {
+     "tier_label": "40-60 election: at least 40% (Urban) or 25% (Non-Urban) of LIHTC Units at or below 50% AMI; or 20-50 election",
+     "points": 16
+    },
+    {
+     "tier_label": "40-60 election: at least 30% (Urban) or 15% (Non-Urban)",
+     "points": 14
+    },
+    {
+     "tier_label": "40-60 election: at least 25% (Urban) or 10% (Non-Urban)",
+     "points": 12
+    },
+    {
+     "tier_label": "Average Income election: average at or below 54% (Urban) or 55% (Non-Urban)",
+     "points": 16
+    },
+    {
+     "tier_label": "Average Income election: 55% (Urban) or 56% (Non-Urban)",
+     "points": 14
+    },
+    {
+     "tier_label": "Average Income election: 56% (Urban) or 57% (Non-Urban)",
+     "points": 12
+    }
+   ],
+   "note": "20-50 election projects are eligible only for 16. Average Income projects must include at least 5% of Units above 60% AMI and cannot take Market Rate Units points (V.F). That bar does not lower the maximum, since a 40-60 project can take 16 here and 2 in V.F.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 5
+  },
+  {
+   "section_label": "V.F",
+   "heading": "Projects that Incorporate Market Rate Units",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 44,
+   "page_end": 44,
+   "quote": "Projects that incorporate Market Rate Units equal to at least 15% of the total Units",
+   "note": "Not available with the Average Income election.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 6
+  },
+  {
+   "section_label": "V.G",
+   "heading": "Projects Committed to a longer Extended Use Period",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "nm_use_ownership",
+   "page_start": 44,
+   "page_end": 44,
+   "quote": "Projects committing to at least a 35-year Affordability Period (15-year initial",
+   "tiers": [
+    {
+     "tier_label": "35-year Affordability Period",
+     "points": 5
+    },
+    {
+     "tier_label": "40 years",
+     "points": 6
+    },
+    {
+     "tier_label": "45 years",
+     "points": 7
+    },
+    {
+     "tier_label": "50 years",
+     "points": 8
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 7
+  },
+  {
+   "section_label": "V.H",
+   "heading": "Households with Special Housing Needs Housing Priority",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "group": "nm_priority",
+   "page_start": 45,
+   "page_end": 49,
+   "quote": "Applications requesting points under this scoring criterion are not eligible for points",
+   "tiers": [
+    {
+     "tier_label": "Food pantry",
+     "points": 2
+    },
+    {
+     "tier_label": "Free transportation to medical and social services, at least 2 days a week",
+     "points": 5
+    },
+    {
+     "tier_label": "Health promotion, wellness classes or health screening at least every two months",
+     "points": 3
+    },
+    {
+     "tier_label": "Quarterly security awareness training",
+     "points": 1
+    },
+    {
+     "tier_label": "Case management for a majority of Special Housing Needs residents, at least quarterly",
+     "points": 5
+    },
+    {
+     "tier_label": "Other Housing New Mexico-approved service (1-2 each)",
+     "points": 2
+    }
+   ],
+   "note": "Threshold: at least 20% of Units for Households with Special Housing Needs, with 10% of Units at 30% AMI or secured project-based federal rental assistance, plus a Service Coordination Plan. Not available with USDA-RD rental assistance. Services used to meet the threshold earn no points. The menu sums past the cap of 5.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 8
+  },
+  {
+   "section_label": "V.I",
+   "heading": "Projects Reserved for Seniors Housing Priority",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "group": "nm_priority",
+   "page_start": 50,
+   "page_end": 53,
+   "quote": "These points benefit Projects specifically designated as Senior Housing.",
+   "tiers": [
+    {
+     "tier_label": "Community building and all Units incorporate Universal Design",
+     "points": 3
+    },
+    {
+     "tier_label": "One prepared meal daily: congregate meals",
+     "points": 2
+    },
+    {
+     "tier_label": "One prepared meal daily: meal service",
+     "points": 1
+    },
+    {
+     "tier_label": "Bi-monthly health and nutrition education",
+     "points": 1
+    },
+    {
+     "tier_label": "Quarterly health screening",
+     "points": 1
+    },
+    {
+     "tier_label": "Quarterly technology training",
+     "points": 1
+    },
+    {
+     "tier_label": "Bi-monthly social events",
+     "points": 1
+    },
+    {
+     "tier_label": "Beyond Financial Literacy",
+     "points": 1
+    },
+    {
+     "tier_label": "Gardening",
+     "points": 1
+    },
+    {
+     "tier_label": "Estate and end-of-life planning",
+     "points": 1
+    },
+    {
+     "tier_label": "Semi-annual Medicaid/Medicare eligibility screening",
+     "points": 1
+    },
+    {
+     "tier_label": "Quarterly security awareness training",
+     "points": 1
+    },
+    {
+     "tier_label": "Other Housing New Mexico-approved service (1-2 each)",
+     "points": 2
+    }
+   ],
+   "note": "Threshold: Senior Housing exempt from familial status discrimination under the Fair Housing Act, with 5 hours a week of service coordination. Service points require a service coordinator. The two meal tiers are alternatives. The menu sums past the cap of 5.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 9
+  },
+  {
+   "section_label": "V.J",
+   "heading": "Households with Children Housing Priority",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "group": "nm_priority",
+   "page_start": 54,
+   "page_end": 58,
+   "quote": "Households with Children Housing Priority Projects are eligible for up to four points",
+   "tiers": [
+    {
+     "tier_label": "Bi-monthly health and nutrition education",
+     "points": 1
+    },
+    {
+     "tier_label": "Semi-annual CPR training",
+     "points": 1
+    },
+    {
+     "tier_label": "Quarterly health screening",
+     "points": 1
+    },
+    {
+     "tier_label": "Quarterly technology training",
+     "points": 1
+    },
+    {
+     "tier_label": "Quarterly security awareness training",
+     "points": 1
+    },
+    {
+     "tier_label": "Weekly tutoring during school year",
+     "points": 1
+    },
+    {
+     "tier_label": "Quarterly job training, search assistance and/or placement",
+     "points": 1
+    },
+    {
+     "tier_label": "Gardening",
+     "points": 1
+    },
+    {
+     "tier_label": "Food resources program",
+     "points": 1
+    },
+    {
+     "tier_label": "Youth character building",
+     "points": 1
+    },
+    {
+     "tier_label": "Beyond financial literacy",
+     "points": 1
+    },
+    {
+     "tier_label": "Other Housing New Mexico-approved service (1-2 each)",
+     "points": 2
+    }
+   ],
+   "note": "Threshold: 25% of Units reserved for Households with Children, with two- and three-bedroom, two-bathroom unit minimums. The p.36 summary calls this 'Projects with Children Housing Priority'. The menu sums past the cap of 4.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 10
+  },
+  {
+   "section_label": "V.K",
+   "heading": "Leveraging Resources",
+   "points_max": 10,
+   "points_type": "formula",
+   "page_start": 58,
+   "page_end": 58,
+   "quote": "Points awarded shall correspond to the percentage of Total",
+   "note": "One point per whole percent of TDC contributed, rounded down, up to 10. Eligible: third-party cash grants and donated land or buildings, deferred developer fee repayable by year 15, General Partner donated land or loaned sales proceeds, government cash, soft loans, permit fee waivers and land, and tribal contributions. Contributions of Native American Trust Land qualify for five points. Tax abatements, bonds and Housing New Mexico funds do not count.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 11
+  },
+  {
+   "section_label": "V.L",
+   "heading": "Marketing Units to Households Listed on Public or Indian Agency Waiting Lists",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 61,
+   "page_end": 61,
+   "quote": "or Indian housing agency waiting lists are eligible for two points under this criterion.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 12
+  },
+  {
+   "section_label": "V.M",
+   "heading": "QCT/Concerted Community Revitalization Plan",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 61,
+   "page_end": 61,
+   "quote": "The Project is eligible for an additional 2 points if eligible for these 3 points (above)",
+   "tiers": [
+    {
+     "tier_label": "Located within a Concerted Community Revitalization Plan area and contributing to it",
+     "points": 3
+    },
+    {
+     "tier_label": "Additionally located in a QCT",
+     "points": 2
+    }
+   ],
+   "note": "The QCT points require the CCRP points. For scattered sites, every site must qualify.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 13
+  },
+  {
+   "section_label": "V.N",
+   "heading": "Projects with Units Intended for Eventual Tenant Ownership",
+   "points_max": 2,
+   "points_type": "fixed",
+   "group": "nm_use_ownership",
+   "page_start": 62,
+   "page_end": 62,
+   "quote": "These points may not be awarded in combination with points under Projects",
+   "note": "Every Unit intended for eventual tenant ownership; single family, duplex, four-plex or townhome only. The bar names 'Projects Committed to an Extended Use Period', which is V.G's heading without 'longer'.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 14
+  },
+  {
+   "section_label": "V.O",
+   "heading": "Projects with Historic Significance",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 62,
+   "page_end": 63,
+   "quote": "Projects certified on the National Register of Historic Places",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 15
+  },
+  {
+   "section_label": "V.P",
+   "heading": "Efficient Use of Tax Credits",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 63,
+   "page_end": 65,
+   "quote": "Projects are eligible for 1, 3, or 5 points based on the criteria listed below.",
+   "tiers": [
+    {
+     "tier_label": "Credits requested below the 5-point per Low-Income Unit AND per Low-Income Square Foot limits",
+     "points": 5
+    },
+    {
+     "tier_label": "Below the 3-point per-unit AND per-square-foot limits",
+     "points": 3
+    },
+    {
+     "tier_label": "Below the 1-point per-unit OR per-square-foot limit",
+     "points": 1
+    }
+   ],
+   "note": "Limits vary by project class (Tribal; Permanent Supportive Housing; non-PSH with at least 80% efficiency or one-bedroom Units; All Other) and by construction type (new construction, including Adaptive Reuse; Substantial Rehabilitation; Moderate Rehabilitation). PSH limits are per unit only, with no 1-point tier. The p.36 summary letters this criterion Q and leaves the P row blank; the body letters it P, and each later criterion is one letter lower in the body than in the summary.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 16
+  },
+  {
+   "section_label": "V.Q",
+   "heading": "Non-Smoking Properties",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 65,
+   "page_end": 66,
+   "quote": "Projects are eligible for scoring points as follows",
+   "tiers": [
+    {
+     "tier_label": "Smoke-Free at Home NM Platinum Certification (new construction; no smoking anywhere on the property)",
+     "points": 6
+    },
+    {
+     "tier_label": "Gold Certification (rehabilitation and/or Adaptive Reuse; no smoking anywhere on the property)",
+     "points": 6
+    },
+    {
+     "tier_label": "Silver Certification (no smoking in Units, common areas or within 25 feet of entries and windows)",
+     "points": 4
+    }
+   ],
+   "note": "Proof of certification is due with the 8609 Application.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 17
+  },
+  {
+   "section_label": "V.R",
+   "heading": "Adaptive Reuse Projects",
+   "points_max": 2,
+   "points_type": "fixed",
+   "group": "nm_rehab_reuse",
+   "page_start": 66,
+   "page_end": 66,
+   "quote": "Projects eligible for points for Rehabilitation Projects are not eligible for points under this",
+   "note": "Conversion of a building not built for residential use; in combined projects, converted space must be at least 20% of gross square feet.",
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 18
+  },
+  {
+   "section_label": "V.S",
+   "heading": "Underserved Communities",
+   "points_max": 9,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 66,
+   "page_end": 67,
+   "quote": "Up to nine additional points are available to a Project meeting any one or more of the",
+   "tiers": [
+    {
+     "tier_label": "New construction of 35 Units or fewer, no rehabilitation or Adaptive Reuse, Market Study supports need",
+     "points": 3
+    },
+    {
+     "tier_label": "Town, municipality or CDP under 16,000 people (2020 Census), Market Study supports need",
+     "points": 3
+    },
+    {
+     "tier_label": "Town or municipality with no active LIHTC Project in the last five calendar years, Market Study supports need",
+     "points": 3
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 19
+  },
+  {
+   "section_label": "V.T",
+   "heading": "Other Scoring Points Available",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 67,
+   "page_end": 68,
+   "quote": "Up to six additional points are available to a Project meeting any one or more of the",
+   "tiers": [
+    {
+     "tier_label": "Deep Affordability: at least 5% of Units at 30% AMI (or an additional 5% for Special Housing Needs priority projects)",
+     "points": 3
+    },
+    {
+     "tier_label": "Resident selection preference for active duty, Honorably Discharged or retired US military Veterans",
+     "points": 3
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "V. Scoring Criteria",
+   "ord": 20
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "III. Application Process",
+   "section_label": "III.tie",
+   "heading": "Lower Total Development Cost per Unit",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "quote": "the tied Project with the lower Total Development Cost per Unit will be selected first for an award of credits",
+   "note": "Applies within each scoring track/category when tied Projects would require more than the available credits.",
+   "ord": 21
+  }
+ ]
+}

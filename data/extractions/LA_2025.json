@@ -1,0 +1,403 @@
+{
+ "_comment": "Louisiana 2025 QAP, Louisiana Housing Corporation ('Final as of 02-14-25'). Page numbers are PDF page indices, matching the printed numbers. Scoring is Appendix A (pp.39-41), a self-score sheet with values in a right-hand column. The text layer keeps them in reading order, but a few values (Elderly, 6) are cut off, so all three pages were read from rendered images and checked against the text. NO TOTAL IS STATED; the minimum is 40 points (p.17). Hand-summed before loading: I 11 (Community Redevelopment 3 + rehabilitation or new construction 8), II 6, III 13 (5 + 4 + 4, matching its stated 13), IV 5, V 16 (2 + 1 + 2 + 3 + 3 + 2 + 3; section V states no cap) = 51. The loader matched. Appendix A section VI (items H-K) lists threshold acknowledgements with no points, coded in LA_thresholds.json.",
+ "match": {
+  "filename": "louisiana-qap-2025.pdf"
+ },
+ "extractor_version": "hand-2025-la-1",
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": null,
+   "page": 39,
+   "note": "No total stated. Computed 51. Minimum score 40 (p.17), so a qualifying application may miss only 11 points."
+  }
+ ],
+ "groups": [
+  {
+   "key": "la_rehab_newcon",
+   "label": "Rehabilitation & Preservation or New Construction",
+   "rule": "max_one",
+   "source_quote": "Applicants cannot receive points for both New Construction and Rehab/Preservation",
+   "page_start": 39
+  }
+ ],
+ "criteria": [
+  {
+   "native_category": "Appendix A - Selection Criteria: I. Targeted Project Type",
+   "section_label": "I.A",
+   "heading": "Community Redevelopment",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 39,
+   "page_end": 39,
+   "quote": "Community Redevelopment (select one, maximum 3 points allowed)",
+   "tiers": [
+    {
+     "tier_label": "Redevelopment Project (distressed, redevelopment, or owner-occupied with development plan)",
+     "points": 3
+    },
+    {
+     "tier_label": "New construction in a Concerted Community Revitalization Plan",
+     "points": 3
+    },
+    {
+     "tier_label": "PHA sponsored project",
+     "points": 3
+    }
+   ],
+   "note": "Must be in a qualified census tract within a Concerted Community Revitalization Plan area.",
+   "kind": "competitive",
+   "ord": 1
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: I. Targeted Project Type",
+   "section_label": "I.B",
+   "heading": "Rehabilitation & Preservation",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "la_rehab_newcon",
+   "page_start": 39,
+   "page_end": 39,
+   "quote": "Rehabilitation & Preservation (Maximum 8 points)",
+   "tiers": [
+    {
+     "tier_label": "Existing LIHTC",
+     "points": 8
+    },
+    {
+     "tier_label": "Existing USDA, LHC or other federally funded project",
+     "points": 8
+    },
+    {
+     "tier_label": "Existing non-historic residential building",
+     "points": 7
+    },
+    {
+     "tier_label": "Blighted housing remediation/replacement",
+     "points": 7
+    },
+    {
+     "tier_label": "Rehab infill/scattered site",
+     "points": 7
+    },
+    {
+     "tier_label": "Preservation of residential historic property",
+     "points": 3
+    }
+   ],
+   "note": "Select one; must match the applicant's pool.",
+   "kind": "competitive",
+   "ord": 2
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: I. Targeted Project Type",
+   "section_label": "I.C",
+   "heading": "New Construction",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "group": "la_rehab_newcon",
+   "page_start": 39,
+   "page_end": 39,
+   "quote": "New Construction (Maximum 8 points)",
+   "tiers": [
+    {
+     "tier_label": "New construction: single family, multifamily or duplexes",
+     "points": 7
+    },
+    {
+     "tier_label": "New construction infill/scattered site single family or duplexes",
+     "points": 7
+    },
+    {
+     "tier_label": "Homeownership project (with either), sale by year 16",
+     "points": 1
+    }
+   ],
+   "note": "One of the 7-point types plus, if applicable, the homeownership point. Homeownership projects cannot earn community facility points.",
+   "kind": "competitive",
+   "ord": 3
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: II. Targeted Population Type",
+   "section_label": "II",
+   "heading": "Targeted Population Type",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 39,
+   "page_end": 39,
+   "quote": "TARGETED POPULATION TYPE (only one selection from either (I) or( II) - Maximum 6 points)",
+   "tiers": [
+    {
+     "tier_label": "Special needs households (homeless, disabled, single parent, veterans, domestic violence victims): 30% of units",
+     "points": 6
+    },
+    {
+     "tier_label": "Special needs: 20%",
+     "points": 5
+    },
+    {
+     "tier_label": "Special needs: 10%",
+     "points": 4
+    },
+    {
+     "tier_label": "Elderly: 100% of units",
+     "points": 6
+    }
+   ],
+   "note": "Special needs points require supportive services; not available to Permanent Supportive Housing. The Elderly value (6) is legible only in the rendered page; the text layer truncates it.",
+   "kind": "competitive",
+   "ord": 4
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: III. Priority Development Areas and Other Preferences",
+   "section_label": "III.A",
+   "heading": "Extended Affordability Agreement",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 40,
+   "page_end": 40,
+   "quote": "Taxpayer/Owner will execute an Extended Affordability Agreement to keep the project affordable until after the:",
+   "tiers": [
+    {
+     "tier_label": "Affordable until after the 35th year",
+     "points": 3
+    },
+    {
+     "tier_label": "40th year",
+     "points": 4
+    },
+    {
+     "tier_label": "45th year",
+     "points": 5
+    }
+   ],
+   "note": "Not for lease-to-own projects or those executing the Corporation's Option to Purchase and Right of First Refusal Agreement.",
+   "kind": "competitive",
+   "ord": 5
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: III. Priority Development Areas and Other Preferences",
+   "section_label": "III.B",
+   "heading": "Governmental Priorities",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 40,
+   "page_end": 40,
+   "quote": "GOVERNMENTAL PRIORITIES - Select all that apply.( Maximum 4 points)",
+   "tiers": [
+    {
+     "tier_label": "In a DDA, QCT, or federally or state recognized Tribal Census Tract",
+     "points": 2
+    },
+    {
+     "tier_label": "Parish with no LIHTC award in 20 years (Grant, La Salle, St. Charles, St. Helena)",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "ord": 6
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: III. Priority Development Areas and Other Preferences",
+   "section_label": "III.C",
+   "heading": "Additional Financial Support",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 40,
+   "page_end": 40,
+   "quote": "ADDITIONAL FINANCIAL SUPPORT -",
+   "tiers": [
+    {
+     "tier_label": "7% or more of total project development costs",
+     "points": 4
+    },
+    {
+     "tier_label": "4% to under 7%",
+     "points": 3
+    },
+    {
+     "tier_label": "2% to under 4%",
+     "points": 2
+    }
+   ],
+   "note": "Philanthropic, non-LHC CDBG/HOME or governmental support; fee waivers, land, tax abatement or below-market financing count. Must be awarded funds.",
+   "kind": "competitive",
+   "ord": 7
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: IV. Location Characteristics",
+   "section_label": "IV.A",
+   "heading": "Neighborhood Features",
+   "points_max": 5,
+   "points_type": "per_unit",
+   "page_start": 40,
+   "page_end": 40,
+   "quote": "Points will be awarded for the following services located within the specified distance of the site.",
+   "tiers": [
+    {
+     "tier_label": "Urban: per service type within 1 mile",
+     "points": 1
+    },
+    {
+     "tier_label": "Urban: per service type 1-2 miles",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Rural: per service type within 5 miles",
+     "points": 1
+    }
+   ],
+   "note": "Eleven service types, one point each at most, capped at 5; assigned by the market analyst. Negative neighborhood features are a threshold (IV.A.8).",
+   "kind": "competitive",
+   "ord": 8
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: V. Project Characteristics",
+   "section_label": "V.A",
+   "heading": "Community Facilities",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 41,
+   "page_end": 41,
+   "quote": "Homeownership and Scattered Site projects on a Non-Contiguous site are not eligible to receive points for community facilities.",
+   "kind": "competitive",
+   "ord": 9
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: V. Project Characteristics",
+   "section_label": "V.B",
+   "heading": "Optional Amenities: Dishwashers",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 41,
+   "page_end": 41,
+   "quote": "Dishwashers maintained in each unit",
+   "kind": "competitive",
+   "ord": 10
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: V. Project Characteristics",
+   "section_label": "V.C",
+   "heading": "Project Amenities",
+   "points_max": 2,
+   "points_type": "per_unit",
+   "page_start": 41,
+   "page_end": 41,
+   "quote": "PROJECT AMENITIES (Maximum 2 points allowed)",
+   "tiers": [
+    {
+     "tier_label": "Per amenity: playground, computer center (5+ computers), exercise room, picnic area with grill, courtyard with seating",
+     "points": 1
+    }
+   ],
+   "kind": "competitive",
+   "ord": 11
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: V. Project Characteristics",
+   "section_label": "V.D",
+   "heading": "Additional Accessible Units",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 41,
+   "page_end": 41,
+   "quote": "ADDITIONAL ACCESSIBLE UNITS (Only 1 selection allowed)",
+   "tiers": [
+    {
+     "tier_label": "More than 15% and up to 20% of units",
+     "points": 2
+    },
+    {
+     "tier_label": "More than 20% of units",
+     "points": 3
+    }
+   ],
+   "kind": "competitive",
+   "ord": 12
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: V. Project Characteristics",
+   "section_label": "V.E",
+   "heading": "On-Site Security",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 41,
+   "page_end": 41,
+   "quote": "ON-SITE SECURITY (Maximum 3 points allowed)",
+   "tiers": [
+    {
+     "tier_label": "24-hour security: cameras, gate or guard (maximum 2 for this part)",
+     "points": 2
+    },
+    {
+     "tier_label": "Cameras connect with local town crime surveillance initiative",
+     "points": 1
+    }
+   ],
+   "kind": "competitive",
+   "ord": 13
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: V. Project Characteristics",
+   "section_label": "V.F",
+   "heading": "HUD Defensible Space",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 41,
+   "page_end": 41,
+   "quote": "Project incorporates HUD Defensible Space",
+   "kind": "competitive",
+   "ord": 14
+  },
+  {
+   "native_category": "Appendix A - Selection Criteria: V. Project Characteristics",
+   "section_label": "V.G",
+   "heading": "Federally Qualified Health Centers",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 41,
+   "page_end": 41,
+   "quote": "Owners agree to host FQHCs onsite to provide tenants with access to preventive health services",
+   "tiers": [
+    {
+     "tier_label": "On-site once a year",
+     "points": 1
+    },
+    {
+     "tier_label": "Twice a year",
+     "points": 2
+    },
+    {
+     "tier_label": "Quarterly",
+     "points": 3
+    }
+   ],
+   "kind": "competitive",
+   "ord": 15
+  },
+  {
+   "native_category": "Section V - Penalties",
+   "section_label": "PEN.1",
+   "heading": "Penalty points for unsatisfied selection criteria",
+   "points_max": null,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 27,
+   "page_end": 27,
+   "quote": "the Developer and all affiliates shall be subject to penalty points in a single",
+   "note": "Applied to the Developer's and affiliates' next-round application: equal to the point value of an unsatisfied selection criterion with no substitute, or three times that value after a Material Change where the allocation is kept. No fixed amount, so no tiers or maximum are coded.",
+   "kind": "competitive",
+   "ord": 16
+  }
+ ]
+}

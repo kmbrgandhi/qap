@@ -1,0 +1,798 @@
+{
+ "_comment": "Texas 2026 QAP (10 TAC Chapter 11), Texas Department of Housing and Community Affairs. Page numbers are PDF page indices, one above the 'Page N of 217' footer. Competitive HTC scoring is §11.9 (pp.60-90); two point menus sit outside it in §11.101(b)(6)(B) and (b)(7) (see detail_external). NO TOTAL IS STATED. Competitive Applications scoring fewer than 120 points are ineligible (§11.101(b)(1)(A)(x), p.99). Hand-summed before loading from each paragraph's stated maximum: (b) 15 + 2 = 17; (c) 16 + 13 + 11 + 4 + 7 + 5 + 4 = 60, with Opportunity Index and the (d)(7) Concerted Revitalization Plan/Opportunity Zone mutually exclusive at 7 each; (d) 17 + 1 + 10 + 9 + 8 + 4 = 49; (e) 26 + 12 + 6 + 3 + 4 + 2 + 1 + 1 = 55. Total 181. The loader matched. Twenty-six of the 181 points are awarded to every eligible application (Financial Feasibility). The State Representative item runs from -8 to +8, and the (f) penalty is excluded.",
+ "match": {
+  "filename": "texas-qap-2026.pdf"
+ },
+ "extractor_version": "hand-2026-tx-1",
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": null,
+   "page": 60,
+   "note": "No total stated. Computed 181; the 120-point eligibility floor (p.99) is 66% of it. Every eligible application gets 26 for Financial Feasibility."
+  }
+ ],
+ "groups": [
+  {
+   "key": "tx_opp_crp",
+   "label": "Opportunity Index or Concerted Revitalization Plan/Opportunity Zone",
+   "rule": "max_one",
+   "source_quote": "Application may qualify for up to seven (7) points under this paragraph only if no points are",
+   "page_start": 83
+  }
+ ],
+ "criteria": [
+  {
+   "native_category": "11.9(b) Criteria promoting development of high quality housing",
+   "section_label": "11.9(b)(1)",
+   "heading": "Size and Quality of the Units",
+   "points_max": 15,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 61,
+   "page_end": 62,
+   "quote": "An Application may qualify for up to fifteen (15) points under subparagraphs (A) and (B) of this paragraph.",
+   "tiers": [
+    {
+     "tier_label": "(A) Unit Sizes: minimum square footage by bedroom count (automatic for Rehabilitation, USDA and Supportive Housing on request)",
+     "points": 6
+    },
+    {
+     "tier_label": "(B) Unit, Development Construction, and Energy and Water Efficiency Features",
+     "points": 9
+    }
+   ],
+   "detail_external": "Point menu for (B): §11.101(b)(6)(B), pp.105-110 of this document",
+   "note": "(B)'s values are in §11.101(b)(6)(B), outside §11.9. Rehabilitation and Supportive Housing start (B) at a base of 5.",
+   "kind": "competitive",
+   "ord": 1
+  },
+  {
+   "native_category": "11.9(b) Criteria promoting development of high quality housing",
+   "section_label": "11.9(b)(2)",
+   "heading": "Sponsor Characteristics",
+   "points_max": 2,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 62,
+   "page_end": 63,
+   "quote": "An Application may qualify to receive either one (1) or two (2) points if it meets the requirements of either subparagraphs",
+   "tiers": [
+    {
+     "tier_label": "(A) Qualified Nonprofit in the Nonprofit Set-Aside, 50% combined interest, unrelated principals",
+     "points": 2
+    },
+    {
+     "tier_label": "(A)(iii) Qualified Nonprofit providing services",
+     "points": 1
+    },
+    {
+     "tier_label": "(B) Nonprofit with 51% GP ownership and 10 years' experience",
+     "points": 2
+    },
+    {
+     "tier_label": "(C) No property tax exemption or abatement",
+     "points": 2
+    },
+    {
+     "tier_label": "(D) Housing Finance Corporation or Housing Authority in its area",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "ord": 2
+  },
+  {
+   "native_category": "11.9(c) Criteria to serve and support Texans most in need",
+   "section_label": "11.9(c)(1)",
+   "heading": "Income Levels of Residents",
+   "points_max": 16,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 63,
+   "page_end": 65,
+   "quote": "An Application may qualify for up to sixteen (16) points for rent and income restricting a Development for the entire",
+   "tiers": [
+    {
+     "tier_label": "Qualified Nonprofit Supportive Housing: 60% of units at 50% AMGI",
+     "points": 16
+    },
+    {
+     "tier_label": "Big-five MSA non-rural, 20-50/40-60: 40% at 50% AMGI",
+     "points": 15
+    },
+    {
+     "tier_label": "30%",
+     "points": 13
+    },
+    {
+     "tier_label": "20%",
+     "points": 11
+    },
+    {
+     "tier_label": "Elsewhere, 20-50/40-60: 20% at 50% AMGI",
+     "points": 15
+    },
+    {
+     "tier_label": "15%",
+     "points": 13
+    },
+    {
+     "tier_label": "10%",
+     "points": 11
+    },
+    {
+     "tier_label": "Big-five MSA, Average Income 54% or lower",
+     "points": 15
+    },
+    {
+     "tier_label": "55%",
+     "points": 13
+    },
+    {
+     "tier_label": "56%",
+     "points": 11
+    },
+    {
+     "tier_label": "Elsewhere, Average Income 55% or lower",
+     "points": 15
+    },
+    {
+     "tier_label": "56%",
+     "points": 13
+    },
+    {
+     "tier_label": "57%",
+     "points": 11
+    }
+   ],
+   "kind": "competitive",
+   "ord": 3
+  },
+  {
+   "native_category": "11.9(c) Criteria to serve and support Texans most in need",
+   "section_label": "11.9(c)(2)",
+   "heading": "Rent Levels of Tenants",
+   "points_max": 13,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 65,
+   "page_end": 65,
+   "quote": "thirteen (13) points for rent and income restricting a Development for the entire",
+   "tiers": [
+    {
+     "tier_label": "Qualified Nonprofit Supportive Housing: 20% of units at 30% AMGI",
+     "points": 13
+    },
+    {
+     "tier_label": "10% at 30% AMGI (7.5% Rural)",
+     "points": 11
+    },
+    {
+     "tier_label": "5% at 30% AMGI",
+     "points": 7
+    }
+   ],
+   "kind": "competitive",
+   "ord": 4
+  },
+  {
+   "native_category": "11.9(c) Criteria to serve and support Texans most in need",
+   "section_label": "11.9(c)(3)",
+   "heading": "Resident Supportive Services",
+   "points_max": 11,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 65,
+   "page_end": 65,
+   "quote": "A Development may qualify to receive up to eleven (11) points.",
+   "tiers": [
+    {
+     "tier_label": "(A) Services worth at least 10 points under §11.101(b)(7)",
+     "points": 10
+    },
+    {
+     "tier_label": "(B) Community space for local provider outreach",
+     "points": 1
+    }
+   ],
+   "detail_external": "Service menu: §11.101(b)(7)",
+   "kind": "competitive",
+   "ord": 5
+  },
+  {
+   "native_category": "11.9(c) Criteria to serve and support Texans most in need",
+   "section_label": "11.9(c)(4)",
+   "heading": "Section 811 Project Rental Assistance Program and Residents with Special Housing Needs",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 65,
+   "page_end": 67,
+   "quote": "up to four (4) points by serving Residents with Special Housing Needs.",
+   "tiers": [
+    {
+     "tier_label": "(A) Section 811 PRA participation, 5% of units",
+     "points": 3
+    },
+    {
+     "tier_label": "(B) 5% of units for Persons with Special Housing Needs (only if (A) unavailable)",
+     "points": 2
+    },
+    {
+     "tier_label": "(C) Additional 2% for Continuum of Care referrals (requires (B))",
+     "points": 1
+    },
+    {
+     "tier_label": "(D) Supportive Housing on a VA site with a Veterans preference",
+     "points": 1
+    }
+   ],
+   "note": "(A), or (B) + (C) when (A) cannot be met, each reaches 3; (D) adds 1 for a maximum of 4.",
+   "kind": "competitive",
+   "ord": 6
+  },
+  {
+   "native_category": "11.9(c) Criteria to serve and support Texans most in need",
+   "section_label": "11.9(c)(5)",
+   "heading": "Opportunity Index",
+   "points_max": 7,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "group": "tx_opp_crp",
+   "page_start": 67,
+   "page_end": 73,
+   "quote": "a Development is eligible for a maximum of seven",
+   "tiers": [
+    {
+     "tier_label": "(A)(i) Low-poverty tract in the top two income quartiles",
+     "points": 2
+    },
+    {
+     "tier_label": "(A)(ii) Third-quartile tract contiguous to a qualifying tract",
+     "points": 1
+    },
+    {
+     "tier_label": "(A)(iii) Rural low-poverty tract in a growing Place",
+     "points": 1
+    },
+    {
+     "tier_label": "(B)(i) Urban amenity menu (I)-(XV): 1-2 points each",
+     "points": 1
+    },
+    {
+     "tier_label": "(B)(ii) Rural/USDA amenity menu (I)-(XIII): 1-2 points each",
+     "points": 1
+    }
+   ],
+   "note": "(A) is a gate worth up to 2; (B) amenities add, and the paragraph caps at 7. Not combinable with Concerted Revitalization Plan or Opportunity Zone (11.9(d)(7)).",
+   "kind": "competitive",
+   "ord": 7
+  },
+  {
+   "native_category": "11.9(c) Criteria to serve and support Texans most in need",
+   "section_label": "11.9(c)(6)",
+   "heading": "Underserved Area",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 73,
+   "page_end": 74,
+   "quote": "Points are not cumulative and an Applicant is therefore limited to selecting one",
+   "tiers": [
+    {
+     "tier_label": "(A) Colonia within 150 miles of the Rio Grande",
+     "points": 5
+    },
+    {
+     "tier_label": "(B) Economically Distressed Area",
+     "points": 1
+    },
+    {
+     "tier_label": "(C) No same-population award in the tract in 20 years",
+     "points": 5
+    },
+    {
+     "tier_label": "(D) No award in 15 years",
+     "points": 4
+    },
+    {
+     "tier_label": "(E) No award in 10 years",
+     "points": 3
+    },
+    {
+     "tier_label": "(F) Tract and contiguous tracts without a same-population award in 10 years (large Places)",
+     "points": 5
+    },
+    {
+     "tier_label": "(G) At-Risk/USDA development 25+ years old, never recapitalized",
+     "points": 3
+    },
+    {
+     "tier_label": "(H) Highest-income-quartile tract",
+     "points": 5
+    }
+   ],
+   "note": "One subparagraph only. Opportunity Index applicants cannot take (A) or (B). The heading lists (A)-(G) but the paragraph continues to (H).",
+   "kind": "competitive",
+   "ord": 8
+  },
+  {
+   "native_category": "11.9(c) Criteria to serve and support Texans most in need",
+   "section_label": "11.9(c)(7)",
+   "heading": "Proximity to Job Areas",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 74,
+   "page_end": 75,
+   "quote": "An Application may qualify to receive up to four",
+   "tiers": [
+    {
+     "tier_label": "(A) Urban: within 5 miles of 10,000 jobs",
+     "points": 4
+    },
+    {
+     "tier_label": "8,000",
+     "points": 3
+    },
+    {
+     "tier_label": "6,500",
+     "points": 2
+    },
+    {
+     "tier_label": "4,500",
+     "points": 1
+    },
+    {
+     "tier_label": "(B) Rural: within 5 miles of 6,000 jobs",
+     "points": 4
+    },
+    {
+     "tier_label": "4,500",
+     "points": 3
+    },
+    {
+     "tier_label": "3,000",
+     "points": 2
+    },
+    {
+     "tier_label": "1,500",
+     "points": 1
+    },
+    {
+     "tier_label": "(C) Access to Jobs: transit within 1/2 mile, with 2+ points under (A) or (B)",
+     "points": 2
+    }
+   ],
+   "note": "The paragraph caps at 4 although (C) offers up to 2 more on top of a 4 under (A) or (B). Not in the At-Risk or USDA Set-Asides.",
+   "kind": "competitive",
+   "ord": 9
+  },
+  {
+   "native_category": "11.9(d) Criteria promoting community support and engagement",
+   "section_label": "11.9(d)(1)",
+   "heading": "Local Government Support",
+   "points_max": 17,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 75,
+   "page_end": 76,
+   "quote": "seventeen (17) points for a resolution or resolutions voted on and adopted by the bodies",
+   "tiers": [
+    {
+     "tier_label": "Municipality: support resolution",
+     "points": 17
+    },
+    {
+     "tier_label": "Municipality: no-objection resolution",
+     "points": 14
+    },
+    {
+     "tier_label": "ETJ: municipality support 8.5 plus county support 8.5",
+     "points": 17
+    },
+    {
+     "tier_label": "ETJ: each no-objection resolution",
+     "points": 7
+    },
+    {
+     "tier_label": "County only: support",
+     "points": 17
+    },
+    {
+     "tier_label": "County only: no objection",
+     "points": 14
+    }
+   ],
+   "note": "An opposing resolution gives zero for that body.",
+   "kind": "competitive",
+   "ord": 10
+  },
+  {
+   "native_category": "11.9(d) Criteria promoting community support and engagement",
+   "section_label": "11.9(d)(2)",
+   "heading": "Commitment of Development Funding by Local Political Subdivision",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 76,
+   "page_end": 77,
+   "quote": "The source of the funding cannot be the Applicant, Developer, or an Affiliate of the",
+   "note": "At least $500 (Urban) or $250 (Rural) of local funding or fee reduction.",
+   "kind": "competitive",
+   "ord": 11
+  },
+  {
+   "native_category": "11.9(d) Criteria promoting community support and engagement",
+   "section_label": "11.9(d)(3)",
+   "heading": "Declared Disaster Area",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 77,
+   "page_end": 77,
+   "quote": "receive ten (10) points if at the time of Application submission or at any time within the",
+   "note": "Site in an area declared a disaster under Tex. Gov't Code §418.014 at submission or within the prior two years.",
+   "kind": "competitive",
+   "ord": 12
+  },
+  {
+   "native_category": "11.9(d) Criteria promoting community support and engagement",
+   "section_label": "11.9(d)(4)",
+   "heading": "Quantifiable Community Participation",
+   "points_max": 9,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 77,
+   "page_end": 79,
+   "quote": "Application may qualify for up to nine (9) points for written statements from a Neighborhood Organization.",
+   "tiers": [
+    {
+     "tier_label": "Support from an organization that opposed an application in the last three rounds",
+     "points": 9
+    },
+    {
+     "tier_label": "Explicit support",
+     "points": 8
+    },
+    {
+     "tier_label": "Neutrality from a formerly opposing organization",
+     "points": 6
+    },
+    {
+     "tier_label": "Neutrality or no statement",
+     "points": 4
+    },
+    {
+     "tier_label": "No Neighborhood Organization",
+     "points": 4
+    },
+    {
+     "tier_label": "Opposition",
+     "points": 0
+    }
+   ],
+   "note": "Several statements are averaged.",
+   "kind": "competitive",
+   "ord": 13
+  },
+  {
+   "native_category": "11.9(d) Criteria promoting community support and engagement",
+   "section_label": "11.9(d)(5)",
+   "heading": "Community Support from State Representative",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 80,
+   "page_end": 82,
+   "quote": "Applications may receive up to eight (8) points for express support, zero points for neutral statements, or have deducted up to eight (8) points for express opposition.",
+   "tiers": [
+    {
+     "tier_label": "Letter of support",
+     "points": 8
+    },
+    {
+     "tier_label": "Neutral letter",
+     "points": 0
+    },
+    {
+     "tier_label": "Letter of opposition",
+     "points": -8
+    },
+    {
+     "tier_label": "No letter: municipal or county support resolution",
+     "points": 8
+    },
+    {
+     "tier_label": "No letter: opposition resolution",
+     "points": -8
+    }
+   ],
+   "note": "Runs from -8 to +8. With no letter, the points follow the Local Government Support resolutions (half each for an ETJ site).",
+   "kind": "competitive",
+   "ord": 14
+  },
+  {
+   "native_category": "11.9(d) Criteria promoting community support and engagement",
+   "section_label": "11.9(d)(6)",
+   "heading": "Input from Community Organizations",
+   "points_max": 4,
+   "points_type": "per_unit",
+   "page_start": 82,
+   "page_end": 83,
+   "quote": "No more than four (4) points will be awarded under this point item under any circumstances.",
+   "tiers": [
+    {
+     "tier_label": "Per letter of support from a qualifying community organization, master-planned POA or Special Management District",
+     "points": 2
+    },
+    {
+     "tier_label": "Per letter of opposition (floor zero)",
+     "points": -1
+    }
+   ],
+   "note": "Only where there is no qualifying Neighborhood Organization, or it gave no statement or neutrality.",
+   "kind": "competitive",
+   "ord": 15
+  },
+  {
+   "native_category": "11.9(d) Criteria promoting community support and engagement",
+   "section_label": "11.9(d)(7)",
+   "heading": "Concerted Revitalization Plan or Opportunity Zone",
+   "points_max": 7,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "tx_opp_crp",
+   "page_start": 83,
+   "page_end": 85,
+   "quote": "Application may qualify for up to seven (7) points under this paragraph only if no points are",
+   "tiers": [
+    {
+     "tier_label": "(A) Urban CRP with local official's letter (QCT or not)",
+     "points": 7
+    },
+    {
+     "tier_label": "(A) Urban CRP without the letter",
+     "points": 5
+    },
+    {
+     "tier_label": "(B) Rural rehabilitation/reconstruction of 25+ year-old public or assisted housing, 85% occupied",
+     "points": 7
+    },
+    {
+     "tier_label": "(C) Federal Opportunity Zone",
+     "points": 7
+    }
+   ],
+   "kind": "competitive",
+   "ord": 16
+  },
+  {
+   "native_category": "11.9(e) Criteria promoting the efficient use of limited resources and Applicant accountability",
+   "section_label": "11.9(e)(1)",
+   "heading": "Financial Feasibility",
+   "points_max": 26,
+   "points_type": "fixed",
+   "page_start": 85,
+   "page_end": 85,
+   "quote": "six (26) points, conditioned upon the successful completion of underwriting in accordance",
+   "note": "Awarded to all eligible Applications, conditioned on passing underwriting.",
+   "kind": "competitive",
+   "ord": 17
+  },
+  {
+   "native_category": "11.9(e) Criteria promoting the efficient use of limited resources and Applicant accountability",
+   "section_label": "11.9(e)(2)",
+   "heading": "Cost of Development per Square Foot",
+   "points_max": 12,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 85,
+   "page_end": 86,
+   "quote": "Applications proposing New Construction or Reconstruction or Adaptive Reuse will",
+   "tiers": [
+    {
+     "tier_label": "New construction/adaptive reuse: building cost <= $155.12/sf or hard cost <= $207.21/sf",
+     "points": 12
+    },
+    {
+     "tier_label": "New construction: <= $165.54/sf or <= $217.63/sf",
+     "points": 11
+    },
+    {
+     "tier_label": "Rehabilitation: hard plus acquisition cost <= $207.21/sf",
+     "points": 12
+    },
+    {
+     "tier_label": "Rehabilitation: <= $268.57/sf in an Urban opportunity area",
+     "points": 12
+    },
+    {
+     "tier_label": "Rehabilitation: <= $268.57/sf",
+     "points": 11
+    }
+   ],
+   "note": "Targets adjusted annually by CPI.",
+   "kind": "competitive",
+   "ord": 18
+  },
+  {
+   "native_category": "11.9(e) Criteria promoting the efficient use of limited resources and Applicant accountability",
+   "section_label": "11.9(e)(3)",
+   "heading": "Pre-application Participation",
+   "points_max": 6,
+   "points_type": "fixed",
+   "page_start": 86,
+   "page_end": 87,
+   "quote": "six (6) points provided a pre-application was submitted by the Pre-Application Final Delivery",
+   "note": "All of (A)-(K) must hold, including a final score within four points of the pre-application self-score.",
+   "kind": "competitive",
+   "ord": 19
+  },
+  {
+   "native_category": "11.9(e) Criteria promoting the efficient use of limited resources and Applicant accountability",
+   "section_label": "11.9(e)(4)",
+   "heading": "Leveraging of Private, State, and Federal Resources",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 87,
+   "page_end": 87,
+   "quote": "An Application may qualify to receive up to three (3) points if at least 5% of the total",
+   "tiers": [
+    {
+     "tier_label": "Leverages CDBG-DR, HOPE VI, RAD or Choice Neighborhoods and credit request under 10% of TDC",
+     "points": 3
+    },
+    {
+     "tier_label": "Credit request under 10% of TDC",
+     "points": 3
+    },
+    {
+     "tier_label": "Under 11%",
+     "points": 2
+    },
+    {
+     "tier_label": "Under 12%",
+     "points": 1
+    }
+   ],
+   "note": "At least 5% of units at 30% AMGI; no more than 50% of developer fee deferred.",
+   "kind": "competitive",
+   "ord": 20
+  },
+  {
+   "native_category": "11.9(e) Criteria promoting the efficient use of limited resources and Applicant accountability",
+   "section_label": "11.9(e)(5)",
+   "heading": "Extended Affordability",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 88,
+   "page_end": 88,
+   "quote": "four (4) points for this item.",
+   "tiers": [
+    {
+     "tier_label": "45-year Affordability Period",
+     "points": 4
+    },
+    {
+     "tier_label": "40 years",
+     "points": 3
+    },
+    {
+     "tier_label": "35 years",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "ord": 21
+  },
+  {
+   "native_category": "11.9(e) Criteria promoting the efficient use of limited resources and Applicant accountability",
+   "section_label": "11.9(e)(6)",
+   "heading": "Historic Preservation",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 88,
+   "page_end": 88,
+   "quote": "An Application may qualify to receive two (2) points if:",
+   "note": "55% of units (or 55 units for 100+) in a Certified Historic Structure, with historic tax credits by 8609.",
+   "kind": "competitive",
+   "ord": 22
+  },
+  {
+   "native_category": "11.9(e) Criteria promoting the efficient use of limited resources and Applicant accountability",
+   "section_label": "11.9(e)(7)",
+   "heading": "Right of First Refusal",
+   "points_max": 1,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 88,
+   "page_end": 89,
+   "quote": "points under subparagraphs (A) or (B) of this paragraph.",
+   "tiers": [
+    {
+     "tier_label": "(A) Right of first refusal to qualified purchasers after the Compliance Period",
+     "points": 1
+    },
+    {
+     "tier_label": "(B) Tenant right of first refusal for single-family or condominium units",
+     "points": 1
+    }
+   ],
+   "kind": "competitive",
+   "ord": 23
+  },
+  {
+   "native_category": "11.9(e) Criteria promoting the efficient use of limited resources and Applicant accountability",
+   "section_label": "11.9(e)(8)",
+   "heading": "Readiness to Proceed",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 89,
+   "page_end": 89,
+   "quote": "The Application includes a certification that site acquisition and building construction permit submission will occur",
+   "note": "Not in the At-Risk or USDA Set-Asides. Missing the March deadline triggers an 11.9(f) penalty; 11.9(f)(3) cites 'subsection (c)(9)' for Readiness to Proceed, which is (e)(8).",
+   "kind": "competitive",
+   "ord": 24
+  },
+  {
+   "native_category": "11.9(f) Factors Affecting Scoring",
+   "section_label": "11.9(f)",
+   "heading": "Penalty deduction in the following round",
+   "points_max": -2,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 89,
+   "page_end": 90,
+   "quote": "assigned a penalty deduction in the following year",
+   "note": "Up to two points per submitted Application in the next round (or ineligibility) for missed Carryover/10% Test deadlines, federal commitment failures, Readiness failures or Adherence to Obligations violations.",
+   "kind": "competitive",
+   "ord": 25
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "11.7 Tie Breaker Factors",
+   "section_label": "11.7(1)",
+   "heading": "USDA Set-Aside: earliest year of initial construction",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "quote": "Applications proposed to rehabilitate the Property with the earliest year of initial construction",
+   "note": "USDA Set-Aside only, until 5% of the ceiling goes to USDA developments.",
+   "ord": 26
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "11.7 Tie Breaker Factors",
+   "section_label": "11.7(2)",
+   "heading": "Lowest sum of distances to the three closest features",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 2,
+   "page_start": 55,
+   "page_end": 55,
+   "quote": "with the sum of the three closest features being used to produce the result.",
+   "note": "Park, public school campus, full-service grocery store, public library. Ties persist within 100 feet.",
+   "ord": 27
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "11.7 Tie Breaker Factors",
+   "section_label": "11.7(3)",
+   "heading": "Lowest Housing Tax Credit request per Low-Income Unit",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 3,
+   "page_start": 55,
+   "page_end": 55,
+   "quote": "If the tie persists, preference will be given to the Application that proposes the lowest Housing Tax Credit request per Low-Income Unit.",
+   "ord": 28
+  }
+ ]
+}
