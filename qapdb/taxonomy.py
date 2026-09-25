@@ -678,6 +678,14 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("KY", "U.6"): COST,    ("KY", "U.7"): LOC,     ("KY", "U.8"): POP,
     ("KY", "B.1"): AFF,     ("KY", "B.2"): LOC,     ("KY", "B.3"): LOC,
     ("KY", "B.5"): LOC,     ("KY", "B.6"): COST,    ("KY", "B.8"): POP,
+
+    # ---- South Carolina --------------------------------------------------------
+    ("SC", "III.A.1"): LOC, ("SC", "III.A.2"): LOC, ("SC", "III.A.3"): LOC,
+    ("SC", "III.A.4"): LOC, ("SC", "III.B"): COST, ("SC", "III.C.1"): AFF,
+    ("SC", "III.C.2"): AFF, ("SC", "III.D"): LOC, ("SC", "III.E"): DES,
+    ("SC", "III.F"): COST, ("SC", "III.G"): PRES, ("SC", "III.H"): POP,
+    ("SC", "V.A"): PRES, ("SC", "V.B"): PRES, ("SC", "V.C"): PRES,
+    ("SC", "V.D"): LOC,
 }
 
 

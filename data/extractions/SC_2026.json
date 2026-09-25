@@ -1,0 +1,480 @@
+{
+ "_comment": "South Carolina 2026, SC Housing. Scoring is Appendix C1 - 9% LIHTC (this file, the clean consolidated version despite its '-amendments' name; the redline companion reads 'Max - 65 70 points' where 70 is correct). Page numbers are PDF page indices; p.1 is a 27 January 2026 clarification sheet, so 'Page C1 - n' is PDF page n+1. TWO UNIVERSES: new construction (default track, Section III) and rehabilitation (track rehab, Section V, 'evaluated comparatively'). NO TOTAL IS STATED for either. Hand-summed before loading. New construction: 70 + 1 + 10 + 5 + 5 + 10 + 10 + 10 + 5 + 6 + 5 + 5 = 142. Rehabilitation: 10 + 9 + 3 + 1 = 23. The loader matched both. The table of contents (p.2) is stale against the body: its set-aside names and percentages (High-Demand New Construction 35-40%, Rehabilitation 20-25%, General New Construction) differ from the body's (Urban 35-40%, Rehabilitation 15-20%, Suburban 25-30%, Rural 5-10%, PHA one award), it has no Public Transportation item, and it calls III.G 'Project-Based Rent Assistance'. Recorded, not resolved. Thresholds are in SC_thresholds.json, cited to the QAP.",
+ "match": {
+  "filename": "southcarolina-appendix-c1-9pct-2026-amendments.pdf"
+ },
+ "extractor_version": "hand-2026-sc-1",
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": null,
+   "page": 6,
+   "note": "New construction. No total stated. Computed 142, of which 70 is Distance to Amenities."
+  },
+  {
+   "track": "rehab",
+   "stated_total": null,
+   "page": 12,
+   "note": "Rehabilitation applications are 'evaluated comparatively' on four criteria. No total stated. Computed 23. Alternative to new construction."
+  }
+ ],
+ "groups": [],
+ "criteria": [
+  {
+   "section_label": "III.A.1",
+   "heading": "Distance to Amenities",
+   "points_max": 70,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 6,
+   "page_end": 7,
+   "quote": "A maximum of two (2) amenities per category can be used.",
+   "tiers": [
+    {
+     "tier_label": "Grocery, nearest band (Urban <1 mi, Suburban <2, Rural <3)",
+     "points": 10
+    },
+    {
+     "tier_label": "Shopping, nearest band",
+     "points": 7
+    },
+    {
+     "tier_label": "Pharmacy, nearest band",
+     "points": 7
+    },
+    {
+     "tier_label": "Retail, nearest band",
+     "points": 6
+    },
+    {
+     "tier_label": "Healthcare, nearest band",
+     "points": 4
+    },
+    {
+     "tier_label": "Public Facility, nearest band",
+     "points": 4
+    }
+   ],
+   "note": "Points fall by driving-distance band (four bands per county group). Up to two amenities per category count, and one establishment may score in at most two categories: 2 x (10+7+7+6+4+4) = 76 against the stated 'Max - 70 points' in each of the three tables. The Suburban table's Public Facility row reads 4, 4, 2, 1 where the other tables read 4, 3, 2, 1. A 27 January 2026 clarification (p.1) excludes hair salons, barber shops, nail salons and post offices as retail.",
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 1
+  },
+  {
+   "section_label": "III.A.2",
+   "heading": "Public Transportation",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 7,
+   "page_end": 7,
+   "quote": "1 point for being located within .3 miles walking distance of a bus/transit stop meeting the following:",
+   "note": "Numbered A.2 in the body; the table of contents lists A.2 as Area Employment and has no Public Transportation item.",
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 2
+  },
+  {
+   "section_label": "III.A.3",
+   "heading": "Area Employment",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 8,
+   "page_end": 8,
+   "quote": "Up to 10 points based on the number of jobs paying between $1,251 and $3,333 per month in a two-",
+   "tiers": [
+    {
+     "tier_label": "5,000+ jobs within the county group's radius (2/5/10 miles)",
+     "points": 10
+    },
+    {
+     "tier_label": "4,000-4,999",
+     "points": 8
+    },
+    {
+     "tier_label": "3,000-3,999",
+     "points": 6
+    },
+    {
+     "tier_label": "2,000-2,999",
+     "points": 4
+    },
+    {
+     "tier_label": "1,000-1,999",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 3
+  },
+  {
+   "section_label": "III.A.4",
+   "heading": "USDA Rural",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 8,
+   "page_end": 8,
+   "quote": "5 points for being located entirely within rural areas as defined by USDA",
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 4
+  },
+  {
+   "section_label": "III.B",
+   "heading": "Land Donation or Ground Lease",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 8,
+   "page_end": 8,
+   "quote": "5 points if a local government, school district or entity who received the property from a local government",
+   "note": "Owned by the public entity since at least July 31, 2025; land and building costs no more than $5,000, or ground lease no more than $100 a year.",
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 5
+  },
+  {
+   "section_label": "III.C.1",
+   "heading": "Affordability: income targeting",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 8,
+   "page_end": 9,
+   "quote": "Applications will earn 10 points based on an agreeing to comply with the applicable limits in the matrix",
+   "tiers": [
+    {
+     "tier_label": "High income county: average income 54% or 20% of units at 30% AMI",
+     "points": 10
+    },
+    {
+     "tier_label": "Moderate: 56% or 20% at 40%",
+     "points": 10
+    },
+    {
+     "tier_label": "Low: 58% or 20% at 50%",
+     "points": 10
+    }
+   ],
+   "note": "One threshold per county income level; meeting it earns 10.",
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 6
+  },
+  {
+   "section_label": "III.C.2",
+   "heading": "Affordability: Qualified Contract waiver",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 9,
+   "page_end": 9,
+   "quote": "affirming a knowing and voluntary waiver of the right to request a qualified contract from the",
+   "note": "Numbered '2.' under C, whose first item carries no number.",
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 7
+  },
+  {
+   "section_label": "III.D",
+   "heading": "Affordable Housing Shortage",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 9,
+   "page_end": 9,
+   "quote": "10 points to a project that is located in a county that did not receive a new construction 9% LIHTC",
+   "tiers": [
+    {
+     "tier_label": "No new construction 9% award in the county in 15 cycles",
+     "points": 10
+    },
+    {
+     "tier_label": "10 cycles",
+     "points": 7
+    },
+    {
+     "tier_label": "5 cycles",
+     "points": 5
+    },
+    {
+     "tier_label": "3 cycles",
+     "points": 3
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 8
+  },
+  {
+   "section_label": "III.E",
+   "heading": "Sustainable Building",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 9,
+   "page_end": 9,
+   "quote": "Applications will earn 5 points for committing to meet green and energy efficiency sustainable building",
+   "note": "Enterprise Green Communities, LEED for Homes, NGBS Bronze+, EarthCraft or CHiP.",
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 9
+  },
+  {
+   "section_label": "III.F",
+   "heading": "Leveraging",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 9,
+   "page_end": 10,
+   "quote": "Applications may earn up to 6 points for documented support from a source listed below.",
+   "tiers": [
+    {
+     "tier_label": "$10,000+ per low-income unit",
+     "points": 6
+    },
+    {
+     "tier_label": "$8,000-$9,999",
+     "points": 5
+    },
+    {
+     "tier_label": "$5,500-$7,999",
+     "points": 4
+    },
+    {
+     "tier_label": "$3,500-$5,499",
+     "points": 3
+    },
+    {
+     "tier_label": "$2,000-$3,499",
+     "points": 2
+    },
+    {
+     "tier_label": "$1,000-$1,999",
+     "points": 1
+    }
+   ],
+   "note": "HOME/CDBG, local housing programs, local public foundations, public infrastructure; loans of 20+ years at or below the AFR.",
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 10
+  },
+  {
+   "section_label": "III.G",
+   "heading": "Other Credits",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 10,
+   "page_end": 10,
+   "quote": "5 points for qualifying and utilizing any of the following:",
+   "note": "Federal historic, SC certified historic, textiles, abandoned building or brownfields credits. The table of contents names III.G 'Project-Based Rent Assistance'; the body's G is Other Credits.",
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 11
+  },
+  {
+   "section_label": "III.H",
+   "heading": "Supportive Housing",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 10,
+   "page_end": 11,
+   "quote": "5 points for agreeing to target ten percent (10%) of the total units to persons with disabilities and either",
+   "note": "10% of units for persons with disabilities at 30% AMI with rent at 20%, or with federal project-based assistance; referrals through a state-coordinated system.",
+   "kind": "competitive",
+   "native_category": "III. New Construction Scoring Criteria",
+   "ord": 12
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "IV. Tie Breaker Criteria",
+   "section_label": "IV.A",
+   "heading": "Development Team's only award",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "quote": "An application would be all of the Development Team",
+   "ord": 13
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "IV. Tie Breaker Criteria",
+   "section_label": "IV.B",
+   "heading": "County with the fewest 9% awards in three cycles",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "quote": "The application in the county with the least 9% LIHTC awards in the previous three funding cycles.",
+   "ord": 14
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "IV. Tie Breaker Criteria",
+   "section_label": "IV.C",
+   "heading": "Highest leveraging support per unit",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 3,
+   "page_start": 11,
+   "page_end": 11,
+   "quote": "The application with the highest amount of funding per unit eligible for points under Section III(F).",
+   "ord": 15
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "IV. Tie Breaker Criteria",
+   "section_label": "IV.D",
+   "heading": "Concerted community revitalization plan area",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 4,
+   "page_start": 11,
+   "page_end": 11,
+   "quote": "The development is located in area that has a concerted community revitalization plan (CRP).",
+   "ord": 16
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "IV. Tie Breaker Criteria",
+   "section_label": "IV.E",
+   "heading": "Tenant ownership after year 15",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 5,
+   "page_start": 11,
+   "page_end": 11,
+   "quote": "Projects providing for tenant ownership at the end of the initial fifteen (15) year compliance period.",
+   "ord": 17
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "IV. Tie Breaker Criteria",
+   "section_label": "IV.F",
+   "heading": "Lottery",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 6,
+   "page_start": 11,
+   "page_end": 11,
+   "quote": "If projects remain tied after all above tie breakers have been applied, the Authority will utilize a",
+   "ord": 18
+  },
+  {
+   "track": "rehab",
+   "native_category": "V. Evaluation of Rehabilitation Applications",
+   "section_label": "V.A",
+   "heading": "Preventing conversion to market rate or loss of government resources",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 12,
+   "page_end": 12,
+   "quote": "Preventing of the conversion of units to market rate and/or the loss of government housing resources,",
+   "tiers": [
+    {
+     "tier_label": "Owner eligible to request a qualified contract now",
+     "points": 10
+    },
+    {
+     "tier_label": "Project-based assistance on 90%+ of units, under 3 years left",
+     "points": 10
+    },
+    {
+     "tier_label": "Qualified contract eligible within two years",
+     "points": 5
+    },
+    {
+     "tier_label": "Assistance on under 90% of units, under 3 years left",
+     "points": 5
+    }
+   ],
+   "kind": "competitive",
+   "ord": 19
+  },
+  {
+   "track": "rehab",
+   "native_category": "V. Evaluation of Rehabilitation Applications",
+   "section_label": "V.B",
+   "heading": "Physical distress: major systems replaced",
+   "points_max": 9,
+   "points_type": "per_unit",
+   "page_start": 12,
+   "page_end": 12,
+   "quote": "1 point for each of the following systems being replaced (max. 9 points)",
+   "tiers": [
+    {
+     "tier_label": "Per system replaced: roof, HVAC, flooring, windows, water heaters, tubs/showers, cabinets and countertops, ranges and refrigerators",
+     "points": 1
+    }
+   ],
+   "note": "The list reads as eight to ten items depending on whether 'kitchen cabinets and countertops' and 'ranges and refrigerators' each count once or twice; the stated maximum is 9.",
+   "kind": "competitive",
+   "ord": 20
+  },
+  {
+   "track": "rehab",
+   "native_category": "V. Evaluation of Rehabilitation Applications",
+   "section_label": "V.C",
+   "heading": "Years since placed in service",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 12,
+   "page_end": 12,
+   "quote": "Up to 3 points for developments placing in service in the time periods below:",
+   "tiers": [
+    {
+     "tier_label": "Years 21-25",
+     "points": 1
+    },
+    {
+     "tier_label": "Years 26-30",
+     "points": 2
+    },
+    {
+     "tier_label": "Years 31+",
+     "points": 3
+    }
+   ],
+   "kind": "competitive",
+   "ord": 21
+  },
+  {
+   "track": "rehab",
+   "native_category": "V. Evaluation of Rehabilitation Applications",
+   "section_label": "V.D",
+   "heading": "Concerted Community Revitalization Plan",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 12,
+   "page_end": 12,
+   "quote": "1 point if the development is located within an area covered by a Concerted Community Revitalization Plan.",
+   "kind": "competitive",
+   "ord": 22
+  },
+  {
+   "track": "rehab",
+   "kind": "tiebreaker",
+   "native_category": "V. Evaluation of Rehabilitation Applications",
+   "section_label": "V.E",
+   "heading": "Distance to amenities points",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "quote": "the Authority will utilize the distance to",
+   "ord": 23
+  }
+ ]
+}

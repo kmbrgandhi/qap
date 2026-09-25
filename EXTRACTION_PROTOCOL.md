@@ -1436,3 +1436,21 @@ fix was to add `KHC` to `AGENCIES`, since the agency probe runs before the
 state probe for exactly this reason. Any document that enumerates counties
 carries this hazard — Jefferson, Washington, Jackson and Lincoln are counties
 in dozens of states.
+
+
+### South Carolina 2026: a table of contents can be a year out of date
+
+South Carolina's Appendix C1 carries the 9% scoring in 11 pages. New
+construction sums to 142 and rehabilitation, scored separately and
+"comparatively", to 23. No total is stated. Distance to Amenities states "Max -
+70 points" while allowing two amenities per category, which could reach 76, so
+the cap binds.
+
+The table of contents on p.2 describes a different year's appendix. Its
+set-aside names and percentages differ from the body's. It has no Public
+Transportation item, although the body numbers one as A.2. And it calls III.G
+"Project-Based Rent Assistance", where the body's G is Other Credits. Code from
+the body, and record the table of contents as a contradiction. **Map the scoring
+section from its headings, not from the table of contents**, as §1 already
+says, and treat a disagreement between the two as a signal that one of them was
+not updated.
