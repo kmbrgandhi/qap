@@ -106,7 +106,7 @@ def build(db_path: Path) -> dict:
                        pt=r["points_type"], unit=r["scoring_unit"], kind=r["kind"],
                        track=r["track"], neg=1 if r["is_negative"] else None,
                        cat=primary.get(r["id"]), nat=r["native_category"],
-                       p0=r["page_start"], p1=r["page_end"], q=r["quote"],
+                       p0=r["page_start"], p1=r["page_end"], cell_ref=r["cell_ref"], q=r["quote"],
                        note=r["note"], tm=r["tier_mode"], ext=r["detail_external"],
                        t=tiers.get(r["id"]))
             criteria.append({k: v for k, v in row.items() if v not in (None, "", [])})

@@ -191,11 +191,14 @@ footer p{margin:0 0 7px;max-width:74ch}
 <main class="wrap" id="main"></main>
 
 <footer class="wrap">
-  <p><b>Work in progress.</b> 30 of 50 states are coded and none have completed human review.
+  <p><b>Work in progress.</b> <span id="f-coded">Most</span> of the 50 states are coded and none
+     have completed human review.
      Figures are extracted from primary documents and every quote is checked against the page it
      cites, but they have not yet been confirmed by a second reader.</p>
   <p>Where a state's computed maximum differs from the total it states, both are shown rather than
      reconciled. Those disagreements are findings, not errors to be tidied away.</p>
+  <p><a href="review.html">Open the review queue →</a> — the same data arranged for checking
+     each criterion against the page it cites.</p>
   <p id="gen"></p>
 </footer>
 
@@ -239,9 +242,10 @@ function renderIndex() {
   const q = (sessionStorage.getItem('q') || '');
   const html = `
     <div class="notice">
-      <b>Read this first.</b> This is a research database under construction. 30 of 50 states are
-      coded; the rest are listed with the documents held for them. Nothing here has been through
-      second-reader review. Cite the source document, not this page.
+      <b>Read this first.</b> This is a research database under construction. Nothing here has been
+      through second-reader review, and where a state's own stated total disagrees with what its
+      criteria add up to, both figures are shown rather than reconciled. Cite the source document,
+      not this page.
     </div>
     <div class="controls">
       <input type="search" id="q" placeholder="Search states, criteria, headings…" value="${esc(q)}" aria-label="Search">
@@ -568,7 +572,11 @@ fetch('qap-data.json').then(r => r.json()).then(d => {
   $('#t-states').textContent = d.states.filter(s => s.criteria.length).length;
   $('#t-crit').textContent = d.states.reduce((a, s) => a + s.criteria.length, 0).toLocaleString();
   $('#t-docs').textContent = d.states.reduce((a, s) => a + s.docs.length, 0);
-  $('#gen').textContent = 'Data extracted from primary source documents; snapshot of ' + d.generated + '.';
+  const nCoded = d.states.filter(s => s.criteria.length).length;
+  const nNoPts = d.states.filter(s => s.no_points).length;
+  $('#f-coded').textContent = nCoded;
+  $('#gen').textContent = `Data extracted from primary source documents; snapshot of ${d.generated}. `
+    + `${nNoPts} further states run no point system and so have nothing to extract.`;
   window.addEventListener('hashchange', route);
   route();
 }).catch(e => {

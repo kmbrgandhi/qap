@@ -5,8 +5,20 @@ backend and no build step.
 
 | File | What it is |
 |---|---|
-| `index.html` | The whole site. Hand-written; edit it directly. |
-| `qap-data.json` | Generated. `python -m qapdb.export_site` rewrites it from `data/qap.db`. |
+| `index.html` | The database browser: every state, plus the cross-state views. |
+| `review.html` | The review queue: one criterion at a time, with its quote, its page citation and a link to the source document. Read-only — it records nothing shared, and "mark reviewed" only ticks an item off in that browser. |
+| `qap-data.json` | Generated, and read by both pages. `python -m qapdb.export_site` rewrites it from `data/qap.db`. |
+
+## Two reviewers, deliberately
+
+`review.html` is the one you can send to someone outside the project. It shows
+what was extracted and where it came from, and links out to the agency's own
+PDF, but it cannot render a highlighted page and it cannot record a decision.
+
+The **writable** reviewer is `app/server.py`, which stays local. It renders the
+cited PDF page as an image with the quote's bounding boxes drawn on, and writes
+decisions back to the database. That needs the 123 MB corpus and a Python
+runtime, so it is not something to publish.
 
 Regenerate the data after any extraction work, or the site shows the old
 figures:
