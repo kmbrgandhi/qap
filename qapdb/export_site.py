@@ -111,12 +111,15 @@ def build(db_path: Path) -> dict:
                        t=tiers.get(r["id"]))
             criteria.append({k: v for k, v in row.items() if v not in (None, "", [])})
 
+        # Take the database's own figure, which honours exclusivity groups.
+        # Summing points_max here counted every option of a max_one group:
+        # Maryland's three 16-point Community Context options showed as 253
+        # against its stated 221, a mismatch that is not one.
         computed: dict[str, float] = {}
-        for c in criteria:
-            if c.get("kind") != "competitive" or c.get("neg") or c.get("pts") is None:
-                continue
-            key = str(c.get("track"))
-            computed[key] = computed.get(key, 0) + c["pts"]
+        for r in con.execute("SELECT v.track, v.computed_total FROM v_qap_computed_total v"
+                             " JOIN qaps q ON q.id = v.qap_id WHERE q.state = ?", (code,)):
+            key = str(r["track"])
+            computed[key] = computed.get(key, 0) + r["computed_total"]
 
         states.append(dict(code=code, name=STATE_NAMES[code], docs=docs, tracks=tracks,
                            criteria=criteria, computed=computed,
