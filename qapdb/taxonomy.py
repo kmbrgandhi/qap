@@ -599,6 +599,11 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("ID", "6.5.1"): AFF, ("ID", "6.5.2"): AFF, ("ID", "6.5.3"): AFF, ("ID", "6.5.4"): AFF,
     ("ID", "6.5.5"): LOC, ("ID", "6.6.1"): SPON, ("ID", "6.6.2"): SPON, ("ID", "6.6.3"): SPON,
     ("ID", "6.6.4"): SPON, ("ID", "6.6.5"): READY, ("ID", "6.6.6"): SPON,
+    ("MS", "SC.1"): LOC, ("MS", "SC.2"): LOC, ("MS", "SC.3"): LOC, ("MS", "SC.4"): LOC,
+    ("MS", "SC.5"): DES, ("MS", "SC.6"): DES, ("MS", "SC.7"): DES, ("MS", "SC.8.A"): DES,
+    ("MS", "SC.8.B"): PRES, ("MS", "SC.9"): AFF, ("MS", "SC.10.a"): POP, ("MS", "SC.10.b"): POP,
+    ("MS", "SC.10.c"): POP, ("MS", "SC.11"): SPON, ("MS", "SC.12"): SPON, ("MS", "SC.12.neg"): SPON,
+    ("MS", "PA.1"): LOC, ("MS", "PA.2"): COST, ("MS", "PA.3"): READY, ("MS", "PA.4"): READY,
 }
 
 

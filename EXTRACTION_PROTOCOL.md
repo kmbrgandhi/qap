@@ -1076,3 +1076,24 @@ occurrences/negative points assessed". Each is coded with `points_max` null and
 a per-instance tier, as §6 already says for deductions with no maximum. The
 Green Building Threshold counts component "points" toward an 8-point minimum.
 Those are threshold points and stay in the thresholds file.
+
+
+### Mississippi 2026: check the document's own year, not just the filename's
+
+Every page of `mississippi-qap-2026.pdf` carries the running header "2024
+QUALIFIED ALLOCATION PLAN". The body says otherwise. p.5 records the adoption
+of "the 2026 Qualified Allocation Plan", and the p.19 schedule runs from
+January to March 2026. So this is the 2026 plan wearing a stale header, not a
+mislabelled 2024 file. Leftovers of the older template show up in the body as
+well: a map layer "for the 2024 application year", and an over-concentration
+chart for 2022 and 2023. The cycle is set to 2026 through `sources.csv` with
+the evidence in its note, and the header is recorded as a contradiction.
+
+The lesson for ingest: the filename, the running header and the body can
+disagree. Before trusting any of them, look for a sentence that dates the
+plan's adoption or its application round.
+
+Mississippi also has a point adjustment that is not a deduction: +5, 0 or −5
+for construction cost against the MCC limit. It raises the maximum by 5. It is
+coded as a competitive criterion with a negative tier, not as a negative
+criterion, because §6 excludes negatives from the reconciled maximum.

@@ -1,0 +1,80 @@
+{
+ "_comment": "Mississippi 2026 QAP Section 4, the five Threshold Factors (pp.23-26). Addendum B design standards, Addendum C required documents and the Section 5 underwriting criteria are incorporated elsewhere and not itemised.",
+ "match": {
+  "filename": "mississippi-qap-2026.pdf"
+ },
+ "extractor_version": "hand-2026-ms-thresholds-1",
+ "groups": [],
+ "criteria": [
+  {
+   "kind": "threshold",
+   "native_category": "Section 4: Threshold Factors",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.1",
+   "heading": "Community Notification",
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "All applicants must notify the public in the community in which they are planning to develop or rehabilitate a",
+   "note": "A deficient item costs 2 points in a competitive application (Addendum A, PA.3), and an uncured one disqualifies it.",
+   "ord": 501
+  },
+  {
+   "kind": "threshold",
+   "native_category": "Section 4: Threshold Factors",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.2",
+   "heading": "Site Control",
+   "page_start": 24,
+   "page_end": 24,
+   "quote": "Applicants must provide evidence that it has, and will maintain from the start of the application review process",
+   "note": "A deficient item costs 2 points in a competitive application (Addendum A, PA.3), and an uncured one disqualifies it.",
+   "ord": 502
+  },
+  {
+   "kind": "threshold",
+   "native_category": "Section 4: Threshold Factors",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.3",
+   "heading": "Local Zoning and Development Conditions",
+   "page_start": 25,
+   "page_end": 25,
+   "quote": "The proposed development must be properly zoned for its intended use.",
+   "note": "A deficient item costs 2 points in a competitive application (Addendum A, PA.3), and an uncured one disqualifies it.",
+   "ord": 503
+  },
+  {
+   "kind": "threshold",
+   "native_category": "Section 4: Threshold Factors",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.4",
+   "heading": "Market Study",
+   "page_start": 25,
+   "page_end": 25,
+   "quote": "All applications must contain an independent third party market study.",
+   "note": "A deficient item costs 2 points in a competitive application (Addendum A, PA.3), and an uncured one disqualifies it.",
+   "ord": 504
+  },
+  {
+   "kind": "threshold",
+   "native_category": "Section 4: Threshold Factors",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "4.5",
+   "heading": "Development Financing",
+   "page_start": 26,
+   "page_end": 26,
+   "quote": "The Applicant must demonstrate sufficient funding sources for the completion of the proposed development.",
+   "note": "A deficient item costs 2 points in a competitive application (Addendum A, PA.3), and an uncured one disqualifies it.",
+   "ord": 505
+  }
+ ]
+}

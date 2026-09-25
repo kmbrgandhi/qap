@@ -13,14 +13,14 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 68 |
-| **States coded** | **34** |
-| Criteria | 1291 (859 competitive, 339 threshold) |
-| Point tiers | 1471 |
-| Track totals | 52 |
+| **States coded** | **35** |
+| Criteria | 1320 (879 competitive, 344 threshold) |
+| Point tiers | 1524 |
+| Track totals | 53 |
 | Documents with a source URL | 33 of 68 |
-| Citations verifying | 1291 of 1291 |
+| Citations verifying | 1320 of 1320 |
 
-Coded: AK AL AR AZ CO CT DE HI IA ID IL IN KS MA ME MI MN MO NC ND NH NJ NM NV NY OH OK PA RI SD VA VT WI WY
+Coded: AK AL AR AZ CO CT DE HI IA ID IL IN KS MA ME MI MN MO MS NC ND NH NJ NM NV NY OH OK PA RI SD VA VT WI WY
 
 The figures combine the 20 states coded against the full corpus with the ten
 coded from `data/pdfs_bundled/`. A repo-only session can rebuild and re-verify
@@ -49,6 +49,7 @@ that no total is stated.
 | NM | 29 | one | none | 102 | no stated total; three exclusion groups |
 | KS | 53 | 9% new construction; 4% add-on; rehab ranked, no points | none | 125 | no stated total; 310-point Article 10 gate coded as thresholds |
 | ID | 41 | one (9% and 4% share it) | none | 109 | no stated total; one exclusion inferred from scope |
+| MS | 29 | one | none | 114 | no stated total; running header says 2024, body says 2026 |
 
 Six of ten state no total. For them the hand-sum made before loading is the
 only completeness check there is; see protocol §6.
@@ -221,6 +222,10 @@ confirm against the page it names.
 - **Arizona**'s cover leaves the amendment date blank, and its 160-point
   minimum sits under the New Construction heading while referring to the whole
   9% round.
+- **Mississippi**'s every page is headed "2024 QUALIFIED ALLOCATION PLAN" while
+  its text adopts the 2026 plan; cycle set to 2026 via `sources.csv`. Its
+  Development Type says "UP TO 25 PTS" and "Up to twenty points" in adjacent
+  lines; Chart 7's 25 is coded.
 - **Colorado**'s 92.5 targeting ceiling, **Minnesota**'s 258 and **New
   Jersey**'s 63-point floor are computed figures, not stated ones, and are
   labelled so in their files.
