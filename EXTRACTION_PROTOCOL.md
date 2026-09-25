@@ -1053,3 +1053,26 @@ Kansas also states a value once for a set of alternatives: "An application may
 earn 15 points in one of the four subsections below". I gave each subsection 15
 in a `max_one` group and noted that the figure is stated once, not per
 subsection.
+
+
+### Idaho 2026: an exclusion inferred from scope must say so
+
+Idaho states no total. Its criteria sum to 109, and the loader matched.
+
+One of its two exclusion groups is stated outright: older-persons housing
+cannot take the children points. The other is not stated anywhere. The
+rehabilitation revitalization point (item 11) is written for "Rehabilitation
+Developments". The cost-per-square-foot score (item 14) is written for "New
+Construction or Adaptive Reuse Developments" and excludes rehabilitation. No
+project can earn both, so the computed maximum is 1 lower than the flat sum.
+Coding that as a group is right. But the group's note has to say the exclusion
+is **inferred from the criteria's scopes**, not quoted, and its
+`source_quote` should be the sentence that fixes the scope. A reviewer
+checking the group against the page should not go looking for a bar that is
+not there.
+
+Idaho's negative points apply per instance "with no maximum number of
+occurrences/negative points assessed". Each is coded with `points_max` null and
+a per-instance tier, as §6 already says for deductions with no maximum. The
+Green Building Threshold counts component "points" toward an 8-point minimum.
+Those are threshold points and stay in the thresholds file.

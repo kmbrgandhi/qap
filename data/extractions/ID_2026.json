@@ -1,0 +1,654 @@
+{
+ "_comment": "Idaho 2026 QAP, Idaho Housing and Finance Association. Page numbers are PDF page indices; the printed page number is six lower. Scoring is Section 6 (pp.31-47): twenty Selection Criteria (6.4), five Preference Points (6.5) that the Code requires, and Negative Performance Points (6.6). NO TOTAL IS STATED; 9% applications need 70 points and 4% bond applications 50. Hand-summed before loading from the stated maxima: 6.4 items 5 + 5 + 2 + 3 + 2 + 3 + 3 + 10 + 15 + 2 + 1 + 1 + 5 + 8 + 1 + 6 + 4 + 2 + 2 + 6 = 86, less 3 because older-persons housing (6) cannot take the children points (7), less 1 because the rehabilitation revitalization point (11) and the new construction cost score (14) apply to different project types: 82. Preference Points 15 + 6 + 3 + 2 + 1 = 27. Total 109; the loader matched. The same criteria score 4% applications against the 50-point floor; no separate track. Negative points have no maximum. Thresholds (4.9) are in ID_thresholds.json.",
+ "match": {
+  "filename": "idaho-qap-2026.pdf"
+ },
+ "extractor_version": "hand-2026-id-1",
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": null,
+   "page": 31,
+   "note": "No total stated. Computed 109 = Selection Criteria 82 (86 flat, less the older-persons/children and rehabilitation/new-construction exclusions) + Preference Points 27. Minimum 70 for 9%, 50 for 4% (p.31)."
+  }
+ ],
+ "groups": [
+  {
+   "key": "id_older_children",
+   "label": "Housing for older persons or three-bedroom family units",
+   "rule": "max_one",
+   "source_quote": "Developments that provide housing for older persons as defined in the Fair",
+   "page_start": 35,
+   "note": "The bar is in the NOTE under item 7."
+  },
+  {
+   "key": "id_rehab_newcon",
+   "label": "Rehabilitation revitalization point or new construction cost score",
+   "rule": "max_one",
+   "source_quote": "Acquisition/Rehabilitation or Rehabilitation-only developments are not included in",
+   "page_start": 39,
+   "note": "Not an explicit bar: item 11 is for rehabilitation developments and item 14 for new construction or adaptive reuse, so no single project qualifies for both. This is inferred from their stated scopes."
+  }
+ ],
+ "criteria": [
+  {
+   "section_label": "6.4.1",
+   "heading": "Proximity to goods, services or major employer",
+   "points_max": 5,
+   "points_type": "per_unit",
+   "page_start": 32,
+   "page_end": 32,
+   "quote": "1/2 point per category for a maximum of 5 points",
+   "tiers": [
+    {
+     "tier_label": "Per category within distance (15 categories listed)",
+     "points": 0.5
+    }
+   ],
+   "note": "Goods and services within 1.5 miles driving (urban) or 3.0 miles (rural, i.e. USDA RD-eligible); a major employer within 5.0 or 10.0 miles. Fifteen categories at 1/2 point reach 7.5, capped at 5.",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 1
+  },
+  {
+   "section_label": "6.4.2",
+   "heading": "Development amenities",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 33,
+   "page_end": 33,
+   "quote": "Developments which offer the following amenities",
+   "tiers": [
+    {
+     "tier_label": "Hard surfacing on 100% of unit flooring (bedrooms exempt)",
+     "points": 1
+    },
+    {
+     "tier_label": "Central or ductless air conditioning in each unit",
+     "points": 0.5
+    },
+    {
+     "tier_label": "High-speed internet or cable/satellite hookup in each unit",
+     "points": 0.5
+    },
+    {
+     "tier_label": "No-charge on-site storage for each unit",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Computer/study room, one computer per 15 units",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Fiber cement siding or comparable on 100% of exterior, 30-year warranty",
+     "points": 2
+    },
+    {
+     "tier_label": "Exterior security camera system with closed circuit monitor",
+     "points": 1
+    },
+    {
+     "tier_label": "Electronic access door controls for interior common areas",
+     "points": 1
+    },
+    {
+     "tier_label": "Personal outdoor living space for each unit",
+     "points": 2
+    }
+   ],
+   "note": "'Select any combination'; the items sum to 9 against the max of 5. Architect certification at application and as built.",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 2
+  },
+  {
+   "section_label": "6.4.3",
+   "heading": "Preference for Public Housing Authority waiting lists",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 33,
+   "page_end": 33,
+   "quote": "Preference given for 100% of the rent-restricted units",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 3
+  },
+  {
+   "section_label": "6.4.4",
+   "heading": "Mix of rent-restricted and market units",
+   "points_max": 3,
+   "points_type": "fixed",
+   "page_start": 34,
+   "page_end": 34,
+   "quote": "10% or greater of total residential units are market units",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 4
+  },
+  {
+   "section_label": "6.4.5",
+   "heading": "Waitlist preference for households with a member with a handicap",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 34,
+   "page_end": 34,
+   "quote": "preference to households that contain one or more members with a handicap",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 5
+  },
+  {
+   "section_label": "6.4.6",
+   "heading": "Housing for older persons",
+   "points_max": 3,
+   "points_type": "fixed",
+   "group": "id_older_children",
+   "page_start": 34,
+   "page_end": 34,
+   "quote": "Developments that provide housing for older persons as defined in the Fair",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 6
+  },
+  {
+   "section_label": "6.4.7",
+   "heading": "Targeted to individuals with children: three-bedroom or larger units",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "id_older_children",
+   "page_start": 35,
+   "page_end": 35,
+   "quote": "three-bedroom or larger units for households. Such developments must",
+   "tiers": [
+    {
+     "tier_label": "5.00% to 9.99% of rent-restricted units",
+     "points": 2
+    },
+    {
+     "tier_label": "10.00% or greater",
+     "points": 3
+    }
+   ],
+   "note": "Developments for older persons do not qualify for these points.",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 7
+  },
+  {
+   "section_label": "6.4.8",
+   "heading": "Non-related contributions, donations and government assistance",
+   "points_max": 10,
+   "points_type": "formula",
+   "page_start": 35,
+   "page_end": 36,
+   "quote": "receive points for every percentage of Total Development Cost received",
+   "note": "One point per percent of TDC (excluding developer/consultant fees and reserves), rounded down to the nearest 1/2 point; 6.71% earns 6.5. Land donations count only from an unrelated party.",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 8
+  },
+  {
+   "section_label": "6.4.9",
+   "heading": "Sponsor LIHTC compliance history",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 36,
+   "page_end": 36,
+   "quote": "Sponsors who have a history of satisfactory LIHTC Allocating Agency",
+   "note": "At least one LIHTC development placed in service with Form 8609 and three years of compliance reviews; deemed compliant unless reviews show substantial noncompliance.",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 9
+  },
+  {
+   "section_label": "6.4.10",
+   "heading": "Areas of Opportunity",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 37,
+   "page_end": 37,
+   "quote": "equal to or less than the State of Idaho",
+   "note": "Census tract poverty rate at or below the Idaho average (FFIEC data).",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 10
+  },
+  {
+   "section_label": "6.4.11",
+   "heading": "Rehabilitation as part of a community revitalization plan",
+   "points_max": 1,
+   "points_type": "fixed",
+   "group": "id_rehab_newcon",
+   "page_start": 37,
+   "page_end": 37,
+   "quote": "Rehabilitation Developments that include the use of existing housing as part",
+   "note": "Rehabilitation only; within a certified urban renewal district or city-designated area addressing affordable housing.",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 11
+  },
+  {
+   "section_label": "6.4.12",
+   "heading": "Eventual tenant ownership",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 37,
+   "page_end": 38,
+   "quote": "Developments with 100% of the units rent-restricted and intended for",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 12
+  },
+  {
+   "section_label": "6.4.13",
+   "heading": "Years since the city's last competitive award",
+   "points_max": 5,
+   "points_type": "per_unit",
+   "page_start": 38,
+   "page_end": 38,
+   "quote": "Projects are eligible for one (1) point for each year lapsed since the city in",
+   "tiers": [
+    {
+     "tier_label": "Per year since the city last received a competitive award, within the last five calendar years",
+     "points": 1
+    }
+   ],
+   "note": "The QAP's example: a 2026 application in a city last awarded in 2025 earns 1 point.",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 13
+  },
+  {
+   "section_label": "6.4.14",
+   "heading": "Cost containment: cost per residential square foot",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "group": "id_rehab_newcon",
+   "page_start": 39,
+   "page_end": 39,
+   "quote": "Points from the two cost categories shall be combined to receive an",
+   "tiers": [
+    {
+     "tier_label": "Hard construction costs <= 80% of adjusted average",
+     "points": 4
+    },
+    {
+     "tier_label": "Hard 80.1%-90.0%",
+     "points": 3
+    },
+    {
+     "tier_label": "Hard 90.1%-100.0%",
+     "points": 2
+    },
+    {
+     "tier_label": "Hard 100.1%-125.0%",
+     "points": 1
+    },
+    {
+     "tier_label": "Remaining development costs <= 80% of adjusted average",
+     "points": 4
+    },
+    {
+     "tier_label": "Remaining 80.1%-90.0%",
+     "points": 3
+    },
+    {
+     "tier_label": "Remaining 90.1%-100.0%",
+     "points": 2
+    },
+    {
+     "tier_label": "Remaining 100.1%-125.0%",
+     "points": 1
+    }
+   ],
+   "note": "New construction or adaptive reuse only; averages from the last three competitive rounds, inflated by 7.5%, dropping the highest and lowest each round. Tier_mode additive across the two cost categories and alternative within each, so the true maximum is 4 + 4 = 8.",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 14
+  },
+  {
+   "section_label": "6.4.15",
+   "heading": "Historic Rehabilitation Tax Credits",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 40,
+   "page_end": 40,
+   "quote": "Developments that utilize Historic Rehabilitation Tax Credits as a funding",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 15
+  },
+  {
+   "section_label": "6.4.16",
+   "heading": "PMA LIHTC rental vacancy of 3.00% or less",
+   "points_max": 6,
+   "points_type": "fixed",
+   "page_start": 40,
+   "page_end": 40,
+   "quote": "Developments located in a Primary Market Area (PMA) with a LIHTC rental",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 16
+  },
+  {
+   "section_label": "6.4.17",
+   "heading": "Permanent Supportive Housing units",
+   "points_max": 4,
+   "points_type": "per_unit",
+   "page_start": 40,
+   "page_end": 40,
+   "quote": "shall be eligible for 1 point per dedicated PSH unit up to a maximum of four",
+   "tiers": [
+    {
+     "tier_label": "Per PSH unit with one additional free Accessible parking space",
+     "points": 1
+    }
+   ],
+   "note": "Special Housing Needs Households at or below 30% AMI, disabled, and homeless or at risk; Housing First supportive services and Coordinated Entry. Non-compliance after placement bars the Sponsor from new applications.",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 17
+  },
+  {
+   "section_label": "6.4.18",
+   "heading": "Waitlist preference for HUD-VASH voucher holders",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 43,
+   "page_end": 43,
+   "quote": "Developments that give a waitlist preference to persons with HUD -Veterans",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 18
+  },
+  {
+   "section_label": "6.4.19",
+   "heading": "$25,000 or less in LIHTC per affordable unit",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 43,
+   "page_end": 43,
+   "quote": "Developments that utilize $25,000 or less in LIHTC per affordable (tax",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 19
+  },
+  {
+   "section_label": "6.4.20",
+   "heading": "Recent timely completion of LIHTC developments",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 43,
+   "page_end": 44,
+   "quote": "qualifying for points under this category is located in Idaho, an additional point",
+   "tiers": [
+    {
+     "tier_label": "Per development: award to Form 8609 application within 24 months",
+     "points": 3
+    },
+    {
+     "tier_label": "Per development: within 36 months",
+     "points": 2
+    },
+    {
+     "tier_label": "Per qualifying development located in Idaho",
+     "points": 1
+    }
+   ],
+   "note": "Multiple developments may be scored, up to 6; each must have its award and 8609 application within the last 60 months. The QAP's second example (p.44) has an 8609 application in December 2024 counted for an application submitted in January 2024.",
+   "kind": "competitive",
+   "native_category": "6.4 Selection Criteria",
+   "ord": 20
+  },
+  {
+   "native_category": "6.5 Preference Points",
+   "section_label": "6.5.1",
+   "heading": "40-year low-income use obligation",
+   "points_max": 15,
+   "points_type": "fixed",
+   "page_start": 44,
+   "page_end": 44,
+   "quote": "Developments that are obligated to provide low-income use 25 years",
+   "note": "Requires a waiver of the Qualified Contract provision.",
+   "kind": "competitive",
+   "ord": 21
+  },
+  {
+   "native_category": "6.5 Preference Points",
+   "section_label": "6.5.2",
+   "heading": "Units at 40% AMI or less",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 44,
+   "page_end": 45,
+   "quote": "Developments with 40% or less area median income (AMI) units.",
+   "tiers": [
+    {
+     "tier_label": "1-60 total units: at least 2.5% of rent-restricted units at 40% AMI or less",
+     "points": 6
+    },
+    {
+     "tier_label": "61+ units: at least 5%",
+     "points": 6
+    }
+   ],
+   "kind": "competitive",
+   "ord": 22
+  },
+  {
+   "native_category": "6.5 Preference Points",
+   "section_label": "6.5.3",
+   "heading": "Units at 45% AMI",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 45,
+   "page_end": 45,
+   "quote": "Developments with 45% area median income (AMI) units.",
+   "tiers": [
+    {
+     "tier_label": "1-60 total units: at least 5% of rent-restricted units at 45% AMI",
+     "points": 3
+    },
+    {
+     "tier_label": "61+ units: at least 10%",
+     "points": 3
+    }
+   ],
+   "note": "Units below 45% AMI do not count, to create a striation of AMI levels.",
+   "kind": "competitive",
+   "ord": 23
+  },
+  {
+   "native_category": "6.5 Preference Points",
+   "section_label": "6.5.4",
+   "heading": "Units at 50% AMI",
+   "points_max": 2,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 45,
+   "page_end": 45,
+   "quote": "Developments with 50% area median income (AMI) units.",
+   "tiers": [
+    {
+     "tier_label": "1-60 total units: at least 10% of rent-restricted units at 50% AMI",
+     "points": 2
+    },
+    {
+     "tier_label": "61+ units: at least 20%",
+     "points": 2
+    }
+   ],
+   "note": "Units below 50% AMI do not count.",
+   "kind": "competitive",
+   "ord": 24
+  },
+  {
+   "native_category": "6.5 Preference Points",
+   "section_label": "6.5.5",
+   "heading": "Qualified census tract with a concerted community revitalization plan",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 45,
+   "page_end": 45,
+   "quote": "Developments located within a qualified census tract in which the",
+   "note": "Citywide revitalization designations do not count.",
+   "kind": "competitive",
+   "ord": 25
+  },
+  {
+   "native_category": "6.6 Negative Performance Points",
+   "section_label": "6.6.1",
+   "heading": "Total Development Costs increased more than 15% to cost certification",
+   "points_max": null,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 46,
+   "page_end": 46,
+   "quote": "developments with Total Development Costs* that have increased more",
+   "tiers": [
+    {
+     "tier_label": "Per instance",
+     "points": -2
+    }
+   ],
+   "note": "Form 8609s issued within one year of the application date. Assessed per instance 'with no maximum number of occurrences/negative points assessed' (p.46), so no maximum is coded.",
+   "kind": "competitive",
+   "ord": 26
+  },
+  {
+   "native_category": "6.6 Negative Performance Points",
+   "section_label": "6.6.2",
+   "heading": "Failure to answer an information request within 30 days",
+   "points_max": null,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 46,
+   "page_end": 46,
+   "quote": "has failed to comply with the",
+   "tiers": [
+    {
+     "tier_label": "Per instance",
+     "points": -2
+    }
+   ],
+   "note": "Within one year of the application date. Assessed per instance 'with no maximum number of occurrences/negative points assessed' (p.46), so no maximum is coded.",
+   "kind": "competitive",
+   "ord": 27
+  },
+  {
+   "native_category": "6.6 Negative Performance Points",
+   "section_label": "6.6.3",
+   "heading": "Required reporting more than 60 days late",
+   "points_max": null,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 46,
+   "page_end": 46,
+   "quote": "days late in providing required reporting to the Association on any",
+   "tiers": [
+    {
+     "tier_label": "Per instance",
+     "points": -2
+    }
+   ],
+   "note": "Within one year of the application date. Assessed per instance 'with no maximum number of occurrences/negative points assessed' (p.46), so no maximum is coded.",
+   "kind": "competitive",
+   "ord": 28
+  },
+  {
+   "native_category": "6.6 Negative Performance Points",
+   "section_label": "6.6.4",
+   "heading": "Loan delinquency, default or municipal tax lien",
+   "points_max": null,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 46,
+   "page_end": 46,
+   "quote": "Sponsor has been 60 calendar days or more delinquent",
+   "tiers": [
+    {
+     "tier_label": "Per instance",
+     "points": -2
+    }
+   ],
+   "note": "Within one year of the application date. Assessed per instance 'with no maximum number of occurrences/negative points assessed' (p.46), so no maximum is coded.",
+   "kind": "competitive",
+   "ord": 29
+  },
+  {
+   "native_category": "6.6 Negative Performance Points",
+   "section_label": "6.6.5",
+   "heading": "Omitted or incomplete application document",
+   "points_max": null,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 47,
+   "page_end": 47,
+   "quote": "that is omitted during an application submission or is submitted with",
+   "tiers": [
+    {
+     "tier_label": "Per instance",
+     "points": -1
+    }
+   ],
+   "note": "The text says 'the scoring threshold shall be reduced', but lists it as a negative point. More than 5 such points makes the application incomplete. At the Association's discretion. Assessed per instance 'with no maximum number of occurrences/negative points assessed' (p.46), so no maximum is coded.",
+   "kind": "competitive",
+   "ord": 30
+  },
+  {
+   "native_category": "6.6 Negative Performance Points",
+   "section_label": "6.6.6",
+   "heading": "Previously awarded project not yet started construction",
+   "points_max": null,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 47,
+   "page_end": 47,
+   "quote": "has not started construction on the awarded project",
+   "tiers": [
+    {
+     "tier_label": "Per instance",
+     "points": -2
+    }
+   ],
+   "note": "Per previously awarded project not yet under construction. Assessed per instance 'with no maximum number of occurrences/negative points assessed' (p.46), so no maximum is coded.",
+   "kind": "competitive",
+   "ord": 31
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "4.10.1 Tie-Breaker Criteria",
+   "section_label": "4.10.1.a",
+   "heading": "County with no more than two awards in the preceding two rounds",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "quote": "located in a county that hasn",
+   "ord": 32
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "4.10.1 Tie-Breaker Criteria",
+   "section_label": "4.10.1.b",
+   "heading": "Lowest AMI average of rent-restricted units",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 2,
+   "page_start": 24,
+   "page_end": 24,
+   "quote": "the lowest Area Median Income (AMI) average of the rent restricted units (rounded",
+   "note": "Any remaining tie is decided at the Association's discretion.",
+   "ord": 33
+  }
+ ]
+}

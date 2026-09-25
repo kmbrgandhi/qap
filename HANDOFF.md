@@ -13,14 +13,14 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 68 |
-| **States coded** | **33** |
-| Criteria | 1250 (828 competitive, 331 threshold) |
-| Point tiers | 1434 |
-| Track totals | 51 |
+| **States coded** | **34** |
+| Criteria | 1291 (859 competitive, 339 threshold) |
+| Point tiers | 1471 |
+| Track totals | 52 |
 | Documents with a source URL | 33 of 68 |
-| Citations verifying | 1250 of 1250 |
+| Citations verifying | 1291 of 1291 |
 
-Coded: AK AL AR AZ CO CT DE HI IA IL IN KS MA ME MI MN MO NC ND NH NJ NM NV NY OH OK PA RI SD VA VT WI WY
+Coded: AK AL AR AZ CO CT DE HI IA ID IL IN KS MA ME MI MN MO NC ND NH NJ NM NV NY OH OK PA RI SD VA VT WI WY
 
 The figures combine the 20 states coded against the full corpus with the ten
 coded from `data/pdfs_bundled/`. A repo-only session can rebuild and re-verify
@@ -48,6 +48,7 @@ that no total is stated.
 | IL | 57 | general 80; one of three add-on policy tracks at 20 | 80 + 20 | 80 + 20 | OK on all four |
 | NM | 29 | one | none | 102 | no stated total; three exclusion groups |
 | KS | 53 | 9% new construction; 4% add-on; rehab ranked, no points | none | 125 | no stated total; 310-point Article 10 gate coded as thresholds |
+| ID | 41 | one (9% and 4% share it) | none | 109 | no stated total; one exclusion inferred from scope |
 
 Six of ten state no total. For them the hand-sum made before loading is the
 only completeness check there is; see protocol §6.
@@ -143,8 +144,9 @@ session has work available without the shared drop folder.
    QAP before attempting it. The lesson is in the protocol: a high page count
    and a plausible filename are not evidence that a document scores anything.
 4. **Fill `data/sources.csv`** for the 35 documents without a source URL, and
-   set cycles for Alaska and Wyoming (neither document states one) and
-   Arizona (ingest recorded a filename/document CONFLICT).
+   set cycles for Alaska, Wyoming and Idaho (none of the three documents states
+   one; Idaho gives only approval dates in April and May 2026) and Arizona
+   (ingest recorded a filename/document CONFLICT).
 5. **Consider a `qapdb/stats` command** that prints this file's corpus table
    from the full database. The figures here were computed from the ten bundled
    states plus the earlier 20 states' recorded totals, which is one more place
