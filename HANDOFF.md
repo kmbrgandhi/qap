@@ -13,14 +13,14 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 68 |
-| **States coded** | **31** |
-| Criteria | 1168 (787 competitive, 298 threshold) |
-| Point tiers | 1351 |
-| Track totals | 47 |
+| **States coded** | **32** |
+| Criteria | 1197 (807 competitive, 306 threshold) |
+| Point tiers | 1418 |
+| Track totals | 48 |
 | Documents with a source URL | 33 of 68 |
-| Citations verifying | 1168 of 1168 |
+| Citations verifying | 1197 of 1197 |
 
-Coded: AK AL AR AZ CO CT DE HI IA IL IN MA ME MI MN MO NC ND NH NJ NV NY OH OK PA RI SD VA VT WI WY
+Coded: AK AL AR AZ CO CT DE HI IA IL IN MA ME MI MN MO NC ND NH NJ NM NV NY OH OK PA RI SD VA VT WI WY
 
 The figures combine the 20 states coded against the full corpus with the ten
 coded from `data/pdfs_bundled/`. A repo-only session can rebuild and re-verify
@@ -46,6 +46,7 @@ that no total is stated.
 | OK | 28 | 9%, state credit | none | 83 / 12 | no stated total |
 | WY | 39 | one | 495 | 495 | OK; negatives reconcile to −1,510 |
 | IL | 57 | general 80; one of three add-on policy tracks at 20 | 80 + 20 | 80 + 20 | OK on all four |
+| NM | 29 | one | none | 102 | no stated total; three exclusion groups |
 
 Six of ten state no total. For them the hand-sum made before loading is the
 only completeness check there is; see protocol §6.

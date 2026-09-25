@@ -1004,3 +1004,26 @@ is barred to a project that earned Deeper Income Targeting. The two sit in
 different tracks, so no group can express the bar, and it lives in the note.
 It does not change any maximum, because the general criteria are always
 scored.
+
+
+### New Mexico 2026: a verified quote can still point at the wrong criterion
+
+New Mexico states no total. The body maxima sum to 115, and three exclusions
+bring that to 102. The three exclusions: one housing priority of H, I and J;
+tenant ownership or a longer use period; rehabilitation or adaptive reuse. The
+loader matched the hand-sum.
+
+The lesson came from the citation check itself. I first cited the Seniors
+priority with "Scoring Points Available (up to 5 points)" on pp.49–53, and it
+verified. But the phrase that matched is on p.49, in the Special Needs
+priority. The Seniors copy is on p.52, which the loader never looks at: it
+searches only `page_start` and `page_end`. Sibling criteria that share a
+template repeat headings like this. **A verified citation proves only that the
+words are on that page, not that they belong to this criterion.** When a
+criterion spans several pages, quote a sentence unique to it, such as its
+eligibility or threshold line, not a boilerplate heading.
+
+The summary table also letters the criteria after O one step higher than the
+body does. It leaves a blank P row, so its Q is the body's P. Body letters are
+coded. A summary is a cross-check on values, and it is no authority for labels
+either.

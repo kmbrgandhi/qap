@@ -1,0 +1,114 @@
+{
+ "_comment": "Section IV Threshold Requirements, New Mexico 2026 QAP (pp.31-35). One row per lettered requirement; G's optional staff meeting (G.2) is not a requirement and is omitted. Design Standards, the Underwriting Supplement (Appendix C) and the Section I.D project eligibility rules are incorporated elsewhere and not itemised.",
+ "match": {
+  "filename": "newmexico-qap-2026.pdf"
+ },
+ "extractor_version": "hand-2026-nm-thresholds-1",
+ "groups": [],
+ "criteria": [
+  {
+   "ord": 501,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "IV.A",
+   "heading": "Site Control",
+   "native_category": "IV. Threshold Requirements",
+   "page_start": 31,
+   "page_end": 31,
+   "quote": "Site control for all of the property needed for the Project must be evidenced by:"
+  },
+  {
+   "ord": 502,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "IV.B",
+   "heading": "Zoning",
+   "native_category": "IV. Threshold Requirements",
+   "page_start": 32,
+   "page_end": 32,
+   "quote": "The Initial Application must include a letter from the local jurisdictional zoning (or planning) official stating that"
+  },
+  {
+   "ord": 503,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "IV.C",
+   "heading": "Fees current",
+   "native_category": "IV. Threshold Requirements",
+   "page_start": 32,
+   "page_end": 32,
+   "quote": "All fees owed to Housing New Mexico for all Projects in which Principal(s) of the proposed Project participate must be"
+  },
+  {
+   "ord": 504,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "IV.D",
+   "heading": "Market Study",
+   "native_category": "IV. Threshold Requirements",
+   "page_start": 32,
+   "page_end": 32,
+   "quote": "A Market Study must be submitted at Application and completed by a"
+  },
+  {
+   "ord": 505,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "IV.E",
+   "heading": "Applicant Eligibility",
+   "native_category": "IV. Threshold Requirements",
+   "page_start": 33,
+   "page_end": 33,
+   "quote": "of the proposed Project must be in good standing with Housing New Mexico and all other state and federal"
+  },
+  {
+   "ord": 506,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "IV.F",
+   "heading": "Financial Feasibility",
+   "native_category": "IV. Threshold Requirements",
+   "page_start": 35,
+   "page_end": 35,
+   "quote": "Applications must demonstrate that the Project meets all requirements in the"
+  },
+  {
+   "ord": 507,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "IV.G.1",
+   "heading": "Intent to Submit",
+   "native_category": "IV. Threshold Requirements",
+   "page_start": 35,
+   "page_end": 35,
+   "quote": "Applicants must submit an Intent to Submit a Tax Credit Application and Development Synopsis on or before December 20, 2025."
+  },
+  {
+   "ord": 508,
+   "kind": "threshold",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "section_label": "IV.G.3",
+   "heading": "QAP training attendance",
+   "native_category": "IV. Threshold Requirements",
+   "page_start": 35,
+   "page_end": 35,
+   "quote": "must have attended the most recent Housing New Mexico QAP training prior to submitting the Application."
+  }
+ ]
+}
