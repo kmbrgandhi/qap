@@ -568,6 +568,17 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("IN", "6.5(D)"): POP,  ("IN", "6.5(E)"): POP,  ("IN", "6.5(F)"): POP,
     ("IN", "6.5(G)"): POP,  ("IN", "6.5(H)"): POP,  ("IN", "6.5(I)"): READY,
     ("IN", "6.5(J)"): SPON, ("IN", "6.6(A)"): SPON,
+    ("IL", "IX.C.i.a"): SPON, ("IL", "IX.C.i.b"): SPON, ("IL", "IX.C.i.c"): SPON,
+    ("IL", "IX.C.i.d"): SPON, ("IL", "IX.C.ii.a"): COST, ("IL", "IX.C.ii.b"): AFF,
+    ("IL", "IX.C.ii.c"): COST, ("IL", "IX.C.iii.a"): LOC, ("IL", "IX.C.iii.b"): LOC,
+    ("IL", "IX.C.iii.c"): LOC, ("IL", "IX.C.iv.a"): DES, ("IL", "IX.C.iv.b"): DES,
+    ("IL", "IX.C.iv.c"): DES, ("IL", "IX.C.v.a"): POP, ("IL", "IX.C.vi.a"): DES,
+    ("IL", "IX.D.a"): PRES, ("IL", "IX.D.b"): PRES, ("IL", "IX.D.c"): COST,
+    ("IL", "IX.D.d"): COST, ("IL", "IX.D.e"): COST, ("IL", "IX.E.a"): POP,
+    ("IL", "IX.E.b"): POP, ("IL", "IX.E.c"): POP, ("IL", "IX.E.d"): POP,
+    ("IL", "IX.E.e"): POP, ("IL", "IX.E.f"): SPON, ("IL", "IX.F.a"): LOC,
+    ("IL", "IX.F.b"): LOC, ("IL", "IX.F.c"): LOC, ("IL", "IX.F.d"): LOC,
+    ("IL", "IX.F.e"): LOC, ("IL", "IX.F.f"): LOC,
 }
 
 

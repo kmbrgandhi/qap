@@ -981,3 +981,26 @@ it is, but if it's historic, then you get some points for it".
 
 This check costs one read and belongs in the pre-flight, before any state is
 promised to a batch.
+
+
+### Illinois 2027-2028: a summary heading can carry a rule the body omits
+
+Illinois reconciled on every track: 80 for the general criteria, and 20 for
+each of three policy tracks. An application adds one of those tracks to the
+general criteria. That pattern is the add-on kind of track from §3.
+
+The one judgement call sat in the development team rows. The body caps BIPOC
+Development Control plus W/D/M Enterprises at 11 for a for-profit team and at
+7 for a non-profit team. It awards Non-Profit Participation 4 points and never
+says a for-profit team cannot take them. The p.41 summary files those 4 points
+under "NON-PROFIT TEAM ONLY CHARACTERISTICS" and states a section subtotal of
+14. Under the body alone, a team could reach 18. Only the summary's heading
+makes 14 reachable, so I coded a capped group at 11 and recorded the gap. This
+is §1's score sheet versus body in a new form: the disagreement sits in a table
+heading, not a number. Read the summary's headings as closely as its values.
+
+A policy-track criterion can also exclude a general one. PSH Rental Assistance
+is barred to a project that earned Deeper Income Targeting. The two sit in
+different tracks, so no group can express the bar, and it lives in the note.
+It does not change any maximum, because the general criteria are always
+scored.

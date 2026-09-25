@@ -1,0 +1,883 @@
+{
+ "_comment": "Illinois 2027-2028 QAP, IHDA. Page numbers are PDF page indices (the printed 'Page N of 68' runs one lower). Scoring is Section IX, pp.40-63. A GENERAL criteria set of up to 80 points is scored for every 9% Application; an Application may also elect ONE of three policy tracks worth up to 20 more, and 'are not eligible to earn points for categories outside of their chosen track' (p.40). Coded as add-on tracks on a shared core: default (general criteria) 80, creative_solutions 20, psh 20, targeted_markets 20. Maximum 100 'regardless of selected policy track' (p.40). Hand-summed before loading from the body: Development Team 3 + 11 (a capped group; see il_team) = 14; Financial 6 + 6 + 8 = 20; Community 5 + 10 + 3 = 18; Design 4 + 2 + 6 = 12; Priority Population Referrals 6; Sustainability 10; total 80, matching the p.41 summary's section figures and its 80. Creative Solutions 6 + 3 + 3 + 6 + 2 = 20; PSH 4 + 4 + 4 + 4 + 2 + 2 = 20; Targeted Markets 5 + 5 + 5 + 2 + 2 + 1 = 20; each matches p.42. The p.41 summary interleaves in the text layer and was read from a rendered image. Market Characteristics runs -3 to +3 and is counted at +3. Thresholds (Section VIII) are in IL_thresholds.json.",
+ "match": {
+  "filename": "illinois-qap-2027-2028.pdf"
+ },
+ "extractor_version": "hand-2027-il-1",
+ "qap_updates": {
+  "stated_total": 80
+ },
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": 80,
+   "page": 41,
+   "note": "'Total General Points Available 80' (p.41); 'may earn up to 80 points by adhering to the general scoring criteria' (p.40). The overall maximum is 100 with a policy track (p.40)."
+  },
+  {
+   "track": "creative_solutions",
+   "stated_total": 20,
+   "page": 42,
+   "note": "Add-on to the general criteria; one policy track only. 'Total Points Available per Policy Track 20'."
+  },
+  {
+   "track": "psh",
+   "stated_total": 20,
+   "page": 42,
+   "note": "Add-on to the general criteria; requires at least 15% of units for Supportive Housing Populations at or below 30% AMI (p.40). A PSH project is automatically awarded 6 under the general SRN Units criterion."
+  },
+  {
+   "track": "targeted_markets",
+   "stated_total": 20,
+   "page": 42,
+   "note": "Add-on to the general criteria; one policy track only."
+  }
+ ],
+ "groups": [
+  {
+   "key": "il_team",
+   "label": "BIPOC Development Control, W/D/M Enterprises and Non-Profit Participation, capped at 11",
+   "rule": "capped_sum",
+   "group_cap": 11,
+   "source_quote": "are eligible to earn a maximum of 11 points cumulatively between the BIPOC Development Control and",
+   "page_start": 43,
+   "note": "The p.41 summary splits these into a for-profit team route (BIPOC + W/D/M, 11) and a non-profit team route (BIPOC + W/D/M at 7, plus Non-Profit Participation 4 = 11). Both routes reach 11, so a cap at 11 is exact for the maximum. It relies on the summary's 'team only' headings; the body does not bar Non-Profit Participation to a for-profit team."
+  }
+ ],
+ "criteria": [
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.i.a",
+   "heading": "Building Development Experience",
+   "points_max": 3,
+   "points_type": "fixed",
+   "page_start": 43,
+   "page_end": 43,
+   "quote": "Projects with development teams that include at least one co-Sponsor meeting one of the following criteria will be",
+   "note": "A co-Sponsor from the Next Generation Capacity Building Initiative (or similar) or with no more than two prior Tax Credit Projects, holding at least a 25% stake in development Control.",
+   "kind": "competitive",
+   "ord": 1
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.i.b",
+   "heading": "BIPOC Development Control",
+   "points_max": 11,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 45,
+   "page_end": 45,
+   "quote": "Participants that have a 50.1% or greater stake in all",
+   "group": "il_team",
+   "tiers": [
+    {
+     "tier_label": "For-profit BIPOC-led: 50.1% or greater stake",
+     "points": 11
+    },
+    {
+     "tier_label": "For-profit BIPOC-led: 49.1%-50% stake",
+     "points": 7
+    },
+    {
+     "tier_label": "For-profit BIPOC-led: 25%-49% stake",
+     "points": 5
+    },
+    {
+     "tier_label": "BIPOC-led/governed non-profit or IL-RDA: 50.1% or greater stake",
+     "points": 3
+    },
+    {
+     "tier_label": "BIPOC-led/governed non-profit or IL-RDA: 49.1%-50% stake",
+     "points": 1
+    }
+   ],
+   "note": "Only one entity may earn these points. The non-profit column has no value in the 25%-49% row. A single entity takes the higher of this and its Women/Disadvantaged/Minority Enterprises points. Capped jointly with IX.C.i.c and IX.C.i.d; see group il_team.",
+   "kind": "competitive",
+   "ord": 2
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.i.c",
+   "heading": "Women/Disadvantaged/Minority Enterprises",
+   "points_max": 11,
+   "points_type": "per_unit",
+   "page_start": 44,
+   "page_end": 45,
+   "quote": "may also earn two points per unique qualifying entity in this category",
+   "group": "il_team",
+   "tiers": [
+    {
+     "tier_label": "Per unique qualifying WBE/DBE/MBE general contractor, property manager, Architect of Record or joint venture partner/co-sponsor",
+     "points": 2
+    }
+   ],
+   "note": "2 points per unique qualifying entity. The joint maximum with BIPOC Development Control is 11 for a for-profit BIPOC-led team and 7 for a non-profit or IL-RDA team (p.45). A vertically integrated entity in several roles earns no more than 2 (footnote 1, p.44). points_max 11 is the for-profit joint cap; this category has no cap of its own.",
+   "kind": "competitive",
+   "ord": 3
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.i.d",
+   "heading": "Non-Profit Organization Participation",
+   "points_max": 4,
+   "points_type": "fixed",
+   "page_start": 45,
+   "page_end": 45,
+   "quote": "can earn four points if the Qualified Non-Profit or IL-RDA holds a majority ownership",
+   "group": "il_team",
+   "note": "The p.41 summary table places this under 'NON-PROFIT TEAM ONLY CHARACTERISTICS' with BIPOC Development Control and W/D/M Enterprises at 7, a group of 11. The body (p.45) does not itself bar a for-profit-led team from it. The stated Development Team total of 14 is reachable only under the summary's reading: 3 + 11 either way. Recorded, not resolved.",
+   "kind": "competitive",
+   "ord": 4
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.ii.a",
+   "heading": "Cost Containment",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 45,
+   "page_end": 46,
+   "quote": "A Project can earn up to six points for containing costs in accordance with its third-party provided Construction",
+   "tiers": [
+    {
+     "tier_label": "Hard costs <= 90% of limits; >= 70% of TDC (new construction/adaptive reuse) or >= 65% (rehab)",
+     "points": 6
+    },
+    {
+     "tier_label": "Hard costs 90%-95% of limits; >= 70% of TDC (new construction/adaptive reuse) or >= 65% (rehab)",
+     "points": 3
+    }
+   ],
+   "detail_external": "Hard cost limits: Underwriting Standards Guide",
+   "note": "A cost increase between Reservation and IRS Form 8609 that would have lowered these points may count against future Applications.",
+   "kind": "competitive",
+   "ord": 5
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.ii.b",
+   "heading": "Deeper Income Targeting with Rental Assistance or Income Averaging",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 46,
+   "page_end": 46,
+   "quote": "Projects that include units that restrict rents and serve households at or below 30% AMI can earn up to six points if",
+   "tiers": [
+    {
+     "tier_label": "30% AMI units 10%-15% (metro Set-Asides) or 5%-10% (Non-Metro)",
+     "points": 2
+    },
+    {
+     "tier_label": "15.1%-25% (metro) or 10.1%-20% (Non-Metro)",
+     "points": 4
+    },
+    {
+     "tier_label": "25.1% or more (metro) or 20.1% or more (Non-Metro)",
+     "points": 6
+    }
+   ],
+   "note": "Requires income averaging and/or project-based rental assistance on all proposed 30% AMI units. Units counted here are in addition to the Mandatory SRN units. A project earning these points cannot earn PSH track Rental Assistance (IX.E.b).",
+   "kind": "competitive",
+   "ord": 6
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.ii.c",
+   "heading": "Leveraging",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 46,
+   "page_end": 47,
+   "quote": "Projects can earn up to eight points if their budget leverages non-Authority resources that are available during the",
+   "tiers": [
+    {
+     "tier_label": "Leveraging resources 5%-9.9% of total project budget",
+     "points": 1
+    },
+    {
+     "tier_label": "10%-14.9%",
+     "points": 2
+    },
+    {
+     "tier_label": "15%-19.9%",
+     "points": 3
+    },
+    {
+     "tier_label": "20%-24.9%",
+     "points": 4
+    },
+    {
+     "tier_label": "25%-29.9%",
+     "points": 5
+    },
+    {
+     "tier_label": "30%-34.9%",
+     "points": 6
+    },
+    {
+     "tier_label": "35%-39.9%",
+     "points": 7
+    },
+    {
+     "tier_label": "40% or more",
+     "points": 8
+    }
+   ],
+   "kind": "competitive",
+   "ord": 7
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.iii.a",
+   "heading": "Access to Transportation",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 47,
+   "page_end": 48,
+   "quote": "Projects can earn up to five points for demonstrating routine access to readily available public transportation and/or",
+   "tiers": [
+    {
+     "tier_label": "Mass transit (0.5 mile of a station or 0.125 mile of a bus stop, weekday 8am-6pm) or demand responsive transit",
+     "points": 4
+    },
+    {
+     "tier_label": "Proximity to jobs: Set-Aside's job count within its proximity threshold",
+     "points": 1
+    }
+   ],
+   "note": "Awarded cumulatively. Job thresholds: Chicago Metro 6,500, City of Chicago 10,700 and Other Metro 5,600 jobs within one mile; Non-Metro 3,500 within five miles.",
+   "kind": "competitive",
+   "ord": 8
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.iii.b",
+   "heading": "Quality of Life Index",
+   "points_max": 10,
+   "points_type": "formula",
+   "page_start": 48,
+   "page_end": 48,
+   "quote": "Census tracts can achieve overall scores ranging from one to 10 points.",
+   "detail_external": "QOLI methodology and tract scores: IHDA Website",
+   "note": "The project takes its census tract's Quality of Life Index score: five categories (education, prosperity, health, housing, connectivity) at two points each. Scores cannot be adjusted.",
+   "kind": "competitive",
+   "ord": 9
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.iii.c",
+   "heading": "Market Characteristics",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 49,
+   "page_end": 49,
+   "quote": "The Market Characteristics review can result in Projects earning up to three points or, conversely, being deducted",
+   "tiers": [
+    {
+     "tier_label": "Inferior market conditions",
+     "points": -3
+    },
+    {
+     "tier_label": "Inferior market conditions",
+     "points": -2
+    },
+    {
+     "tier_label": "Inferior market conditions",
+     "points": -1
+    },
+    {
+     "tier_label": "Appropriate market conditions",
+     "points": 0
+    },
+    {
+     "tier_label": "Superior market conditions",
+     "points": 1
+    },
+    {
+     "tier_label": "Superior market conditions",
+     "points": 2
+    },
+    {
+     "tier_label": "Superior market conditions",
+     "points": 3
+    }
+   ],
+   "detail_external": "Site and Market Review and Scoring Criteria, Standards for Market Study Reviews and Professionals",
+   "note": "Scored by the Authority from the site and market study; applicants may self-score only zero, and the Authority expects zero to be typical. Runs from -3 to +3, so a project can lose up to 3 points here. The deduction side is kept inside this criterion rather than split out as a separate negative criterion.",
+   "kind": "competitive",
+   "ord": 10
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.iv.a",
+   "heading": "Additional Accessible Units",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 50,
+   "page_end": 50,
+   "quote": "Projects can earn up to four points by including additional Type A accessible units beyond the Mandatory",
+   "tiers": [
+    {
+     "tier_label": "Type A accessible units 15%-16.9% of total",
+     "points": 1
+    },
+    {
+     "tier_label": "17%-19.9%",
+     "points": 2
+    },
+    {
+     "tier_label": "20% or more",
+     "points": 4
+    }
+   ],
+   "kind": "competitive",
+   "ord": 11
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.iv.b",
+   "heading": "Unit Mix",
+   "points_max": 2,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 50,
+   "page_end": 50,
+   "quote": "Projects can earn up to two points for meeting the following unit mix thresholds:",
+   "tiers": [
+    {
+     "tier_label": "Older adult: two-bedroom units 1%-9.9% of age-restricted units; non-age-restricted: three-bedroom+ 25%-49.9% of units",
+     "points": 1
+    },
+    {
+     "tier_label": "Older adult: two-bedroom units 10%-25%; non-age-restricted: three-bedroom+ 50% or more",
+     "points": 2
+    }
+   ],
+   "note": "Points are not cumulative and are limited to the lowest score by population. The older adult column stops at 25%, and no row covers more than 25% two-bedroom units.",
+   "kind": "competitive",
+   "ord": 12
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.iv.c",
+   "heading": "Universal Design",
+   "points_max": 6,
+   "points_type": "fixed",
+   "page_start": 50,
+   "page_end": 50,
+   "quote": "A Project can earn up to six points for providing an additional 10 elements above Mandatory Universal Design",
+   "detail_external": "Universal Design elements: IHDA DCRC",
+   "note": "Ten additional elements, not required by code, in 100% of units. The text says 'up to six' but gives no partial scale.",
+   "kind": "competitive",
+   "ord": 13
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.v.a",
+   "heading": "Statewide Referral Network Units",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 50,
+   "page_end": 51,
+   "quote": "Projects that pursue additional points under the Permanent Supportive Housing policy track and meet the supportive",
+   "tiers": [
+    {
+     "tier_label": "SRN units 12%-14.9% of total, or Mandatory 5-10% SRN units covered by 100% rental assistance",
+     "points": 2
+    },
+    {
+     "tier_label": "SRN units 15%-20%, or all 12%-14.9% SRN units covered by 100% rental assistance",
+     "points": 4
+    },
+    {
+     "tier_label": "SRN units 15%-25% with federal or state-funded rental assistance on 100% of SRN units",
+     "points": 6
+    },
+    {
+     "tier_label": "Automatic: PSH policy track project meeting the 15% supportive housing unit requirement",
+     "points": 6
+    }
+   ],
+   "note": "Outside the PSH track, requires at least three persons per unit on the SRN waitlist for the municipality or Chicago community area, or alternative documentation accepted at the Authority's discretion. No further points beyond 25%.",
+   "kind": "competitive",
+   "ord": 14
+  },
+  {
+   "native_category": "General Scoring Criteria",
+   "section_label": "IX.C.vi.a",
+   "heading": "Green Building Design",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 51,
+   "page_end": 52,
+   "quote": "Projects may earn up to 10 points by achieving the requirements as follows:",
+   "tiers": [
+    {
+     "tier_label": "Non-Certification Pathway (10% above energy code for new construction; ASHRAE or HERS 85 pathway for rehab)",
+     "points": 4
+    },
+    {
+     "tier_label": "Base Pathway (EGC Certification; GPR, NGBS or LEED Gold; DOE Efficient New Homes)",
+     "points": 7
+    },
+    {
+     "tier_label": "Net Zero Pathway (EGC Plus Zero Emissions; GPR, NGBS or LEED Gold + Net Zero)",
+     "points": 8
+    },
+    {
+     "tier_label": "Zero Carbon Pathway (ILFI Energy Petal; PHIUS Core)",
+     "points": 10
+    }
+   ],
+   "note": "One pathway only; not cumulative.",
+   "kind": "competitive",
+   "ord": 15
+  },
+  {
+   "native_category": "Creative Solutions Policy Track",
+   "track": "creative_solutions",
+   "section_label": "IX.D.a",
+   "heading": "Risk of Loss in Affordability",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 53,
+   "page_end": 53,
+   "quote": "Projects may be awarded points cumulatively for meeting the requirements in the three sub-categories listed below",
+   "tiers": [
+    {
+     "tier_label": "Market Affordability Risk: a Site in a tract with ARI score 4 or 5",
+     "points": 3
+    },
+    {
+     "tier_label": "Naturally Occurring Affordable Housing",
+     "points": 3
+    },
+    {
+     "tier_label": "Timely Recapitalization: closing within seven years of EUA expiry",
+     "points": 3
+    }
+   ],
+   "note": "Cumulative up to 6; NOAH and Timely Recapitalization cannot both be earned, so the tier sum of 9 reaches 6 either way.",
+   "kind": "competitive",
+   "ord": 16
+  },
+  {
+   "native_category": "Creative Solutions Policy Track",
+   "track": "creative_solutions",
+   "section_label": "IX.D.b",
+   "heading": "Recent Capital Improvements and Investment",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 53,
+   "page_end": 54,
+   "quote": "Projects may not receive more than three points total in this category.",
+   "tiers": [
+    {
+     "tier_label": "Capital improvements to building structure/envelope or systems within the last 10 years",
+     "points": 3
+    },
+    {
+     "tier_label": "Capital improvements to building interior within the last 10 years",
+     "points": 1
+    }
+   ],
+   "note": "The table does not say whether rows combine; the category cap of 3 makes the question moot for the maximum.",
+   "kind": "competitive",
+   "ord": 17
+  },
+  {
+   "native_category": "Creative Solutions Policy Track",
+   "track": "creative_solutions",
+   "section_label": "IX.D.c",
+   "heading": "Density Bonus",
+   "points_max": 3,
+   "points_type": "fixed",
+   "scored_against_round": true,
+   "page_start": 54,
+   "page_end": 54,
+   "quote": "Projects whose ratio falls in the lowest quartile (25%) within their Set-Aside will",
+   "note": "Authority resources requested per total unit, compared with all Applications in the Set-Aside; the lowest quartile gets 3 automatically. Applicants may self-score only zero.",
+   "kind": "competitive",
+   "ord": 18
+  },
+  {
+   "native_category": "Creative Solutions Policy Track",
+   "track": "creative_solutions",
+   "section_label": "IX.D.d",
+   "heading": "Innovative Models",
+   "points_max": 6,
+   "points_type": "fixed",
+   "page_start": 54,
+   "page_end": 55,
+   "quote": "solution, or model for the development of affordable housing units may earn up to six points.",
+   "note": "E.g. techniques cutting construction cost by 10% or construction time by 20%, modular or mass timber construction, office-to-residential conversion. No partial scale is given for 'up to six'.",
+   "kind": "competitive",
+   "ord": 19
+  },
+  {
+   "native_category": "Creative Solutions Policy Track",
+   "track": "creative_solutions",
+   "section_label": "IX.D.e",
+   "heading": "No Additional Authority Resource Requests",
+   "points_max": 2,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 55,
+   "page_end": 55,
+   "quote": "No additional Authority resource request other than",
+   "tiers": [
+    {
+     "tier_label": "No Authority resource request other than LIHTC and IAHTC",
+     "points": 1
+    },
+    {
+     "tier_label": "No Authority resource request other than LIHTC",
+     "points": 2
+    }
+   ],
+   "note": "Not available to portfolio projects requesting subordination of existing Authority loans with must-pay hard debt at initial closing.",
+   "kind": "competitive",
+   "ord": 20
+  },
+  {
+   "native_category": "Permanent Supportive Housing Policy Track",
+   "track": "psh",
+   "section_label": "IX.E.a",
+   "heading": "Additional Units Dedicated to Supportive Housing",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 56,
+   "page_end": 56,
+   "quote": "Populations may earn up to four points. Points will be awarded based on the total percentage of units dedicated to",
+   "tiers": [
+    {
+     "tier_label": "Supportive housing units 20%-24.9% of total",
+     "points": 1
+    },
+    {
+     "tier_label": "25%-49.9%",
+     "points": 2
+    },
+    {
+     "tier_label": "50%-99.9%",
+     "points": 3
+    },
+    {
+     "tier_label": "100%",
+     "points": 4
+    }
+   ],
+   "kind": "competitive",
+   "ord": 21
+  },
+  {
+   "native_category": "Permanent Supportive Housing Policy Track",
+   "track": "psh",
+   "section_label": "IX.E.b",
+   "heading": "Rental Assistance",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 56,
+   "page_end": 56,
+   "quote": "The term of the rental assistance will be awarded points based on length of commitment by qualifying type. Points",
+   "tiers": [
+    {
+     "tier_label": "25.1-50% of PSH units assisted, 10+ year commitment",
+     "points": 2
+    },
+    {
+     "tier_label": "25.1-50%, 5-year to 9-year 11-month commitment",
+     "points": 1
+    },
+    {
+     "tier_label": "50.1-75%, 10+ year",
+     "points": 3
+    },
+    {
+     "tier_label": "50.1-75%, 5-year to 9-year 11-month",
+     "points": 2
+    },
+    {
+     "tier_label": "50.1-75%, qualifying CoC-funded",
+     "points": 1
+    },
+    {
+     "tier_label": "75.1% or more, 10+ year",
+     "points": 4
+    },
+    {
+     "tier_label": "75.1% or more, 5-year to 9-year 11-month",
+     "points": 3
+    },
+    {
+     "tier_label": "75.1% or more, qualifying CoC-funded",
+     "points": 2
+    }
+   ],
+   "note": "Project-based assistance only. Not available to a project earning points under Deeper Income Targeting (IX.C.ii.b), a general criterion. The 25.1-50% row has no CoC value.",
+   "kind": "competitive",
+   "ord": 22
+  },
+  {
+   "native_category": "Permanent Supportive Housing Policy Track",
+   "track": "psh",
+   "section_label": "IX.E.c",
+   "heading": "Coordination of Referrals",
+   "points_max": 4,
+   "points_type": "fixed",
+   "page_start": 57,
+   "page_end": 57,
+   "quote": "Projects pursuing additional points under the Permanent Supportive Housing policy track may earn up to four points",
+   "detail_external": "Referral requirements: IHDA PSH Requirements Guide",
+   "note": "Coordination with the local CoC and/or DCFS, IDOC or IDHS IDD, evidenced by a Letter of Intent. The QAP gives no partial scale for 'up to four'; it is in the Guide.",
+   "kind": "competitive",
+   "ord": 23
+  },
+  {
+   "native_category": "Permanent Supportive Housing Policy Track",
+   "track": "psh",
+   "section_label": "IX.E.d",
+   "heading": "Coordination of Services",
+   "points_max": 4,
+   "points_type": "fixed",
+   "page_start": 57,
+   "page_end": 57,
+   "quote": "services and supports to the Project may earn up to four points.",
+   "detail_external": "Coordination of Service requirements: IHDA PSH Requirements Guide",
+   "note": "On-site services MOU, service-funding experience, and/or a preliminary service budget. No partial scale is given in the QAP.",
+   "kind": "competitive",
+   "ord": 24
+  },
+  {
+   "native_category": "Permanent Supportive Housing Policy Track",
+   "track": "psh",
+   "section_label": "IX.E.e",
+   "heading": "Low-Barrier Tenant Screening",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 57,
+   "page_end": 57,
+   "quote": "utilize low-barrier tenant screening practices. Projects that commit to specific minimum thresholds in their TSPs",
+   "detail_external": "Minimum thresholds: IHDA PSH Requirements Guide",
+   "kind": "competitive",
+   "ord": 25
+  },
+  {
+   "native_category": "Permanent Supportive Housing Policy Track",
+   "track": "psh",
+   "section_label": "IX.E.f",
+   "heading": "Supportive Housing Experience, Training and Endorsements",
+   "points_max": 2,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 58,
+   "page_end": 58,
+   "quote": "Projects may earn up to two points in this category, which will be awarded cumulatively as follows:",
+   "tiers": [
+    {
+     "tier_label": "Sponsor developed and placed in service no less than 300 supportive housing units in the US",
+     "points": 2
+    },
+    {
+     "tier_label": "Sponsor participated in the Illinois Supportive Housing Institute (2022 onward)",
+     "points": 1
+    },
+    {
+     "tier_label": "CSH letter of support: Project meets CSH Quality Supportive Housing Standards",
+     "points": 1
+    }
+   ],
+   "note": "Cumulative up to 2. The Institute point is barred to projects earning the 'Building Development Capacity category (Section IX.C.i.a)', which is the category headed Building Development Experience.",
+   "kind": "competitive",
+   "ord": 26
+  },
+  {
+   "native_category": "Targeted Markets Policy Track",
+   "track": "targeted_markets",
+   "section_label": "IX.F.a",
+   "heading": "Affordability Risk Index",
+   "points_max": 5,
+   "points_type": "formula",
+   "page_start": 59,
+   "page_end": 59,
+   "quote": "Projects will receive between zero and five points under this category, in accordance with their assigned ARI score",
+   "detail_external": "ARI methodology and tract scores: IHDA Website",
+   "note": "Points equal the census tract's ARI score, 0 to 5. Scattered sites are prorated by units and rounded up.",
+   "kind": "competitive",
+   "ord": 27
+  },
+  {
+   "native_category": "Targeted Markets Policy Track",
+   "track": "targeted_markets",
+   "section_label": "IX.F.b",
+   "heading": "Communities Lacking Affordability",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 59,
+   "page_end": 59,
+   "quote": "community with an overall housing stock that lacks affordability can earn up to five points under the Communities",
+   "tiers": [
+    {
+     "tier_label": "Municipality overall affordability 10% or less (NELGs)",
+     "points": 5
+    },
+    {
+     "tier_label": "10.1% - 17%",
+     "points": 3
+    },
+    {
+     "tier_label": "17.% - 20%",
+     "points": 2
+    }
+   ],
+   "detail_external": "AHPAA affordability determination",
+   "note": "The third band is printed '17.% - 20%', overlapping the 17% upper bound of the band above; presumably 17.1%. Recorded as printed.",
+   "kind": "competitive",
+   "ord": 28
+  },
+  {
+   "native_category": "Targeted Markets Policy Track",
+   "track": "targeted_markets",
+   "section_label": "IX.F.c",
+   "heading": "Community Revitalization Strategies",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 59,
+   "page_end": 59,
+   "quote": "Community Revitalization Strategies may earn up to five points for demonstrating planning and/or efforts that lead",
+   "detail_external": "Community Revitalization Strategy Thresholds and Scoring Criteria",
+   "note": "Scale held in the external Scoring Criteria. Requires a technical assistance call with Authority staff. Scattered-site points are prorated by units covered.",
+   "kind": "competitive",
+   "ord": 29
+  },
+  {
+   "native_category": "Targeted Markets Policy Track",
+   "track": "targeted_markets",
+   "section_label": "IX.F.d",
+   "heading": "Neighborhood Assets",
+   "points_max": 2,
+   "points_type": "per_unit",
+   "page_start": 60,
+   "page_end": 61,
+   "quote": "neighborhood characteristics and amenities as designated by the Authority can score up to two points, depending",
+   "tiers": [
+    {
+     "tier_label": "Per asset category (Food Access, Health & Wellness, Education & Culture, Mobility, Civic & Community Facilities, Retail, Services), maximum one each",
+     "points": 1
+    }
+   ],
+   "note": "Seven categories at one point each, capped at 2. Walking distance 0.5 miles, or 5 miles Non-Metro. The body cites 'Section XI.C.iii.a' and 'Section XI.F.d' for criteria that sit in Section IX. The table's heading reads 'Civic & Community Facilities' where the text lists 'Civic & Culture Facilities'.",
+   "kind": "competitive",
+   "ord": 30
+  },
+  {
+   "native_category": "Targeted Markets Policy Track",
+   "track": "targeted_markets",
+   "section_label": "IX.F.e",
+   "heading": "Opportunity Zones",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 62,
+   "page_end": 62,
+   "quote": "Projects will be automatically awarded two points if one or more of its Sites is located within a census tract",
+   "kind": "competitive",
+   "ord": 31
+  },
+  {
+   "native_category": "Targeted Markets Policy Track",
+   "track": "targeted_markets",
+   "section_label": "IX.F.f",
+   "heading": "Transit Oriented Development",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 62,
+   "page_end": 62,
+   "quote": "within a transit oriented development (“TOD”) planning area. Projects will be awarded one point under this category",
+   "kind": "competitive",
+   "ord": 32
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tiebreaker Criteria",
+   "section_label": "IX.G.1",
+   "heading": "Highest unit count",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "quote": "First Tiebreaker: Projects with the highest unit count.",
+   "ord": 33
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tiebreaker Criteria",
+   "section_label": "IX.G.2",
+   "heading": "Lowest per-unit construction costs",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 2,
+   "page_start": 63,
+   "page_end": 63,
+   "quote": "Second Tiebreaker: Projects with the lowest per-unit construction costs.",
+   "ord": 34
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tiebreaker Criteria",
+   "section_label": "IX.G.3",
+   "heading": "Lowest average income by AMI targeting",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 3,
+   "page_start": 63,
+   "page_end": 63,
+   "quote": "Third Tiebreaker: Projects that incorporate the lowest average income by AMI targeting for all units.",
+   "ord": 35
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tiebreaker Criteria",
+   "section_label": "IX.G.4",
+   "heading": "Eventual tenant ownership with homeownership plan",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 4,
+   "page_start": 63,
+   "page_end": 63,
+   "quote": "Fourth Tiebreaker: Projects that are intended for eventual tenant ownership and have a robust",
+   "ord": 36
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tiebreaker Criteria",
+   "section_label": "IX.G.5",
+   "heading": "Historic significance",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 5,
+   "page_start": 63,
+   "page_end": 63,
+   "quote": "Fifth Tiebreaker: Projects with historic significance.",
+   "ord": 37
+  }
+ ]
+}
