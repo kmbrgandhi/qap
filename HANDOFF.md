@@ -12,12 +12,12 @@ says *where we are*; the protocol says *how to work*.
 | | |
 |---|---|
 | States collected | 50 |
-| Documents | 68 |
+| Documents | 69 |
 | **States coded** | **30** |
 | Criteria | 1111 (755 competitive, 278 threshold) |
 | Point tiers | 1284 |
 | Track totals | 43 |
-| Documents with a source URL | 33 of 68 |
+| Documents with a source URL | 42 of 69 |
 | Citations verifying | 1111 of 1111 |
 
 Coded: AK AL AR AZ CO CT DE HI IA IN MA ME MI MN MO NC ND NH NJ NV NY OH OK PA RI SD VA VT WI WY
@@ -71,9 +71,9 @@ manifest.py         rewrites data/manifest.csv, keeping rows it cannot see
 ## Working from the git repo alone
 
 The full corpus is 123 MB in a shared drop folder and is **not** committed.
-`data/pdfs_bundled/` carries 24 documents: the 11 behind the ten states already
-coded from the repo, so their citations can be re-verified anywhere, plus 13
-covering 12 uncoded states for the next batch. See its README.
+`data/pdfs_bundled/` carries 28 documents: the 11 behind the ten states already
+coded from the repo, so their citations can be re-verified anywhere, plus 17
+covering 14 uncoded states for the next batch. See its README.
 
 `qapdb/paths.py` resolves every PDF: the path recorded at ingest, then
 `data/pdfs_bundled/`, then `$QAP_PDF_DIR`. A document that cannot be found is
@@ -106,9 +106,9 @@ The dashboard is `python -m app.server`, then http://127.0.0.1:8000.
 
 ## What to do next
 
-All ten of the first bundle are coded. **A second bundle of 13 documents
-covering 12 uncoded states is now in `data/pdfs_bundled/`**, so a repo-only
-session has work available without the shared drop folder.
+All ten of the first bundle are coded. **`data/pdfs_bundled/` now holds 28 documents covering
+14 uncoded states**, so a repo-only session has plenty of work available
+without the shared drop folder.
 
 1. **Code the second bundle.** Every document was opened and confirmed to carry
    real point values first; `data/pdfs_bundled/README.md` has the per-state
@@ -127,18 +127,30 @@ session has work available without the shared drop folder.
    review queue is for.
 3. **States still needing a decision or a document:**
 
-   | Group | States |
-   |---|---|
-   | Need a method decision first | NE, SC (image pass), MD (Program Guide not collected), KY (spreadsheet), UT (weights) |
-   | Need a different document collected | OR — see below |
-   | Nothing to extract | FL (RFAs), MT (no points) |
+   All six were researched on 24 September 2026 and every source URL below is
+   recorded in `data/sources.csv` with what the document actually contains.
 
-   **Oregon was wrongly listed here as ready.** `oregon-qap-2025.pdf` is a
-   public comment-and-response log: pages 44–142 are named commenters and
-   replies, not a scoring plan, and its only point values sit inside a reply
-   discussing proposed resilient construction scoring. Collect Oregon's actual
-   QAP before attempting it. The lesson is in the protocol: a high page count
-   and a plausible filename are not evidence that a document scores anything.
+   | State | Status | What changed |
+   |---|---|---|
+   | **MD** | **Ready — bundled** | Scoring is in the *Multifamily Rental Financing Program Guide*, formally an attachment to the QAP. Collected: 109pp, Chapter 4 from printed p.52, Scoring Summary Table totals **221**. Printed pages run 5 behind PDF pages. Bonus points (10, or 15 for intergenerational/elderly/PSH) sit outside the 221. |
+   | **SC** | **Ready — bundled, no image pass needed** | The blocker was wrong. Our filenames were inverted: `southcarolina-appendix-c1-9pct-2026-amendments.pdf` is the **clean consolidated** appendix (zero merged artifacts, three clean `Max - 70 points`), and the file without the suffix is the redline showing `Max - 65 70 points`. **70 is correct.** Code from the "-amendments" file. The 2026 QAP governs, signed 30 December 2025; 2027 is still a draft. |
+   | **NE** | Still needs an image pass | Holdings confirmed current, three-year plan for 2026–2028. Point values live in the 5-page scoresheet, which states a 40-point minimum and maxima of 87 non-metro / 85 metro. The plan's own summary table on pp.5-6 is headed "PROPOSED SCORING" and its group totals sum to 94, disagreeing with the scoresheet — treat the scoresheet as authoritative. |
+   | **UT** | Needs a model decision | Weight-based scoring **confirmed**, not points. Each criterion is a raw score times a weight: Lower Income Targeting ×50 (cap 5,000), Project Location ×20 (cap 300, from 15 raw), Project Characteristics ×20 (530), Applicant Characteristics ×20 (200), Special Housing Needs ×20 (500), Credit Efficiency ×20 (240). **No grand total is stated anywhere.** The "~5,000" in our old note was one criterion's cap, not the total. |
+   | **KY** | Needs a decision | XLSX-only, confirmed, with **no PDF fallback**. The Guidelines carry zero point values across 107 pages; the QAP states KHC makes awards "without determining points". Values are in a 5-sheet scoring workbook. Ingesting Kentucky means teaching the pipeline XLSX. |
+   | **OR** | Nothing to extract | No point system — see below. |
+
+
+   **Oregon does not score, and an earlier version of this file said so for
+   the wrong reason.** It claimed `oregon-qap-2025.pdf` was the wrong document,
+   a stray comment log. It is not: it is Oregon's adopted QAP, signed by the
+   Governor on 25 February 2025, and the comment-and-response log on pp.38–147
+   is Appendix B, a formal part of it. Oregon selects by mandatory threshold,
+   then a count of supplemental criteria, then tiebreakers in fixed order. Its
+   own text: projects "will not be prioritized over other projects for
+   including more than three of these criteria". Across pp.1–38 the body
+   contains no occurrence of "scor" or "weight". There is nothing to extract,
+   and no document to go and find. See the protocol entry "No points here is
+   not the same as wrong document".
 4. **Fill `data/sources.csv`** for the 35 documents without a source URL, and
    set cycles for Alaska and Wyoming (neither document states one) and
    Arizona (ingest recorded a filename/document CONFLICT).

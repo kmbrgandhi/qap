@@ -962,22 +962,83 @@ exception. That makes the hand-sum-first rule more important, not less: it is
 the only check that exists.
 
 
-### A plausible filename is not evidence that a document scores anything
+### "No points here" is not the same as "wrong document" — the Oregon error
 
-Oregon was listed as ready to code on the strength of its page count and its
-name. Opening it showed `oregon-qap-2025.pdf` is a public comment-and-response
-log: pages 44–142 are named commenters and agency replies, and the only point
-values in the file sit inside a reply discussing *proposed* resilient
-construction scoring. Coding it would have produced criteria attributed to
-Oregon that Oregon never adopted.
+Two claims were made about Oregon. One was right and one was wrong, and the
+difference is worth keeping, because the wrong one was written into three files
+and a commit message before it was checked.
 
-The signal that caught it was the one already in §1: count "point" occurrences
-before extracting. Oregon has 23 across 147 pages. Colorado, at 68 across 102,
-looked similar and turned out to be genuine — so a low count is not proof
-either way. **Read where the occurrences fall, not just how many there are.**
-In a real scoring plan they cluster in a scoring section; in Oregon they were
-scattered through prose, several inside sentences like "I can't remember what
-it is, but if it's historic, then you get some points for it".
+**Right:** Oregon's `oregon-qap-2025.pdf` carries no point scoring. The signal
+was the §1 pre-flight count: 23 "point" occurrences across 147 pages, nearly
+all of them scattered through prose rather than clustered in a scoring section.
+Colorado, at 68 across 102, looked similar and turned out to be genuine, so a
+low count is never proof by itself. **Read where the occurrences fall, not just
+how many there are.**
 
-This check costs one read and belongs in the pre-flight, before any state is
-promised to a batch.
+**Wrong:** the conclusion drawn from that — that the file was the wrong
+document, a stray comment log, and that Oregon's "real" QAP needed collecting.
+It is the real QAP, adopted and signed by the Governor on 25 February 2025.
+Pages 1–35 are the plan, 36–37 are Appendix A, and the comment-and-response log
+that prompted the misreading is **Appendix B, a formal part of the adopted
+document**. The body's own vocabulary settles it: across pp.1–38 there are zero
+occurrences of "scor" and zero of "weight", against four of "tiebreak", five of
+"threshold" and four of "supplemental".
+
+Oregon selects by mandatory threshold, then a count of supplemental criteria,
+then tiebreakers applied in fixed order. Its QAP says so directly: projects
+"must meet at least three of the following supplemental criteria. While
+encouraged, projects will not be prioritized over other projects for including
+more than three of these criteria." Exceeding the minimum earns nothing, which
+is precisely what a point system would pay for.
+
+**The rule this produces.** When a document has no scoring, you have found one
+of two things, and they need different responses:
+
+- *The document is wrong* — the scoring lives in a companion (Michigan,
+  Minnesota, Maryland, Washington), an appendix (Louisiana, South Carolina), or
+  a spreadsheet (Kentucky). Go and find it.
+- *The state does not score* — it uses thresholds, tiebreakers, weights or
+  checkmarks instead (Oregon, Montana; Utah weights, Vermont checkmarks).
+  Record how it actually selects, and do not go looking for a document that
+  does not exist.
+
+Before concluding the first, **read the front of the document**: the title
+page, the approval or adoption statement, and the table of contents. That is
+where a plan announces what it is, and it takes one read. The Oregon claim
+survived as long as it did because the middle of the file was searched and the
+first thirty pages never were.
+
+### A filename is not a document's status
+
+South Carolina was deferred for months on the belief that its scoring appendix
+was only available as a redline, where struck and replacement values merge in
+the text layer: `Max - 65 70 points`, where 70 is correct. That was true of one
+file. It was not true of the file whose name suggested it.
+
+We held two versions. The one named `…-2026.pdf` looked like the final, and the
+one named `…-2026-amendments.pdf` looked like a partial patch on top of it. The
+reverse was the case. The "amendments" file is the **clean consolidated
+appendix** — a one-page amendment cover note dated 27 January 2026 followed by
+the complete appendix, pages C1-1 to C1-11. Scanned for merged values it
+returns zero, against two in the file we had been treating as authoritative.
+
+The check takes one command and should run on any state holding more than one
+version of the same document:
+
+    merged = re.findall(r'Max\s*-\s*\d+\s+\d+\s*points', text)   # redline
+    clean  = re.findall(r'Max\s*-\s*\d+\s*points', text)          # consolidated
+
+Generalise the pattern to whatever the state writes — the signature of a
+redline is *two numbers where the document's own grammar allows one*. Other
+tells: a title page extracting as `20252026`, or a maximum with no separating
+space at all, like South Carolina's 2027 draft, whose `Max - 7670 points` a
+naive parser reads as one five-digit number.
+
+Two rules follow:
+
+- **When a state publishes several versions, scan them all before choosing**,
+  and record in `data/sources.csv` which one to code from and why. Do not infer
+  status from the filename, ours or theirs.
+- **Re-test a deferral before trusting it.** This one was recorded with a real
+  reason and a real quoted example, which made it look settled. The reason was
+  sound; the file it was attached to was wrong.
