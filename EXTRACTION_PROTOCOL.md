@@ -1097,3 +1097,27 @@ Mississippi also has a point adjustment that is not a deduction: +5, 0 or −5
 for construction cost against the MCC limit. It raises the maximum by 5. It is
 coded as a competitive criterion with a negative tier, not as a negative
 criterion, because §6 excludes negatives from the reconciled maximum.
+
+
+### Georgia 2026-2027: a table can be all graphics, and a cap can sit on another track
+
+Georgia's applicability matrix (p.80) decides which of 22 criteria apply to
+four universes: New Affordability and Preservation, each at 9% and 4%. Its
+checkmarks are drawn graphics. The text layer holds the row labels and nothing
+else, so it reads as a list of criteria that apply nowhere. §4's rendered page
+image was the only way to read it. **When a table's text layer is all labels
+and no values, suspect graphics before you suspect an empty table.**
+
+The matrix put the structure on a shared core plus add-ons: nine criteria
+common to both 9% competitions (50.5), New Affordability's site and community
+criteria (+51) and Preservation's own criteria (+42). A Preservation
+application also scores the New Affordability site criteria, but caps them at
+20 inside its own section. That cap belongs to the preservation track while
+the criteria it caps are coded on another. It is one preservation criterion
+worth 20, and its tiers name the criteria it draws on. The criteria are not
+duplicated. This is the capped-group idea of §5, applied across tracks, where
+a `groups` entry cannot reach.
+
+The 4% universes are described in the comment and in each criterion's note
+rather than coded, as in Kansas. The exception is the two USDA Portfolio
+criteria that exist only at 4%.

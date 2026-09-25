@@ -1,0 +1,1112 @@
+{
+ "_comment": "Georgia 2026-2027 QAP, Georgia Department of Community Affairs. Page numbers are PDF page indices, matching the printed page numbers. Scoring Criteria pp.79-115; the p.80 applicability matrix is drawn with graphic checkmarks invisible to the text layer and was read from a rendered image. FOUR UNIVERSES: New Affordability and Preservation, each at 9% and 4%/Bonds. Coded as a shared core plus add-on tracks. Default track = the nine criteria scored in both 9% competitions (III-IX, all universes; XXII-XXIII, 9% only): 6 + 5 + 10 + 5 + 15 + 3 + 2 + 2 + 2.5 = 50.5. new_affordability adds X-XXI: 20 + 6 + 3 + 13 (one of XIII-XVI) + 5 (Phased 4 or Previous 5) + 1 + 1 + 2 = 51, for 101.5. preservation adds XXIV: 6 + 6 + 4 (Age or Restrictions) + 20 (site criteria, capped) + 3 + 3 (USDA) = 42, for 92.5. The 4% universes are not separate tracks. 4% New Affordability omits XV, XX, XXI, XXII and XXIII and caps its site criteria at 33 (p.81). 4% Preservation omits XXII and XXIII and adds two USDA Portfolio criteria (track four_pct_usda_portfolio). NO TOTAL IS STATED; 'Maximum points vary by Application type' (p.112). The loader matched every hand-summed track. Contradictions recorded: Community Designations A (13 in its headings, ten in its text); DCA Community Initiatives B (2.5 points, 'this point').",
+ "match": {
+  "filename": "georgia-qap-2026-2027.pdf"
+ },
+ "extractor_version": "hand-2026-ga-1",
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": null,
+   "page": 80,
+   "note": "Shared 9% core, 50.5. Seven of the nine criteria also score 4% applications. No total stated."
+  },
+  {
+   "track": "new_affordability",
+   "stated_total": null,
+   "page": 80,
+   "note": "Add-on for New Affordability: 51, for a 9% New Affordability maximum of 101.5. Computed, not stated."
+  },
+  {
+   "track": "preservation",
+   "stated_total": null,
+   "page": 112,
+   "note": "Add-on for Preservation: 42, for a 9% Preservation maximum of 92.5. 'Maximum points vary by Application type.' The USDA criteria apply only to USDA properties."
+  },
+  {
+   "track": "four_pct_usda_portfolio",
+   "stated_total": null,
+   "page": 115,
+   "note": "Two USDA criteria for 4% Credits/Bonds Portfolio applications only, 16 points."
+  }
+ ],
+ "groups": [
+  {
+   "key": "ga_community",
+   "label": "Only one of Revitalization/Redevelopment, Stable Communities, Community Designations, Housing Needs Characteristics",
+   "rule": "max_one",
+   "source_quote": "Points from only one of the following sections will contribute to the Application score:",
+   "page_start": 97
+  },
+  {
+   "key": "ga_phase_previous",
+   "label": "Phased Development or Previous Projects",
+   "rule": "max_one",
+   "source_quote": "Applicants may only claim points in either Phased Development or Previous Projects.",
+   "page_start": 105
+  },
+  {
+   "key": "ga_age_restrictions",
+   "label": "Property Age or Tax Credit Restrictions",
+   "rule": "max_one",
+   "source_quote": "Applicants may only claim points in either Tax Credit Restrictions or Property Age.",
+   "page_start": 113
+  }
+ ],
+ "criteria": [
+  {
+   "section_label": "III",
+   "heading": "Extended Affordability Commitment",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 81,
+   "page_end": 82,
+   "quote": "Applicants may claim points in A alone, A and B, or A and C.",
+   "tiers": [
+    {
+     "tier_label": "A. No Principal requested a Qualified Contract in Georgia on or after May 20, 2025",
+     "points": 5
+    },
+    {
+     "tier_label": "B. Resident ownership plan (single-family styled units)",
+     "points": 1
+    },
+    {
+     "tier_label": "C. Right of first refusal to a qualified nonprofit or housing authority",
+     "points": 1
+    }
+   ],
+   "note": "B and C are alternatives, each combinable with A: 5 + 1 = 6.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 1
+  },
+  {
+   "section_label": "IV",
+   "heading": "Favorable Financing",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 82,
+   "page_end": 84,
+   "quote": "Applicants may claim points in A and/or B.",
+   "tiers": [
+    {
+     "tier_label": "A. Qualifying sources $500,000-$999,999 or $10,000-$19,999/unit: NHTF or HOME-ARP",
+     "points": 2
+    },
+    {
+     "tier_label": "A. Same band, other qualifying sources",
+     "points": 1
+    },
+    {
+     "tier_label": "A. $1,000,000-$1,999,999 or $20,000-$29,999/unit: NHTF or HOME-ARP",
+     "points": 3
+    },
+    {
+     "tier_label": "A. Same band, other sources",
+     "points": 2
+    },
+    {
+     "tier_label": "A. $2,000,000+ or $30,000+/unit: NHTF or HOME-ARP",
+     "points": 4
+    },
+    {
+     "tier_label": "A. Same band, other sources",
+     "points": 3
+    },
+    {
+     "tier_label": "B. Property cost reduction: Private Enterprise Agreement, 45-year ground lease at $100/year or less, or land donation",
+     "points": 1
+    }
+   ],
+   "note": "A up to 4 (from eleven qualifying source types; loans at or below AFR for ten years or more) plus B 1.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 2
+  },
+  {
+   "section_label": "V",
+   "heading": "Compliance Performance",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 84,
+   "page_end": 85,
+   "quote": "Each Application will start with an award of ten (10) Performance Points.",
+   "tiers": [
+    {
+     "tier_label": "Starting award",
+     "points": 10
+    },
+    {
+     "tier_label": "Each Significant Adverse Event with a waiver granted or renewed",
+     "points": -5
+    },
+    {
+     "tier_label": "Each unique Adverse Circumstance",
+     "points": -2
+    },
+    {
+     "tier_label": "Add-back: 7 successful Credit/HOME properties",
+     "points": 1
+    },
+    {
+     "tier_label": "8-10",
+     "points": 2
+    },
+    {
+     "tier_label": "11-15",
+     "points": 3
+    },
+    {
+     "tier_label": "16-20",
+     "points": 4
+    },
+    {
+     "tier_label": "More than 20",
+     "points": 5
+    }
+   ],
+   "note": "A net score that 'may be negative'. Add-backs apply only when the score after deductions is below 10, so the maximum is 10.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 3
+  },
+  {
+   "section_label": "VI",
+   "heading": "Integrated Supportive Housing",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 86,
+   "page_end": 88,
+   "quote": "Applicants may claim points in C alone or in addition to either A or B.",
+   "tiers": [
+    {
+     "tier_label": "A. Supportive housing referrals without PBRA (10% of units for 9%, 5% for 4%)",
+     "points": 2
+    },
+    {
+     "tier_label": "A. Referrals with PBRA, units at 30% AMI",
+     "points": 3
+    },
+    {
+     "tier_label": "B. Tenant selection preference under the Settlement Agreement, 15% of units",
+     "points": 1
+    },
+    {
+     "tier_label": "C. DCA PBRA prior performance (automatic unless penalised)",
+     "points": 2
+    }
+   ],
+   "note": "A or B, plus C: 3 + 2 = 5. C is assigned automatically and removed as a 2-point penalty after notice.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 4
+  },
+  {
+   "section_label": "VII",
+   "heading": "Readiness to Proceed",
+   "points_max": 15,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 88,
+   "page_end": 89,
+   "quote": "Applicants receive points for each set of documents below.",
+   "tiers": [
+    {
+     "tier_label": "Bond inducement resolution",
+     "points": 2
+    },
+    {
+     "tier_label": "Site control and (new construction/adaptive reuse) site zoning documentation",
+     "points": 5
+    },
+    {
+     "tier_label": "Public water/sanitary sewer",
+     "points": 1
+    },
+    {
+     "tier_label": "Operating utilities",
+     "points": 1
+    },
+    {
+     "tier_label": "Site information and conceptual site development plan",
+     "points": 1
+    },
+    {
+     "tier_label": "Preliminary financing commitments",
+     "points": 1
+    },
+    {
+     "tier_label": "Phase 1 ESA within 18 months",
+     "points": 1
+    },
+    {
+     "tier_label": "General contractor cost estimate",
+     "points": 1
+    },
+    {
+     "tier_label": "Market study",
+     "points": 1
+    },
+    {
+     "tier_label": "Physical Needs Assessment (rehabilitation)",
+     "points": 1
+    }
+   ],
+   "note": "A document set that does not apply to the construction type earns its points in full.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 5
+  },
+  {
+   "section_label": "VIII",
+   "heading": "Deeper Targeting/Rent/Income Restrictions",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 89,
+   "page_end": 89,
+   "quote": "Applicants may claim points under either A or B.",
+   "tiers": [
+    {
+     "tier_label": "A. Overall property AMI 58% or less",
+     "points": 2
+    },
+    {
+     "tier_label": "B. Government PBRA on 20% or more of units, ten years remaining",
+     "points": 3
+    }
+   ],
+   "note": "4% applications may claim only B.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 6
+  },
+  {
+   "section_label": "IX",
+   "heading": "HCV and PHA Notices",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 90,
+   "page_end": 90,
+   "quote": "Applicant commits to register to be a participating landlord with the local Housing Choice Voucher",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 7
+  },
+  {
+   "section_label": "XXII",
+   "heading": "Enriched Property Services",
+   "points_max": 2,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 110,
+   "page_end": 110,
+   "quote": "Applicant agrees to one of the resident services commitments below for the proposed development.",
+   "tiers": [
+    {
+     "tier_label": "A. Owner-provided services by a CORES-certified General Partnership entity (two 9% applications per entity)",
+     "points": 2
+    },
+    {
+     "tier_label": "B. Accept CORES-certified 3rd party resident services coordination",
+     "points": 2
+    }
+   ],
+   "note": "9% New Affordability and 9% Preservation only; not 4%.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 8
+  },
+  {
+   "section_label": "XXIII",
+   "heading": "DCA Community Initiatives",
+   "points_max": 2.5,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 111,
+   "page_end": 111,
+   "quote": "Applicants may claim points in either A or B.",
+   "tiers": [
+    {
+     "tier_label": "A. GICH team letter of support",
+     "points": 2
+    },
+    {
+     "tier_label": "B. GICH Senior Year team letter of support",
+     "points": 2.5
+    }
+   ],
+   "note": "9% New Affordability and 9% Preservation only. The B text says issuing more than one letter means no project is 'awarded this point', although B is worth 2.5.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 9
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "X.A",
+   "heading": "Desirable Activities",
+   "points_max": 20,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 90,
+   "page_end": 92,
+   "quote": "Applications will earn points for each desirable activity/characteristic category as set forth below,",
+   "tiers": [
+    {
+     "tier_label": "Group 1 amenity within 0.5 mile",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Group 1 within 1 mile (Metro) or 2 miles (Rural)",
+     "points": 2
+    },
+    {
+     "tier_label": "Group 1 within 2 miles (Metro) or 3 miles (Rural)",
+     "points": 1.5
+    },
+    {
+     "tier_label": "Group 2 amenity within 0.5 mile",
+     "points": 2
+    },
+    {
+     "tier_label": "Group 2 within 1 mile (Metro) or 2 miles (Rural)",
+     "points": 1.5
+    },
+    {
+     "tier_label": "Group 2 within 2 miles (Metro) or 3 miles (Rural)",
+     "points": 1
+    }
+   ],
+   "note": "Nineteen amenity items (a-s), each assigned to Group 1 or Group 2 in the table's last column; one point award per item by distance, up to 20. The p.91 column headed 'Points Group' carries group numbers, not points.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 10
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "X.B",
+   "heading": "Undesirable/Inefficient Site Activities/Characteristics",
+   "points_max": null,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 92,
+   "page_end": 93,
+   "quote": "Two (2) points will be deducted from the Applicant",
+   "tiers": [
+    {
+     "tier_label": "Per undesirable activity within 0.25 mile",
+     "points": -2
+    }
+   ],
+   "note": "Deducted 'from the Applicant's Desirable points'; no maximum is stated. A USDA food desert counts unless grocery points are earned.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 11
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "XI",
+   "heading": "Community Transportation Options",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 94,
+   "page_end": 95,
+   "quote": "Applicants may claim points in either A or B.",
+   "tiers": [
+    {
+     "tier_label": "A1. Metro site owned by a transit agency with access to a transit hub",
+     "points": 6
+    },
+    {
+     "tier_label": "A2. Metro site within 0.25 mile walk of a transit hub",
+     "points": 5
+    },
+    {
+     "tier_label": "A2. 0.5 mile",
+     "points": 4.5
+    },
+    {
+     "tier_label": "A2. 1 mile",
+     "points": 4
+    },
+    {
+     "tier_label": "B1. Metro site within 0.25 mile of a public transportation stop",
+     "points": 3
+    },
+    {
+     "tier_label": "B1. 0.5 mile",
+     "points": 2
+    },
+    {
+     "tier_label": "B1. 1 mile",
+     "points": 1
+    },
+    {
+     "tier_label": "B2. Other Metro on-call service on-site",
+     "points": 1
+    },
+    {
+     "tier_label": "B3. Rural publicly operated transit",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 12
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "XII",
+   "heading": "Quality Education Areas",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 96,
+   "page_end": 97,
+   "quote": "Points will be awarded based on the number of grades within schools that meet the",
+   "tiers": [
+    {
+     "tier_label": "All tenancies: 3 qualifying grades",
+     "points": 1
+    },
+    {
+     "tier_label": "All tenancies: 7 grades",
+     "points": 1.5
+    },
+    {
+     "tier_label": "HFOP, Elderly or Other: all K-12",
+     "points": 2
+    },
+    {
+     "tier_label": "Family: all K-12",
+     "points": 3
+    }
+   ],
+   "note": "A school qualifies with CCRPI at or above the 50th percentile or a 'Beating the Odds' designation.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 13
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "XIII",
+   "heading": "Revitalization/Redevelopment Plans",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "group": "ga_community",
+   "page_start": 97,
+   "page_end": 102,
+   "quote": "no more than ten (10) points from this section will contribute to the overall Application score.",
+   "tiers": [
+    {
+     "tier_label": "A. Site within a qualifying Community Revitalization Plan",
+     "points": 4
+    },
+    {
+     "tier_label": "A. Also in a Qualified Census Tract",
+     "points": 1
+    },
+    {
+     "tier_label": "A. Planning best practices (PlanFirst, Revitalization Area Strategy, Rural Zone, or public input)",
+     "points": 2
+    },
+    {
+     "tier_label": "B. Community Transformation: Community Partnerships (up to 3) and/or GICH support (2), capped at 3",
+     "points": 3
+    },
+    {
+     "tier_label": "C. Community Investment: third-party capital investment (up to 2) plus financial commitment (1)",
+     "points": 3
+    }
+   ],
+   "note": "A up to 7, B up to 3, C up to 3, capped at 10.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 14
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "XIV",
+   "heading": "Stable Communities",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "ga_community",
+   "page_start": 102,
+   "page_end": 103,
+   "quote": "Within a Census Tract: Applications earn points if the site is located in a Census Tract with values in a",
+   "tiers": [
+    {
+     "tier_label": "2 indicators, within the tract",
+     "points": 6
+    },
+    {
+     "tier_label": "3 indicators, within",
+     "points": 8
+    },
+    {
+     "tier_label": "4 indicators, within",
+     "points": 10
+    },
+    {
+     "tier_label": "2 indicators, near (0.25 mile)",
+     "points": 5
+    },
+    {
+     "tier_label": "3 indicators, near",
+     "points": 7
+    },
+    {
+     "tier_label": "4 indicators, near",
+     "points": 9
+    }
+   ],
+   "detail_external": "DCA Stable Communities Supplement",
+   "note": "Indicators: ATSDR Environmental Index, travel time, employment rate, poverty rate and median income; percentiles computed within each geographic pool.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 15
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "XV",
+   "heading": "Housing Needs Characteristics",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "group": "ga_community",
+   "page_start": 104,
+   "page_end": 104,
+   "quote": "This section does not apply to the Atlanta Metro Pool.",
+   "tiers": [
+    {
+     "tier_label": "A. Housing Need and Growth: non-QCT tract with 45%+ severe housing problems in a growing county",
+     "points": 5
+    },
+    {
+     "tier_label": "B. Also eligible for 5+ points under Stable Communities or Revitalization",
+     "points": 5
+    }
+   ],
+   "note": "9% only.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 16
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "XVI",
+   "heading": "Community Designations",
+   "points_max": 13,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "ga_community",
+   "page_start": 104,
+   "page_end": 105,
+   "quote": "Applicants may claim points in either A or B.",
+   "tiers": [
+    {
+     "tier_label": "A. HUD Choice Neighborhood Implementation Grant area (one application per awardee)",
+     "points": 13
+    },
+    {
+     "tier_label": "B. Purpose Built Communities nomination (one application)",
+     "points": 10
+    }
+   ],
+   "note": "CONTRADICTION: the section header reads 'Up to 13 Points' and subsection A's heading '13 Points', but A's text awards 'Ten (10) points'. Coded 13, which both headings and the section maximum support.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 17
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "XVII",
+   "heading": "Phased Development",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "ga_phase_previous",
+   "page_start": 105,
+   "page_end": 106,
+   "quote": "9% Metro Pool Applications receive four (4) points under this section.",
+   "tiers": [
+    {
+     "tier_label": "9% Metro Pool",
+     "points": 4
+    },
+    {
+     "tier_label": "9% Rural Pool and 4% applications",
+     "points": 3
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 18
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "XVIII",
+   "heading": "Previous Projects",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "ga_phase_previous",
+   "page_start": 106,
+   "page_end": 107,
+   "quote": "Under this section, DCA awards points to Applications located in areas where DCA has developed",
+   "tiers": [
+    {
+     "tier_label": "A. Metro: no awards within one mile in 15 years",
+     "points": 5
+    },
+    {
+     "tier_label": "A. 6 years",
+     "points": 4
+    },
+    {
+     "tier_label": "A. 4 years",
+     "points": 3
+    },
+    {
+     "tier_label": "A. Within one mile of a transit hub: no awards in 3 years",
+     "points": 4
+    },
+    {
+     "tier_label": "A. Transit hub: 2 years",
+     "points": 3
+    },
+    {
+     "tier_label": "B. Rural: county new construction units under 0.15% of population, 15 years",
+     "points": 3
+    },
+    {
+     "tier_label": "B. 0.15%-0.25%, 15 years",
+     "points": 2
+    },
+    {
+     "tier_label": "B. Under 0.15%, 5 years",
+     "points": 1
+    }
+   ],
+   "note": "Metro up to 5, Rural up to 3. 4% rounds use a half-mile radius.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 19
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "XIX",
+   "heading": "Economic Development Proximity",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 108,
+   "page_end": 108,
+   "quote": "Proposed development is located within commuting distance of an economic development project that",
+   "note": "Rural: 90 net new jobs within 30 miles; Other Metro: 250 within 20 miles. The table gives no Atlanta Metro row.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 20
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "XX",
+   "heading": "Mixed Income Developments",
+   "points_max": 1,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 108,
+   "page_end": 108,
+   "quote": "One (1) point will be awarded to Applications that include at least 10% unrestricted market rate",
+   "tiers": [
+    {
+     "tier_label": "A. 10%+ unrestricted market rate units, no income averaging",
+     "points": 1
+    },
+    {
+     "tier_label": "B. Income averaging election, no market rate units",
+     "points": 1
+    }
+   ],
+   "note": "9% only.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 21
+  },
+  {
+   "track": "new_affordability",
+   "section_label": "XXI",
+   "heading": "Historic Preservation",
+   "points_max": 2,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 109,
+   "page_end": 109,
+   "quote": "DCA will award points if the proposed development includes historic tax credit proceeds and is an",
+   "tiers": [
+    {
+     "tier_label": "A. Historic tax credit proceeds, adaptive reuse of a historic structure (30%+ of units)",
+     "points": 2
+    },
+    {
+     "tier_label": "B. Historic structure housing 50%+ of units",
+     "points": 2
+    }
+   ],
+   "note": "9% only.",
+   "kind": "competitive",
+   "native_category": "Scoring Criteria",
+   "ord": 22
+  },
+  {
+   "track": "preservation",
+   "native_category": "XXIV. Preservation Scoring Criteria",
+   "section_label": "XXIV.A",
+   "heading": "Occupancy",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 112,
+   "page_end": 112,
+   "quote": "Application property exhibits average monthly occupancy over twenty-four months within the",
+   "tiers": [
+    {
+     "tier_label": "95% or more",
+     "points": 6
+    },
+    {
+     "tier_label": "90% to 94.9%",
+     "points": 4
+    },
+    {
+     "tier_label": "85 to 89.9%",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "ord": 23
+  },
+  {
+   "track": "preservation",
+   "native_category": "XXIV. Preservation Scoring Criteria",
+   "section_label": "XXIV.B",
+   "heading": "Rent Advantage",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 112,
+   "page_end": 113,
+   "quote": "The Rent Analysis Letter compares the 60% Housing Credit rent limit to market rents.",
+   "tiers": [
+    {
+     "tier_label": "25% or more",
+     "points": 6
+    },
+    {
+     "tier_label": "20%-24.9%",
+     "points": 4
+    },
+    {
+     "tier_label": "15%-19.9%",
+     "points": 2
+    }
+   ],
+   "note": "Not available to USDA Portfolio (4%), HUD Rental Assistance or RAD set-aside applications. DCA commissions the rent analysis.",
+   "kind": "competitive",
+   "ord": 24
+  },
+  {
+   "track": "preservation",
+   "native_category": "XXIV. Preservation Scoring Criteria",
+   "section_label": "XXIV.C",
+   "heading": "Property Age",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "ga_age_restrictions",
+   "page_start": 113,
+   "page_end": 113,
+   "quote": "Application provides evidence that the property",
+   "tiers": [
+    {
+     "tier_label": "Placed in service 2005 or earlier (2026 round; 2006 for 2027)",
+     "points": 4
+    },
+    {
+     "tier_label": "2006 to 2010 (2026 round; 2007-2011 for 2027)",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "ord": 25
+  },
+  {
+   "track": "preservation",
+   "native_category": "XXIV. Preservation Scoring Criteria",
+   "section_label": "XXIV.D",
+   "heading": "Tax Credit Restrictions",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "ga_age_restrictions",
+   "page_start": 113,
+   "page_end": 114,
+   "quote": "Current Federal Tax Credit restrictions were applied to the property during the calendar year ranges",
+   "tiers": [
+    {
+     "tier_label": "LURC executed 1995-1999 (2026 round; 1996-2000 for 2027)",
+     "points": 4
+    },
+    {
+     "tier_label": "2000-2005 (2026 round; 2001-2006 for 2027)",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "ord": 26
+  },
+  {
+   "track": "preservation",
+   "native_category": "XXIV. Preservation Scoring Criteria",
+   "section_label": "XXIV.E",
+   "heading": "Site Characteristics",
+   "points_max": 20,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 114,
+   "page_end": 114,
+   "quote": "claim all points under each criteria, but no more than twenty (20) points will qualify for this",
+   "tiers": [
+    {
+     "tier_label": "Desirable/Undesirable Activities (X)",
+     "points": 20
+    },
+    {
+     "tier_label": "Community Transportation Options (XI)",
+     "points": 6
+    },
+    {
+     "tier_label": "Quality Education Areas (XII)",
+     "points": 3
+    },
+    {
+     "tier_label": "One of Revitalization, Stable Communities, Community Designations or Housing Needs Characteristics (XIII-XVI)",
+     "points": 13
+    }
+   ],
+   "note": "Preservation applications score the New Affordability site criteria, which are coded once on that track, capped at 20 here. The tiers name those criteria at their own maxima. Not available to 4% USDA Portfolio applications.",
+   "kind": "competitive",
+   "ord": 27
+  },
+  {
+   "track": "preservation",
+   "native_category": "XXIV. Preservation Scoring Criteria",
+   "section_label": "XXIV.F.1",
+   "heading": "USDA: Pre-Payment Risk",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 114,
+   "page_end": 114,
+   "quote": "Up to three (3) points based on the percentage of properties preserved that were built before",
+   "tiers": [
+    {
+     "tier_label": "All properties eligible for 515 pre-payment",
+     "points": 3
+    },
+    {
+     "tier_label": "At least 75%",
+     "points": 2
+    },
+    {
+     "tier_label": "50% to 74.9%",
+     "points": 1
+    }
+   ],
+   "kind": "competitive",
+   "ord": 28
+  },
+  {
+   "track": "preservation",
+   "native_category": "XXIV. Preservation Scoring Criteria",
+   "section_label": "XXIV.F.2",
+   "heading": "USDA: Mortgage Maturity Risk",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 114,
+   "page_end": 115,
+   "quote": "Up to three (3) points based on the year of the last maturing 515 loan.",
+   "tiers": [
+    {
+     "tier_label": "Last 515 loan matures 2027-2031 (2026 round; 2028-2032 for 2027)",
+     "points": 3
+    },
+    {
+     "tier_label": "2032-2036 (2026 round; 2033-2037 for 2027)",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "ord": 29
+  },
+  {
+   "track": "four_pct_usda_portfolio",
+   "native_category": "XXIV. Preservation Scoring Criteria",
+   "section_label": "XXIV.F.3",
+   "heading": "USDA: Geographic Distribution",
+   "points_max": 10,
+   "points_type": "per_unit",
+   "page_start": 115,
+   "page_end": 115,
+   "quote": "Applications receive one (1) point for each county that a USDA property associated with the",
+   "tiers": [
+    {
+     "tier_label": "Per county with a USDA property in the portfolio",
+     "points": 1
+    }
+   ],
+   "note": "4% Credits/Bonds Portfolio only.",
+   "kind": "competitive",
+   "ord": 30
+  },
+  {
+   "track": "four_pct_usda_portfolio",
+   "native_category": "XXIV. Preservation Scoring Criteria",
+   "section_label": "XXIV.F.4",
+   "heading": "USDA: Severe and Critical Need",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 115,
+   "page_end": 115,
+   "quote": "Applications may receive up to six (6) points if the average housing vacancy rate for the",
+   "tiers": [
+    {
+     "tier_label": "Average county housing vacancy <= 2.49%",
+     "points": 6
+    },
+    {
+     "tier_label": "2.50%-4.99%",
+     "points": 5
+    },
+    {
+     "tier_label": "5.00%-9.99%",
+     "points": 4
+    },
+    {
+     "tier_label": "10.00%-19.99%",
+     "points": 2
+    }
+   ],
+   "note": "4% Credits/Bonds Portfolio only.",
+   "kind": "competitive",
+   "ord": 31
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Core Plan: 9% Tiebreakers",
+   "section_label": "TB.1",
+   "heading": "Project Team's first award in the current round",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "quote": "an Application would be the Project Team",
+   "ord": 32
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Core Plan: 9% Tiebreakers",
+   "section_label": "TB.2",
+   "heading": "Owner-provided Enriched Property Services",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "quote": "Owner-provided Services",
+   "ord": 33
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Core Plan: 9% Tiebreakers",
+   "section_label": "TB.3",
+   "heading": "Earlier year of the Local Government's most recent 9% award",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 3,
+   "page_start": 21,
+   "page_end": 21,
+   "quote": "earlier year of the most recent 9% Credits award for the Local Government boundary",
+   "ord": 34
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Core Plan: 9% Tiebreakers",
+   "section_label": "TB.4",
+   "heading": "New Affordability family: 20% or more three- or four-bedroom units",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 4,
+   "page_start": 21,
+   "page_end": 21,
+   "quote": "for ties between New Affordability, Family tenancy Applications, 20% or more units are",
+   "ord": 35
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Core Plan: 9% Tiebreakers",
+   "section_label": "TB.5",
+   "heading": "Preservation: soonest expiry of all affordability restrictions",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 5,
+   "page_start": 21,
+   "page_end": 21,
+   "quote": "soonest year that all Housing Credit, HUD, and/or USDA affordability restrictions",
+   "ord": 36
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Core Plan: 9% Tiebreakers",
+   "section_label": "TB.6",
+   "heading": "Preservation: rent advantage value",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 6,
+   "page_start": 21,
+   "page_end": 21,
+   "quote": "the rent advantage value used in (Scoring) Preservation Scoring Criteria,",
+   "ord": 37
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Core Plan: 9% Tiebreakers",
+   "section_label": "TB.7",
+   "heading": "Least 9% Credits per low-income unit",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 7,
+   "page_start": 21,
+   "page_end": 21,
+   "quote": "applications that use the least amount of 9% Credits per low-income unit",
+   "ord": 38
+  }
+ ]
+}

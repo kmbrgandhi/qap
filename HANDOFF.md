@@ -13,14 +13,14 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 68 |
-| **States coded** | **35** |
-| Criteria | 1320 (879 competitive, 344 threshold) |
-| Point tiers | 1524 |
-| Track totals | 53 |
+| **States coded** | **36** |
+| Criteria | 1387 (910 competitive, 373 threshold) |
+| Point tiers | 1635 |
+| Track totals | 57 |
 | Documents with a source URL | 33 of 68 |
-| Citations verifying | 1320 of 1320 |
+| Citations verifying | 1387 of 1387 |
 
-Coded: AK AL AR AZ CO CT DE HI IA ID IL IN KS MA ME MI MN MO MS NC ND NH NJ NM NV NY OH OK PA RI SD VA VT WI WY
+Coded: AK AL AR AZ CO CT DE GA HI IA ID IL IN KS MA ME MI MN MO MS NC ND NH NJ NM NV NY OH OK PA RI SD VA VT WI WY
 
 The figures combine the 20 states coded against the full corpus with the ten
 coded from `data/pdfs_bundled/`. A repo-only session can rebuild and re-verify
@@ -50,6 +50,7 @@ that no total is stated.
 | KS | 53 | 9% new construction; 4% add-on; rehab ranked, no points | none | 125 | no stated total; 310-point Article 10 gate coded as thresholds |
 | ID | 41 | one (9% and 4% share it) | none | 109 | no stated total; one exclusion inferred from scope |
 | MS | 29 | one | none | 114 | no stated total; running header says 2024, body says 2026 |
+| GA | 67 | 9% core 50.5; new affordability +51; preservation +42; 4% USDA portfolio 16 | none | 101.5 / 92.5 | no stated total; matrix read from image |
 
 Six of ten state no total. For them the hand-sum made before loading is the
 only completeness check there is; see protocol §6.

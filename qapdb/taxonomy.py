@@ -604,6 +604,14 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("MS", "SC.8.B"): PRES, ("MS", "SC.9"): AFF, ("MS", "SC.10.a"): POP, ("MS", "SC.10.b"): POP,
     ("MS", "SC.10.c"): POP, ("MS", "SC.11"): SPON, ("MS", "SC.12"): SPON, ("MS", "SC.12.neg"): SPON,
     ("MS", "PA.1"): LOC, ("MS", "PA.2"): COST, ("MS", "PA.3"): READY, ("MS", "PA.4"): READY,
+    ("GA", "III"): AFF, ("GA", "IV"): COST, ("GA", "V"): SPON, ("GA", "VI"): POP,
+    ("GA", "VII"): READY, ("GA", "VIII"): AFF, ("GA", "IX"): POP, ("GA", "XXII"): POP,
+    ("GA", "XXIII"): LOC, ("GA", "X.A"): LOC, ("GA", "X.B"): LOC, ("GA", "XI"): LOC,
+    ("GA", "XII"): LOC, ("GA", "XIII"): LOC, ("GA", "XIV"): LOC, ("GA", "XV"): LOC,
+    ("GA", "XVI"): LOC, ("GA", "XVII"): LOC, ("GA", "XVIII"): LOC, ("GA", "XIX"): LOC,
+    ("GA", "XX"): AFF, ("GA", "XXI"): PRES, ("GA", "XXIV.A"): PRES, ("GA", "XXIV.B"): PRES,
+    ("GA", "XXIV.C"): PRES, ("GA", "XXIV.D"): PRES, ("GA", "XXIV.E"): LOC, ("GA", "XXIV.F.1"): PRES,
+    ("GA", "XXIV.F.2"): PRES, ("GA", "XXIV.F.3"): PRES, ("GA", "XXIV.F.4"): PRES,
 }
 
 
