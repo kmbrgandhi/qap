@@ -71,8 +71,9 @@ manifest.py         rewrites data/manifest.csv, keeping rows it cannot see
 ## Working from the git repo alone
 
 The full corpus is 123 MB in a shared drop folder and is **not** committed.
-`data/pdfs_bundled/` carries the eleven documents behind the ten states coded
-from the repo, so their citations can be re-verified anywhere. See its README.
+`data/pdfs_bundled/` carries 24 documents: the 11 behind the ten states already
+coded from the repo, so their citations can be re-verified anywhere, plus 13
+covering 12 uncoded states for the next batch. See its README.
 
 `qapdb/paths.py` resolves every PDF: the path recorded at ingest, then
 `data/pdfs_bundled/`, then `$QAP_PDF_DIR`. A document that cannot be found is
@@ -105,31 +106,43 @@ The dashboard is `python -m app.server`, then http://127.0.0.1:8000.
 
 ## What to do next
 
-All ten bundled states are coded. No uncoded state has its PDF in the repo, so
-the next extraction needs either the shared drop folder (`$QAP_PDF_DIR`) or a
-new bundle.
+All ten of the first bundle are coded. **A second bundle of 13 documents
+covering 12 uncoded states is now in `data/pdfs_bundled/`**, so a repo-only
+session has work available without the shared drop folder.
 
-1. **Human review of the flagged items below.** Each is recorded in its state's
+1. **Code the second bundle.** Every document was opened and confirmed to carry
+   real point values first; `data/pdfs_bundled/README.md` has the per-state
+   notes. Illinois, New Mexico, Kansas and Idaho are the most straightforward.
+   Two need warning in advance:
+   - **Louisiana** keeps its scoring in Appendix A from p.39, a self-score
+     sheet whose values sit in a column separate from their labels. Expect the
+     text layer to interleave them, as Nebraska's does.
+   - **Washington** scores in the 84-page 9% Policies document, not the
+     10-page QAP. Both are bundled; code the Policies.
+
+   California (regulations format, CCR §10325) and Texas (218 pages) are the
+   hardest. Leave them until last.
+2. **Human review of the flagged items below.** Each is recorded in its state's
    notes with the page to check. They are judgement calls, which is what the
    review queue is for.
-2. **Bundle a next batch** the way `data/pdfs_bundled/` was built (sha256
-   matching `data/manifest.csv`), if repo-only sessions are to continue. The
-   uncoded states fall into five groups:
+3. **States still needing a decision or a document:**
 
-   | Group | States (pages of the current document) |
+   | Group | States |
    |---|---|
-   | Ready, single document, no known obstacle | IL (77), NM (98), LA (104), ID (108), KS (112), MS (116), GA (126), TN (139), WV (139), OR (147) |
-   | Ready, but long or regulatory | CA (108, regulations; scoring is CCR §10325), TX (218) |
-   | Companion document holds the scoring | WA (the 84-page 9% Policies, not the 10-page QAP) |
    | Need a method decision first | NE, SC (image pass), MD (Program Guide not collected), KY (spreadsheet), UT (weights) |
+   | Need a different document collected | OR — see below |
    | Nothing to extract | FL (RFAs), MT (no points) |
 
-   Illinois, New Mexico, Louisiana and Idaho are the shortest single-document
-   plans and the natural next four.
-3. **Fill `data/sources.csv`** for the 35 documents without a source URL, and
+   **Oregon was wrongly listed here as ready.** `oregon-qap-2025.pdf` is a
+   public comment-and-response log: pages 44–142 are named commenters and
+   replies, not a scoring plan, and its only point values sit inside a reply
+   discussing proposed resilient construction scoring. Collect Oregon's actual
+   QAP before attempting it. The lesson is in the protocol: a high page count
+   and a plausible filename are not evidence that a document scores anything.
+4. **Fill `data/sources.csv`** for the 35 documents without a source URL, and
    set cycles for Alaska and Wyoming (neither document states one) and
    Arizona (ingest recorded a filename/document CONFLICT).
-4. **Consider a `qapdb/stats` command** that prints this file's corpus table
+5. **Consider a `qapdb/stats` command** that prints this file's corpus table
    from the full database. The figures here were computed from the ten bundled
    states plus the earlier 20 states' recorded totals, which is one more place
    for arithmetic to drift.

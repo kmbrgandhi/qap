@@ -961,3 +961,23 @@ at all. The absence of a stated total is the norm in this batch, not the
 exception. That makes the hand-sum-first rule more important, not less: it is
 the only check that exists.
 
+
+### A plausible filename is not evidence that a document scores anything
+
+Oregon was listed as ready to code on the strength of its page count and its
+name. Opening it showed `oregon-qap-2025.pdf` is a public comment-and-response
+log: pages 44–142 are named commenters and agency replies, and the only point
+values in the file sit inside a reply discussing *proposed* resilient
+construction scoring. Coding it would have produced criteria attributed to
+Oregon that Oregon never adopted.
+
+The signal that caught it was the one already in §1: count "point" occurrences
+before extracting. Oregon has 23 across 147 pages. Colorado, at 68 across 102,
+looked similar and turned out to be genuine — so a low count is not proof
+either way. **Read where the occurrences fall, not just how many there are.**
+In a real scoring plan they cluster in a scoring section; in Oregon they were
+scattered through prose, several inside sentences like "I can't remember what
+it is, but if it's historic, then you get some points for it".
+
+This check costs one read and belongs in the pre-flight, before any state is
+promised to a batch.
