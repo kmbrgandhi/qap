@@ -1,0 +1,791 @@
+{
+ "_comment": "Maryland 2026, DHCD/CDA. Scoring is Chapter 4 of the Multifamily Rental Financing Program Guide (this file); the QAP (maryland-qap-2026.pdf) is bundled for context and defers scoring to the Guide. Page numbers are PDF page indices; printed 'Page | n' is PDF page n+5. The Scoring Summary Table (p.59) states 221 points: 74 + 16 + 8 + 55 + 25 + 33 + 10. Hand-summed before loading: 4.1 = 42 + 18 + 14 = 74 (the -10 deduction excluded); 4.2 = 16 (one of three); 4.3 = 8; 4.4 = 5 + 10 + 10 + 8 + 8 + 10 + 4 = 55; 4.5 = 15 + 10 = 25 (the -8 cost deduction excluded); 4.6 = 10 + 6 + 13 + 4 = 33; 4.7 = 10. Total 221, matching. State Bonus Points (4.8) sit 'outside of the 221 point scale' and go on their own track. No tiebreakers are stated in either document. Minimum scores (pp.57-58): 92 for MBP/RHW-only projects, with category minimums; 145 for the Infill and Redevelopment Pool. Contradictions recorded in notes: 4.1.4's name (MBE/DBEs vs Local Small Businesses), 4.6.1's name, the 4.5.2 worked example, the misplaced 4.4.3 example, the State Bonus maximum (10 vs 15), and the Tennessee data source in 4.2.2. Thresholds are in MD_thresholds.json.",
+ "match": {
+  "filename": "maryland-multifamily-program-guide-2026.pdf"
+ },
+ "extractor_version": "hand-2026-md-1",
+ "qap_updates": {
+  "stated_total": 221
+ },
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": 221,
+   "page": 59,
+   "note": "Scoring Summary Table total. Excludes the -10 and -8 deductions and the State Bonus."
+  },
+  {
+   "track": "state_bonus",
+   "stated_total": null,
+   "page": 95,
+   "note": "Discretionary, outside the 221-point scale. 10, or 15 for intergenerational, elderly or supportive housing."
+  }
+ ],
+ "groups": [
+  {
+   "key": "4.2",
+   "label": "Community Context: one of 4.2.1, 4.2.2, 4.2.3",
+   "rule": "max_one",
+   "page_start": 66,
+   "source_quote": "Projects may only receive points under one of the following categories: 4.2.1, 4.2.2, or 4.2.3."
+  }
+ ],
+ "criteria": [
+  {
+   "native_category": "4.1 Capacity of Development Team",
+   "section_label": "4.1.1",
+   "heading": "Development Team Experience",
+   "points_max": 42,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 60,
+   "page_end": 60,
+   "quote": "DHCD will award up to forty-two (42) points based on an assessment of Development Team",
+   "tiers": [
+    {
+     "tier_label": "Developer: consistent and successful track record",
+     "points": 18
+    },
+    {
+     "tier_label": "Developer: overall successful",
+     "points": 13
+    },
+    {
+     "tier_label": "Developer: inconsistent",
+     "points": 8
+    },
+    {
+     "tier_label": "General Contractor: consistent and successful",
+     "points": 9
+    },
+    {
+     "tier_label": "General Contractor: overall successful",
+     "points": 5
+    },
+    {
+     "tier_label": "General Contractor: inconsistent",
+     "points": 2
+    },
+    {
+     "tier_label": "Architect: consistent and successful",
+     "points": 6
+    },
+    {
+     "tier_label": "Architect: overall successful",
+     "points": 4
+    },
+    {
+     "tier_label": "Architect: inconsistent",
+     "points": 2
+    },
+    {
+     "tier_label": "Property Manager: consistent and successful",
+     "points": 9
+    },
+    {
+     "tier_label": "Property Manager: overall successful",
+     "points": 5
+    },
+    {
+     "tier_label": "Property Manager: inconsistent",
+     "points": 2
+    }
+   ],
+   "note": "Each of four team members is rated on one of four rows (the last row, 'limited or no experience', scores 0 for all). 18 + 9 + 6 + 9 = 42. MBP/RHW-only projects need at least 30 here (32 with FHA Risk Sharing), p.57.",
+   "kind": "competitive",
+   "ord": 1
+  },
+  {
+   "native_category": "4.1 Capacity of Development Team",
+   "section_label": "4.1.2",
+   "heading": "Deductions from Team Experience Score",
+   "points_max": -10,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 61,
+   "page_end": 62,
+   "quote": "Points will be deducted from the Development Team Capacity score for any Developer (up to six",
+   "note": "Developer up to 6, property manager up to 4, for listed performance failures in the past five years. Scored as 'Negative 10 points' in the Scoring Summary Table (p.59), outside the 221.",
+   "kind": "competitive",
+   "ord": 2
+  },
+  {
+   "native_category": "4.1 Capacity of Development Team",
+   "section_label": "4.1.3",
+   "heading": "Developer Financial Capacity",
+   "points_max": 18,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 62,
+   "page_end": 63,
+   "quote": "Up to eighteen (18) points may be awarded based on the financial capacity of the Developer,",
+   "tiers": [
+    {
+     "tier_label": "Developer combined net worth over 25% of TDC",
+     "points": 2
+    },
+    {
+     "tier_label": "Developer net worth 10%-25% of TDC",
+     "points": 1
+    },
+    {
+     "tier_label": "Developer net liquid assets over 10% of TDC",
+     "points": 2.5
+    },
+    {
+     "tier_label": "Developer liquid over 4% but under 10%",
+     "points": 2
+    },
+    {
+     "tier_label": "Developer liquid 2%-4%",
+     "points": 1
+    },
+    {
+     "tier_label": "Guarantor net worth over 25% of TDC",
+     "points": 6
+    },
+    {
+     "tier_label": "Guarantor net worth 10%-25%",
+     "points": 3
+    },
+    {
+     "tier_label": "Guarantor net liquid assets over 10% of TDC",
+     "points": 7.5
+    },
+    {
+     "tier_label": "Guarantor liquid over 4% but under 10%",
+     "points": 6
+    },
+    {
+     "tier_label": "Guarantor liquid 2%-4%",
+     "points": 3
+    }
+   ],
+   "note": "Four independent tests, one tier each: 2 + 2.5 + 6 + 7.5 = 18. Minimums: 12 for MBP/RHW, 14 with FHA Risk Sharing (p.57), 10 for the Infill and Redevelopment Pool (p.58).",
+   "kind": "competitive",
+   "ord": 3
+  },
+  {
+   "native_category": "4.1 Capacity of Development Team",
+   "section_label": "4.1.4",
+   "heading": "Nonprofits, Public Housing Authorities, and Local Small Businesses",
+   "points_max": 14,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 64,
+   "page_end": 66,
+   "quote": "Projects shall be eligible for a maximum of fourteen (14) points under this section as detailed",
+   "tiers": [
+    {
+     "tier_label": "Category 1: NP or PHA with controlling (51%+) ownership, Qualified Nonprofit",
+     "points": 8
+    },
+    {
+     "tier_label": "Category 2: PHA, Local Small Business or Community-Based NP with 10.1-15% GP/MM interest",
+     "points": 5
+    },
+    {
+     "tier_label": "Category 2: 15.1-25%",
+     "points": 5.5
+    },
+    {
+     "tier_label": "Category 2: 25.1-50.9%",
+     "points": 6
+    },
+    {
+     "tier_label": "Category 3: per NP/PHA/Local Small Business as general contractor, architect or property manager (max 8)",
+     "points": 4
+    },
+    {
+     "tier_label": "Category 4: per entity on Secondary Development Team (max 8)",
+     "points": 1
+    },
+    {
+     "tier_label": "Category 4: per entity in another capacity-building role (max 8)",
+     "points": 2
+    }
+   ],
+   "note": "Four categories capped at 8, 6, 8 and 8 (30 in all) under a section maximum of 14; the same entity may score in several. No points if the entity is on the Primary Development Team and earns under 50% of its 4.1.1 points; 4.1.2 deductions carry over (p.66). The Scoring Summary Table (p.59) names this item 'Nonprofits (NPs), Public Housing Authorities (PHAs) and Minority/ Disadvantaged Business Enterprises (MBE/DBEs)'; the body names Local Small Businesses and does not mention MBE/DBEs. Recorded, not resolved.",
+   "kind": "competitive",
+   "ord": 4
+  },
+  {
+   "native_category": "4.2 Community Context",
+   "section_label": "4.2.1",
+   "heading": "Community Impact Projects",
+   "points_max": 16,
+   "points_type": "fixed",
+   "group": "4.2",
+   "page_start": 66,
+   "page_end": 67,
+   "quote": "Sixteen (16) points will be awarded to any elderly or family project, new construction or",
+   "note": "QCT or DDA (not a state-designated basis boost) contributing to a concerted community revitalization plan meeting the listed requirements.",
+   "kind": "competitive",
+   "ord": 5
+  },
+  {
+   "native_category": "4.2 Community Context",
+   "section_label": "4.2.2",
+   "heading": "Communities of Opportunity",
+   "points_max": 16,
+   "points_type": "fixed",
+   "group": "4.2",
+   "page_start": 68,
+   "page_end": 69,
+   "quote": "Sixteen (16) points will be awarded to family projects with reasonable access to jobs, quality",
+   "note": "Family projects only: a Community of Opportunity on DHCD's Composite Opportunity Index map, or an area so designated by law, court order or settlement (Thompson v. HUD; the Baltimore County Conciliation Agreement). The index's population-change component is 'obtained from the Tennessee State Data Center' (p.68), a source that cannot describe Maryland tracts; recorded as printed.",
+   "kind": "competitive",
+   "ord": 6
+  },
+  {
+   "native_category": "4.2 Community Context",
+   "section_label": "4.2.3",
+   "heading": "Defined Planning Areas and Opportunity Zones",
+   "points_max": 16,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "group": "4.2",
+   "page_start": 70,
+   "page_end": 70,
+   "quote": "Projects that did not receive points in Sections 4.2.1 or 4.2.2 may receive up to a maximum of",
+   "tiers": [
+    {
+     "tier_label": "Category 1: rural area, Sustainable Community, Enterprise/Empowerment Zone, Main Street, Heritage Area or designated rural village",
+     "points": 12
+    },
+    {
+     "tier_label": "Category 2: also in an Opportunity Zone",
+     "points": 4
+    }
+   ],
+   "kind": "competitive",
+   "ord": 7
+  },
+  {
+   "native_category": "4.3 Transit Oriented Development",
+   "section_label": "4.3",
+   "heading": "Transit Oriented Development",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 70,
+   "page_end": 71,
+   "quote": "TOD projects shall be eligible for a maximum of eight (8) points under this section as detailed in",
+   "tiers": [
+    {
+     "tier_label": "Cat 1: State-designated TOD",
+     "points": 8
+    },
+    {
+     "tier_label": "Cat 1: within 3/4 mile of rail stop or station",
+     "points": 8
+    },
+    {
+     "tier_label": "Cat 1: within 3/4 mile of two transferring bus lines",
+     "points": 5
+    },
+    {
+     "tier_label": "Cat 1: rural, within 1 mile of bus or rail",
+     "points": 4
+    },
+    {
+     "tier_label": "Cat 1: family housing in a Community of Opportunity within 1 mile of bus or rail",
+     "points": 4
+    },
+    {
+     "tier_label": "Cat 1: served by accessible Demand Responsive Transit",
+     "points": 4
+    },
+    {
+     "tier_label": "Cat 2: Walk Score 50-59",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Cat 2: Walk Score 60-69",
+     "points": 1
+    },
+    {
+     "tier_label": "Cat 2: Walk Score 70-79",
+     "points": 1.5
+    },
+    {
+     "tier_label": "Cat 2: Walk Score 80+",
+     "points": 2
+    }
+   ],
+   "note": "Category 1 reads as one qualifying bullet; Category 2 adds a Walk Score band. The section maximum of 8 caps the sum.",
+   "kind": "competitive",
+   "ord": 8
+  },
+  {
+   "native_category": "4.4 Public Purpose",
+   "section_label": "4.4.1.a",
+   "heading": "Income Targeting: 10% of units at 30% AMI",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 72,
+   "page_end": 72,
+   "quote": "A project will receive five (5) points if at least 10% of the income-restricted units in the",
+   "kind": "competitive",
+   "ord": 9
+  },
+  {
+   "native_category": "4.4 Public Purpose",
+   "section_label": "4.4.1.b",
+   "heading": "Income Targeting: weighted average AMI by bedroom",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 72,
+   "page_end": 73,
+   "quote": "Up to ten (10) points will be awarded to any project, regardless of location, based on the",
+   "tiers": [
+    {
+     "tier_label": "32.00% or below",
+     "points": 10
+    },
+    {
+     "tier_label": "32.01-33.50%",
+     "points": 9.5
+    },
+    {
+     "tier_label": "33.51-35.00%",
+     "points": 9
+    },
+    {
+     "tier_label": "35.01-36.50%",
+     "points": 8.5
+    },
+    {
+     "tier_label": "36.51-38.00%",
+     "points": 8
+    },
+    {
+     "tier_label": "38.01-39.50%",
+     "points": 7.5
+    },
+    {
+     "tier_label": "39.51-41.00%",
+     "points": 7
+    },
+    {
+     "tier_label": "41.01-42.50%",
+     "points": 6.5
+    },
+    {
+     "tier_label": "42.51-44.00%",
+     "points": 6
+    },
+    {
+     "tier_label": "44.01-45.50%",
+     "points": 5.5
+    },
+    {
+     "tier_label": "45.51-47.00%",
+     "points": 5
+    },
+    {
+     "tier_label": "47.01-48.50%",
+     "points": 4.5
+    },
+    {
+     "tier_label": "48.51-50.00%",
+     "points": 4
+    },
+    {
+     "tier_label": "50.01-51.00%",
+     "points": 3.5
+    },
+    {
+     "tier_label": "51.01-52.00%",
+     "points": 3
+    },
+    {
+     "tier_label": "52.01-53.00%",
+     "points": 2.5
+    },
+    {
+     "tier_label": "53.01-54.00%",
+     "points": 2
+    },
+    {
+     "tier_label": "54.01-54.50%",
+     "points": 1.5
+    },
+    {
+     "tier_label": "54.51-55.00%",
+     "points": 1
+    },
+    {
+     "tier_label": "55.01-55.50%",
+     "points": 0.5
+    }
+   ],
+   "note": "The table is introduced 'depending on the location of the project' but has one column. Worked example (p.74): 45.75% gives 5 points.",
+   "kind": "competitive",
+   "ord": 10
+  },
+  {
+   "native_category": "4.4 Public Purpose",
+   "section_label": "4.4.2",
+   "heading": "Targeted Populations",
+   "points_max": 10,
+   "points_type": "formula",
+   "page_start": 75,
+   "page_end": 76,
+   "quote": "DHCD will award up to 10 points in this category based on the percentage of units set aside out",
+   "note": "(set-aside units / 10% of affordable units) x 10, at 30% AMI. More than 15% of affordable units for a targeted population scores zero, with exceptions for VA Enhanced Use Lease and permanent supportive housing up to 50% (p.76).",
+   "kind": "competitive",
+   "ord": 11
+  },
+  {
+   "native_category": "4.4 Public Purpose",
+   "section_label": "4.4.3",
+   "heading": "Family Housing",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 77,
+   "page_end": 77,
+   "quote": "Up to eight (8) points are available in this category for projects as outlined in the table below:",
+   "tiers": [
+    {
+     "tier_label": "65% 2BR+ and 5-9% 3BR+",
+     "points": 2
+    },
+    {
+     "tier_label": "60% 2BR+ and 10-19% 3BR+",
+     "points": 3
+    },
+    {
+     "tier_label": "60% and 20-24%",
+     "points": 4
+    },
+    {
+     "tier_label": "65% and 20-24%",
+     "points": 5
+    },
+    {
+     "tier_label": "60% and 25-29%",
+     "points": 6
+    },
+    {
+     "tier_label": "65% and 25-29%",
+     "points": 7
+    },
+    {
+     "tier_label": "60% and 30%+",
+     "points": 8
+    },
+    {
+     "tier_label": "Alternative: 100% veteran (EUL) or homeless preference, 20% 2BR+",
+     "points": 4
+    }
+   ],
+   "note": "No age restrictions. The 2-point row requires 65% 2BR+ while the 3-point row requires 60%, as printed. The worked example for this section is printed under 4.4.4 Tenant Services (p.78).",
+   "kind": "competitive",
+   "ord": 12
+  },
+  {
+   "native_category": "4.4 Public Purpose",
+   "section_label": "4.4.4",
+   "heading": "Tenant Services",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 78,
+   "page_end": 78,
+   "quote": "Up to eight (8) points will be awarded to projects that augment the minimum Threshold Criteria",
+   "tiers": [
+    {
+     "tier_label": "Partners identified with written agreements",
+     "points": 3
+    },
+    {
+     "tier_label": "Tenant population and applicability of services",
+     "points": 1
+    },
+    {
+     "tier_label": "Full budget with sources",
+     "points": 2
+    },
+    {
+     "tier_label": "Financing need without identified sources",
+     "points": 1
+    },
+    {
+     "tier_label": "Resident outcome goals and measurement",
+     "points": 1
+    },
+    {
+     "tier_label": "Feedback, conflict resolution and privacy protocols",
+     "points": 1
+    },
+    {
+     "tier_label": "Alternative: CORES-certified provider for the compliance period",
+     "points": 8
+    }
+   ],
+   "note": "3 + 1 + 2 + 1 + 1 = 8, or 8 outright via CORES. The 'Examples' block on this page describes bedroom mixes and belongs to 4.4.3 Family Housing.",
+   "kind": "competitive",
+   "ord": 13
+  },
+  {
+   "native_category": "4.4 Public Purpose",
+   "section_label": "4.4.5",
+   "heading": "Mixed Income Housing",
+   "points_max": 10,
+   "points_type": "formula",
+   "page_start": 79,
+   "page_end": 79,
+   "quote": "DHCD will award up to 10 points in this category based on the number of Market Rate units as a",
+   "note": "(market rate units / affordable units) x 10, rounded to 1/100. No cap is written into the formula; 10 is the stated maximum.",
+   "kind": "competitive",
+   "ord": 14
+  },
+  {
+   "native_category": "4.4 Public Purpose",
+   "section_label": "4.4.6",
+   "heading": "Policy Incentives",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "scored_against_round": true,
+   "page_start": 79,
+   "page_end": 80,
+   "quote": "1. One (1) point will be awarded to projects that involve “twinning” of 9% LIHTC and",
+   "tiers": [
+    {
+     "tier_label": "Twinning: three highest-scoring twinning projects, 150+ units, $5M+ MBP need",
+     "points": 1
+    },
+    {
+     "tier_label": "Top three projects in communities of opportunity in the Baltimore Region and DC Metro",
+     "points": 2
+    },
+    {
+     "tier_label": "Top two projects in the listed non-metro counties",
+     "points": 2
+    },
+    {
+     "tier_label": "Choice Neighborhood projects",
+     "points": 2
+    },
+    {
+     "tier_label": "Joint development with MDOT or WMATA on transit-adjacent land",
+     "points": 2
+    },
+    {
+     "tier_label": "75+ units meeting Housing Starts Now",
+     "points": 2
+    }
+   ],
+   "note": "Six items worth 11 under a section maximum of 4. Several are awarded only to the top projects in the round, ranked on final scores excluding 4.4.6 and 4.8 (p.80).",
+   "kind": "competitive",
+   "ord": 15
+  },
+  {
+   "native_category": "4.5 Leveraging and Cost Effectiveness",
+   "section_label": "4.5.1",
+   "heading": "Direct Leveraging",
+   "points_max": 15,
+   "points_type": "formula",
+   "page_start": 81,
+   "page_end": 84,
+   "quote": "DHCD will award points based on the percentage of total development costs funded by non-state",
+   "note": "Share of TDC from non-State sources divided by .06667 (non-rural) or .06 (rural, then capped at 15). Twinning projects of 120+ units with a $5M+ MBP need 'will receive two (2) additional points' (p.82); whether those can take the score above 15 is not said. Coded at the stated maximum of 15.",
+   "kind": "competitive",
+   "ord": 16
+  },
+  {
+   "native_category": "4.5 Leveraging and Cost Effectiveness",
+   "section_label": "4.5.2",
+   "heading": "Operating Subsidies",
+   "points_max": 10,
+   "points_type": "formula",
+   "page_start": 84,
+   "page_end": 85,
+   "quote": "DHCD recognizes that projects may include other federal or local investments not directly",
+   "note": "(Average subsidy per affordable unit per year / $600) x 10 in entitlement jurisdictions, / $300 in non-entitlement. The worked example (p.85) computes '$375 ÷ $600 = 0.625' and then '0.9375 x 10 = 6.25 points awarded': 0.625 x 10 would be 6.25; 0.9375 is not derived anywhere. Recorded, not resolved.",
+   "kind": "competitive",
+   "ord": 17
+  },
+  {
+   "native_category": "4.5 Leveraging and Cost Effectiveness",
+   "section_label": "4.5.3",
+   "heading": "Construction or Rehabilitation Cost Incentives",
+   "points_max": -8,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 85,
+   "page_end": 86,
+   "quote": "up to eight (8) points will be deducted from any large project, and up to six (6) points deducted from",
+   "note": "(excess over cost limit / cost limit) x 8 for large projects, x 6 for small (up to 40 units). Cost limits are published separately before each round.",
+   "kind": "competitive",
+   "ord": 18
+  },
+  {
+   "native_category": "4.6 Development Quality Standards",
+   "section_label": "4.6.1",
+   "heading": "Sustainability Features",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 86,
+   "page_end": 89,
+   "quote": "A project can only receive points under one of the following criteria:",
+   "tiers": [
+    {
+     "tier_label": "Complete green certification (Enterprise, LEED, NGBS, EarthCraft, Green Globes)",
+     "points": 10
+    },
+    {
+     "tier_label": "Meet the certification's minimum score without certifying",
+     "points": 8
+    },
+    {
+     "tier_label": "One point per listed feature, up to 6",
+     "points": 6
+    }
+   ],
+   "note": "Headed 'Sustainability Features' in the body and 'Green Features' in the Scoring Summary Table (p.59). Eleven features are listed for the per-feature option.",
+   "kind": "competitive",
+   "ord": 19
+  },
+  {
+   "native_category": "4.6 Development Quality Standards",
+   "section_label": "4.6.2",
+   "heading": "Energy Efficiency",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 89,
+   "page_end": 90,
+   "quote": "DHCD will award additional points to projects to encourage design features that provide",
+   "tiers": [
+    {
+     "tier_label": "Rehab: ECMs with 30%+ savings or all SIR > 1.0",
+     "points": 4
+    },
+    {
+     "tier_label": "Rehab: ECMs with 20%+ savings or all SIR > 1.5",
+     "points": 2
+    },
+    {
+     "tier_label": "Alternative energy",
+     "points": 2
+    },
+    {
+     "tier_label": "Heat pump domestic water heating",
+     "points": 2
+    }
+   ],
+   "note": "4 + 2 + 2 = 8 is reachable by a rehabilitation project against a stated maximum of 6; new construction can reach 4. Gut rehabilitation is not eligible for the rehab items.",
+   "kind": "competitive",
+   "ord": 20
+  },
+  {
+   "native_category": "4.6 Development Quality Standards",
+   "section_label": "4.6.3",
+   "heading": "Project Durability and Enhancements",
+   "points_max": 13,
+   "points_type": "per_unit",
+   "page_start": 90,
+   "page_end": 91,
+   "quote": "One (1) point (except as noted for building exteriors) will be awarded, up to a maximum of",
+   "tiers": [
+    {
+     "tier_label": "Per listed feature",
+     "points": 1
+    },
+    {
+     "tier_label": "Building exterior at least 75% masonry or other highly durable materials",
+     "points": 2
+    }
+   ],
+   "note": "Eighteen features: seventeen at 1 point and the exterior at 2, 19 in all, capped at 13.",
+   "kind": "competitive",
+   "ord": 21
+  },
+  {
+   "native_category": "4.6 Development Quality Standards",
+   "section_label": "4.6.4",
+   "heading": "Lovable Places",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 92,
+   "page_end": 93,
+   "quote": "DHCD will award two (2) points for projects that promote walkability, community connections,",
+   "tiers": [
+    {
+     "tier_label": "Category A: walkable community design and three of five listed community spaces",
+     "points": 2
+    },
+    {
+     "tier_label": "Category B: LIHTC-eligible community service facility (child care, public library, or fresh-food retail)",
+     "points": 4
+    }
+   ],
+   "kind": "competitive",
+   "ord": 22
+  },
+  {
+   "native_category": "4.7 Housing Starts Now",
+   "section_label": "4.7",
+   "heading": "Housing Starts Now",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 93,
+   "page_end": 94,
+   "quote": "the project(s) must include milestones and projected closing dates within one (1) year of the award",
+   "tiers": [
+    {
+     "tier_label": "New construction/adaptive reuse: full site plan approval",
+     "points": 10
+    },
+    {
+     "tier_label": "New construction/adaptive reuse: preliminary site plan approval",
+     "points": 6
+    },
+    {
+     "tier_label": "New construction/adaptive reuse: zoned for intended use",
+     "points": 4
+    },
+    {
+     "tier_label": "Acquisition/rehabilitation (25+ years in service): zoned for intended use",
+     "points": 2
+    }
+   ],
+   "note": "Threshold 3.14 (p.56) requires general-pool applications to earn at least 2 points here.",
+   "kind": "competitive",
+   "ord": 23
+  },
+  {
+   "track": "state_bonus",
+   "native_category": "4.8 State Bonus Points",
+   "section_label": "4.8",
+   "heading": "State Bonus Points",
+   "points_max": 15,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 94,
+   "page_end": 95,
+   "quote": "No more than ten (10) State Bonus Points may be awarded to any project, except for",
+   "tiers": [
+    {
+     "tier_label": "Any eligible project",
+     "points": 10
+    },
+    {
+     "tier_label": "Intergenerational, elderly, or permanent supportive housing",
+     "points": 15
+    }
+   ],
+   "note": "Discretionary and optional; only projects scoring at least 120 before bonus are eligible, and no more than 20% of competitive LIHTC and RHFP funds may go to bonus recipients. Outside the 221-point scale per the Scoring Summary Table, which gives '(maximum of 10 points)'; the body allows 15 for intergenerational, elderly or supportive housing. Recorded, not resolved; coded at 15 on its own track.",
+   "kind": "competitive",
+   "ord": 24
+  }
+ ]
+}

@@ -1454,3 +1454,31 @@ the body, and record the table of contents as a contradiction. **Map the scoring
 section from its headings, not from the table of contents**, as §1 already
 says, and treat a disagreement between the two as a signal that one of them was
 not updated.
+
+
+### Maryland 2026: the scoring lives in the Guide, and the summary table is a second source
+
+Maryland's QAP defers all scoring to Chapter 4 of the Multifamily Rental
+Financing Program Guide, so the Guide is the file to match. Its Scoring Summary
+Table (p.59) states 221 points. The hand sum reached 221 exactly, with both
+deductions (−10 team, −8 cost) and the discretionary State Bonus left out.
+
+The summary table and the body disagree in three places:
+
+- 4.1.4 is named "MBE/DBEs" in the table and "Local Small Businesses" in the
+  body.
+- 4.6.1 is "Green Features" in the table and "Sustainability Features" in the
+  body.
+- The State Bonus is "maximum of 10" in the table. The body allows 15 for
+  elderly, intergenerational and supportive housing.
+
+**Treat a summary table as a source to check against, not a restatement of
+the body.** It matched on every number that counts toward the total and
+disagreed on almost everything else.
+
+Worked examples need checking too. 4.5.2's example gets 0.625 in step 1 and
+then multiplies 0.9375 in step 2. A Family Housing example is printed under
+Tenant Services. The Composite Opportunity Index takes Maryland population
+change "from the Tennessee State Data Center". All are recorded as printed.
+Also, one threshold (3.14) requires at least 2 points in a scoring section
+(4.7): a threshold that can only be read alongside the scoring.
