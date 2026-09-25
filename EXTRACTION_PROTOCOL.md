@@ -1188,3 +1188,29 @@ point value of the selection criteria that cannot be satisfied", has no point
 amount of its own. My first draft coded the multipliers ×1 and ×3 as tiers of
 −1 and −3. That reads as points and would have summed as points. Such a
 penalty gets `points_max` null, no tiers, and the rule stated in the note.
+
+
+### Washington 2027: when a bar sets one criterion against a set, cap the set
+
+Washington's Eligible Tribal Area criterion bars every other location-targeting
+criterion. That puts one criterion (worth 6, 5 or 10 by pool) against a set of
+up to five (worth 7, 7 or 3). A `max_one` group picks the single largest
+member, so it would compare the tribal points with Location Efficient's 2, not
+with the whole set's 7. No group rule expresses "A or the sum of B..F".
+
+I coded it as a `capped_sum` group over all of them, with the cap set at the
+better route for each pool: King 7, Metro 7, Non-Metro 10. That gives the exact
+maximum. It is a device, not the rule, and the group's note says so: the cap
+cannot tell an application which combination is legal. **When you use a
+cap as a device, say so in the group note, give both routes' arithmetic, and
+keep the real rule in the criterion's note.** If the maximum is all that is
+reconciled, the device is sound. The day the database answers "which
+combinations are legal", it will need a real rule type.
+
+The three geographic pools differ only in priority populations and location, so
+they are add-on tracks on a 159-point shared core. The Policies document also
+disagrees with itself on its own date (cover July 2026, p.2 "Republished
+8/1/2025") and on its set-aside menu (the text promises 20 options where the
+menu lists 17), and its examples cite an "Option 20" that does not exist. The
+cycle was set to 2027 through `sources.csv`, from the Policies' own "For the
+2027 allocation cycle".

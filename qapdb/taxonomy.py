@@ -649,6 +649,15 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("LA", "III.A"): AFF, ("LA", "III.B"): LOC, ("LA", "III.C"): COST, ("LA", "IV.A"): LOC,
     ("LA", "V.A"): DES, ("LA", "V.B"): DES, ("LA", "V.C"): DES, ("LA", "V.D"): DES,
     ("LA", "V.E"): DES, ("LA", "V.F"): DES, ("LA", "V.G"): POP, ("LA", "PEN.1"): SPON,
+    ("WA", "6.1"): AFF, ("WA", "6.2"): AFF, ("WA", "6.4"): COST, ("WA", "6.5"): COST,
+    ("WA", "6.6"): AFF, ("WA", "6.7"): COST, ("WA", "6.8"): COST, ("WA", "6.9"): PRES,
+    ("WA", "6.10"): PRES, ("WA", "6.18"): SPON, ("WA", "6.19"): POP, ("WA", "6.20"): AFF,
+    ("WA", "6.21"): DES, ("WA", "6.3.A.K"): POP, ("WA", "6.3.C.K"): POP, ("WA", "6.11.K"): LOC,
+    ("WA", "6.12.K"): LOC, ("WA", "6.13.K"): LOC, ("WA", "6.14.K"): LOC, ("WA", "6.15.K"): LOC,
+    ("WA", "6.17.K"): LOC, ("WA", "6.3.A.M"): POP, ("WA", "6.3.B.M"): POP, ("WA", "6.3.C.M"): POP,
+    ("WA", "6.11.M"): LOC, ("WA", "6.12.M"): LOC, ("WA", "6.13.M"): LOC, ("WA", "6.14.M"): LOC,
+    ("WA", "6.15.M"): LOC, ("WA", "6.16.M"): LOC, ("WA", "6.3.A.N"): POP, ("WA", "6.3.B.N"): POP,
+    ("WA", "6.3.C.N"): POP, ("WA", "6.11.N"): LOC, ("WA", "6.12.N"): LOC, ("WA", "6.16.N"): LOC,
 }
 
 
