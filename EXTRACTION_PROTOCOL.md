@@ -1121,3 +1121,27 @@ a `groups` entry cannot reach.
 The 4% universes are described in the comment and in each criterion's note
 rather than coded, as in Kansas. The exception is the two USDA Portfolio
 criteria that exist only at 4%.
+
+
+### Tennessee 2026: a scale is not a reachable total, and the NM lesson again
+
+Both of Tennessee's scoring sections open the same way: "The scoring criteria
+in this section are not intended to allow an Applicant to claim the maximum
+100 points." That records 100 as the scale's ceiling and says in the same
+sentence that no application reaches it. 100 is coded as the stated total on
+both tracks. The MISMATCH against the computed 94 (new construction) and 89
+(rehabilitation) is by design, and each track total's note quotes the sentence
+that explains it. A reader then sees at once that the gap is the document's
+intent, not a coding miss.
+
+The multi-page citation trap from New Mexico caught me again, this time loudly.
+I quoted "PHAs shall receive five points." for a criterion running pp.108–110.
+The sentence is on p.109, and the loader, which checks only the first and last
+page, reported it unverified. That was the right outcome: a quote from the
+middle page of a range fails honestly, and a phrase repeated on the first page
+passes dishonestly. **For a criterion spanning three or more pages, take the
+quote from its first page.**
+
+Tennessee's cross-references regularly name Section 16 for Section 17 items and
+Section 18 for the minimum score, which Section 17 states. Each bar was coded
+from its evident target and the discrepancy recorded in the criterion's note.

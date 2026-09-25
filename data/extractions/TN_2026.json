@@ -1,0 +1,866 @@
+{
+ "_comment": "Tennessee 2026 QAP, Tennessee Housing Development Agency. Page numbers are PDF page indices, which match the running header 'PAGE -N-' (the table of contents is about four pages off). Section 17 scores two ALTERNATIVE universes: A. New Construction (default track, pp.88-102) and B. Rehabilitation of Existing Multifamily Housing (track rehab, pp.103-117). Each opens: 'The scoring criteria in this section are not intended to allow an Applicant to claim the maximum 100 points.' 100 is recorded as the stated total of both, and the MISMATCH that follows is by the document's own design. Hand-summed before loading. New construction: 4 + 6 + 23 + 7 + 4 + 4 + 4 + 4 + 1 + 5 + 10 + 5 + (11 or 14: 9) + 8 = 94. Rehabilitation: 2 + 13 + 23 + 10 + (5 or 7: 7) + 1 + 10 + 5 + (8 or 11: 10) + 8 = 89. The loader matched both. Minimums: 65 new construction (52 in the PHA General Priority Category), 60 rehabilitation. Several cross-references cite Section 16 for Section 17 items; each is recorded in its note. Thresholds (Section 6) are in TN_thresholds.json.",
+ "match": {
+  "filename": "tennessee-qap-2026.pdf"
+ },
+ "extractor_version": "hand-2026-tn-1",
+ "qap_updates": {
+  "stated_total": 100
+ },
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": 100,
+   "page": 88,
+   "note": "New construction. 'The scoring criteria in this section are not intended to allow an Applicant to claim the maximum 100 points.' Computed 94. MISMATCH by design: 100 is the scale, and the document says the criteria do not reach it. Minimum 65 (52 PHA General Priority)."
+  },
+  {
+   "track": "rehab",
+   "stated_total": 100,
+   "page": 103,
+   "note": "Rehabilitation. Same sentence. Computed 89. MISMATCH by design. Minimum 60."
+  }
+ ],
+ "groups": [
+  {
+   "key": "tn_nc_ownership",
+   "label": "New construction: eventual resident ownership or Qualified Contract waiver",
+   "rule": "max_one",
+   "source_quote": "An Initial Application is not eligible for these points if",
+   "page_start": 102
+  },
+  {
+   "key": "tn_rh_population",
+   "label": "Rehabilitation: Special Housing Needs or Children",
+   "rule": "max_one",
+   "source_quote": "but not both.",
+   "page_start": 110
+  },
+  {
+   "key": "tn_rh_ownership",
+   "label": "Rehabilitation: eventual resident ownership or Qualified Contract waiver",
+   "rule": "max_one",
+   "source_quote": "Initial Applications waiving the ability to participate in the QCP.",
+   "page_start": 116
+  }
+ ],
+ "criteria": [
+  {
+   "section_label": "17.A.1",
+   "heading": "Housing Credit Development Location",
+   "points_max": 4,
+   "points_type": "formula",
+   "page_start": 88,
+   "page_end": 88,
+   "quote": "Initial Applications proposing developments located in areas",
+   "detail_external": "Proposed Siting Model for New Construction - 2026 QAP Public",
+   "note": "By Regional Housing Needs Score; city-identified priority areas qualify automatically for 4. Not applicable in the PHA General Priority Category.",
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 1
+  },
+  {
+   "section_label": "17.A.2",
+   "heading": "Meeting Housing Needs",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 88,
+   "page_end": 89,
+   "quote": "Initial Applications in which the 40/60 Test is elected may earn up to 5",
+   "tiers": [
+    {
+     "tier_label": "40/60: additional 5% at 50% AMI",
+     "points": 1
+    },
+    {
+     "tier_label": "additional 10%",
+     "points": 2
+    },
+    {
+     "tier_label": "additional 15%",
+     "points": 4
+    },
+    {
+     "tier_label": "additional 20%",
+     "points": 6
+    },
+    {
+     "tier_label": "20/50: additional 5% at 40% AMI",
+     "points": 1
+    },
+    {
+     "tier_label": "additional 10%",
+     "points": 2
+    },
+    {
+     "tier_label": "additional 15%",
+     "points": 4
+    },
+    {
+     "tier_label": "additional 20%",
+     "points": 6
+    },
+    {
+     "tier_label": "At least 10% of units at 30% AMI",
+     "points": 6
+    }
+   ],
+   "note": "CONTRADICTION: the heading says 'up to 6 points' and Table 17-1 reaches 6, but items a and b each say 'may earn up to 5 points'. Coded 6. Average Income Test applications are ineligible.",
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 2
+  },
+  {
+   "section_label": "17.A.3",
+   "heading": "Development Characteristics",
+   "points_max": 23,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 89,
+   "page_end": 92,
+   "quote": "For Development Characteristics also appearing in",
+   "tiers": [
+    {
+     "tier_label": "Brick/stone veneer or stucco 60%+, remainder fiber cement/hardiplank",
+     "points": 4
+    },
+    {
+     "tier_label": "50%+",
+     "points": 3
+    },
+    {
+     "tier_label": "40%+",
+     "points": 2
+    },
+    {
+     "tier_label": "Anti-fungal roofing, 30-year warranty",
+     "points": 2
+    },
+    {
+     "tier_label": "Dog/pet park",
+     "points": 1
+    },
+    {
+     "tier_label": "Washer/dryer hookups in all units",
+     "points": 3
+    },
+    {
+     "tier_label": "Gazebo",
+     "points": 2
+    },
+    {
+     "tier_label": "Keyed secure delivery area",
+     "points": 2
+    },
+    {
+     "tier_label": "Dedicated flex/case management office space",
+     "points": 6
+    },
+    {
+     "tier_label": "1,200 sq ft community building",
+     "points": 6
+    },
+    {
+     "tier_label": "Pre-wired high speed internet with ports in all bedrooms",
+     "points": 5
+    },
+    {
+     "tier_label": "Range-top fire suppression in each unit",
+     "points": 6
+    },
+    {
+     "tier_label": "Camera video security system",
+     "points": 2
+    },
+    {
+     "tier_label": "Walking trail",
+     "points": 2
+    },
+    {
+     "tier_label": "Perimeter fencing (not chain link)",
+     "points": 2
+    },
+    {
+     "tier_label": "Pergola",
+     "points": 2
+    },
+    {
+     "tier_label": "Veranda",
+     "points": 2
+    },
+    {
+     "tier_label": "Landscaped covered pavilion",
+     "points": 2
+    },
+    {
+     "tier_label": "Historic structure or district",
+     "points": 2
+    }
+   ],
+   "note": "Exterior materials: choose one. The listed items sum well past the cap of 23. Items that also appear under Serving Resident Populations may be claimed only once.",
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 3
+  },
+  {
+   "section_label": "17.A.4",
+   "heading": "Sponsor Characteristics",
+   "points_max": 7,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 92,
+   "page_end": 93,
+   "quote": "Development Team Tennessee Housing Credit Experience",
+   "tiers": [
+    {
+     "tier_label": "a. Most recent Tennessee allocation 2021-2025 (PHAs automatically)",
+     "points": 2
+    },
+    {
+     "tier_label": "a. 2020 and before",
+     "points": 1
+    },
+    {
+     "tier_label": "b. Track record: 0-1 cumulative Minor SAEs",
+     "points": 5
+    },
+    {
+     "tier_label": "b. 2-3",
+     "points": 3
+    },
+    {
+     "tier_label": "b. 4",
+     "points": 1
+    },
+    {
+     "tier_label": "b. 5+",
+     "points": 0
+    }
+   ],
+   "note": "a up to 2 plus b up to 5.",
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 4
+  },
+  {
+   "section_label": "17.A.5",
+   "heading": "Water & Sewer",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 93,
+   "page_end": 94,
+   "quote": "Points are available based on the status of availability of water and sewer",
+   "tiers": [
+    {
+     "tier_label": "Approved and planned to site, or on-site system financed and planned",
+     "points": 2
+    },
+    {
+     "tier_label": "Installed and available, or on-site system financed and TDEC-approved",
+     "points": 4
+    }
+   ],
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 5
+  },
+  {
+   "section_label": "17.A.6",
+   "heading": "Financial Readiness to Proceed",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 94,
+   "page_end": 94,
+   "quote": "Points are available based on the percentage of non-equity dollars",
+   "tiers": [
+    {
+     "tier_label": "0-25% of non-equity dollars committed",
+     "points": 1
+    },
+    {
+     "tier_label": "25.1-50%",
+     "points": 2
+    },
+    {
+     "tier_label": "50.1-75%",
+     "points": 3
+    },
+    {
+     "tier_label": "75.1-100%",
+     "points": 4
+    }
+   ],
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 6
+  },
+  {
+   "section_label": "17.A.7",
+   "heading": "Design Development",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 94,
+   "page_end": 95,
+   "quote": "Points are available depending upon the level of conceptual design work",
+   "tiers": [
+    {
+     "tier_label": "Schematic site plan only",
+     "points": 1
+    },
+    {
+     "tier_label": "+ schematic floor plans",
+     "points": 2
+    },
+    {
+     "tier_label": "+ schematic elevations",
+     "points": 3
+    },
+    {
+     "tier_label": "+ construction drawings begun",
+     "points": 4
+    }
+   ],
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 7
+  },
+  {
+   "section_label": "17.A.8",
+   "heading": "Planning & Zoning Process",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 95,
+   "page_end": 95,
+   "quote": "Points will be awarded based on what stage the proposal is at in the",
+   "tiers": [
+    {
+     "tier_label": "Has not begun",
+     "points": 0
+    },
+    {
+     "tier_label": "In process",
+     "points": 2
+    },
+    {
+     "tier_label": "By right or zoning approvals in place",
+     "points": 4
+    }
+   ],
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 8
+  },
+  {
+   "section_label": "17.A.9",
+   "heading": "Public Housing Waiting List/Housing Choice Voucher Holder",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 95,
+   "page_end": 96,
+   "quote": "Initial Applications electing these points must indicate priority for",
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 9
+  },
+  {
+   "section_label": "17.A.10",
+   "heading": "Serving Resident Populations with Special Housing Needs OR with Children",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 96,
+   "page_end": 98,
+   "quote": "Serving Resident Populations with Special Housing Needs OR Serving",
+   "tiers": [
+    {
+     "tier_label": "Special Housing Needs: supportive services agreement, dedicated space and one approved amenity",
+     "points": 5
+    },
+    {
+     "tier_label": "Children: 20% three-bedroom units, playground and one approved amenity",
+     "points": 5
+    }
+   ],
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 10
+  },
+  {
+   "section_label": "17.A.11",
+   "heading": "Development Intended for Eventual Resident Ownership",
+   "points_max": 1,
+   "points_type": "fixed",
+   "group": "tn_nc_ownership",
+   "page_start": 101,
+   "page_end": 101,
+   "quote": "Applicants offering qualified residents the right of first refusal to purchase",
+   "note": "Bars points under 'Section 16-A-14 and Section 16-A-15'; the Qualified Contract waiver and Extended Recapitalization Waiver are 17.A.14 and 17.A.15, which in turn cite 17-A-11. The bar reaches both, but the group holds only 11 and 14; it yields the same maximum, 17 (9 + 8), because 11 is worth only 1.",
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 11
+  },
+  {
+   "section_label": "17.A.12",
+   "heading": "Energy Efficiency",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 101,
+   "page_end": 101,
+   "quote": "ENERGY STAR rated HVAC systems (15 SEER minimum or equivalent) in all",
+   "tiers": [
+    {
+     "tier_label": "ENERGY STAR HVAC",
+     "points": 3
+    },
+    {
+     "tier_label": "Tankless water heater",
+     "points": 2
+    },
+    {
+     "tier_label": "Dishwasher",
+     "points": 2
+    },
+    {
+     "tier_label": "Refrigerator 19 cu ft with ice maker",
+     "points": 2
+    },
+    {
+     "tier_label": "Windows",
+     "points": 2
+    },
+    {
+     "tier_label": "Ceiling fans",
+     "points": 1
+    },
+    {
+     "tier_label": "Ventilation fans",
+     "points": 1
+    }
+   ],
+   "note": "Items sum to 13 against the cap of 10.",
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 12
+  },
+  {
+   "section_label": "17.A.13",
+   "heading": "Tennessee Growth Policy Act",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 101,
+   "page_end": 102,
+   "quote": "located completely and wholly in a county or municipality with an approved growth plan",
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 13
+  },
+  {
+   "section_label": "17.A.14",
+   "heading": "Waiver of the Qualified Contract Process",
+   "points_max": 9,
+   "points_type": "fixed",
+   "group": "tn_nc_ownership",
+   "page_start": 102,
+   "page_end": 102,
+   "quote": "Initial Applications waiving the ability to participate in the QCP.",
+   "note": "The rehabilitation version (17.B.11) is worth 10.",
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 14
+  },
+  {
+   "section_label": "17.A.15",
+   "heading": "Extended Recapitalization Waiver",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 102,
+   "page_end": 102,
+   "quote": "Applicants may defer the point when recapitalization of the proposed",
+   "tiers": [
+    {
+     "tier_label": "17 years from last building placed in service",
+     "points": 2
+    },
+    {
+     "tier_label": "20 years",
+     "points": 8
+    }
+   ],
+   "note": "Barred with 17.A.11 (see its note).",
+   "native_category": "17.A New Construction Only",
+   "kind": "competitive",
+   "ord": 15
+  },
+  {
+   "section_label": "17.B.1",
+   "heading": "Housing Credit Development Location",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 103,
+   "page_end": 103,
+   "quote": "Development site wholly located within a HUD",
+   "note": "Wholly within a QCT covered by a CCRP.",
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 16
+  },
+  {
+   "section_label": "17.B.2",
+   "heading": "Meeting Housing Needs",
+   "points_max": 13,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 103,
+   "page_end": 106,
+   "quote": "An Initial Application will be eligible for points based on the number of years",
+   "tiers": [
+    {
+     "tier_label": "a. Time since last building placed in service (Table 17-9), up to",
+     "points": 4
+    },
+    {
+     "tier_label": "b. Three-year average physical occupancy x 3",
+     "points": 3
+    },
+    {
+     "tier_label": "c. Rehabilitation hard costs per door above $25,000 (Table 17-10), up to",
+     "points": 3
+    },
+    {
+     "tier_label": "d. Post-rehab Housing Credit units / county existing and pipeline units x 3",
+     "points": 3
+    }
+   ],
+   "note": "a + b + c + d = 13. Table 17-9 gives PHAs 3 for 1994-1996 and 4 before 1994, but other applicants 4 and 3, the reverse. The fourth component has no letter and follows c directly (p.104).",
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 17
+  },
+  {
+   "section_label": "17.B.3",
+   "heading": "Development Characteristics",
+   "points_max": 23,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 106,
+   "page_end": 108,
+   "quote": "Rehabilitating Existing Multifamily Housing in an area covered by a CCRP.",
+   "tiers": [
+    {
+     "tier_label": "Area covered by a CCRP",
+     "points": 5
+    },
+    {
+     "tier_label": "Brick/stone veneer or stucco 60%+, remainder fiber cement/hardiplank",
+     "points": 4
+    },
+    {
+     "tier_label": "50%+",
+     "points": 3
+    },
+    {
+     "tier_label": "40%+",
+     "points": 2
+    },
+    {
+     "tier_label": "Anti-fungal roofing",
+     "points": 2
+    },
+    {
+     "tier_label": "Washer/dryer hookups",
+     "points": 3
+    },
+    {
+     "tier_label": "Gazebo",
+     "points": 2
+    },
+    {
+     "tier_label": "1,200 sq ft community building",
+     "points": 6
+    },
+    {
+     "tier_label": "Pre-wired internet, central port",
+     "points": 2
+    },
+    {
+     "tier_label": "Pre-wired internet, ports in all bedrooms",
+     "points": 3
+    },
+    {
+     "tier_label": "Range-top fire suppression",
+     "points": 6
+    },
+    {
+     "tier_label": "Camera video security",
+     "points": 2
+    },
+    {
+     "tier_label": "Walking trail",
+     "points": 2
+    },
+    {
+     "tier_label": "Perimeter fencing",
+     "points": 2
+    },
+    {
+     "tier_label": "Pergola",
+     "points": 2
+    },
+    {
+     "tier_label": "Veranda",
+     "points": 2
+    },
+    {
+     "tier_label": "Picnic shelter",
+     "points": 2
+    },
+    {
+     "tier_label": "Historic structure or district",
+     "points": 5
+    }
+   ],
+   "note": "Exterior materials and the two internet options are each choose-one. The historic item cites 'Section 16-B-3-p' for itself.",
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 18
+  },
+  {
+   "section_label": "17.B.4",
+   "heading": "Sponsor Characteristics",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 108,
+   "page_end": 110,
+   "quote": "To reward recent Housing Credit experience in Tennessee, developers",
+   "tiers": [
+    {
+     "tier_label": "a. Most recent Tennessee allocation 2021-2025 (PHAs automatically)",
+     "points": 5
+    },
+    {
+     "tier_label": "a. 2020 and before",
+     "points": 3
+    },
+    {
+     "tier_label": "b. 0-1 cumulative Minor SAEs",
+     "points": 5
+    },
+    {
+     "tier_label": "b. 2-3",
+     "points": 3
+    },
+    {
+     "tier_label": "b. 4",
+     "points": 1
+    },
+    {
+     "tier_label": "b. 5+",
+     "points": 0
+    }
+   ],
+   "note": "The rehabilitation track record counts Minor SAEs from January 1, 2019; new construction's from January 1, 2020.",
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 19
+  },
+  {
+   "section_label": "17.B.5",
+   "heading": "Serving Resident Populations with Special Housing Needs",
+   "points_max": 7,
+   "points_type": "fixed",
+   "group": "tn_rh_population",
+   "page_start": 110,
+   "page_end": 112,
+   "quote": "Points may be taken for Serving Resident Populations with Special Housing",
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 20
+  },
+  {
+   "section_label": "17.B.6",
+   "heading": "Public Housing Waiting List/Housing Choice Voucher Holder",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 112,
+   "page_end": 112,
+   "quote": "Initial Applications electing these points must indicate priority for households",
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 21
+  },
+  {
+   "section_label": "17.B.7",
+   "heading": "Serving Resident Populations with Children",
+   "points_max": 7,
+   "points_type": "fixed",
+   "group": "tn_rh_population",
+   "page_start": 113,
+   "page_end": 113,
+   "quote": "Points may be taken for Serving Resident Populations with Children or Serving",
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 22
+  },
+  {
+   "section_label": "17.B.8",
+   "heading": "Development Intended for Eventual Resident Ownership",
+   "points_max": 4,
+   "points_type": "fixed",
+   "group": "tn_rh_ownership",
+   "page_start": 115,
+   "page_end": 116,
+   "quote": "Applicants offering qualified residents the right of first refusal to purchase single",
+   "note": "Bars 17.B.11 and 17.B.12. 17.B.11 in turn cites 'Section 17-A-11', the new construction item; 17.B.12 correctly cites 17-B-8. The group holds 8 and 11; the maximum, 18 (10 + 8), is the same as for the full bar.",
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 23
+  },
+  {
+   "section_label": "17.B.9",
+   "heading": "Energy Efficiency",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 116,
+   "page_end": 116,
+   "quote": "ENERGY STAR rated HVAC systems (15 SEER minimum or equivalent)",
+   "tiers": [
+    {
+     "tier_label": "ENERGY STAR HVAC",
+     "points": 3
+    },
+    {
+     "tier_label": "Tankless water heater",
+     "points": 2
+    },
+    {
+     "tier_label": "Refrigerator 18 cu ft with ice maker",
+     "points": 2
+    },
+    {
+     "tier_label": "Windows",
+     "points": 2
+    },
+    {
+     "tier_label": "Ventilation fans",
+     "points": 1
+    }
+   ],
+   "note": "Items sum to exactly 10.",
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 24
+  },
+  {
+   "section_label": "17.B.10",
+   "heading": "Tennessee Growth Policy Act",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 116,
+   "page_end": 116,
+   "quote": "wholly in a county or municipality with a growth plan approved by the local",
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 25
+  },
+  {
+   "section_label": "17.B.11",
+   "heading": "Waiver of the Qualified Contract Process",
+   "points_max": 10,
+   "points_type": "fixed",
+   "group": "tn_rh_ownership",
+   "page_start": 116,
+   "page_end": 116,
+   "quote": "Initial Applications waiving the ability to participate in the QCP.",
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 26
+  },
+  {
+   "section_label": "17.B.12",
+   "heading": "Extended Recapitalization Waiver",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 116,
+   "page_end": 117,
+   "quote": "these points if points are taken in area Section 17",
+   "tiers": [
+    {
+     "tier_label": "17 years since placed in service",
+     "points": 2
+    },
+    {
+     "tier_label": "20 years",
+     "points": 8
+    }
+   ],
+   "native_category": "17.B Rehabilitation of Existing Multifamily Housing",
+   "track": "rehab",
+   "kind": "competitive",
+   "ord": 27
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tie Breaker",
+   "section_label": "18.F.1",
+   "heading": "New construction: least Housing Credit per Housing Credit unit",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 125,
+   "page_end": 125,
+   "quote": "In the event of a scoring tie between two or more Initial Applications",
+   "ord": 28
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tie Breaker",
+   "section_label": "18.F.1.a",
+   "heading": "New construction: wholly within a QCT and covered by a CCRP",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 2,
+   "page_start": 125,
+   "page_end": 125,
+   "quote": "If the tie is not broken by Section 18.F.1, priority will be given to the",
+   "ord": 29
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Tie Breaker",
+   "section_label": "18.F.2",
+   "heading": "Rehabilitation: least Housing Credit per Housing Credit unit",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 125,
+   "page_end": 125,
+   "quote": "proposing rehabilitation of Existing Multifamily Housing, the tie shall be",
+   "track": "rehab",
+   "ord": 30
+  }
+ ]
+}

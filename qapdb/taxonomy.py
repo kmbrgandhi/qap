@@ -612,6 +612,13 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("GA", "XX"): AFF, ("GA", "XXI"): PRES, ("GA", "XXIV.A"): PRES, ("GA", "XXIV.B"): PRES,
     ("GA", "XXIV.C"): PRES, ("GA", "XXIV.D"): PRES, ("GA", "XXIV.E"): LOC, ("GA", "XXIV.F.1"): PRES,
     ("GA", "XXIV.F.2"): PRES, ("GA", "XXIV.F.3"): PRES, ("GA", "XXIV.F.4"): PRES,
+    ("TN", "17.A.1"): LOC, ("TN", "17.A.2"): AFF, ("TN", "17.A.3"): DES, ("TN", "17.A.4"): SPON,
+    ("TN", "17.A.5"): READY, ("TN", "17.A.6"): READY, ("TN", "17.A.7"): READY, ("TN", "17.A.8"): READY,
+    ("TN", "17.A.9"): POP, ("TN", "17.A.10"): POP, ("TN", "17.A.11"): AFF, ("TN", "17.A.12"): DES,
+    ("TN", "17.A.13"): LOC, ("TN", "17.A.14"): AFF, ("TN", "17.A.15"): AFF, ("TN", "17.B.1"): LOC,
+    ("TN", "17.B.2"): PRES, ("TN", "17.B.3"): DES, ("TN", "17.B.4"): SPON, ("TN", "17.B.5"): POP,
+    ("TN", "17.B.6"): POP, ("TN", "17.B.7"): POP, ("TN", "17.B.8"): AFF, ("TN", "17.B.9"): DES,
+    ("TN", "17.B.10"): LOC, ("TN", "17.B.11"): AFF, ("TN", "17.B.12"): AFF,
 }
 
 
