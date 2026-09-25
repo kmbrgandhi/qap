@@ -24,6 +24,8 @@ import sqlite3
 from pathlib import Path
 
 import pymupdf
+
+from qapdb import sheets
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, Response
 
@@ -145,14 +147,22 @@ def page_png(cid: int, dpi: int = 130) -> Response:
     criterion whose quote is not really on the page renders with no box -
     the reviewer sees the problem instead of taking the page number on trust.
     """
-    got = rows("""SELECT c.quote, c.page_start, qa.local_path
+    got = rows("""SELECT c.quote, c.page_start, c.cell_ref, qa.local_path
                   FROM criteria c JOIN qaps qa ON qa.id = c.qap_id
                   WHERE c.id = ?""", (cid,))
     if not got:
         raise HTTPException(404, "no such criterion")
     quote, page_no, path = got[0]["quote"], got[0]["page_start"], got[0]["local_path"]
+    cell_ref = got[0]["cell_ref"]
     if not page_no:
         raise HTTPException(404, "criterion has no page")
+
+    # A spreadsheet source has no page to rasterise. Kentucky publishes its
+    # scoring only as .xlsx, so rather than 500 at the reviewer, typeset the
+    # cited sheet onto a page and highlight the quote there. The reviewer
+    # still sees the words in context, next to the cell reference.
+    if sheets.is_sheet(path):
+        return _sheet_png(path, page_no, quote, cell_ref, dpi)
 
     doc = pymupdf.open(path)
     if not (1 <= page_no <= doc.page_count):
@@ -171,6 +181,39 @@ def page_png(cid: int, dpi: int = 130) -> Response:
                     headers={"Cache-Control": "no-store"})
 
 
+def _sheet_png(path: str, sheet_no: int, quote: str, cell_ref: str | None,
+               dpi: int) -> Response:
+    """Typeset one worksheet as a page so the review UI can show it."""
+    wb = sheets.SheetDoc(path)
+    if not (1 <= sheet_no <= wb.page_count):
+        wb.close()
+        raise HTTPException(404, "sheet out of range")
+    ws = wb[sheet_no - 1]
+    body = ws.get_text().replace("\t", "   ")
+    wb.close()
+
+    header = f"{Path(path).name}  |  sheet {sheet_no}: {ws.title}"
+    if cell_ref:
+        header += f"   [cited cell: {cell_ref}]"
+
+    out = pymupdf.open()
+    page = out.new_page(width=1100, height=1500)
+    page.insert_textbox(pymupdf.Rect(36, 28, 1064, 60), header,
+                        fontsize=10, fontname="hebo", color=(0.18, 0.36, 0.31))
+    page.insert_textbox(pymupdf.Rect(36, 68, 1064, 1470), body,
+                        fontsize=8.2, fontname="cour")
+
+    for rect in (page.search_for(quote) if quote else []):
+        annot = page.add_highlight_annot(rect)
+        annot.set_colors(stroke=(1, 0.85, 0.2))
+        annot.update()
+
+    data = page.get_pixmap(dpi=dpi).tobytes("png")
+    out.close()
+    return Response(data, media_type="image/png",
+                    headers={"Cache-Control": "no-store"})
+
+
 @app.get("/api/pdf")
 def pdf(cid: int) -> FileResponse:
     """The source PDF, so a reviewer can open the full document if needed."""
@@ -178,8 +221,10 @@ def pdf(cid: int) -> FileResponse:
                   JOIN qaps qa ON qa.id = c.qap_id WHERE c.id = ?""", (cid,))
     if not got:
         raise HTTPException(404, "no such criterion")
-    return FileResponse(got[0]["local_path"], media_type="application/pdf",
-                        filename=got[0]["filename"])
+    path = got[0]["local_path"]
+    media = ("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+             if sheets.is_sheet(path) else "application/pdf")
+    return FileResponse(path, media_type=media, filename=got[0]["filename"])
 
 
 @app.post("/api/review")
