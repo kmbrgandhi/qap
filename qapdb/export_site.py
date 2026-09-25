@@ -65,13 +65,17 @@ def build(db_path: Path) -> dict:
     catdefs = [dict(name=r["name"], definition=r["definition"])
                for r in con.execute("SELECT name, definition FROM categories ORDER BY id")]
 
+    # The column is is_primary, not role. An earlier version guessed the name
+    # and swallowed the OperationalError, so every criterion exported with no
+    # category at all and the coverage page showed zero states scoring
+    # anything. Let a wrong query fail loudly instead: a silently empty
+    # category is worse than a crash, because the page still renders.
     primary: dict[int, str] = {}
-    try:
-        for r in con.execute("SELECT criterion_id, category_id FROM criterion_categories"
-                             " WHERE role = 'primary'"):
-            primary[r["criterion_id"]] = cats.get(r["category_id"])
-    except sqlite3.OperationalError:
-        pass  # taxonomy not yet applied; the site copes with missing categories
+    for r in con.execute("SELECT criterion_id, category_id FROM criterion_categories"
+                         " WHERE is_primary = 1"):
+        primary[r["criterion_id"]] = cats.get(r["category_id"])
+    if not primary:
+        raise SystemExit("no primary categories found; run python -m qapdb.taxonomy --commit")
 
     tiers: dict[int, list] = {}
     for r in con.execute("SELECT criterion_id, tier_label, points FROM point_tiers"

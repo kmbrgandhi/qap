@@ -53,6 +53,37 @@ header.top{border-bottom:1px solid var(--rule);background:var(--raise)}
 .tally .k{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);margin-top:5px}
 
 /* ---- notice ---- */
+.nav{display:flex;gap:2px;flex-wrap:wrap;flex:1 1 100%;order:3;margin-top:4px}
+.nav a{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 11px;
+       border-radius:3px;border:1px solid transparent}
+.nav a:hover{color:var(--accent);background:var(--accent-soft)}
+.nav a.on{color:var(--accent);background:var(--accent-soft);border-color:var(--rule)}
+
+/* coverage matrix */
+.mx{border-collapse:separate;border-spacing:0;min-width:820px}
+.mx th.rot{height:118px;vertical-align:bottom;padding:0 0 8px}
+.mx th.rot span{display:block;writing-mode:vertical-rl;transform:rotate(180deg);
+  font-size:11px;letter-spacing:.04em;text-transform:none;font-weight:600;color:var(--ink);
+  white-space:nowrap;text-align:left}
+.mx td.cell{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;
+  font-size:12.5px;padding:6px 9px;border-bottom:1px solid var(--rule-soft)}
+.mx td.zero{color:var(--oxide);font-weight:600}
+.mx td.zero::after{content:"0"}
+.mx td.stn{white-space:nowrap;font-weight:600}
+.mx td.cov{text-align:center;font-family:var(--mono);font-weight:600}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:12px}
+.sw{display:inline-block;width:11px;height:11px;border-radius:2px;vertical-align:-1px;margin-right:5px}
+
+/* concept results */
+.hit{border-bottom:1px solid var(--rule-soft);padding-block:13px}
+.hit .hd{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.hit .st{font-family:var(--mono);font-weight:600;color:var(--accent);min-width:34px}
+.hit .nm{font-weight:600;flex:1 1 300px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-block:10px 16px}
+.chips button{font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;color:var(--muted);
+  background:var(--raise);border:1px solid var(--rule);border-radius:99px;padding:4px 12px}
+.chips button:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.lead{color:var(--muted);max-width:72ch;margin-block:10px 0;font-size:14.5px}
 .notice{border:1px solid var(--rule);border-left:3px solid var(--amber);background:var(--amber-soft);
         padding:12px 15px;border-radius:3px;font-size:13.5px;color:var(--ink);margin-block:22px}
 .notice b{font-weight:700}
@@ -91,6 +122,7 @@ td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:righ
 .back{display:inline-block;font-size:13px;margin-block:18px 0;color:var(--muted);text-decoration:none;font-weight:600}
 .back:hover{color:var(--accent)}
 .sthead{padding-block:12px 0}
+.pgh{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);font-weight:600;padding-block:20px 0}
 .sthead h2{font-family:var(--serif);font-size:clamp(24px,3.6vw,33px);font-weight:600;line-height:1.15}
 .sthead .sub{color:var(--muted);font-size:14px;margin-top:6px}
 .panel{border:1px solid var(--rule);border-radius:4px;background:var(--raise);padding:16px 18px;margin-block:16px}
@@ -147,6 +179,7 @@ footer p{margin:0 0 7px;max-width:74ch}
       <p>How each state scores competing applications for 9% housing credits — every criterion,
          its maximum, and the page of the state's own allocation plan it was read from.</p>
     </div>
+    <nav class="nav" id="nav"></nav>
     <div class="tallies">
       <div class="tally"><div class="n" id="t-states">—</div><div class="k">States coded</div></div>
       <div class="tally"><div class="n" id="t-crit">—</div><div class="k">Criteria</div></div>
@@ -367,7 +400,165 @@ function renderState(code) {
   window.scrollTo(0, 0);
 }
 
+
+const CATS = () => DATA.categories.map(c => c.name);
+const catShort = n => n.split(/[&,]/)[0].trim();
+
+/* Which categories does each state actually score, and how heavily? */
+function coverageRows() {
+  return DATA.states.filter(s => s.criteria.length).map(st => {
+    const by = {}; let total = 0;
+    for (const c of st.criteria) {
+      if (c.kind !== 'competitive' || c.neg || c.pts == null || !c.cat) continue;
+      by[c.cat] = (by[c.cat] || 0) + c.pts; total += c.pts;
+    }
+    const scored = CATS().filter(n => (by[n] || 0) > 0).length;
+    return {st, by, total, scored};
+  });
+}
+
+function renderCoverage() {
+  const rows = coverageRows();
+  const cats = CATS();
+  const all8 = rows.filter(r => r.scored === cats.length);
+  const shade = share => {
+    if (!share) return '';
+    const a = Math.min(0.5, 0.06 + share * 1.6);
+    return ` style="background:color-mix(in srgb, var(--accent) ${Math.round(a * 100)}%, transparent)"`;
+  };
+  $('#main').innerHTML = `
+    <h2 class="pgh">Category coverage</h2>
+    <p class="lead">Every state scores housing credits, but not the same things. Each cell is that
+      category's share of the state's own competitive points, so states with wildly different
+      scales stay comparable. A red zero means the state scores nothing in that category at all.</p>
+    <div class="notice"><b>${all8.length} of ${rows.length} coded states score all ${cats.length}
+      categories:</b> ${all8.map(r => esc(r.st.name)).join(', ') || 'none'}.
+      The rest leave at least one unscored — which is a policy choice, not an oversight.</div>
+    <div class="tablescroll">
+      <table class="mx">
+        <thead><tr>
+          <th>State</th>
+          ${cats.map(c => `<th class="rot"><span>${esc(catShort(c))}</span></th>`).join('')}
+          <th class="rot"><span>Categories scored</span></th>
+        </tr></thead>
+        <tbody>
+          ${rows.sort((a, b) => b.scored - a.scored || a.st.name.localeCompare(b.st.name))
+            .map(r => `<tr class="go" data-code="${r.st.code}" tabindex="0">
+              <td class="stn"><span class="stcode">${r.st.code}</span>${esc(r.st.name)}</td>
+              ${cats.map(c => {
+                const v = r.by[c] || 0, share = r.total ? v / r.total : 0;
+                return v ? `<td class="cell"${shade(share)} title="${v} of ${r.total} points">${(share * 100).toFixed(0)}%</td>`
+                         : `<td class="cell zero" title="nothing scored in this category"></td>`;
+              }).join('')}
+              <td class="cov">${r.scored}/${cats.length}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--accent)"></span>darker = larger share of that state's points</span>
+      <span><span class="sw" style="background:var(--oxide)"></span>0 = category not scored at all</span>
+    </div>
+    <p class="lead">Shares are of competitive points only. Deductions are excluded, and so are
+      threshold requirements, which carry no points by definition.</p>`;
+  wireRows();
+}
+
+const PRESETS = ['broadband', 'historic', 'transit', 'veteran', 'energy', 'homeless',
+                 'rural', 'accessib', 'zoning', 'preservation'];
+
+function renderConcepts() {
+  const q0 = sessionStorage.getItem('cq') || 'broadband';
+  $('#main').innerHTML = `
+    <h2 class="pgh">Who scores this?</h2>
+    <p class="lead">One concept, every state that scores it, with the value and the quoted text.
+      States rarely use the same words for the same idea, so search the thing itself — "transit",
+      "historic", "broadband" — rather than a criterion name.</p>
+    <div class="chips">${PRESETS.map(t => `<button data-t="${t}">${t}</button>`).join('')}</div>
+    <div class="controls">
+      <input type="search" id="cq" placeholder="Search every criterion…" value="${esc(q0)}" aria-label="Search criteria">
+      <span class="count" id="ccount"></span>
+    </div>
+    <div id="hits"></div>`;
+  const draw = () => {
+    const term = $('#cq').value.trim().toLowerCase();
+    sessionStorage.setItem('cq', $('#cq').value);
+    if (!term) { $('#hits').innerHTML = ''; $('#ccount').textContent = ''; return; }
+    const hits = [];
+    for (const st of DATA.states) {
+      for (const c of st.criteria) {
+        const hay = `${c.h || ''} ${c.q || ''} ${c.note || ''} ${c.nat || ''}`.toLowerCase();
+        if (hay.includes(term)) hits.push({st, c});
+      }
+    }
+    const states = new Set(hits.map(h => h.st.code));
+    $('#ccount').textContent = `${hits.length} criteria in ${states.size} states`;
+    $('#hits').innerHTML = hits.slice(0, 220).map(({st, c}) => `
+      <div class="hit">
+        <div class="hd">
+          <a class="st" href="#/${st.code}">${st.code}</a>
+          <span class="nm">${esc(c.h)}</span>
+          ${c.pts != null ? `<span class="pts${c.neg ? ' neg' : ''}">${c.pts}</span>` : `<span class="chip non">${esc(c.kind)}</span>`}
+        </div>
+        <div class="crit-meta">
+          ${c.cat ? `<span class="catchip">${esc(c.cat)}</span>` : ''}
+          ${c.p0 ? `<span class="cite">p.${c.p0}</span>` : ''}
+        </div>
+        ${c.q ? `<blockquote>${esc(c.q)}</blockquote>` : ''}
+      </div>`).join('') + (hits.length > 220
+        ? `<p class="lead">Showing the first 220 of ${hits.length}. Narrow the search to see the rest.</p>` : '');
+  };
+  $('#cq').addEventListener('input', draw);
+  $('#main').querySelectorAll('.chips button').forEach(b =>
+    b.addEventListener('click', () => { $('#cq').value = b.dataset.t; draw(); }));
+  draw();
+}
+
+function renderExternal() {
+  const hits = [];
+  for (const st of DATA.states)
+    for (const c of st.criteria) if (c.ext) hits.push({st, c});
+  const pts = hits.reduce((a, h) => a + (h.c.pts || 0), 0);
+  const states = new Set(hits.map(h => h.st.code));
+  $('#main').innerHTML = `
+    <h2 class="pgh">Scored somewhere else</h2>
+    <p class="lead">Criteria whose actual test lives outside the allocation plan — an index, a
+      certification, a map, a separate exhibit. The plan sets the weight; something else decides
+      who earns it. These points cannot be audited from the QAP alone, which matters if you are
+      trying to work out why a project scored what it did.</p>
+    <div class="notice"><b>${hits.length} criteria across ${states.size} states, worth ${pts}
+      points in total</b>, are decided by a document the allocation plan only names.</div>
+    ${hits.sort((a, b) => (b.c.pts || 0) - (a.c.pts || 0)).map(({st, c}) => `
+      <div class="hit">
+        <div class="hd">
+          <a class="st" href="#/${st.code}">${st.code}</a>
+          <span class="nm">${esc(c.h)}</span>
+          ${c.pts != null ? `<span class="pts">${c.pts}</span>` : ''}
+        </div>
+        <div class="ext">${esc(c.ext)}</div>
+      </div>`).join('')}`;
+}
+
+function wireRows() {
+  $('#main').querySelectorAll('tr.go').forEach(tr => {
+    const go = () => { location.hash = '#/' + tr.dataset.code; };
+    tr.addEventListener('click', go);
+    tr.addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+  });
+}
+
+const NAV = [['', 'States'], ['coverage', 'Category coverage'],
+             ['concepts', 'Who scores this?'], ['external', 'Scored elsewhere']];
+function drawNav(active) {
+  $('#nav').innerHTML = NAV.map(([h, label]) =>
+    `<a href="#${h ? '/' + h : ''}" class="${h === active ? 'on' : ''}">${label}</a>`).join('');
+}
+
 function route() {
+  const h = location.hash.replace(/^#\/?/, '');
+  const views = {coverage: renderCoverage, concepts: renderConcepts, external: renderExternal};
+  drawNav(views[h] ? h : '');
+  if (views[h]) return views[h]();
   const m = location.hash.match(/^#\/([A-Z]{2})$/);
   if (m) renderState(m[1]); else renderIndex();
 }
