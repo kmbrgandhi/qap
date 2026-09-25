@@ -28,3 +28,4 @@ __pycache__/
 
 # Verification run output, rebuildable: python -m qapdb.verify_citations
 data/citation_check.json
+data/qap_proposed.db

@@ -1,0 +1,391 @@
+<title>QAP Data Model Briefing</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Spectral:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F0F2EE; --raise:#F7F8F5; --sunk:#E7EAE3; --ink:#1A1D19; --muted:#5E665C; --faint:#868D83;
+  --rule:#D5DAD1; --rule-soft:#E3E7E0;
+  --accent:#2F5D50; --accent-soft:#E0E9E4;
+  --oxide:#9B3D2E; --oxide-soft:#F1E2DE;
+  --amber:#8A6414; --amber-soft:#F2E9D4;
+  --sans:"Public Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Spectral",ui-serif,Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#14170F; --raise:#1C201A; --sunk:#101309; --ink:#E7EBE2; --muted:#9BA394; --faint:#79806F;
+  --rule:#31372C; --rule-soft:#262B21;
+  --accent:#7FB8A2; --accent-soft:#1E2C26;
+  --oxide:#D98A76; --oxide-soft:#33211C;
+  --amber:#D6B063; --amber-soft:#2C2515;
+}}
+:root[data-theme="dark"]{
+  --paper:#14170F; --raise:#1C201A; --sunk:#101309; --ink:#E7EBE2; --muted:#9BA394; --faint:#79806F;
+  --rule:#31372C; --rule-soft:#262B21;
+  --accent:#7FB8A2; --accent-soft:#1E2C26;
+  --oxide:#D98A76; --oxide-soft:#33211C;
+  --amber:#D6B063; --amber-soft:#2C2515;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+a{color:var(--accent);text-underline-offset:2px}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:820px;margin:0 auto;padding-inline:22px}
+
+header{border-bottom:1px solid var(--rule);background:var(--raise);padding-block:38px 30px}
+.eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:9px}
+header h1{font-family:var(--serif);font-size:clamp(30px,5.5vw,46px);font-weight:600;line-height:1.08;letter-spacing:-.015em}
+header .dek{color:var(--muted);font-size:17px;margin-top:12px;max-width:62ch}
+.stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:26px;padding-top:22px;border-top:1px solid var(--rule)}
+.stat .n{font-family:var(--mono);font-size:27px;font-weight:600;line-height:1}
+.stat .k{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);margin-top:6px}
+
+section{padding-block:40px 6px}
+section+section{border-top:1px solid var(--rule-soft)}
+.num{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:600;letter-spacing:.1em}
+h2{font-family:var(--serif);font-size:clamp(23px,3.6vw,31px);font-weight:600;margin-top:7px;line-height:1.18}
+h2+p.intro{color:var(--muted);margin-top:11px;max-width:66ch}
+h3{font-size:17px;font-weight:700;margin-top:26px}
+h3+p{margin-top:7px}
+p{max-width:68ch}
+code{font-family:var(--mono);font-size:.88em;background:var(--sunk);padding:1px 5px;border-radius:2px}
+
+/* model diagram */
+.model{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+.mrow{display:flex;gap:12px;flex-wrap:wrap}
+.box{flex:1 1 210px;border:1px solid var(--rule);border-radius:4px;background:var(--raise);padding:13px 15px}
+.box.spine{border-left:3px solid var(--accent)}
+.box.support{border-left:3px solid var(--amber)}
+.box.empty{border-left:3px solid var(--oxide);opacity:.85}
+.box .t{font-family:var(--mono);font-size:13.5px;font-weight:600}
+.box .c{font-family:var(--mono);font-size:11.5px;color:var(--faint);float:right}
+.box .d{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.45}
+.arrow{text-align:center;color:var(--faint);font-size:13px;font-family:var(--mono)}
+
+/* decisions */
+.dec{border:1px solid var(--rule);border-radius:4px;background:var(--raise);padding:15px 17px;margin-top:13px}
+.dec h4{font-size:15.5px;font-weight:700;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.dec h4 .f{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:600}
+.dec p{margin:8px 0 0;font-size:14.5px;color:var(--muted)}
+.dec .case{margin-top:9px;padding-left:12px;border-left:2px solid var(--rule);
+  font-size:14px;color:var(--ink);font-style:italic;font-family:var(--serif)}
+
+/* open questions */
+.q{border:1px solid var(--rule);border-left:3px solid var(--oxide);border-radius:4px;
+   background:var(--raise);padding:16px 18px;margin-top:14px}
+.q h4{font-size:16.5px;font-weight:700}
+.q .ask{margin-top:10px;padding:9px 12px;background:var(--oxide-soft);border-radius:3px;
+  font-size:14px;font-weight:600;color:var(--ink)}
+.q p{font-size:14.5px;color:var(--muted);margin:8px 0 0}
+
+table{border-collapse:collapse;width:100%;margin-top:18px;font-size:14.5px}
+th,td{text-align:left;padding:8px 11px;border-bottom:1px solid var(--rule-soft)}
+th{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:700}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.tablewrap{overflow-x:auto}
+
+.callout{border:1px solid var(--rule);border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:14px 17px;border-radius:3px;margin-top:20px;font-size:14.5px}
+.callout b{font-weight:700}
+pre{background:var(--sunk);border:1px solid var(--rule);border-radius:3px;padding:12px 14px;
+  overflow-x:auto;font-family:var(--mono);font-size:13px;line-height:1.5;margin-top:12px}
+footer{border-top:1px solid var(--rule);margin-top:44px;padding-block:24px 46px;color:var(--faint);font-size:13.5px}
+footer p{margin:0 0 8px}
+</style>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Working briefing</p>
+    <h1>How the QAP database is built</h1>
+    <p class="dek">What the data model holds, the eight decisions already baked into it, and the
+      six questions that are still open. Written to be argued with.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">47</div><div class="k">States scored</div></div>
+      <div class="stat"><div class="n">1,935</div><div class="k">Criteria</div></div>
+      <div class="stat"><div class="n">2,579</div><div class="k">Point tiers</div></div>
+      <div class="stat"><div class="n">70</div><div class="k">Source documents</div></div>
+      <div class="stat"><div class="n">0</div><div class="k">Reviewed by a second reader</div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="wrap">
+  <p class="num">01</p>
+  <h2>The spine</h2>
+  <p class="intro">Three tables carry the substance. Everything else either describes them across
+    states, or records how much we trust them.</p>
+
+  <div class="model">
+    <div class="mrow">
+      <div class="box spine"><span class="c">70</span><div class="t">qaps</div>
+        <div class="d">One row per source document. Not one per state: five states keep their
+          scoring in a companion document, and Kentucky's is a spreadsheet.</div></div>
+    </div>
+    <div class="arrow">↓ one document has many</div>
+    <div class="mrow">
+      <div class="box spine"><span class="c">1,935</span><div class="t">criteria</div>
+        <div class="d">One row per thing a project is scored on, at the grain the document scores
+          it. Carries the quote, the page it came from, and whether that quote was actually found
+          there.</div></div>
+    </div>
+    <div class="arrow">↓ one criterion may have many</div>
+    <div class="mrow">
+      <div class="box spine"><span class="c">2,579</span><div class="t">point_tiers</div>
+        <div class="d">The bands inside a criterion — “20 points under 40% AMI, 17 at 41–45%”.
+          Separate rows because the bands are the policy.</div></div>
+    </div>
+    <div class="mrow" style="margin-top:8px">
+      <div class="box support"><span class="c">78</span><div class="t">track_totals</div>
+        <div class="d">What the state says its scale adds up to, per track. The check that catches
+          missed criteria.</div></div>
+      <div class="box support"><span class="c">67</span><div class="t">exclusivity_groups</div>
+        <div class="d">Criteria that cannot all be earned together. Without them, summing overstates
+          what a project can score.</div></div>
+    </div>
+    <div class="mrow">
+      <div class="box support"><span class="c">8</span><div class="t">categories</div>
+        <div class="d">Our cross-state vocabulary. Every competitive criterion gets exactly one,
+          so category totals add up.</div></div>
+      <div class="box support"><span class="c">1,856</span><div class="t">criterion_categories</div>
+        <div class="d">The assignments, each made deliberately. Nothing is auto-classified.</div></div>
+    </div>
+    <div class="mrow">
+      <div class="box empty"><span class="c">0</span><div class="t">reviews</div>
+        <div class="d">Second-reader decisions. Empty — see question 1.</div></div>
+      <div class="box empty"><span class="c">0</span><div class="t">prior_codings</div>
+        <div class="d">Space for an independent coding to compare against. Empty — see question 5.</div></div>
+      <div class="box empty"><span class="c">0</span><div class="t">prior_matches</div>
+        <div class="d">Where this coding and that one agree or differ. Empty.</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><b>Read the empty tables as the agenda.</b> The extraction is essentially
+    done. Everything that is empty is the part that turns a dataset into a finding somebody else
+    will believe.</div>
+</section>
+
+<section class="wrap">
+  <p class="num">02</p>
+  <h2>Eight decisions already made</h2>
+  <p class="intro">None of these were designed up front. Each one is in the schema because a
+    specific state broke the version before it. That history is worth knowing before anyone
+    proposes undoing one.</p>
+
+  <div class="dec">
+    <h4>Every figure carries a page citation, and the citation is checked <span class="f">quote, page_start, citation_verified</span></h4>
+    <p>Nothing is loaded without a verbatim quote and the page it sits on, and the loader searches
+      that page before writing. A criterion whose quote cannot be found is worse than a missing
+      one. All 1,935 currently verify.</p>
+    <p class="case">This is the whole promise. Everything else is bookkeeping around it.</p>
+  </div>
+
+  <div class="dec">
+    <h4>Scoring universes that cannot be pooled are tracks <span class="f">track, track_totals</span></h4>
+    <p>Twenty states run more than one. Michigan scores urban and rural applications on separate
+      44-point scales and a project is in exactly one; its supportive-housing criteria apply only
+      to supportive-housing projects. One number could not describe that state honestly.</p>
+    <p class="case">Michigan has four tracks. Collapsing them would have invented a 175-point scale no applicant faces.</p>
+  </div>
+
+  <div class="dec">
+    <h4>Criteria that cannot both be earned are grouped <span class="f">exclusivity_groups</span></h4>
+    <p>Two rules: <code>max_one</code>, where a menu contributes only its largest option, and
+      <code>capped_sum</code>, where a family of items is capped below their sum.</p>
+    <p class="case">Maryland lists three Community Context options at 16 points each. Summed naively that state reads 253 against its stated 221.</p>
+  </div>
+
+  <div class="dec">
+    <h4>Tiers say whether they are alternatives or components <span class="f">tier_mode</span></h4>
+    <p>260 criteria are <code>alternative</code> (only the best band applies), 89 are
+      <code>additive</code> (the bands sum to the maximum), 58 are <code>mixed</code>. The two look
+      identical in the data and the arithmetic depends entirely on which it is.</p>
+    <p class="case">Inferred by arithmetic for the states coded before the field existed. Those inferences still want confirming.</p>
+  </div>
+
+  <div class="dec">
+    <h4>Not every state scores in points <span class="f">scoring_unit</span></h4>
+    <p>1,322 criteria are in points. Utah's 16 are <code>weighted</code> — a raw score times a
+      category weight, so its largest criterion is worth 5,000. Vermont ranks in checkmarks.
+      Totals must never mix units.</p>
+    <p class="case">Storing Utah's 5,000 in the same column as Ohio's 100 without this would make them look comparable.</p>
+  </div>
+
+  <div class="dec">
+    <h4>Deductions are criteria, and sit outside stated totals <span class="f">is_negative</span></h4>
+    <p>94 rows are penalties. States exclude them from their own stated maxima, and so do we.
+      Wyoming's deductions reach −1,510 against a 495-point scale.</p>
+    <p class="case">Michigan's section D totals 11, which is its two positive criteria and none of its four deductions. Independent confirmation of the rule.</p>
+  </div>
+
+  <div class="dec">
+    <h4>Points decided elsewhere say so <span class="f">detail_external</span></h4>
+    <p>64 criteria set a weight but not a test — an opportunity index, a certification, a separate
+      exhibit. The QAP says how much it is worth and something else decides who earns it.</p>
+    <p class="case">Ohio's whole 100-point system is three index-driven criteria, two of which point at an Urban Institute index published separately.</p>
+  </div>
+
+  <div class="dec">
+    <h4>Contradictions are recorded, not resolved <span class="f">note, track_totals.note</span></h4>
+    <p>Where a document disagrees with itself, both readings go in the note with the page to check.
+      Five states currently compute a total different from the one they state — Indiana, Nebraska,
+      Nevada, Tennessee and West Virginia — and each has a documented reason.</p>
+    <p class="case">Delaware states 234 on p.34 and 231 on p.52. Tennessee's QAP says outright that its criteria "are not intended to allow an Applicant to claim the maximum 100 points".</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="num">03</p>
+  <h2>What it already shows</h2>
+  <p class="intro">Three things visible in the data now, before any review.</p>
+
+  <h3>Scales are not comparable, and the spread is larger than people expect</h3>
+  <p>West Virginia's scale is 993 points. Michigan's base track is 78. Any claim of the form
+    “state X weights Y heavily” has to be normalised first, or it is measuring scale, not priority.</p>
+
+  <div class="tablewrap"><table>
+    <thead><tr><th>State</th><th class="n">Stated total</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>West Virginia</td><td class="n">993</td><td>Two parallel tracks, both at 993</td></tr>
+      <tr><td>Wyoming</td><td class="n">495</td><td>Deductions reach −1,510</td></tr>
+      <tr><td>Pennsylvania</td><td class="n">232</td><td>One criterion is worth 41</td></tr>
+      <tr><td>Nevada</td><td class="n">97</td><td>Stated 97; the sections cannot produce it</td></tr>
+      <tr><td>Michigan</td><td class="n">78</td><td>Base track only; three further tracks exist</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Sixteen of 47 states score all eight categories</h3>
+  <p>The rest leave at least one unscored, which is a policy choice rather than an oversight. Ohio
+    scores in only two: its entire system is a neighbourhood opportunity index, a housing needs
+    index, and credit per unit.</p>
+
+  <h3>Some scoring cannot be audited from the plan at all</h3>
+  <p>64 criteria hand the actual test to a document the plan only names. If you want to know why a
+    project scored what it did, the QAP is not sufficient for those points.</p>
+</section>
+
+<section class="wrap">
+  <p class="num">04</p>
+  <h2>Six things to decide</h2>
+  <p class="intro">This is the agenda. Each has a concrete proposal attached, and for three of them
+    there is a working local database you can open rather than imagine.</p>
+
+  <div class="q">
+    <h4>1. Review has a table for decisions and nowhere to record what is waiting</h4>
+    <p>The <code>reviews</code> table allows accepted, edited, rejected, skipped and adjudicated —
+      all outcomes. There is no “pending”, because a row only exists once someone has reviewed.
+      So the queue is currently implicit: everything not yet in <code>reviews</code>. That is
+      workable at 33 items and not at 1,935.</p>
+    <p>33 criteria have extraction notes that explicitly ask for a second reader. They are the
+      obvious first pass.</p>
+    <div class="ask">Decide: does the queue live in the database, or in whatever tracker the team
+      already uses? And what counts as “reviewed” — the citation, the number, or the judgement?</div>
+  </div>
+
+  <div class="q">
+    <h4>2. The eight categories are too coarse for the questions people will ask</h4>
+    <p>They were built so totals add up, and they do that well. But “which states score broadband?”
+      cannot be answered from them, because broadband sits inside Design, accessibility &amp;
+      sustainability with forty other things. Today that question is answered by text search,
+      which misses any state that says “fixed route stop” and never “transit”.</p>
+    <div class="ask">Decide: do we add a second, many-to-many concept vocabulary? If so, who owns
+      the word list — and is it fixed up front or grown as states are read?</div>
+  </div>
+
+  <div class="q">
+    <h4>3. Cross-state comparison needs one agreed denominator</h4>
+    <p>Share of the state's own track total is the obvious normaliser, and it is computable now for
+      1,094 of 1,156 scored criteria. The other 62 have no denominator because their state states
+      no total at all — five coded states publish no scale.</p>
+    <div class="ask">Decide: for a state that states no total, do we normalise against our computed
+      total, or leave those criteria out of every comparison?</div>
+  </div>
+
+  <div class="q">
+    <h4>4. The corpus is one cycle deep</h4>
+    <p>The schema already supports several cycles per state — <code>cycle_start</code>,
+      <code>governs_round</code>, <code>is_most_recent</code> — but only four states currently hold
+      more than one cycle's documents. Change over time is the question most people will ask of
+      this data, and we cannot answer it yet.</p>
+    <div class="ask">Decide: is historical depth in scope? If so, how many cycles back, and is it
+      worth more than reviewing what we have?</div>
+  </div>
+
+  <div class="q">
+    <h4>5. There is no independent check on the coding</h4>
+    <p><code>prior_codings</code> and <code>prior_matches</code> exist to hold a second, independent
+      reading and record where it agrees. Both are empty. Every figure here was produced by one
+      pass, verified mechanically against its page but not read twice.</p>
+    <div class="ask">Decide: a blind second coding of a sample, or a full human review of
+      everything? The first gives a defensible error rate; the second gives confidence but no
+      measurement.</div>
+  </div>
+
+  <div class="q">
+    <h4>6. Sources are drifting away from PDFs</h4>
+    <p>Kentucky publishes its scoring only as a spreadsheet, and it is now read as a document whose
+      pages are sheets, with citations naming an exact cell. Maryland's lives in a Program Guide,
+      Michigan's and Minnesota's in separate workbooks, Washington's in a policies document.</p>
+    <div class="ask">Decide: do we keep absorbing formats, or draw a line and record some states as
+      out of scope for the pipeline?</div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="num">05</p>
+  <h2>There is a working proposal you can open</h2>
+  <p class="intro">Questions 1, 2 and 3 are implemented against the real 47 states in a local
+    database, so the meeting can look at them rather than discuss them in the abstract.</p>
+
+  <pre>python -m qapdb.propose        # writes data/qap_proposed.db
+sqlite3 data/qap_proposed.db</pre>
+
+  <p>It copies the live database and adds three things, touching nothing in the original:</p>
+
+  <div class="tablewrap"><table>
+    <thead><tr><th>Addition</th><th>What it does</th><th class="n">Size</th></tr></thead>
+    <tbody>
+      <tr><td><code>concepts</code>, <code>criterion_concepts</code></td>
+          <td>A many-to-many concept vocabulary, seeded with 12 worked examples. Every link is
+              marked <code>suggested</code>, never confirmed — the patterns that proposed them
+              over- and under-match on purpose, so the shape is arguable.</td>
+          <td class="n">561 links</td></tr>
+      <tr><td><code>v_criterion_share</code></td>
+          <td>Each criterion as a percentage of its own track total, using the stated total where
+              one exists. Makes “who weights transit most” a query rather than an argument.</td>
+          <td class="n">1,094 rows</td></tr>
+      <tr><td><code>review_queue</code></td>
+          <td>What is waiting and why, which <code>reviews</code> has no place for. Seeded with the
+              33 criteria whose own notes ask for a second reader.</td>
+          <td class="n">33 rows</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout"><b>A sample of what it answers.</b> Ranking transit criteria by share of
+    their own scale puts New Jersey first at 22.7% of a 22-point track, then California at 13.8%
+    and Kentucky at 13.3%. On raw points California's 15 would have led and New Jersey's 5 would
+    have looked trivial.</div>
+
+  <p style="margin-top:20px">The file is gitignored. It is a proposal, not a migration, and nothing
+    downstream reads it.</p>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p><b>Status.</b> 47 of 50 states are scored. Oregon, Montana and Florida run no point system, so
+    the corpus is complete rather than short. Nothing has been through second-reader review.</p>
+  <p>Companion pages: the <a href="index.html">database browser</a> and the
+    <a href="review.html">review queue</a>.</p>
+  <p id="gen"></p>
+</footer>
+
+<script>
+fetch('qap-data.json').then(r => r.json()).then(d => {
+  const el = document.getElementById('gen');
+  if (el) el.textContent = 'Figures read from the database on ' + d.generated + '.';
+}).catch(() => {});
+</script>

@@ -7,7 +7,8 @@ backend and no build step.
 |---|---|
 | `index.html` | The database browser: every state, plus the cross-state views. |
 | `review.html` | The review queue: one criterion at a time, with its quote, its page citation and a link to the source document. Read-only — it records nothing shared, and "mark reviewed" only ticks an item off in that browser. |
-| `qap-data.json` | Generated, and read by both pages. `python -m qapdb.export_site` rewrites it from `data/qap.db`. |
+| `schema.html` | A briefing on the data model: what it holds, the decisions already baked in, and the open questions. Written for a meeting, not for the repo. |
+| `qap-data.json` | Generated, and read by the browser and the queue. `python -m qapdb.export_site` rewrites it from `data/qap.db`. |
 
 ## Two reviewers, deliberately
 
