@@ -1482,3 +1482,29 @@ Tenant Services. The Composite Opportunity Index takes Maryland population
 change "from the Tennessee State Data Center". All are recorded as printed.
 Also, one threshold (3.14) requires at least 2 points in a scoring section
 (4.7): a threshold that can only be read alongside the scoring.
+
+
+### Nebraska 2026-2028: when the only point values are on a scoresheet
+
+Nebraska's Allocation Plan has no scoring detail. It lists "Other Selection
+Criteria" and "NIFA Scored Criteria" and sends ties to "the outlined Final
+Ranking in the 9% NIFA/NDED Application". Its one point table is headed
+"PROPOSED SCORING" and totals 94. The five-page scoresheet is therefore the
+source. Its text layer separates labels from values, so **every value was
+read from rendered page images**, and each quote cites a label that the text
+layer does carry. That combination lets a value be read from the image while
+the quote is still machine-checked.
+
+The sheet states "Non-Metro Max Points = 87 / Metro Max Points = 85". Summing
+its block maxima gives 88 and 86. Honouring the two exclusions the sheet
+prints gives 84 and 82. No reading of the printed rows produces 87/85. The
+nearest candidate is Preservation, three uncapped rows (2, 3, 2) that the
+plan scores at 3; reading it as 2 would reconcile, but nothing prints a 2.
+Coded at 3, and the MISMATCH stands.
+
+- **Where each pool states its own total, use full parallel tracks**, not a
+  shared core with add-ons. The add-on shape has nowhere to put "87" that the
+  reconciliation view can check.
+- **A block with several rows and no "select one" and no maximum is
+  ambiguous.** Code the largest row, say so in the note, and give the sum an
+  additive reading would reach.

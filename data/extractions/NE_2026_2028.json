@@ -1,0 +1,1397 @@
+{
+ "_comment": "Nebraska 2026/2027/2028 9% LIHTC, NIFA. Coded from the 5-page scoresheet, which carries the point values. The 36-page Allocation Plan (nebraska-9pct-allocation-plan-2026-2027-2028.pdf) defers scoring to the application: its only point table (p.6) is headed 'NIFA LIHTC PROPOSED SCORING' and sums to 94, and it disagrees with the sheet on QCT (3 vs 2), Natural Disaster (3 vs 2) and Efficient Housing Production (9 vs 6). The plan's tie rule (p.15) points to 'the outlined Final Ranking in the 9% NIFA/NDED Application', which is not bundled. The scoresheet's text layer separates labels from values, so every value was read from rendered page images and the quotes are labels the text layer does carry. Page numbers are PDF page indices. TWO POOLS coded as full parallel tracks, non_metro and metro (metro labels carry '.M'), because the sheet states a total for each: 'Non-Metro Max Points = 87 / Metro Max Points = 85' (p.5), with Other Selection Criteria subtotals of 74 and 72 and a 40-point minimum on that subtotal (p.2). Hand-summed before loading. Shared criteria at their block maxima: 2 + 3 + 2 + 3 + 3 + 2 + 1 + 3 + 1 + 1 + 2 + 1 + 1 + 4 + 8 + 6 + 8 + 4 + 4 + 6 + 1 + 2 + 1 = 69. Non-metro adds 2 + 1 + 3 = 6, giving an Other Selection Criteria subtotal of 75. Metro adds 4, giving 73. NIFA-scored criteria add 5 + 6 + 2 = 13, for 88 and 86. So a flat sum overshoots each stated figure by exactly 1, and no reading of the printed rows yields 74/72. The sheet also prints two exclusions: CROWN developments cannot take Mixed Income (3), and DHHS-DBH (1) is barred with Section 811 (4). Honouring them, the reachable maxima are 84 and 82. The MISMATCH against 87/85 stands by design. Negative: -3 for a LIHTC increase request in the last 12 months. Threshold exhibits are in NE_thresholds.json.",
+ "match": {
+  "filename": "nebraska-9pct-scoresheet-2026-2027-2028.pdf"
+ },
+ "extractor_version": "hand-2026-ne-1",
+ "qap_updates": {
+  "stated_total": 87
+ },
+ "track_totals": [
+  {
+   "track": "non_metro",
+   "stated_total": 87,
+   "page": 5,
+   "note": "'Non-Metro Max Points = 87'; Other Selection Criteria subtotal 74. Flat sum of block maxima 88 (75 + 13); 84 honouring the sheet's two exclusions."
+  },
+  {
+   "track": "metro",
+   "stated_total": 85,
+   "page": 5,
+   "note": "'Metro Max Points = 85'; subtotal 72. Flat sum 86 (73 + 13); 82 honouring the exclusions."
+  }
+ ],
+ "groups": [
+  {
+   "key": "crown_mixed_n",
+   "label": "CROWN or Mixed Income (non-metro)",
+   "rule": "max_one",
+   "page_start": 2,
+   "source_quote": "Mixed Income Development - (CROWN developments not eligible)"
+  },
+  {
+   "key": "pbra_dhhs_n",
+   "label": "Project-Based Rental Assistance and DHHS-DBH referral (non-metro)",
+   "rule": "capped_sum",
+   "group_cap": 4,
+   "page_start": 4,
+   "source_quote": "DHHS-DBH Referral Commitment - Exhibit 218 (not eligible if selecting Section 811)",
+   "note": "Capped at 4 as a device: DHHS-DBH (1) is barred with Section 811 (4) but combines with the PHA option (2), so the most reachable is 4."
+  },
+  {
+   "key": "crown_mixed_m",
+   "label": "CROWN or Mixed Income (metro)",
+   "rule": "max_one",
+   "page_start": 2,
+   "source_quote": "Mixed Income Development - (CROWN developments not eligible)"
+  },
+  {
+   "key": "pbra_dhhs_m",
+   "label": "Project-Based Rental Assistance and DHHS-DBH referral (metro)",
+   "rule": "capped_sum",
+   "group_cap": 4,
+   "page_start": 4,
+   "source_quote": "DHHS-DBH Referral Commitment - Exhibit 218 (not eligible if selecting Section 811)",
+   "note": "Capped at 4 as a device: DHHS-DBH (1) is barred with Section 811 (4) but combines with the PHA option (2), so the most reachable is 4."
+  }
+ ],
+ "criteria": [
+  {
+   "section_label": "OSC.1",
+   "heading": "Compliance and Extended Use Periods",
+   "points_max": 2,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 2,
+   "quote": "Compliance & Extended Use Periods",
+   "tiers": [
+    {
+     "tier_label": "15-year compliance + 15-year extended use",
+     "points": 0
+    },
+    {
+     "tier_label": "15 + 25",
+     "points": 1
+    },
+    {
+     "tier_label": "15 + 30",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 1,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.2",
+   "heading": "Waiver of Qualified Contract",
+   "points_max": 3,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "- Waive right of Qualified Contract option (CRANE and CROWN required)",
+   "note": "Printed as a fourth row of the Compliance block. The plan's p.6 table lists 'Compliance & Extended Use Period 2' and 'Waiver of Qualified Contract 3' separately, so it is coded as additive. Required for CRANE and CROWN developments.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 2,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.3",
+   "heading": "Right of First Refusal",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "Right of First Refusal - Exhibit 200 Checked Yes & listed",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 3,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.4",
+   "heading": "Eventual Tenant Home Ownership (CROWN)",
+   "points_max": 3,
+   "points_type": "fixed",
+   "group": "crown_mixed_n",
+   "page_start": 2,
+   "quote": "Eventual Tenant Home Ownership (CROWN) - Exhibit 201",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 4,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.5",
+   "heading": "Preservation",
+   "points_max": 3,
+   "points_type": "tiered",
+   "page_start": 2,
+   "quote": "Preservation - Exhibit 202",
+   "tiers": [
+    {
+     "tier_label": "Federally Assisted Building",
+     "points": 2
+    },
+    {
+     "tier_label": "Preservation of Existing Affordable Housing (USDA-RD, HUD, CNI)",
+     "points": 3
+    },
+    {
+     "tier_label": "Use of Federal Historic Tax Credits",
+     "points": 2
+    }
+   ],
+   "note": "The scoresheet does not say whether these rows combine: no 'select one' and no block maximum. Coded at 3, the largest row and the plan's p.6 figure for 'Preservation of Developments'. Read as additive the block would reach 7. See the file comment: a Preservation maximum of 2 is the one single change that would reconcile the sheet's stated maxima, but no printed figure gives 2.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 5,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.6",
+   "heading": "Senior Development",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "-Development reserved for elderly tenants?",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 6,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.7",
+   "heading": "Family Development",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "-10% of units being four-bedroom or larger",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 7,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.8",
+   "heading": "Mixed Income Development",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "crown_mixed_n",
+   "page_start": 2,
+   "quote": "Mixed Income Development - (CROWN developments not eligible)",
+   "tiers": [
+    {
+     "tier_label": "10% market rate",
+     "points": 1
+    },
+    {
+     "tier_label": "15% market rate",
+     "points": 2
+    },
+    {
+     "tier_label": "20% market rate",
+     "points": 3
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 8,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.9",
+   "heading": "Development of Market Rate Units",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "15% of total LIHTC units",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 9,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.10",
+   "heading": "Development of Housing in Greater Nebraska",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "Development of Housing in Greater Nebraska",
+   "note": "RUCC 7, 8 or 9. Not marked NON-METRO ONLY, so it is in both pools, but RUCC 7-9 are nonmetropolitan county codes and a Metro project is unlikely to qualify.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 10,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.11",
+   "heading": "Economic Development Certified, Entitlement, or Leadership Community",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "Economic Development Certified/Entitlement/Leadership Comm",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 11,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.12",
+   "heading": "PHA Referral Agreement",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 3,
+   "quote": "PHA Referral Agreement - Checked Yes & Exhibit 205 (Agreement)",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 12,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.13",
+   "heading": "Track Record of Applicant, Owner and/or Consultant",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 3,
+   "quote": "-Certification of Experience -Applicant and Owner",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 13,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.13.neg",
+   "heading": "Requested an increase of LIHTC in the last 12 months",
+   "points_max": -3,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 3,
+   "quote": "Requested an increase of LIHTC in the last 12 months?",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 14,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.14",
+   "heading": "Management Qualifications and Experience",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 3,
+   "quote": "Management Qualifications and Experience",
+   "tiers": [
+    {
+     "tier_label": "Certification of Experience, property management",
+     "points": 1
+    },
+    {
+     "tier_label": "Attendance at prior year NIFA LIHTC Compliance Training",
+     "points": 2
+    },
+    {
+     "tier_label": "Housing Credit Certified Professional",
+     "points": 1
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 15,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.15",
+   "heading": "Design Standards",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 3,
+   "quote": "Design Standards (max = 8 points) - Exhibit 209",
+   "tiers": [
+    {
+     "tier_label": "Brick or stone over 25% of front elevation",
+     "points": 2
+    },
+    {
+     "tier_label": "100% fiber cement or engineered wood siding",
+     "points": 2
+    },
+    {
+     "tier_label": "Polymer-modified or metal shingle roofing",
+     "points": 3
+    },
+    {
+     "tier_label": "Landscaping on street-visible elevations",
+     "points": 2
+    },
+    {
+     "tier_label": "20%+ visitable",
+     "points": 2
+    },
+    {
+     "tier_label": "10%+ accessible",
+     "points": 3
+    },
+    {
+     "tier_label": "At least 2 exterior additions",
+     "points": 1
+    }
+   ],
+   "note": "Seven items worth 15, capped at 8. Read from the rendered page: the text layer drops several labels from their values.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 16,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.16",
+   "heading": "Green Standards",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 3,
+   "quote": "Green Standards (max = 6 points) - Exhibit 209",
+   "tiers": [
+    {
+     "tier_label": "Geothermal closed loop heat pump or active solar",
+     "points": 3
+    },
+    {
+     "tier_label": "Smart thermostats (only with owner-paid broadband)",
+     "points": 2
+    },
+    {
+     "tier_label": "All mechanical equipment Energy Star",
+     "points": 2
+    },
+    {
+     "tier_label": "Windows and doors average R-3.75",
+     "points": 1
+    },
+    {
+     "tier_label": "Exterior lighting photocell or timer",
+     "points": 1
+    },
+    {
+     "tier_label": "Recycled-content carpet and pad",
+     "points": 1
+    },
+    {
+     "tier_label": "Paints under 250 g/l VOC",
+     "points": 1
+    },
+    {
+     "tier_label": "Water conservation",
+     "points": 1
+    },
+    {
+     "tier_label": "Waste reduction plan",
+     "points": 1
+    },
+    {
+     "tier_label": "Passive solar design",
+     "points": 1
+    },
+    {
+     "tier_label": "Meet or exceed a green standard program",
+     "points": 6
+    }
+   ],
+   "note": "Ten features worth 14, or 6 outright for a green program, capped at 6.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 17,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.17",
+   "heading": "Amenities",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 3,
+   "quote": "Amenities (max = 8 points) - Exhibit 209",
+   "tiers": [
+    {
+     "tier_label": "Additional use space: community room 2, garage per unit 2, garage stall 1, storage 1, work/school space 1, storm shelter 2, pantry 1",
+     "points": 10
+    },
+    {
+     "tier_label": "Clothes washing (select only one): in-unit W/D 3, hook-ups 1, community laundry 1",
+     "points": 3
+    },
+    {
+     "tier_label": "Outdoor health and wellness: playground 2, exercise equipment 2, sports court 2, individual playground 2, vertical garden 1, ceiling fans 1, dog park 1",
+     "points": 11
+    },
+    {
+     "tier_label": "Productivity and safety: medical alert 1, broadband 2, fiber 3, video security 3",
+     "points": 9
+    },
+    {
+     "tier_label": "Other amenity approved by NIFA",
+     "points": 1
+    }
+   ],
+   "note": "Group tier values are the sums of their items as printed; the section is capped at 8.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 18,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.18",
+   "heading": "Project-Based Rental Assistance",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "pbra_dhhs_n",
+   "page_start": 4,
+   "quote": "Project-Based Rental Assistance - May only select one",
+   "tiers": [
+    {
+     "tier_label": "Housing Authority commitment to new PBRA or RAD vouchers",
+     "points": 2
+    },
+    {
+     "tier_label": "Section 811 Project Rental Assistance",
+     "points": 4
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 19,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.19",
+   "heading": "Supportive Services",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 4,
+   "quote": "Supportive Services (max = 4 pts) - Exhibit 211 (Supportive Service plan/commitment letters)",
+   "tiers": [
+    {
+     "tier_label": "Health (six services, 1-3 each)",
+     "points": 13
+    },
+    {
+     "tier_label": "Finance (four services, 1-3 each)",
+     "points": 8
+    },
+    {
+     "tier_label": "Education, counseling and training (ten services, 1-3 each)",
+     "points": 20
+    },
+    {
+     "tier_label": "Community and care (ten services, 1-2 each)",
+     "points": 18
+    }
+   ],
+   "note": "Thirty services, capped at 4. Tier values are group sums as printed.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 20,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.20",
+   "heading": "Leverage and Collaboration",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 4,
+   "quote": "Leverage and Collaboration",
+   "tiers": [
+    {
+     "tier_label": "100%",
+     "points": 0
+    },
+    {
+     "tier_label": "90-99.99%",
+     "points": 1
+    },
+    {
+     "tier_label": "80-89.99%",
+     "points": 2
+    },
+    {
+     "tier_label": "70-79.99%",
+     "points": 3
+    },
+    {
+     "tier_label": "60-69.99%",
+     "points": 4
+    },
+    {
+     "tier_label": "50-59.99%",
+     "points": 5
+    },
+    {
+     "tier_label": "49.99% and below",
+     "points": 6
+    }
+   ],
+   "note": "Points rise as the percentage falls. The scoresheet does not say what the percentage measures, and the plan does not define it.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 21,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.25",
+   "heading": "DHHS-DBH Referral Commitment",
+   "points_max": 1,
+   "points_type": "fixed",
+   "group": "pbra_dhhs_n",
+   "page_start": 4,
+   "quote": "DHHS-DBH Referral Commitment - Exhibit 218 (not eligible if selecting Section 811)",
+   "note": "Grouped with Project-Based Rental Assistance because it is barred with Section 811, the 4-point option there. It can still combine with the 2-point PHA option: the group's maximum of 4 is the reachable figure.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 22,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.26",
+   "heading": "Qualified Census Tract",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 4,
+   "quote": "Qualified Census Tract - Exhibit 215 & attached letter and a copy of the plan",
+   "note": "The plan's p.6 table gives 3 for 'Located in a Qualified Census Tract/Difficult Development Area'.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 23,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.21",
+   "heading": "Proximity to Services",
+   "points_max": 2,
+   "points_type": "per_unit",
+   "page_start": 4,
+   "quote": "Proximity to Services (NON-METRO ONLY) - Exhibit 213",
+   "tiers": [
+    {
+     "tier_label": "Grocery, farmer's market or pharmacy within 3 miles",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Hospital, clinic or urgent care within 3 miles",
+     "points": 0.5
+    },
+    {
+     "tier_label": "School, daycare, senior or community center within 3 miles",
+     "points": 0.5
+    },
+    {
+     "tier_label": "Park or library within 0.5 mile",
+     "points": 0.5
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 24,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.22",
+   "heading": "Community Housing Initiatives",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 4,
+   "quote": "Community Housing Initiatives (NON-METRO ONLY) - Exhibit 214",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 25,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.23",
+   "heading": "Small Community",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 4,
+   "quote": "Small Community (NON-METRO ONLY)",
+   "tiers": [
+    {
+     "tier_label": "Population 5,000 or less",
+     "points": 3
+    },
+    {
+     "tier_label": "Over 5,000 to 15,000",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 26,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.27",
+   "heading": "Neighborhood Plan or Choice Neighborhood",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 5,
+   "quote": "Neighborhood Plan or Choice Neighborhood -attach documentation - Exhibit 216",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 27,
+   "page_end": 5
+  },
+  {
+   "section_label": "OSC.28",
+   "heading": "Housing and Healthcare Component",
+   "points_max": null,
+   "points_type": "none",
+   "page_start": 5,
+   "quote": "Housing and Healthcare Component - Exhibit 219",
+   "note": "'Evaluated by NIFA'; no points printed. The plan's p.6 table gives 0.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "non_metro",
+   "ord": 28,
+   "page_end": 5
+  },
+  {
+   "native_category": "NIFA Scored Criteria",
+   "section_label": "NIFA.1",
+   "heading": "Targeting Gross Rents",
+   "points_max": 5,
+   "points_type": "formula",
+   "page_start": 5,
+   "quote": "Targeting Gross Rents",
+   "note": "'Up to 5'.",
+   "kind": "competitive",
+   "track": "non_metro",
+   "ord": 29,
+   "page_end": 5
+  },
+  {
+   "native_category": "NIFA Scored Criteria",
+   "section_label": "NIFA.2",
+   "heading": "Efficient Housing Production",
+   "points_max": 6,
+   "points_type": "formula",
+   "page_start": 5,
+   "quote": "Efficient Housing Production",
+   "note": "'Up to 6'. The plan's p.6 table gives 9.",
+   "kind": "competitive",
+   "track": "non_metro",
+   "ord": 30,
+   "page_end": 5
+  },
+  {
+   "native_category": "NIFA Scored Criteria",
+   "section_label": "NIFA.3",
+   "heading": "Efficient Use of HOME Funds",
+   "points_max": null,
+   "points_type": "none",
+   "page_start": 5,
+   "quote": "Efficient Use of HOME Funds",
+   "note": "'Evaluated by DED'; no points printed.",
+   "kind": "competitive",
+   "track": "non_metro",
+   "ord": 31,
+   "page_end": 5
+  },
+  {
+   "native_category": "NIFA Scored Criteria",
+   "section_label": "NIFA.4",
+   "heading": "Natural Disaster Designation",
+   "points_max": 2,
+   "points_type": "formula",
+   "page_start": 5,
+   "quote": "Natural Disaster Designation",
+   "note": "'up to 2'. The plan's p.6 table gives 3.",
+   "kind": "competitive",
+   "track": "non_metro",
+   "ord": 32,
+   "page_end": 5
+  },
+  {
+   "section_label": "OSC.1.M",
+   "heading": "Compliance and Extended Use Periods",
+   "points_max": 2,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 2,
+   "quote": "Compliance & Extended Use Periods",
+   "tiers": [
+    {
+     "tier_label": "15-year compliance + 15-year extended use",
+     "points": 0
+    },
+    {
+     "tier_label": "15 + 25",
+     "points": 1
+    },
+    {
+     "tier_label": "15 + 30",
+     "points": 2
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 33,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.2.M",
+   "heading": "Waiver of Qualified Contract",
+   "points_max": 3,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "- Waive right of Qualified Contract option (CRANE and CROWN required)",
+   "note": "Printed as a fourth row of the Compliance block. The plan's p.6 table lists 'Compliance & Extended Use Period 2' and 'Waiver of Qualified Contract 3' separately, so it is coded as additive. Required for CRANE and CROWN developments.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 34,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.3.M",
+   "heading": "Right of First Refusal",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "Right of First Refusal - Exhibit 200 Checked Yes & listed",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 35,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.4.M",
+   "heading": "Eventual Tenant Home Ownership (CROWN)",
+   "points_max": 3,
+   "points_type": "fixed",
+   "group": "crown_mixed_m",
+   "page_start": 2,
+   "quote": "Eventual Tenant Home Ownership (CROWN) - Exhibit 201",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 36,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.5.M",
+   "heading": "Preservation",
+   "points_max": 3,
+   "points_type": "tiered",
+   "page_start": 2,
+   "quote": "Preservation - Exhibit 202",
+   "tiers": [
+    {
+     "tier_label": "Federally Assisted Building",
+     "points": 2
+    },
+    {
+     "tier_label": "Preservation of Existing Affordable Housing (USDA-RD, HUD, CNI)",
+     "points": 3
+    },
+    {
+     "tier_label": "Use of Federal Historic Tax Credits",
+     "points": 2
+    }
+   ],
+   "note": "The scoresheet does not say whether these rows combine: no 'select one' and no block maximum. Coded at 3, the largest row and the plan's p.6 figure for 'Preservation of Developments'. Read as additive the block would reach 7. See the file comment: a Preservation maximum of 2 is the one single change that would reconcile the sheet's stated maxima, but no printed figure gives 2.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 37,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.6.M",
+   "heading": "Senior Development",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "-Development reserved for elderly tenants?",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 38,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.7.M",
+   "heading": "Family Development",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "-10% of units being four-bedroom or larger",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 39,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.8.M",
+   "heading": "Mixed Income Development",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "crown_mixed_m",
+   "page_start": 2,
+   "quote": "Mixed Income Development - (CROWN developments not eligible)",
+   "tiers": [
+    {
+     "tier_label": "10% market rate",
+     "points": 1
+    },
+    {
+     "tier_label": "15% market rate",
+     "points": 2
+    },
+    {
+     "tier_label": "20% market rate",
+     "points": 3
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 40,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.9.M",
+   "heading": "Development of Market Rate Units",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "15% of total LIHTC units",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 41,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.10.M",
+   "heading": "Development of Housing in Greater Nebraska",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "Development of Housing in Greater Nebraska",
+   "note": "RUCC 7, 8 or 9. Not marked NON-METRO ONLY, so it is in both pools, but RUCC 7-9 are nonmetropolitan county codes and a Metro project is unlikely to qualify.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 42,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.11.M",
+   "heading": "Economic Development Certified, Entitlement, or Leadership Community",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 2,
+   "quote": "Economic Development Certified/Entitlement/Leadership Comm",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 43,
+   "page_end": 2
+  },
+  {
+   "section_label": "OSC.12.M",
+   "heading": "PHA Referral Agreement",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 3,
+   "quote": "PHA Referral Agreement - Checked Yes & Exhibit 205 (Agreement)",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 44,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.13.M",
+   "heading": "Track Record of Applicant, Owner and/or Consultant",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 3,
+   "quote": "-Certification of Experience -Applicant and Owner",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 45,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.13.neg.M",
+   "heading": "Requested an increase of LIHTC in the last 12 months",
+   "points_max": -3,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 3,
+   "quote": "Requested an increase of LIHTC in the last 12 months?",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 46,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.14.M",
+   "heading": "Management Qualifications and Experience",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 3,
+   "quote": "Management Qualifications and Experience",
+   "tiers": [
+    {
+     "tier_label": "Certification of Experience, property management",
+     "points": 1
+    },
+    {
+     "tier_label": "Attendance at prior year NIFA LIHTC Compliance Training",
+     "points": 2
+    },
+    {
+     "tier_label": "Housing Credit Certified Professional",
+     "points": 1
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 47,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.15.M",
+   "heading": "Design Standards",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 3,
+   "quote": "Design Standards (max = 8 points) - Exhibit 209",
+   "tiers": [
+    {
+     "tier_label": "Brick or stone over 25% of front elevation",
+     "points": 2
+    },
+    {
+     "tier_label": "100% fiber cement or engineered wood siding",
+     "points": 2
+    },
+    {
+     "tier_label": "Polymer-modified or metal shingle roofing",
+     "points": 3
+    },
+    {
+     "tier_label": "Landscaping on street-visible elevations",
+     "points": 2
+    },
+    {
+     "tier_label": "20%+ visitable",
+     "points": 2
+    },
+    {
+     "tier_label": "10%+ accessible",
+     "points": 3
+    },
+    {
+     "tier_label": "At least 2 exterior additions",
+     "points": 1
+    }
+   ],
+   "note": "Seven items worth 15, capped at 8. Read from the rendered page: the text layer drops several labels from their values.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 48,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.16.M",
+   "heading": "Green Standards",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 3,
+   "quote": "Green Standards (max = 6 points) - Exhibit 209",
+   "tiers": [
+    {
+     "tier_label": "Geothermal closed loop heat pump or active solar",
+     "points": 3
+    },
+    {
+     "tier_label": "Smart thermostats (only with owner-paid broadband)",
+     "points": 2
+    },
+    {
+     "tier_label": "All mechanical equipment Energy Star",
+     "points": 2
+    },
+    {
+     "tier_label": "Windows and doors average R-3.75",
+     "points": 1
+    },
+    {
+     "tier_label": "Exterior lighting photocell or timer",
+     "points": 1
+    },
+    {
+     "tier_label": "Recycled-content carpet and pad",
+     "points": 1
+    },
+    {
+     "tier_label": "Paints under 250 g/l VOC",
+     "points": 1
+    },
+    {
+     "tier_label": "Water conservation",
+     "points": 1
+    },
+    {
+     "tier_label": "Waste reduction plan",
+     "points": 1
+    },
+    {
+     "tier_label": "Passive solar design",
+     "points": 1
+    },
+    {
+     "tier_label": "Meet or exceed a green standard program",
+     "points": 6
+    }
+   ],
+   "note": "Ten features worth 14, or 6 outright for a green program, capped at 6.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 49,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.17.M",
+   "heading": "Amenities",
+   "points_max": 8,
+   "points_type": "tiered",
+   "tier_mode": "mixed",
+   "page_start": 3,
+   "quote": "Amenities (max = 8 points) - Exhibit 209",
+   "tiers": [
+    {
+     "tier_label": "Additional use space: community room 2, garage per unit 2, garage stall 1, storage 1, work/school space 1, storm shelter 2, pantry 1",
+     "points": 10
+    },
+    {
+     "tier_label": "Clothes washing (select only one): in-unit W/D 3, hook-ups 1, community laundry 1",
+     "points": 3
+    },
+    {
+     "tier_label": "Outdoor health and wellness: playground 2, exercise equipment 2, sports court 2, individual playground 2, vertical garden 1, ceiling fans 1, dog park 1",
+     "points": 11
+    },
+    {
+     "tier_label": "Productivity and safety: medical alert 1, broadband 2, fiber 3, video security 3",
+     "points": 9
+    },
+    {
+     "tier_label": "Other amenity approved by NIFA",
+     "points": 1
+    }
+   ],
+   "note": "Group tier values are the sums of their items as printed; the section is capped at 8.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 50,
+   "page_end": 3
+  },
+  {
+   "section_label": "OSC.18.M",
+   "heading": "Project-Based Rental Assistance",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "group": "pbra_dhhs_m",
+   "page_start": 4,
+   "quote": "Project-Based Rental Assistance - May only select one",
+   "tiers": [
+    {
+     "tier_label": "Housing Authority commitment to new PBRA or RAD vouchers",
+     "points": 2
+    },
+    {
+     "tier_label": "Section 811 Project Rental Assistance",
+     "points": 4
+    }
+   ],
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 51,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.19.M",
+   "heading": "Supportive Services",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 4,
+   "quote": "Supportive Services (max = 4 pts) - Exhibit 211 (Supportive Service plan/commitment letters)",
+   "tiers": [
+    {
+     "tier_label": "Health (six services, 1-3 each)",
+     "points": 13
+    },
+    {
+     "tier_label": "Finance (four services, 1-3 each)",
+     "points": 8
+    },
+    {
+     "tier_label": "Education, counseling and training (ten services, 1-3 each)",
+     "points": 20
+    },
+    {
+     "tier_label": "Community and care (ten services, 1-2 each)",
+     "points": 18
+    }
+   ],
+   "note": "Thirty services, capped at 4. Tier values are group sums as printed.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 52,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.20.M",
+   "heading": "Leverage and Collaboration",
+   "points_max": 6,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 4,
+   "quote": "Leverage and Collaboration",
+   "tiers": [
+    {
+     "tier_label": "100%",
+     "points": 0
+    },
+    {
+     "tier_label": "90-99.99%",
+     "points": 1
+    },
+    {
+     "tier_label": "80-89.99%",
+     "points": 2
+    },
+    {
+     "tier_label": "70-79.99%",
+     "points": 3
+    },
+    {
+     "tier_label": "60-69.99%",
+     "points": 4
+    },
+    {
+     "tier_label": "50-59.99%",
+     "points": 5
+    },
+    {
+     "tier_label": "49.99% and below",
+     "points": 6
+    }
+   ],
+   "note": "Points rise as the percentage falls. The scoresheet does not say what the percentage measures, and the plan does not define it.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 53,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.25.M",
+   "heading": "DHHS-DBH Referral Commitment",
+   "points_max": 1,
+   "points_type": "fixed",
+   "group": "pbra_dhhs_m",
+   "page_start": 4,
+   "quote": "DHHS-DBH Referral Commitment - Exhibit 218 (not eligible if selecting Section 811)",
+   "note": "Grouped with Project-Based Rental Assistance because it is barred with Section 811, the 4-point option there. It can still combine with the 2-point PHA option: the group's maximum of 4 is the reachable figure.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 54,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.26.M",
+   "heading": "Qualified Census Tract",
+   "points_max": 2,
+   "points_type": "fixed",
+   "page_start": 4,
+   "quote": "Qualified Census Tract - Exhibit 215 & attached letter and a copy of the plan",
+   "note": "The plan's p.6 table gives 3 for 'Located in a Qualified Census Tract/Difficult Development Area'.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 55,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.24.M",
+   "heading": "Areas of High Opportunity",
+   "points_max": 4,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 4,
+   "quote": "Areas of High Opportunity (METRO ONLY)",
+   "tiers": [
+    {
+     "tier_label": "Connectivity",
+     "points": 1
+    },
+    {
+     "tier_label": "Education",
+     "points": 1
+    },
+    {
+     "tier_label": "Employment",
+     "points": 1
+    },
+    {
+     "tier_label": "Housing and Health",
+     "points": 1
+    }
+   ],
+   "note": "Each of four indicators scores '0-1'; whether fractions are awarded is not said.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 56,
+   "page_end": 4
+  },
+  {
+   "section_label": "OSC.27.M",
+   "heading": "Neighborhood Plan or Choice Neighborhood",
+   "points_max": 1,
+   "points_type": "fixed",
+   "page_start": 5,
+   "quote": "Neighborhood Plan or Choice Neighborhood -attach documentation - Exhibit 216",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 57,
+   "page_end": 5
+  },
+  {
+   "section_label": "OSC.28.M",
+   "heading": "Housing and Healthcare Component",
+   "points_max": null,
+   "points_type": "none",
+   "page_start": 5,
+   "quote": "Housing and Healthcare Component - Exhibit 219",
+   "note": "'Evaluated by NIFA'; no points printed. The plan's p.6 table gives 0.",
+   "kind": "competitive",
+   "native_category": "Other Selection Criteria",
+   "track": "metro",
+   "ord": 58,
+   "page_end": 5
+  },
+  {
+   "native_category": "NIFA Scored Criteria",
+   "section_label": "NIFA.1.M",
+   "heading": "Targeting Gross Rents",
+   "points_max": 5,
+   "points_type": "formula",
+   "page_start": 5,
+   "quote": "Targeting Gross Rents",
+   "note": "'Up to 5'.",
+   "kind": "competitive",
+   "track": "metro",
+   "ord": 59,
+   "page_end": 5
+  },
+  {
+   "native_category": "NIFA Scored Criteria",
+   "section_label": "NIFA.2.M",
+   "heading": "Efficient Housing Production",
+   "points_max": 6,
+   "points_type": "formula",
+   "page_start": 5,
+   "quote": "Efficient Housing Production",
+   "note": "'Up to 6'. The plan's p.6 table gives 9.",
+   "kind": "competitive",
+   "track": "metro",
+   "ord": 60,
+   "page_end": 5
+  },
+  {
+   "native_category": "NIFA Scored Criteria",
+   "section_label": "NIFA.3.M",
+   "heading": "Efficient Use of HOME Funds",
+   "points_max": null,
+   "points_type": "none",
+   "page_start": 5,
+   "quote": "Efficient Use of HOME Funds",
+   "note": "'Evaluated by DED'; no points printed.",
+   "kind": "competitive",
+   "track": "metro",
+   "ord": 61,
+   "page_end": 5
+  },
+  {
+   "native_category": "NIFA Scored Criteria",
+   "section_label": "NIFA.4.M",
+   "heading": "Natural Disaster Designation",
+   "points_max": 2,
+   "points_type": "formula",
+   "page_start": 5,
+   "quote": "Natural Disaster Designation",
+   "note": "'up to 2'. The plan's p.6 table gives 3.",
+   "kind": "competitive",
+   "track": "metro",
+   "ord": 62,
+   "page_end": 5
+  }
+ ]
+}

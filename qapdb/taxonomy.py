@@ -696,6 +696,29 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("MD", "4.5.1"): COST, ("MD", "4.5.2"): COST, ("MD", "4.5.3"): COST,
     ("MD", "4.6.1"): DES, ("MD", "4.6.2"): DES, ("MD", "4.6.3"): DES,
     ("MD", "4.6.4"): DES, ("MD", "4.7"): READY, ("MD", "4.8"): (LOC, POP),
+
+    # ---- Nebraska (non-metro; metro copies carry .M) ---------------------------
+    ("NE", "OSC.1"): AFF, ("NE", "OSC.2"): AFF, ("NE", "OSC.3"): AFF,
+    ("NE", "OSC.4"): AFF, ("NE", "OSC.5"): PRES, ("NE", "OSC.6"): POP,
+    ("NE", "OSC.7"): POP, ("NE", "OSC.8"): AFF, ("NE", "OSC.9"): AFF,
+    ("NE", "OSC.10"): LOC, ("NE", "OSC.11"): LOC, ("NE", "OSC.12"): POP,
+    ("NE", "OSC.13"): SPON, ("NE", "OSC.13.neg"): SPON, ("NE", "OSC.14"): SPON,
+    ("NE", "OSC.15"): DES, ("NE", "OSC.16"): DES, ("NE", "OSC.17"): DES,
+    ("NE", "OSC.18"): AFF, ("NE", "OSC.19"): POP, ("NE", "OSC.20"): COST,
+    ("NE", "OSC.25"): POP, ("NE", "OSC.26"): LOC, ("NE", "OSC.27"): LOC,
+    ("NE", "OSC.28"): POP, ("NE", "NIFA.1"): AFF, ("NE", "NIFA.2"): COST,
+    ("NE", "NIFA.3"): COST, ("NE", "NIFA.4"): LOC, ("NE", "OSC.21"): LOC,
+    ("NE", "OSC.22"): LOC, ("NE", "OSC.23"): LOC, ("NE", "OSC.1.M"): AFF,
+    ("NE", "OSC.2.M"): AFF, ("NE", "OSC.3.M"): AFF, ("NE", "OSC.4.M"): AFF,
+    ("NE", "OSC.5.M"): PRES, ("NE", "OSC.6.M"): POP, ("NE", "OSC.7.M"): POP,
+    ("NE", "OSC.8.M"): AFF, ("NE", "OSC.9.M"): AFF, ("NE", "OSC.10.M"): LOC,
+    ("NE", "OSC.11.M"): LOC, ("NE", "OSC.12.M"): POP, ("NE", "OSC.13.M"): SPON,
+    ("NE", "OSC.13.neg.M"): SPON, ("NE", "OSC.14.M"): SPON, ("NE", "OSC.15.M"): DES,
+    ("NE", "OSC.16.M"): DES, ("NE", "OSC.17.M"): DES, ("NE", "OSC.18.M"): AFF,
+    ("NE", "OSC.19.M"): POP, ("NE", "OSC.20.M"): COST, ("NE", "OSC.25.M"): POP,
+    ("NE", "OSC.26.M"): LOC, ("NE", "OSC.27.M"): LOC, ("NE", "OSC.28.M"): POP,
+    ("NE", "NIFA.1.M"): AFF, ("NE", "NIFA.2.M"): COST, ("NE", "NIFA.3.M"): COST,
+    ("NE", "NIFA.4.M"): LOC, ("NE", "OSC.24.M"): LOC,
 }
 
 
