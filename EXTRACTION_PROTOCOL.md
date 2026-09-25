@@ -1027,3 +1027,29 @@ The summary table also letters the criteria after O one step higher than the
 body does. It leaves a blank P row, so its Q is the body's P. Body letters are
 coded. A summary is a cross-check on values, and it is no authority for labels
 either.
+
+
+### Kansas 2026: points that every application must earn are a threshold
+
+Kansas has three kinds of points, and each needed a different home.
+
+- **Appendix A carries 310 points** in seven categories that K.A.R. 110-10-1
+  mandates. Each is all or nothing, and an application must earn all 310 just
+  to be invited. Points that nobody can fail to earn and still compete do not
+  rank anyone. I coded them as thresholds, with the value in the heading and
+  note, and checked that they sum to the stated 310. Loading them as
+  competitive would have made a 125-point plan look like a 435-point one.
+- **The 4% round reuses the 9% criteria.** A chart (p.24) marks which ones
+  apply, and a 55-point minimum replaces ranking. I did not duplicate 17
+  criteria into a 4% track. I put the one 4%-only criterion on `four_pct` and
+  named the 9%-only ones in the notes and the comment. §3's add-on track works
+  here too. The 4% maximum of 85 is written down as computed and is not
+  reconciled.
+- **Rehabilitation has no points at all.** Six factors are ranked "in
+  declining order of significance". They are coded as `ranked_priority` on a
+  `rehab` track whose total says so.
+
+Kansas also states a value once for a set of alternatives: "An application may
+earn 15 points in one of the four subsections below". I gave each subsection 15
+in a `max_one` group and noted that the figure is stated once, not per
+subsection.

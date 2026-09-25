@@ -584,6 +584,13 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("NM", "V.I"): POP, ("NM", "V.J"): POP, ("NM", "V.K"): COST, ("NM", "V.L"): POP,
     ("NM", "V.M"): LOC, ("NM", "V.N"): AFF, ("NM", "V.O"): PRES, ("NM", "V.P"): COST,
     ("NM", "V.Q"): DES, ("NM", "V.R"): PRES, ("NM", "V.S"): LOC, ("NM", "V.T"): AFF,
+    ("KS", "VII.A.1"): SPON, ("KS", "VII.A.2"): SPON, ("KS", "VII.A.3.dev"): SPON,
+    ("KS", "VII.A.3.comp"): SPON, ("KS", "VII.B"): LOC, ("KS", "VII.C"): LOC,
+    ("KS", "VII.D"): LOC, ("KS", "VII.E"): LOC, ("KS", "VII.F.1"): LOC,
+    ("KS", "VII.F.2"): LOC, ("KS", "VII.G.1"): COST, ("KS", "VII.G.2"): COST,
+    ("KS", "VII.H"): LOC, ("KS", "VII.I"): LOC, ("KS", "VII.J.1"): POP,
+    ("KS", "VII.J.2"): POP, ("KS", "VII.K.1"): AFF, ("KS", "VII.K.2"): AFF,
+    ("KS", "VII.K.3"): AFF, ("KS", "VII.K.4"): AFF, ("KS", "VII.K.5"): AFF,
 }
 
 

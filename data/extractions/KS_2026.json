@@ -1,0 +1,535 @@
+{
+ "_comment": "Kansas 2026 QAP, Kansas Housing Resources Corporation. Page numbers are PDF page indices; the printed page number is three lower. THREE UNIVERSES. (1) 9% new construction, Section VII (pp.24-37), the default track. (2) 4% applications scored on the same Section VII criteria against a 55-point minimum; the p.24 chart marks which apply. They are not duplicated here: A.2, E, G and K.4 are 9% only, and K.5 is 4% only (track four_pct). (3) Rehabilitation, Section VI (p.23): six ranked priorities and no points (track rehab). Every application must also earn all 310 Appendix A (K.A.R. 110-10-1) points, coded as thresholds. NO TOTAL IS STATED for Section VII. Hand-summed before loading from the section maxima: A 10 (5 + 5), B/C 10, D 5, E 5, F 20 (10 + 10), G 30 (10 + 20), H/I 15, J 10, K 20 (5 + 15) = 125. Each stated section maximum ('Maximum of N points') matches its parts. The loader matched 125. Deductions of up to 30 are excluded. The 4% maximum from the chart is 85 (A.1 5, B/C 10, D 5, F 20, H/I 15, J 10, K 20), a computed figure not reconciled by the loader.",
+ "match": {
+  "filename": "kansas-qap-2026.pdf"
+ },
+ "extractor_version": "hand-2026-ks-1",
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": null,
+   "page": 24,
+   "note": "9% new construction. No total stated. Computed 125 from the section maxima. Preliminary applications must reach 33 points to be invited to full application (p.24)."
+  },
+  {
+   "track": "four_pct",
+   "stated_total": null,
+   "page": 24,
+   "note": "4% applications are scored on the Section VII criteria the p.24 chart marks for 4% and must reach 55 points. Only K.5, the one 4%-only criterion, is coded on this track; the shared criteria sit on the default track and are not duplicated. Computed 4% maximum 85; not reconciled."
+  },
+  {
+   "track": "rehab",
+   "stated_total": null,
+   "page": 23,
+   "note": "Rehabilitation: six ranked priorities, no point scoring (p.24)."
+  }
+ ],
+ "groups": [
+  {
+   "key": "ks_underserved_phase",
+   "label": "Underserved Areas or Subsequent Phase",
+   "rule": "max_one",
+   "source_quote": "An application may not earn points in both this subsection and the Subsequent Phase",
+   "page_start": 27
+  },
+  {
+   "key": "ks_crp_opportunity",
+   "label": "Community Revitalization Plans or Opportunity Sites",
+   "rule": "max_one",
+   "source_quote": "Applications may not earn points in both this subsection and the Opportunity Site subsection.",
+   "page_start": 34
+  },
+  {
+   "key": "ks_senior_family",
+   "label": "Senior Housing with Services or Three or More Bedrooms",
+   "rule": "max_one",
+   "source_quote": "An application may not earn points in both Senior Housing with Services and Three or More Bedrooms",
+   "page_start": 35
+  },
+  {
+   "key": "ks_deeper",
+   "label": "15 points in one of the four deeper affordability or homeownership subsections",
+   "rule": "max_one",
+   "source_quote": "An application may earn 15 points in one of the four subsections below.",
+   "page_start": 36,
+   "note": "K.5 is 4% only and sits on the four_pct track."
+  }
+ ],
+ "criteria": [
+  {
+   "section_label": "VII.A.1",
+   "heading": "Past Performance",
+   "points_max": 5,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 25,
+   "page_end": 25,
+   "quote": "KHRC will award 1 point for each Kansas LIHTC property up to 5 points",
+   "tiers": [
+    {
+     "tier_label": "In-state: 1 point per Kansas LIHTC property placed in service 2016-2025 (up to 5)",
+     "points": 5
+    },
+    {
+     "tier_label": "Out-of-state: 3 properties placed in service outside Kansas 2016-2025",
+     "points": 3
+    }
+   ],
+   "note": "In-state and out-of-state do not combine; KHRC awards the higher. Under the 'Maximum of 10 points' heading for Previous Experience (A.1 + A.2). Scored for 4% and 9%.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 1
+  },
+  {
+   "section_label": "VII.A.2",
+   "heading": "Successful Below Market Loans and Support",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 25,
+   "page_end": 26,
+   "quote": "KHRC will award 5 points if the Applicant meets at least 2 of any of the criteria below for Kansas LIHTC",
+   "note": "At least two of: below market loans or support, a local fee waiver ($40,000 Metropolitan, $20,000 Rural, or 100%), a 10-year real estate tax exemption, or Inflation Reduction Act rebates, on prior Kansas properties. 9% only per the p.24 chart.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 2
+  },
+  {
+   "section_label": "VII.A.3.dev",
+   "heading": "Penalties: Housing Development",
+   "points_max": -10,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 26,
+   "page_end": 27,
+   "quote": "KHRC may deduct 10 points if any Principal was listed as a developer or ownership entity member or",
+   "note": "For a development placed in service 2016-2025 whose Principal failed QAP IX(A), sought a qualified contract after September 1, 2022, missed design, accessibility or energy requirements, requested late added resources, increased credits or bonds more than 10%, or missed cost certification. Discretionary ('may').",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 3
+  },
+  {
+   "section_label": "VII.A.3.comp",
+   "heading": "Penalties: Housing Compliance",
+   "points_max": -20,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 27,
+   "page_end": 27,
+   "quote": "KHRC may deduct up to 20 points if any Principal was listed as a developer or ownership entity member",
+   "tiers": [
+    {
+     "tier_label": "Unnotified management or ownership change after January 1, 2023",
+     "points": -5
+    },
+    {
+     "tier_label": "LURA commitment violation (per violation per property)",
+     "points": -5
+    },
+    {
+     "tier_label": "Replacement reserve failure (per property)",
+     "points": -5
+    },
+    {
+     "tier_label": "Persistent compliance failure (per property)",
+     "points": -5
+    }
+   ],
+   "tier_mode": "additive",
+   "note": "Up to -20 in total.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 4
+  },
+  {
+   "section_label": "VII.B",
+   "heading": "Underserved Areas",
+   "points_max": 10,
+   "points_type": "fixed",
+   "group": "ks_underserved_phase",
+   "page_start": 27,
+   "page_end": 28,
+   "quote": "An area is determined as underserved if it is not in a zip code that has been awarded a LIHTC project in",
+   "note": "10 points for a site outside the listed ZIP Codes: 33 Metropolitan (p.27) and 31 Rural (p.28). Not combinable with Subsequent Phase.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 5
+  },
+  {
+   "section_label": "VII.C",
+   "heading": "Subsequent Phase",
+   "points_max": 10,
+   "points_type": "fixed",
+   "group": "ks_underserved_phase",
+   "page_start": 28,
+   "page_end": 28,
+   "quote": "is/are within .25 miles of the previous phase(s).",
+   "note": "Second or third phase by the same Applicant; earlier phases under 5% vacancy with waitlists of at least half the new units and no qualified contract.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 6
+  },
+  {
+   "section_label": "VII.D",
+   "heading": "Residential Character",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 28,
+   "page_end": 29,
+   "quote": "KHRC will award 5 points if the proposed site is in or adjacent to existing residential development.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 7
+  },
+  {
+   "section_label": "VII.E",
+   "heading": "Quality Site",
+   "points_max": 5,
+   "points_type": "fixed",
+   "scored_against_round": true,
+   "page_start": 29,
+   "page_end": 29,
+   "quote": "KHRC will award 5 points each to up to two proposals in the Metropolitan Counties and two proposals in",
+   "note": "Staff's subjective rating of the most desirable sites; at most two per region. 9% only.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 8
+  },
+  {
+   "section_label": "VII.F.1",
+   "heading": "Proximity to Amenities: Primary",
+   "points_max": 10,
+   "points_type": "formula",
+   "scored_against_round": true,
+   "page_start": 30,
+   "page_end": 30,
+   "quote": "award the maximum points (10 points) to the application with the lowest total mileage; and",
+   "note": "Weighted driving distance: grocery x 0.5 + shopping x 0.75 + pharmacy x 1, with a 0.3-mile floor; the lowest total in the region gets 10 and others a percentage of it. 4% applications are compared against 0.4 miles. Under the 'Maximum of 20 points' heading for F.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 9
+  },
+  {
+   "section_label": "VII.F.2",
+   "heading": "Proximity to Amenities: Secondary",
+   "points_max": 10,
+   "points_type": "per_unit",
+   "page_start": 31,
+   "page_end": 31,
+   "quote": "A maximum of 10 points total may be awarded for Secondary amenities.",
+   "tiers": [
+    {
+     "tier_label": "Per qualifying amenity type within 3 miles driving distance (16 types listed)",
+     "points": 1
+    },
+    {
+     "tier_label": "Rural Counties: per qualifying amenity 3-20 miles",
+     "points": 0.5
+    }
+   ],
+   "note": "One point per listed amenity type, distinct from primary amenity establishments. The town square type applies only in Rural Counties.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 10
+  },
+  {
+   "section_label": "VII.G.1",
+   "heading": "Below Market Loans",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 32,
+   "page_end": 33,
+   "quote": "KHRC will award up to 10 points to applications meeting the criteria below.",
+   "tiers": [
+    {
+     "tier_label": "$4,000 - $10,000 per unit of qualifying funds",
+     "points": 5
+    },
+    {
+     "tier_label": "Greater than $10,000 per unit",
+     "points": 10
+    }
+   ],
+   "note": "Loans at no more than 1% interest with at least 20-year amortization, or grants, from listed sources. 9% only. Under the 'Maximum of 30 points' heading for G.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 11
+  },
+  {
+   "section_label": "VII.G.2",
+   "heading": "Other Support",
+   "points_max": 20,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 33,
+   "page_end": 34,
+   "quote": "KHRC will award up to 20 points to applications meeting the criteria below. Applicants will earn 10",
+   "tiers": [
+    {
+     "tier_label": "Land donation by a local government (land and building costs no more than $5,000)",
+     "points": 10
+    },
+    {
+     "tier_label": "Local fee waiver: 5 or 10 points by unit count and amount, or 10 for a 100% waiver",
+     "points": 10
+    },
+    {
+     "tier_label": "Historic rehabilitation tax credit eligible",
+     "points": 10
+    },
+    {
+     "tier_label": "Kansas sales tax exemption via Industrial Revenue Bonds resolution",
+     "points": 10
+    }
+   ],
+   "note": "10 points per category, once per category, capped at 20; the fee waiver can also earn 5 ($20,000/$40,000/$60,000 for 0-30/31-100/101+ units, against $40,000/$80,000/$120,000 for 10). 9% only.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 12
+  },
+  {
+   "section_label": "VII.H",
+   "heading": "Community Revitalization Plans (CRP)",
+   "points_max": 15,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "group": "ks_crp_opportunity",
+   "page_start": 34,
+   "page_end": 34,
+   "quote": "KHRC will award an additional 10 points if either the:",
+   "tiers": [
+    {
+     "tier_label": "Site in a formally adopted Community Revitalization Plan area with local non-housing investment",
+     "points": 5
+    },
+    {
+     "tier_label": "Additionally: CRP area includes part of a QCT, or the local government selected a Principal by RFP/RFQ",
+     "points": 10
+    }
+   ],
+   "note": "Not combinable with Opportunity Sites; KHRC awards the higher.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 13
+  },
+  {
+   "section_label": "VII.I",
+   "heading": "Opportunity Sites",
+   "points_max": 15,
+   "points_type": "formula",
+   "scored_against_round": true,
+   "group": "ks_crp_opportunity",
+   "page_start": 35,
+   "page_end": 35,
+   "quote": "award the maximum points (15 points) to the application with the highest final percentile ranking;",
+   "detail_external": "Appendix D census tract scores",
+   "note": "9%: the highest Appendix D tract score in the set-aside gets 15, others a percentage of it. 4%: 15 for a score above 70, otherwise a percentage of 70.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 14
+  },
+  {
+   "section_label": "VII.J.1",
+   "heading": "Senior Housing with Services",
+   "points_max": 5,
+   "points_type": "fixed",
+   "group": "ks_senior_family",
+   "page_start": 35,
+   "page_end": 36,
+   "quote": "Senior developments that commit to at least three of the following will receive 5 points:",
+   "note": "Three of eleven listed amenities or services.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 15
+  },
+  {
+   "section_label": "VII.J.2",
+   "heading": "Three or More Bedrooms",
+   "points_max": 10,
+   "points_type": "fixed",
+   "group": "ks_senior_family",
+   "page_start": 36,
+   "page_end": 36,
+   "quote": "bedrooms will receive 10 points.",
+   "note": "Family property with at least 25% of LIHTC units of three or more bedrooms. The J header reads 'Maximum of 10 points'; the bar against combining uses the subsection titles.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 16
+  },
+  {
+   "section_label": "VII.K.1",
+   "heading": "Income Targeting",
+   "points_max": 5,
+   "points_type": "fixed",
+   "page_start": 36,
+   "page_end": 36,
+   "quote": "units to be set-aside for households at 30% AMI will receive 5 points.",
+   "note": "Metropolitan Counties only: an additional 15% of LIHTC units at 30% AMI beyond Section V targeting. Rural applications cannot earn this, so their K maximum is 15.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 17
+  },
+  {
+   "section_label": "VII.K.2",
+   "heading": "Fair Market Rents",
+   "points_max": 15,
+   "points_type": "fixed",
+   "group": "ks_deeper",
+   "page_start": 36,
+   "page_end": 36,
+   "quote": "Development offers gross rent for all units up to and including the 60% limits at a rate that is at or",
+   "note": "All rents up to the 60% limits at or below HUD Fair Market Rent. The QAP states the 15 once, for 'one of the four subsections', not per subsection.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 18
+  },
+  {
+   "section_label": "VII.K.3",
+   "heading": "Project Based Rental Assistance",
+   "points_max": 15,
+   "points_type": "fixed",
+   "group": "ks_deeper",
+   "page_start": 36,
+   "page_end": 36,
+   "quote": "Development offers project based rental assistance to 60% or more of the LIHTC units.",
+   "note": "A local PHA commitment is required at full application. The QAP states the 15 once, for 'one of the four subsections', not per subsection.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 19
+  },
+  {
+   "section_label": "VII.K.4",
+   "heading": "Conversion to Homeownership",
+   "points_max": 15,
+   "points_type": "fixed",
+   "group": "ks_deeper",
+   "page_start": 37,
+   "page_end": 37,
+   "quote": "To be eligible for homeownership conversion projects must meet the requirements specified in Section",
+   "note": "Single-family homes with a nonprofit sole managing member and a Homeownership Conversion Plan (Section V(C)(6)). 9% only. The QAP states the 15 once, for 'one of the four subsections', not per subsection.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 20
+  },
+  {
+   "section_label": "VII.K.5",
+   "heading": "State Set-Aside Income and Rent Targeting",
+   "points_max": 15,
+   "points_type": "fixed",
+   "track": "four_pct",
+   "page_start": 37,
+   "page_end": 37,
+   "quote": "Scored at full application for 4% proposals only.",
+   "note": "4% only: the Section V(C)(5) 9% targeting (average 54%/57% AMI, or 30% of units at 40%/50% AMI) taken on voluntarily. The fourth of the 'one of the four subsections' worth 15.",
+   "kind": "competitive",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 21
+  },
+  {
+   "kind": "tiebreaker",
+   "section_label": "VII.L",
+   "heading": "Best location, higher energy standards, fewer LIHTCs, most 30% AMI units",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "quote": "KHRC will make awards based on which site(s) is/are the best location",
+   "note": "Four considerations applied together 'all in KHRC's discretion', not in stated order. 9% only.",
+   "native_category": "VII. Selection Criteria: New Construction",
+   "ord": 22
+  },
+  {
+   "kind": "ranked_priority",
+   "native_category": "VI. Selection Criteria: Rehabilitation",
+   "track": "rehab",
+   "section_label": "VI.1",
+   "heading": "Requiring more rehabilitation work",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "Requiring more rehabilitation work, based on KHRC",
+   "note": "Rehabilitation applications are ranked on six factors 'listed in declining order of significance'; 'Implementation of this subsection will not involve point scoring' (p.24).",
+   "ord": 23
+  },
+  {
+   "kind": "ranked_priority",
+   "native_category": "VI. Selection Criteria: Rehabilitation",
+   "track": "rehab",
+   "section_label": "VI.2",
+   "heading": "LIHTC resyndications in year 22 of affordability and beyond",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "LIHTC resyndications in year 22 of affordability and beyond.",
+   "ord": 24
+  },
+  {
+   "kind": "ranked_priority",
+   "native_category": "VI. Selection Criteria: Rehabilitation",
+   "track": "rehab",
+   "section_label": "VI.3",
+   "heading": "Greater percentage of units with project-based rent assistance",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 3,
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "A greater percentage of units with project-based rent assistance.",
+   "ord": 25
+  },
+  {
+   "kind": "ranked_priority",
+   "native_category": "VI. Selection Criteria: Rehabilitation",
+   "track": "rehab",
+   "section_label": "VI.4",
+   "heading": "Greater ratio of hard costs to total development budget",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 4,
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "A greater ratio of hard costs to total development budget.",
+   "ord": 26
+  },
+  {
+   "kind": "ranked_priority",
+   "native_category": "VI. Selection Criteria: Rehabilitation",
+   "track": "rehab",
+   "section_label": "VI.5",
+   "heading": "Identified by a local government as needing rehabilitation for revitalization",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 5,
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "Properties identified by a local government as in need of rehabilitation for community",
+   "ord": 27
+  },
+  {
+   "kind": "ranked_priority",
+   "native_category": "VI. Selection Criteria: Rehabilitation",
+   "track": "rehab",
+   "section_label": "VI.6",
+   "heading": "Applicant's experience as a LIHTC property owner",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 6,
+   "page_start": 23,
+   "page_end": 23,
+   "quote": "experience as a LIHTC property owner.",
+   "ord": 28
+  }
+ ]
+}

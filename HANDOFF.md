@@ -13,14 +13,14 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 68 |
-| **States coded** | **32** |
-| Criteria | 1197 (807 competitive, 306 threshold) |
-| Point tiers | 1418 |
-| Track totals | 48 |
+| **States coded** | **33** |
+| Criteria | 1250 (828 competitive, 331 threshold) |
+| Point tiers | 1434 |
+| Track totals | 51 |
 | Documents with a source URL | 33 of 68 |
-| Citations verifying | 1197 of 1197 |
+| Citations verifying | 1250 of 1250 |
 
-Coded: AK AL AR AZ CO CT DE HI IA IL IN MA ME MI MN MO NC ND NH NJ NM NV NY OH OK PA RI SD VA VT WI WY
+Coded: AK AL AR AZ CO CT DE HI IA IL IN KS MA ME MI MN MO NC ND NH NJ NM NV NY OH OK PA RI SD VA VT WI WY
 
 The figures combine the 20 states coded against the full corpus with the ten
 coded from `data/pdfs_bundled/`. A repo-only session can rebuild and re-verify
@@ -47,6 +47,7 @@ that no total is stated.
 | WY | 39 | one | 495 | 495 | OK; negatives reconcile to −1,510 |
 | IL | 57 | general 80; one of three add-on policy tracks at 20 | 80 + 20 | 80 + 20 | OK on all four |
 | NM | 29 | one | none | 102 | no stated total; three exclusion groups |
+| KS | 53 | 9% new construction; 4% add-on; rehab ranked, no points | none | 125 | no stated total; 310-point Article 10 gate coded as thresholds |
 
 Six of ten state no total. For them the hand-sum made before loading is the
 only completeness check there is; see protocol §6.
