@@ -13,14 +13,14 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 68 |
-| **States coded** | **38** |
-| Criteria | 1541 (1039 competitive, 394 threshold) |
-| Point tiers | 2085 |
-| Track totals | 62 |
+| **States coded** | **39** |
+| Criteria | 1575 (1055 competitive, 412 threshold) |
+| Point tiers | 2120 |
+| Track totals | 63 |
 | Documents with a source URL | 33 of 68 |
-| Citations verifying | 1541 of 1541 |
+| Citations verifying | 1575 of 1575 |
 
-Coded: AK AL AR AZ CO CT DE GA HI IA ID IL IN KS MA ME MI MN MO MS NC ND NH NJ NM NV NY OH OK PA RI SD TN VA VT WI WV WY
+Coded: AK AL AR AZ CO CT DE GA HI IA ID IL IN KS LA MA ME MI MN MO MS NC ND NH NJ NM NV NY OH OK PA RI SD TN VA VT WI WV WY
 
 The figures combine the 20 states coded against the full corpus with the ten
 coded from `data/pdfs_bundled/`. A repo-only session can rebuild and re-verify
@@ -53,6 +53,7 @@ that no total is stated.
 | GA | 67 | 9% core 50.5; new affordability +51; preservation +42; 4% USDA portfolio 16 | none | 101.5 / 92.5 | no stated total; matrix read from image |
 | TN | 42 | new construction; rehab (alternatives) | 100 / 100 | 94 / 89 | MISMATCH by design: the QAP says its criteria do not reach 100 |
 | WV | 112 | new supply; existing (full parallel tracks); top-off bonus 10 | 993 / 993 | 988 / 988 | MISMATCH by design: two mutually exclusive criteria both counted |
+| LA | 34 | one | none | 51 | no stated total; score sheet read from page images |
 
 Six of ten state no total. For them the hand-sum made before loading is the
 only completeness check there is; see protocol §6.

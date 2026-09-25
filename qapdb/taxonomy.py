@@ -645,6 +645,10 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("WV", "EQ.7.E"): DES, ("WV", "EQ.8.E"): DES, ("WV", "EQ.11.E"): DES, ("WV", "EQ.12.E"): DES,
     ("WV", "EQ.13.E"): DES, ("WV", "EQ.14.E"): DES, ("WV", "EQ.10.E"): DES, ("WV", "BONUS.1"): READY,
     ("WV", "NEG.1"): READY, ("WV", "NEG.2"): SPON,
+    ("LA", "I.A"): LOC, ("LA", "I.B"): PRES, ("LA", "I.C"): DES, ("LA", "II"): POP,
+    ("LA", "III.A"): AFF, ("LA", "III.B"): LOC, ("LA", "III.C"): COST, ("LA", "IV.A"): LOC,
+    ("LA", "V.A"): DES, ("LA", "V.B"): DES, ("LA", "V.C"): DES, ("LA", "V.D"): DES,
+    ("LA", "V.E"): DES, ("LA", "V.F"): DES, ("LA", "V.G"): POP, ("LA", "PEN.1"): SPON,
 }
 
 

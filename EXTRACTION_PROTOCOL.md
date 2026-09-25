@@ -1171,3 +1171,20 @@ That is a MISMATCH by design, as with Indiana. The ten-band location tables,
 about 150 numbers in all, were parsed from the page text by script rather than
 retyped. Every band carries its page, so the script's output is checkable
 against the same text layer the citation checker reads.
+
+
+### Louisiana 2025: an interleaving warning is a reason to look, not a verdict
+
+The bundle README warned that Louisiana's Appendix A keeps its values in a
+separate column and might interleave the way Nebraska's does. It did not
+interleave: the text layer lists the labels and then the values in the same
+order. It did drop one value. The Elderly Households row's "6" sits past the
+point where the column text stops. The rendered pages settled both questions in
+minutes, and all three pages were read from images and checked against the
+text before any value was written.
+
+A penalty that multiplies a criterion's value, such as "three (3) times the
+point value of the selection criteria that cannot be satisfied", has no point
+amount of its own. My first draft coded the multipliers ×1 and ×3 as tiers of
+−1 and −3. That reads as points and would have summed as points. Such a
+penalty gets `points_max` null, no tiers, and the rule stated in the note.
