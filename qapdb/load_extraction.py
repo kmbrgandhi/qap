@@ -89,6 +89,23 @@ def load(spec_path: Path, db_path: Path, commit: bool) -> int:
         c["_verified"] = 1 if ok else 0
         if not ok:
             failures.append(c)
+
+    # A verified quote proves the words are on the cited page, not that they
+    # belong to this criterion. New Mexico's Seniors priority first cited a
+    # heading phrase that verified on p.49, where it belongs to the Special
+    # Needs priority; the Seniors copy was on p.52. So name every other page a
+    # verified quote also appears on, for the reviewer to check. Informational
+    # only: repeated boilerplate is sometimes the right thing to quote.
+    texts = [_normalise(p.get_text()) for p in doc]
+    ambiguous = []
+    for c in criteria:
+        q = _normalise(c.get("quote") or "")
+        if not c["_verified"] or not q:
+            continue
+        cited = {c.get("page_start"), c.get("page_end")}
+        others = [i + 1 for i, t in enumerate(texts) if q in t and i + 1 not in cited]
+        if others:
+            ambiguous.append((c, others))
     doc.close()
 
     n_ver = sum(c["_verified"] for c in criteria)
@@ -97,6 +114,9 @@ def load(spec_path: Path, db_path: Path, commit: bool) -> int:
     for c in failures:
         print(f"  ! UNVERIFIED p{c.get('page_start')}  {c.get('heading','')[:60]}")
         print(f"      quote: {c.get('quote','')[:80]!r}")
+    for c, others in ambiguous:
+        shown = ", ".join(map(str, others[:8])) + (" ..." if len(others) > 8 else "")
+        print(f"  ~ quote for {c.get('section_label')} also appears on p. {shown}")
 
     # Points arithmetic, per track, before it reaches the database.
     tracks: dict[str | None, tuple[float, float]] = {}

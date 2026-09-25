@@ -22,16 +22,16 @@ says *where we are*; the protocol says *how to work*.
 
 Coded: AK AL AR AZ CA CO CT DE GA HI IA ID IL IN KS LA MA ME MI MN MO MS NC ND NH NJ NM NV NY OH OK PA RI SD TN TX VA VT WA WI WV WY
 
-The figures combine the 20 states coded against the full corpus with the ten
+The figures combine the 20 states coded against the full corpus with the 22
 coded from `data/pdfs_bundled/`. A repo-only session can rebuild and re-verify
-only the ten bundled states (497 criteria); the other 614 need the shared drop
-folder.
+the 22 bundled states (1,080 criteria, of which 74 are West Virginia's `.E`
+parallel-track copies); the other 614 need the shared drop folder.
 
 Every coded state reconciles its computed maximum against a total stated in its
 own document, records the MISMATCH and its cause, or records in `track_totals`
 that no total is stated.
 
-### Where the ten bundled states landed
+### Where the 22 bundled states landed
 
 | State | Criteria | Tracks | Stated | Computed | Status |
 |---|---|---|---|---|---|
@@ -58,8 +58,11 @@ that no total is stated.
 | CA | 27 | one (9% Credit Ceiling, §10325) | none | 109 | no stated total; §10326 bond scoring not coded |
 | TX | 37 | one | none | 181 | no stated total; 120-point eligibility floor; 26 points awarded to all |
 
-Six of ten state no total. For them the hand-sum made before loading is the
-only completeness check there is; see protocol §6.
+Fifteen of the 22 state no total. For them the hand-sum made before loading is
+the only completeness check there is; see protocol §6. Three reconcile fully
+(Alaska, Wyoming, Illinois); Nevada's bond track does too. Indiana, Tennessee
+and West Virginia record a MISMATCH their own text explains, and Nevada's 9%
+track one it does not.
 
 ## The shape of the work
 
@@ -83,9 +86,10 @@ manifest.py         rewrites data/manifest.csv, keeping rows it cannot see
 ## Working from the git repo alone
 
 The full corpus is 123 MB in a shared drop folder and is **not** committed.
-`data/pdfs_bundled/` carries 24 documents: the 11 behind the ten states already
-coded from the repo, so their citations can be re-verified anywhere, plus 13
-covering 12 uncoded states for the next batch. See its README.
+`data/pdfs_bundled/` carries 24 documents behind the 22 states coded from the
+repo, so every one of their citations can be re-verified anywhere. Washington's
+10-page QAP is bundled for context only; its scoring is in the bundled 9%
+Policies. See its README.
 
 `qapdb/paths.py` resolves every PDF: the path recorded at ingest, then
 `data/pdfs_bundled/`, then `$QAP_PDF_DIR`. A document that cannot be found is
@@ -111,29 +115,23 @@ available.
 
 Do not commit `data/manifest.csv` wholesale from this partial database. It keeps
 the rows it cannot see, but recomputes the rows it can, and `is_most_recent`
-recomputed over eleven documents flips Minnesota's QAP and worksheet. Commit
+recomputed over the bundled documents alone flips Minnesota's QAP and
+worksheet. Commit
 only the rows for the state you coded.
 
 The dashboard is `python -m app.server`, then http://127.0.0.1:8000.
 
 ## What to do next
 
-All ten of the first bundle are coded. **A second bundle of 13 documents
-covering 12 uncoded states is now in `data/pdfs_bundled/`**, so a repo-only
-session has work available without the shared drop folder.
+Both bundles are coded: 22 states from the repo, 42 in all. No uncoded
+document is left in `data/pdfs_bundled/`, so the next extraction needs either
+the shared drop folder or a newly collected document.
 
-1. **Code the second bundle.** Every document was opened and confirmed to carry
-   real point values first; `data/pdfs_bundled/README.md` has the per-state
-   notes. Illinois, New Mexico, Kansas and Idaho are the most straightforward.
-   Two need warning in advance:
-   - **Louisiana** keeps its scoring in Appendix A from p.39, a self-score
-     sheet whose values sit in a column separate from their labels. Expect the
-     text layer to interleave them, as Nebraska's does.
-   - **Washington** scores in the 84-page 9% Policies document, not the
-     10-page QAP. Both are bundled; code the Policies.
-
-   California (regulations format, CCR §10325) and Texas (218 pages) are the
-   hardest. Leave them until last.
+1. **Second passes the first pass deliberately left out**, each noted in its
+   file: California's §10326 tax-exempt bond scoring (a separate competition);
+   the 4% universes of Kansas and Georgia, described in notes rather than coded
+   as tracks; and the selective threshold files, whose `_comment`s list what
+   was omitted.
 2. **Human review of the flagged items below.** Each is recorded in its state's
    notes with the page to check. They are judgement calls, which is what the
    review queue is for.
@@ -157,9 +155,10 @@ session has work available without the shared drop folder.
    regulations are dated December 10, 2025 and name no round) and Arizona
    (ingest recorded a filename/document CONFLICT).
 5. **Consider a `qapdb/stats` command** that prints this file's corpus table
-   from the full database. The figures here were computed from the ten bundled
+   from the full database. The figures here were computed from the 22 bundled
    states plus the earlier 20 states' recorded totals, which is one more place
-   for arithmetic to drift.
+   for arithmetic to drift. It should de-duplicate West Virginia's `.E` rows
+   when counting criteria.
 
 ## Deliberately deferred, with reasons
 
@@ -193,7 +192,7 @@ session has work available without the shared drop folder.
 - Human review of every coded state is still pending and is expected to happen
   against the PDFs, which is why citations are page-plus-quote rather than
   character offsets.
-- Threshold extraction is selective in the ten bundled states: each
+- Threshold extraction is selective in the 22 bundled states: each
   `*_thresholds.json` says in its `_comment` what was left out.
 
 ## Contradictions and judgement calls worth knowing about
@@ -234,6 +233,19 @@ confirm against the page it names.
   its text adopts the 2026 plan; cycle set to 2026 via `sources.csv`. Its
   Development Type says "UP TO 25 PTS" and "Up to twenty points" in adjacent
   lines; Chart 7's 25 is coded.
+- **Illinois**'s summary files Non-Profit Participation under "NON-PROFIT TEAM
+  ONLY"; its body never says so, and only that heading makes the stated
+  Development Team subtotal of 14 reachable.
+- **New Mexico**'s summary letters its criteria after O one step higher than the
+  body, with a blank P row.
+- **Georgia**'s Community Designations A is 13 points in two headings and "Ten
+  (10) points" in its text; 13 is coded.
+- **Tennessee** and **West Virginia** state totals (100; 993) their own criteria
+  cannot reach: Tennessee says so, and West Virginia counts two criteria that
+  bar each other. Tennessee's cross-references cite Section 16 for Section 17.
+- **Washington**'s Policies promise "20 different set-aside combinations"
+  against a 17-row menu, give its Use Period as 22-44 in the summary and 24-44
+  in the body, and date themselves differently on the cover and p.2.
 - **Colorado**'s 92.5 targeting ceiling, **Minnesota**'s 258 and **New
   Jersey**'s 63-point floor are computed figures, not stated ones, and are
   labelled so in their files.

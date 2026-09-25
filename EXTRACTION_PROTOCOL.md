@@ -32,6 +32,13 @@ Work through this in order. It takes ten minutes and saves hours.
 - **Confirm the document is the one that governs the round.** Check
   `qaps.doc_status`, and read the cover. Drafts are fine to extract but must
   be labelled; do not let one silently stand in for an adopted plan.
+- **Date the document from its body, not its filename or running header.**
+  Mississippi's every page says "2024 QUALIFIED ALLOCATION PLAN" while its text
+  adopts the 2026 plan; Washington's cover and p.2 give different republication
+  dates. Find the sentence that dates adoption or the round, set the cycle
+  through `data/sources.csv` with that sentence in the note, and record the
+  disagreement. Where no sentence names a round (Alaska, Wyoming, Idaho,
+  California), leave the cycle unset and list it in the handoff.
 - **Check the text layer.** `source_quality` from ingest tells you: `native`,
   `garbled_text`, or `no_text_layer`. Anything but `native` must be OCR'd
   first (`ocrmypdf --force-ocr`), the OCR'd copy put in the drop folder, and
@@ -84,7 +91,13 @@ One row per thing a project is scored on, at the grain the document scores it.
   cure deduction).
 - A criterion that scores in both directions (a vacancy ladder running from
   +25 to −10) stays **one row**, with the negative bands in the note; a purely
-  negative item is its own row (Virginia, Wyoming).
+  negative item is its own row (Virginia, Wyoming). Its `points_max` is the
+  positive ceiling, which counts toward the total (Mississippi's ±5 cost
+  adjustment adds 5; Texas's State Representative runs −8 to +8).
+- **A penalty defined as a multiple of another criterion's value has no point
+  amount.** Louisiana deducts "three (3) times the point value" of an unmet
+  commitment: `points_max` null, no tiers, the rule in the note. Coding ×1 and
+  ×3 as tiers of −1 and −3 reads as points and sums as points.
 - When a matrix pays only through an average or a count (Iowa's Site Appeal,
   Indiana's amenity charts), code the thing that is scored, not every cell.
 
@@ -100,7 +113,7 @@ One row per thing a project is scored on, at the grain the document scores it.
 | `points_type` | `fixed`, `tiered`, `formula`, `per_unit`, `unlimited`, `negative`, `none`. |
 | `scoring_unit` | `points` unless the document scores in something else. Vermont scores in checkmarks; Utah uses weights (weight × score). Never mix units in one total. |
 | `kind` | `competitive`, `threshold`, `ranked_priority`, `tiebreaker`, `set_aside`. |
-| `track` | Where the QAP runs scoring universes that must not be pooled. Two kinds, which look identical in the data, so every `track_totals.note` must say which it is: **alternatives**, where a project is in exactly one (Michigan urban/rural, Arizona rehab/new construction, Oklahoma 9%/state credit); and **add-ons**, extra criteria on top of a shared core (Arizona tribal, New Jersey's three cycles, Indiana 9%/bond). When scales share most criteria, code the core once plus one add-on track per scale rather than duplicating it; suffix any criterion that must appear on two tracks (`.family`, `.senior`). |
+| `track` | Where the QAP runs scoring universes that must not be pooled. Two kinds, which look identical in the data, so every `track_totals.note` must say which it is: **alternatives**, where a project is in exactly one (Michigan urban/rural, Arizona rehab/new construction, Oklahoma 9%/state credit); and **add-ons**, extra criteria on top of a shared core (Arizona tribal, New Jersey's three cycles, Indiana 9%/bond). When scales share most criteria, code the core once plus one add-on track per scale rather than duplicating it; suffix any criterion that must appear on two tracks (`.family`, `.senior`). A third shape, **full parallel tracks**, is for universes that score the same criteria at different values and each state their own total (West Virginia's New Supply and Existing, both 993): every criterion appears once per track, the copies suffixed (`.E`), so each track reconciles alone. Say so in `_comment`; per-criterion counts must de-duplicate the suffixed rows. |
 | `page_start` / `page_end` | **PDF page indices**, not printed page numbers. |
 | `quote` | See §4. |
 | `note` | Ambiguities, contradictions, alternatives, anything a reviewer should see. Generous notes are cheap; silent judgement calls are not. |
@@ -124,7 +137,21 @@ One row per thing a project is scored on, at the grain the document scores it.
 - **Two-column tables need the page image.** Where the text layer interleaves
   columns (Wyoming's Negative and Maximum Points summary, Indiana's rent
   table), read the figures from the rendered page, say so in `_comment`, and
-  quote clean body text for the citation.
+  quote clean body text for the citation. The same goes for a table whose text
+  layer holds labels and no values: its marks may be drawn graphics (Georgia's
+  applicability checkmarks), and a warned-of interleave may instead be a
+  truncation (Louisiana's Elderly 6). Look before deciding either way.
+- **A verified quote proves the words are on the page, nothing more.** It does
+  not prove they belong to this criterion (New Mexico's Seniors citation
+  verified on a Special Needs page), nor that a section label in a note is
+  right (Texas's 120-point floor sat in §11.101, not the §11.202 its words
+  suggested). The loader checks only `page_start` and `page_end`, so for a
+  criterion spanning three or more pages, **quote a sentence unique to it from
+  its first page**, not a shared heading. The dry run lists every other page a
+  quote appears on; read that list.
+- **Parse long numeric tables from the text layer by script, don't retype
+  them**, when the layer keeps them in order (West Virginia's ten-band location
+  tables, some 150 numbers). Spot-check the output against the page.
 
 ## 5. Points arithmetic
 
@@ -145,6 +172,16 @@ One row per thing a project is scored on, at the grain the document scores it.
   `capped_sum` at the best allowed route.** Minnesota's Rental Assistance is
   barred to Preservation Tier 1 but not Tier 2: cap 46, where `max_one` would
   record 45.
+- **When one criterion bars a whole set, cap the set at the better route, and
+  call it a device.** Washington's Eligible Tribal Area (6/5/10 by pool) bars
+  five other location criteria worth 7/7/3 together; `max_one` would compare
+  it with the largest single member. A `capped_sum` over all of them at
+  max(tribal, set) gives the exact maximum. The group note must say it is a
+  device, give both routes' arithmetic, and leave the real rule in the notes.
+- **An exclusion inferred from scope, not stated, is labelled as inferred.**
+  Idaho's rehabilitation-only point and new-construction-only cost score can
+  never combine, but no sentence says so; the group's note says it is
+  inferred, and its `source_quote` is the sentence that fixes the scope.
 - **Unit-level and source-level exclusions cannot be groups.** "Cannot be
   claimed for the same units" limits the real maximum in a way the schema
   cannot hold. Put it in the notes and say in the track note that the computed
@@ -177,6 +214,16 @@ the stated one:
   cannot combine, or spans scoring universes, keep the stated figure against
   its track and decompose the gap in the note until it sums exactly (Indiana:
   121 + 25 + 4 + 12 + 3 = 165).
+- **A scale is not a reachable total.** Tennessee's sections open "not
+  intended to allow an Applicant to claim the maximum 100 points"; West
+  Virginia's 993 counts two criteria that bar each other. Record the stated
+  figure, let the MISMATCH stand, and quote the explaining sentence in the
+  track note so no one mistakes it for a coding miss.
+- **Say when points go to everyone.** Texas awards all eligible applications
+  26 for Financial Feasibility, and Kansas requires all 310 Article 10 points
+  of every applicant. Points nobody can fail to earn don't rank anyone: the
+  first is coded as awarded and flagged in its note; the second, a pass/fail
+  gate, belongs in the thresholds file (§7).
 - **Reconcile negatives too** where the document states them (Wyoming's
   −1,510), and check worked examples against the rule they illustrate
   (Wyoming's donations example contradicts its rule).
@@ -194,6 +241,11 @@ the stated one:
   158 in Housing Needs) is a threshold row whose note says what it applies to.
   A floor stated as a share of an unstated maximum (New Jersey's 65%) gets the
   computed value in its note, labelled as ours.
+- **An all-or-nothing gate that carries points is a threshold.** Kansas's
+  Appendix A assigns 310 points across seven categories that every
+  application must earn in full. Code each category as a threshold with its
+  value in the heading and note, and check they sum to the stated gate total.
+  Loading them as competitive would make a 125-point plan look like 435.
 - **When a companion document holds the points, give the QAP its own small
   file** for whatever the companion defers to it (Minnesota's tie breakers and
   the RD/Small Projects floor are in `MN_qap_2026_2028.json`, matched to the QAP
@@ -220,7 +272,12 @@ with `python -c "import sqlite3; sqlite3.connect('data/qap.db').executescript(op
 And `manifest.py` run against a partial database (the bundled PDFs only) keeps
 the rows it cannot see but recomputes the rows it can, including
 `is_most_recent` over the partial set; read the diff and commit only the rows
-for the state you coded.
+for the state you coded. The manifest ends rows with CRLF and keeps bare LF
+inside quoted multi-line notes, so a row edited by hand or script must keep its
+trailing `\r`; check `git diff --stat` shows only the lines you meant to touch.
+`apply_sources.py` appends a source note to the database's `notes` on every
+run, so regenerate a manifest row from a freshly built database, or edit it
+directly, rather than from one that has had sources applied twice.
 
 ## 9. What to hand the reviewer
 
@@ -235,7 +292,11 @@ The human review queue is for judgement, not for typos. Flag in `note`:
 - any figure you computed rather than read (a formula ceiling, a floor
   expressed as a share of an unstated maximum), labelled as computed
 - cross-references that point to the wrong section, with the section you took
-  them to mean
+  them to mean (Tennessee cites Section 16 for Section 17 items throughout)
+- a summary table whose labels or lettering disagree with the body
+  (New Mexico's summary letters its later criteria one step off from its body;
+  Illinois's "team only" heading carries a rule its body omits)
+- any grouping that is a device rather than the document's rule
 
 Numbers in notes are held to rule 1 like any other: count them or leave them
 out. "Some 90 amenities" is an estimate, and estimates do not belong in the
@@ -1256,3 +1317,22 @@ would have passed either attribution, because both quote the same sentence on
 the same page. **The checker verifies words on pages. It does not verify
 section labels.** When a note or comment names a section, read the nearest
 section heading above the quote.
+
+
+### Twelve more bundled states, consolidated
+
+The second bundle added Illinois, New Mexico, Kansas, Idaho, Mississippi,
+Georgia, Tennessee, West Virginia, Louisiana, Washington, California and Texas.
+Its recurring lessons are now rules above. §1: date the document from its
+body. §2: bidirectional adjustments and multiplier penalties. §3: full parallel
+tracks. §4: graphics tables, what a verified quote proves, and parsing long
+tables by script. §5: capping a set against one criterion, and inferred
+exclusions. §6: scales that are not reachable totals, and points that go to
+everyone. §7: point-bearing gates. §8: the manifest's line endings. §9:
+summary-versus-body labels and grouping devices. The loader now lists every
+other page a quote appears on.
+
+Of the twelve, Illinois reconciled fully to stated totals. Tennessee and West
+Virginia record a MISMATCH that their own text explains. The other nine state no
+total. Across all 22 bundled states, 15 state no total: the hand-sum made
+before loading remains the only completeness check for most of the corpus.
