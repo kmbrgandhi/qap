@@ -1,8 +1,10 @@
 # Bundled PDFs
 
-24 documents committed to the repo on purpose, behind the 22 states coded from
-here. Every one is coded; Washington's QAP is here for context, since its
-scoring lives in the 9% Policies.
+31 documents committed to the repo on purpose, behind the 26 states coded from
+here. Every one is coded. Four QAPs are here for context only, because the
+scoring lives in a companion document: Washington's (9% Policies), South
+Carolina's (Appendix C1), Maryland's (Program Guide) and Nebraska's plan (the
+scoresheet).
 
 The full corpus is 123 MB in a shared drop folder and stays out of git — see
 the note at the top of `.gitignore`. But a session that has only the repo (a
@@ -44,6 +46,13 @@ what the pre-bundling check turned up and what coding confirmed.
 | WA | `washington-qap-2027.pdf` | 10 | The QAP itself, bundled for context only |
 | WV | `westvirginia-qap-2025-2026.pdf` | 139 | Two full parallel tracks, 993 each |
 | WY | `wyoming-qap-2027.pdf` | 80 | |
+| SC | `southcarolina-appendix-c1-9pct-2026-amendments.pdf` | 12 | **This carries the 9% scoring.** Despite the name it is the clean consolidated Appendix C1; the redline (not bundled) reads `Max - 65 70 points`, where 70 is correct. Table of contents is a year stale |
+| SC | `southcarolina-qap-2026-amendments.pdf` | 23 | The governing QAP, also clean. Thresholds are cited here |
+| MD | `maryland-multifamily-program-guide-2026.pdf` | 109 | **This carries the scoring** (Chapter 4). Printed pages run 5 behind PDF pages. Reconciles to its stated 221 |
+| MD | `maryland-qap-2026.pdf` | 34 | The QAP itself, bundled for context only |
+| NE | `nebraska-9pct-scoresheet-2026-2027-2028.pdf` | 5 | **This carries the point values.** Values read from page images; the text layer separates them from their labels. States 87 / 85; the printed rows do not reach either |
+| NE | `nebraska-9pct-allocation-plan-2026-2027-2028.pdf` | 36 | Plan for context; its "PROPOSED SCORING" table (p.6) totals 94 and disagrees with the sheet |
+| UT | `utah-qap-2027.pdf` | 168 | **Scores by weight.** Stored at weighted value in `scoring_unit = 'weighted'`; never pool with points. No grand total stated; all six category maxima reconcile |
 
 **Oregon is deliberately absent.** `oregon-qap-2025.pdf` was a candidate until
 it was opened: pages 44–142 are a public comment-and-response log, with named
@@ -54,23 +63,3 @@ different document collected before it can be coded.
 Keep this folder a working set, not a mirror. If you need a document that is
 not here, take it from the shared drop folder via `$QAP_PDF_DIR` rather than
 adding to the repo by default.
-
-## Not yet coded — the remaining four
-
-Every other state in the corpus is coded. These four are what is left, and all
-four are researched: `data/sources.csv` records the source URL and what each
-document actually contains.
-
-| State | File | Pages | Notes |
-|---|---|---|---|
-| **SC** | `southcarolina-appendix-c1-9pct-2026-amendments.pdf` | 12 | **Start here — shortest job in the corpus.** Despite the name this is the CLEAN consolidated Appendix C-1, where the 9% scoring lives. Verified free of redline artifacts. The companion file without `-amendments` is the redline and reads `Max - 65 70 points`; **70 is correct**. |
-| **SC** | `southcarolina-qap-2026-amendments.pdf` | 23 | The governing 2026 QAP, signed 30 December 2025. Also the clean version. Scoring is in the appendix, not here. |
-| **MD** | `maryland-multifamily-program-guide-2026.pdf` | 109 | **This carries the scoring**, not the QAP. Chapter 4 from printed p.52; Scoring Summary Table totals **221**. Printed page numbers run 5 behind PDF pages. Bonus points (10, or 15 for intergenerational/elderly/PSH) sit outside the 221. |
-| **MD** | `maryland-qap-2026.pdf` | 34 | The QAP itself, bundled for context only. |
-| **NE** | `nebraska-9pct-scoresheet-2026-2027-2028.pdf` | 5 | **This carries the point values**, not the plan. States a 40-point minimum and maxima of 87 non-metro / 85 metro. Needs an image-based pass: the text layer interleaves labels and values across columns, exactly as Wyoming's summary did — and Wyoming was read successfully from rendered page images. |
-| **NE** | `nebraska-9pct-allocation-plan-2026-2027-2028.pdf` | 36 | Three-year plan for 2026-2028. Its summary table on pp.5-6 is headed "PROPOSED SCORING" in an otherwise final document and its group totals sum to 94, disagreeing with the scoresheet. **Treat the scoresheet as authoritative.** |
-| **UT** | `utah-qap-2027.pdf` | 168 | **Scores by WEIGHT, not points** — use `scoring_unit`, do not flatten. Each criterion is a raw score times a weight: Lower Income Targeting x50 (cap 5,000), Project Location x20 (cap 300, from 15 raw), Project Characteristics x20 (530), Applicant Characteristics x20 (200), Special Housing Needs x20 (500), Credit Efficiency x20 (240). **No grand total is stated anywhere in the QAP** — do not compute one and present it as stated. |
-
-Order: South Carolina (12 pages), then Maryland, then Nebraska, then Utah.
-Utah last: it is the first weight-scored state in the corpus and its totals are
-not comparable with anyone else's.

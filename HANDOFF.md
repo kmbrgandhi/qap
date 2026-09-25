@@ -13,18 +13,24 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 70 |
-| **States coded** | **43** |
-| Criteria | 1711 (1137 competitive, 574 threshold and other) |
-| Point tiers | 2314 |
+| **States coded** | **47** (the other 3 have no point system) |
+| Criteria | 1935 (1255 competitive, 680 threshold and other) |
+| Point tiers | 2579 |
 | Documents with a source URL | 42 of 70 |
 | Citations verifying | all |
 
-Coded: AK AL AR AZ CA CO CT DE GA HI IA ID IL IN KS KY LA MA ME MI MN MO MS NC ND NH NJ NM NV NY OH OK PA RI SD TN TX VA VT WA WI WV WY
+Coded: AK AL AR AZ CA CO CT DE GA HI IA ID IL IN KS KY LA MA MD ME MI MN MO MS NC ND NE NH NJ NM NV NY OH OK PA RI SC SD TN TX UT VA VT WA WI WV WY
 
-The figures combine the 20 states coded against the full corpus with the 22
-coded from `data/pdfs_bundled/`. A repo-only session can rebuild and re-verify
-the 22 bundled states (1,080 criteria, of which 74 are West Virginia's `.E`
-parallel-track copies); the other 614 need the shared drop folder.
+The figures combine the 20 states coded against the full corpus, Kentucky
+(coded from its workbook), and the 26 coded from `data/pdfs_bundled/`. A
+repo-only session can rebuild and re-verify the 26 bundled states. They hold
+1,304 criteria, of which 74 are West Virginia's `.E` parallel-track copies and
+31 are Nebraska's `.M` copies. The remaining 631 criteria need the shared drop
+folder.
+
+Utah's 16 competitive criteria are in `scoring_unit = 'weighted'`: raw points
+times the category weight, which is what Utah ranks on. They must never be
+summed or charted with anyone else's points.
 
 Every coded state reconciles its computed maximum against a total stated in its
 own document, records the MISMATCH and its cause, or records in `track_totals`
@@ -56,12 +62,17 @@ that no total is stated.
 | WA | 55 | core 159; King +42, Metro +32, Non-Metro +35 | none | 201 / 191 / 194 | no stated total; scored in the 9% Policies, not the QAP |
 | CA | 27 | one (9% Credit Ceiling, §10325) | none | 109 | no stated total; §10326 bond scoring not coded |
 | TX | 37 | one | none | 181 | no stated total; 120-point eligibility floor; 26 points awarded to all |
+| SC | 23 | new construction 142; rehab 23 (alternatives) | none | 142 / 23 | no stated total; table of contents a year stale |
+| MD | 24 | one; state bonus 15 | 221 | 221 | OK; bonus sits outside the 221 |
+| NE | 62 | non-metro, metro (full parallel tracks) | 87 / 85 | 84 / 82 | MISMATCH: block maxima give 88 / 86, the sheet's own exclusions 84 / 82 |
+| UT | 17 | one, **weighted units** | none | 6,770 weighted | no grand total stated; every category maximum reconciles |
 
-Fifteen of the 22 state no total. For them the hand-sum made before loading is
-the only completeness check there is; see protocol §6. Three reconcile fully
-(Alaska, Wyoming, Illinois); Nevada's bond track does too. Indiana, Tennessee
-and West Virginia record a MISMATCH their own text explains, and Nevada's 9%
-track one it does not.
+Seventeen of the 26 state no total. For them the hand-sum made before loading
+is the only completeness check there is; see protocol §6. Four reconcile fully
+(Alaska, Wyoming, Illinois, Maryland), and so does Nevada's bond track. Utah
+states no total but states every category maximum, and all six reconcile.
+Indiana, Tennessee and West Virginia record a MISMATCH their own text explains.
+Nevada's 9% track and Nebraska record one it does not.
 
 ## The shape of the work
 
@@ -85,7 +96,7 @@ manifest.py         rewrites data/manifest.csv, keeping rows it cannot see
 ## Working from the git repo alone
 
 The full corpus is 123 MB in a shared drop folder and is **not** committed.
-`data/pdfs_bundled/` carries 24 documents behind the 22 states coded from the
+`data/pdfs_bundled/` carries 31 documents behind the 26 states coded from the
 repo, so every one of their citations can be re-verified anywhere. Washington's
 10-page QAP is bundled for context only; its scoring is in the bundled 9%
 Policies. See its README.
@@ -122,48 +133,39 @@ The dashboard is `python -m app.server`, then http://127.0.0.1:8000.
 
 ## What to do next
 
-**Four states remain uncoded, and all four have their documents in the repo.**
-`data/pdfs_bundled/README.md` carries the per-state briefing; each is also
-researched in `data/sources.csv`.
+**Extraction is complete.** 47 of 50 states are coded. The other three have no
+point system to extract, and that is recorded rather than pending: **Oregon**
+(threshold, then supplemental count, then ordered tiebreakers), **Montana** (no
+point system) and **Florida** (scoring delegated to per-cycle RFAs).
 
-| State | Why it is last | Warning |
-|---|---|---|
-| **SC** | Nothing — start here, 12 pages | Code from the file ending `-amendments.pdf`; the other is a redline reading `Max - 65 70 points`, where 70 is correct |
-| **MD** | Nothing | Scoring is in the Program Guide, not the QAP. Printed pages run 5 behind PDF pages |
-| **NE** | Needs an image pass | The scoresheet interleaves labels and values, as Wyoming's did. Wyoming was read from rendered page images successfully |
-| **UT** | First weight-scored state | Use `scoring_unit`. Do not flatten weights to points, and do not compute a grand total: the QAP states none |
+The remaining work is review, not extraction:
 
-Three states are finished rather than pending, because they have no point
-system to extract: **Oregon** (threshold, then supplemental count, then ordered
-tiebreakers), **Montana** (no point system), **Florida** (scoring delegated to
-per-cycle RFAs).
+1. **Human review of every coded state against its PDF.** Start with the
+   MISMATCH rows above and the contradictions below, where a reviewer's reading
+   changes a number.
+2. **Nebraska's 87/85.** No reading of the printed scoresheet reaches them. The
+   application the plan cites for ties and scoring detail ("the 9% NIFA/NDED
+   Application") is not collected, and would settle it.
+3. **Source URLs** for the documents that lack them (see Open items).
+4. **Cross-state work that respects units.** Utah is weighted and Vermont uses
+   checkmarks; filter on `scoring_unit` before summing anything across states.
 
-After those four the corpus is complete at 47 of 50, with the other three
-recorded as non-scoring. The remaining work is then human review, not
-extraction.
+## Scoring shapes worth knowing about
 
-
-## Deliberately deferred, with reasons
-
-- **Nebraska, South Carolina** — need an image-based pass. Nebraska's scoresheet
-  separates labels from values across columns that the text layer interleaves;
-  South Carolina's amendments are redline PDFs where struck and replacement
-  values merge in the text layer ("Max - 65 70 points", where 70 is correct).
-  Read rendered page images, do not trust the text layer. Wyoming's summary had
-  the same interleaving and was read from images successfully; Nebraska's is
-  larger but may yield to the same approach.
-- **Maryland** — scoring lives in the DHCD Program Guide, which is not yet
-  collected.
-- **Kentucky** — scoring is in a spreadsheet, not a PDF. Needs a decision before
-  the pipeline can take it.
-- **Florida** (delegates scoring to RFAs) and **Montana** (no point system) have
-  nothing to extract.
-- **Utah** scores by weight rather than points, and **Vermont** in checkmarks.
-  Use `scoring_unit`; do not flatten either into points.
+- **Utah** scores by weight and **Vermont** in checkmarks. Both are stored in
+  their own `scoring_unit` and never flattened into points. Adding `weighted`
+  changed a CHECK constraint in `schema.sql`, so a database built before it must
+  be rebuilt, not migrated.
+- **Kentucky** is coded from a spreadsheet. `cell_ref` citations there are
+  machine-checked against the named cell.
+- **Maryland** scores in its Multifamily Rental Financing Program Guide, not its
+  QAP. **Nebraska** scores on a five-page scoresheet, not its plan.
+  **Washington** scores in its 9% Policies. In each case the bundled README
+  names the file to code from.
 
 ## Open items
 
-- 35 of 68 documents still have no `source_url`. `data/sources.csv` is keyed by
+- 28 of 70 documents still have no `source_url`. `data/sources.csv` is keyed by
   sha256; add rows there and run `apply_sources.py`, never edit the DB directly.
 - `tier_mode` was inferred by arithmetic for the states coded before it existed
   (88 alternative, 28 additive, 21 mixed at the time). Those inferences are
@@ -232,3 +234,17 @@ confirm against the page it names.
 - **Colorado**'s 92.5 targeting ceiling, **Minnesota**'s 258 and **New
   Jersey**'s 63-point floor are computed figures, not stated ones, and are
   labelled so in their files.
+- **South Carolina**'s table of contents describes a different year's
+  appendix: different set-asides, no Public Transportation item, and III.G
+  named "Project-Based Rent Assistance" where the body's G is Other Credits.
+- **Maryland**'s summary table and body disagree on 4.1.4's name (MBE/DBEs
+  vs Local Small Businesses) and the State Bonus maximum (10 vs 15). Its 4.5.2
+  worked example multiplies 0.9375 after computing 0.625. Its opportunity index
+  takes Maryland population change "from the Tennessee State Data Center".
+- **Nebraska**'s sheet states 87/85. Its block maxima sum to 88/86, and its
+  own exclusions give 84/82. Preservation (rows 2, 3, 2, no cap) is the likely
+  culprit. The plan's "PROPOSED SCORING" table disagrees on QCT, Natural
+  Disaster and Efficient Housing Production.
+- **Utah**'s Project Characteristics prints "Sum of Subtotals 30.5" beside a
+  530 maximum. Its subtotals give 26.5, and 26.5 × 20 = 530. The gap is a
+  blank row 6(a).
