@@ -25,6 +25,7 @@ from pathlib import Path
 
 import pymupdf
 
+from . import sheets
 from .paths import resolve_pdf
 
 
@@ -73,7 +74,7 @@ def load(spec_path: Path, db_path: Path, commit: bool) -> int:
               f" ingested path, data/pdfs_bundled/ and $QAP_PDF_DIR",
               file=sys.stderr)
         return 1
-    doc = pymupdf.open(pdf)
+    doc = sheets.open_doc(pdf)
     criteria = spec["criteria"]
 
     # Verify every citation before writing anything.
@@ -86,6 +87,12 @@ def load(spec_path: Path, db_path: Path, commit: bool) -> int:
             # A quote can legitimately straddle a page break.
             if not ok and c.get("page_end") and c["page_end"] != pg:
                 ok = verify_quote(doc[c["page_end"] - 1], c.get("quote", ""))
+        # A spreadsheet citation may name one cell. That is a stricter test
+        # than the sheet-wide search above, so it overrides it in both
+        # directions: a quote in the wrong cell is not verified.
+        if (ref := c.get("cell_ref")) and isinstance(doc, sheets.SheetDoc):
+            got = doc.cell_text(ref)
+            ok = got is not None and _normalise(c.get("quote", "")) in _normalise(got)
         c["_verified"] = 1 if ok else 0
         if not ok:
             failures.append(c)
@@ -199,14 +206,14 @@ def load(spec_path: Path, db_path: Path, commit: bool) -> int:
         cur = conn.execute(
             """INSERT INTO criteria
                (qap_id, ord, section_label, heading, verbatim_text, quote,
-                page_start, page_end, citation_verified, points_max, points_type,
+                page_start, page_end, cell_ref, citation_verified, points_max, points_type,
                 scoring_unit, kind, rank_order, track, native_category, is_negative,
                 scored_against_round, tier_mode, detail_external,
                 note, exclusivity_group_id, extractor_version)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (qap_id, c.get("ord"), c.get("section_label"), c.get("heading"),
              c.get("verbatim_text"), c.get("quote"), c.get("page_start"),
-             c.get("page_end"), c["_verified"], c.get("points_max"),
+             c.get("page_end"), c.get("cell_ref"), c["_verified"], c.get("points_max"),
              c.get("points_type", "fixed"), c.get("scoring_unit", "points"),
              c.get("kind", "competitive"),
              c.get("rank_order"), c.get("track"), c.get("native_category"),

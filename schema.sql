@@ -120,6 +120,12 @@ CREATE TABLE IF NOT EXISTS criteria (
     quote         TEXT,
     page_start    INTEGER,
     page_end      INTEGER,
+    -- Spreadsheet sources only. A workbook is read as a document whose pages
+    -- are sheets, so page_start still applies; this names one cell within it,
+    -- e.g. '3)Scoring Overview!H7'. Where present the loader checks the quote
+    -- against that cell alone, which is stricter than any page citation.
+    -- Kentucky publishes its scoring only as .xlsx; see qapdb/sheets.py.
+    cell_ref      TEXT,
     citation_verified INTEGER NOT NULL DEFAULT 0,  -- 0 unchecked/failed, 1 found
 
     -- Maximum this criterion alone can yield. NULL for threshold criteria.

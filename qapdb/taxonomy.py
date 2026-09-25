@@ -568,6 +568,14 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("IN", "6.5(D)"): POP,  ("IN", "6.5(E)"): POP,  ("IN", "6.5(F)"): POP,
     ("IN", "6.5(G)"): POP,  ("IN", "6.5(H)"): POP,  ("IN", "6.5(I)"): READY,
     ("IN", "6.5(J)"): SPON, ("IN", "6.6(A)"): SPON,
+
+    # ---- Kentucky ----------------------------------------------------------
+    # First spreadsheet source. Two parallel pools, Urban and Balance of State,
+    # sharing criterion names but not values, so both are mapped.
+    ("KY", "U.1"): AFF,     ("KY", "U.2"): LOC,     ("KY", "U.4"): LOC,
+    ("KY", "U.6"): COST,    ("KY", "U.7"): LOC,     ("KY", "U.8"): POP,
+    ("KY", "B.1"): AFF,     ("KY", "B.2"): LOC,     ("KY", "B.3"): LOC,
+    ("KY", "B.5"): LOC,     ("KY", "B.6"): COST,    ("KY", "B.8"): POP,
 }
 
 

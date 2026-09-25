@@ -30,6 +30,7 @@ try:
 except ImportError:  # older installs expose the same API as fitz
     import fitz
 
+from . import sheets
 from .paths import resolve_pdf
 
 DB = Path(__file__).resolve().parent.parent / "data" / "qap.db"
@@ -102,7 +103,7 @@ def check(state_filter: str | None = None) -> list[dict]:
         fn = r["filename"]
         if fn not in docs:
             path = resolve_pdf(r.get("local_path"), fn) or find_pdf(pdf_dir(), fn)
-            docs[fn] = fitz.open(path) if path else None
+            docs[fn] = sheets.open_doc(path) if path else None
         doc = docs[fn]
         out = {k: r[k] for k in ("id", "state", "section_label", "heading",
                                  "kind", "page_start", "page_end")}
@@ -175,7 +176,7 @@ def check_text_hashes(state_filter: str | None = None) -> list[dict]:
             pdf_dir(), r["filename"])
         if path is None or not path.exists():
             continue
-        doc = fitz.open(path)
+        doc = sheets.open_doc(path)
         text = "".join(p.get_text() for p in doc)
         doc.close()
         if hashlib.sha256(text.encode("utf-8")).hexdigest() != r["text_sha256"]:

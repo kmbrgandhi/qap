@@ -1042,3 +1042,40 @@ Two rules follow:
 - **Re-test a deferral before trusting it.** This one was recorded with a real
   reason and a real quoted example, which made it look settled. The reason was
   sound; the file it was attached to was wrong.
+
+### Spreadsheet sources, and what a cell citation catches
+
+Kentucky publishes its scoring only as an .xlsx workbook. Its 107-page
+Guidelines carry no point values at all and its QAP states that KHC makes
+awards "without determining points", so there is no PDF to code from.
+
+Rather than give the pipeline a second document model, `qapdb/sheets.py`
+presents a workbook as **a document whose pages are sheets**. `page_start` is
+then the sheet ordinal and every existing check works unchanged. One field is
+added: `cell_ref`, naming one cell, e.g. `3)Scoring Overview!G7`.
+
+**The cell check is stricter than the page check, and it earned its place
+immediately.** Kentucky's two pools share criterion names in column G and carry
+their values in columns H and J. Four Balance-of-State criteria were first
+cited to the value cell rather than the name cell. A page-level check passes
+that without complaint — the quoted words *are* on the sheet. The cell check
+failed all four, because `J7` holds `15`, not "PolicyMap: Renter Cost Burdens".
+
+So, for spreadsheet sources:
+
+- **`cell_ref` points at the cell holding the quoted text**, not at the cell
+  holding the number. Where they differ — a shared name column beside per-pool
+  value columns — put the value cell in the note, and say which is which.
+- Reference other cells freely in notes (`'2)New Supply'!B52`). Only the one
+  in `cell_ref` is machine-checked.
+- Record a pool the state declines to score. Kentucky's Existing Supply pool
+  states "This pool will have NO scoring."; without a row saying so, its
+  absence reads as missing extraction work.
+
+**A county list will impersonate a state.** Ingest filed the Kentucky workbook
+as Washington: the file contains "Kentucky" zero times and "Washington" four,
+because Kentucky has a Washington County and the workbook lists all 120. The
+fix was to add `KHC` to `AGENCIES`, since the agency probe runs before the
+state probe for exactly this reason. Any document that enumerates counties
+carries this hazard — Jefferson, Washington, Jackson and Lincoln are counties
+in dozens of states.

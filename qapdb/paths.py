@@ -1,4 +1,4 @@
-"""Find a QAP PDF on whatever machine we happen to be running on.
+"""Find a QAP source document on whatever machine we are running on.
 
 `qaps.local_path` records where a document sat when it was ingested. That path
 is right on the machine that did the ingest and wrong everywhere else: the

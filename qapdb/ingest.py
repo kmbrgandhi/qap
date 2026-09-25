@@ -29,6 +29,8 @@ from pathlib import Path
 
 import pymupdf
 
+from . import sheets
+
 # Pages scanned when identifying a document. Front matter carries the state,
 # agency, cycle, and draft/final status in essentially every QAP.
 ID_PAGES = 6
@@ -139,6 +141,13 @@ AGENCIES = {
     "KANSAS HOUSING RESOURCES CORPORATION": ("KS", "Kansas Housing Resources Corporation"),
     "KHRC": ("KS", "Kansas Housing Resources Corporation"),
     "KENTUCKY HOUSING CORPORATION": ("KY", "Kentucky Housing Corporation"),
+    # KHC's scoring workbook never spells the state out: "Kentucky" appears
+    # zero times in it, while "Washington" appears four, because Kentucky has
+    # a Washington County and the workbook lists all 120 of them. Without this
+    # token the state probe files the workbook as WA. County names collide
+    # with state names far more often than agency abbreviations do, which is
+    # why the agency check runs first.
+    "KHC": ("KY", "Kentucky Housing Corporation"),
     "LOUISIANA HOUSING CORPORATION": ("LA", "Louisiana Housing Corporation"),
     "MISSISSIPPI HOME CORPORATION": ("MS", "Mississippi Home Corporation"),
     "MONTANA BOARD OF HOUSING": ("MT", "Montana Board of Housing"),
@@ -282,7 +291,7 @@ def _resolve_cycle(ident: Ident, filename: str, title_text: str) -> None:
 def identify(path: Path) -> Ident:
     """Read a PDF's front matter and work out what document it is."""
     ident = Ident()
-    doc = pymupdf.open(path)
+    doc = sheets.open_doc(path)
     ident.n_pages = doc.page_count
 
     extracted = "".join(doc[i].get_text() for i in range(doc.page_count))
@@ -429,7 +438,7 @@ def discover(root: Path) -> list[Path]:
     2026 QAP already arrived inside one, and a flat glob silently skipped it.
     """
     out = []
-    for p in sorted(root.rglob("*.pdf")):
+    for p in sorted([*root.rglob("*.pdf"), *root.rglob("*.xlsx")]):
         name = p.name.lower()
         if any(p.name.startswith(s) for s in SKIP_PATTERNS):
             continue

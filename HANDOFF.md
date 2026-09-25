@@ -13,14 +13,14 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 69 |
-| **States coded** | **30** |
-| Criteria | 1111 (755 competitive, 278 threshold) |
+| **States coded** | **31** |
+| Criteria | 1128 (767 competitive, 279 threshold) |
 | Point tiers | 1284 |
 | Track totals | 43 |
 | Documents with a source URL | 42 of 69 |
-| Citations verifying | 1111 of 1111 |
+| Citations verifying | 1128 of 1128 |
 
-Coded: AK AL AR AZ CO CT DE HI IA IN MA ME MI MN MO NC ND NH NJ NV NY OH OK PA RI SD VA VT WI WY
+Coded: AK AL AR AZ CO CT DE HI IA IN KY MA ME MI MN MO NC ND NH NJ NV NY OH OK PA RI SD VA VT WI WY
 
 The figures combine the 20 states coded against the full corpus with the ten
 coded from `data/pdfs_bundled/`. A repo-only session can rebuild and re-verify
@@ -136,7 +136,7 @@ without the shared drop folder.
    | **SC** | **Ready — bundled, no image pass needed** | The blocker was wrong. Our filenames were inverted: `southcarolina-appendix-c1-9pct-2026-amendments.pdf` is the **clean consolidated** appendix (zero merged artifacts, three clean `Max - 70 points`), and the file without the suffix is the redline showing `Max - 65 70 points`. **70 is correct.** Code from the "-amendments" file. The 2026 QAP governs, signed 30 December 2025; 2027 is still a draft. |
    | **NE** | Still needs an image pass | Holdings confirmed current, three-year plan for 2026–2028. Point values live in the 5-page scoresheet, which states a 40-point minimum and maxima of 87 non-metro / 85 metro. The plan's own summary table on pp.5-6 is headed "PROPOSED SCORING" and its group totals sum to 94, disagreeing with the scoresheet — treat the scoresheet as authoritative. |
    | **UT** | Needs a model decision | Weight-based scoring **confirmed**, not points. Each criterion is a raw score times a weight: Lower Income Targeting ×50 (cap 5,000), Project Location ×20 (cap 300, from 15 raw), Project Characteristics ×20 (530), Applicant Characteristics ×20 (200), Special Housing Needs ×20 (500), Credit Efficiency ×20 (240). **No grand total is stated anywhere.** The "~5,000" in our old note was one criterion's cap, not the total. |
-   | **KY** | Needs a decision | XLSX-only, confirmed, with **no PDF fallback**. The Guidelines carry zero point values across 107 pages; the QAP states KHC makes awards "without determining points". Values are in a 5-sheet scoring workbook. Ingesting Kentucky means teaching the pipeline XLSX. |
+   | **KY** | **Done** | XLSX-only, as suspected. Rather than a second document model, `qapdb/sheets.py` reads a workbook as a document whose pages are sheets, and `criteria.cell_ref` names the exact cell. Coded: 17 criteria, two pools reconciling to 75 each. |
    | **OR** | Nothing to extract | No point system — see below. |
 
 
