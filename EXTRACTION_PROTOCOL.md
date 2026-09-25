@@ -1145,3 +1145,29 @@ quote from its first page.**
 Tennessee's cross-references regularly name Section 16 for Section 17 items and
 Section 18 for the minimum score, which Section 17 states. Each bar was coded
 from its evident target and the discrepancy recorded in the criterion's note.
+
+
+### West Virginia 2025-2026: one criterion, two values, two full tracks
+
+West Virginia states 993 points for New Supply and 993 for Existing Low-Income
+Housing. Nearly every criterion applies to both at different values, often
+exactly half for Existing. Neither of §3's track shapes fits this. A shared core
+plus add-ons would leave nothing in the core, because values differ even where
+the criteria are the same. Alternatives with only their unique criteria would
+leave neither universe able to reconcile on its own.
+
+So I coded two **full parallel tracks**. Every criterion that applies to both
+appears twice, and the Existing copy carries a `.E` suffix on its
+`section_label`. Each track then reconciles independently against its own 993.
+The duplication is stated in the file's comment, and any per-criterion count
+from the database must de-duplicate `.E` rows before being compared across
+states. **Use full parallel tracks only when the same criteria carry different
+values in each universe and each universe has its own stated total.** Where
+values match, prefer a shared core.
+
+Both tracks compute 988. The five-point Tenant Ownership criterion and the
+150-point Longest Periods preference bar each other, but the 993 counts both.
+That is a MISMATCH by design, as with Indiana. The ten-band location tables,
+about 150 numbers in all, were parsed from the page text by script rather than
+retyped. Every band carries its page, so the script's output is checkable
+against the same text layer the citation checker reads.
