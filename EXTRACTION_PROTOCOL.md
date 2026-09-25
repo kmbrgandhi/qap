@@ -1214,3 +1214,24 @@ disagrees with itself on its own date (cover July 2026, p.2 "Republished
 menu lists 17), and its examples cite an "Option 20" that does not exist. The
 cycle was set to 2027 through `sources.csv`, from the Policies' own "For the
 2027 allocation cycle".
+
+
+### California 2026: regulations are a QAP, and a scoring paragraph can say "Reserved"
+
+California's QAP is its regulations, CCR Title 4 §§10300–10338, and the 9%
+scoring is §10325(c). It reads like statute. Nothing is labelled as a total,
+maxima sit in the body of each paragraph ("No more than 15 points will be
+awarded in this category"), and paragraph (5) says only "Reserved." A
+reserved paragraph is the regulation's own placeholder, not a gap in the
+extraction. Record it in the comment so that no one goes looking for a
+criterion (5) that was never there.
+
+Tax-exempt bond applications are scored separately under §10326. That is a
+different competition, run with CDLAC, and it was not coded. The comment says
+so, and so does the handoff. A second pass could add it on its own track.
+
+The tiebreaker after the housing-type check is a computed ratio: leveraged
+soft resources plus a basis ratio, with resource-area bonuses in percentage
+points. It is coded as a tiebreaker with the formula in its note. Its
+"percentage points" are not selection points and must not be summed with
+them.

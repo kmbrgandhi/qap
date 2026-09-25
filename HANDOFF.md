@@ -13,14 +13,14 @@ says *where we are*; the protocol says *how to work*.
 |---|---|
 | States collected | 50 |
 | Documents | 68 |
-| **States coded** | **40** |
-| Criteria | 1630 (1091 competitive, 428 threshold) |
-| Point tiers | 2157 |
-| Track totals | 67 |
+| **States coded** | **41** |
+| Criteria | 1657 (1100 competitive, 443 threshold) |
+| Point tiers | 2226 |
+| Track totals | 68 |
 | Documents with a source URL | 33 of 68 |
-| Citations verifying | 1630 of 1630 |
+| Citations verifying | 1657 of 1657 |
 
-Coded: AK AL AR AZ CO CT DE GA HI IA ID IL IN KS LA MA ME MI MN MO MS NC ND NH NJ NM NV NY OH OK PA RI SD TN VA VT WA WI WV WY
+Coded: AK AL AR AZ CA CO CT DE GA HI IA ID IL IN KS LA MA ME MI MN MO MS NC ND NH NJ NM NV NY OH OK PA RI SD TN VA VT WA WI WV WY
 
 The figures combine the 20 states coded against the full corpus with the ten
 coded from `data/pdfs_bundled/`. A repo-only session can rebuild and re-verify
@@ -55,6 +55,7 @@ that no total is stated.
 | WV | 112 | new supply; existing (full parallel tracks); top-off bonus 10 | 993 / 993 | 988 / 988 | MISMATCH by design: two mutually exclusive criteria both counted |
 | LA | 34 | one | none | 51 | no stated total; score sheet read from page images |
 | WA | 55 | core 159; King +42, Metro +32, Non-Metro +35 | none | 201 / 191 / 194 | no stated total; scored in the 9% Policies, not the QAP |
+| CA | 27 | one (9% Credit Ceiling, §10325) | none | 109 | no stated total; §10326 bond scoring not coded |
 
 Six of ten state no total. For them the hand-sum made before loading is the
 only completeness check there is; see protocol §6.
@@ -151,7 +152,8 @@ session has work available without the shared drop folder.
    and a plausible filename are not evidence that a document scores anything.
 4. **Fill `data/sources.csv`** for the 35 documents without a source URL, and
    set cycles for Alaska, Wyoming and Idaho (none of the three documents states
-   one; Idaho gives only approval dates in April and May 2026) and Arizona
+   one; Idaho gives only approval dates in April and May 2026), California (its
+   regulations are dated December 10, 2025 and name no round) and Arizona
    (ingest recorded a filename/document CONFLICT).
 5. **Consider a `qapdb/stats` command** that prints this file's corpus table
    from the full database. The figures here were computed from the ten bundled

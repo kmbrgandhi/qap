@@ -658,6 +658,9 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("WA", "6.11.M"): LOC, ("WA", "6.12.M"): LOC, ("WA", "6.13.M"): LOC, ("WA", "6.14.M"): LOC,
     ("WA", "6.15.M"): LOC, ("WA", "6.16.M"): LOC, ("WA", "6.3.A.N"): POP, ("WA", "6.3.B.N"): POP,
     ("WA", "6.3.C.N"): POP, ("WA", "6.11.N"): LOC, ("WA", "6.12.N"): LOC, ("WA", "6.16.N"): LOC,
+    ("CA", "10325(c)(1)(A)"): SPON, ("CA", "10325(c)(1)(B)"): SPON, ("CA", "10325(c)(2)"): SPON,
+    ("CA", "10325(c)(3)"): POP, ("CA", "10325(c)(4)(A)"): LOC, ("CA", "10325(c)(4)(B)"): POP,
+    ("CA", "10325(c)(6)"): AFF, ("CA", "10325(c)(7)"): READY, ("CA", "10325(c)(8)"): DES,
 }
 
 

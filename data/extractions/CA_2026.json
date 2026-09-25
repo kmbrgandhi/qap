@@ -1,0 +1,477 @@
+{
+ "_comment": "California 2026, CTCAC Regulations (California Code of Regulations, Title 4, Division 17, Chapter 1), December 10, 2025. California's QAP is these regulations. Page numbers are PDF page indices. Scoring for Credit Ceiling (9%) applications is Section 10325(c) (pp.32-52). Section 10326 (tax-exempt bond applications) is a separate competition, not coded here. NO TOTAL IS STATED. Hand-summed before loading: (1) general partner 7 + management company 3 = 10 (no combined cap stated); (3) Housing Needs 10; (4)(A) Site Amenities 15 (capped); (4)(B) Service Amenities 10 (capped); (5) reserved; (6) Lowest Income 52 (table 50 + 2 for 10% at 30% AMI); (7) Readiness 10; (8) Miscellaneous 2 (capped) = 109. The loader matched. Negative points run up to 10 per violation and are excluded. The first tiebreaker after the housing-type check is a computed ratio, not a point criterion. Thresholds (10325(f) and (g)) are in CA_thresholds.json.",
+ "match": {
+  "filename": "california-qap-2026.pdf"
+ },
+ "extractor_version": "hand-2026-ca-1",
+ "track_totals": [
+  {
+   "track": null,
+   "stated_total": null,
+   "page": 32,
+   "note": "No total stated. Computed 109 across the eight 10325(c) scoring paragraphs, (5) being reserved. Applications must score at least 45 on Lowest Income."
+  }
+ ],
+ "groups": [],
+ "criteria": [
+  {
+   "section_label": "10325(c)(1)(A)",
+   "heading": "General partner experience",
+   "points_max": 7,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 32,
+   "page_end": 33,
+   "quote": "General partner experience. To receive points under this subsection for projects in",
+   "tiers": [
+    {
+     "tier_label": "3-4 projects in service 3+ years (one 5+ years, two California LIHTC)",
+     "points": 5
+    },
+    {
+     "tier_label": "5+ projects",
+     "points": 7
+    },
+    {
+     "tier_label": "Special needs (Nonprofit/Special Needs set-aside): 3 special needs projects + 1 California LIHTC",
+     "points": 5
+    },
+    {
+     "tier_label": "Special needs: 4+",
+     "points": 7
+    }
+   ],
+   "note": "Highest applicable category, not cumulative; where there are several general partners, the one with the highest points counts.",
+   "kind": "competitive",
+   "native_category": "Section 10325(c) Scoring",
+   "ord": 1
+  },
+  {
+   "section_label": "10325(c)(1)(B)",
+   "heading": "Management Company experience",
+   "points_max": 3,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 33,
+   "page_end": 34,
+   "quote": "Management Company experience. To receive points under this subsection, the",
+   "tiers": [
+    {
+     "tier_label": "6-10 projects managed 3+ years (two California LIHTC)",
+     "points": 2
+    },
+    {
+     "tier_label": "11+ projects",
+     "points": 3
+    },
+    {
+     "tier_label": "Special needs: 2-3 special needs projects + 1 California LIHTC",
+     "points": 2
+    },
+    {
+     "tier_label": "Special needs: 4+",
+     "points": 3
+    }
+   ],
+   "note": "No combined cap with (A) is stated; (A) and (B) add to 10.",
+   "kind": "competitive",
+   "native_category": "Section 10325(c) Scoring",
+   "ord": 2
+  },
+  {
+   "section_label": "10325(c)(2)",
+   "heading": "Negative points",
+   "points_max": -10,
+   "points_type": "negative",
+   "is_negative": true,
+   "page_start": 35,
+   "page_end": 36,
+   "quote": "Negative points, up to a total of 10 for each project and/or each violation,",
+   "note": "At the Executive Director's discretion, for 23 listed grounds (A)-(W): unused subsidies, missed deadlines, amenities or services not provided, uncorrected noncompliance, misrepresentation, basis 40% over limits at placement, and others. In effect one to two years. 'Up to a total of 10 for each project and/or each violation', so -10 is per violation, not an overall floor.",
+   "kind": "competitive",
+   "native_category": "Section 10325(c) Scoring",
+   "ord": 3
+  },
+  {
+   "section_label": "10325(c)(3)",
+   "heading": "Housing Needs",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "alternative",
+   "page_start": 36,
+   "page_end": 37,
+   "quote": "Housing Needs. (Points will be awarded only in one category listed below except that",
+   "tiers": [
+    {
+     "tier_label": "Large Family",
+     "points": 10
+    },
+    {
+     "tier_label": "Special Needs",
+     "points": 10
+    },
+    {
+     "tier_label": "Seniors",
+     "points": 10
+    },
+    {
+     "tier_label": "At-Risk",
+     "points": 10
+    },
+    {
+     "tier_label": "SRO",
+     "points": 10
+    }
+   ],
+   "note": "Every housing type earns 10; the category also sets the tie-breaker's housing type goal.",
+   "kind": "competitive",
+   "native_category": "Section 10325(c) Scoring",
+   "ord": 4
+  },
+  {
+   "section_label": "10325(c)(4)(A)",
+   "heading": "Site Amenities",
+   "points_max": 15,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 37,
+   "page_end": 40,
+   "quote": "No more than 15 points will be awarded in this category.",
+   "tiers": [
+    {
+     "tier_label": "1. Transit within 1/3 mile, 30-minute peak service, density over 25 units/acre",
+     "points": 7
+    },
+    {
+     "tier_label": "1. Transit within 1/3 mile, 30-minute service",
+     "points": 6
+    },
+    {
+     "tier_label": "1. Within 1/2 mile, 30-minute service",
+     "points": 5
+    },
+    {
+     "tier_label": "1. Within 1/3 mile",
+     "points": 4
+    },
+    {
+     "tier_label": "1. Within 1/2 mile",
+     "points": 3
+    },
+    {
+     "tier_label": "1. Plus free or half-price transit passes, one per unit",
+     "points": 3
+    },
+    {
+     "tier_label": "1. Plus passes, one per two units",
+     "points": 2
+    },
+    {
+     "tier_label": "2. Public park or community center within 1/2 mile (Rural 1)",
+     "points": 3
+    },
+    {
+     "tier_label": "2. Within 3/4 mile (Rural 1.5)",
+     "points": 2
+    },
+    {
+     "tier_label": "3. Public library within 1/2 mile (Rural 1)",
+     "points": 3
+    },
+    {
+     "tier_label": "3. Within 1 mile (Rural 2)",
+     "points": 2
+    },
+    {
+     "tier_label": "4. Full-scale grocery within 1/2 mile",
+     "points": 5
+    },
+    {
+     "tier_label": "4. Within 1 mile",
+     "points": 4
+    },
+    {
+     "tier_label": "4. Within 1.5 miles",
+     "points": 3
+    },
+    {
+     "tier_label": "4. Neighborhood market within 1/4 mile",
+     "points": 4
+    },
+    {
+     "tier_label": "4. Within 1/2 mile",
+     "points": 3
+    },
+    {
+     "tier_label": "4. Certified farmers' market within 1/2 mile",
+     "points": 2
+    },
+    {
+     "tier_label": "4. Within 1 mile",
+     "points": 1
+    },
+    {
+     "tier_label": "5. Adult education or community college within 1 mile",
+     "points": 3
+    },
+    {
+     "tier_label": "5. Public school within attendance-area distances (25%+ three-bedroom)",
+     "points": 3
+    },
+    {
+     "tier_label": "5. Within an additional 1/2 mile",
+     "points": 2
+    },
+    {
+     "tier_label": "6. Senior center within 1/2 mile (Senior)",
+     "points": 3
+    },
+    {
+     "tier_label": "6. Within 3/4 mile",
+     "points": 2
+    },
+    {
+     "tier_label": "7. Special needs facility within 1/2 mile",
+     "points": 3
+    },
+    {
+     "tier_label": "7. Within 1 mile",
+     "points": 2
+    },
+    {
+     "tier_label": "8. Qualifying medical clinic or hospital within 1/2 mile",
+     "points": 3
+    },
+    {
+     "tier_label": "8. Within 1 mile",
+     "points": 2
+    },
+    {
+     "tier_label": "9. Pharmacy within 1/2 mile",
+     "points": 2
+    },
+    {
+     "tier_label": "9. Within 1 mile",
+     "points": 1
+    },
+    {
+     "tier_label": "10. Free high speed internet (25 Mbps) for 15 years (3 for Rural)",
+     "points": 2
+    },
+    {
+     "tier_label": "11. New construction Large Family in a Highest or High Resource area",
+     "points": 8
+    },
+    {
+     "tier_label": "12. Farmworker Housing or Native American apportionment",
+     "points": 5
+    }
+   ],
+   "note": "One award per subcategory except the transit pass add-on; the text says 'each of the subcategories (1-9)' although twelve are listed. No site amenity points for Native American apportionment applications unless they drop to the Rural set-aside. Rural distances in parentheses.",
+   "kind": "competitive",
+   "native_category": "Section 10325(c) Scoring",
+   "ord": 5
+  },
+  {
+   "section_label": "10325(c)(4)(B)",
+   "heading": "Service Amenities",
+   "points_max": 10,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 40,
+   "page_end": 44,
+   "quote": "Projects that provide high-quality services designed to improve the quality of life for",
+   "tiers": [
+    {
+     "tier_label": "1. Service Coordinator, 1 FTE per 600 bedrooms",
+     "points": 5
+    },
+    {
+     "tier_label": "2. Other Services Specialist, 1 FTE per 600 bedrooms",
+     "points": 5
+    },
+    {
+     "tier_label": "3. Instructor-led classes, 84 hours/year (42 small)",
+     "points": 7
+    },
+    {
+     "tier_label": "3. 60 hours/year (30 small)",
+     "points": 5
+    },
+    {
+     "tier_label": "4. Health and wellness, 100 hours per 100 bedrooms",
+     "points": 5
+    },
+    {
+     "tier_label": "4. 60 hours per 100 bedrooms",
+     "points": 3
+    },
+    {
+     "tier_label": "5. Licensed childcare, 20 hours/week",
+     "points": 5
+    },
+    {
+     "tier_label": "6. After school program, 10 hours/week",
+     "points": 5
+    },
+    {
+     "tier_label": "6. 6 hours/week",
+     "points": 3
+    },
+    {
+     "tier_label": "7. Case Manager, 1 FTE per 100 bedrooms (special needs)",
+     "points": 5
+    },
+    {
+     "tier_label": "8. Service Coordinator or Specialist, 1 FTE per 360 bedrooms (special needs)",
+     "points": 5
+    },
+    {
+     "tier_label": "9. Classes, 84 hours/year (special needs)",
+     "points": 5
+    },
+    {
+     "tier_label": "10. Licensed health or behavioral health services (special needs)",
+     "points": 5
+    },
+    {
+     "tier_label": "11. Licensed childcare (special needs)",
+     "points": 5
+    },
+    {
+     "tier_label": "12. After school program (special needs)",
+     "points": 5
+    }
+   ],
+   "note": "Items 1-6 serve Large Family, Senior and At-Risk projects; 7-12 serve Special Needs (75%+) and SRO projects; mixed projects are scored proportionately. Items are mutually exclusive for any one service. 'No more than 10 points will be awarded in this category.'",
+   "kind": "competitive",
+   "native_category": "Section 10325(c) Scoring",
+   "ord": 6
+  },
+  {
+   "section_label": "10325(c)(6)",
+   "heading": "Lowest Income",
+   "points_max": 52,
+   "points_type": "formula",
+   "page_start": 44,
+   "page_end": 45,
+   "quote": "Lowest Income in accordance with the table below",
+   "tiers": [
+    {
+     "tier_label": "Lowest Income Points Table (percent of units x percent of AMI), maximum",
+     "points": 50
+    },
+    {
+     "tier_label": "(B) At least 10% of Low-Income Units at 30% AMI, spread largest-first",
+     "points": 2
+    }
+   ],
+   "note": "Each AMI column may be used once; percent-of-units rows may repeat. The 55% AMI column is for the Rural set-aside only. All projects must score at least 45 here to be eligible for 9% credits.",
+   "kind": "competitive",
+   "native_category": "Section 10325(c) Scoring",
+   "ord": 7
+  },
+  {
+   "section_label": "10325(c)(7)",
+   "heading": "Readiness to Proceed",
+   "points_max": 10,
+   "points_type": "fixed",
+   "page_start": 45,
+   "page_end": 46,
+   "quote": "Readiness to Proceed. 10 points will be available to projects that document enforceable",
+   "note": "Construction must start within 180 or 194 days of reservation, with the listed documents by the assigned deadline. Failure means rescission, negative points, or both.",
+   "kind": "competitive",
+   "native_category": "Section 10325(c) Scoring",
+   "ord": 8
+  },
+  {
+   "section_label": "10325(c)(8)",
+   "heading": "Miscellaneous Federal and State Policies",
+   "points_max": 2,
+   "points_type": "tiered",
+   "tier_mode": "additive",
+   "page_start": 46,
+   "page_end": 47,
+   "quote": "Miscellaneous Federal and State Policies",
+   "tiers": [
+    {
+     "tier_label": "(A) Credit Substitution",
+     "points": 2
+    },
+    {
+     "tier_label": "(B) Enhanced Accessibility and Visitability",
+     "points": 2
+    },
+    {
+     "tier_label": "(C) Smoke Free Residence",
+     "points": 2
+    },
+    {
+     "tier_label": "(D) Historic Preservation (Historic Tax Credits)",
+     "points": 1
+    },
+    {
+     "tier_label": "(E) Revitalization Area Project",
+     "points": 2
+    },
+    {
+     "tier_label": "(F) Eventual Tenant Ownership",
+     "points": 1
+    },
+    {
+     "tier_label": "(G) Excess state-owned or local surplus land",
+     "points": 2
+    }
+   ],
+   "note": "'Maximum 2 points'; the seven items sum to 12.",
+   "kind": "competitive",
+   "native_category": "Section 10325(c) Scoring",
+   "ord": 9
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Section 10325(c)(9) Tie Breakers",
+   "section_label": "10325(c)(9).SJ",
+   "heading": "Single-jurisdiction letter of support (San Francisco, Los Angeles)",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 1,
+   "page_start": 47,
+   "page_end": 47,
+   "quote": "the first tiebreaker shall be the presence within the submitted application of a formal letter of",
+   "note": "San Francisco and City of Los Angeles apportionments only.",
+   "ord": 10
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Section 10325(c)(9) Tie Breakers",
+   "section_label": "10325(c)(9).1",
+   "heading": "Housing type goal not yet met",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 2,
+   "page_start": 47,
+   "page_end": 47,
+   "quote": "First, if an application",
+   "note": "Applications whose housing type goal is already met in the round are skipped in favour of a tied application whose goal is not.",
+   "ord": 11
+  },
+  {
+   "kind": "tiebreaker",
+   "native_category": "Section 10325(c)(9) Tie Breakers",
+   "section_label": "10325(c)(9).2",
+   "heading": "Leveraged soft resources ratio + basis ratio + resource area and rural bonuses",
+   "points_max": null,
+   "points_type": "none",
+   "scoring_unit": "none",
+   "rank_order": 3,
+   "page_start": 47,
+   "page_end": 47,
+   "quote": "Second, the highest of the sum of the following:",
+   "note": "(A) leveraged soft resources / total residential development cost, with a size factor for 50+ new units; (B) (1 - requested unadjusted eligible basis / total residential development cost) / 2; (C) a Highest/High Resource bonus of 20/10 (non-rural) or 10/5 (rural) percentage points for new construction Large Family; (D) +5 points for Rural projects in counties with no award in five years.",
+   "ord": 12
+  }
+ ]
+}
