@@ -1235,3 +1235,24 @@ soft resources plus a basis ratio, with resource-area bonuses in percentage
 points. It is coded as a tiebreaker with the formula in its note. Its
 "percentage points" are not selection points and must not be summed with
 them.
+
+
+### Texas 2026: check the section a rule lives in, not just its page
+
+Texas states each paragraph's maximum in words and figures ("up to sixteen
+(16) points"), and those maxima sum to 181. The loader matched. Two things in
+it are worth carrying forward.
+
+First, **26 of the 181 points go to every eligible application.** Financial
+Feasibility is "awarded ... conditioned upon the successful completion of
+underwriting". It is coded as a fixed 26 because that is what the document
+does, and the note says it does not separate anyone. A cross-state comparison
+of maxima should know that some states pad them this way.
+
+Second, I first placed the 120-point eligibility floor in §11.202 (Ineligible
+Applicants) because the words sat in an ineligibility list. It is in
+§11.101(b)(1)(A)(x), on p.99; §11.202 starts on p.127. The citation checker
+would have passed either attribution, because both quote the same sentence on
+the same page. **The checker verifies words on pages. It does not verify
+section labels.** When a note or comment names a section, read the nearest
+section heading above the quote.
