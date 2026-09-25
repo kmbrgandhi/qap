@@ -111,7 +111,7 @@ One row per thing a project is scored on, at the grain the document scores it.
 | `native_category` | The QAP's own category name, verbatim. Never our taxonomy's. |
 | `points_max` | What this criterion alone can yield. Null for thresholds, for deductions with no stated maximum, and where the values live in a document the corpus does not hold (then `detail_external` names it: Colorado's Housing Need exhibits). |
 | `points_type` | `fixed`, `tiered`, `formula`, `per_unit`, `unlimited`, `negative`, `none`. |
-| `scoring_unit` | `points` unless the document scores in something else. Vermont scores in checkmarks; Utah uses weights (weight × score). Never mix units in one total. |
+| `scoring_unit` | `points` unless the document scores in something else. Vermont scores in `checkmarks`; Utah is stored in `weighted` (raw score × category weight, the value the document ranks on). Never mix units in one total. |
 | `kind` | `competitive`, `threshold`, `ranked_priority`, `tiebreaker`, `set_aside`. |
 | `track` | Where the QAP runs scoring universes that must not be pooled. Two kinds, which look identical in the data, so every `track_totals.note` must say which it is: **alternatives**, where a project is in exactly one (Michigan urban/rural, Arizona rehab/new construction, Oklahoma 9%/state credit); and **add-ons**, extra criteria on top of a shared core (Arizona tribal, New Jersey's three cycles, Indiana 9%/bond). When scales share most criteria, code the core once plus one add-on track per scale rather than duplicating it; suffix any criterion that must appear on two tracks (`.family`, `.senior`). A third shape, **full parallel tracks**, is for universes that score the same criteria at different values and each state their own total (West Virginia's New Supply and Existing, both 993): every criterion appears once per track, the copies suffixed (`.E`), so each track reconciles alone. Say so in `_comment`; per-criterion counts must de-duplicate the suffixed rows. |
 | `page_start` / `page_end` | **PDF page indices**, not printed page numbers. |
@@ -1508,3 +1508,27 @@ Coded at 3, and the MISMATCH stands.
 - **A block with several rows and no "select one" and no maximum is
   ambiguous.** Code the largest row, say so in the note, and give the sum an
   additive reading would reach.
+
+
+### Utah 2027: store weights as the document ranks, and check every stated subtotal
+
+Utah multiplies each category's raw score by a weight, ×50 for Lower Income
+Targeting and ×20 for the other five categories, and states each category's
+maximum in weighted terms (5,000, 300, 530, 200, 500, 240). Each criterion is
+stored at its **weighted** value, with the raw maximum and weight in the note,
+under a new `scoring_unit` of `weighted`. Weighted values are what Utah ranks
+on. They let the stated category maxima reconcile directly. They also keep the
+coverage view's within-state shares honest: stored raw, Lower Income Targeting
+would be 100 of 188.5 raw points (53%) instead of 5,000 of 6,770 (74%). Adding the unit
+changed a CHECK constraint, so older databases must be rebuilt.
+
+No grand total is stated. The loader's 6,770 is only the sum of the stated
+category maxima, and the file says so.
+
+All six category maxima reconciled, but one page disagrees with itself.
+Project Characteristics prints "Sum of Subtotals 30.5 / Weighting X20 /
+Maximum ... 530". Its subtotals give 26.5, and 26.5 × 20 is 530. The page image
+shows the missing 4: row 6(a) is printed blank, and its footnote survives.
+**Check a printed "sum" line against the parts even when the final figure
+matches**; a deleted row can leave one line of arithmetic behind.
+

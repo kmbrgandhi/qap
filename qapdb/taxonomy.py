@@ -719,6 +719,14 @@ ASSIGN: dict[tuple[str, str], object] = {
     ("NE", "OSC.26.M"): LOC, ("NE", "OSC.27.M"): LOC, ("NE", "OSC.28.M"): POP,
     ("NE", "NIFA.1.M"): AFF, ("NE", "NIFA.2.M"): COST, ("NE", "NIFA.3.M"): COST,
     ("NE", "NIFA.4.M"): LOC, ("NE", "OSC.24.M"): LOC,
+
+    # ---- Utah (weighted units; never pooled with points) -----------------------
+    ("UT", "A"): AFF, ("UT", "A.a"): LOC, ("UT", "A.b"): LOC,
+    ("UT", "A.c"): LOC, ("UT", "B.1"): POP, ("UT", "B.2"): DES,
+    ("UT", "B.3"): PRES, ("UT", "B.4"): DES, ("UT", "B.5"): COST,
+    ("UT", "B.6.b"): LOC, ("UT", "B.6.c"): COST, ("UT", "C.1"): SPON,
+    ("UT", "D.2"): POP, ("UT", "D.3"): POP, ("UT", "D.4"): POP,
+    ("UT", "E"): COST,
 }
 
 

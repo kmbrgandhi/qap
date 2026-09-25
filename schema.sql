@@ -135,9 +135,13 @@ CREATE TABLE IF NOT EXISTS criteria (
     -- Ceiling Credit applications with "checkmarks", which staff then weight
     -- to produce a ranking. Storing 4 checkmarks in a points column without
     -- this would silently make them comparable to 4 Connecticut points, which
-    -- they are not. Totals and charts must never mix units.
+    -- they are not. Totals and charts must never mix units. Utah scores each
+    -- criterion in raw points and multiplies by a category weight (x50 or
+    -- x20); its rows are stored at the weighted value, in unit 'weighted',
+    -- because that is what the document ranks on and what its stated
+    -- category maxima (5,000, 300, 530 ...) are denominated in.
     scoring_unit  TEXT NOT NULL DEFAULT 'points'
-                  CHECK (scoring_unit IN ('points','checkmarks','rank','none')),
+                  CHECK (scoring_unit IN ('points','checkmarks','weighted','rank','none')),
     points_type   TEXT DEFAULT 'fixed'
                   CHECK (points_type IN ('fixed','tiered','formula',
                                          'per_unit','unlimited','negative','none')),
